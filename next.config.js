@@ -3,5 +3,8 @@ module.exports = {
     locales: ["en"],
     defaultLocale: "en",
   },
-  output: "standalone",
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
 };
