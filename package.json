@@ -24,6 +24,11 @@
     "@emotion/react": "^11.10.6",
     "@emotion/server": "^11.10.0",
     "@emotion/styled": "^11.10.6",
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-brands-svg-icons": "^6.5.1",
+    "@fortawesome/free-regular-svg-icons": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.17",
     "@tailwindcss/aspect-ratio": "^0.4.2",
@@ -31,7 +36,9 @@
     "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",
-    "react-hook-form": "^7.43.9"
+    "react-hook-form": "^7.43.9",
+    "styled-components": "^6.1.8",
+    "tailwind-fontawesome": "^0.6.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",

@@ -1,0 +1,271 @@
+{
+  "2024-001": {
+    "isActive": true,
+    "imageUrl": "/course/2024-001/poster/square-image2-01-01.jpg",
+    "detailUrl": "https://www.eventpop.me/e/16996/dks-fundamental-docker-1-2024",
+    "title": "Fundamental Docker",
+    "code": "2024-001",
+    "duration": "1 Day, 09:00 - 17:00",
+    "overview": "The Fundamental Docker course is a learning experience about the basics of Docker, which is an efficient technology used for containerization. Participants will learn about Linux usage, basic Linux commands, working with the VIM text editor, and basic Docker operations including container creation, management, and the use of Docker Compose for orchestrating multiple services simultaneously.",
+    "objectives": [
+      "To ensure participants understand the fundamentals of Docker and how containerization systems work.",
+      "To empower participants to efficiently utilize Docker for creating and managing containers.",
+      "To enable participants to use Docker Compose for orchestrating multiple services simultaneously"
+    ],
+    "whoShouldAttend": [
+      "Software developers looking to learn Docker for application development.",
+      "DevOps engineers seeking to understand Docker for environment management and team collaboration.",
+      "System administrators interested in using Docker for system management and maintenance.",
+      "Individuals interested in learning containerization and system management in situations requiring flexibility and resource efficiency."
+    ],
+    "prerequisites": [
+      "Basic knowledge of Linux operating systems.",
+      "Proficiency in Command Line Interface (CLI) usage."
+    ],
+    "participantsWillReceive": [
+      "One Cloud Servers (VM) per person for training purposes.",
+      "Training manuals/documentation.",
+      "Lunch and refreshments.",
+      "Certification upon completion of the Fundamental Docker course.",
+      "Excellent care and attention from instructors and staff.",
+      "Unlimited attendance to the Fundamental Docker Workshop (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat)."
+    ],
+    "outline": [
+      {
+        "title": "Fundamental Linux",
+        "descriptions": [
+          "Directory structure",
+          "Linux Commands",
+          "Using VIM Text Editor",
+          "Using GIT Version Control",
+          "Workshop 1 - Basic web deploy",
+          "Workshop 2 - Deploy with Nginx"
+        ]
+      },
+      {
+        "title": "What is Docker?",
+        "descriptions": [
+          "Container Technology",
+          "Containers and VM",
+          "Docker Architecture"
+        ]
+      },
+      {
+        "title": "Docker Basic Commands",
+        "descriptions": [
+          "Workshop 3 - Images Management",
+          "Workshop 4 - Running Containers",
+          "Workshop 5 - Reverse Proxy"
+        ]
+      },
+      {
+        "title": "Docker Compose",
+        "descriptions": [
+          "Workshop 6 - Docker Compose File",
+          "Workshop 7 - Running Compose Services",
+          "Workshop 8 - Build image with Docker file"
+        ]
+      }
+    ],
+    "publicSchedule": [
+      {
+        "title": "Fundamental Docker - 1/2024",
+        "eventStart": "2024-03-09T09:00:00+0700",
+        "eventEnd": "2024-03-09T17:00:00+0700",
+        "ticketUrl": "https://www.eventpop.me/e/16996/dks-fundamental-docker-1-2024",
+        "saleStart": "2024-02-18T09:00:00+0700",
+        "saleEnd": "2024-03-29T17:00:00+0700",
+        "isSelling": true,
+        "isSoldOut": false
+      },
+      {
+        "title": "Fundamental Docker - 2/2024",
+        "eventStart": "2024-05-08T09:00:00+0700",
+        "eventEnd": "2024-05-08T17:00:00+0700",
+        "isSelling": false
+      },
+      {
+        "title": "Fundamental Docker - 3/2024",
+        "eventStart": "2024-07-06T09:00:00+0700",
+        "eventEnd": "2024-07-06T17:00:00+0700",
+        "isSelling": false
+      }
+    ],
+    "documents": [
+      {
+        "title": "Fundamental Docker Outline (English Version)",
+        "fileUrl": "/course/2024-001/document/2024-001-fundamental-docker-en.pdf"
+      },
+      {
+        "title": "Fundamental Docker Outline (Thai Version)",
+        "fileUrl": "/course/2024-001/document/2024-001-fundamental-docker-th.pdf"
+      }
+    ]
+  },
+  "2024-002": {
+    "isActive": false,
+    "imageUrl": null,
+    "title": "Fundamental Kubernetes",
+    "code": "2024-002",
+    "duration": "1 Day, 09:00 - 17:00",
+    "overview": "The course Fundamental Kubernetes is designed to provide an introduction to the basics of Kubernetes, an official cluster management and container orchestration system. Participants will learn about Kubernetes' capabilities, how the system operates, cluster architecture, container state management, network management, and various tools used in Kubernetes administration.",
+    "objectives": [
+      "To provide learners with a solid understanding of the fundamentals of Kubernetes and its capabilities,",
+      "To empower learners to create and manage their own clusters using Kubernetes,",
+      "To ensure learners comprehend container state management, load balancing, and application scaling techniques."
+    ],
+    "whoShouldAttend": [
+      "Software developers interested in studying cluster management and container orchestration.",
+      "DevOps engineers seeking to understand Kubernetes for system management and maintenance.",
+      "System administrators interested in learning about cluster management and container orchestration.",
+      "Individuals interested in learning about tools and technologies used in cluster management and container orchestration."
+    ],
+    "prerequisites": [
+      "Basic knowledge of Linux operating systems.",
+      "Proficiency in Command Line Interface (CLI) usage.",
+      "Fundamental understanding of Docker usage."
+    ],
+    "participantsWillReceive": [
+      "Three Cloud Servers (VM) per person (1 Master and 2 Nodes) for training purposes.",
+      "Training manuals/documentation.",
+      "Lunch and refreshments.",
+      "Certification upon completion of the Fundamental Kubernetes course.",
+      "Excellent care and attention from instructors and staff.",
+      "Unlimited attendance to the Fundamental Kubernetes Workshop (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat)."
+    ],
+    "outline": [
+      {
+        "title": "What? When? Where?",
+        "descriptions": [
+          "What is Kubernetes?",
+          "What are its capabilities?",
+          "When should it be used?",
+          "Case Studies"
+        ]
+      },
+      {
+        "title": "Going back in time",
+        "descriptions": [
+          "Deploying and Managing Containers Before Kubernetes: Examining Problems and Traditional Solutions"
+        ]
+      },
+      {
+        "title": "Kubernetes Concepts and Overview",
+        "descriptions": [
+          "Understanding Concepts",
+          "Capabilities in Addressing Various Problems"
+        ]
+      },
+      {
+        "title": "Cluster Architecture",
+        "descriptions": [
+          "Architecture of a Cluster",
+          "Differences between Cluster and Container Operation",
+          "What are nodes, pods, and services?"
+        ]
+      },
+      {
+        "title": "Workshop 1 - Building Your Own Cluster",
+        "descriptions": [
+          "Hands-on - Creating a Cluster and Adding Nodes, along with Creating Simple Pods and Services"
+        ]
+      },
+      {
+        "title": "Storage, Containers and Workloads",
+        "descriptions": [
+          "Understanding Container Operations and Components",
+          "Case Studies"
+        ]
+      },
+      {
+        "title": "Workshop 2 - Deploying an Easy App with Deployments",
+        "descriptions": ["Testing App Deployment Using Kubernetes Deployments"]
+      },
+      {
+        "title": "Workshop 3 - Deploying the App with StatefulSets",
+        "descriptions": [
+          "Testing App Deployment Using Kubernetes StatefulSets",
+          "Studying Differences Between Deployment and StatefulSets"
+        ]
+      },
+      {
+        "title": "Services, Load Balancing, and Networking",
+        "descriptions": [
+          "Understanding Tools for Managing Network Routes and Configurations to Access Deployed Applications"
+        ]
+      },
+      {
+        "title": "Workshop 4 - Point to my services 1",
+        "descriptions": [
+          "Testing Access to a Web Application via Kubernetes Configuration and DNS from External Sources"
+        ]
+      },
+      {
+        "title": "Workshop 5 - Point to my services 2",
+        "descriptions": [
+          "Testing Configuration and Access Rights, Network Routing Limitations, and Load Balancing in the Cluster"
+        ]
+      },
+      {
+        "title": "Workshop 6 - HPA and K6",
+        "descriptions": [
+          "Testing HPA Creation and Using Testing Tools to See Configuration Results"
+        ]
+      },
+      {
+        "title": "Configuration",
+        "descriptions": [
+          "Understanding Configuration and Passing Parameters in Kubernetes, Along with Best Practices"
+        ]
+      },
+      {
+        "title": "Workshop 7 - Testing Your Configuration",
+        "descriptions": [
+          "Testing Configuration Settings and Parameter Passing Following Kubernetes Officials' Recommendations"
+        ]
+      }
+    ],
+    "publicSchedule": [
+      {
+        "title": "Fundamental Kubernetes - 1/2024",
+        "eventStart": "2024-03-16T09:00:00+0700",
+        "eventEnd": "2024-03-16T17:00:00+0700",
+        "ticketUrl": null,
+        "saleStart": null,
+        "saleEnd": null,
+        "isSelling": false,
+        "isSoldOut": false
+      },
+      {
+        "title": "Fundamental Kubernetes - 2/2024",
+        "eventStart": "2024-05-18T09:00:00+0700",
+        "eventEnd": "2024-05-18T17:00:00+0700",
+        "ticketUrl": null,
+        "saleStart": null,
+        "saleEnd": null,
+        "isSelling": false,
+        "isSoldOut": false
+      },
+      {
+        "title": "Fundamental Kubernetes - 3/2024",
+        "eventStart": "2024-07-10T09:00:00+0700",
+        "eventEnd": "2024-07-10T17:00:00+0700",
+        "ticketUrl": null,
+        "saleStart": null,
+        "saleEnd": null,
+        "isSelling": false,
+        "isSoldOut": false
+      }
+    ],
+    "documents": [
+      {
+        "title": "Fundamental Kubernetes Outline (English Version)",
+        "fileUrl": "/course/2024-002/document/fundamental-kubernetes-en.pdf"
+      },
+      {
+        "title": "Fundamental Kubernetes Outline (Thai Version)",
+        "fileUrl": "/course/2024-002/document/fundamental-kubernetes-th.pdf"
+      }
+    ]
+  }
+}
