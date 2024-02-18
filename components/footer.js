@@ -14,7 +14,7 @@ export default function Footer() {
   const navigation = [
     { title: "Home", path: "/" },
     { title: "Course", path: "/course" },
-    // { title: "Schedule", path: "/schedule" },
+    { title: "Schedule", path: "/schedule" },
   ];
   const legal = [
     { title: "About Us", path: "/about-us" },

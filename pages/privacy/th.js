@@ -11,7 +11,7 @@ export default function PrivacyContentTH() {
         </p>
       </div>
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 text-blue-700">
+        <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
           การเก็บรวบรวมข้อมูลส่วนบุคคล
         </h2>
         <p>
@@ -26,7 +26,7 @@ export default function PrivacyContentTH() {
         <p></p>
       </div>
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 text-blue-700">
+        <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
           ประเภทข้อมูลส่วนบุคคลที่เก็บรวบรวม
         </h2>
         <p>
@@ -57,7 +57,9 @@ export default function PrivacyContentTH() {
         </p>
       </div>
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 text-blue-700">ผู้เยาว์</h2>
+        <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
+          ผู้เยาว์
+        </h2>
         <p>
           หากคุณมีอายุต่ำกว่า 20 ปีหรือมีข้อจำกัดความสามารถตามกฎหมาย
           เราอาจเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคลของคุณ
@@ -67,7 +69,7 @@ export default function PrivacyContentTH() {
         </p>
       </div>
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 text-blue-700">
+        <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
           วิธีการเก็บรักษาข้อมูลส่วนบุคคล
         </h2>
         <p>
@@ -79,7 +81,7 @@ export default function PrivacyContentTH() {
         </ul>
       </div>
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 text-blue-700">
+        <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
           การประมวลผลข้อมูลส่วนบุคคล
         </h2>
         <p>
@@ -100,7 +102,7 @@ export default function PrivacyContentTH() {
         </ul>
       </div>
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 text-blue-700">
+        <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
           การเปิดเผยข้อมูลส่วนบุคคล
         </h2>
         <p>
@@ -155,7 +157,7 @@ export default function PrivacyContentTH() {
         </p>
       </div>
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 text-blue-700">
+        <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
           ระยะเวลาจัดเก็บข้อมูลส่วนบุคคล
         </h2>
         <p>
@@ -166,7 +168,7 @@ export default function PrivacyContentTH() {
         </p>
       </div>
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 text-blue-700">
+        <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
           สิทธิของเจ้าของข้อมูลส่วนบุคคล
         </h2>
         <p>
@@ -243,7 +245,9 @@ export default function PrivacyContentTH() {
         </p>
       </div>
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 text-blue-700">การโฆษณาและการตลาด</h2>
+        <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
+          การโฆษณาและการตลาด
+        </h2>
 
         <p>
           เราอาจส่งข้อมูลหรือจดหมายข่าวไปยังอีเมลของคุณ
@@ -254,7 +258,7 @@ export default function PrivacyContentTH() {
         </p>
       </div>
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 text-blue-700">
+        <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
           เทคโนโลยีติดตามตัวบุคคล (Cookies)
         </h2>
         <p>
@@ -268,7 +272,7 @@ export default function PrivacyContentTH() {
         </p>
       </div>
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 text-blue-700">
+        <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
           การรักษาความมั่งคงปลอดภัยของข้อมูลส่วนบุคคล
         </h2>
         <p>
@@ -284,7 +288,7 @@ export default function PrivacyContentTH() {
         </p>
       </div>
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 text-blue-700">
+        <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
           การแจ้งเหตุละเมิดข้อมูลส่วนบุคคล
         </h2>
         <p>
@@ -297,7 +301,7 @@ export default function PrivacyContentTH() {
         </p>
       </div>
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 text-blue-700">
+        <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
           การแก้ไขเปลี่ยนแปลงนโยบายความเป็นส่วนตัว
         </h2>
         <p>
@@ -309,7 +313,7 @@ export default function PrivacyContentTH() {
         </p>
       </div>
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 text-blue-700">
+        <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
           นโยบายความเป็นส่วนตัวของเว็บไซต์อื่น
         </h2>
         <p>
@@ -322,7 +326,9 @@ export default function PrivacyContentTH() {
         </p>
       </div>
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 text-blue-700">รายละเอียดการติดต่อ</h2>
+        <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
+          รายละเอียดการติดต่อ
+        </h2>
         <p>
           หากคุณต้องการสอบถามข้อมูลเกี่ยวกับนโยบายความเป็นส่วนตัวฉบับนี้
           รวมถึงการขอใช้สิทธิต่าง ๆ

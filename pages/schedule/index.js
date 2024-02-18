@@ -2,9 +2,9 @@ import React from "react";
 import Head from "next/head";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
-import CourseList from "../../components/courseList";
+import Container from "../../components/container";
 
-const Course = () => {
+const Schedule = () => {
   return (
     <>
       <Head>
@@ -16,10 +16,13 @@ const Course = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <CourseList breadcrumb={true} />
+      <Container>
+        <div className="w-full text-center">COMMING SOON!</div>
+      </Container>
+
       <Footer />
     </>
   );
 };
 
-export default Course;
+export default Schedule;

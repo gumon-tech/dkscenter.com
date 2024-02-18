@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
-import CourseList from "../../components/courseList";
+import CourseDetail from "../../components/courseDetail";
 
 const Course = () => {
   return (
@@ -16,7 +16,7 @@ const Course = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <CourseList breadcrumb={true} />
+      <CourseDetail />
       <Footer />
     </>
   );

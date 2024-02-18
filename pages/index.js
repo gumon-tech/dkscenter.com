@@ -3,6 +3,7 @@ import Navbar from "../components/navbar";
 import SectionTitle from "../components/sectionTitle";
 import Video from "../components/video";
 import Footer from "../components/footer";
+import CourseList from "../components/courseList";
 
 const Home = () => {
   return (
@@ -36,6 +37,7 @@ const Home = () => {
         </p>
       </SectionTitle>
       <Video />
+      <CourseList />
       <Footer />
     </>
   );

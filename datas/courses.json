@@ -1,7 +1,9 @@
 {
-  "2024-001": {
+  "2024-001-fundamental-docker": {
+    "lastUpdate": "2024-02-18T09:00:00+0700",
+    "key": "2024-001-fundamental-docker",
     "isActive": true,
-    "imageUrl": "/course/2024-001/poster/square-image2-01-01.jpg",
+    "imageUrl": "/course/2024-001/poster/cover-image2-01-01.jpg",
     "detailUrl": "https://www.eventpop.me/e/16996/dks-fundamental-docker-1-2024",
     "title": "Fundamental Docker",
     "code": "2024-001",
@@ -75,20 +77,22 @@
         "ticketUrl": "https://www.eventpop.me/e/16996/dks-fundamental-docker-1-2024",
         "saleStart": "2024-02-18T09:00:00+0700",
         "saleEnd": "2024-03-29T17:00:00+0700",
-        "isSelling": true,
-        "isSoldOut": false
+        "isActive": true,
+        "isSoldOut": false,
+        "location": "BTS Phaya Thai"
       },
       {
         "title": "Fundamental Docker - 2/2024",
         "eventStart": "2024-05-08T09:00:00+0700",
         "eventEnd": "2024-05-08T17:00:00+0700",
-        "isSelling": false
+        "isActive": true,
+        "isSoldOut": false
       },
       {
         "title": "Fundamental Docker - 3/2024",
         "eventStart": "2024-07-06T09:00:00+0700",
         "eventEnd": "2024-07-06T17:00:00+0700",
-        "isSelling": false
+        "isActive": true
       }
     ],
     "documents": [
@@ -102,8 +106,10 @@
       }
     ]
   },
-  "2024-002": {
-    "isActive": false,
+  "2024-002-fundamental-kubernetes": {
+    "lastUpdate": "2024-02-18T09:00:00+0700",
+    "key": "2024-002-fundamental-kubernetes",
+    "isActive": true,
     "imageUrl": null,
     "title": "Fundamental Kubernetes",
     "code": "2024-002",
@@ -233,7 +239,7 @@
         "ticketUrl": null,
         "saleStart": null,
         "saleEnd": null,
-        "isSelling": false,
+        "isActive": false,
         "isSoldOut": false
       },
       {
@@ -243,7 +249,7 @@
         "ticketUrl": null,
         "saleStart": null,
         "saleEnd": null,
-        "isSelling": false,
+        "isActive": false,
         "isSoldOut": false
       },
       {
@@ -253,7 +259,7 @@
         "ticketUrl": null,
         "saleStart": null,
         "saleEnd": null,
-        "isSelling": false,
+        "isActive": false,
         "isSoldOut": false
       }
     ],

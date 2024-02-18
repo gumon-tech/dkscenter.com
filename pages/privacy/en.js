@@ -11,7 +11,7 @@ export default function PrivacyContentEN() {
         </p>
       </div>
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 text-blue-700">
+        <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
           Collection of Personal Data
         </h2>
         <p>
@@ -25,7 +25,9 @@ export default function PrivacyContentEN() {
         </ul>
       </div>
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 text-blue-700">Types of Data Collected</h2>
+        <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
+          Types of Data Collected
+        </h2>
         <p>
           <b>Personal data</b> such as name, surname, age, date of birth,
           nationality, identification card, passport, etc.
@@ -56,7 +58,9 @@ export default function PrivacyContentEN() {
         </p>
       </div>
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 text-blue-700">Children</h2>
+        <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
+          Children
+        </h2>
         <p>
           If you are under the age of 20 or having legal restrictions, we may
           collect use or disclose your personal data. We require your parents or
@@ -67,7 +71,9 @@ export default function PrivacyContentEN() {
         </p>
       </div>
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 text-blue-700">Storage of Data</h2>
+        <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
+          Storage of Data
+        </h2>
         <p>We store your personal data as hard copy and soft copy.</p>
         <p>We store your personal data by using the following systems:</p>
         <ul className="list-disc px-10">
@@ -75,7 +81,9 @@ export default function PrivacyContentEN() {
         </ul>
       </div>
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 text-blue-700">Use of Data</h2>
+        <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
+          Use of Data
+        </h2>
         <p>We use the collected data for various purposes:</p>
         <ul className="list-disc px-10">
           <li>To create and manage accounts</li>
@@ -91,7 +99,7 @@ export default function PrivacyContentEN() {
         </ul>
       </div>
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 text-blue-700">
+        <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
           Disclosure of Personal Data
         </h2>
         <p>
@@ -151,7 +159,9 @@ export default function PrivacyContentEN() {
         </p>
       </div>
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 text-blue-700">Data Retention</h2>
+        <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
+          Data Retention
+        </h2>
         <p>
           We will retain your personal data for as long as necessary during the
           period you are a customer or under relationship with us, or for as
@@ -162,7 +172,9 @@ export default function PrivacyContentEN() {
         </p>
       </div>
       <div className="mb-6">
-        <h2 className="text-3xl mb-2 text-blue-700">Data Subject Rights</h2>
+        <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
+          Data Subject Rights
+        </h2>
         <p>
           Subject to the Personal Data Protection Laws thereof, you may exercise
           any of these rights in the following:
@@ -241,7 +253,7 @@ export default function PrivacyContentEN() {
           address, telephone, registered mail (if applicable).
         </p>
         <div className="mb-6">
-          <h2 className="text-3xl mb-2 text-blue-700">
+          <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
             Advertising and Marketing
           </h2>
 
@@ -253,7 +265,9 @@ export default function PrivacyContentEN() {
           </p>
         </div>
         <div className="mb-6">
-          <h2 className="text-3xl mb-2 text-blue-700">Cookies</h2>
+          <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
+            Cookies
+          </h2>
           <p>
             To enrich and perfect your experience, we use cookies or similar
             technologies to display personalized content, appropriate
@@ -265,7 +279,9 @@ export default function PrivacyContentEN() {
           </p>
         </div>
         <div className="mb-6">
-          <h2 className="text-3xl mb-2 text-blue-700">Data Security</h2>
+          <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
+            Data Security
+          </h2>
           <p>
             We endeavor to protect your personal data by establishing security
             measures in accordance with the principles of confidentiality,
@@ -276,7 +292,7 @@ export default function PrivacyContentEN() {
           </p>
         </div>
         <div className="mb-6">
-          <h2 className="text-3xl mb-2 text-blue-700">
+          <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
             Data Breach Notification
           </h2>
           <p>
@@ -291,7 +307,7 @@ export default function PrivacyContentEN() {
           </p>
         </div>
         <div className="mb-6">
-          <h2 className="text-3xl mb-2 text-blue-700">
+          <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
             Changes to this Privacy Policy
           </h2>
         </div>
@@ -307,7 +323,9 @@ export default function PrivacyContentEN() {
           </p>
         </div>
         <div className="mb-6">
-          <h2 className="text-3xl mb-2 text-blue-700">Links to Other Sites</h2>
+          <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
+            Links to Other Sites
+          </h2>
           <p>
             The purpose of this Privacy Policy is to offer products or services
             and use of our website. Any websites from other dotext-centers found
@@ -316,7 +334,9 @@ export default function PrivacyContentEN() {
           </p>
         </div>
         <div className="mb-6">
-          <h2 className="text-3xl mb-2 text-blue-700">Contact Information</h2>
+          <h2 className="text-3xl mb-2 text-blue-700 dark:text-blue-400">
+            Contact Information
+          </h2>
           <p>
             If you have any questions about this Privacy Policy or would like to
             exercise your rights, you can contact us by using the following
