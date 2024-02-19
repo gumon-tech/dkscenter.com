@@ -273,5 +273,319 @@
         "fileUrl": "/course/2024-002/document/fundamental-kubernetes-th.pdf"
       }
     ]
+  },
+  "2024-007-modern-web-frontend-with-react": {
+    "lastUpdate": "2024-02-19T09:00:00+0700",
+    "key": "2024-007-modern-web-frontend-with-react",
+    "isActive": true,
+    "imageUrl": null,
+    "title": "Modern Web Frontend with React (Next.js - App Router - Typescript)",
+    "code": "2024-007",
+    "duration": "2 Day, 09:00 - 17:00",
+    "overview": "The Modern Web Frontend with React (Next.js - App Router - Typescript) course is a learning experience focused on the basics of developing web applications using ReactJS, a JavaScript library used for building user interfaces. Participants will learn about the React structure, component creation, state management, API integration, and routing in web applications.",
+    "objectives": [
+      "To provide participants with an understanding of the basics of ReactJS and web application development using React.",
+      "To empower participants to create and manage various components in web applications using React.",
+      "To enable participants to fetch data from APIs and manage the state of the application in the React framework."
+    ],
+    "whoShouldAttend": [
+      "Software developers looking to learn about ReactJS and web application development.",
+      "Developers with experience in website development who seek to understand the usage of ReactJS.",
+      "Individuals interested in learning how to create efficient web applications using ReactJS."
+    ],
+    "prerequisites": [
+      "Participants in the course should have basic knowledge of programming with JavaScript.",
+      "Participants in the course should also have fundamental knowledge of web application development.",
+      "Participants should have a basic understanding of HTML, CSS, and JavaScript to better grasp the content.",
+      "Preparation of necessary development tools such as Node.js and npm (Node Package Manager) for building and managing React projects.",
+      "Ability to use Command Line Interface (CLI) for creating React projects and managing dependencies using npm.",
+      "A computer equipped with programming tools such as a Text Editor or Integrated Development Environment (IDE) suitable for React development.",
+      "Enthusiasm for learning and collaborating with others during the course. Working with team members helps participants gain valuable experience through knowledge exchange and collaboration."
+    ],
+    "participantsWillReceive": [
+      "Training manuals/documentation.",
+      "Lunch and refreshments.",
+      "Certification upon completion of the Modern Web Frontend with React (Next.js - App Router - Typescript) course.",
+      "Excellent care and attention from instructors and staff.",
+      "Unlimited attendance to the Modern Web Frontend with React (Next.js - App Router - Typescript) (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat).",
+      "If you are unable to attend the training session this time, you can reschedule your participation according to the training schedule."
+    ],
+    "outline": [
+      {
+        "title": "History of Web Frontend Development",
+        "descriptions": [
+          "The evolution of web application development before the separation of Backend and Frontend."
+        ]
+      },
+      {
+        "title": "Pros and Cons",
+        "descriptions": [
+          "Advantages and disadvantages of developing web applications with separated Backend and Frontend."
+        ]
+      },
+      {
+        "title": "System Architecture Overview",
+        "descriptions": [
+          "An overview of current web application design with Backend and Frontend separation, including case studies."
+        ]
+      },
+      {
+        "title": "ECMAScript and TypeScript",
+        "descriptions": [
+          "Modern JavaScript writing and fundamentals of TypeScript."
+        ]
+      },
+      {
+        "title": "What is React? And why Next.js?",
+        "descriptions": [
+          "Introduction to React and React-powered frameworks."
+        ]
+      },
+      {
+        "title": "Workshop 1",
+        "descriptions": [
+          "Creating a Next.js app."
+        ]
+      },
+      {
+        "title": "Project Structure",
+        "descriptions": ["Introduction to the basic structure of Next.js."]
+      },
+      {
+        "title": "HTML and JSX",
+        "descriptions": [
+          "What is JSX?",
+          "Differences and precautions between HTML tags and JSX."
+        ]
+      },
+      {
+        "title": "Component Concept",
+        "descriptions": [
+          "Explanation of functions and various necessary roles in developing web applications with React",
+          "Creating components to separate frequently used parts",
+          "Component exporting and importing",
+          "Passing values to components (Component Props)."
+        ]
+      },
+      {
+        "title": "Workshop 2",
+        "descriptions": [
+          "My First Component."
+        ]
+      },
+      {
+        "title": "Tailwind CSS",
+        "descriptions": [
+          "Introduction to basic usage of Tailwind CSS"
+        ]
+      },
+      {
+        "title": "Workshop 3",
+        "descriptions": [
+          "My Home Page."
+        ]
+      },
+      {
+        "title": "State: A Component's Memory",
+        "descriptions": [
+          "Explanation of useState function and basic usage."
+        ]
+      },
+      {
+        "title": "Workshop 4",
+        "descriptions": [
+          "Carousel banner."
+        ]
+      },
+      {
+        "title": "Reacting to Input with State",
+        "descriptions": [
+          "Using State with Input."
+        ]
+      },
+      {
+        "title": "Workshop 5",
+        "descriptions": [
+          "Search box."
+        ]
+      },
+      {
+        "title": "Sharing State Between Components",
+        "descriptions": [
+          "Explanation of using State with other components."
+        ]
+      },
+      {
+        "title": "Workshop 6",
+        "descriptions": [
+          "Search results."
+        ]
+      },
+      {
+        "title": "Next.js Routing",
+        "descriptions": [
+          "Explanation of creating Route Paths in various formats",
+          "Page and Layout structures",
+          "page navigation (Linking and Navigating)."
+        ]
+      },
+      {
+        "title": "Workshop 7",
+        "descriptions": [
+          "New search page."
+        ]
+      },
+      {
+        "title": "Workshop 8",
+        "descriptions": [
+          "Products and Details."
+        ]
+      },
+      {
+        "title": "Server Components and Client Components",
+        "descriptions": [
+          "Explanation of differences and usage of Server Components and Client Components",
+          "Case studies."
+        ]
+      },
+      {
+        "title": "Next.js Data Fetching",
+        "descriptions": [
+          "Explanation of API calls",
+          "Creating and using Server Actions and Mutations",
+          "Using formData and useFormStatus."
+        ]
+      },
+      {
+        "title": "Workshop 9",
+        "descriptions": [
+          "Register."
+        ]
+      },
+      {
+        "title": "Authentication Flow",
+        "descriptions": [
+          "Explanation of the structure and principles of Authentication systems."
+        ]
+      },
+      {
+        "title": "Workshop 10",
+        "descriptions": [
+          "Login."
+        ]
+      },
+      {
+        "title": "Passing Data Deeply with Context",
+        "descriptions": [
+          "Explanation of principles, necessity, and management of complex ",
+          "Case studies."
+        ]
+      },
+      {
+        "title": "Workshop 11",
+        "descriptions": [
+          "My Profile."
+        ]
+      },
+      {
+        "title": "Error Handling and Middleware",
+        "descriptions": [
+          "Explanation of Error Handling principles in the Next.js framework and Middleware operations",
+          "Case studies."
+        ]
+      },
+      {
+        "title": "Workshop 12",
+        "descriptions": [
+          "Redirect when not logged in."
+        ]
+      },
+      {
+        "title": "Scaling Up with Reducer and Context",
+        "descriptions": [
+          "Explanation of using Reducer and State Action with Context",
+          "Case studies."
+        ]
+      },
+      {
+        "title": "Workshop 13",
+        "descriptions": [
+          "Add products to cart."
+        ]
+      },
+      {
+        "title": "Synchronizing with Effects",
+        "descriptions": [
+          "Explanation of useEffect function and its usage in various formats."
+        ]
+      },
+      {
+        "title": "Workshop 14",
+        "descriptions": [
+          "Checkout!"
+        ]
+      },
+      {
+        "title": "Workshop 15",
+        "descriptions": [
+          "Order History."
+        ]
+      },
+      {
+        "title": "Environment Variables and Deploying",
+        "descriptions": [
+          "Explanation of Environment Variables usage and deployment in various formats."
+        ]
+      },
+      {
+        "title": "Workshop 16",
+        "descriptions": [
+          "Hello World!"
+        ]
+      }
+    ],
+    
+    "publicSchedule": [
+      {
+        "title": "Fundamental Frontend (React) - 1/2024",
+        "eventStart": "2024-03-16T09:00:00+0700",
+        "eventEnd": "2024-03-16T17:00:00+0700",
+        "ticketUrl": null,
+        "saleStart": null,
+        "saleEnd": null,
+        "isActive": false,
+        "isSoldOut": false
+      },
+      {
+        "title": "Fundamental Frontend (React) - 2/2024",
+        "eventStart": "2024-05-18T09:00:00+0700",
+        "eventEnd": "2024-05-18T17:00:00+0700",
+        "ticketUrl": null,
+        "saleStart": null,
+        "saleEnd": null,
+        "isActive": false,
+        "isSoldOut": false
+      },
+      {
+        "title": "Fundamental Frontend (React) - 3/2024",
+        "eventStart": "2024-07-10T09:00:00+0700",
+        "eventEnd": "2024-07-10T17:00:00+0700",
+        "ticketUrl": null,
+        "saleStart": null,
+        "saleEnd": null,
+        "isActive": false,
+        "isSoldOut": false
+      }
+    ],
+    "documents": [
+      {
+        "title": "Modern Web Frontend with React (Next.js - App Router - Typescript) (English Version)",
+        "fileUrl": "/course/2024-007/document/modern-web-frontend-with-react-(nextjs-app-router-typescript)-en.pdf"
+      },
+      {
+        "title": "Modern Web Frontend with React (Next.js - App Router - Typescript) (Thai Version)",
+        "fileUrl": "/course/2024-007/document/modern-web-frontend-with-react-(nextjs-app-router-typescript)-th.pdf"
+      }
+    ]
   }
 }
