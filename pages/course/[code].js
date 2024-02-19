@@ -10,7 +10,7 @@ const Course = ({ courseData }) => {
     <>
       <Head>
         <title>
-          {courseData.title} | DKS Center - Digital Knowledge Sharing Center
+          {`${courseData.title} | DKS Center - Digital Knowledge Sharing Center`}
         </title>
         <meta
           name="description"
