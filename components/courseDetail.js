@@ -33,7 +33,7 @@ const CourseDetail = ({ courseData }) => {
       )}
 
       <div className="flex flex-wrap">
-        <div className="md:w-full xl:basis-8/12">
+        <div className="md:w-full xl:basis-8/12 lg:pr-5">
           <p className="my-5 text-gray-700 dark:text-gray-400">
             {courseData.overview}
           </p>
@@ -120,7 +120,7 @@ const CourseDetail = ({ courseData }) => {
             </>
           )}
         </div>
-        <div className="md:w-full xl:basis-4/12 px-5">
+        <div className="md:w-full xl:basis-4/12">
           <table className="w-full text-sm text-left  text-gray-500 dark:text-gray-400 mb-5">
             <thead className="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
               <tr>
@@ -144,7 +144,7 @@ const CourseDetail = ({ courseData }) => {
             </tbody>
           </table>
 
-          <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 mb-5 table-auto overflow-scroll">
+          <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 mb-5">
             <thead className="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
               <tr>
                 <th
@@ -183,7 +183,7 @@ const CourseDetail = ({ courseData }) => {
                     );
                     return (
                       <tr key={index} className="bg-white dark:bg-gray-800">
-                        <th scope="row" className="px-6 py-4 whitespace-nowrap">
+                        <th scope="row" className="px-6 py-4">
                           <h3 className="text-indigo-700 dark:text-indigo-400">
                             {publicSchedule.ticketUrl ? (
                               <a
@@ -294,6 +294,7 @@ const CourseDetail = ({ courseData }) => {
               </tr>
             </tbody>
           </table>
+
           {courseData.documents && courseData.documents.length > 0 && (
             <table className="w-full text-sm text-left  text-gray-500 dark:text-gray-400 mb-5">
               <thead className="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
