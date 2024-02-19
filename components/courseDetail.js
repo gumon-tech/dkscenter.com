@@ -1,11 +1,6 @@
-import courses from "../datas/courses.json";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircle } from "@fortawesome/free-regular-svg-icons";
-import Dotdotdot from "react-dotdotdot";
 import Container from "./container";
 import Link from "next/link";
 import Breadcrumb from "./breadcrumb";
-import { useRouter } from "next/router";
 import dayjs from "dayjs";
 import {
   CalendarIcon,
@@ -13,12 +8,8 @@ import {
   MapPinIcon,
 } from "@heroicons/react/24/outline";
 
-export default function CourseDetail(props) {
-  const router = useRouter();
-  const courseCode = router.query.code;
-  const courseData = courses[courseCode];
-
-  return !courseCode || !courseData ? (
+const CourseDetail = ({ courseData }) => {
+  return !courseData ? (
     <Container>
       <Breadcrumb paths={[{ title: "Training Course", path: "/course" }]} />
       No data.
@@ -28,7 +19,7 @@ export default function CourseDetail(props) {
       <Breadcrumb
         paths={[
           { title: "Training Course", path: "/course" },
-          { title: courseCode, path: `/course/${courseCode}` },
+          { title: courseData.code, path: `/course/${courseData.code}` },
         ]}
       />
       <h2 className="mt-3 max-w-2xl text-3xl font-bold leading-snug tracking-tight text-gray-800 lg:leading-tight lg:text-4xl dark:text-white">
@@ -360,4 +351,6 @@ export default function CourseDetail(props) {
       </div>
     </Container>
   );
-}
+};
+
+export default CourseDetail;
