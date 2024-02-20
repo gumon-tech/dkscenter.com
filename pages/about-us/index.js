@@ -11,7 +11,7 @@ const AboutUs = () => {
   return (
     <>
       <Head>
-        <title>DKS Center - Digital Knowledge Sharing Center</title>
+        <title>About Us | DKS Center - Digital Knowledge Sharing Center</title>
         <meta
           name="description"
           content="DKS acts as a central hub bridging digital communities and technology enthusiasts, fostering collaboration and knowledge exchange. Our mission includes organizing seminars, knowledge-sharing activities, and collaborative events to constantly update our network with the latest insights."

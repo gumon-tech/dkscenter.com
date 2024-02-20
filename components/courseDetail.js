@@ -1,11 +1,6 @@
-import courses from "../datas/courses.json";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircle } from "@fortawesome/free-regular-svg-icons";
-import Dotdotdot from "react-dotdotdot";
 import Container from "./container";
 import Link from "next/link";
 import Breadcrumb from "./breadcrumb";
-import { useRouter } from "next/router";
 import dayjs from "dayjs";
 import {
   CalendarIcon,
@@ -13,12 +8,8 @@ import {
   MapPinIcon,
 } from "@heroicons/react/24/outline";
 
-export default function CourseDetail(props) {
-  const router = useRouter();
-  const courseCode = router.query.code;
-  const courseData = courses[courseCode];
-
-  return !courseCode || !courseData ? (
+const CourseDetail = ({ courseData }) => {
+  return !courseData ? (
     <Container>
       <Breadcrumb paths={[{ title: "Training Course", path: "/course" }]} />
       No data.
@@ -28,7 +19,7 @@ export default function CourseDetail(props) {
       <Breadcrumb
         paths={[
           { title: "Training Course", path: "/course" },
-          { title: courseCode, path: `/course/${courseCode}` },
+          { title: courseData.code, path: `/course/${courseData.code}` },
         ]}
       />
       <h2 className="mt-3 max-w-2xl text-3xl font-bold leading-snug tracking-tight text-gray-800 lg:leading-tight lg:text-4xl dark:text-white">
@@ -42,7 +33,7 @@ export default function CourseDetail(props) {
       )}
 
       <div className="flex flex-wrap">
-        <div className="md:w-full xl:basis-8/12">
+        <div className="md:w-full xl:basis-8/12 lg:pr-5">
           <p className="my-5 text-gray-700 dark:text-gray-400">
             {courseData.overview}
           </p>
@@ -129,7 +120,7 @@ export default function CourseDetail(props) {
             </>
           )}
         </div>
-        <div className="md:w-full xl:basis-4/12 px-5">
+        <div className="md:w-full xl:basis-4/12">
           <table className="w-full text-sm text-left  text-gray-500 dark:text-gray-400 mb-5">
             <thead className="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
               <tr>
@@ -153,7 +144,7 @@ export default function CourseDetail(props) {
             </tbody>
           </table>
 
-          <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 mb-5 table-auto overflow-scroll">
+          <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 mb-5">
             <thead className="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
               <tr>
                 <th
@@ -192,7 +183,7 @@ export default function CourseDetail(props) {
                     );
                     return (
                       <tr key={index} className="bg-white dark:bg-gray-800">
-                        <th scope="row" className="px-6 py-4 whitespace-nowrap">
+                        <th scope="row" className="px-6 py-4">
                           <h3 className="text-indigo-700 dark:text-indigo-400">
                             {publicSchedule.ticketUrl ? (
                               <a
@@ -303,6 +294,7 @@ export default function CourseDetail(props) {
               </tr>
             </tbody>
           </table>
+
           {courseData.documents && courseData.documents.length > 0 && (
             <table className="w-full text-sm text-left  text-gray-500 dark:text-gray-400 mb-5">
               <thead className="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
@@ -360,4 +352,6 @@ export default function CourseDetail(props) {
       </div>
     </Container>
   );
-}
+};
+
+export default CourseDetail;
