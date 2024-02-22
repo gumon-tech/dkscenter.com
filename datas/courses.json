@@ -595,7 +595,7 @@
     "imageUrl": null,
     "title": "Fundamental API (NodeJS+ Restful+ MongoDB)",
     "code": "2024-003",
-    "duration": "1 Days, 09:00 - 17:00",
+    "duration": "1 Day, 09:00 - 17:00",
     "overview": "The Fundamental API course (NodeJS + Restful API + Mongo) is a learning journey into the basics of API development using Node.js, Restful API, and MongoDB technologies to create and manage web applications communicating via APIs. Participants will delve into JavaScript (ECMAScript), Node.js, Restful API, TypeScript, Nest JS, MongoDB, and Node.js Environment management. They will also learn about Middleware creation and management, Error Handling, and deploying Node.js projects.",
     "objectives": [
       "To ensure participants grasp the fundamentals of API development using Node.js, Restful API, and MongoDB.",
@@ -739,7 +739,7 @@
     "imageUrl": null,
     "title": "Fundamental API (NodeJS+ GraphQL+ MongoDB)",
     "code": "2024-004",
-    "duration": "1 Days, 09:00 - 17:00",
+    "duration": "1 Day, 09:00 - 17:00",
     "overview": "The Fundamental API course (NodeJS + GraphQL + Mongo) is a learning journey into the basics of API development using Node.js, GraphQL, and MongoDB technologies to create and manage web applications communicating via APIs. Participants will delve into JavaScript (ECMAScript), Node.js, Restful API, TypeScript, Nest JS, MongoDB, and Node.js Environment management. They will also learn about Middleware creation and management, Error Handling, and deploying Node.js projects.",
     "objectives": [
       "To ensure participants grasp the fundamentals of API development using Node.js,GraphQL, and MongoDB.",
@@ -883,7 +883,7 @@
     "imageUrl": null,
     "title": "Fundamental API (NodeJS+ Restful+ PostgreSQL)",
     "code": "2024-005",
-    "duration": "1 Days, 09:00 - 17:00",
+    "duration": "1 Day, 09:00 - 17:00",
     "overview": "The Fundamental API course (NodeJS + Restful API + PostgreSQL) is a learning journey into the basics of API development using Node.js, Restful API, and PostgreSQL technologies to create and manage web applications communicating via APIs. Participants will delve into JavaScript (ECMAScript), Node.js, Restful API, TypeScript, Nest JS, PostgreSQL, and Node.js Environment management. They will also learn about Middleware creation and management, Error Handling, and deploying Node.js projects.",
     "objectives": [
       "To ensure participants grasp the fundamentals of API development using Node.js, Restful API, and PostgreSQL.",
@@ -1027,7 +1027,7 @@
     "imageUrl": null,
     "title": "Fundamental API (NodeJS+ GraphQL+ PostgreSQL)",
     "code": "2024-006",
-    "duration": "1 Days, 09:00 - 17:00",
+    "duration": "1 Day, 09:00 - 17:00",
     "overview": "The Fundamental API course (NodeJS + GraphQL  + PostgreSQL) is a learning journey into the basics of API development using Node.js, GraphQL , and PostgreSQL technologies to create and manage web applications communicating via APIs. Participants will delve into JavaScript (ECMAScript), Node.js, GraphQL , TypeScript, Nest JS, PostgreSQL, and Node.js Environment management. They will also learn about Middleware creation and management, Error Handling, and deploying Node.js projects.",
     "objectives": [
       "To ensure participants grasp the fundamentals of API development using Node.js,GraphQL, and MongoDB.",
