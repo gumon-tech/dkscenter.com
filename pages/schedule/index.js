@@ -3,6 +3,7 @@ import Head from "next/head";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
 import Container from "../../components/container";
+import Table from "../../components/table";
 
 const Schedule = () => {
   return (
@@ -20,7 +21,9 @@ const Schedule = () => {
       </Head>
       <Navbar />
       <Container>
-        <div className="w-full text-center">COMMING SOON!</div>
+        <div className="w-full text-center">
+          <Table />
+        </div>
       </Container>
 
       <Footer />
