@@ -27,7 +27,7 @@ const Home = () => {
         usage for orchestrating multiple services.
         <p className="pt-8">
           <a
-            href="https://www.eventpop.me/e/16996/dks-fundamental-docker-1-2024"
+            href="https://dkscenter.com/course/2024-001-fundamental-docker"
             target="_blank"
             className="mt-8 px-8 py-4 text-lg font-medium text-center text-white bg-indigo-600 rounded-md"
           >
