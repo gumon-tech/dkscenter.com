@@ -1,5 +1,6 @@
 import { ThemeProvider } from "next-themes";
 import "../css/tailwind.css";
+import "../css/styles.css";
 import { GoogleTagManager } from "@next/third-parties/google";
 
 function MyApp({ Component, pageProps }) {
