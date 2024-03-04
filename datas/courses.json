@@ -78,7 +78,7 @@
         "saleStart": "2024-02-18T09:00:00+0700",
         "saleEnd": "2024-03-29T17:00:00+0700",
         "isActive": true,
-        "isSoldOut": false,
+        "isSoldOut": true,
         "location": "BTS Phaya Thai"
       },
       {
