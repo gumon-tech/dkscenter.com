@@ -181,6 +181,23 @@ const CourseDetail = ({ courseData }) => {
                     const isSaleEnded = dayjs().isAfter(
                       dayjs(publicSchedule.saleEnd)
                     );
+
+                    // ไม่ตรงเงือนไข จะแสดงสิ่งนี้
+                    let courseType = "COMING_SOON";
+                    // หมดช่วงเวลาขาย
+                    if (isSaleEnded) courseType = "ENDED";
+                    // ยังอยู่ช่วงเวลาขาย + ขายหมดแล้ว
+                    if (!isSaleEnded && publicSchedule.isSoldOut) {
+                      courseType = "SOLD_OUT";
+                    }
+                    // ยังอยู่ช่วงเวลาขาย + ขายไม่หมด + มีลิ้งขาย
+                    if (
+                      !isSaleEnded &&
+                      !publicSchedule.isSoldOut &&
+                      publicSchedule.ticketUrl
+                    ) {
+                      courseType = "GET_YOURS";
+                    }
                     return (
                       <tr key={index} className="bg-white dark:bg-gray-800">
                         <th scope="row" className="px-6 py-4">
@@ -222,21 +239,18 @@ const CourseDetail = ({ courseData }) => {
                           )}
                         </th>
                         <td className="px-6 py-4 text-center">
-                          {publicSchedule.isSoldOut && !isSaleEnded && (
-                            <span className="text-red-600 font-bold">
-                              SOLD OUT
-                            </span>
-                          )}
-
-                          {isSaleEnded && (
+                          {courseType === "COMING_SOON" && "COMING SOON!"}
+                          {courseType === "ENDED" && (
                             <span className="text-gray-700 dark:text-gray-400 font-bold">
                               ENDED
                             </span>
                           )}
-
-                          {!isSaleEnded &&
-                          !publicSchedule.isSoldOut &&
-                          publicSchedule.ticketUrl ? (
+                          {courseType === "SOLD_OUT" && (
+                            <span className="text-red-600 font-bold">
+                              SOLD OUT
+                            </span>
+                          )}
+                          {courseType === "GET_YOURS" && (
                             <a
                               target="_blank"
                               href={publicSchedule.ticketUrl}
@@ -244,8 +258,6 @@ const CourseDetail = ({ courseData }) => {
                             >
                               Get Yours!
                             </a>
-                          ) : (
-                            "COMING SOON!"
                           )}
                         </td>
                       </tr>
