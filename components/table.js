@@ -10,7 +10,7 @@ export default function Table() {
 
   return <div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
     <div className="relative rounded-xl overflow-auto">
-      <div className="shadow-sm overflow-hidden my-8">
+      <div className="shadow-sm table-overflow overflow-hidden my-8">
         <table className="border-collapse table-auto w-full text-base">
           <thead>
             <tr>
