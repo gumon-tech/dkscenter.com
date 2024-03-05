@@ -4,6 +4,7 @@ import SectionTitle from "../components/sectionTitle";
 import Video from "../components/video";
 import Footer from "../components/footer";
 import CourseList from "../components/courseList";
+import Link from "next/link";
 
 const Home = () => {
   return (
@@ -26,13 +27,12 @@ const Home = () => {
         operations such as container creation, management, and Docker Compose
         usage for orchestrating multiple services.
         <p className="pt-8">
-          <a
-            href="https://dkscenter.com/course/2024-001-fundamental-docker"
-            target="_blank"
+          <Link
+            href="/course/2024-001-fundamental-docker"
             className="mt-8 px-8 py-4 text-lg font-medium text-center text-white bg-indigo-600 rounded-md"
           >
             Secure Your Spot Now!
-          </a>
+          </Link>
         </p>
       </SectionTitle>
       <Video />
