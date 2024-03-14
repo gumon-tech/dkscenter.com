@@ -8,7 +8,7 @@ const Video = () => {
       <div className="w-full max-w-4xl mx-auto overflow-hidden lg:mb-20 rounded-2xl ">
         <div
           onClick={() => setPlayVideo(!playVideo)}
-          style={{ backgroundImage: `url(img/cover-image2-01-01.jpg)` }}
+          style={{ backgroundImage: `url(course/2024-007/poster/cover-image2-01-01.png)` }}
           className="relative cursor-pointer aspect-w-16 aspect-h-9 bg-center bg-contain"
         >
           <div className="absolute cursor-pointer aspect-w-16 aspect-h-9 bg-black opacity-60"></div>

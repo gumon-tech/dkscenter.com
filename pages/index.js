@@ -20,15 +20,12 @@ const Home = () => {
       <Navbar />
       <SectionTitle
         pretitle="Upcoming Event"
-        title="Fundamental Docker #1/2024"
+        title="Modern Web Frontend with React #1/2024"
       >
-        The Fundamental Docker course teaches essential Docker basics, including
-        Linux fundamentals, basic commands, VIM text editing, and core Docker
-        operations such as container creation, management, and Docker Compose
-        usage for orchestrating multiple services.
+        The Modern Web Frontend with React course is a learning experience focused on the basics of developing web applications using ReactJS, a JavaScript library used for building user interfaces. Participants will learn about the React structure, component creation, state management, API integration, and routing in web applications.
         <p className="pt-8">
           <Link
-            href="/course/2024-001-fundamental-docker"
+            href="/course/2024-007-modern-web-frontend-with-react"
             className="mt-8 px-8 py-4 text-lg font-medium text-center text-white bg-indigo-600 rounded-md"
           >
             Secure Your Spot Now!
