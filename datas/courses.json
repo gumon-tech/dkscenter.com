@@ -80,19 +80,6 @@
         "isActive": true,
         "isSoldOut": true,
         "location": "BTS Phaya Thai"
-      },
-      {
-        "title": "Fundamental Docker - 2/2024",
-        "eventStart": "2024-05-08T09:00:00+0700",
-        "eventEnd": "2024-05-08T17:00:00+0700",
-        "isActive": true,
-        "isSoldOut": false
-      },
-      {
-        "title": "Fundamental Docker - 3/2024",
-        "eventStart": "2024-07-06T09:00:00+0700",
-        "eventEnd": "2024-07-06T17:00:00+0700",
-        "isActive": true
       }
     ],
     "documents": [
@@ -231,38 +218,7 @@
         ]
       }
     ],
-    "publicSchedule": [
-      {
-        "title": "Fundamental Kubernetes - 1/2024",
-        "eventStart": "2024-03-16T09:00:00+0700",
-        "eventEnd": "2024-03-16T17:00:00+0700",
-        "ticketUrl": null,
-        "saleStart": null,
-        "saleEnd": null,
-        "isActive": false,
-        "isSoldOut": false
-      },
-      {
-        "title": "Fundamental Kubernetes - 2/2024",
-        "eventStart": "2024-05-18T09:00:00+0700",
-        "eventEnd": "2024-05-18T17:00:00+0700",
-        "ticketUrl": null,
-        "saleStart": null,
-        "saleEnd": null,
-        "isActive": false,
-        "isSoldOut": false
-      },
-      {
-        "title": "Fundamental Kubernetes - 3/2024",
-        "eventStart": "2024-07-10T09:00:00+0700",
-        "eventEnd": "2024-07-10T17:00:00+0700",
-        "ticketUrl": null,
-        "saleStart": null,
-        "saleEnd": null,
-        "isActive": false,
-        "isSoldOut": false
-      }
-    ],
+    "publicSchedule": [],
     "documents": [
       {
         "title": "Fundamental Kubernetes Outline (English Version)",
@@ -545,38 +501,7 @@
       }
     ],
     
-    "publicSchedule": [
-      {
-        "title": "Fundamental Frontend (React) - 1/2024",
-        "eventStart": "2024-03-16T09:00:00+0700",
-        "eventEnd": "2024-03-16T17:00:00+0700",
-        "ticketUrl": null,
-        "saleStart": null,
-        "saleEnd": null,
-        "isActive": false,
-        "isSoldOut": false
-      },
-      {
-        "title": "Fundamental Frontend (React) - 2/2024",
-        "eventStart": "2024-05-18T09:00:00+0700",
-        "eventEnd": "2024-05-18T17:00:00+0700",
-        "ticketUrl": null,
-        "saleStart": null,
-        "saleEnd": null,
-        "isActive": false,
-        "isSoldOut": false
-      },
-      {
-        "title": "Fundamental Frontend (React) - 3/2024",
-        "eventStart": "2024-07-10T09:00:00+0700",
-        "eventEnd": "2024-07-10T17:00:00+0700",
-        "ticketUrl": null,
-        "saleStart": null,
-        "saleEnd": null,
-        "isActive": false,
-        "isSoldOut": false
-      }
-    ],
+    "publicSchedule": [],
     "documents": [
       {
         "title": "Modern Web Frontend with React (Next.js - App Router - Typescript) (English Version)",
@@ -689,38 +614,7 @@
       }
     ],
     
-    "publicSchedule": [
-      {
-        "title": "Fundamental API (NodeJS+ Restful+ MongoDB) - 1/2024",
-        "eventStart": "2024-03-16T09:00:00+0700",
-        "eventEnd": "2024-03-16T17:00:00+0700",
-        "ticketUrl": null,
-        "saleStart": null,
-        "saleEnd": null,
-        "isActive": false,
-        "isSoldOut": false
-      },
-      {
-        "title": "Fundamental API (NodeJS+ Restful+ MongoDB) - 2/2024",
-        "eventStart": "2024-05-18T09:00:00+0700",
-        "eventEnd": "2024-05-18T17:00:00+0700",
-        "ticketUrl": null,
-        "saleStart": null,
-        "saleEnd": null,
-        "isActive": false,
-        "isSoldOut": false
-      },
-      {
-        "title": "Fundamental API (NodeJS+ Restful+ MongoDB) - 3/2024",
-        "eventStart": "2024-07-10T09:00:00+0700",
-        "eventEnd": "2024-07-10T17:00:00+0700",
-        "ticketUrl": null,
-        "saleStart": null,
-        "saleEnd": null,
-        "isActive": false,
-        "isSoldOut": false
-      }
-    ],
+    "publicSchedule": [],
     "documents": [
       {
         "title": "Fundamental API (NodeJS+ Restful+ MongoDB) (English Version)",
@@ -833,38 +727,7 @@
       }
     ],
     
-    "publicSchedule": [
-      {
-        "title": "Fundamental API (NodeJS+ Restful+ MongoDB) - 1/2024",
-        "eventStart": "2024-03-16T09:00:00+0700",
-        "eventEnd": "2024-03-16T17:00:00+0700",
-        "ticketUrl": null,
-        "saleStart": null,
-        "saleEnd": null,
-        "isActive": false,
-        "isSoldOut": false
-      },
-      {
-        "title": "Fundamental API (NodeJS+ Restful+ MongoDB) - 2/2024",
-        "eventStart": "2024-05-18T09:00:00+0700",
-        "eventEnd": "2024-05-18T17:00:00+0700",
-        "ticketUrl": null,
-        "saleStart": null,
-        "saleEnd": null,
-        "isActive": false,
-        "isSoldOut": false
-      },
-      {
-        "title": "Fundamental API (NodeJS+ Restful+ MongoDB) - 3/2024",
-        "eventStart": "2024-07-10T09:00:00+0700",
-        "eventEnd": "2024-07-10T17:00:00+0700",
-        "ticketUrl": null,
-        "saleStart": null,
-        "saleEnd": null,
-        "isActive": false,
-        "isSoldOut": false
-      }
-    ],
+    "publicSchedule": [],
     "documents": [
       {
         "title": "Fundamental API (NodeJS+ GraphQL+ MongoDB)(English Version)",
@@ -977,38 +840,7 @@
       }
     ],
     
-    "publicSchedule": [
-      {
-        "title": "Fundamental API (NodeJS+ Restful+ MongoDB) - 1/2024",
-        "eventStart": "2024-03-16T09:00:00+0700",
-        "eventEnd": "2024-03-16T17:00:00+0700",
-        "ticketUrl": null,
-        "saleStart": null,
-        "saleEnd": null,
-        "isActive": false,
-        "isSoldOut": false
-      },
-      {
-        "title": "Fundamental API (NodeJS+ Restful+ MongoDB) - 2/2024",
-        "eventStart": "2024-05-18T09:00:00+0700",
-        "eventEnd": "2024-05-18T17:00:00+0700",
-        "ticketUrl": null,
-        "saleStart": null,
-        "saleEnd": null,
-        "isActive": false,
-        "isSoldOut": false
-      },
-      {
-        "title": "Fundamental API (NodeJS+ Restful+ MongoDB) - 3/2024",
-        "eventStart": "2024-07-10T09:00:00+0700",
-        "eventEnd": "2024-07-10T17:00:00+0700",
-        "ticketUrl": null,
-        "saleStart": null,
-        "saleEnd": null,
-        "isActive": false,
-        "isSoldOut": false
-      }
-    ],
+    "publicSchedule": [],
     "documents": [
       {
         "title": "Fundamental API (NodeJS+ Restful+ PostgreSQL) (English Version)",
@@ -1121,38 +953,7 @@
       }
     ],
     
-    "publicSchedule": [
-      {
-        "title": "Fundamental API (NodeJS+ Restful+ MongoDB) - 1/2024",
-        "eventStart": "2024-03-16T09:00:00+0700",
-        "eventEnd": "2024-03-16T17:00:00+0700",
-        "ticketUrl": null,
-        "saleStart": null,
-        "saleEnd": null,
-        "isActive": false,
-        "isSoldOut": false
-      },
-      {
-        "title": "Fundamental API (NodeJS+ Restful+ MongoDB) - 2/2024",
-        "eventStart": "2024-05-18T09:00:00+0700",
-        "eventEnd": "2024-05-18T17:00:00+0700",
-        "ticketUrl": null,
-        "saleStart": null,
-        "saleEnd": null,
-        "isActive": false,
-        "isSoldOut": false
-      },
-      {
-        "title": "Fundamental API (NodeJS+ Restful+ MongoDB) - 3/2024",
-        "eventStart": "2024-07-10T09:00:00+0700",
-        "eventEnd": "2024-07-10T17:00:00+0700",
-        "ticketUrl": null,
-        "saleStart": null,
-        "saleEnd": null,
-        "isActive": false,
-        "isSoldOut": false
-      }
-    ],
+    "publicSchedule": [],
     "documents": [
       {
         "title": "Fundamental API (NodeJS+ GraphQL+ MongoDB)(English Version)",
