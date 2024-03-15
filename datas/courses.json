@@ -518,11 +518,11 @@
     "documents": [
       {
         "title": "Modern Web Frontend with React (Next.js - App Router - Typescript) (English Version)",
-        "fileUrl": "/course/2024-007/document/modern-web-frontend-with-react-(nextjs-app-router-typescript)-en.pdf"
+        "fileUrl": "/course/2024-007/document/modern-web-frontend-with-react-en.pdf"
       },
       {
         "title": "Modern Web Frontend with React (Next.js - App Router - Typescript) (Thai Version)",
-        "fileUrl": "/course/2024-007/document/modern-web-frontend-with-react-(nextjs-app-router-typescript)-th.pdf"
+        "fileUrl": "/course/2024-007/document/modern-web-frontend-with-react-th.pdf"
       }
     ]
   },
@@ -631,11 +631,11 @@
     "documents": [
       {
         "title": "Fundamental API (NodeJS+ Restful+ MongoDB) (English Version)",
-        "fileUrl": "/course/2024-003/document/fundamental-api-(nodejs+restful+mongodb)-en.pdf"
+        "fileUrl": "/course/2024-003/document/fundamental-api-nodejs+restful+mongodb-en.pdf"
       },
       {
         "title": "Fundamental API (NodeJS+ Restful+ MongoDB) (Thai Version)",
-        "fileUrl": "/course/2024-003/document/fundamental-api-(nodejs+restful+mongodb)-th.pdf"
+        "fileUrl": "/course/2024-003/document/fundamental-api-nodejs+restful+mongodb-th.pdf"
       }
     ]
   },
@@ -744,11 +744,11 @@
     "documents": [
       {
         "title": "Fundamental API (NodeJS+ GraphQL+ MongoDB)(English Version)",
-        "fileUrl": "/course/2024-004/document/fundamental-api-(nodejs+grapgql+mongodb)-en.pdf"
+        "fileUrl": "/course/2024-004/document/fundamental-api-nodejs+grapgql+mongodb-en.pdf"
       },
       {
         "title": "Fundamental API (NodeJS+ GraphQL+ MongoDB) (Thai Version)",
-        "fileUrl": "/course/2024-004/document/fundamental-api-(nodejs+grapgql+mongodb)-th.pdf"
+        "fileUrl": "/course/2024-004/document/fundamental-api-nodejs+grapgql+mongodb-th.pdf"
       }
     ]
   },
@@ -857,11 +857,11 @@
     "documents": [
       {
         "title": "Fundamental API (NodeJS+ Restful+ PostgreSQL) (English Version)",
-        "fileUrl": "/course/2024-005/document/fundamental-api-(nodejs+restful+postgresql)-en.pdf"
+        "fileUrl": "/course/2024-005/document/fundamental-api-nodejs+restful+postgresql-en.pdf"
       },
       {
         "title": "Fundamental API (NodeJS+ Restful+ PostgreSQL) (Thai Version)",
-        "fileUrl": "/course/2024-005/document/fundamental-api-(nodejs+restful+postgresql)-th.pdf"
+        "fileUrl": "/course/2024-005/document/fundamental-api-nodejs+restful+postgresql-th.pdf"
       }
     ]
   },
@@ -970,11 +970,11 @@
     "documents": [
       {
         "title": "Fundamental API (NodeJS+ GraphQL+ MongoDB)(English Version)",
-        "fileUrl": "/course/2024-006/document/fundamental-api-(nodejs+GraphQL+PostgreSQL)-en.pdf"
+        "fileUrl": "/course/2024-006/document/fundamental-api-nodejs+GraphQL+PostgreSQL-en.pdf"
       },
       {
         "title": "Fundamental API (NodeJS+ GraphQL+ MongoDB) (Thai Version)",
-        "fileUrl": "/course/2024-006/document/fundamental-api-(nodejs+GraphQL+PostgreSQL)-th.pdf"
+        "fileUrl": "/course/2024-006/document/fundamental-api-nodejs+GraphQL+PostgreSQL-th.pdf"
       }
     ]
   }
