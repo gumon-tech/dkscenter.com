@@ -507,9 +507,9 @@
         "title": "Modern Web Frontend with React - 1/2024",
         "eventStart": "2024-05-25T09:00:00+0700",
         "eventEnd": "2024-05-26T17:00:00+0700",
-        "ticketUrl": false,
-        "saleStart": false,
-        "saleEnd": "2024-05-25T09:00:00+0700",
+        "ticketUrl": "https://www.eventpop.me/s/modern-web-frontend-with-react-1-2024",
+        "saleStart": "2024-03-21T09:00:00+0700",
+        "saleEnd": "2024-05-24T23:59:59+0700",
         "isActive": true,
         "isSoldOut": false,
         "location": "BTS Phaya Thai"
