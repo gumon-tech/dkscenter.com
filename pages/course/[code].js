@@ -17,6 +17,18 @@ const Course = ({ courseData }) => {
           content={`${courseData.title} | ${courseData.overview}`}
         />
         <link rel="icon" href="/favicon.ico" />
+
+        {/* Open Graph Protocol */}
+        <meta property="og:title" content={`${courseData.title} | DKS Center - Digital Knowledge Sharing Center`} />
+        <meta property="og:description" content={`${courseData.title} | ${courseData.overview}`} />
+        <meta property="og:image" content={courseData.imageUrl} />
+        {/* <meta property="og:url" content="URL ของเว็บไซต์" /> */}
+
+        {/* Twitter Card */}
+        <meta name="twitter:title" content={`${courseData.title} | DKS Center - Digital Knowledge Sharing Center`} />
+        <meta name="twitter:description" content={`${courseData.title} | ${courseData.overview}`} />
+        <meta name="twitter:image" content={courseData.imageUrl} />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Navbar />
       <CourseDetail courseData={courseData} />
