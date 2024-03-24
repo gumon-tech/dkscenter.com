@@ -4,8 +4,19 @@ import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
 import CourseDetail from "../../components/courseDetail";
 import courses from "../../datas/courses.json";
+import { useRouter } from "next/router";
 
 const Course = ({ courseData }) => {
+  const { asPath } = useRouter();
+  const origin =
+    typeof window !== "undefined" && window.location.origin
+      ? window.location.origin
+      : "";
+
+  const URL = `${origin}${asPath}`;
+  const domain = origin;
+
+
   return (
     <>
       <Head>
@@ -19,15 +30,27 @@ const Course = ({ courseData }) => {
         <link rel="icon" href="/favicon.ico" />
 
         {/* Open Graph Protocol */}
-        <meta property="og:title" content={`${courseData.title} | DKS Center - Digital Knowledge Sharing Center`} />
-        <meta property="og:description" content={`${courseData.title} | ${courseData.overview}`} />
-        <meta property="og:image" content={courseData.imageUrl} />
-        {/* <meta property="og:url" content="URL ของเว็บไซต์" /> */}
+        <meta
+          property="og:title"
+          content={`${courseData.title} | DKS Center - Digital Knowledge Sharing Center`}
+        />
+        <meta
+          property="og:description"
+          content={`${courseData.title} | ${courseData.overview}`}
+        />
+        <meta property="og:image" content={domain + courseData.imageUrl} />
+        <meta property="og:url" content={URL} />
 
         {/* Twitter Card */}
-        <meta name="twitter:title" content={`${courseData.title} | DKS Center - Digital Knowledge Sharing Center`} />
-        <meta name="twitter:description" content={`${courseData.title} | ${courseData.overview}`} />
-        <meta name="twitter:image" content={courseData.imageUrl} />
+        <meta
+          name="twitter:title"
+          content={`${courseData.title} | DKS Center - Digital Knowledge Sharing Center`}
+        />
+        <meta
+          name="twitter:description"
+          content={`${courseData.title} | ${courseData.overview}`}
+        />
+        <meta name="twitter:image" content={domain + courseData.imageUrl} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Navbar />
