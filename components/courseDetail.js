@@ -118,7 +118,7 @@ const CourseDetail = ({ courseData }) => {
         <CourseDetailRight courseData={courseData} />
         <CourseDetailRight
           courseData={courseData}
-          className={"hidden xl:block xl:basis-8/12 lg:pr-5"}
+          className={"hidden xl:block xl:basis-8/12"}
         />
       </div>
     </Container>
