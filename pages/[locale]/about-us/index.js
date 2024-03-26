@@ -1,8 +1,8 @@
 import React from "react";
 import Head from "next/head";
-import Navbar from "../../components/navbar";
-import Footer from "../../components/footer";
-import Hero from "../../components/hero";
+import Navbar from "../../../components/navbar";
+import Footer from "../../../components/footer";
+import Hero from "../../../components/hero";
 import { AtSymbolIcon } from "@heroicons/react/24/solid";
 import { faFacebook, faLine } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

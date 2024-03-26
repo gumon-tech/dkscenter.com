@@ -1,9 +1,9 @@
 import React from "react";
 import Head from "next/head";
-import Navbar from "../../components/navbar";
-import Footer from "../../components/footer";
-import CourseDetail from "../../components/courseDetail";
-import courses from "../../datas/courses.json";
+import Navbar from "../../../components/navbar";
+import Footer from "../../../components/footer";
+import CourseDetail from "../../../components/courseDetail";
+import courses from "../../../datas/courses.json";
 import { useRouter } from "next/router";
 
 const Course = ({ courseData }) => {
@@ -60,11 +60,17 @@ const Course = ({ courseData }) => {
   );
 };
 
-export const getStaticPaths = () => {
+export const getStaticPaths = ({ locales }) => {
   const courseKeyList = Object.keys(courses);
   const paths = courseKeyList.map((courseKey) => ({
     params: { code: courseKey },
-  }));
+    locale: 'en'
+  },
+  {
+    params: { code: courseKey },
+    locale: 'th'
+  }
+  ));
   return { paths, fallback: false };
 };
 

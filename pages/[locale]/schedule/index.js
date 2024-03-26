@@ -1,9 +1,9 @@
 import React from "react";
 import Head from "next/head";
-import Navbar from "../../components/navbar";
-import Footer from "../../components/footer";
-import Container from "../../components/container";
-import Table from "../../components/table";
+import Navbar from "../../../components/navbar";
+import Footer from "../../../components/footer";
+import Container from "../../../components/container";
+import Table from "../../../components/table";
 
 const Schedule = () => {
   return (

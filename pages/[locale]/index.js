@@ -1,12 +1,21 @@
 import Head from "next/head";
-import Navbar from "../components/navbar";
-import SectionTitle from "../components/sectionTitle";
-import Video from "../components/video";
-import Footer from "../components/footer";
-import CourseList from "../components/courseList";
+import Navbar from "../../components/navbar";
+import SectionTitle from "../../components/sectionTitle";
+import Video from "../../components/video";
+import Footer from "../../components/footer";
+import CourseList from "../../components/courseList";
 import Link from "next/link";
+import { useTranslation } from 'next-i18next';
+import { makeStaticProps } from "../../lib/getStatic";
+import { getStaticPaths } from "../../lib/getStatic";
+
+
+const getStaticProps = makeStaticProps(['common'])
+export { getStaticPaths, getStaticProps }
 
 const Home = () => {
+  const { t } = useTranslation('common');
+
   return (
     <>
       <Head>
@@ -18,6 +27,7 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
+      <h1>{t('welcome')}</h1>
       <SectionTitle
         pretitle="Upcoming Event"
         title="Modern Web Frontend with React #1/2024"
