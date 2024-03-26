@@ -5,8 +5,11 @@ import {
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import dayjs from "dayjs";
+import { useRouter } from "next/router";
 
 const CourseDetailRight = ({ courseData, className }) => {
+  const router = useRouter();
+  const { code } = router.query;
   return (
     <div className={className ? className : "md:w-full xl:basis-4/12"}>
       <table className="w-full text-sm text-left  text-gray-500 dark:text-gray-400 mb-5">
@@ -136,7 +139,10 @@ const CourseDetailRight = ({ courseData, className }) => {
                       {courseType === "GET_YOURS" && (
                         <a
                           target="_blank"
-                          href={publicSchedule.ticketUrl}
+                          href={
+                            publicSchedule.ticketUrl +
+                            (!!code ? "?discount_code=" + code : "")
+                          }
                           className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                         >
                           Get Yours!

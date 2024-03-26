@@ -3,7 +3,7 @@ import Breadcrumb from "./breadcrumb";
 import dayjs from "dayjs";
 import CourseDetailRight from "./courseDetailRight";
 
-const CourseDetail = ({ courseData }) => {
+const CourseDetail = ({ courseData, discountCode }) => {
   return !courseData ? (
     <Container>
       <Breadcrumb paths={[{ title: "Training Course", path: "/course" }]} />
@@ -14,7 +14,10 @@ const CourseDetail = ({ courseData }) => {
       <Breadcrumb
         paths={[
           { title: "Training Course", path: "/course" },
-          { title: courseData.code, path: `/course/${courseData.code}` },
+          {
+            title: courseData.courseKey,
+            path: `/course/${courseData.courseKey}`,
+          },
         ]}
       />
       <h2 className="mt-3 max-w-2xl text-3xl font-bold leading-snug tracking-tight text-gray-800 lg:leading-tight lg:text-4xl dark:text-white">
@@ -115,10 +118,14 @@ const CourseDetail = ({ courseData }) => {
             </>
           )}
         </div>
-        <CourseDetailRight courseData={courseData} />
+        <CourseDetailRight
+          courseData={courseData}
+          discountCode={discountCode}
+        />
         <CourseDetailRight
           courseData={courseData}
           className={"hidden xl:block xl:basis-8/12"}
+          discountCode={discountCode}
         />
       </div>
     </Container>

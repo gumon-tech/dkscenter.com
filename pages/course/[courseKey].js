@@ -16,7 +16,6 @@ const Course = ({ courseData }) => {
   const URL = `${origin}${asPath}`;
   const domain = origin;
 
-
   return (
     <>
       <Head>
@@ -63,13 +62,13 @@ const Course = ({ courseData }) => {
 export const getStaticPaths = () => {
   const courseKeyList = Object.keys(courses);
   const paths = courseKeyList.map((courseKey) => ({
-    params: { code: courseKey },
+    params: { courseKey: courseKey },
   }));
   return { paths, fallback: false };
 };
 
 export const getStaticProps = (context) => {
-  const courseKey = context.params?.code || "";
+  const courseKey = context.params?.courseKey || "";
   const courseData = courses[courseKey];
   return { props: { courseData } };
 };
