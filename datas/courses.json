@@ -1084,20 +1084,20 @@
       ],
       "whoShouldAttend": [
         "นักพัฒนาซอฟต์แวร์ที่ต้องการเรียนรู้เกี่ยวกับการพัฒนา API โดยใช้ Node.js, Restful API, และ MongoDB",
-        "Developers looking to understand the usage of TypeScript, Nest JS, and MongoDB for projects utilizing APIs.",
-        "Individuals interested in developing and managing web applications communicating via APIs."
+        "นักพัฒนาที่ต้องการทำความเข้าใจในการใช้งาน TypeScript, Nest JS, และ MongoDB เพื่อพัฒนาโปรเจคที่มีการใช้งาน API",
+        "ผู้ที่สนใจในการพัฒนาและจัดการกับเว็บแอปพลิเคชันที่มีการสื่อสารผ่าน API"
       ],
       "prerequisites": [
-        "Participants in the course should have basic knowledge of programming with JavaScript.",
-        "Participants in the course should also have fundamental knowledge of web application development."
+        "ผู้เข้าร่วมคอร์สควรมีความรู้พื้นฐานเกี่ยวกับการเขียนโปรแกรมด้วยภาษา JavaScript",
+        "ผู้เข้าร่วมคอร์สควรความรู้พื้นฐานเกี่ยวกับการพัฒนาเว็บแอปพลิเคชัน"
       ],
       "participantsWillReceive": [
-        "Training manuals/documentation.",
-        "Lunch and refreshments.",
-        "Certification upon completion of the Fundamental API (NodeJS+ Restful+ MongoDB) course.",
-        "Excellent care and attention from instructors and staff.",
-        "Unlimited attendance to the Fundamental API (NodeJS+ Restful+ MongoDB)  (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat).",
-        "If you are unable to attend the training session this time, you can reschedule your participation according to the training schedule."
+        "เอกสารคู่มือการอบรม",
+        "อาหารกลางวันและอาหารว่าง",
+        "ใบรับรองผ่านการอบรมหลักสูตร Fundamental API (NodeJS+ Restful+ MongoDB)",
+        "การดูแลเอาใจใส่เป็นอย่างดีจากวิทยากรและทีมงาน Staff",
+        "สามารถเข้าร่วม Fundamental API (NodeJS+ Restful+ MongoDB) ซ้ำได้ไม่จำกัดจำนวนครั้ง (จำกัดสิทธิ์เข้าร่วมซ้ำ 5 ท่านต่อรอบการอบรม หากท่านต้องการเข้าร่วม Workshop ซ้ำ กรุณาติดต่อ Facebook Page, Line, Email หรือช่องทางอื่น ๆ เพื่อสำรองที่นั่ง)",
+        "หากท่านไม่สะดวกเข้าร่วมการอบรมในครั้งนี้ ท่านสามารถเลื่อนการเข้าร่วมอบรมได้ตามตารางการอบรม"
       ],
       "outline": [
         {
