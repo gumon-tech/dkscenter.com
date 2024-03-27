@@ -1518,5 +1518,457 @@
         }
       ]
     }
+  },
+  "2024-005-fundamental-api": {
+    "th": {
+      "lastUpdate": "2024-02-20T09:00:00+0700",
+      "key": "2024-005-fundamental-api",
+      "isActive": true,
+      "imageUrl": null,
+      "title": "Fundamental API (NodeJS+ Restful+ PostgreSQL)",
+      "code": "2024-005",
+      "duration": "1 วัน, 09:00 - 17:00",
+      "overview": "คอร์ส Fundamental API (NodeJS+ Restful API+ PostgreSQL) เป็นการเรียนรู้เกี่ยวกับพื้นฐานของการพัฒนา API โดยใช้เทคโนโลยี Node.js, Restful API, และ PostgreSQL เพื่อสร้างและจัดการกับเว็บแอปพลิเคชันที่มีการสื่อสารผ่าน API ผู้เรียนจะได้เรียนรู้เกี่ยวกับการใช้งาน JavaScript (ECMAScript), Node.js, Restful API, TypeScript, Nest JS, PostgreSQL, และการจัดการกับ Environment ของ Node.js รวมถึงการสร้างและการจัดการกับ Middleware และการจัดการกับข้อผิดพลาด (Error Handling) และการสร้างและการใช้งานโปรเจค Node.js ในการ Deploy",
+      "objectives": [
+        "เพื่อให้ผู้เรียนมีความเข้าใจเกี่ยวกับพื้นฐานของการพัฒนา API โดยใช้ Node.js, Restful API, และ PostgreSQL",
+        "เพื่อให้ผู้เรียนสามารถสร้างและจัดการกับ API ที่มีการสื่อสารผ่าน Restful APIได้อย่างมีประสิทธิภาพ",
+        "เพื่อให้ผู้เรียนสามารถใช้งาน TypeScript, Nest JS, และ PostgreSQL เพื่อพัฒนาและจัดการกับโปรเจคที่มีการใช้งาน API"
+      ],
+      "whoShouldAttend": [
+        "นักพัฒนาซอฟต์แวร์ที่ต้องการเรียนรู้เกี่ยวกับการพัฒนา API โดยใช้ Node.js, Restful API, และ PostgreSQL",
+        "นักพัฒนาที่ต้องการทำความเข้าใจในการใช้งาน TypeScript, Nest JS, และ PostgreSQL เพื่อพัฒนาโปรเจคที่มีการใช้งาน API",
+        "ผู้ที่สนใจในการพัฒนาและจัดการกับเว็บแอปพลิเคชันที่มีการสื่อสารผ่าน API"
+      ],
+      "prerequisites": [
+        "ผู้เข้าร่วมคอร์สควรมีความรู้พื้นฐานเกี่ยวกับการเขียนโปรแกรมด้วยภาษา JavaScript",
+        "ผู้เข้าร่วมคอร์สควรความรู้พื้นฐานเกี่ยวกับการพัฒนาเว็บแอปพลิเคชัน"
+      ],
+      "participantsWillReceive": [
+        "เอกสารคู่มือการอบรม",
+        "อาหารกลางวันและอาหารว่าง",
+        "ใบรับรองผ่านการอบรมหลักสูตร Fundamental API (NodeJS+ Restful+ PostgreSQL)",
+        "การดูแลเอาใจใส่เป็นอย่างดีจากวิทยากรและทีมงาน Staff",
+        "สามารถเข้าร่วม Fundamental API (NodeJS+ Restful+ PostgreSQL) ซ้ำได้ไม่จำกัดจำนวนครั้ง (จำกัดสิทธิ์เข้าร่วมซ้ำ 5 ท่านต่อรอบการอบรม หากท่านต้องการเข้าร่วม Workshop ซ้ำ กรุณาติดต่อ Facebook Page, Line, Email หรือช่องทางอื่น ๆ เพื่อสำรองที่นั่ง)",
+        "หากท่านไม่สะดวกเข้าร่วมการอบรมในครั้งนี้ ท่านสามารถเลื่อนการเข้าร่วมอบรมได้ตามตารางการอบรม"
+      ],
+      "outline": [
+        {
+          "title": "Introduction to JavaScript (ECMAScript) ",
+          "descriptions": [
+            "Workshop1 - Play with JavaScript"
+          ]
+        },
+        {
+          "title": "Introduction to NodeJS",
+          "descriptions": [
+            "Workshop2 - Play with NodeJS"
+          ]
+        },
+        {
+          "title": "Introduction to Restful API",
+          "descriptions": [
+            "Workshop3 - Play with Restful API"
+          ]
+        },
+        {
+          "title": "Introduction to TypeScript",
+          "descriptions": [
+            "Workshop4 - Play with TypeScript"
+          ]
+        },
+        {
+          "title": "Introduction to Nest JS",
+          "descriptions": [
+            "Workshop5 - Play with Nest JS "
+          ]
+        },
+        {
+          "title": "Introduction to PostgreSQL ",
+          "descriptions": [
+            "Workshop6 - Play with PostgreSQL "
+          ]
+        },
+        {
+          "title": "Introduction to MVC ",
+          "descriptions": [
+            "Workshop7 - Routing and CRUD (PostgreSQL & TypeORM) "
+          ]
+        },
+        {
+          "title": "NodeJS Environment (Node ENV)",
+          "descriptions": [
+            "Workshop8 - Using multiple Node ENV"
+          ]
+        },
+        {
+          "title": "Nest JS Middleware",
+          "descriptions": [
+            "Workshop9 - Authenticating with Middleware (JWT)",
+            "Workshop10 - Logging with Middleware"
+          ]
+        },
+        {
+          "title": "Error Handling",
+          "descriptions": [
+            "Workshop11 - Handling error with Restful API"
+          ]
+        },
+        {
+          "title": "Build & Deployment",
+          "descriptions": [
+            "Workshop12 - Deploy NodeJS project"
+          ]
+        }
+      ],
+      "publicSchedule": [],
+      "documents": [
+        {
+          "title": "Fundamental API (NodeJS+ Restful+ PostgreSQL) (English Version)",
+          "fileUrl": "/course/2024-005/document/fundamental-api-nodejs+restful+postgresql-en.pdf"
+        },
+        {
+          "title": "Fundamental API (NodeJS+ Restful+ PostgreSQL) (Thai Version)",
+          "fileUrl": "/course/2024-005/document/fundamental-api-nodejs+restful+postgresql-th.pdf"
+        }
+      ]
+    },
+    "en": {
+      "lastUpdate": "2024-02-20T09:00:00+0700",
+      "key": "2024-005-fundamental-api",
+      "isActive": true,
+      "imageUrl": null,
+      "title": "Fundamental API (NodeJS+ Restful+ PostgreSQL)",
+      "code": "2024-005",
+      "duration": "1 Day, 09:00 - 17:00",
+      "overview": "The Fundamental API course (NodeJS + Restful API + PostgreSQL) is a learning journey into the basics of API development using Node.js, Restful API, and PostgreSQL technologies to create and manage web applications communicating via APIs. Participants will delve into JavaScript (ECMAScript), Node.js, Restful API, TypeScript, Nest JS, PostgreSQL, and Node.js Environment management. They will also learn about Middleware creation and management, Error Handling, and deploying Node.js projects.",
+      "objectives": [
+        "To ensure participants grasp the fundamentals of API development using Node.js, Restful API, and PostgreSQL.",
+        "To empower participants to efficiently create and manage APIs communicating via Restful API.",
+        "To enable participants to utilize TypeScript, Nest JS, and PostgreSQL for developing and managing projects utilizing APIs."
+      ],
+      "whoShouldAttend": [
+        "Software developers seeking to learn about API development using Node.js, Restful API, and PostgreSQL",
+        "Developers looking to understand the usage of TypeScript, Nest JS, and PostgreSQL for projects utilizing APIs.",
+        "Individuals interested in developing and managing web applications communicating via APIs."
+      ],
+      "prerequisites": [
+        "Participants in the course should have basic knowledge of programming with JavaScript.",
+        "Participants in the course should also have fundamental knowledge of web application development."
+      ],
+      "participantsWillReceive": [
+        "Training manuals/documentation.",
+        "Lunch and refreshments.",
+        "Certification upon completion of the Fundamental API (NodeJS+ Restful+ PostgreSQL) course.",
+        "Excellent care and attention from instructors and staff.",
+        "Unlimited attendance to the Fundamental API (NodeJS+ Restful+ PostgreSQL)  (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat).",
+        "If you are unable to attend the training session this time, you can reschedule your participation according to the training schedule."
+      ],
+      "outline": [
+        {
+          "title": "Introduction to JavaScript (ECMAScript) ",
+          "descriptions": [
+            "Workshop1 - Play with JavaScript"
+          ]
+        },
+        {
+          "title": "Introduction to NodeJS",
+          "descriptions": [
+            "Workshop2 - Play with NodeJS"
+          ]
+        },
+        {
+          "title": "Introduction to Restful API",
+          "descriptions": [
+            "Workshop3 - Play with Restful API"
+          ]
+        },
+        {
+          "title": "Introduction to TypeScript",
+          "descriptions": [
+            "Workshop4 - Play with TypeScript"
+          ]
+        },
+        {
+          "title": "Introduction to Nest JS",
+          "descriptions": [
+            "Workshop5 - Play with Nest JS "
+          ]
+        },
+        {
+          "title": "Introduction to PostgreSQL ",
+          "descriptions": [
+            "Workshop6 - Play with PostgreSQL "
+          ]
+        },
+        {
+          "title": "Introduction to MVC ",
+          "descriptions": [
+            "Workshop7 - Routing and CRUD (PostgreSQL & TypeORM) "
+          ]
+        },
+        {
+          "title": "NodeJS Environment (Node ENV)",
+          "descriptions": [
+            "Workshop8 - Using multiple Node ENV"
+          ]
+        },
+        {
+          "title": "Nest JS Middleware",
+          "descriptions": [
+            "Workshop9 - Authenticating with Middleware (JWT)",
+            "Workshop10 - Logging with Middleware"
+          ]
+        },
+        {
+          "title": "Error Handling",
+          "descriptions": [
+            "Workshop11 - Handling error with Restful API"
+          ]
+        },
+        {
+          "title": "Build & Deployment",
+          "descriptions": [
+            "Workshop12 - Deploy NodeJS project"
+          ]
+        }
+      ],
+      "publicSchedule": [],
+      "documents": [
+        {
+          "title": "Fundamental API (NodeJS+ Restful+ PostgreSQL) (English Version)",
+          "fileUrl": "/course/2024-005/document/fundamental-api-nodejs+restful+postgresql-en.pdf"
+        },
+        {
+          "title": "Fundamental API (NodeJS+ Restful+ PostgreSQL) (Thai Version)",
+          "fileUrl": "/course/2024-005/document/fundamental-api-nodejs+restful+postgresql-th.pdf"
+        }
+      ]
+    }
+  },
+  "2024-006-fundamental-api": {
+    "th": {
+      "lastUpdate": "2024-02-20T09:00:00+0700",
+      "key": "2024-006-fundamental-api",
+      "isActive": true,
+      "imageUrl": null,
+      "title": "Fundamental API (NodeJS+ GraphQL+ PostgreSQL)",
+      "code": "2024-006",
+      "duration": "1 วัน, 09:00 - 17:00",
+      "overview": "คอร์ส Fundamental API (NodeJS+ GraphQL + PostgreSQL) เป็นการเรียนรู้เกี่ยวกับพื้นฐานของการพัฒนา API โดยใช้เทคโนโลยี Node.js, GraphQL , และ PostgreSQL เพื่อสร้างและจัดการกับเว็บแอปพลิเคชันที่มีการสื่อสารผ่าน API ผู้เรียนจะได้เรียนรู้เกี่ยวกับการใช้งาน JavaScript (ECMAScript), Node.js, GraphQL , TypeScript, Nest JS, PostgreSQL, และการจัดการกับ Environment ของ Node.js รวมถึงการสร้างและการจัดการกับ Middleware และการจัดการกับข้อผิดพลาด (Error Handling) และการสร้างและการใช้งานโปรเจค Node.js ในการ Deploy",
+      "objectives": [
+        "เพื่อให้ผู้เรียนมีความเข้าใจเกี่ยวกับพื้นฐานของการพัฒนา API โดยใช้ Node.js, GraphQL , และ PostgreSQL",
+        "เพื่อให้ผู้เรียนสามารถสร้างและจัดการกับ API ที่มีการสื่อสารผ่าน GraphQL ได้อย่างมีประสิทธิภาพ",
+        "เพื่อให้ผู้เรียนสามารถใช้งาน TypeScript, Nest JS, และ PostgreSQL เพื่อพัฒนาและจัดการกับโปรเจคที่มีการใช้งาน API"
+      ],
+      "whoShouldAttend": [
+        "นักพัฒนาซอฟต์แวร์ที่ต้องการเรียนรู้เกี่ยวกับการพัฒนา API โดยใช้ Node.js, GraphQL, และ PostgreSQL",
+        "นักพัฒนาที่ต้องการทำความเข้าใจในการใช้งาน TypeScript, Nest JS, และ PostgreSQL เพื่อพัฒนาโปรเจคที่มีการใช้งาน GraphQL",
+        "ผู้ที่สนใจในการพัฒนาและจัดการกับเว็บแอปพลิเคชันที่มีการสื่อสารผ่าน GraphQL"
+      ],
+      "prerequisites": [
+        "ผู้เข้าร่วมคอร์สควรมีความรู้พื้นฐานเกี่ยวกับการเขียนโปรแกรมด้วยภาษา JavaScript",
+        "ผู้เข้าร่วมคอร์สควรความรู้พื้นฐานเกี่ยวกับการพัฒนาเว็บแอปพลิเคชัน"
+      ],
+      "participantsWillReceive": [
+        "เอกสารคู่มือการอบรม",
+        "อาหารกลางวันและอาหารว่าง",
+        "ใบรับรองผ่านการอบรมหลักสูตร Fundamental API (NodeJS+ GraphQL+ PostgreSQL)",
+        "การดูแลเอาใจใส่เป็นอย่างดีจากวิทยากรและทีมงาน Staff",
+        "สามารถเข้าร่วม Fundamental API (NodeJS+ GraphQL+ PostgreSQL) ซ้ำได้ไม่จำกัดจำนวนครั้ง (จำกัดสิทธิ์เข้าร่วมซ้ำ 5 ท่านต่อรอบการอบรม หากท่านต้องการเข้าร่วม Workshop ซ้ำ กรุณาติดต่อ Facebook Page, Line, Email หรือช่องทางอื่น ๆ เพื่อสำรองที่นั่ง)",
+        "หากท่านไม่สะดวกเข้าร่วมการอบรมในครั้งนี้ ท่านสามารถเลื่อนการเข้าร่วมอบรมได้ตามตารางการอบรม"
+      ],
+      "outline": [
+        {
+          "title": "Introduction to JavaScript (ECMAScript) ",
+          "descriptions": [
+            "Workshop1 - Play with JavaScript"
+          ]
+        },
+        {
+          "title": "Introduction to NodeJS",
+          "descriptions": [
+            "Workshop2 - Play with NodeJS"
+          ]
+        },
+        {
+          "title": "Introduction to GraphQL",
+          "descriptions": [
+            "Workshop3 - Play with GraphQL"
+          ]
+        },
+        {
+          "title": "Introduction to TypeScript",
+          "descriptions": [
+            "Workshop4 - Play with TypeScript"
+          ]
+        },
+        {
+          "title": "Introduction to Nest JS",
+          "descriptions": [
+            "Workshop5 - Play with Nest JS "
+          ]
+        },
+        {
+          "title": "Introduction to PostgreSQL ",
+          "descriptions": [
+            "Workshop6 - Play with PostgreSQL "
+          ]
+        },
+        {
+          "title": "Introduction to MVC ",
+          "descriptions": [
+            "Workshop7 - Routing and CRUD (PostgreSQL & TypeORM) "
+          ]
+        },
+        {
+          "title": "NodeJS Environment (Node ENV)",
+          "descriptions": [
+            "Workshop8 - Using multiple Node ENV"
+          ]
+        },
+        {
+          "title": "Nest JS Middleware",
+          "descriptions": [
+            "Workshop9 - Authenticating with Middleware (JWT)",
+            "Workshop10 - Logging with Middleware"
+          ]
+        },
+        {
+          "title": "Error Handling",
+          "descriptions": [
+            "Workshop11 - Handling error with GraphQL"
+          ]
+        },
+        {
+          "title": "Build & Deployment",
+          "descriptions": [
+            "Workshop12 - Deploy NodeJS project"
+          ]
+        }
+      ],
+      "publicSchedule": [],
+      "documents": [
+        {
+          "title": "Fundamental API (NodeJS+ GraphQL+ MongoDB)(English Version)",
+          "fileUrl": "/course/2024-006/document/fundamental-api-nodejs+GraphQL+PostgreSQL-en.pdf"
+        },
+        {
+          "title": "Fundamental API (NodeJS+ GraphQL+ MongoDB) (Thai Version)",
+          "fileUrl": "/course/2024-006/document/fundamental-api-nodejs+GraphQL+PostgreSQL-th.pdf"
+        }
+      ]
+    },
+    "en": {
+      "lastUpdate": "2024-02-20T09:00:00+0700",
+      "key": "2024-006-fundamental-api",
+      "isActive": true,
+      "imageUrl": null,
+      "title": "Fundamental API (NodeJS+ GraphQL+ PostgreSQL)",
+      "code": "2024-006",
+      "duration": "1 Day, 09:00 - 17:00",
+      "overview": "The Fundamental API course (NodeJS + GraphQL  + PostgreSQL) is a learning journey into the basics of API development using Node.js, GraphQL , and PostgreSQL technologies to create and manage web applications communicating via APIs. Participants will delve into JavaScript (ECMAScript), Node.js, GraphQL , TypeScript, Nest JS, PostgreSQL, and Node.js Environment management. They will also learn about Middleware creation and management, Error Handling, and deploying Node.js projects.",
+      "objectives": [
+        "To ensure participants grasp the fundamentals of API development using Node.js,GraphQL, and MongoDB.",
+        "To empower participants to efficiently create and manage APIs communicating via GraphQL API.",
+        "To enable participants to utilize TypeScript, Nest JS, and PostgreSQL for developing and managing projects utilizing GraphQL"
+      ],
+      "whoShouldAttend": [
+        "Software developers seeking to learn about API development using Node.js, GraphQL, and PostgreSQL.",
+        "Developers looking to understand the usage of TypeScript, Nest JS, and PostgreSQL for projects utilizing GraphQL.",
+        "Individuals interested in developing and managing web applications communicating via GraphQL."
+      ],
+      "prerequisites": [
+        "Participants in the course should have basic knowledge of programming with JavaScript.",
+        "Participants in the course should also have fundamental knowledge of web application development."
+      ],
+      "participantsWillReceive": [
+        "Training manuals/documentation.",
+        "Lunch and refreshments.",
+        "Certification upon completion of the Fundamental API (NodeJS+ GraphQL+ PostgreSQL) course.",
+        "Excellent care and attention from instructors and staff.",
+        "Unlimited attendance to the Fundamental API (NodeJS+ Restful+ PostgreSQL)  (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat).",
+        "If you are unable to attend the training session this time, you can reschedule your participation according to the training schedule."
+      ],
+      "outline": [
+        {
+          "title": "Introduction to JavaScript (ECMAScript) ",
+          "descriptions": [
+            "Workshop1 - Play with JavaScript"
+          ]
+        },
+        {
+          "title": "Introduction to NodeJS",
+          "descriptions": [
+            "Workshop2 - Play with NodeJS"
+          ]
+        },
+        {
+          "title": "Introduction to GraphQL",
+          "descriptions": [
+            "Workshop3 - Play with GraphQL"
+          ]
+        },
+        {
+          "title": "Introduction to TypeScript",
+          "descriptions": [
+            "Workshop4 - Play with TypeScript"
+          ]
+        },
+        {
+          "title": "Introduction to Nest JS",
+          "descriptions": [
+            "Workshop5 - Play with Nest JS "
+          ]
+        },
+        {
+          "title": "Introduction to PostgreSQL ",
+          "descriptions": [
+            "Workshop6 - Play with PostgreSQL "
+          ]
+        },
+        {
+          "title": "Introduction to MVC ",
+          "descriptions": [
+            "Workshop7 - Routing and CRUD (PostgreSQL & TypeORM) "
+          ]
+        },
+        {
+          "title": "NodeJS Environment (Node ENV)",
+          "descriptions": [
+            "Workshop8 - Using multiple Node ENV"
+          ]
+        },
+        {
+          "title": "Nest JS Middleware",
+          "descriptions": [
+            "Workshop9 - Authenticating with Middleware (JWT)",
+            "Workshop10 - Logging with Middleware"
+          ]
+        },
+        {
+          "title": "Error Handling",
+          "descriptions": [
+            "Workshop11 - Handling error with GraphQL"
+          ]
+        },
+        {
+          "title": "Build & Deployment",
+          "descriptions": [
+            "Workshop12 - Deploy NodeJS project"
+          ]
+        }
+      ],
+      "publicSchedule": [],
+      "documents": [
+        {
+          "title": "Fundamental API (NodeJS+ GraphQL+ MongoDB)(English Version)",
+          "fileUrl": "/course/2024-006/document/fundamental-api-nodejs+GraphQL+PostgreSQL-en.pdf"
+        },
+        {
+          "title": "Fundamental API (NodeJS+ GraphQL+ MongoDB) (Thai Version)",
+          "fileUrl": "/course/2024-006/document/fundamental-api-nodejs+GraphQL+PostgreSQL-th.pdf"
+        }
+      ]
+    }
   }
 }
