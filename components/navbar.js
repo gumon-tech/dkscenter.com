@@ -26,7 +26,7 @@ export default function Navbar(props) {
 
   return (
     <div className="w-full">
-      <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-28">
+      <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-8">
         {/* Logo  */}
         <Disclosure>
           {({ open }) => (
