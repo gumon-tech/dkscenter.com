@@ -1301,7 +1301,7 @@
       "imageUrl": null,
       "title": "Fundamental API (NodeJS+ GraphQL+ MongoDB)",
       "code": "2024-004",
-      "duration": "1 Day, 09:00 - 17:00",
+      "duration": "1 วัน, 09:00 - 17:00",
       "overview": "คอร์ส Fundamental API (NodeJS+ GraphQL+ MongoDB) เป็นการเรียนรู้เกี่ยวกับพื้นฐานของการพัฒนา API โดยใช้เทคโนโลยี Node.js, GraphQL, และ MongoDB เพื่อสร้างและจัดการกับเว็บแอปพลิเคชันที่มีการสื่อสารผ่าน API ผู้เรียนจะได้เรียนรู้เกี่ยวกับการใช้งาน JavaScript (ECMAScript), Node.js, Graph QL, TypeScript, Nest JS, MongoDB, และการจัดการกับ Environment ของ Node.js รวมถึงการสร้างและการจัดการกับ Middleware และการจัดการกับข้อผิดพลาด (Error Handling) และการสร้างและการใช้งานโปรเจค Node.js ในการ Deploy",
       "objectives": [
         "เพื่อให้ผู้เรียนมีความเข้าใจเกี่ยวกับพื้นฐานของการพัฒนา API โดยใช้ Node.js, GraphQL, และ MongoDB",
