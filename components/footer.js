@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "/components/link";
 import Image from "next/image";
 import React from "react";
 import Container from "./container";
@@ -9,6 +9,13 @@ import {
   faLine,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+
+// import { useTranslation } from "next-i18next";
+// import { makeStaticProps } from "/lib/getStatic";
+// import { getStaticPaths } from "/lib/getStatic";
+
+// const getStaticProps = makeStaticProps(["home"]);
+// export { getStaticPaths, getStaticProps };
 
 export default function Footer() {
   const navigation = [

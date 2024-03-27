@@ -1,7 +1,7 @@
 import Head from "next/head";
-import Navbar from "../../components/navbar";
-import Footer from "../../components/footer";
-import SectionTitle from "../../components/sectionTitle";
+import Navbar from "/components/navbar";
+import Footer from "/components/footer";
+import SectionTitle from "/components/sectionTitle";
 import PrivacyContentEN from "./en";
 import PrivacyContentTH from "./th";
 

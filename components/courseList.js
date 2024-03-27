@@ -3,12 +3,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-regular-svg-icons";
 import Dotdotdot from "react-dotdotdot";
 import Container from "./container";
-import Link from "next/link";
+import Link from "/components/link";
 import Breadcrumb from "./breadcrumb";
 
 export default function CourseList(props) {
+  // console.log("CourseList props", props);
+  const i18next = props.i18next;
+  let { t, i18n } = i18next;
+
   return (
     <Container>
+      {t("sectionTitle-detail1")}
       {props.breadcrumb && (
         <Breadcrumb paths={[{ title: "Training Course", path: "course" }]} />
       )}

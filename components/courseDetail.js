@@ -1,5 +1,5 @@
 import Container from "./container";
-import Link from "next/link";
+import Link from "/components/link";
 import Breadcrumb from "./breadcrumb";
 import dayjs from "dayjs";
 import {

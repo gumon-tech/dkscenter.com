@@ -16,7 +16,6 @@ const Course = ({ courseData }) => {
   const URL = `${origin}${asPath}`;
   const domain = origin;
 
-
   return (
     <>
       <Head>
@@ -60,17 +59,17 @@ const Course = ({ courseData }) => {
   );
 };
 
-export const getStaticPaths = ({ locales }) => {
+export const getStaticPaths = () => {
   const courseKeyList = Object.keys(courses);
-  const paths = courseKeyList.map((courseKey) => ({
-    params: { code: courseKey },
-    locale: 'en'
-  },
-  {
-    params: { code: courseKey },
-    locale: 'th'
+  const paths = [];
+  const locales = ["en", "th"];
+  for (const courseKey of courseKeyList) {
+    for (const locale of locales) {
+      paths.push({
+        params: { code: courseKey, locale: locale },
+      });
+    }
   }
-  ));
   return { paths, fallback: false };
 };
 
