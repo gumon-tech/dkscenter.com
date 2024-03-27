@@ -6,23 +6,28 @@ import Hero from "../../../components/hero";
 import { AtSymbolIcon } from "@heroicons/react/24/solid";
 import { faFacebook, faLine } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTranslation } from "next-i18next";
+import { makeStaticProps } from "/lib/getStatic";
+import { getStaticPaths } from "/lib/getStatic";
+
+const getStaticProps = makeStaticProps(["home"]);
+export { getStaticPaths, getStaticProps };
 
 const AboutUs = () => {
+  const i18next = useTranslation("home");
+  const { t, i18n } = i18next;
   return (
     <>
       <Head>
-        <title>About Us | DKS Center - Digital Knowledge Sharing Center</title>
-        <meta
-          name="description"
-          content="DKS acts as a central hub bridging digital communities and technology enthusiasts, fostering collaboration and knowledge exchange. Our mission includes organizing seminars, knowledge-sharing activities, and collaborative events to constantly update our network with the latest insights."
-        />
+        <title>{t("head-title")}</title>
+        <meta name="description" content={t("head-content")} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
-      <Hero>
+      <Navbar i18next={i18next} />
+      <Hero i18next={i18next}>
         <>
           <p className="py-5 leading-normal text-gray-500  dark:text-gray-300">
-            If you have any questions simply use the following contact details.
+            {t("about-us-1")}
           </p>
 
           <Contact
@@ -58,7 +63,7 @@ const AboutUs = () => {
           />
         </>
       </Hero>
-      <Footer />
+      <Footer i18next={i18next} />
     </>
   );
 };
