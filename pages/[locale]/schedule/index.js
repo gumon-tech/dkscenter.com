@@ -4,29 +4,32 @@ import Navbar from "../../../components/navbar";
 import Footer from "../../../components/footer";
 import Container from "../../../components/container";
 import Table from "../../../components/table";
+import { useTranslation } from "next-i18next";
+import { makeStaticProps } from "/lib/getStatic";
+import { getStaticPaths } from "/lib/getStatic";
+
+const getStaticProps = makeStaticProps(["home"]);
+export { getStaticPaths, getStaticProps };
 
 const Schedule = () => {
+  const i18next = useTranslation("home");
+  const { t, i18n } = i18next;
+
   return (
     <>
       <Head>
-        <title>
-          Public Training Schedule | DKS Center - Digital Knowledge Sharing
-          Center
-        </title>
-        <meta
-          name="description"
-          content="DKS acts as a central hub bridging digital communities and technology enthusiasts, fostering collaboration and knowledge exchange. Our mission includes organizing seminars, knowledge-sharing activities, and collaborative events to constantly update our network with the latest insights."
-        />
+        <title>{t("head-title")}</title>
+        <meta name="description" content={t("head-content")} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
+      <Navbar i18next={i18next}/>
       <Container>
         <div className="w-full text-center">
-          <Table />
+          <Table i18next={i18next}/>
         </div>
       </Container>
 
-      <Footer />
+      <Footer i18next={i18next}/>
     </>
   );
 };
