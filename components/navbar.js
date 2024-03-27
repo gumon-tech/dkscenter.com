@@ -1,9 +1,20 @@
-import Link from "next/link";
 import ThemeChanger from "./DarkSwitch";
 import Image from "next/image";
 import { Disclosure } from "@headlessui/react";
+import { useTranslation } from "next-i18next";
+import Link from "/components/link";
+import { useRouter } from "next/router";
+import LanguageSwitchLink from "./LanguageSwitchLink";
+import i18nextConfig from "../next-i18next.config";
+import LanguageSwitchDropdown from "./LanguageSwitchDropdown";
 
-const Navbar = () => {
+
+export default function Navbar(props){
+  const router = useRouter();
+  const i18next = props.i18next;
+  let { t, i18n } = i18next;
+
+  const currentLocale = router.query.locale || i18nextConfig.i18n.defaultLocale;
   const navigation = [
     { title: "Home", path: "/" },
     { title: "Course", path: "/course" },
@@ -90,6 +101,21 @@ const Navbar = () => {
                 </Link>
               </li>
             ))}
+
+            <li className="mr-3 nav__item" key="LanguageSwitchLink">
+              <span style={{ lineHeight: "4.65em", fontSize: "small" }}>
+                {/* {t("change-locale")}  */}
+              </span>
+              {i18nextConfig.i18n.locales.map((locale) => {
+                if (locale === currentLocale) return null;
+                return <LanguageSwitchLink locale={locale} key={locale} />;
+              })}
+            </li>
+
+            {/* <li className="mr-3 nav__item" key="LanguageSwitchDropdown">
+              <LanguageSwitchDropdown i18next={i18next}/>
+            </li> */}
+
           </ul>
 
           <ThemeChanger />
@@ -98,5 +124,3 @@ const Navbar = () => {
     </div>
   );
 };
-
-export default Navbar;
