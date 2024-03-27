@@ -7,6 +7,9 @@ import { useRouter } from "next/router";
 import LanguageSwitchLink from "./LanguageSwitchLink";
 import i18nextConfig from "../next-i18next.config";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { Menu, Transition } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { Fragment } from "react";
 
 export default function Navbar(props) {
   const router = useRouter();
@@ -102,16 +105,10 @@ export default function Navbar(props) {
             ))}
 
             <li className="mr-3 nav__item" key="LanguageSwitchLink">
-              <span style={{ lineHeight: "4.65em", fontSize: "small" }}>
-                {/* {t("change-locale")}  */}
-              </span>
               {i18nextConfig.i18n.locales.map((locale) => {
                 if (locale === currentLocale) return null;
                 return <LanguageSwitchLink locale={locale} key={locale} />;
               })}
-            </li>
-            <li className="mr-3 nav__item" key="LanguageSwitchLink">
-              <LanguageSwitcher />
             </li>
           </ul>
 
