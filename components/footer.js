@@ -10,14 +10,11 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
-// import { useTranslation } from "next-i18next";
-// import { makeStaticProps } from "/lib/getStatic";
-// import { getStaticPaths } from "/lib/getStatic";
+export default function Footer(props) {
 
-// const getStaticProps = makeStaticProps(["home"]);
-// export { getStaticPaths, getStaticProps };
+  const i18next = props.i18next;
+  let { t, i18n } = i18next;
 
-export default function Footer() {
   const navigation = [
     { title: "Home", path: "/" },
     { title: "Course", path: "/course" },
@@ -49,9 +46,7 @@ export default function Footer() {
             </div>
 
             <div className="max-w-md mt-4 text-gray-500 dark:text-gray-400">
-              DKS - Connecting digital communities and tech enthusiasts. We
-              facilitate collaboration, host joint events, and continuously
-              update knowledge through community exchanges.
+            {t("footer")}
             </div>
           </div>
 
