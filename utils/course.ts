@@ -1,8 +1,8 @@
-import courses from "../datas/courses.json"
-import { Course } from "../types/course"
+import courses from "../datas/courses.json";
+import { Course } from "../types/course";
 
-
-export const getActiveCourses = (): Course[] => {
+export const getActiveCourses = (currentLanguage = "en"): Course[] => {
   return Object.values(courses)
-  .filter((course) => course.isActive)
-}
+    .map((course) => course[currentLanguage])
+    .filter((course) => course.isActive);
+};

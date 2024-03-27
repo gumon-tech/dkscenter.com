@@ -1,981 +1,788 @@
 {
   "2024-001-fundamental-docker": {
-    "lastUpdate": "2024-02-18T09:00:00+0700",
-    "key": "2024-001-fundamental-docker",
-    "isActive": true,
-    "imageUrl": "/course/2024-001/poster/cover-image2-01-01.jpg",
-    "detailUrl": "https://dkscenter.com/course/2024-001-fundamental-docker",
-    "title": "Fundamental Docker",
-    "code": "2024-001",
-    "duration": "1 Day, 09:00 - 17:00",
-    "overview": "The Fundamental Docker course is a learning experience about the basics of Docker, which is an efficient technology used for containerization. Participants will learn about Linux usage, basic Linux commands, working with the VIM text editor, and basic Docker operations including container creation, management, and the use of Docker Compose for orchestrating multiple services simultaneously.",
-    "objectives": [
-      "To ensure participants understand the fundamentals of Docker and how containerization systems work.",
-      "To empower participants to efficiently utilize Docker for creating and managing containers.",
-      "To enable participants to use Docker Compose for orchestrating multiple services simultaneously"
-    ],
-    "whoShouldAttend": [
-      "Software developers looking to learn Docker for application development.",
-      "DevOps engineers seeking to understand Docker for environment management and team collaboration.",
-      "System administrators interested in using Docker for system management and maintenance.",
-      "Individuals interested in learning containerization and system management in situations requiring flexibility and resource efficiency."
-    ],
-    "prerequisites": [
-      "Basic knowledge of Linux operating systems.",
-      "Proficiency in Command Line Interface (CLI) usage."
-    ],
-    "participantsWillReceive": [
-      "One Cloud Servers (VM) per person for training purposes.",
-      "Training manuals/documentation.",
-      "Lunch and refreshments.",
-      "Certification upon completion of the Fundamental Docker course.",
-      "Excellent care and attention from instructors and staff.",
-      "Unlimited attendance to the Fundamental Docker Workshop (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat)."
-    ],
-    "outline": [
-      {
-        "title": "Fundamental Linux",
-        "descriptions": [
-          "Directory structure",
-          "Linux Commands",
-          "Using VIM Text Editor",
-          "Using GIT Version Control",
-          "Workshop 1 - Basic web deploy",
-          "Workshop 2 - Deploy with Nginx"
-        ]
-      },
-      {
-        "title": "What is Docker?",
-        "descriptions": [
-          "Container Technology",
-          "Containers and VM",
-          "Docker Architecture"
-        ]
-      },
-      {
-        "title": "Docker Basic Commands",
-        "descriptions": [
-          "Workshop 3 - Images Management",
-          "Workshop 4 - Running Containers",
-          "Workshop 5 - Reverse Proxy"
-        ]
-      },
-      {
-        "title": "Docker Compose",
-        "descriptions": [
-          "Workshop 6 - Docker Compose File",
-          "Workshop 7 - Running Compose Services",
-          "Workshop 8 - Build image with Docker file"
-        ]
-      }
-    ],
-    "publicSchedule": [
-      {
-        "title": "Fundamental Docker - 1/2024",
-        "eventStart": "2024-03-09T09:00:00+0700",
-        "eventEnd": "2024-03-09T17:00:00+0700",
-        "ticketUrl": "https://www.eventpop.me/e/16996/dks-fundamental-docker-1-2024",
-        "saleStart": "2024-02-18T09:00:00+0700",
-        "saleEnd": "2024-02-29T17:00:00+0700",
-        "isActive": true,
-        "isSoldOut": true,
-        "location": "BTS Phaya Thai"
-      }
-    ],
-    "documents": [
-      {
-        "title": "Fundamental Docker Outline (English Version)",
-        "fileUrl": "/course/2024-001/document/2024-001-fundamental-docker-en.pdf"
-      },
-      {
-        "title": "Fundamental Docker Outline (Thai Version)",
-        "fileUrl": "/course/2024-001/document/2024-001-fundamental-docker-th.pdf"
-      }
-    ]
-  },
-  "2024-002-fundamental-kubernetes": {
-    "lastUpdate": "2024-02-18T09:00:00+0700",
-    "key": "2024-002-fundamental-kubernetes",
-    "isActive": true,
-    "imageUrl": null,
-    "title": "Fundamental Kubernetes",
-    "code": "2024-002",
-    "duration": "1 Day, 09:00 - 17:00",
-    "overview": "The course Fundamental Kubernetes is designed to provide an introduction to the basics of Kubernetes, an official cluster management and container orchestration system. Participants will learn about Kubernetes' capabilities, how the system operates, cluster architecture, container state management, network management, and various tools used in Kubernetes administration.",
-    "objectives": [
-      "To provide learners with a solid understanding of the fundamentals of Kubernetes and its capabilities,",
-      "To empower learners to create and manage their own clusters using Kubernetes,",
-      "To ensure learners comprehend container state management, load balancing, and application scaling techniques."
-    ],
-    "whoShouldAttend": [
-      "Software developers interested in studying cluster management and container orchestration.",
-      "DevOps engineers seeking to understand Kubernetes for system management and maintenance.",
-      "System administrators interested in learning about cluster management and container orchestration.",
-      "Individuals interested in learning about tools and technologies used in cluster management and container orchestration."
-    ],
-    "prerequisites": [
-      "Basic knowledge of Linux operating systems.",
-      "Proficiency in Command Line Interface (CLI) usage.",
-      "Fundamental understanding of Docker usage."
-    ],
-    "participantsWillReceive": [
-      "Three Cloud Servers (VM) per person (1 Master and 2 Nodes) for training purposes.",
-      "Training manuals/documentation.",
-      "Lunch and refreshments.",
-      "Certification upon completion of the Fundamental Kubernetes course.",
-      "Excellent care and attention from instructors and staff.",
-      "Unlimited attendance to the Fundamental Kubernetes Workshop (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat)."
-    ],
-    "outline": [
-      {
-        "title": "What? When? Where?",
-        "descriptions": [
-          "What is Kubernetes?",
-          "What are its capabilities?",
-          "When should it be used?",
-          "Case Studies"
-        ]
-      },
-      {
-        "title": "Going back in time",
-        "descriptions": [
-          "Deploying and Managing Containers Before Kubernetes: Examining Problems and Traditional Solutions"
-        ]
-      },
-      {
-        "title": "Kubernetes Concepts and Overview",
-        "descriptions": [
-          "Understanding Concepts",
-          "Capabilities in Addressing Various Problems"
-        ]
-      },
-      {
-        "title": "Cluster Architecture",
-        "descriptions": [
-          "Architecture of a Cluster",
-          "Differences between Cluster and Container Operation",
-          "What are nodes, pods, and services?"
-        ]
-      },
-      {
-        "title": "Workshop 1 - Building Your Own Cluster",
-        "descriptions": [
-          "Hands-on - Creating a Cluster and Adding Nodes, along with Creating Simple Pods and Services"
-        ]
-      },
-      {
-        "title": "Storage, Containers and Workloads",
-        "descriptions": [
-          "Understanding Container Operations and Components",
-          "Case Studies"
-        ]
-      },
-      {
-        "title": "Workshop 2 - Deploying an Easy App with Deployments",
-        "descriptions": ["Testing App Deployment Using Kubernetes Deployments"]
-      },
-      {
-        "title": "Workshop 3 - Deploying the App with StatefulSets",
-        "descriptions": [
-          "Testing App Deployment Using Kubernetes StatefulSets",
-          "Studying Differences Between Deployment and StatefulSets"
-        ]
-      },
-      {
-        "title": "Services, Load Balancing, and Networking",
-        "descriptions": [
-          "Understanding Tools for Managing Network Routes and Configurations to Access Deployed Applications"
-        ]
-      },
-      {
-        "title": "Workshop 4 - Point to my services 1",
-        "descriptions": [
-          "Testing Access to a Web Application via Kubernetes Configuration and DNS from External Sources"
-        ]
-      },
-      {
-        "title": "Workshop 5 - Point to my services 2",
-        "descriptions": [
-          "Testing Configuration and Access Rights, Network Routing Limitations, and Load Balancing in the Cluster"
-        ]
-      },
-      {
-        "title": "Workshop 6 - HPA and K6",
-        "descriptions": [
-          "Testing HPA Creation and Using Testing Tools to See Configuration Results"
-        ]
-      },
-      {
-        "title": "Configuration",
-        "descriptions": [
-          "Understanding Configuration and Passing Parameters in Kubernetes, Along with Best Practices"
-        ]
-      },
-      {
-        "title": "Workshop 7 - Testing Your Configuration",
-        "descriptions": [
-          "Testing Configuration Settings and Parameter Passing Following Kubernetes Officials' Recommendations"
-        ]
-      }
-    ],
-    "publicSchedule": [],
-    "documents": [
-      {
-        "title": "Fundamental Kubernetes Outline (English Version)",
-        "fileUrl": "/course/2024-002/document/fundamental-kubernetes-en.pdf"
-      },
-      {
-        "title": "Fundamental Kubernetes Outline (Thai Version)",
-        "fileUrl": "/course/2024-002/document/fundamental-kubernetes-th.pdf"
-      }
-    ]
+    "th": {
+      "lastUpdate": "2024-02-18T09:00:00+0700",
+      "key": "2024-001-fundamental-docker",
+      "isActive": true,
+      "imageUrl": "/course/2024-001/poster/cover-image2-01-01.jpg",
+      "detailUrl": "https://dkscenter.com/course/2024-001-fundamental-docker",
+      "title": "Fundamental Docker",
+      "code": "2024-001",
+      "duration": "1 วัน, 09:00 - 17:00",
+      "overview": "The Fundamental Docker course is a learning experience about the basics of Docker, which is an efficient technology used for containerization. Participants will learn about Linux usage, basic Linux commands, working with the VIM text editor, and basic Docker operations including container creation, management, and the use of Docker Compose for orchestrating multiple services simultaneously.",
+      "objectives": [
+        "To ensure participants understand the fundamentals of Docker and how containerization systems work.",
+        "To empower participants to efficiently utilize Docker for creating and managing containers.",
+        "To enable participants to use Docker Compose for orchestrating multiple services simultaneously"
+      ],
+      "whoShouldAttend": [
+        "Software developers looking to learn Docker for application development.",
+        "DevOps engineers seeking to understand Docker for environment management and team collaboration.",
+        "System administrators interested in using Docker for system management and maintenance.",
+        "Individuals interested in learning containerization and system management in situations requiring flexibility and resource efficiency."
+      ],
+      "prerequisites": [
+        "Basic knowledge of Linux operating systems.",
+        "Proficiency in Command Line Interface (CLI) usage."
+      ],
+      "participantsWillReceive": [
+        "One Cloud Servers (VM) per person for training purposes.",
+        "Training manuals/documentation.",
+        "Lunch and refreshments.",
+        "Certification upon completion of the Fundamental Docker course.",
+        "Excellent care and attention from instructors and staff.",
+        "Unlimited attendance to the Fundamental Docker Workshop (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat)."
+      ],
+      "outline": [
+        {
+          "title": "Fundamental Linux",
+          "descriptions": [
+            "Directory structure",
+            "Linux Commands",
+            "Using VIM Text Editor",
+            "Using GIT Version Control",
+            "Workshop 1 - Basic web deploy",
+            "Workshop 2 - Deploy with Nginx"
+          ]
+        },
+        {
+          "title": "What is Docker?",
+          "descriptions": [
+            "Container Technology",
+            "Containers and VM",
+            "Docker Architecture"
+          ]
+        },
+        {
+          "title": "Docker Basic Commands",
+          "descriptions": [
+            "Workshop 3 - Images Management",
+            "Workshop 4 - Running Containers",
+            "Workshop 5 - Reverse Proxy"
+          ]
+        },
+        {
+          "title": "Docker Compose",
+          "descriptions": [
+            "Workshop 6 - Docker Compose File",
+            "Workshop 7 - Running Compose Services",
+            "Workshop 8 - Build image with Docker file"
+          ]
+        }
+      ],
+      "publicSchedule": [
+        {
+          "title": "Fundamental Docker - 1/2024",
+          "eventStart": "2024-03-09T09:00:00+0700",
+          "eventEnd": "2024-03-09T17:00:00+0700",
+          "ticketUrl": "https://www.eventpop.me/e/16996/dks-fundamental-docker-1-2024",
+          "saleStart": "2024-02-18T09:00:00+0700",
+          "saleEnd": "2024-02-29T17:00:00+0700",
+          "isActive": true,
+          "isSoldOut": true,
+          "location": "BTS Phaya Thai"
+        }
+      ],
+      "documents": [
+        {
+          "title": "Fundamental Docker Outline (English Version)",
+          "fileUrl": "/course/2024-001/document/2024-001-fundamental-docker-en.pdf"
+        },
+        {
+          "title": "Fundamental Docker Outline (Thai Version)",
+          "fileUrl": "/course/2024-001/document/2024-001-fundamental-docker-th.pdf"
+        }
+      ]
+    },
+    "en": {
+      "lastUpdate": "2024-02-18T09:00:00+0700",
+      "key": "2024-001-fundamental-docker",
+      "isActive": true,
+      "imageUrl": "/course/2024-001/poster/cover-image2-01-01.jpg",
+      "detailUrl": "https://dkscenter.com/course/2024-001-fundamental-docker",
+      "title": "Fundamental Docker",
+      "code": "2024-001",
+      "duration": "1 Day, 09:00 - 17:00",
+      "overview": "The Fundamental Docker course is a learning experience about the basics of Docker, which is an efficient technology used for containerization. Participants will learn about Linux usage, basic Linux commands, working with the VIM text editor, and basic Docker operations including container creation, management, and the use of Docker Compose for orchestrating multiple services simultaneously.",
+      "objectives": [
+        "To ensure participants understand the fundamentals of Docker and how containerization systems work.",
+        "To empower participants to efficiently utilize Docker for creating and managing containers.",
+        "To enable participants to use Docker Compose for orchestrating multiple services simultaneously"
+      ],
+      "whoShouldAttend": [
+        "Software developers looking to learn Docker for application development.",
+        "DevOps engineers seeking to understand Docker for environment management and team collaboration.",
+        "System administrators interested in using Docker for system management and maintenance.",
+        "Individuals interested in learning containerization and system management in situations requiring flexibility and resource efficiency."
+      ],
+      "prerequisites": [
+        "Basic knowledge of Linux operating systems.",
+        "Proficiency in Command Line Interface (CLI) usage."
+      ],
+      "participantsWillReceive": [
+        "One Cloud Servers (VM) per person for training purposes.",
+        "Training manuals/documentation.",
+        "Lunch and refreshments.",
+        "Certification upon completion of the Fundamental Docker course.",
+        "Excellent care and attention from instructors and staff.",
+        "Unlimited attendance to the Fundamental Docker Workshop (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat)."
+      ],
+      "outline": [
+        {
+          "title": "Fundamental Linux",
+          "descriptions": [
+            "Directory structure",
+            "Linux Commands",
+            "Using VIM Text Editor",
+            "Using GIT Version Control",
+            "Workshop 1 - Basic web deploy",
+            "Workshop 2 - Deploy with Nginx"
+          ]
+        },
+        {
+          "title": "What is Docker?",
+          "descriptions": [
+            "Container Technology",
+            "Containers and VM",
+            "Docker Architecture"
+          ]
+        },
+        {
+          "title": "Docker Basic Commands",
+          "descriptions": [
+            "Workshop 3 - Images Management",
+            "Workshop 4 - Running Containers",
+            "Workshop 5 - Reverse Proxy"
+          ]
+        },
+        {
+          "title": "Docker Compose",
+          "descriptions": [
+            "Workshop 6 - Docker Compose File",
+            "Workshop 7 - Running Compose Services",
+            "Workshop 8 - Build image with Docker file"
+          ]
+        }
+      ],
+      "publicSchedule": [
+        {
+          "title": "Fundamental Docker - 1/2024",
+          "eventStart": "2024-03-09T09:00:00+0700",
+          "eventEnd": "2024-03-09T17:00:00+0700",
+          "ticketUrl": "https://www.eventpop.me/e/16996/dks-fundamental-docker-1-2024",
+          "saleStart": "2024-02-18T09:00:00+0700",
+          "saleEnd": "2024-02-29T17:00:00+0700",
+          "isActive": true,
+          "isSoldOut": true,
+          "location": "BTS Phaya Thai"
+        }
+      ],
+      "documents": [
+        {
+          "title": "Fundamental Docker Outline (English Version)",
+          "fileUrl": "/course/2024-001/document/2024-001-fundamental-docker-en.pdf"
+        },
+        {
+          "title": "Fundamental Docker Outline (Thai Version)",
+          "fileUrl": "/course/2024-001/document/2024-001-fundamental-docker-th.pdf"
+        }
+      ]
+    }
   },
   "2024-007-modern-web-frontend-with-react": {
-    "lastUpdate": "2024-02-19T09:00:00+0700",
-    "key": "2024-007-modern-web-frontend-with-react",
-    "isActive": true,
-    "imageUrl": "/course/2024-007/poster/cover-image2-01-01.png",
-    "detailUrl": "https://dkscenter.com/course/2024-007-modern-web-frontend-with-react",
-    "title": "Modern Web Frontend with React (Next.js - App Router - Typescript)",
-    "code": "2024-007",
-    "duration": "2 Days, 09:00 - 17:00",
-    "overview": "The Modern Web Frontend with React (Next.js - App Router - Typescript) course is a learning experience focused on the basics of developing web applications using ReactJS, a JavaScript library used for building user interfaces. Participants will learn about the React structure, component creation, state management, API integration, and routing in web applications.",
-    "objectives": [
-      "To provide participants with an understanding of the basics of ReactJS and web application development using React.",
-      "To empower participants to create and manage various components in web applications using React.",
-      "To enable participants to fetch data from APIs and manage the state of the application in the React framework."
-    ],
-    "whoShouldAttend": [
-      "Software developers looking to learn about ReactJS and web application development.",
-      "Developers with experience in website development who seek to understand the usage of ReactJS.",
-      "Individuals interested in learning how to create efficient web applications using ReactJS."
-    ],
-    "prerequisites": [
-      "Participants in the course should have basic knowledge of programming with JavaScript.",
-      "Participants in the course should also have fundamental knowledge of web application development.",
-      "Participants should have a basic understanding of HTML, CSS, and JavaScript to better grasp the content.",
-      "Preparation of necessary development tools such as Node.js and npm (Node Package Manager) for building and managing React projects.",
-      "Ability to use Command Line Interface (CLI) for creating React projects and managing dependencies using npm.",
-      "A computer equipped with programming tools such as a Text Editor or Integrated Development Environment (IDE) suitable for React development.",
-      "Enthusiasm for learning and collaborating with others during the course. Working with team members helps participants gain valuable experience through knowledge exchange and collaboration."
-    ],
-    "participantsWillReceive": [
-      "Training manuals/documentation.",
-      "Lunch and refreshments.",
-      "Certification upon completion of the Modern Web Frontend with React (Next.js - App Router - Typescript) course.",
-      "Excellent care and attention from instructors and staff.",
-      "Unlimited attendance to the Modern Web Frontend with React (Next.js - App Router - Typescript) (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat).",
-      "If you are unable to attend the training session this time, you can reschedule your participation according to the training schedule."
-    ],
-    "outline": [
-      {
-        "title": "History of Web Frontend Development",
-        "descriptions": [
-          "The evolution of web application development before the separation of Backend and Frontend."
-        ]
-      },
-      {
-        "title": "Pros and Cons",
-        "descriptions": [
-          "Advantages and disadvantages of developing web applications with separated Backend and Frontend."
-        ]
-      },
-      {
-        "title": "System Architecture Overview",
-        "descriptions": [
-          "An overview of current web application design with Backend and Frontend separation, including case studies."
-        ]
-      },
-      {
-        "title": "ECMAScript and TypeScript",
-        "descriptions": [
-          "Modern JavaScript writing and fundamentals of TypeScript."
-        ]
-      },
-      {
-        "title": "What is React? And why Next.js?",
-        "descriptions": [
-          "Introduction to React and React-powered frameworks."
-        ]
-      },
-      {
-        "title": "Workshop 1",
-        "descriptions": [
-          "Creating a Next.js app."
-        ]
-      },
-      {
-        "title": "Project Structure",
-        "descriptions": ["Introduction to the basic structure of Next.js."]
-      },
-      {
-        "title": "HTML and JSX",
-        "descriptions": [
-          "What is JSX?",
-          "Differences and precautions between HTML tags and JSX."
-        ]
-      },
-      {
-        "title": "Component Concept",
-        "descriptions": [
-          "Explanation of functions and various necessary roles in developing web applications with React",
-          "Creating components to separate frequently used parts",
-          "Component exporting and importing",
-          "Passing values to components (Component Props)."
-        ]
-      },
-      {
-        "title": "Workshop 2",
-        "descriptions": [
-          "My First Component."
-        ]
-      },
-      {
-        "title": "Tailwind CSS",
-        "descriptions": [
-          "Introduction to basic usage of Tailwind CSS"
-        ]
-      },
-      {
-        "title": "Workshop 3",
-        "descriptions": [
-          "My Home Page."
-        ]
-      },
-      {
-        "title": "State: A Component's Memory",
-        "descriptions": [
-          "Explanation of useState function and basic usage."
-        ]
-      },
-      {
-        "title": "Workshop 4",
-        "descriptions": [
-          "Carousel banner."
-        ]
-      },
-      {
-        "title": "Reacting to Input with State",
-        "descriptions": [
-          "Using State with Input."
-        ]
-      },
-      {
-        "title": "Workshop 5",
-        "descriptions": [
-          "Search box."
-        ]
-      },
-      {
-        "title": "Sharing State Between Components",
-        "descriptions": [
-          "Explanation of using State with other components."
-        ]
-      },
-      {
-        "title": "Workshop 6",
-        "descriptions": [
-          "Search results."
-        ]
-      },
-      {
-        "title": "Next.js Routing",
-        "descriptions": [
-          "Explanation of creating Route Paths in various formats",
-          "Page and Layout structures",
-          "page navigation (Linking and Navigating)."
-        ]
-      },
-      {
-        "title": "Workshop 7",
-        "descriptions": [
-          "New search page."
-        ]
-      },
-      {
-        "title": "Workshop 8",
-        "descriptions": [
-          "Products and Details."
-        ]
-      },
-      {
-        "title": "Server Components and Client Components",
-        "descriptions": [
-          "Explanation of differences and usage of Server Components and Client Components",
-          "Case studies."
-        ]
-      },
-      {
-        "title": "Next.js Data Fetching",
-        "descriptions": [
-          "Explanation of API calls",
-          "Creating and using Server Actions and Mutations",
-          "Using formData and useFormStatus."
-        ]
-      },
-      {
-        "title": "Workshop 9",
-        "descriptions": [
-          "Register."
-        ]
-      },
-      {
-        "title": "Authentication Flow",
-        "descriptions": [
-          "Explanation of the structure and principles of Authentication systems."
-        ]
-      },
-      {
-        "title": "Workshop 10",
-        "descriptions": [
-          "Login."
-        ]
-      },
-      {
-        "title": "Passing Data Deeply with Context",
-        "descriptions": [
-          "Explanation of principles, necessity, and management of complex ",
-          "Case studies."
-        ]
-      },
-      {
-        "title": "Workshop 11",
-        "descriptions": [
-          "My Profile."
-        ]
-      },
-      {
-        "title": "Error Handling and Middleware",
-        "descriptions": [
-          "Explanation of Error Handling principles in the Next.js framework and Middleware operations",
-          "Case studies."
-        ]
-      },
-      {
-        "title": "Workshop 12",
-        "descriptions": [
-          "Redirect when not logged in."
-        ]
-      },
-      {
-        "title": "Scaling Up with Reducer and Context",
-        "descriptions": [
-          "Explanation of using Reducer and State Action with Context",
-          "Case studies."
-        ]
-      },
-      {
-        "title": "Workshop 13",
-        "descriptions": [
-          "Add products to cart."
-        ]
-      },
-      {
-        "title": "Synchronizing with Effects",
-        "descriptions": [
-          "Explanation of useEffect function and its usage in various formats."
-        ]
-      },
-      {
-        "title": "Workshop 14",
-        "descriptions": [
-          "Checkout!"
-        ]
-      },
-      {
-        "title": "Workshop 15",
-        "descriptions": [
-          "Order History."
-        ]
-      },
-      {
-        "title": "Environment Variables and Deploying",
-        "descriptions": [
-          "Explanation of Environment Variables usage and deployment in various formats."
-        ]
-      },
-      {
-        "title": "Workshop 16",
-        "descriptions": [
-          "Hello World!"
-        ]
-      }
-    ],
-    
-    "publicSchedule": [
-      {
-        "title": "Modern Web Frontend with React - 1/2024",
-        "eventStart": "2024-05-25T09:00:00+0700",
-        "eventEnd": "2024-05-26T17:00:00+0700",
-        "ticketUrl": "https://www.eventpop.me/s/modern-web-frontend-with-react-1-2024",
-        "saleStart": "2024-03-21T09:00:00+0700",
-        "saleEnd": "2024-05-24T23:59:59+0700",
-        "isActive": true,
-        "isSoldOut": false,
-        "location": "BTS Phaya Thai"
-      }
-    ],
-    "documents": [
-      {
-        "title": "Modern Web Frontend with React (Next.js - App Router - Typescript) (English Version)",
-        "fileUrl": "/course/2024-007/document/modern-web-frontend-with-react-en.pdf"
-      },
-      {
-        "title": "Modern Web Frontend with React (Next.js - App Router - Typescript) (Thai Version)",
-        "fileUrl": "/course/2024-007/document/modern-web-frontend-with-react-th.pdf"
-      }
-    ]
-  },
-  "2024-003-fundamental-api": {
-    "lastUpdate": "2024-02-20T09:00:00+0700",
-    "key": "2024-003-fundamental-api",
-    "isActive": true,
-    "imageUrl": null,
-    "title": "Fundamental API (NodeJS+ Restful+ MongoDB)",
-    "code": "2024-003",
-    "duration": "1 Day, 09:00 - 17:00",
-    "overview": "The Fundamental API course (NodeJS + Restful API + Mongo) is a learning journey into the basics of API development using Node.js, Restful API, and MongoDB technologies to create and manage web applications communicating via APIs. Participants will delve into JavaScript (ECMAScript), Node.js, Restful API, TypeScript, Nest JS, MongoDB, and Node.js Environment management. They will also learn about Middleware creation and management, Error Handling, and deploying Node.js projects.",
-    "objectives": [
-      "To ensure participants grasp the fundamentals of API development using Node.js, Restful API, and MongoDB.",
-      "To empower participants to efficiently create and manage APIs communicating via Restful API.",
-      "To enable participants to utilize TypeScript, Nest JS, and MongoDB for developing and managing projects utilizing APIs."
-    ],
-    "whoShouldAttend": [
-      "Software developers seeking to learn about API development using Node.js, Restful API, and MongoDB.",
-      "Developers looking to understand the usage of TypeScript, Nest JS, and MongoDB for projects utilizing APIs.",
-      "Individuals interested in developing and managing web applications communicating via APIs."
-    ],
-    "prerequisites": [
-      "Participants in the course should have basic knowledge of programming with JavaScript.",
-      "Participants in the course should also have fundamental knowledge of web application development."
-    ],
-    "participantsWillReceive": [
-      "Training manuals/documentation.",
-      "Lunch and refreshments.",
-      "Certification upon completion of the Fundamental API (NodeJS+ Restful+ MongoDB) course.",
-      "Excellent care and attention from instructors and staff.",
-      "Unlimited attendance to the Fundamental API (NodeJS+ Restful+ MongoDB)  (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat).",
-      "If you are unable to attend the training session this time, you can reschedule your participation according to the training schedule."
-    ],
-    "outline": [
-      {
-        "title": "Introduction to JavaScript (ECMAScript) ",
-        "descriptions": [
-          "Workshop1 - Play with JavaScript"
-        ]
-      },
-      {
-        "title": "Introduction to NodeJS",
-        "descriptions": [
-          "Workshop2 - Play with NodeJS"
-        ]
-      },
-      {
-        "title": "Introduction to Restful API",
-        "descriptions": [
-          "Workshop3 - Play with Restful API"
-        ]
-      },
-      {
-        "title": "Introduction to TypeScript",
-        "descriptions": [
-          "Workshop4 - Play with TypeScript"
-        ]
-      },
-      {
-        "title": "Introduction to Nest JS",
-        "descriptions": [
-          "Workshop5 - Play with Nest JS "
-        ]
-      },
-      {
-        "title": "Introduction to MongoDB ",
-        "descriptions": [
-          "Workshop6 - Play with MongoDB "
-        ]
-      },
-      {
-        "title": "Introduction to MVC ",
-        "descriptions": [
-          "Workshop7 - Routing and CRUD (MongoDB & Mongoose) "
-        ]
-      },
-      {
-        "title": "NodeJS Environment (Node ENV)",
-        "descriptions": [
-          "Workshop8 - Using multiple Node ENV"
-        ]
-      },
-      {
-        "title": "Nest JS Middleware",
-        "descriptions": [
-          "Workshop9 - Authenticating with Middleware (JWT)",
-          "Workshop10 - Logging with Middleware"
-        ]
-      },
-      {
-        "title": "Error Handling",
-        "descriptions": [
-          "Workshop11 - Handling error with Restful API"
-        ]
-      },
-      {
-        "title": "Build & Deployment",
-        "descriptions": [
-          "Workshop12 - Deploy NodeJS project"
-        ]
-      }
-    ],
-    
-    "publicSchedule": [],
-    "documents": [
-      {
-        "title": "Fundamental API (NodeJS+ Restful+ MongoDB) (English Version)",
-        "fileUrl": "/course/2024-003/document/fundamental-api-nodejs+restful+mongodb-en.pdf"
-      },
-      {
-        "title": "Fundamental API (NodeJS+ Restful+ MongoDB) (Thai Version)",
-        "fileUrl": "/course/2024-003/document/fundamental-api-nodejs+restful+mongodb-th.pdf"
-      }
-    ]
-  },
-  "2024-004-fundamental-api": {
-    "lastUpdate": "2024-02-20T09:00:00+0700",
-    "key": "2024-004-fundamental-api",
-    "isActive": true,
-    "imageUrl": null,
-    "title": "Fundamental API (NodeJS+ GraphQL+ MongoDB)",
-    "code": "2024-004",
-    "duration": "1 Day, 09:00 - 17:00",
-    "overview": "The Fundamental API course (NodeJS + GraphQL + Mongo) is a learning journey into the basics of API development using Node.js, GraphQL, and MongoDB technologies to create and manage web applications communicating via APIs. Participants will delve into JavaScript (ECMAScript), Node.js, Restful API, TypeScript, Nest JS, MongoDB, and Node.js Environment management. They will also learn about Middleware creation and management, Error Handling, and deploying Node.js projects.",
-    "objectives": [
-      "To ensure participants grasp the fundamentals of API development using Node.js,GraphQL, and MongoDB.",
-      "To empower participants to efficiently create and manage APIs communicating via GraphQL API.",
-      "To enable participants to utilize TypeScript, Nest JS, and MongoDB for developing and managing projects utilizing GraphQL"
-    ],
-    "whoShouldAttend": [
-      "Software developers seeking to learn about API development using Node.js, GraphQL, and MongoDB.",
-      "Developers looking to understand the usage of TypeScript, Nest JS, and MongoDB for projects utilizing GraphQL",
-      "Individuals interested in developing and managing web applications communicating via GraphQL"
-    ],
-    "prerequisites": [
-      "Participants in the course should have basic knowledge of programming with JavaScript.",
-      "Participants in the course should also have fundamental knowledge of web application development."
-    ],
-    "participantsWillReceive": [
-      "Training manuals/documentation.",
-      "Lunch and refreshments.",
-      "Certification upon completion of the Fundamental API (NodeJS+ GraphQL+ MongoDB) course.",
-      "Excellent care and attention from instructors and staff.",
-      "Unlimited attendance to the Fundamental API (NodeJS+ Restful+ MongoDB)  (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat).",
-      "If you are unable to attend the training session this time, you can reschedule your participation according to the training schedule."
-    ],
-    "outline": [
-      {
-        "title": "Introduction to JavaScript (ECMAScript) ",
-        "descriptions": [
-          "Workshop1 - Play with JavaScript"
-        ]
-      },
-      {
-        "title": "Introduction to NodeJS",
-        "descriptions": [
-          "Workshop2 - Play with NodeJS"
-        ]
-      },
-      {
-        "title": "Introduction to GraphQL",
-        "descriptions": [
-          "Workshop3 - Play with GraphQL"
-        ]
-      },
-      {
-        "title": "Introduction to TypeScript",
-        "descriptions": [
-          "Workshop4 - Play with TypeScript"
-        ]
-      },
-      {
-        "title": "Introduction to Nest JS",
-        "descriptions": [
-          "Workshop5 - Play with Nest JS "
-        ]
-      },
-      {
-        "title": "Introduction to MongoDB ",
-        "descriptions": [
-          "Workshop6 - Play with MongoDB "
-        ]
-      },
-      {
-        "title": "Introduction to MVC ",
-        "descriptions": [
-          "Workshop7 - Routing and CRUD (MongoDB & Mongoose) "
-        ]
-      },
-      {
-        "title": "NodeJS Environment (Node ENV)",
-        "descriptions": [
-          "Workshop8 - Using multiple Node ENV"
-        ]
-      },
-      {
-        "title": "Nest JS Middleware",
-        "descriptions": [
-          "Workshop9 - Authenticating with Middleware (JWT)",
-          "Workshop10 - Logging with Middleware"
-        ]
-      },
-      {
-        "title": "Error Handling",
-        "descriptions": [
-          "Workshop11 - Handling error with GraphQL"
-        ]
-      },
-      {
-        "title": "Build & Deployment",
-        "descriptions": [
-          "Workshop12 - Deploy NodeJS project"
-        ]
-      }
-    ],
-    
-    "publicSchedule": [],
-    "documents": [
-      {
-        "title": "Fundamental API (NodeJS+ GraphQL+ MongoDB)(English Version)",
-        "fileUrl": "/course/2024-004/document/fundamental-api-nodejs+grapgql+mongodb-en.pdf"
-      },
-      {
-        "title": "Fundamental API (NodeJS+ GraphQL+ MongoDB) (Thai Version)",
-        "fileUrl": "/course/2024-004/document/fundamental-api-nodejs+grapgql+mongodb-th.pdf"
-      }
-    ]
-  },
-  "2024-005-fundamental-api": {
-    "lastUpdate": "2024-02-20T09:00:00+0700",
-    "key": "2024-005-fundamental-api",
-    "isActive": true,
-    "imageUrl": null,
-    "title": "Fundamental API (NodeJS+ Restful+ PostgreSQL)",
-    "code": "2024-005",
-    "duration": "1 Day, 09:00 - 17:00",
-    "overview": "The Fundamental API course (NodeJS + Restful API + PostgreSQL) is a learning journey into the basics of API development using Node.js, Restful API, and PostgreSQL technologies to create and manage web applications communicating via APIs. Participants will delve into JavaScript (ECMAScript), Node.js, Restful API, TypeScript, Nest JS, PostgreSQL, and Node.js Environment management. They will also learn about Middleware creation and management, Error Handling, and deploying Node.js projects.",
-    "objectives": [
-      "To ensure participants grasp the fundamentals of API development using Node.js, Restful API, and PostgreSQL.",
-      "To empower participants to efficiently create and manage APIs communicating via Restful API.",
-      "To enable participants to utilize TypeScript, Nest JS, and PostgreSQL for developing and managing projects utilizing APIs."
-    ],
-    "whoShouldAttend": [
-      "Software developers seeking to learn about API development using Node.js, Restful API, and PostgreSQL",
-      "Developers looking to understand the usage of TypeScript, Nest JS, and PostgreSQL for projects utilizing APIs.",
-      "Individuals interested in developing and managing web applications communicating via APIs."
-    ],
-    "prerequisites": [
-      "Participants in the course should have basic knowledge of programming with JavaScript.",
-      "Participants in the course should also have fundamental knowledge of web application development."
-    ],
-    "participantsWillReceive": [
-      "Training manuals/documentation.",
-      "Lunch and refreshments.",
-      "Certification upon completion of the Fundamental API (NodeJS+ Restful+ PostgreSQL) course.",
-      "Excellent care and attention from instructors and staff.",
-      "Unlimited attendance to the Fundamental API (NodeJS+ Restful+ PostgreSQL)  (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat).",
-      "If you are unable to attend the training session this time, you can reschedule your participation according to the training schedule."
-    ],
-    "outline": [
-      {
-        "title": "Introduction to JavaScript (ECMAScript) ",
-        "descriptions": [
-          "Workshop1 - Play with JavaScript"
-        ]
-      },
-      {
-        "title": "Introduction to NodeJS",
-        "descriptions": [
-          "Workshop2 - Play with NodeJS"
-        ]
-      },
-      {
-        "title": "Introduction to Restful API",
-        "descriptions": [
-          "Workshop3 - Play with Restful API"
-        ]
-      },
-      {
-        "title": "Introduction to TypeScript",
-        "descriptions": [
-          "Workshop4 - Play with TypeScript"
-        ]
-      },
-      {
-        "title": "Introduction to Nest JS",
-        "descriptions": [
-          "Workshop5 - Play with Nest JS "
-        ]
-      },
-      {
-        "title": "Introduction to PostgreSQL ",
-        "descriptions": [
-          "Workshop6 - Play with PostgreSQL "
-        ]
-      },
-      {
-        "title": "Introduction to MVC ",
-        "descriptions": [
-          "Workshop7 - Routing and CRUD (PostgreSQL & TypeORM) "
-        ]
-      },
-      {
-        "title": "NodeJS Environment (Node ENV)",
-        "descriptions": [
-          "Workshop8 - Using multiple Node ENV"
-        ]
-      },
-      {
-        "title": "Nest JS Middleware",
-        "descriptions": [
-          "Workshop9 - Authenticating with Middleware (JWT)",
-          "Workshop10 - Logging with Middleware"
-        ]
-      },
-      {
-        "title": "Error Handling",
-        "descriptions": [
-          "Workshop11 - Handling error with Restful API"
-        ]
-      },
-      {
-        "title": "Build & Deployment",
-        "descriptions": [
-          "Workshop12 - Deploy NodeJS project"
-        ]
-      }
-    ],
-    
-    "publicSchedule": [],
-    "documents": [
-      {
-        "title": "Fundamental API (NodeJS+ Restful+ PostgreSQL) (English Version)",
-        "fileUrl": "/course/2024-005/document/fundamental-api-nodejs+restful+postgresql-en.pdf"
-      },
-      {
-        "title": "Fundamental API (NodeJS+ Restful+ PostgreSQL) (Thai Version)",
-        "fileUrl": "/course/2024-005/document/fundamental-api-nodejs+restful+postgresql-th.pdf"
-      }
-    ]
-  },
-  "2024-006-fundamental-api": {
-    "lastUpdate": "2024-02-20T09:00:00+0700",
-    "key": "2024-006-fundamental-api",
-    "isActive": true,
-    "imageUrl": null,
-    "title": "Fundamental API (NodeJS+ GraphQL+ PostgreSQL)",
-    "code": "2024-006",
-    "duration": "1 Day, 09:00 - 17:00",
-    "overview": "The Fundamental API course (NodeJS + GraphQL  + PostgreSQL) is a learning journey into the basics of API development using Node.js, GraphQL , and PostgreSQL technologies to create and manage web applications communicating via APIs. Participants will delve into JavaScript (ECMAScript), Node.js, GraphQL , TypeScript, Nest JS, PostgreSQL, and Node.js Environment management. They will also learn about Middleware creation and management, Error Handling, and deploying Node.js projects.",
-    "objectives": [
-      "To ensure participants grasp the fundamentals of API development using Node.js,GraphQL, and MongoDB.",
-      "To empower participants to efficiently create and manage APIs communicating via GraphQL API.",
-      "To enable participants to utilize TypeScript, Nest JS, and PostgreSQL for developing and managing projects utilizing GraphQL"
-    ],
-    "whoShouldAttend": [
-      "Software developers seeking to learn about API development using Node.js, GraphQL, and PostgreSQL.",
-      "Developers looking to understand the usage of TypeScript, Nest JS, and PostgreSQL for projects utilizing GraphQL.",
-      "Individuals interested in developing and managing web applications communicating via GraphQL."
-    ],
-    "prerequisites": [
-      "Participants in the course should have basic knowledge of programming with JavaScript.",
-      "Participants in the course should also have fundamental knowledge of web application development."
-    ],
-    "participantsWillReceive": [
-      "Training manuals/documentation.",
-      "Lunch and refreshments.",
-      "Certification upon completion of the Fundamental API (NodeJS+ GraphQL+ PostgreSQL) course.",
-      "Excellent care and attention from instructors and staff.",
-      "Unlimited attendance to the Fundamental API (NodeJS+ Restful+ PostgreSQL)  (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat).",
-      "If you are unable to attend the training session this time, you can reschedule your participation according to the training schedule."
-    ],
-    "outline": [
-      {
-        "title": "Introduction to JavaScript (ECMAScript) ",
-        "descriptions": [
-          "Workshop1 - Play with JavaScript"
-        ]
-      },
-      {
-        "title": "Introduction to NodeJS",
-        "descriptions": [
-          "Workshop2 - Play with NodeJS"
-        ]
-      },
-      {
-        "title": "Introduction to GraphQL",
-        "descriptions": [
-          "Workshop3 - Play with GraphQL"
-        ]
-      },
-      {
-        "title": "Introduction to TypeScript",
-        "descriptions": [
-          "Workshop4 - Play with TypeScript"
-        ]
-      },
-      {
-        "title": "Introduction to Nest JS",
-        "descriptions": [
-          "Workshop5 - Play with Nest JS "
-        ]
-      },
-      {
-        "title": "Introduction to PostgreSQL ",
-        "descriptions": [
-          "Workshop6 - Play with PostgreSQL "
-        ]
-      },
-      {
-        "title": "Introduction to MVC ",
-        "descriptions": [
-          "Workshop7 - Routing and CRUD (PostgreSQL & TypeORM) "
-        ]
-      },
-      {
-        "title": "NodeJS Environment (Node ENV)",
-        "descriptions": [
-          "Workshop8 - Using multiple Node ENV"
-        ]
-      },
-      {
-        "title": "Nest JS Middleware",
-        "descriptions": [
-          "Workshop9 - Authenticating with Middleware (JWT)",
-          "Workshop10 - Logging with Middleware"
-        ]
-      },
-      {
-        "title": "Error Handling",
-        "descriptions": [
-          "Workshop11 - Handling error with GraphQL"
-        ]
-      },
-      {
-        "title": "Build & Deployment",
-        "descriptions": [
-          "Workshop12 - Deploy NodeJS project"
-        ]
-      }
-    ],
-    
-    "publicSchedule": [],
-    "documents": [
-      {
-        "title": "Fundamental API (NodeJS+ GraphQL+ MongoDB)(English Version)",
-        "fileUrl": "/course/2024-006/document/fundamental-api-nodejs+GraphQL+PostgreSQL-en.pdf"
-      },
-      {
-        "title": "Fundamental API (NodeJS+ GraphQL+ MongoDB) (Thai Version)",
-        "fileUrl": "/course/2024-006/document/fundamental-api-nodejs+GraphQL+PostgreSQL-th.pdf"
-      }
-    ]
+    "th": {
+      "lastUpdate": "2024-02-19T09:00:00+0700",
+      "key": "2024-007-modern-web-frontend-with-react",
+      "isActive": true,
+      "imageUrl": "/course/2024-007/poster/cover-image2-01-01.png",
+      "detailUrl": "https://dkscenter.com/course/2024-007-modern-web-frontend-with-react",
+      "title": "Modern Web Frontend with React (Next.js - App Router - Typescript)",
+      "code": "2024-007",
+      "duration": "2 Days, 09:00 - 17:00",
+      "overview": "The Modern Web Frontend with React (Next.js - App Router - Typescript) course is a learning experience focused on the basics of developing web applications using ReactJS, a JavaScript library used for building user interfaces. Participants will learn about the React structure, component creation, state management, API integration, and routing in web applications.",
+      "objectives": [
+        "To provide participants with an understanding of the basics of ReactJS and web application development using React.",
+        "To empower participants to create and manage various components in web applications using React.",
+        "To enable participants to fetch data from APIs and manage the state of the application in the React framework."
+      ],
+      "whoShouldAttend": [
+        "Software developers looking to learn about ReactJS and web application development.",
+        "Developers with experience in website development who seek to understand the usage of ReactJS.",
+        "Individuals interested in learning how to create efficient web applications using ReactJS."
+      ],
+      "prerequisites": [
+        "Participants in the course should have basic knowledge of programming with JavaScript.",
+        "Participants in the course should also have fundamental knowledge of web application development.",
+        "Participants should have a basic understanding of HTML, CSS, and JavaScript to better grasp the content.",
+        "Preparation of necessary development tools such as Node.js and npm (Node Package Manager) for building and managing React projects.",
+        "Ability to use Command Line Interface (CLI) for creating React projects and managing dependencies using npm.",
+        "A computer equipped with programming tools such as a Text Editor or Integrated Development Environment (IDE) suitable for React development.",
+        "Enthusiasm for learning and collaborating with others during the course. Working with team members helps participants gain valuable experience through knowledge exchange and collaboration."
+      ],
+      "participantsWillReceive": [
+        "Training manuals/documentation.",
+        "Lunch and refreshments.",
+        "Certification upon completion of the Modern Web Frontend with React (Next.js - App Router - Typescript) course.",
+        "Excellent care and attention from instructors and staff.",
+        "Unlimited attendance to the Modern Web Frontend with React (Next.js - App Router - Typescript) (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat).",
+        "If you are unable to attend the training session this time, you can reschedule your participation according to the training schedule."
+      ],
+      "outline": [
+        {
+          "title": "History of Web Frontend Development",
+          "descriptions": [
+            "The evolution of web application development before the separation of Backend and Frontend."
+          ]
+        },
+        {
+          "title": "Pros and Cons",
+          "descriptions": [
+            "Advantages and disadvantages of developing web applications with separated Backend and Frontend."
+          ]
+        },
+        {
+          "title": "System Architecture Overview",
+          "descriptions": [
+            "An overview of current web application design with Backend and Frontend separation, including case studies."
+          ]
+        },
+        {
+          "title": "ECMAScript and TypeScript",
+          "descriptions": [
+            "Modern JavaScript writing and fundamentals of TypeScript."
+          ]
+        },
+        {
+          "title": "What is React? And why Next.js?",
+          "descriptions": [
+            "Introduction to React and React-powered frameworks."
+          ]
+        },
+        {
+          "title": "Workshop 1",
+          "descriptions": [
+            "Creating a Next.js app."
+          ]
+        },
+        {
+          "title": "Project Structure",
+          "descriptions": [
+            "Introduction to the basic structure of Next.js."
+          ]
+        },
+        {
+          "title": "HTML and JSX",
+          "descriptions": [
+            "What is JSX?",
+            "Differences and precautions between HTML tags and JSX."
+          ]
+        },
+        {
+          "title": "Component Concept",
+          "descriptions": [
+            "Explanation of functions and various necessary roles in developing web applications with React",
+            "Creating components to separate frequently used parts",
+            "Component exporting and importing",
+            "Passing values to components (Component Props)."
+          ]
+        },
+        {
+          "title": "Workshop 2",
+          "descriptions": [
+            "My First Component."
+          ]
+        },
+        {
+          "title": "Tailwind CSS",
+          "descriptions": [
+            "Introduction to basic usage of Tailwind CSS"
+          ]
+        },
+        {
+          "title": "Workshop 3",
+          "descriptions": [
+            "My Home Page."
+          ]
+        },
+        {
+          "title": "State: A Component's Memory",
+          "descriptions": [
+            "Explanation of useState function and basic usage."
+          ]
+        },
+        {
+          "title": "Workshop 4",
+          "descriptions": [
+            "Carousel banner."
+          ]
+        },
+        {
+          "title": "Reacting to Input with State",
+          "descriptions": [
+            "Using State with Input."
+          ]
+        },
+        {
+          "title": "Workshop 5",
+          "descriptions": [
+            "Search box."
+          ]
+        },
+        {
+          "title": "Sharing State Between Components",
+          "descriptions": [
+            "Explanation of using State with other components."
+          ]
+        },
+        {
+          "title": "Workshop 6",
+          "descriptions": [
+            "Search results."
+          ]
+        },
+        {
+          "title": "Next.js Routing",
+          "descriptions": [
+            "Explanation of creating Route Paths in various formats",
+            "Page and Layout structures",
+            "page navigation (Linking and Navigating)."
+          ]
+        },
+        {
+          "title": "Workshop 7",
+          "descriptions": [
+            "New search page."
+          ]
+        },
+        {
+          "title": "Workshop 8",
+          "descriptions": [
+            "Products and Details."
+          ]
+        },
+        {
+          "title": "Server Components and Client Components",
+          "descriptions": [
+            "Explanation of differences and usage of Server Components and Client Components",
+            "Case studies."
+          ]
+        },
+        {
+          "title": "Next.js Data Fetching",
+          "descriptions": [
+            "Explanation of API calls",
+            "Creating and using Server Actions and Mutations",
+            "Using formData and useFormStatus."
+          ]
+        },
+        {
+          "title": "Workshop 9",
+          "descriptions": [
+            "Register."
+          ]
+        },
+        {
+          "title": "Authentication Flow",
+          "descriptions": [
+            "Explanation of the structure and principles of Authentication systems."
+          ]
+        },
+        {
+          "title": "Workshop 10",
+          "descriptions": [
+            "Login."
+          ]
+        },
+        {
+          "title": "Passing Data Deeply with Context",
+          "descriptions": [
+            "Explanation of principles, necessity, and management of complex ",
+            "Case studies."
+          ]
+        },
+        {
+          "title": "Workshop 11",
+          "descriptions": [
+            "My Profile."
+          ]
+        },
+        {
+          "title": "Error Handling and Middleware",
+          "descriptions": [
+            "Explanation of Error Handling principles in the Next.js framework and Middleware operations",
+            "Case studies."
+          ]
+        },
+        {
+          "title": "Workshop 12",
+          "descriptions": [
+            "Redirect when not logged in."
+          ]
+        },
+        {
+          "title": "Scaling Up with Reducer and Context",
+          "descriptions": [
+            "Explanation of using Reducer and State Action with Context",
+            "Case studies."
+          ]
+        },
+        {
+          "title": "Workshop 13",
+          "descriptions": [
+            "Add products to cart."
+          ]
+        },
+        {
+          "title": "Synchronizing with Effects",
+          "descriptions": [
+            "Explanation of useEffect function and its usage in various formats."
+          ]
+        },
+        {
+          "title": "Workshop 14",
+          "descriptions": [
+            "Checkout!"
+          ]
+        },
+        {
+          "title": "Workshop 15",
+          "descriptions": [
+            "Order History."
+          ]
+        },
+        {
+          "title": "Environment Variables and Deploying",
+          "descriptions": [
+            "Explanation of Environment Variables usage and deployment in various formats."
+          ]
+        },
+        {
+          "title": "Workshop 16",
+          "descriptions": [
+            "Hello World!"
+          ]
+        }
+      ],
+      "publicSchedule": [
+        {
+          "title": "Modern Web Frontend with React - 1/2024",
+          "eventStart": "2024-05-25T09:00:00+0700",
+          "eventEnd": "2024-05-26T17:00:00+0700",
+          "ticketUrl": "https://www.eventpop.me/e/21610/modern-web-frontend-with-react-1-2024",
+          "saleStart": "2024-03-21T09:00:00+0700",
+          "saleEnd": "2024-05-24T23:59:59+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "BTS Phaya Thai"
+        }
+      ],
+      "documents": [
+        {
+          "title": "Modern Web Frontend with React (Next.js - App Router - Typescript) (English Version)",
+          "fileUrl": "/course/2024-007/document/modern-web-frontend-with-react-en.pdf"
+        },
+        {
+          "title": "Modern Web Frontend with React (Next.js - App Router - Typescript) (Thai Version)",
+          "fileUrl": "/course/2024-007/document/modern-web-frontend-with-react-th.pdf"
+        }
+      ]
+    },
+    "en": {
+      "lastUpdate": "2024-02-19T09:00:00+0700",
+      "key": "2024-007-modern-web-frontend-with-react",
+      "isActive": true,
+      "imageUrl": "/course/2024-007/poster/cover-image2-01-01.png",
+      "detailUrl": "https://dkscenter.com/course/2024-007-modern-web-frontend-with-react",
+      "title": "Modern Web Frontend with React (Next.js - App Router - Typescript)",
+      "code": "2024-007",
+      "duration": "2 Days, 09:00 - 17:00",
+      "overview": "The Modern Web Frontend with React (Next.js - App Router - Typescript) course is a learning experience focused on the basics of developing web applications using ReactJS, a JavaScript library used for building user interfaces. Participants will learn about the React structure, component creation, state management, API integration, and routing in web applications.",
+      "objectives": [
+        "To provide participants with an understanding of the basics of ReactJS and web application development using React.",
+        "To empower participants to create and manage various components in web applications using React.",
+        "To enable participants to fetch data from APIs and manage the state of the application in the React framework."
+      ],
+      "whoShouldAttend": [
+        "Software developers looking to learn about ReactJS and web application development.",
+        "Developers with experience in website development who seek to understand the usage of ReactJS.",
+        "Individuals interested in learning how to create efficient web applications using ReactJS."
+      ],
+      "prerequisites": [
+        "Participants in the course should have basic knowledge of programming with JavaScript.",
+        "Participants in the course should also have fundamental knowledge of web application development.",
+        "Participants should have a basic understanding of HTML, CSS, and JavaScript to better grasp the content.",
+        "Preparation of necessary development tools such as Node.js and npm (Node Package Manager) for building and managing React projects.",
+        "Ability to use Command Line Interface (CLI) for creating React projects and managing dependencies using npm.",
+        "A computer equipped with programming tools such as a Text Editor or Integrated Development Environment (IDE) suitable for React development.",
+        "Enthusiasm for learning and collaborating with others during the course. Working with team members helps participants gain valuable experience through knowledge exchange and collaboration."
+      ],
+      "participantsWillReceive": [
+        "Training manuals/documentation.",
+        "Lunch and refreshments.",
+        "Certification upon completion of the Modern Web Frontend with React (Next.js - App Router - Typescript) course.",
+        "Excellent care and attention from instructors and staff.",
+        "Unlimited attendance to the Modern Web Frontend with React (Next.js - App Router - Typescript) (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat).",
+        "If you are unable to attend the training session this time, you can reschedule your participation according to the training schedule."
+      ],
+      "outline": [
+        {
+          "title": "History of Web Frontend Development",
+          "descriptions": [
+            "The evolution of web application development before the separation of Backend and Frontend."
+          ]
+        },
+        {
+          "title": "Pros and Cons",
+          "descriptions": [
+            "Advantages and disadvantages of developing web applications with separated Backend and Frontend."
+          ]
+        },
+        {
+          "title": "System Architecture Overview",
+          "descriptions": [
+            "An overview of current web application design with Backend and Frontend separation, including case studies."
+          ]
+        },
+        {
+          "title": "ECMAScript and TypeScript",
+          "descriptions": [
+            "Modern JavaScript writing and fundamentals of TypeScript."
+          ]
+        },
+        {
+          "title": "What is React? And why Next.js?",
+          "descriptions": [
+            "Introduction to React and React-powered frameworks."
+          ]
+        },
+        {
+          "title": "Workshop 1",
+          "descriptions": [
+            "Creating a Next.js app."
+          ]
+        },
+        {
+          "title": "Project Structure",
+          "descriptions": [
+            "Introduction to the basic structure of Next.js."
+          ]
+        },
+        {
+          "title": "HTML and JSX",
+          "descriptions": [
+            "What is JSX?",
+            "Differences and precautions between HTML tags and JSX."
+          ]
+        },
+        {
+          "title": "Component Concept",
+          "descriptions": [
+            "Explanation of functions and various necessary roles in developing web applications with React",
+            "Creating components to separate frequently used parts",
+            "Component exporting and importing",
+            "Passing values to components (Component Props)."
+          ]
+        },
+        {
+          "title": "Workshop 2",
+          "descriptions": [
+            "My First Component."
+          ]
+        },
+        {
+          "title": "Tailwind CSS",
+          "descriptions": [
+            "Introduction to basic usage of Tailwind CSS"
+          ]
+        },
+        {
+          "title": "Workshop 3",
+          "descriptions": [
+            "My Home Page."
+          ]
+        },
+        {
+          "title": "State: A Component's Memory",
+          "descriptions": [
+            "Explanation of useState function and basic usage."
+          ]
+        },
+        {
+          "title": "Workshop 4",
+          "descriptions": [
+            "Carousel banner."
+          ]
+        },
+        {
+          "title": "Reacting to Input with State",
+          "descriptions": [
+            "Using State with Input."
+          ]
+        },
+        {
+          "title": "Workshop 5",
+          "descriptions": [
+            "Search box."
+          ]
+        },
+        {
+          "title": "Sharing State Between Components",
+          "descriptions": [
+            "Explanation of using State with other components."
+          ]
+        },
+        {
+          "title": "Workshop 6",
+          "descriptions": [
+            "Search results."
+          ]
+        },
+        {
+          "title": "Next.js Routing",
+          "descriptions": [
+            "Explanation of creating Route Paths in various formats",
+            "Page and Layout structures",
+            "page navigation (Linking and Navigating)."
+          ]
+        },
+        {
+          "title": "Workshop 7",
+          "descriptions": [
+            "New search page."
+          ]
+        },
+        {
+          "title": "Workshop 8",
+          "descriptions": [
+            "Products and Details."
+          ]
+        },
+        {
+          "title": "Server Components and Client Components",
+          "descriptions": [
+            "Explanation of differences and usage of Server Components and Client Components",
+            "Case studies."
+          ]
+        },
+        {
+          "title": "Next.js Data Fetching",
+          "descriptions": [
+            "Explanation of API calls",
+            "Creating and using Server Actions and Mutations",
+            "Using formData and useFormStatus."
+          ]
+        },
+        {
+          "title": "Workshop 9",
+          "descriptions": [
+            "Register."
+          ]
+        },
+        {
+          "title": "Authentication Flow",
+          "descriptions": [
+            "Explanation of the structure and principles of Authentication systems."
+          ]
+        },
+        {
+          "title": "Workshop 10",
+          "descriptions": [
+            "Login."
+          ]
+        },
+        {
+          "title": "Passing Data Deeply with Context",
+          "descriptions": [
+            "Explanation of principles, necessity, and management of complex ",
+            "Case studies."
+          ]
+        },
+        {
+          "title": "Workshop 11",
+          "descriptions": [
+            "My Profile."
+          ]
+        },
+        {
+          "title": "Error Handling and Middleware",
+          "descriptions": [
+            "Explanation of Error Handling principles in the Next.js framework and Middleware operations",
+            "Case studies."
+          ]
+        },
+        {
+          "title": "Workshop 12",
+          "descriptions": [
+            "Redirect when not logged in."
+          ]
+        },
+        {
+          "title": "Scaling Up with Reducer and Context",
+          "descriptions": [
+            "Explanation of using Reducer and State Action with Context",
+            "Case studies."
+          ]
+        },
+        {
+          "title": "Workshop 13",
+          "descriptions": [
+            "Add products to cart."
+          ]
+        },
+        {
+          "title": "Synchronizing with Effects",
+          "descriptions": [
+            "Explanation of useEffect function and its usage in various formats."
+          ]
+        },
+        {
+          "title": "Workshop 14",
+          "descriptions": [
+            "Checkout!"
+          ]
+        },
+        {
+          "title": "Workshop 15",
+          "descriptions": [
+            "Order History."
+          ]
+        },
+        {
+          "title": "Environment Variables and Deploying",
+          "descriptions": [
+            "Explanation of Environment Variables usage and deployment in various formats."
+          ]
+        },
+        {
+          "title": "Workshop 16",
+          "descriptions": [
+            "Hello World!"
+          ]
+        }
+      ],
+      "publicSchedule": [
+        {
+          "title": "Modern Web Frontend with React - 1/2024",
+          "eventStart": "2024-05-25T09:00:00+0700",
+          "eventEnd": "2024-05-26T17:00:00+0700",
+          "ticketUrl": "https://www.eventpop.me/e/21610/modern-web-frontend-with-react-1-2024",
+          "saleStart": "2024-03-21T09:00:00+0700",
+          "saleEnd": "2024-05-24T23:59:59+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "BTS Phaya Thai"
+        }
+      ],
+      "documents": [
+        {
+          "title": "Modern Web Frontend with React (Next.js - App Router - Typescript) (English Version)",
+          "fileUrl": "/course/2024-007/document/modern-web-frontend-with-react-en.pdf"
+        },
+        {
+          "title": "Modern Web Frontend with React (Next.js - App Router - Typescript) (Thai Version)",
+          "fileUrl": "/course/2024-007/document/modern-web-frontend-with-react-th.pdf"
+        }
+      ]
+    }
   }
 }

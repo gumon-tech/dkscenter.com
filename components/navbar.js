@@ -6,10 +6,9 @@ import Link from "/components/link";
 import { useRouter } from "next/router";
 import LanguageSwitchLink from "./LanguageSwitchLink";
 import i18nextConfig from "../next-i18next.config";
-import LanguageSwitchDropdown from "./LanguageSwitchDropdown";
+import LanguageSwitcher from "./LanguageSwitcher";
 
-
-export default function Navbar(props){
+export default function Navbar(props) {
   const router = useRouter();
   const i18next = props.i18next;
   const { t, i18n } = i18next;
@@ -111,16 +110,19 @@ export default function Navbar(props){
                 return <LanguageSwitchLink locale={locale} key={locale} />;
               })}
             </li>
+            <li className="mr-3 nav__item" key="LanguageSwitchLink">
+            <LanguageSwitcher />
+            </li>
 
-            {/* <li className="mr-3 nav__item" key="LanguageSwitchDropdown">
-              <LanguageSwitchDropdown i18next={i18next}/>
-            </li> */}
 
+            
           </ul>
+
+          
 
           <ThemeChanger />
         </div>
       </nav>
     </div>
   );
-};
+}

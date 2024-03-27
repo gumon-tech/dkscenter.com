@@ -79,7 +79,7 @@ export const getStaticPaths = () => {
   for (const courseKey of courseKeyList) {
     for (const locale of locales) {
       paths.push({
-        params: { code: courseKey, locale: locale },
+        params: { courseKey: courseKey, locale: locale },
       });
     }
   }
@@ -90,7 +90,7 @@ export const getStaticProps = makeStaticProps(["home"]);
 
 function makeStaticProps(ns = {}) {
   return async function getStaticProps(ctx) {
-    const courseKey = ctx.params?.code || "";
+    const courseKey = ctx.params?.courseKey || "";
     const courseData = courses[courseKey];
     return {
       props: await getI18nProps(ctx, ns, courseData),

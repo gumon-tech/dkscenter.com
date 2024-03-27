@@ -3,8 +3,12 @@ import Link from "/components/link";
 import { getActiveCourses } from "../utils/course";
 import { getSchedule } from "../utils/dateTime";
 
-export default function Table() {
-  const courses = getActiveCourses();
+export default function Table(props) {
+  const i18next = props.i18next;
+  const { t, i18n } = i18next;
+  const currentLanguage = i18n.language;
+  const courses = getActiveCourses(currentLanguage);
+
 
   return (
     <div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -14,16 +18,16 @@ export default function Table() {
             <thead>
               <tr>
                 <th className="font-bold text-xl border-b dark:border-slate-600  text-slate-400  dark:text-slate-200 text-center p-4">
-                  Course
+                  {t("schedule-course")}
                 </th>
                 {/* <th className="font-bold text-xl border-b dark:border-slate-600  text-slate-400  dark:text-slate-200 text-center p-4 ">
                   Code
                 </th> */}
                 <th className="font-bold text-xl border-b dark:border-slate-600  text-slate-400  dark:text-slate-200 text-center p-4 ">
-                  Duration
+                {t("schedule-duration")}
                 </th>
                 <th className="font-bold text-xl border-b dark:border-slate-600  text-slate-400  dark:text-slate-200 text-center p-4 ">
-                  Schedule
+                {t("schedule-schedule")}
                 </th>
               </tr>
             </thead>

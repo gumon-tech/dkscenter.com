@@ -1,31 +1,41 @@
-import languageDetector from '/lib/languageDetector'
-import { useRouter } from 'next/router'
-import Link from 'next/link'
+import languageDetector from "/lib/languageDetector";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 const LanguageSwitchLink = ({ locale, ...rest }) => {
-  const router = useRouter()
+  const router = useRouter();
 
-  let href = rest.href || router.asPath
-  let pName = router.pathname
+  let href = rest.href || router.asPath;
+  let pName = router.pathname;
+
+  // หาตำแหน่งของสตริงคิวรี่ใน URL
+  const queryIndex = href.indexOf("?");
+
+  // ตัดสตริงคิวรี่ออกมา
+  let queryString = "";
+  if (queryIndex > 0) {
+    queryString = href.substring(queryIndex);
+  }
+
   Object.keys(router.query).forEach((k) => {
-    if (k === 'locale') {
-      pName = pName.replace(`[${k}]`, locale)
-      return
+    if (k === "locale") {
+      pName = pName.replace(`[${k}]`, locale);
+      return;
     }
-    pName = pName.replace(`[${k}]`, router.query[k])
-  })
+    pName = pName.replace(`[${k}]`, router.query[k]);
+  });
   if (locale) {
-    href = rest.href ? `/${locale}${rest.href}` : pName
+    href = rest.href ? `/${locale}${rest.href}` : pName;
+  }
+  if (queryString) {
+    href = href + queryString;
   }
 
   return (
-    <Link
-      href={href}
-      onClick={() => languageDetector.cache(locale)}
-    >
-      <button style={{  }}>{locale}</button>
+    <Link href={href} onClick={() => languageDetector.cache(locale)}>
+      <button style={{}}>{locale}</button>
     </Link>
   );
 };
 
-export default LanguageSwitchLink
+export default LanguageSwitchLink;

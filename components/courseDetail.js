@@ -7,10 +7,14 @@ import {
   ClockIcon,
   MapPinIcon,
 } from "@heroicons/react/24/outline";
+import { useRouter } from "next/router";
 
 const CourseDetail = ({ courseData, i18next }) => {
   const { t, i18n } = i18next;
   const currentLanguage = i18n.language;
+  const router = useRouter();
+  const { code } = router.query;
+
   return !courseData ? (
     <Container>
       <Breadcrumb paths={[{ title: "Training Course", path: "/course" }]} />
@@ -185,12 +189,12 @@ const CourseDetail = ({ courseData, i18next }) => {
                     );
 
                     // ไม่ตรงเงือนไข จะแสดงสิ่งนี้
-                    let courseType = t("course-detail-10");
+                    let courseType = "COMING_SOON";
                     // หมดช่วงเวลาขาย
-                    if (isSaleEnded) courseType = t("course-detail-11");
+                    if (isSaleEnded) courseType = "ENDED";
                     // ยังอยู่ช่วงเวลาขาย + ขายหมดแล้ว
                     if (!isSaleEnded && publicSchedule.isSoldOut) {
-                      courseType = t("course-detail-12");
+                      courseType = "SOLD_OUT";
                     }
                     // ยังอยู่ช่วงเวลาขาย + ขายไม่หมด + มีลิ้งขาย
                     if (
@@ -198,8 +202,9 @@ const CourseDetail = ({ courseData, i18next }) => {
                       !publicSchedule.isSoldOut &&
                       publicSchedule.ticketUrl
                     ) {
-                      courseType = t("course-detail-13");
+                      courseType = "GET_YOURS";
                     }
+
                     return (
                       <tr key={index} className="bg-white dark:bg-gray-800">
                         <th scope="row" className="px-6 py-4">
@@ -207,7 +212,11 @@ const CourseDetail = ({ courseData, i18next }) => {
                             {publicSchedule.ticketUrl ? (
                               <a
                                 target="_blank"
-                                href={publicSchedule.ticketUrl}
+                                href={
+                                  publicSchedule.ticketUrl +
+                                  (!!code ? "?discount_code=" + code : "")
+                                }
+                                
                               >
                                 {publicSchedule.title}
                               </a>
@@ -255,7 +264,10 @@ const CourseDetail = ({ courseData, i18next }) => {
                           {courseType === "GET_YOURS" && (
                             <a
                               target="_blank"
-                              href={publicSchedule.ticketUrl}
+                              href={
+                                publicSchedule.ticketUrl +
+                                (!!code ? "?discount_code=" + code : "")
+                              }
                               className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                             >
                               {t("course-detail-16")}

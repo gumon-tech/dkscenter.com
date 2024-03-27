@@ -31,5 +31,8 @@
   "course-detail-16": "Get Yours!",
   "course-detail-17": "No schedule is currently available for the public training course.",
   "course-detail-18": "Special offer? Please contact us!",
-  "course-detail-19": "DOCUMENT"
+  "course-detail-19": "DOCUMENT",
+  "schedule-course": "Course",
+  "schedule-duration": "Duration",
+  "schedule-schedule": "Schedule"
 }
