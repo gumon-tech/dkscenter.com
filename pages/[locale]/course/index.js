@@ -3,23 +3,26 @@ import Head from "next/head";
 import Navbar from "../../../components/navbar";
 import Footer from "../../../components/footer";
 import CourseList from "../../../components/courseList";
+import { useTranslation } from "next-i18next";
+import { makeStaticProps } from "/lib/getStatic";
+import { getStaticPaths } from "/lib/getStatic";
+
+const getStaticProps = makeStaticProps(["home"]);
+export { getStaticPaths, getStaticProps };
 
 const Course = () => {
+  const i18next = useTranslation("home");
+  const { t, i18n } = i18next;
   return (
     <>
       <Head>
-        <title>
-          Training Course | DKS Center - Digital Knowledge Sharing Center
-        </title>
-        <meta
-          name="description"
-          content="DKS acts as a central hub bridging digital communities and technology enthusiasts, fostering collaboration and knowledge exchange. Our mission includes organizing seminars, knowledge-sharing activities, and collaborative events to constantly update our network with the latest insights."
-        />
+        <title>{t("head-title")}</title>
+        <meta name="description" content={t("head-content")} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
-      <CourseList breadcrumb={true} />
-      <Footer />
+      <Navbar i18next={i18next} />
+      <CourseList breadcrumb={true} i18next={i18next} />
+      <Footer i18next={i18next} />
     </>
   );
 };
