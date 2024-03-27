@@ -1,8 +1,9 @@
 import { ThemeProvider } from "next-themes";
 import "../css/tailwind.css";
 import "../css/styles.css";
+import "../css/fonts.css";
 import { GoogleTagManager } from "@next/third-parties/google";
-import { appWithTranslation } from 'next-i18next';
+import { appWithTranslation } from "next-i18next";
 
 function MyApp({ Component, pageProps }) {
   return (

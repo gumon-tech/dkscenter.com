@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Sarabun";
+  src: url("/fonts/sarabun-regular.woff") format("woff");
+  /* Add other font formats if available */
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/inter-regular.woff") format("woff");
+  /* Add other font formats if available */
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

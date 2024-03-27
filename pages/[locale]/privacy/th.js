@@ -2,7 +2,7 @@ export default function PrivacyContentTH() {
   return (
     <div className="text-left">
       <div className="mb-6">
-        <p>
+        <p className="ibm-plex">
           บริษัท กุมอน เทคโนโลยี จำกัด
           ให้ความสำคัญกับการคุ้มครองข้อมูลส่วนบุคคลของคุณ
           โดยนโยบายความเป็นส่วนตัวฉบับนี้ได้อธิบายแนวปฏิบัติเกี่ยวกับการเก็บรวบรวม
