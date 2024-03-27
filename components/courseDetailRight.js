@@ -94,7 +94,13 @@ const CourseDetailRight = ({ courseData, className }) => {
                     <th scope="row" className="px-6 py-4">
                       <h3 className="text-indigo-700 dark:text-indigo-400">
                         {publicSchedule.ticketUrl ? (
-                          <a target="_blank" href={publicSchedule.ticketUrl}>
+                          <a
+                            target="_blank"
+                            href={
+                              publicSchedule.ticketUrl +
+                              (!!code ? "?discount_code=" + code : "")
+                            }
+                          >
                             {publicSchedule.title}
                           </a>
                         ) : (
