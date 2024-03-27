@@ -9,11 +9,15 @@ import {
   faLine,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import i18nextConfig from "../next-i18next.config";
+import { useRouter } from "next/router";
+import LanguageSwitchLink from "./LanguageSwitchLink";
 
 export default function Footer(props) {
-
+  const router = useRouter();
   const i18next = props.i18next;
   let { t, i18n } = i18next;
+  const currentLocale = router.query.locale || i18nextConfig.i18n.defaultLocale;
 
   const navigation = [
     { title: "Home", path: "/" },
@@ -46,7 +50,7 @@ export default function Footer(props) {
             </div>
 
             <div className="max-w-md mt-4 text-gray-500 dark:text-gray-400">
-            {t("footer")}
+              {t("footer")}
             </div>
           </div>
 
@@ -74,6 +78,18 @@ export default function Footer(props) {
                   {item.title}
                 </Link>
               ))}
+              {i18nextConfig.i18n.locales.map((locale) => {
+                if (locale === currentLocale) return null;
+                return (
+                  <LanguageSwitchLink
+                    className={
+                      "w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700"
+                    }
+                    locale={locale}
+                    key={locale}
+                  />
+                );
+              })}
             </div>
           </div>
 

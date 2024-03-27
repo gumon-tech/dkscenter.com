@@ -1,15 +1,10 @@
 import ThemeChanger from "./DarkSwitch";
 import Image from "next/image";
 import { Disclosure } from "@headlessui/react";
-import { useTranslation } from "next-i18next";
 import Link from "/components/link";
 import { useRouter } from "next/router";
 import LanguageSwitchLink from "./LanguageSwitchLink";
 import i18nextConfig from "../next-i18next.config";
-import LanguageSwitcher from "./LanguageSwitcher";
-import { Menu, Transition } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { Fragment } from "react";
 
 export default function Navbar(props) {
   const router = useRouter();
