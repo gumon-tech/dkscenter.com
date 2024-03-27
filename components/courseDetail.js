@@ -8,11 +8,13 @@ import {
   MapPinIcon,
 } from "@heroicons/react/24/outline";
 
-const CourseDetail = ({ courseData }) => {
+const CourseDetail = ({ courseData, i18next }) => {
+  const { t, i18n } = i18next;
+  const currentLanguage = i18n.language;
   return !courseData ? (
     <Container>
       <Breadcrumb paths={[{ title: "Training Course", path: "/course" }]} />
-      No data.
+      {t("course-detail-1")}
     </Container>
   ) : (
     <Container>
@@ -27,7 +29,7 @@ const CourseDetail = ({ courseData }) => {
       </h2>
       {courseData.lastUpdate && (
         <div className="text-sm font-bold tracking-wider text-indigo-700 dark:text-indigo-400 uppercase mt-2">
-          last updated on:{" "}
+          {t("course-detail-2")}{" "}
           {dayjs(courseData.lastUpdate).format("D MMM YYYY, HH:mm")}
         </div>
       )}
@@ -47,7 +49,7 @@ const CourseDetail = ({ courseData }) => {
           {courseData.objectives && courseData.objectives.length > 0 && (
             <>
               <h3 className="text-3xl mt-5 text-blue-700 dark:text-blue-400 font-bold">
-                OBJECTIVES
+                 {t("course-detail-3")}
               </h3>
               <ul className="list-disc text-gray-700 dark:text-gray-400 p-5">
                 {courseData.objectives.map((objective, index) => (
@@ -60,7 +62,7 @@ const CourseDetail = ({ courseData }) => {
             courseData.whoShouldAttend.length > 0 && (
               <>
                 <h3 className="text-3xl mt-5 text-blue-700 dark:text-blue-400 font-bold">
-                  WHO SHOULD ATTEND?
+                {t("course-detail-4")}
                 </h3>
                 <ul className="list-disc text-gray-700 dark:text-gray-400 p-5">
                   {courseData.whoShouldAttend.map((whoShouldAttend, index) => (
@@ -72,7 +74,7 @@ const CourseDetail = ({ courseData }) => {
           {courseData.prerequisites && courseData.prerequisites.length > 0 && (
             <>
               <h3 className="text-3xl mt-5 text-blue-700 dark:text-blue-400 font-bold">
-                PREREQUISITES
+              {t("course-detail-5")}
               </h3>
               <ul className="list-disc text-gray-700 dark:text-gray-400 p-5">
                 {courseData.prerequisites.map((prerequisite, index) => (
@@ -85,7 +87,7 @@ const CourseDetail = ({ courseData }) => {
             courseData.participantsWillReceive.length > 0 && (
               <>
                 <h3 className="text-3xl mt-5 text-blue-700 dark:text-blue-400 font-bold">
-                  ALL PARTICIPANTS WILL RECEIVE
+                {t("course-detail-6")}
                 </h3>
                 <ul className="list-disc text-gray-700 dark:text-gray-400 p-5">
                   {courseData.participantsWillReceive.map(
@@ -99,7 +101,7 @@ const CourseDetail = ({ courseData }) => {
           {courseData.outline && courseData.outline.length > 0 && (
             <>
               <h3 className="text-3xl mt-5 text-blue-700 dark:text-blue-400 font-bold">
-                OUTLINE
+              {t("course-detail-7")}
               </h3>
               <ol className="list-decimal text-gray-700 dark:text-gray-400 p-5">
                 {courseData.outline.map((outline, index) => (
@@ -128,7 +130,7 @@ const CourseDetail = ({ courseData }) => {
                   scope="col"
                   className="px-6 py-3 rounded-t-lg text-xl mt-5 text-blue-700 dark:text-blue-400 font-bold"
                 >
-                  DURATION
+                  {t("course-detail-8")}
                 </th>
               </tr>
             </thead>
@@ -152,7 +154,7 @@ const CourseDetail = ({ courseData }) => {
                   colSpan={2}
                   className="px-6 py-3 rounded-t-lg text-xl mt-5 text-blue-700 dark:text-blue-400 font-bold"
                 >
-                  Public Training Schedule
+                  {t("course-detail-9")}
                 </th>
               </tr>
             </thead>
@@ -183,12 +185,12 @@ const CourseDetail = ({ courseData }) => {
                     );
 
                     // ไม่ตรงเงือนไข จะแสดงสิ่งนี้
-                    let courseType = "COMING_SOON";
+                    let courseType = t("course-detail-10");
                     // หมดช่วงเวลาขาย
-                    if (isSaleEnded) courseType = "ENDED";
+                    if (isSaleEnded) courseType = t("course-detail-11");
                     // ยังอยู่ช่วงเวลาขาย + ขายหมดแล้ว
                     if (!isSaleEnded && publicSchedule.isSoldOut) {
-                      courseType = "SOLD_OUT";
+                      courseType = t("course-detail-12");
                     }
                     // ยังอยู่ช่วงเวลาขาย + ขายไม่หมด + มีลิ้งขาย
                     if (
@@ -196,7 +198,7 @@ const CourseDetail = ({ courseData }) => {
                       !publicSchedule.isSoldOut &&
                       publicSchedule.ticketUrl
                     ) {
-                      courseType = "GET_YOURS";
+                      courseType = t("course-detail-13");
                     }
                     return (
                       <tr key={index} className="bg-white dark:bg-gray-800">
@@ -242,12 +244,12 @@ const CourseDetail = ({ courseData }) => {
                           {courseType === "COMING_SOON" && "COMING SOON!"}
                           {courseType === "ENDED" && (
                             <span className="text-gray-700 dark:text-gray-400 font-bold">
-                              ENDED
+                              {t("course-detail-14")}
                             </span>
                           )}
                           {courseType === "SOLD_OUT" && (
                             <span className="text-red-600 font-bold">
-                              SOLD OUT
+                              {t("course-detail-15")}
                             </span>
                           )}
                           {courseType === "GET_YOURS" && (
@@ -256,7 +258,7 @@ const CourseDetail = ({ courseData }) => {
                               href={publicSchedule.ticketUrl}
                               className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                             >
-                              Get Yours!
+                              {t("course-detail-16")}
                             </a>
                           )}
                         </td>
@@ -270,8 +272,7 @@ const CourseDetail = ({ courseData }) => {
                     colSpan={2}
                     className="px-6 rounded-t-lg py-4 font-medium text-gray-900 dark:text-white"
                   >
-                    No schedule is currently available for the public training
-                    course.
+                    {t("course-detail-17")}
                   </th>
                 </tr>
               )}
@@ -285,7 +286,7 @@ const CourseDetail = ({ courseData }) => {
                     href={"/about-us"}
                     className="inline-flex font-medium items-center text-blue-600 dark:text-blue-400 hover:underline"
                   >
-                    Special offer? Please contact us!
+                    {t("course-detail-18")}
                     <svg
                       className="w-3 h-3 ms-2.5 rtl:rotate-[270deg]"
                       aria-hidden="true"
@@ -315,7 +316,7 @@ const CourseDetail = ({ courseData }) => {
                     scope="col"
                     className="px-6 py-3 rounded-t-lg text-xl mt-5 text-blue-700 dark:text-blue-400 font-bold"
                   >
-                    DOCUMENT
+                    {t("course-detail-19")}
                   </th>
                 </tr>
               </thead>

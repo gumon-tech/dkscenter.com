@@ -12,7 +12,7 @@ import LanguageSwitchDropdown from "./LanguageSwitchDropdown";
 export default function Navbar(props){
   const router = useRouter();
   const i18next = props.i18next;
-  let { t, i18n } = i18next;
+  const { t, i18n } = i18next;
 
   const currentLocale = router.query.locale || i18nextConfig.i18n.defaultLocale;
   const navigation = [
