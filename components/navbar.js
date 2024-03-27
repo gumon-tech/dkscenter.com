@@ -82,6 +82,19 @@ export default function Navbar(props) {
                         {item.title}
                       </Link>
                     ))}
+
+                    {i18nextConfig.i18n.locales.map((locale) => {
+                      if (locale === currentLocale) return null;
+                      return (
+                        <LanguageSwitchLink
+                          className={
+                            "w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none"
+                          }
+                          locale={locale}
+                          key={locale}
+                        />
+                      );
+                    })}
                   </>
                 </Disclosure.Panel>
               </div>
@@ -107,7 +120,15 @@ export default function Navbar(props) {
             <li className="mr-3 nav__item" key="LanguageSwitchLink">
               {i18nextConfig.i18n.locales.map((locale) => {
                 if (locale === currentLocale) return null;
-                return <LanguageSwitchLink locale={locale} key={locale} />;
+                return (
+                  <LanguageSwitchLink
+                    className={
+                      "inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800"
+                    }
+                    locale={locale}
+                    key={locale}
+                  />
+                );
               })}
             </li>
           </ul>

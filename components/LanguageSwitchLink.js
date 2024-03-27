@@ -2,7 +2,7 @@ import languageDetector from "/lib/languageDetector";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-const LanguageSwitchLink = ({ locale, ...rest }) => {
+const LanguageSwitchLink = ({ className, locale, ...rest }) => {
   const router = useRouter();
 
   let href = rest.href || router.asPath;
@@ -35,7 +35,7 @@ const LanguageSwitchLink = ({ locale, ...rest }) => {
     <Link
       href={href}
       onClick={() => languageDetector.cache(locale)}
-      className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800"
+      className={className}
     >
       {locale === "th" && (
         <>
