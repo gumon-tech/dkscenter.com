@@ -5,27 +5,30 @@ import SectionTitle from "/components/sectionTitle";
 import PrivacyContentEN from "./en";
 import PrivacyContentTH from "./th";
 
+import { useTranslation } from "next-i18next";
+import { makeStaticProps } from "/lib/getStatic";
+import { getStaticPaths } from "/lib/getStatic";
+
+const getStaticProps = makeStaticProps(["home"]);
+export { getStaticPaths, getStaticProps };
+
 const Privacy = () => {
+  const i18next = useTranslation("home");
+  const { t, i18n } = i18next;
+  const currentLanguage = i18n.language;
   return (
     <>
       <Head>
-        <title>
-          Privacy Policy | DKS Center - Digital Knowledge Sharing Center
-        </title>
-        <meta
-          name="description"
-          content="DKS acts as a central hub bridging digital communities and technology enthusiasts, fostering collaboration and knowledge exchange. Our mission includes organizing seminars, knowledge-sharing activities, and collaborative events to constantly update our network with the latest insights."
-        />
+        <title>{t("head-title")}</title>
+        <meta name="description" content={t("head-content")} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
-      <SectionTitle
-        pretitle="Gumon Technology Co., Ltd."
-        title="Privacy Policy for Customer"
-      >
-        <PrivacyContentEN />
+      <Navbar i18next={i18next} />
+      <SectionTitle pretitle={t("privacy-1")} title={t("privacy-2")}>
+        {currentLanguage === 'th' && (<PrivacyContentTH/>)}
+        {currentLanguage === 'en' && (<PrivacyContentEN/>)}
       </SectionTitle>
-      <Footer />
+      <Footer i18next={i18next} />
     </>
   );
 };
