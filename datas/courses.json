@@ -5,37 +5,38 @@
       "key": "2024-001-fundamental-docker",
       "isActive": true,
       "imageUrl": "/course/2024-001/poster/cover-image2-01-01.jpg",
-      "detailUrl": "https://dkscenter.com/course/2024-001-fundamental-docker",
+      "detailUrl": "https://dkscenter.com/th/course/2024-001-fundamental-docker",
       "title": "Fundamental Docker",
       "code": "2024-001",
       "duration": "1 วัน, 09:00 - 17:00",
-      "overview": "The Fundamental Docker course is a learning experience about the basics of Docker, which is an efficient technology used for containerization. Participants will learn about Linux usage, basic Linux commands, working with the VIM text editor, and basic Docker operations including container creation, management, and the use of Docker Compose for orchestrating multiple services simultaneously.",
+      "overview": "คอร์ส Fundamental Docker เป็นการเรียนรู้เกี่ยวกับพื้นฐานของ Docker ซึ่งเป็นเทคโนโลยีที่ใช้กับการคอนเทนเนอร์ได้อย่างมีประสิทธิภาพ ผู้เรียนจะได้เรียนรู้เกี่ยวกับการใช้งาน Linux, คำสั่งพื้นฐานของ Linux, การใช้งานตัวแก้ไขข้อความ VIM, และการทำงานกับ Docker ในระดับพื้นฐานและขั้นตอนการสร้างและจัดการคอนเทนเนอร์ และการใช้งาน Docker Compose เพื่อจัดการกับหลายบริการพร้อมกัน",
       "objectives": [
-        "To ensure participants understand the fundamentals of Docker and how containerization systems work.",
-        "To empower participants to efficiently utilize Docker for creating and managing containers.",
-        "To enable participants to use Docker Compose for orchestrating multiple services simultaneously"
+        "เพื่อให้ผู้เรียนมีความเข้าใจเกี่ยวกับพื้นฐานของ Docker และการทำงานของระบบคอนเทนเนอร์",
+        "เพื่อให้ผู้เรียนสามารถใช้งาน Docker ในการสร้างและจัดการคอนเทนเนอร์ได้อย่างมีประสิทธิภาพ",
+        "เพื่อให้ผู้เรียนสามารถใช้งาน Docker Compose เพื่อจัดการกับหลายบริการพร้อมกัน"
       ],
       "whoShouldAttend": [
-        "Software developers looking to learn Docker for application development.",
-        "DevOps engineers seeking to understand Docker for environment management and team collaboration.",
-        "System administrators interested in using Docker for system management and maintenance.",
-        "Individuals interested in learning containerization and system management in situations requiring flexibility and resource efficiency."
+        "นักพัฒนาซอฟต์แวร์ที่ต้องการเรียนรู้เกี่ยวกับการใช้ Docker เพื่อการพัฒนาแอปพลิเคชัน",
+        "วิศวกร DevOps ที่ต้องการทำความเข้าใจในการใช้งาน Docker เพื่อการจัดการสภาพแวดล้อมและการทำงานร่วมกันในทีม",
+        "ผู้ดูแลระบบที่สนใจในการใช้ Docker เพื่อการจัดการและดูแลระบบ",
+        "ผู้ที่สนใจเรียนรู้เกี่ยวกับการใช้งานคอนเทนเนอร์และการจัดการระบบคอมพิวเตอร์ในสถานการณ์ที่ต้องการการยืดหยุ่นและประหยัดทรัพยากร"
       ],
       "prerequisites": [
-        "Basic knowledge of Linux operating systems.",
-        "Proficiency in Command Line Interface (CLI) usage."
+        "พื้นฐานเกี่ยวกับระบบปฏิบัติการ Linux",
+        "การใช้งาน Command Line Interface (CLI)"
       ],
       "participantsWillReceive": [
-        "One Cloud Servers (VM) per person for training purposes.",
-        "Training manuals/documentation.",
-        "Lunch and refreshments.",
-        "Certification upon completion of the Fundamental Docker course.",
-        "Excellent care and attention from instructors and staff.",
-        "Unlimited attendance to the Fundamental Docker Workshop (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat)."
+        "Cloud Server (VM) ท่านละ 1 เครื่อง เพื่อใช้ประกอบการอบรม",
+        "เอกสารคู่มือการอบรม",
+        "อาหารกลางวันและอาหารว่าง",
+        "ใบรับรองผ่านการอบรมหลักสูตร Fundamental Docker",
+        "การดูแลเอาใจใส่เป็นอย่างดีจากวิทยากรและทีมงาน Staff",
+        "สามารถเข้าร่วม Fundamental Docker Workshop ซ้ำได้ไม่จำกัดจำนวนครั้ง (จำกัดสิทธิ์เข้าร่วมซ้ำ 5 ท่านต่อรอบการอบรม หากท่านต้องการเข้าร่วม Workshop ซ้ำ กรุณาติดต่อ Facebook Page, Line, Email หรือช่องทางอื่น ๆ เพื่อสำรองที่นั่ง)",
+        "หากท่านไม่สะดวกเข้าร่วมการอบรมในครั้งนี้ ท่านสามารถเลื่อนการเข้าร่วมอบรมได้ตามตารางการอบรม"
       ],
       "outline": [
         {
-          "title": "Fundamental Linux",
+          "title": "พื้นฐาน Linux",
           "descriptions": [
             "Directory structure",
             "Linux Commands",
@@ -80,7 +81,7 @@
           "saleEnd": "2024-02-29T17:00:00+0700",
           "isActive": true,
           "isSoldOut": true,
-          "location": "BTS Phaya Thai"
+          "location": "BTS พญาไท"
         }
       ],
       "documents": [
@@ -189,6 +190,287 @@
       ]
     }
   },
+  "2024-002-fundamental-kubernetes": {
+    "th": {
+      "lastUpdate": "2024-02-18T09:00:00+0700",
+      "key": "2024-002-fundamental-kubernetes",
+      "isActive": true,
+      "imageUrl": "/course/2024-002/poster/cover-image2-01-01.png",
+      "title": "Fundamental Kubernetes",
+      "code": "2024-002",
+      "duration": "1 วัน, 09:00 - 17:00",
+      "overview": "คอร์ส Fundamental Kubernetes เป็นการเรียนรู้เกี่ยวกับพื้นฐานของ Kubernetes ซึ่งเป็นระบบจัดการคลัสเตอร์และการจัดการคอนเทนเนอร์อย่างเป็นทางการ ผู้เรียนจะได้เรียนรู้เกี่ยวกับความสามารถของ Kubernetes, วิธีการทำงานของระบบ, โครงสร้างของ Cluster, การจัดการกับสถานะของ Container, การจัดการเครือข่ายและการใช้งานเครื่องมือต่าง ๆ ในการจัดการกับ Kubernetes",
+      "objectives": [
+        "เพื่อให้ผู้เรียนมีความเข้าใจเกี่ยวกับพื้นฐานของ Kubernetes และความสามารถของระบบ",
+        "เพื่อให้ผู้เรียนสามารถสร้างและจัดการกับ Cluster ของตนเองด้วย Kubernetes",
+        "เพื่อให้ผู้เรียนเข้าใจเกี่ยวกับการจัดการกับสถานะของ Container, การทำ Load Balancing, และการ Scaling ของแอปพลิเคชัน"
+      ],
+      "whoShouldAttend": [
+        "นักพัฒนาซอฟต์แวร์ที่สนใจในการศึกษาเกี่ยวกับการจัดการคลัสเตอร์และการจัดการคอนเทนเนอร์",
+        "วิศวกร DevOps ที่ต้องการทำความเข้าใจในการใช้งาน Kubernetes เพื่อการจัดการและดูแลระบบ",
+        "ผู้ดูแลระบบที่สนใจในการเรียนรู้เกี่ยวกับการจัดการคลัสเตอร์และการจัดการคอนเทนเนอร์",
+        "ผู้ที่สนใจเรียนรู้เกี่ยวกับเครื่องมือและเทคโนโลยีที่ใช้ในการจัดการคลัสเตอร์และการจัดการคอนเทนเนอร์"
+      ],
+      "prerequisites": [
+        "พื้นฐานเกี่ยวกับระบบปฏิบัติการ Linux",
+        "การใช้งาน Command Line Interface (CLI)",
+        "ความรู้พื้นฐานการใช้งาน Docker"
+      ],
+      "participantsWillReceive": [
+        "Cloud Server (VM) ท่านละ 3 เครื่อง (1 Master and 2 Nodes) เพื่อใช้ประกอบการอบรม",
+        "เอกสารคู่มือการอบรม",
+        "อาหารกลางวันและอาหารว่าง",
+        "ใบรับรองผ่านการอบรมหลักสูตร Fundamental Kubernetes",
+        "การดูแลเอาใจใส่เป็นอย่างดีจากวิทยากรและทีมงาน Staff",
+        "สามารถเข้าร่วม Fundamental Kubernetes Workshop ซ้ำได้ไม่จำกัดจำนวนครั้ง (จำกัดสิทธิ์เข้าร่วมซ้ำ 5 ท่านต่อรอบการอบรม หากท่านต้องการเข้าร่วม Workshop ซ้ำ กรุณาติดต่อ Facebook Page, Line, Email หรือช่องทางอื่น ๆ เพื่อสำรองที่นั่ง)",
+        "หากท่านไม่สะดวกเข้าร่วมการอบรมในครั้งนี้ ท่านสามารถเลื่อนการเข้าร่วมอบรมได้ตามตารางการอบรม"
+      ],
+      "outline": [
+        {
+          "title": "What? When? Where?",
+          "descriptions": [
+            "Kubernetes คืออะไร?",
+            "มีความสามารถอย่างไร?",
+            "ควรใช้เมื่อไร?",
+            "กรณีศึกษา"
+          ]
+        },
+        {
+          "title": "Going back in time",
+          "descriptions": [
+            "วิธีการ Deploy และจัดการกับ Container ก่อนที่จะมีสิ่งที่เรียกว่า Kubernetes พร้อมศึกษาปัญหาและวิธีรับมือแบบเดิม"
+          ]
+        },
+        {
+          "title": "Kubernetes Concepts and Overview",
+          "descriptions": [
+            "Understanding Concepts",
+            "ความสามารถในการเข้ามาจัดการกับปัญหาต่าง ๆ"
+          ]
+        },
+        {
+          "title": "Cluster Architecture",
+          "descriptions": [
+            "Architecture ของ Cluster",
+            "ความแต่งต่างระหว่างการทำงานแบบ Cluster และ Container แบบเดิม",
+            "nodes, pods, and services คืออะไร"
+          ]
+        },
+        {
+          "title": "Workshop 1 - Building Your Own Cluster",
+          "descriptions": [
+            "ทอดสอบสร้าง Cluster และเพิ่ม Node ใน Cluster นั้น พร้อมทั้งลองสร้าง Pods และ Service แบบง่าย ๆ"
+          ]
+        },
+        {
+          "title": "Storage, Containers and Workloads",
+          "descriptions": [
+            "รู้จักการทำงานและองค์ประกอบของ Containers และ Workload",
+            "กรณีศึกษา"
+          ]
+        },
+        {
+          "title": "Workshop 2 - Deploying an Easy App with Deployments",
+          "descriptions": [
+            "ทดสอบ Deploy App ง่ายๆ ด้วยการใช้งาน Kubernetes Deployments"
+          ]
+        },
+        {
+          "title": "Workshop 3 - Deploying the App with StatefulSets",
+          "descriptions": [
+            "ทดสอบการ Deploy App ด้วย Kubernetes StatefulSets",
+            "ศึกษาข้อแตกต่างระหว่าง Deployment และ StatefulSets"
+          ]
+        },
+        {
+          "title": "Services, Load Balancing, and Networking",
+          "descriptions": [
+            "รู้จักกับเครื่องมือในการจัดการเส้นทางของ Network และการกำหนดค่าเพื่อให้สามารถเข้าถึง Application ที่เราได้ Deploy ไว้"
+          ]
+        },
+        {
+          "title": "Workshop 4 - Point to my services 1",
+          "descriptions": [
+            "ทดสอบการเข้าถึง Web Application ผ่านการทำหนดค่าใน Kubernetes และ DNS จากภายนอก"
+          ]
+        },
+        {
+          "title": "Workshop 5 - Point to my services 2",
+          "descriptions": [
+            "ทดสอบการกำหนดค่าและสิทธิ์การเข้าถึง การจำกัดเส้นทาง Network รวมถึงการทำ Load balancing ใน Cluster"
+          ]
+        },
+        {
+          "title": "Workshop 6 - HPA and K6",
+          "descriptions": [
+            "ทดสอบสร้าง HPA และใช้เครื่องมือการทดสอบเพื่อดูผลลัพธ์ของการตั้งค่า"
+          ]
+        },
+        {
+          "title": "Configuration",
+          "descriptions": [
+            "รู้จักกับการตั้งค่า การส่งค่าผ่าน Parameter ต่างๆ ใน Kubernetes พร้อมทั้ง Best Practice"
+          ]
+        },
+        {
+          "title": "Workshop 7 - Testing Your Configuration",
+          "descriptions": [
+            "Testing Configuration Settings and Parameter Passing Following Kubernetes Officials' Recommendations"
+          ]
+        }
+      ],
+      "publicSchedule": [],
+      "documents": [
+        {
+          "title": "Fundamental Kubernetes Outline (English Version)",
+          "fileUrl": "/course/2024-002/document/fundamental-kubernetes-en.pdf"
+        },
+        {
+          "title": "Fundamental Kubernetes Outline (Thai Version)",
+          "fileUrl": "/course/2024-002/document/fundamental-kubernetes-th.pdf"
+        }
+      ]
+    },
+    "en": {
+      "lastUpdate": "2024-02-18T09:00:00+0700",
+      "key": "2024-002-fundamental-kubernetes",
+      "isActive": true,
+      "imageUrl": "/course/2024-002/poster/cover-image2-01-01.png",
+      "title": "Fundamental Kubernetes",
+      "code": "2024-002",
+      "duration": "1 Day, 09:00 - 17:00",
+      "overview": "The course Fundamental Kubernetes is designed to provide an introduction to the basics of Kubernetes, an official cluster management and container orchestration system. Participants will learn about Kubernetes' capabilities, how the system operates, cluster architecture, container state management, network management, and various tools used in Kubernetes administration.",
+      "objectives": [
+        "To provide learners with a solid understanding of the fundamentals of Kubernetes and its capabilities,",
+        "To empower learners to create and manage their own clusters using Kubernetes,",
+        "To ensure learners comprehend container state management, load balancing, and application scaling techniques."
+      ],
+      "whoShouldAttend": [
+        "Software developers interested in studying cluster management and container orchestration.",
+        "DevOps engineers seeking to understand Kubernetes for system management and maintenance.",
+        "System administrators interested in learning about cluster management and container orchestration.",
+        "Individuals interested in learning about tools and technologies used in cluster management and container orchestration."
+      ],
+      "prerequisites": [
+        "Basic knowledge of Linux operating systems.",
+        "Proficiency in Command Line Interface (CLI) usage.",
+        "Fundamental understanding of Docker usage."
+      ],
+      "participantsWillReceive": [
+        "Three Cloud Servers (VM) per person (1 Master and 2 Nodes) for training purposes.",
+        "Training manuals/documentation.",
+        "Lunch and refreshments.",
+        "Certification upon completion of the Fundamental Kubernetes course.",
+        "Excellent care and attention from instructors and staff.",
+        "Unlimited attendance to the Fundamental Kubernetes Workshop (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat)."
+      ],
+      "outline": [
+        {
+          "title": "What? When? Where?",
+          "descriptions": [
+            "What is Kubernetes?",
+            "What are its capabilities?",
+            "When should it be used?",
+            "Case Studies"
+          ]
+        },
+        {
+          "title": "Going back in time",
+          "descriptions": [
+            "Deploying and Managing Containers Before Kubernetes: Examining Problems and Traditional Solutions"
+          ]
+        },
+        {
+          "title": "Kubernetes Concepts and Overview",
+          "descriptions": [
+            "Understanding Concepts",
+            "Capabilities in Addressing Various Problems"
+          ]
+        },
+        {
+          "title": "Cluster Architecture",
+          "descriptions": [
+            "Architecture of a Cluster",
+            "Differences between Cluster and Container Operation",
+            "What are nodes, pods, and services?"
+          ]
+        },
+        {
+          "title": "Workshop 1 - Building Your Own Cluster",
+          "descriptions": [
+            "Hands-on - Creating a Cluster and Adding Nodes, along with Creating Simple Pods and Services"
+          ]
+        },
+        {
+          "title": "Storage, Containers and Workloads",
+          "descriptions": [
+            "Understanding Container Operations and Components",
+            "Case Studies"
+          ]
+        },
+        {
+          "title": "Workshop 2 - Deploying an Easy App with Deployments",
+          "descriptions": [
+            "Testing App Deployment Using Kubernetes Deployments"
+          ]
+        },
+        {
+          "title": "Workshop 3 - Deploying the App with StatefulSets",
+          "descriptions": [
+            "Testing App Deployment Using Kubernetes StatefulSets",
+            "Studying Differences Between Deployment and StatefulSets"
+          ]
+        },
+        {
+          "title": "Services, Load Balancing, and Networking",
+          "descriptions": [
+            "Understanding Tools for Managing Network Routes and Configurations to Access Deployed Applications"
+          ]
+        },
+        {
+          "title": "Workshop 4 - Point to my services 1",
+          "descriptions": [
+            "Testing Access to a Web Application via Kubernetes Configuration and DNS from External Sources"
+          ]
+        },
+        {
+          "title": "Workshop 5 - Point to my services 2",
+          "descriptions": [
+            "Testing Configuration and Access Rights, Network Routing Limitations, and Load Balancing in the Cluster"
+          ]
+        },
+        {
+          "title": "Workshop 6 - HPA and K6",
+          "descriptions": [
+            "Testing HPA Creation and Using Testing Tools to See Configuration Results"
+          ]
+        },
+        {
+          "title": "Configuration",
+          "descriptions": [
+            "Understanding Configuration and Passing Parameters in Kubernetes, Along with Best Practices"
+          ]
+        },
+        {
+          "title": "Workshop 7 - Testing Your Configuration",
+          "descriptions": [
+            "Testing Configuration Settings and Parameter Passing Following Kubernetes Officials' Recommendations"
+          ]
+        }
+      ],
+      "publicSchedule": [],
+      "documents": [
+        {
+          "title": "Fundamental Kubernetes Outline (English Version)",
+          "fileUrl": "/course/2024-002/document/fundamental-kubernetes-en.pdf"
+        },
+        {
+          "title": "Fundamental Kubernetes Outline (Thai Version)",
+          "fileUrl": "/course/2024-002/document/fundamental-kubernetes-th.pdf"
+        }
+      ]
+    }
+  },
   "2024-007-modern-web-frontend-with-react": {
     "th": {
       "lastUpdate": "2024-02-19T09:00:00+0700",
@@ -198,64 +480,64 @@
       "detailUrl": "https://dkscenter.com/course/2024-007-modern-web-frontend-with-react",
       "title": "Modern Web Frontend with React (Next.js - App Router - Typescript)",
       "code": "2024-007",
-      "duration": "2 Days, 09:00 - 17:00",
-      "overview": "The Modern Web Frontend with React (Next.js - App Router - Typescript) course is a learning experience focused on the basics of developing web applications using ReactJS, a JavaScript library used for building user interfaces. Participants will learn about the React structure, component creation, state management, API integration, and routing in web applications.",
+      "duration": "2 วัน, 09:00 - 17:00",
+      "overview": "คอร์ส Modern Web Frontend with React (Next.js - App Router - Typescript) เป็นการเรียนรู้เกี่ยวกับพื้นฐานของการพัฒนาเว็บแอปพลิเคชันด้วย ReactJS ซึ่งเป็นไลบรารี JavaScript ที่ใช้สำหรับสร้าง UI และอินเทอร์เฟซผู้ใช้ ผู้เรียนจะได้เรียนรู้เกี่ยวกับโครงสร้างของ React, การสร้างคอมโพเนนต์, การจัดการสถานะ, การเรียกใช้ API, และการทำ routing ในเว็บแอปพลิเคชัน",
       "objectives": [
-        "To provide participants with an understanding of the basics of ReactJS and web application development using React.",
-        "To empower participants to create and manage various components in web applications using React.",
-        "To enable participants to fetch data from APIs and manage the state of the application in the React framework."
+        "เพื่อให้ผู้เรียนมีความเข้าใจเกี่ยวกับพื้นฐานของ ReactJS และการพัฒนาเว็บแอปพลิเคชันด้วย React",
+        "เพื่อให้ผู้เรียนสามารถสร้างและจัดการกับคอมโพเนนต์ต่าง ๆ ในเว็บแอปพลิเคชันด้วย React",
+        "เพื่อให้ผู้เรียนสามารถเรียกใช้งานข้อมูลจาก API และจัดการกับสถานะของแอปพลิเคชันในรูปแบบของ React"
       ],
       "whoShouldAttend": [
-        "Software developers looking to learn about ReactJS and web application development.",
-        "Developers with experience in website development who seek to understand the usage of ReactJS.",
-        "Individuals interested in learning how to create efficient web applications using ReactJS."
+        "นักพัฒนาซอฟต์แวร์ที่ต้องการเรียนรู้เกี่ยวกับ ReactJS และการพัฒนาเว็บแอปพลิเคชัน",
+        "นักพัฒนาที่มีประสบการณ์ในการพัฒนาเว็บไซต์และต้องการทำความเข้าใจในการใช้ ReactJS",
+        "ผู้ที่สนใจเรียนรู้เกี่ยวกับการสร้างเว็บแอปพลิเคชันที่มีประสิทธิภาพด้วย ReactJS"
       ],
       "prerequisites": [
-        "Participants in the course should have basic knowledge of programming with JavaScript.",
-        "Participants in the course should also have fundamental knowledge of web application development.",
-        "Participants should have a basic understanding of HTML, CSS, and JavaScript to better grasp the content.",
-        "Preparation of necessary development tools such as Node.js and npm (Node Package Manager) for building and managing React projects.",
-        "Ability to use Command Line Interface (CLI) for creating React projects and managing dependencies using npm.",
-        "A computer equipped with programming tools such as a Text Editor or Integrated Development Environment (IDE) suitable for React development.",
-        "Enthusiasm for learning and collaborating with others during the course. Working with team members helps participants gain valuable experience through knowledge exchange and collaboration."
+        "ผู้เข้าร่วมคอร์สควรมีความรู้พื้นฐานเกี่ยวกับการเขียนโปรแกรมด้วยภาษา JavaScript",
+        "ผู้เข้าร่วมคอร์สควรความรู้พื้นฐานเกี่ยวกับการพัฒนาเว็บแอปพลิเคชัน",
+        "ผู้เข้าร่วมคอร์สควรมีความรู้พื้นฐานเกี่ยวกับ HTML, CSS, และ JavaScript เพื่อให้เข้าใจเนื้อหาได้ดียิ่งขึ้น",
+        "การเตรียมโปรแกรมพัฒนาที่จำเป็น เช่น Node.js และ npm (Node Package Manager) เพื่อใช้ในการสร้างและจัดการโปรเจค React",
+        "การมีความสามารถในการใช้งาน Command Line Interface (CLI) เพื่อการสร้างโปรเจค React และการจัดการกับ dependencies ต่าง ๆ โดยใช้ npm",
+        "คอมพิวเตอร์ที่มีเครื่องมือสำหรับการเขียนโปรแกรมเช่นโปรแกรม Text Editor หรือ Integrated Development Environment (IDE) ที่เหมาะสมสำหรับการพัฒนา React",
+        "ความกระตือรือร้นในการเรียนรู้และการทำงานร่วมกับผู้อื่นในระหว่างการศึกษา การทำงานร่วมกับสมาชิกในทีมช่วยให้ผู้เรียนได้รับประสบการณ์ที่มีประโยชน์จากการแลกเปลี่ยนความรู้และประสบการณ์"
       ],
       "participantsWillReceive": [
-        "Training manuals/documentation.",
-        "Lunch and refreshments.",
-        "Certification upon completion of the Modern Web Frontend with React (Next.js - App Router - Typescript) course.",
-        "Excellent care and attention from instructors and staff.",
-        "Unlimited attendance to the Modern Web Frontend with React (Next.js - App Router - Typescript) (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat).",
-        "If you are unable to attend the training session this time, you can reschedule your participation according to the training schedule."
+        "เอกสารคู่มือการอบรม",
+        "อาหารกลางวันและอาหารว่าง",
+        "ใบรับรองผ่านการอบรมหลักสูตร Modern Web Frontend with React (Next.js - App Router - Typescript)",
+        "การดูแลเอาใจใส่เป็นอย่างดีจากวิทยากรและทีมงาน Staff",
+        "สามารถเข้าร่วม Modern Web Frontend with React (Next.js - App Router - Typescript) ซ้ำได้ไม่จำกัดจำนวนครั้ง (จำกัดสิทธิ์เข้าร่วมซ้ำ 5 ท่านต่อรอบการอบรม หากท่านต้องการเข้าร่วม Workshop ซ้ำ กรุณาติดต่อ Facebook Page, Line, Email หรือช่องทางอื่น ๆ เพื่อสำรองที่นั่ง)",
+        "หากท่านไม่สะดวกเข้าร่วมการอบรมในครั้งนี้ ท่านสามารถเลื่อนการเข้าร่วมอบรมได้ตามตารางการอบรม"
       ],
       "outline": [
         {
           "title": "History of Web Frontend Development",
           "descriptions": [
-            "The evolution of web application development before the separation of Backend and Frontend."
+            "ประวัติศาสตร์ของการพัฒนาเว็บแอปพลิเคชันก่อนจะมีการพัฒนาแบบแยกระหว่าง Backend และ Frontend"
           ]
         },
         {
           "title": "Pros and Cons",
           "descriptions": [
-            "Advantages and disadvantages of developing web applications with separated Backend and Frontend."
+            "ข้อดี ข้อเสีย ของการพัฒนาเว็บแอปพลิเคชันแบบแยก Backend และ Frontend"
           ]
         },
         {
           "title": "System Architecture Overview",
           "descriptions": [
-            "An overview of current web application design with Backend and Frontend separation, including case studies."
+            "ภาพรวมของการออกแบบเว็บแอปพลิเคชันแบบแยก Backend และ Frontend ในปัจจุบัน พร้อมกรณีศึกษา"
           ]
         },
         {
           "title": "ECMAScript and TypeScript",
           "descriptions": [
-            "Modern JavaScript writing and fundamentals of TypeScript."
+            "การเขียนจาวาสคริปต์สมัยใหม่ และพื้นฐานการเขียน Typescript"
           ]
         },
         {
           "title": "What is React? And why Next.js?",
           "descriptions": [
-            "Introduction to React and React-powered frameworks."
+            "ทำความรู้จักกับ React และ React-powered frameworks"
           ]
         },
         {
@@ -267,23 +549,23 @@
         {
           "title": "Project Structure",
           "descriptions": [
-            "Introduction to the basic structure of Next.js."
+            "แนะนำโครงสร้างของ Next.js"
           ]
         },
         {
           "title": "HTML and JSX",
           "descriptions": [
-            "What is JSX?",
-            "Differences and precautions between HTML tags and JSX."
+            "JSX คืออะไร?",
+            "ความแตกต่างและข้อควรระวังระหว่าง Html tag และ JSX"
           ]
         },
         {
           "title": "Component Concept",
           "descriptions": [
-            "Explanation of functions and various necessary roles in developing web applications with React",
-            "Creating components to separate frequently used parts",
-            "Component exporting and importing",
-            "Passing values to components (Component Props)."
+            "อธิบายฟังก์ชันและหน้าที่ต่าง ๆ ที่จำเป็นต่อการพัฒนาเว็บแอปพลิเคชันด้วย React",
+            "การสร้าง Component เพื่อแยกส่วนประกอบที่ใช้งานบ่อย ๆ",
+            "การ Export และ Import ส่วนประกอบเข้ามาใช้งาน",
+            "ารส่งค่าไปยังส่วนประกอบ (Component Pops)"
           ]
         },
         {
@@ -295,7 +577,7 @@
         {
           "title": "Tailwind CSS",
           "descriptions": [
-            "Introduction to basic usage of Tailwind CSS"
+            "แนะนำการใช้งาน Tailwind CSS เบื้องต้น"
           ]
         },
         {
@@ -307,7 +589,7 @@
         {
           "title": "State: A Component's Memory",
           "descriptions": [
-            "Explanation of useState function and basic usage."
+            "อธิบายฟังก์ชัน useState และวิธีการใช้งานเบื้องต้น"
           ]
         },
         {
@@ -319,7 +601,7 @@
         {
           "title": "Reacting to Input with State",
           "descriptions": [
-            "Using State with Input."
+            "การใช้งาน State ร่วมกับ Input"
           ]
         },
         {
@@ -331,7 +613,7 @@
         {
           "title": "Sharing State Between Components",
           "descriptions": [
-            "Explanation of using State with other components."
+            "อธิบายการใช้ State ร่วมกับ Component อื่นๆ"
           ]
         },
         {
@@ -343,9 +625,9 @@
         {
           "title": "Next.js Routing",
           "descriptions": [
-            "Explanation of creating Route Paths in various formats",
-            "Page and Layout structures",
-            "page navigation (Linking and Navigating)."
+            "อธิบายการสร้าง Route Path ในรูปแบบต่าง ๆ",
+            "โครงสร้างของ Page และ Layouts",
+            "การเปลี่ยนหน้า (Linking and Navigating)"
           ]
         },
         {
@@ -363,16 +645,16 @@
         {
           "title": "Server Components and Client Components",
           "descriptions": [
-            "Explanation of differences and usage of Server Components and Client Components",
-            "Case studies."
+            "อธิบายข้อแตกต่างและการใช้งาน Server Components และ Client Components",
+            "กรณีศึกษา"
           ]
         },
         {
           "title": "Next.js Data Fetching",
           "descriptions": [
-            "Explanation of API calls",
-            "Creating and using Server Actions and Mutations",
-            "Using formData and useFormStatus."
+            "อธิบายการเรียกใช้ API",
+            "การสร้างและเรียกใช้งาน Server Actions and Mutations",
+            "การใช้งาน formData และ useFormStatus"
           ]
         },
         {
@@ -384,7 +666,7 @@
         {
           "title": "Authentication Flow",
           "descriptions": [
-            "Explanation of the structure and principles of Authentication systems."
+            "อธิบายการวางโครงสร้างและหลักการของระบบยืนยันตัวตน (Authentication)"
           ]
         },
         {
@@ -396,8 +678,8 @@
         {
           "title": "Passing Data Deeply with Context",
           "descriptions": [
-            "Explanation of principles, necessity, and management of complex ",
-            "Case studies."
+            "อธิบายหลักการ ความจำเป็น และวิธิการบริหารจัดการข้อมูลที่มีความซับซ้อน",
+            "กรณีศึกษา"
           ]
         },
         {
@@ -409,8 +691,8 @@
         {
           "title": "Error Handling and Middleware",
           "descriptions": [
-            "Explanation of Error Handling principles in the Next.js framework and Middleware operations",
-            "Case studies."
+            "อธิการหลักการทำ Error Handling ในแบบฉบับของ Next.js และ การทำงานของ Middleware",
+            "กรณีศึกษา"
           ]
         },
         {
@@ -422,8 +704,8 @@
         {
           "title": "Scaling Up with Reducer and Context",
           "descriptions": [
-            "Explanation of using Reducer and State Action with Context",
-            "Case studies."
+            "อธิบายการใช้ Reducer และ State Action ร่วมกับ Context",
+            "กรณีศึกษา"
           ]
         },
         {
@@ -435,7 +717,7 @@
         {
           "title": "Synchronizing with Effects",
           "descriptions": [
-            "Explanation of useEffect function and its usage in various formats."
+            "อธิบายการทำงานของฟังก์ชัน useEffect และวิธีการใช้งานในรูปแบบต่าง ๆ"
           ]
         },
         {
@@ -453,7 +735,7 @@
         {
           "title": "Environment Variables and Deploying",
           "descriptions": [
-            "Explanation of Environment Variables usage and deployment in various formats."
+            "อธิบายการใช้งาน Environment Variables และการ Deploy ในรูปแบบต่าง ๆ"
           ]
         },
         {

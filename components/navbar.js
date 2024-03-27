@@ -23,7 +23,7 @@ export default function Navbar(props) {
 
   return (
     <div className="w-full">
-      <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-0">
+      <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-28">
         {/* Logo  */}
         <Disclosure>
           {({ open }) => (
@@ -111,14 +111,9 @@ export default function Navbar(props) {
               })}
             </li>
             <li className="mr-3 nav__item" key="LanguageSwitchLink">
-            <LanguageSwitcher />
+              <LanguageSwitcher />
             </li>
-
-
-            
           </ul>
-
-          
 
           <ThemeChanger />
         </div>
