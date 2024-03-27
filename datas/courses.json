@@ -480,64 +480,64 @@
       "detailUrl": "https://dkscenter.com/course/2024-007-modern-web-frontend-with-react",
       "title": "Modern Web Frontend with React (Next.js - App Router - Typescript)",
       "code": "2024-007",
-      "duration": "2 Days, 09:00 - 17:00",
-      "overview": "The Modern Web Frontend with React (Next.js - App Router - Typescript) course is a learning experience focused on the basics of developing web applications using ReactJS, a JavaScript library used for building user interfaces. Participants will learn about the React structure, component creation, state management, API integration, and routing in web applications.",
+      "duration": "2 วัน, 09:00 - 17:00",
+      "overview": "คอร์ส Modern Web Frontend with React (Next.js - App Router - Typescript) เป็นการเรียนรู้เกี่ยวกับพื้นฐานของการพัฒนาเว็บแอปพลิเคชันด้วย ReactJS ซึ่งเป็นไลบรารี JavaScript ที่ใช้สำหรับสร้าง UI และอินเทอร์เฟซผู้ใช้ ผู้เรียนจะได้เรียนรู้เกี่ยวกับโครงสร้างของ React, การสร้างคอมโพเนนต์, การจัดการสถานะ, การเรียกใช้ API, และการทำ routing ในเว็บแอปพลิเคชัน",
       "objectives": [
-        "To provide participants with an understanding of the basics of ReactJS and web application development using React.",
-        "To empower participants to create and manage various components in web applications using React.",
-        "To enable participants to fetch data from APIs and manage the state of the application in the React framework."
+        "เพื่อให้ผู้เรียนมีความเข้าใจเกี่ยวกับพื้นฐานของ ReactJS และการพัฒนาเว็บแอปพลิเคชันด้วย React",
+        "เพื่อให้ผู้เรียนสามารถสร้างและจัดการกับคอมโพเนนต์ต่าง ๆ ในเว็บแอปพลิเคชันด้วย React",
+        "เพื่อให้ผู้เรียนสามารถเรียกใช้งานข้อมูลจาก API และจัดการกับสถานะของแอปพลิเคชันในรูปแบบของ React"
       ],
       "whoShouldAttend": [
-        "Software developers looking to learn about ReactJS and web application development.",
-        "Developers with experience in website development who seek to understand the usage of ReactJS.",
-        "Individuals interested in learning how to create efficient web applications using ReactJS."
+        "นักพัฒนาซอฟต์แวร์ที่ต้องการเรียนรู้เกี่ยวกับ ReactJS และการพัฒนาเว็บแอปพลิเคชัน",
+        "นักพัฒนาที่มีประสบการณ์ในการพัฒนาเว็บไซต์และต้องการทำความเข้าใจในการใช้ ReactJS",
+        "ผู้ที่สนใจเรียนรู้เกี่ยวกับการสร้างเว็บแอปพลิเคชันที่มีประสิทธิภาพด้วย ReactJS"
       ],
       "prerequisites": [
-        "Participants in the course should have basic knowledge of programming with JavaScript.",
-        "Participants in the course should also have fundamental knowledge of web application development.",
-        "Participants should have a basic understanding of HTML, CSS, and JavaScript to better grasp the content.",
-        "Preparation of necessary development tools such as Node.js and npm (Node Package Manager) for building and managing React projects.",
-        "Ability to use Command Line Interface (CLI) for creating React projects and managing dependencies using npm.",
-        "A computer equipped with programming tools such as a Text Editor or Integrated Development Environment (IDE) suitable for React development.",
-        "Enthusiasm for learning and collaborating with others during the course. Working with team members helps participants gain valuable experience through knowledge exchange and collaboration."
+        "ผู้เข้าร่วมคอร์สควรมีความรู้พื้นฐานเกี่ยวกับการเขียนโปรแกรมด้วยภาษา JavaScript",
+        "ผู้เข้าร่วมคอร์สควรความรู้พื้นฐานเกี่ยวกับการพัฒนาเว็บแอปพลิเคชัน",
+        "ผู้เข้าร่วมคอร์สควรมีความรู้พื้นฐานเกี่ยวกับ HTML, CSS, และ JavaScript เพื่อให้เข้าใจเนื้อหาได้ดียิ่งขึ้น",
+        "การเตรียมโปรแกรมพัฒนาที่จำเป็น เช่น Node.js และ npm (Node Package Manager) เพื่อใช้ในการสร้างและจัดการโปรเจค React",
+        "การมีความสามารถในการใช้งาน Command Line Interface (CLI) เพื่อการสร้างโปรเจค React และการจัดการกับ dependencies ต่าง ๆ โดยใช้ npm",
+        "คอมพิวเตอร์ที่มีเครื่องมือสำหรับการเขียนโปรแกรมเช่นโปรแกรม Text Editor หรือ Integrated Development Environment (IDE) ที่เหมาะสมสำหรับการพัฒนา React",
+        "ความกระตือรือร้นในการเรียนรู้และการทำงานร่วมกับผู้อื่นในระหว่างการศึกษา การทำงานร่วมกับสมาชิกในทีมช่วยให้ผู้เรียนได้รับประสบการณ์ที่มีประโยชน์จากการแลกเปลี่ยนความรู้และประสบการณ์"
       ],
       "participantsWillReceive": [
-        "Training manuals/documentation.",
-        "Lunch and refreshments.",
-        "Certification upon completion of the Modern Web Frontend with React (Next.js - App Router - Typescript) course.",
-        "Excellent care and attention from instructors and staff.",
-        "Unlimited attendance to the Modern Web Frontend with React (Next.js - App Router - Typescript) (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat).",
-        "If you are unable to attend the training session this time, you can reschedule your participation according to the training schedule."
+        "เอกสารคู่มือการอบรม",
+        "อาหารกลางวันและอาหารว่าง",
+        "ใบรับรองผ่านการอบรมหลักสูตร Modern Web Frontend with React (Next.js - App Router - Typescript)",
+        "การดูแลเอาใจใส่เป็นอย่างดีจากวิทยากรและทีมงาน Staff",
+        "สามารถเข้าร่วม Modern Web Frontend with React (Next.js - App Router - Typescript) ซ้ำได้ไม่จำกัดจำนวนครั้ง (จำกัดสิทธิ์เข้าร่วมซ้ำ 5 ท่านต่อรอบการอบรม หากท่านต้องการเข้าร่วม Workshop ซ้ำ กรุณาติดต่อ Facebook Page, Line, Email หรือช่องทางอื่น ๆ เพื่อสำรองที่นั่ง)",
+        "หากท่านไม่สะดวกเข้าร่วมการอบรมในครั้งนี้ ท่านสามารถเลื่อนการเข้าร่วมอบรมได้ตามตารางการอบรม"
       ],
       "outline": [
         {
           "title": "History of Web Frontend Development",
           "descriptions": [
-            "The evolution of web application development before the separation of Backend and Frontend."
+            "ประวัติศาสตร์ของการพัฒนาเว็บแอปพลิเคชันก่อนจะมีการพัฒนาแบบแยกระหว่าง Backend และ Frontend"
           ]
         },
         {
           "title": "Pros and Cons",
           "descriptions": [
-            "Advantages and disadvantages of developing web applications with separated Backend and Frontend."
+            "ข้อดี ข้อเสีย ของการพัฒนาเว็บแอปพลิเคชันแบบแยก Backend และ Frontend"
           ]
         },
         {
           "title": "System Architecture Overview",
           "descriptions": [
-            "An overview of current web application design with Backend and Frontend separation, including case studies."
+            "ภาพรวมของการออกแบบเว็บแอปพลิเคชันแบบแยก Backend และ Frontend ในปัจจุบัน พร้อมกรณีศึกษา"
           ]
         },
         {
           "title": "ECMAScript and TypeScript",
           "descriptions": [
-            "Modern JavaScript writing and fundamentals of TypeScript."
+            "การเขียนจาวาสคริปต์สมัยใหม่ และพื้นฐานการเขียน Typescript"
           ]
         },
         {
           "title": "What is React? And why Next.js?",
           "descriptions": [
-            "Introduction to React and React-powered frameworks."
+            "ทำความรู้จักกับ React และ React-powered frameworks"
           ]
         },
         {
@@ -549,23 +549,23 @@
         {
           "title": "Project Structure",
           "descriptions": [
-            "Introduction to the basic structure of Next.js."
+            "แนะนำโครงสร้างของ Next.js"
           ]
         },
         {
           "title": "HTML and JSX",
           "descriptions": [
-            "What is JSX?",
-            "Differences and precautions between HTML tags and JSX."
+            "JSX คืออะไร?",
+            "ความแตกต่างและข้อควรระวังระหว่าง Html tag และ JSX"
           ]
         },
         {
           "title": "Component Concept",
           "descriptions": [
-            "Explanation of functions and various necessary roles in developing web applications with React",
-            "Creating components to separate frequently used parts",
-            "Component exporting and importing",
-            "Passing values to components (Component Props)."
+            "อธิบายฟังก์ชันและหน้าที่ต่าง ๆ ที่จำเป็นต่อการพัฒนาเว็บแอปพลิเคชันด้วย React",
+            "การสร้าง Component เพื่อแยกส่วนประกอบที่ใช้งานบ่อย ๆ",
+            "การ Export และ Import ส่วนประกอบเข้ามาใช้งาน",
+            "ารส่งค่าไปยังส่วนประกอบ (Component Pops)"
           ]
         },
         {
@@ -577,7 +577,7 @@
         {
           "title": "Tailwind CSS",
           "descriptions": [
-            "Introduction to basic usage of Tailwind CSS"
+            "แนะนำการใช้งาน Tailwind CSS เบื้องต้น"
           ]
         },
         {
@@ -589,7 +589,7 @@
         {
           "title": "State: A Component's Memory",
           "descriptions": [
-            "Explanation of useState function and basic usage."
+            "อธิบายฟังก์ชัน useState และวิธีการใช้งานเบื้องต้น"
           ]
         },
         {
@@ -601,7 +601,7 @@
         {
           "title": "Reacting to Input with State",
           "descriptions": [
-            "Using State with Input."
+            "การใช้งาน State ร่วมกับ Input"
           ]
         },
         {
@@ -613,7 +613,7 @@
         {
           "title": "Sharing State Between Components",
           "descriptions": [
-            "Explanation of using State with other components."
+            "อธิบายการใช้ State ร่วมกับ Component อื่นๆ"
           ]
         },
         {
@@ -625,9 +625,9 @@
         {
           "title": "Next.js Routing",
           "descriptions": [
-            "Explanation of creating Route Paths in various formats",
-            "Page and Layout structures",
-            "page navigation (Linking and Navigating)."
+            "อธิบายการสร้าง Route Path ในรูปแบบต่าง ๆ",
+            "โครงสร้างของ Page และ Layouts",
+            "การเปลี่ยนหน้า (Linking and Navigating)"
           ]
         },
         {
@@ -645,16 +645,16 @@
         {
           "title": "Server Components and Client Components",
           "descriptions": [
-            "Explanation of differences and usage of Server Components and Client Components",
-            "Case studies."
+            "อธิบายข้อแตกต่างและการใช้งาน Server Components และ Client Components",
+            "กรณีศึกษา"
           ]
         },
         {
           "title": "Next.js Data Fetching",
           "descriptions": [
-            "Explanation of API calls",
-            "Creating and using Server Actions and Mutations",
-            "Using formData and useFormStatus."
+            "อธิบายการเรียกใช้ API",
+            "การสร้างและเรียกใช้งาน Server Actions and Mutations",
+            "การใช้งาน formData และ useFormStatus"
           ]
         },
         {
@@ -666,7 +666,7 @@
         {
           "title": "Authentication Flow",
           "descriptions": [
-            "Explanation of the structure and principles of Authentication systems."
+            "อธิบายการวางโครงสร้างและหลักการของระบบยืนยันตัวตน (Authentication)"
           ]
         },
         {
@@ -678,8 +678,8 @@
         {
           "title": "Passing Data Deeply with Context",
           "descriptions": [
-            "Explanation of principles, necessity, and management of complex ",
-            "Case studies."
+            "อธิบายหลักการ ความจำเป็น และวิธิการบริหารจัดการข้อมูลที่มีความซับซ้อน",
+            "กรณีศึกษา"
           ]
         },
         {
@@ -691,8 +691,8 @@
         {
           "title": "Error Handling and Middleware",
           "descriptions": [
-            "Explanation of Error Handling principles in the Next.js framework and Middleware operations",
-            "Case studies."
+            "อธิการหลักการทำ Error Handling ในแบบฉบับของ Next.js และ การทำงานของ Middleware",
+            "กรณีศึกษา"
           ]
         },
         {
@@ -704,8 +704,8 @@
         {
           "title": "Scaling Up with Reducer and Context",
           "descriptions": [
-            "Explanation of using Reducer and State Action with Context",
-            "Case studies."
+            "อธิบายการใช้ Reducer และ State Action ร่วมกับ Context",
+            "กรณีศึกษา"
           ]
         },
         {
@@ -717,7 +717,7 @@
         {
           "title": "Synchronizing with Effects",
           "descriptions": [
-            "Explanation of useEffect function and its usage in various formats."
+            "อธิบายการทำงานของฟังก์ชัน useEffect และวิธีการใช้งานในรูปแบบต่าง ๆ"
           ]
         },
         {
@@ -735,7 +735,7 @@
         {
           "title": "Environment Variables and Deploying",
           "descriptions": [
-            "Explanation of Environment Variables usage and deployment in various formats."
+            "อธิบายการใช้งาน Environment Variables และการ Deploy ในรูปแบบต่าง ๆ"
           ]
         },
         {
