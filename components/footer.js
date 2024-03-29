@@ -99,7 +99,7 @@ export default function Footer(props) {
             <div className="flex mt-5 space-x-5 text-gray-400 dark:text-gray-500">
               <a
                 target="_blank"
-                href="https://www.facebook.com/digitalknowledgesharing"
+                href="https://www.facebook.com/dks.share"
               >
                 <FontAwesomeIcon icon={faFacebook} width={30} height={30} />
               </a>
