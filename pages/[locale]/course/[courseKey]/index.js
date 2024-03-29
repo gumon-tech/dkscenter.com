@@ -1,9 +1,9 @@
 import React from "react";
 import Head from "next/head";
-import Navbar from "../../../components/navbar";
-import Footer from "../../../components/footer";
-import CourseDetail from "../../../components/courseDetail";
-import courses from "../../../datas/courses.json";
+import Navbar from "/components/navbar";
+import Footer from "/components/footer";
+import CourseDetail from "/components/courseDetail";
+import courses from "/datas/courses.json";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
