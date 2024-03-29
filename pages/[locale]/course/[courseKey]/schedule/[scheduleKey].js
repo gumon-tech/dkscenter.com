@@ -7,12 +7,13 @@ import courses from "/datas/courses.json";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { Modal } from "/components/modal";
 
-const CourseSchedule = ({ courseData ,scheduleData  }) => {
+const CourseSchedule = ({ courseData, scheduleData }) => {
   const i18next = useTranslation("home");
   const { t, i18n } = i18next;
 
-  const { asPath , query } = useRouter();
+  const { asPath, query } = useRouter();
   const origin =
     typeof window !== "undefined" && window.location.origin
       ? window.location.origin
@@ -20,34 +21,34 @@ const CourseSchedule = ({ courseData ,scheduleData  }) => {
 
   const URL = `${origin}${asPath}`;
   const domain = origin;
-  console.log('query',query)
-  console.log('courseData',courseData)
-  console.log('scheduleData',scheduleData)
-
-
+  console.log("query", query);
+  console.log("courseData", courseData);
+  console.log("scheduleData", scheduleData);
 
   return (
     <>
-      <h1>CourseSchedule</h1>
-      <h2>scheduleKey: {scheduleData.scheduleKey}</h2>
-      <h2>title: {scheduleData.title}</h2>
+      <Modal>
+        <h1>CourseSchedule</h1>
+        <h2>scheduleKey: {scheduleData.scheduleKey}</h2>
+        <h2>title: {scheduleData.title}</h2>
+      </Modal>
     </>
   );
 };
 
 export const getStaticPaths = () => {
-  const courseDatas =  Object.values(courses)
+  const courseDatas = Object.values(courses);
   const paths = [];
   for (const courseData of courseDatas) {
-    const courseLocaleDatas =  Object.values(courseData)
+    const courseLocaleDatas = Object.values(courseData);
     for (const courseLocaleData of courseLocaleDatas) {
       for (const publicSchedule of courseLocaleData.publicSchedule) {
-        if(publicSchedule.isActive === true && publicSchedule.scheduleKey){
+        if (publicSchedule.isActive === true && publicSchedule.scheduleKey) {
           paths.push({
-            params: { 
-              courseKey: courseLocaleData.key, 
+            params: {
+              courseKey: courseLocaleData.key,
               scheduleKey: publicSchedule.scheduleKey,
-              locale: courseLocaleData.locale || "en"
+              locale: courseLocaleData.locale || "en",
             },
           });
         }
@@ -72,12 +73,14 @@ function makeStaticProps(ns = {}) {
 async function getI18nProps(ctx, ns = ["home"], courseData) {
   const locale = ctx?.params?.locale;
   const scheduleKey = ctx?.params?.scheduleKey;
-  const courseLocaleData = courseData[locale]; 
-  const scheduleData = courseLocaleData?.publicSchedule?.find((schedule) => schedule.scheduleKey == scheduleKey);
+  const courseLocaleData = courseData[locale];
+  const scheduleData = courseLocaleData?.publicSchedule?.find(
+    (schedule) => schedule.scheduleKey == scheduleKey
+  );
   const props = {
     ...(await serverSideTranslations(locale, ns)),
     courseData: courseLocaleData,
-    scheduleData: scheduleData
+    scheduleData: scheduleData,
   };
   return props;
 }

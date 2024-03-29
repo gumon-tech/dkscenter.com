@@ -141,16 +141,21 @@ const CourseDetailLink = ({
                       )}
 
                       {courseType === "GET_YOURS" && registerBottom && (
-                        <a
-                          target="_blank"
-                          href={
-                            publicSchedule.ticketUrl +
-                            (!!code ? "?discount_code=" + code : "")
-                          }
-                          className="mt-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                        >
-                          {t("course-detail-16")}
-                        </a>
+                        <>
+                          <a
+                            target="_blank"
+                            href={
+                              publicSchedule.ticketUrl +
+                              (!!code ? "?discount_code=" + code : "")
+                            }
+                            className="mt-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                          >
+                            {t("course-detail-16")}
+                          </a>
+                          <nav>
+                            <Link href={"/course/"+courseData.key+"/schedule/"+publicSchedule.scheduleKey}>Open modal</Link>
+                          </nav>
+                        </>
                       )}
                     </th>
                     <td>
