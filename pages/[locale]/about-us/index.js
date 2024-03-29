@@ -43,9 +43,9 @@ const AboutUs = () => {
               <>
                 <a
                   target="_blank"
-                  href="https://www.facebook.com/digitalknowledgesharing"
+                  href="https://www.facebook.com/dks.share"
                 >
-                  fb.com/digitalknowledgesharing
+                  fb.com/dks.share
                 </a>
               </>
             }
