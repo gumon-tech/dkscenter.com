@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import dayjs from "dayjs";
 
 const TicketCard = ({ ticket, onQuantityChange }) => {
+  const salesStartTime = new Date(ticket.salesStart);
   const currentTime = new Date();
+  const salesEndTime = new Date(ticket.salesEnd);
+
   const [quantity, setQuantity] = useState(0);
 
   const handleIncrease = () => {
@@ -19,12 +22,20 @@ const TicketCard = ({ ticket, onQuantityChange }) => {
     }
   };
 
-  const localizedSalesStart = new Date(ticket.salesStart).toLocaleDateString(
-    "th-TH",
-    {
-      dateStyle: "medium",
-    }
-  );
+  const localizedSalesStart = salesStartTime.toLocaleDateString("th-TH", {
+    dateStyle: "medium",
+  });
+
+  let timeSaleType = "isBeforeSales";
+  if (currentTime < salesStartTime) {
+    timeSaleType = "isBeforeSales";
+  }
+  if (salesStartTime <= currentTime && currentTime <= salesEndTime) {
+    timeSaleType = "isInSales";
+  }
+  if (salesEndTime < currentTime) {
+    timeSaleType = "isAfterSales";
+  }
 
   return (
     <div className="border border-gray-300 rounded p-4 mb-4 relative">
@@ -36,27 +47,29 @@ const TicketCard = ({ ticket, onQuantityChange }) => {
             currency: "THB",
           })}
         </p>
-
-        {new Date(ticket.salesStart) <= currentTime &&
-          currentTime <= new Date(ticket.salesEnd) && (
-            <>
-              <button
-                className="bg-blue-500 text-white px-2 py-1 rounded"
-                onClick={handleDecrease}
-              >
-                -
-              </button>
-              <span className="mx-2">{quantity}</span>
-              <button
-                className="bg-blue-500 text-white px-2 py-1 rounded"
-                onClick={handleIncrease}
-              >
-                +
-              </button>
-            </>
-          )}
+        {timeSaleType == "isBeforeSales" && <></>}
+        {timeSaleType == "isInSales" && (
+          <>
+            <button
+              className="bg-blue-500 text-white px-2 py-1 rounded"
+              onClick={handleDecrease}
+            >
+              -
+            </button>
+            <span className="mx-2">{quantity}</span>
+            <button
+              className="bg-blue-500 text-white px-2 py-1 rounded"
+              onClick={handleIncrease}
+            >
+              +
+            </button>
+          </>
+        )}
+        {timeSaleType == "isAfterSales" && (
+          <span class="text-red sold-out-text">ขายหมดแล้ว</span>
+        )}
       </div>
-      <p>Available: {ticket.available - ticket.reserved}</p>
+      <p>Available: {ticket.remaining || ticket.available || 0}</p>
       <p>Available from: {localizedSalesStart}</p>
       {ticket.discountCode && <p>Discount from: {ticket.discountCode}</p>}
     </div>
@@ -86,12 +99,10 @@ const CartDetails = ({ cartItems }) => {
     return calculateSubtotal() - calculateDiscount();
   };
 
-
   return (
     <div className="border border-gray-300 rounded p-4">
       <h2 className="text-lg font-semibold mb-4">Cart Details</h2>
       {cartItems.map((item) => (
-
         <div key={item.ticketId} className="cart-item mb-2">
           <p>{item.name}</p>
           <p>
@@ -103,26 +114,24 @@ const CartDetails = ({ cartItems }) => {
           </p>
         </div>
       ))}
-      <hr/>
-      <br/>
+      <hr />
+      <br />
       <p>
         Subtotal x{" "}
-        
-          {calculateSubtotal().toLocaleString("th-TH", {
-            style: "currency",
-            currency: "THB",
-          })}
-        
+        {calculateSubtotal().toLocaleString("th-TH", {
+          style: "currency",
+          currency: "THB",
+        })}
       </p>
-      <p >
+      <p>
         Discount x{" "}
         {calculateDiscount().toLocaleString("th-TH", {
           style: "currency",
           currency: "THB",
         })}
       </p>
-      <hr/>
-      <p >
+      <hr />
+      <p>
         Total:{" "}
         {calculateTotal().toLocaleString("th-TH", {
           style: "currency",
