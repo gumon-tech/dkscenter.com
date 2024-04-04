@@ -153,7 +153,7 @@ const CourseDetailLink = ({
                             {t("course-detail-16")}
                           </a>
                           <nav>
-                            <Link href={"/course/"+courseData.key+"/schedule/"+publicSchedule.scheduleKey}>Open modal</Link>
+                            <Link href={"/course/"+courseData.key+"/schedule/"+publicSchedule.scheduleKey + (!!code ? "?discount_code=" + code : "")}>Open modal</Link>
                           </nav>
                         </>
                       )}
