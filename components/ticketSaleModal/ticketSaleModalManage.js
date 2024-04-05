@@ -26,19 +26,7 @@ export default function TicketSaleModalManage({
   const [ticketId, setTicketId] = useState(null);
   const [ticketAmount, setTicketAmount] = useState(null);
   const [reserveId, setReserveId] = useState(null);
-  const [reserveExpire, setReserveExpire] = useState(null);
-
-
-  console.log("manageState", manageState);
-  console.log("discountCode", discountCode);
-
-  console.log("accessToken", accessToken);
-  console.log("refreshToken", refreshToken);
-  console.log("ticketId", ticketId);
-  console.log("ticketAmount", ticketAmount);
-  console.log("reserveId", reserveId);
-  console.log("reserveExpire", reserveExpire);
-
+  const [reserveExpire, setReserveExpire] = useState(new Date());
 
   // 0 = หน้าแสดงบัตรทั้งหมด
   // 1 = หน้ายืนยัน email
@@ -47,8 +35,6 @@ export default function TicketSaleModalManage({
   if (manageState === 0) {
     return (
       <div>
-        หน้าแสดงบัตรทั้งหมด
-        <br />
         <FetchTicketSale
           i18next={i18next}
           courseKey={courseKey}
@@ -61,12 +47,6 @@ export default function TicketSaleModalManage({
           setTicketAmount={setTicketAmount}
           setManageState={setManageState}
         />
-        {/* <button
-          className="mt-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          onClick={() => setManageState(1)}
-        >
-          next
-        </button> */}
       </div>
     );
   }
@@ -74,8 +54,6 @@ export default function TicketSaleModalManage({
   if (manageState === 1) {
     return (
       <div>
-        หน้ายืนยัน email
-        <br />
         <EmailTicketSale
           i18next={i18next}
           accessToken={accessToken}
@@ -89,13 +67,8 @@ export default function TicketSaleModalManage({
           setReserveId={setReserveId}
           reserveExpire={reserveExpire}
           setReserveExpire={setReserveExpire}
+          setManageState={setManageState}
         />
-        <button
-          className="mt-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          onClick={() => setManageState(2)}
-        >
-          next
-        </button>
       </div>
     );
   }
@@ -103,21 +76,18 @@ export default function TicketSaleModalManage({
   if (manageState === 2) {
     return (
       <div>
-        หน้ากรอกข้อมูลการซื้อบัตร
-        <br />
+        
         <CheckoutTicketSale
           i18next={i18next}
           accessToken={accessToken}
+          setAccessToken={setAccessToken}
+          refreshToken={refreshToken}
+          setRefreshToken={setRefreshToken}
           ticketAmount={ticketAmount}
           reserveId={reserveId}
           reserveExpire={reserveExpire}
+          setManageState={setManageState}
         />
-        <button
-          className="mt-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          onClick={() => setManageState(0)}
-        >
-          next
-        </button>
       </div>
     );
   }
