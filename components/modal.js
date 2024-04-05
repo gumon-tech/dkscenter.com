@@ -4,7 +4,6 @@ const Modal = ({ isOpen, onClose, children, title }) => {
   const modalStyle = {
     minWidth: '70vw', // ขนาดขั้นต่ำของ modal เป็น 70% ของ viewport width
     minHeight: '70vh', // ขนาดขั้นต่ำของ modal เป็น 70% ของ viewport height
-    overflow: 'auto', // การเพิ่มสไลด์บาร์เมื่อข้อมูลมีมากเกินไป
   };
 
   if (!isOpen) return <></>;
@@ -35,7 +34,7 @@ const Modal = ({ isOpen, onClose, children, title }) => {
             </svg>
           </button>
         </div>
-        <div>{children}</div>
+        <div className="overflow-y-auto max-h-96">{children}</div> {/* เพิ่ม class overflow-y-auto และ max-h-96 เพื่อให้มีการเลื่อนแนวตั้งเฉพาะเนื้อหา */}
       </div>
     </div>
   );
