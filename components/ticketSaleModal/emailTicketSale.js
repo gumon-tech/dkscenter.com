@@ -3,6 +3,8 @@ import axios from "axios";
 import ReactLoading from "react-loading";
 import Countdown from "react-countdown";
 import { sendVerifyEmail } from "../../utils/sendVerifyEmail";
+import { verifyEmailToken } from "../../utils/verifyEmailToken";
+import { ticketsReserve } from "../../utils/ticketsReserve";
 
 const API_URL = process.env.API_URL;
 
@@ -17,35 +19,95 @@ export default function EmailTicketSale({
   ticketAmount,
   reserveId,
   setReserveId,
+  reserveExpire,
+  setReserveExpire,
+  setManageState,
 }) {
-  const [email, setEmail] = useState(null);
-  const [ref, setRef] = useState("tjUsveX");
-  const [expireAt, setExpireAt] = useState("2024-04-05T11:15:20.725Z");
+  const [email, setEmail] = useState("");
+  const [ref, setRef] = useState("");
+  const [expireAt, setExpireAt] = useState(new Date());
+  const [sendVerifyEmailId, setSendVerifyEmailId] = useState("");
   const [otp, setOTP] = useState("");
   const [showOTPForm, setShowOTPForm] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleEmailSubmit = async (e) => {
     e.preventDefault();
     // ส่งอีเมลไปยังเซิร์ฟเวอร์เพื่อขอ OTP
     // onConfirmEmail(email);
-    setShowOTPForm(true); // แสดงฟอร์มใส่ OTP หลังยืนยันอีเมล
+    setIsLoading(true);
+    setShowOTPForm(true);
     try {
-      let response = await sendVerifyEmail(email); // เพิ่ม await เพื่อรอให้การส่งอีเมล์เสร็จสมบูรณ์ก่อน
-      console.log(response); // ตรวจสอบค่าที่ได้รับจากการส่งอีเมล์ (response)
+      const response = await sendVerifyEmail(email); // เพิ่ม await เพื่อรอให้การส่งอีเมล์เสร็จสมบูรณ์ก่อน
+      setRef(response.ref);
+      setExpireAt(response.expireAt);
+      setSendVerifyEmailId(response.id);
     } catch (error) {
       console.error("Error sending verification email:", error);
       // ทำการจัดการข้อผิดพลาดตามที่คุณต้องการ
     }
+    // แสดงฟอร์มใส่ OTP หลังยืนยันอีเมล
+    setIsLoading(false);
   };
 
-  const handleOTPSubmit = (e) => {
+  const handleOTPSubmit = async (e) => {
     e.preventDefault();
     // ส่ง OTP ไปยังเซิร์ฟเวอร์เพื่อยืนยัน
+    setIsLoading(true);
+    try {
+      const response = await verifyEmailToken({
+        id: sendVerifyEmailId,
+        email: email,
+        ref: ref,
+        otp: otp,
+      });
+
+      const newAccessToken = response.accessToken;
+      const newRefreshToken = response.refreshToken;
+
+      setAccessToken(newAccessToken);
+      setRefreshToken(newRefreshToken);
+
+      // ยิง api ซื้อ
+      try {
+        const response = await ticketsReserve({
+          token: newAccessToken,
+          ticketId: ticketId,
+          ticketAmount: ticketAmount,
+          discountCode: discountCode,
+        });
+
+        console.log("ticketsReserve data", response);
+        setReserveId(response.reserveDetail.reserveId);
+        setReserveExpire(response.reserveDetail.expireAt);
+        setManageState(2);
+      } catch (error) {
+        console.error("Error ticketsReserve :", error);
+        // ทำการจัดการข้อผิดพลาดตามที่คุณต้องการ
+      }
+    } catch (error) {
+      console.error("Error sending verifyEmailToken :", error);
+      // ทำการจัดการข้อผิดพลาดตามที่คุณต้องการ
+    }
+
+    setIsLoading(false);
   };
 
-  const handleResendOTP = () => {
+  const handleResendOTP = async (e) => {
     // ส่งอีเมลไปยังเซิร์ฟเวอร์เพื่อขอ OTP ใหม่
-    // onConfirmEmail(email);
+    setIsLoading(true);
+    try {
+      const response = await sendVerifyEmail(email); // เพิ่ม await เพื่อรอให้การส่งอีเมล์เสร็จสมบูรณ์ก่อน
+      setRef(response.ref);
+      setExpireAt(response.expireAt);
+      setSendVerifyEmailId(response.id);
+    } catch (error) {
+      console.error("Error sending verification email:", error);
+      // ทำการจัดการข้อผิดพลาดตามที่คุณต้องการ
+    }
+    setShowOTPForm(true); // แสดงฟอร์มใส่ OTP หลังยืนยันอีเมล
+    setIsLoading(false);
+    setOTP("");
   };
 
   return (
@@ -85,7 +147,7 @@ export default function EmailTicketSale({
           </div>
         )}
 
-        {showOTPForm && (
+        {showOTPForm && !isLoading && (
           <div className="max-w-md mx-auto mt-8">
             <div className="bg-white shadow-md rounded px-8 py-8">
               <h2 className="text-2xl font-semibold text-center mb-4">
@@ -135,6 +197,17 @@ export default function EmailTicketSale({
                 </div>
               </form>
             </div>
+          </div>
+        )}
+
+        {showOTPForm && isLoading && (
+          <div className="flex justify-center items-center h-screen">
+            <ReactLoading
+              type="spinningBubbles"
+              color={"#049ee8"}
+              height={100} // ปรับความสูง
+              width={100} // ปรับความกว้าง
+            />
           </div>
         )}
       </div>
