@@ -29,7 +29,16 @@ export default function TicketSaleModalManage({
   const [reserveExpire, setReserveExpire] = useState(null);
 
 
+  console.log("manageState", manageState);
   console.log("discountCode", discountCode);
+
+  console.log("accessToken", accessToken);
+  console.log("refreshToken", refreshToken);
+  console.log("ticketId", ticketId);
+  console.log("ticketAmount", ticketAmount);
+  console.log("reserveId", reserveId);
+  console.log("reserveExpire", reserveExpire);
+
 
   // 0 = หน้าแสดงบัตรทั้งหมด
   // 1 = หน้ายืนยัน email
@@ -50,13 +59,14 @@ export default function TicketSaleModalManage({
           setTicketId={setTicketId}
           ticketAmount={ticketAmount}
           setTicketAmount={setTicketAmount}
+          setManageState={setManageState}
         />
-        <button
+        {/* <button
           className="mt-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           onClick={() => setManageState(1)}
         >
           next
-        </button>
+        </button> */}
       </div>
     );
   }

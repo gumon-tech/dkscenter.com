@@ -14,7 +14,8 @@ export default function FetchTicketSale({
   ticketId,
   setTicketId,
   ticketAmount,
-  setTicketAmount
+  setTicketAmount,
+  setManageState
 }) {
   if (!courseKey) return null;
   if (!scheduleKey) return null;
@@ -34,107 +35,19 @@ export default function FetchTicketSale({
             },
           }
         );
-        setTickets(response.data);
+        setTickets(response.data.tickets || []);
+        setDiscountDetail(response.data.discountDetail || null);
         setIsLoading(false);
         console.log("response", response);
       } catch (error) {
         console.error("Error fetching tickets:", error);
-        const response = {
-          code: "GET_TIEKETS_SUCCESS_AND_DISCOUNTED_PRICE_HAS_ADDED",
-          message: "Get tickets success and discounted price has added!",
-          courseKey: "2024-007-modern-web-frontend-with-react",
-          scheduleKey: "2024-1",
-          tickets: [
-            {
-              quantity: 20,
-              eventName:
-                "Modern Web Frontend with React (Next.js - App Router - Typescript)",
-              available: 10,
-              courseKey: "2024-007-modern-web-frontend-with-react",
-              eventDate: "25 May 2024 - 26 May 2024",
-              salesEnd: "2024-04-01T10:00:00.000Z",
-              scheduleKey: "2024-1",
-              eventLocation: "BTS Phaya Thai, Bangkok, Thailand",
-              order: 1,
-              name: "Early Bird",
-              eventTime: "09:00 - 17:00",
-              detailLink:
-                "https://dkscenter.com/th/course/2024-007-modern-web-frontend-with-react",
-              ticketId: "11156c00-417f-44b3-b659-95023795e314",
-              updatedAt: "2024-04-04T19:49:05.322Z",
-              price: 6900,
-              salesStart: "2024-03-28T18:05:51.305Z",
-              reserved: 4,
-              remaining: 6,
-              discountedPrice: 6555,
-            },
-            {
-              quantity: 20,
-              eventName:
-                "Modern Web Frontend with React (Next.js - App Router - Typescript)",
-              available: 2,
-              courseKey: "2024-007-modern-web-frontend-with-react",
-              eventDate: "25 May 2024 - 26 May 2024",
-              salesEnd: "2024-05-18T10:00:00.000Z",
-              scheduleKey: "2024-1",
-              eventLocation: "BTS Phaya Thai, Bangkok, Thailand",
-              order: 2,
-              name: "Standard",
-              eventTime: "09:00 - 17:00",
-              detailLink:
-                "https://dkscenter.com/th/course/2024-007-modern-web-frontend-with-react",
-              ticketId: "6b6e31ac-62b1-4173-8c06-ac934195ec26",
-              updatedAt: "2024-04-04T18:57:21.939Z",
-              price: 7900,
-              salesStart: "2024-04-01T10:00:00.000Z",
-              reserved: 0,
-              remaining: 2,
-              discountedPrice: 7505,
-            },
-            {
-              quantity: 20,
-              eventName:
-                "Modern Web Frontend with React (Next.js - App Router - Typescript)",
-              available: 16,
-              courseKey: "2024-007-modern-web-frontend-with-react",
-              eventDate: "25 May 2024 - 26 May 2024",
-              salesEnd: "2024-05-24T10:00:00.000Z",
-              scheduleKey: "2024-1",
-              eventLocation: "BTS Phaya Thai, Bangkok, Thailand",
-              order: 3,
-              name: "Special",
-              eventTime: "09:00 - 17:00",
-              detailLink:
-                "https://dkscenter.com/th/course/2024-007-modern-web-frontend-with-react",
-              ticketId: "9407e262-19ba-4059-92af-3079461770cf",
-              updatedAt: "2024-04-04T20:04:57.811Z",
-              price: 10000,
-              salesStart: "2024-04-01T10:00:00.000Z",
-              reserved: 4,
-              remaining: 12,
-              discountedPrice: 9500,
-            },
-          ],
-          discountDetail: {
-            isActive: true,
-            note: "test",
-            discountCode: "ADS999",
-            courseKey: "2024-007-modern-web-frontend-with-react",
-            discountValue: 5,
-            discountCodeId: "65182e58-85f0-44ca-9c28-c31797152824",
-            discountType: "PERCENTAGE",
-            tag: "test",
-          },
-        };
-
-        setTickets(response.tickets || []);
-        setDiscountDetail(response.discountDetail || null);
         setIsLoading(false);
       }
     };
+    // setIsLoading(true);
 
     fetchTickets();
-  }, []); // เพื่อให้เรียก API ในครั้งเดียวเมื่อ component ถูก render เท่านั้น
+  }, [discountCode]); // เพื่อให้เรียก API ในครั้งเดียวเมื่อ component ถูก render เท่านั้น
 
   if (isLoading)
     return (
@@ -148,7 +61,18 @@ export default function FetchTicketSale({
 
   return (
     <>
-      <TicketSales tickets={tickets} discountDetail={discountDetail}/>
+      <TicketSales
+        i18next={i18next}
+        tickets={tickets}
+        discountCode={discountCode}
+        setDiscountCode={setDiscountCode}
+        ticketId={ticketId}
+        setTicketId={setTicketId}
+        ticketAmount={ticketAmount}
+        setTicketAmount={setTicketAmount}
+        discountDetail={discountDetail}
+        setManageState={setManageState}
+      />
     </>
   );
 }
