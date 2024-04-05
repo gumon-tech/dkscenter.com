@@ -98,7 +98,7 @@ const TicketCard = ({
           </>
         )}
         {timeSaleType == "isAfterSales" && (
-          <span class="text-red sold-out-text">ขายหมดแล้ว</span>
+          <span className="text-red sold-out-text">ขายหมดแล้ว</span>
         )}
       </div>
       <p>Available: {ticket.remaining || ticket.available || 0}</p>
