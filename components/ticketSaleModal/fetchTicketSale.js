@@ -15,7 +15,7 @@ export default function FetchTicketSale({
   setTicketId,
   ticketAmount,
   setTicketAmount,
-  setManageState
+  setManageState,
 }) {
   if (!courseKey) return null;
   if (!scheduleKey) return null;
@@ -51,12 +51,14 @@ export default function FetchTicketSale({
 
   if (isLoading)
     return (
-      <ReactLoading
-        type="spinningBubbles"
-        color={"#049ee8"}
-        height={"50%"}
-        width={"50%"}
-      />
+      <div className="flex justify-center items-center h-screen">
+        <ReactLoading
+          type="spinningBubbles"
+          color={"#049ee8"}
+          height={100} // ปรับความสูง
+          width={100} // ปรับความกว้าง
+        />
+      </div>
     );
 
   return (
