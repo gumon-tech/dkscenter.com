@@ -34,47 +34,6 @@ const CourseDetailLink = ({
     setModalOpen(false);
   };
 
-  const tickets = [
-    {
-      quantity: 20,
-      available: 18,
-      courseKey: "2024-007-modern-web-frontend-with-react",
-      ticketId: "11156c00-417f-44b3-b659-95023795e314",
-      reserved: 0,
-      scheduleKey: "2024-1",
-      salesEnd: "2024-04-01T10:00:00.000Z",
-      order: 1,
-      price: 6900,
-      salesStart: "2024-03-28T18:05:51.305Z",
-      name: "Early Bird",
-    },
-    {
-      quantity: 20,
-      available: 18,
-      courseKey: "2024-007-modern-web-frontend-with-react",
-      ticketId: "6b6e31ac-62b1-4173-8c06-ac934195ec26",
-      reserved: 0,
-      scheduleKey: "2024-1",
-      salesEnd: "2024-05-18T10:00:00.000Z",
-      order: 2,
-      price: 7900,
-      salesStart: "2024-04-01T10:00:00.000Z",
-      name: "Standard",
-    },
-    {
-      quantity: 20,
-      available: 18,
-      courseKey: "2024-007-modern-web-frontend-with-react",
-      ticketId: "9407e262-19ba-4059-92af-3079461770cf",
-      reserved: 0,
-      scheduleKey: "2024-1",
-      salesEnd: "2024-05-24T10:00:00.000Z",
-      order: 3,
-      price: 10000,
-      salesStart: "2024-04-01T10:00:00.000Z",
-      name: "Special",
-    },
-  ];
 
   return (
     <>
@@ -200,7 +159,7 @@ const CourseDetailLink = ({
                           </div>
                         )}
 
-                        {courseType === "GET_YOURS" && registerBottom && (
+                        {courseType === "GET_YOURS" && registerBottom && publicSchedule.scheduleKey && (
                           <>
                             <nav>
                               <button
@@ -213,6 +172,19 @@ const CourseDetailLink = ({
                               </button>
                             </nav>
                           </>
+                        )}
+
+                        {courseType === "GET_YOURS" && registerBottom && !publicSchedule.scheduleKey && (
+                          <a
+                            target="_blank"
+                            href={
+                              publicSchedule.ticketUrl +
+                              (!!code ? "?discount_code=" + code : "")
+                            }
+                            className="mt-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                          >
+                            {t("course-detail-16")}
+                          </a>
                         )}
                       </th>
                       <td>
@@ -228,29 +200,35 @@ const CourseDetailLink = ({
                           </span>
                         )}
 
-                        {courseType === "GET_YOURS" && registerRight && (
-                          // <a
-                          //   target="_blank"
-                          //   href={
-                          //     publicSchedule.ticketUrl +
-                          //     (!!code ? "?discount_code=" + code : "")
-                          //   }
-                          //   className="mt-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                          // >
-                          //   {t("course-detail-16")}
-                          // </a>
+                        {courseType === "GET_YOURS" &&
+                          registerRight &&
+                          publicSchedule.scheduleKey && (
+                            <nav>
+                              <button
+                                className="mt-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                onClick={() =>
+                                  openModal(publicSchedule.scheduleKey)
+                                }
+                              >
+                                {t("course-detail-16")}
+                              </button>
+                            </nav>
+                          )}
 
-                          <nav>
-                            <button
-                              className="mt-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                              onClick={() =>
-                                openModal(publicSchedule.scheduleKey)
+                        {courseType === "GET_YOURS" &&
+                          registerRight &&
+                          !publicSchedule.scheduleKey && (
+                            <a
+                              target="_blank"
+                              href={
+                                publicSchedule.ticketUrl +
+                                (!!code ? "?discount_code=" + code : "")
                               }
+                              className="mt-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                             >
                               {t("course-detail-16")}
-                            </button>
-                          </nav>
-                        )}
+                            </a>
+                          )}
                       </td>
                     </tr>
                   );
@@ -354,16 +332,7 @@ const CourseDetailLink = ({
       </div>
 
       <Modal isOpen={modalOpen} onClose={closeModal} title="Ticket">
-        {/* <TicketSales
-          tickets={tickets}
-          courseKey=""
-          scheduleKey=""
-          discountCode=""
-          i18next={i18next}
-        ></TicketSales> */}
-
         <TicketSaleModalManage
-          tickets={tickets}
           courseKey={courseData.key}
           scheduleKey={scheduleKey}
           discountCodeURL={code}
