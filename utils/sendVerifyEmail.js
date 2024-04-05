@@ -9,19 +9,9 @@ const API_URL = process.env.API_URL;
 
 export async function sendVerifyEmail(email) {
   try {
-    console.log('url',`${API_URL}/send-verify-email` )
-    const response = await axios.post(
-      `${API_URL}/send-verify-email`,
-      {
-        email: email
-      },
-      {
-        headers: {
-          "Content-Type": "application/json"
-        },
-        withCredentials: true
-      }
-    );
+    const response = await axios.post(`${API_URL}/send-verify-email`, {
+      email: email,
+    });
 
     // ตรวจสอบว่าการส่งอีเมล์เสร็จสมบูรณ์และไม่มีข้อผิดพลาดเกิดขึ้น
     if (response.status === 200) {
