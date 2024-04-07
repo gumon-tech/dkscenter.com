@@ -93,6 +93,7 @@ export default function CheckoutTicketSale({
     } catch (error) {
       console.error("Error refreshEmailToken :", error);
     }
+    setIsLoading(false);
   };
 
   if (isLoading)
