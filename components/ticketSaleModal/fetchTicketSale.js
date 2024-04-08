@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ReactLoading from "react-loading";
 import TicketSales from "../TicketSales";
+import { getTickets } from "../../utils/getTickets";
 
 const API_URL = process.env.API_URL;
 
@@ -23,29 +24,28 @@ export default function FetchTicketSale({
   const [isLoading, setIsLoading] = useState(true);
   const [tickets, setTickets] = useState([]);
   const [discountDetail, setDiscountDetail] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchTickets = async () => {
+      setIsLoading(true);
       try {
-        const response = await axios.get(
-          `${API_URL}/tickets/courses/${courseKey}/schedules/${scheduleKey}`,
-          {
-            params: {
-              discount_code: discountCode,
-            },
-          }
-        );
-        setTickets(response.data.tickets || []);
-        setDiscountDetail(response.data.discountDetail || null);
+        const response = await getTickets({
+          courseKey: courseKey,
+          scheduleKey: scheduleKey,
+          discountCode: discountCode,
+        });
+        setTickets(response.tickets || []);
+        setDiscountDetail(response.discountDetail || null);
         setIsLoading(false);
-        console.log("response", response);
+        setError(null);
       } catch (error) {
-        console.error("Error fetching tickets:", error);
+        console.error("Error getTickets:", error);
         setIsLoading(false);
+        setError(error);
       }
+      setIsLoading(false);
     };
-    // setIsLoading(true);
-
     fetchTickets();
   }, [discountCode]); // เพื่อให้เรียก API ในครั้งเดียวเมื่อ component ถูก render เท่านั้น
 
@@ -75,6 +75,17 @@ export default function FetchTicketSale({
         discountDetail={discountDetail}
         setManageState={setManageState}
       />
+      {error && (
+        <div className="error text-red-500">
+          <p>error message: {JSON.stringify(error.message)}</p>
+          <p>error name: {JSON.stringify(error.name)}</p>
+          <p>error code: {JSON.stringify(error.code)}</p>
+          <p>error status: {JSON.stringify(error.status)}</p>
+          <p>error stack: {JSON.stringify(error.stack)}</p>
+          <p>error config: {JSON.stringify(error.config)}</p>
+          <p>error response: {JSON.stringify(error.response)}</p>
+        </div>
+      )}
     </>
   );
 }
