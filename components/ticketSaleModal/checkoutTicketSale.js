@@ -19,6 +19,7 @@ export default function CheckoutTicketSale({
   reserveExpire,
   setManageState,
 }) {
+  const { t, i18n } = i18next;
   const router = useRouter();
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -136,7 +137,7 @@ export default function CheckoutTicketSale({
         <p className="text-left text-gray-600 mb-2">
           ReserveId: {reserveId}
           <br />
-          Expire At: <Countdown date={reserveExpire} />
+          {t("ticket-checkout-expire")}: <Countdown date={reserveExpire} />
         </p>
         <form onSubmit={handleSubmit}>
           {contacts.map((contact, index) => (
@@ -145,12 +146,12 @@ export default function CheckoutTicketSale({
               className="bg-white shadow-md rounded p-4 mb-8 border border-gray-200"
             >
               <h2 className="text-lg font-semibold mb-2">
-                Contact {index + 1}
+                {t("ticket-checkout-contact")} {index + 1}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input
                   type="text"
-                  placeholder="First Name"
+                  placeholder={t("ticket-checkout-first-name")}
                   id={`firstName_${index}`}
                   name={`firstName_${index}`}
                   value={contacts[index]?.firstName || ""}
@@ -160,7 +161,7 @@ export default function CheckoutTicketSale({
                 />
                 <input
                   type="text"
-                  placeholder="Last Name"
+                  placeholder={t("ticket-checkout-last-name")}
                   id={`lastName_${index}`}
                   name={`lastName_${index}`}
                   value={contacts[index]?.lastName || ""}
@@ -170,7 +171,7 @@ export default function CheckoutTicketSale({
                 />
                 <input
                   type="email"
-                  placeholder="Email"
+                  placeholder={t("ticket-checkout-email")}
                   id={`email_${index}`}
                   name={`email_${index}`}
                   value={contacts[index]?.email || ""}
@@ -180,7 +181,7 @@ export default function CheckoutTicketSale({
                 />
                 <input
                   type="tel"
-                  placeholder="Phone Number"
+                  placeholder={t("ticket-checkout-phone-number")}
                   id={`phoneNumber_${index}`}
                   name={`phoneNumber_${index}`}
                   value={contacts[index]?.phoneNumber || ""}
@@ -195,7 +196,7 @@ export default function CheckoutTicketSale({
             type="submit"
             className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 w-full transition duration-300 ease-in-out"
           >
-            Submit
+            {t("ticket-checkout-submit")}
           </button>
         </form>
       </div>

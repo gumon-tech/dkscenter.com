@@ -137,7 +137,7 @@ export default function EmailTicketSale({
           <div className="max-w-md mx-auto mt-8">
             <div className="bg-white shadow-md rounded px-8 py-8">
               <h2 className="text-2xl font-semibold text-center mb-4">
-                Email Confirmation
+                {t("ticket-email-email-confirmation")}
               </h2>
               <form onSubmit={handleEmailSubmit}>
                 <div className="mb-4">
@@ -145,7 +145,7 @@ export default function EmailTicketSale({
                     className="block text-gray-700 text-sm font-bold mb-2"
                     htmlFor="email"
                   >
-                    Email Address
+                    {t("ticket-email-email-address")}
                   </label>
                   <input
                     type="email"
@@ -160,7 +160,7 @@ export default function EmailTicketSale({
                   type="submit"
                   className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 w-full"
                 >
-                  Confirm Email
+                  {t("ticket-email-email-confirm-email")}
                 </button>
               </form>
             </div>
@@ -171,17 +171,15 @@ export default function EmailTicketSale({
           <div className="max-w-md mx-auto mt-8">
             <div className="bg-white shadow-md rounded px-8 py-8">
               <h2 className="text-2xl font-semibold text-center mb-4">
-                OTP Confirmation
+                {t("ticket-email-oto-confirmation")}
               </h2>
-              <p className="text-center mb-4">
-                Please enter the OTP sent to your email.
-              </p>
+              <p className="text-center mb-4">{t("ticket-email-oto-enter")}</p>
               <p className="text-left text-gray-600 mb-2">
                 Email: {email}
                 <br />
-                Ref: {ref}
+                {t("ticket-email-oto-ref")}: {ref}
                 <br />
-                Expire At: <Countdown date={expireAt} />
+                {t("ticket-email-oto-expire")}: <Countdown date={expireAt} />
               </p>
               <form onSubmit={handleOTPSubmit}>
                 <div className="mb-4">
@@ -204,7 +202,7 @@ export default function EmailTicketSale({
                   type="submit"
                   className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 w-full mb-2"
                 >
-                  Confirm OTP
+                  {t("ticket-email-oto-confirm")}
                 </button>
                 <div className="flex justify-end">
                   <button
@@ -212,7 +210,7 @@ export default function EmailTicketSale({
                     className="text-blue-500 hover:underline"
                     onClick={handleResendOTP}
                   >
-                    Resend OTP
+                    {t("ticket-email-oto-resend")}
                   </button>
                 </div>
               </form>

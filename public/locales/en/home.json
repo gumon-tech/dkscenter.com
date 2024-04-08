@@ -47,6 +47,23 @@
   "ticket-cart-subtotal": "Subtotal",
   "ticket-cart-discount": "Discount",
   "ticket-cart-total": "Total",
-  "ticket-cart-checkout": "Checkout"
-
+  "ticket-cart-checkout": "Checkout",
+  "error-email_is_invalid": "Email is invalid!",
+  "error-oto_is_invalid": "OTP is invalid!",
+  "ticket-email-email-confirmation": "Email Confirmation",
+  "ticket-email-email-address": "Email Address",
+  "ticket-email-email-confirm-email": "Confirm Email",
+  "ticket-email-oto-confirmation": "OTP Confirmation",
+  "ticket-email-oto-enter": "Please enter the OTP sent to your email.",
+  "ticket-email-oto-ref": "Ref",
+  "ticket-email-oto-expire": "Expire At",
+  "ticket-email-oto-confirm": "Confirm OTP",
+  "ticket-email-oto-resend": "Resend OTP",
+  "ticket-checkout-expire": "Expire At",
+  "ticket-checkout-contact": "Contact",
+  "ticket-checkout-first-name": "First Name",
+  "ticket-checkout-last-name": "Last Name",
+  "ticket-checkout-email": "Email",
+  "ticket-checkout-phone-number": "Phone Number",
+  "ticket-checkout-submit": "Submit"
 }

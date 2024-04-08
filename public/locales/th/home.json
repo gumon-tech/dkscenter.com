@@ -47,6 +47,25 @@
   "ticket-cart-subtotal": "ยอดรวมสินค้า",
   "ticket-cart-discount": "ส่วนลด",
   "ticket-cart-total": "ยอดรวมทั้งสิ้น",
-  "ticket-cart-checkout": "ชำระเงิน"
+  "ticket-cart-checkout": "ชำระเงิน",
+  "error-email_is_invalid": "Email ไม่ถูกต้อง",
+  "error-oto_is_invalid": "OTP ไม่ถูกต้อง",
+  "ticket-email-email-confirmation": "การยืนยัน Email",
+  "ticket-email-email-address": "ที่อยู่ Email",
+  "ticket-email-email-confirm-email": "ยืนยัน Email",
+  "ticket-email-oto-confirmation": "การยืนยัน OTP",
+  "ticket-email-oto-enter": "โปรดป้อนรหัส OTP ที่ส่งไปยังอีเมลของคุณ",
+  "ticket-email-oto-ref": "Ref",
+  "ticket-email-oto-expire": "หมดอายุเมื่อ",
+  "ticket-email-oto-confirm": "ยืนยัน OTP",
+  "ticket-email-oto-resend": "ส่ง OTP อีกครั้ง",
+  "ticket-checkout-expire": "หมดอายุเมื่อ",
+  "ticket-checkout-contact": "ข้อมูลติดต่อ",
+  "ticket-checkout-first-name": "ชื่อ",
+  "ticket-checkout-last-name": "นามสกุล",
+  "ticket-checkout-email": "Email",
+  "ticket-checkout-phone-number": "เบอร์โทร",
+  "ticket-checkout-submit": "ยืนยัน"
+  
 
 }
