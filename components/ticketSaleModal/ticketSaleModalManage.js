@@ -12,9 +12,6 @@ export default function TicketSaleModalManage({
 }) {
   const router = useRouter();
   const { t, i18n } = i18next;
-  // console.log("courseKey", courseKey);
-  // console.log("scheduleKey", scheduleKey);
-  // console.log("discountCodeURL", discountCodeURL);
 
   if (!courseKey) return null;
   if (!scheduleKey) return null;
@@ -76,7 +73,6 @@ export default function TicketSaleModalManage({
   if (manageState === 2) {
     return (
       <div>
-        
         <CheckoutTicketSale
           i18next={i18next}
           accessToken={accessToken}
