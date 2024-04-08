@@ -34,7 +34,6 @@ const CourseDetailLink = ({
     setModalOpen(false);
   };
 
-
   return (
     <>
       <div className={className}>
@@ -116,6 +115,15 @@ const CourseDetailLink = ({
                     courseType = "GET_YOURS";
                   }
 
+                  if (
+                    !isSaleEnded &&
+                    !publicSchedule.isSoldOut &&
+                    !publicSchedule.ticketUrl &&
+                    publicSchedule.scheduleKey
+                  ) {
+                    courseType = "GET_YOURS_2";
+                  }
+
                   return (
                     <tr key={index} className="bg-white dark:bg-gray-800">
                       <th scope="row" className="px-6 py-4">
@@ -130,6 +138,17 @@ const CourseDetailLink = ({
                             >
                               {publicSchedule.title}
                             </a>
+                          ) : publicSchedule.scheduleKey ? (
+                            <>
+                              <a
+                                href="#"
+                                onClick={() =>
+                                  openModal(publicSchedule.scheduleKey)
+                                }
+                              >
+                                {publicSchedule.title}
+                              </a>
+                            </>
                           ) : (
                             publicSchedule.title
                           )}
@@ -159,7 +178,20 @@ const CourseDetailLink = ({
                           </div>
                         )}
 
-                        {courseType === "GET_YOURS" && registerBottom && publicSchedule.scheduleKey && (
+                        {courseType === "GET_YOURS" && registerBottom && (
+                          <a
+                            target="_blank"
+                            href={
+                              publicSchedule.ticketUrl +
+                              (!!code ? "?discount_code=" + code : "")
+                            }
+                            className="mt-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                          >
+                            {t("course-detail-16")}
+                          </a>
+                        )}
+
+                        {courseType === "GET_YOURS_2" && registerBottom && (
                           <>
                             <nav>
                               <button
@@ -172,19 +204,6 @@ const CourseDetailLink = ({
                               </button>
                             </nav>
                           </>
-                        )}
-
-                        {courseType === "GET_YOURS" && registerBottom && !publicSchedule.scheduleKey && (
-                          <a
-                            target="_blank"
-                            href={
-                              publicSchedule.ticketUrl +
-                              (!!code ? "?discount_code=" + code : "")
-                            }
-                            className="mt-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                          >
-                            {t("course-detail-16")}
-                          </a>
                         )}
                       </th>
                       <td>
@@ -200,35 +219,31 @@ const CourseDetailLink = ({
                           </span>
                         )}
 
-                        {courseType === "GET_YOURS" &&
-                          registerRight &&
-                          publicSchedule.scheduleKey && (
-                            <nav>
-                              <button
-                                className="mt-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                                onClick={() =>
-                                  openModal(publicSchedule.scheduleKey)
-                                }
-                              >
-                                {t("course-detail-16")}
-                              </button>
-                            </nav>
-                          )}
+                        {courseType === "GET_YOURS" && registerRight && (
+                          <a
+                            target="_blank"
+                            href={
+                              publicSchedule.ticketUrl +
+                              (!!code ? "?discount_code=" + code : "")
+                            }
+                            className="mt-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                          >
+                            {t("course-detail-16")}
+                          </a>
+                        )}
 
-                        {courseType === "GET_YOURS" &&
-                          registerRight &&
-                          !publicSchedule.scheduleKey && (
-                            <a
-                              target="_blank"
-                              href={
-                                publicSchedule.ticketUrl +
-                                (!!code ? "?discount_code=" + code : "")
-                              }
+                        {courseType === "GET_YOURS_2" && registerRight && (
+                          <nav>
+                            <button
                               className="mt-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                              onClick={() =>
+                                openModal(publicSchedule.scheduleKey)
+                              }
                             >
                               {t("course-detail-16")}
-                            </a>
-                          )}
+                            </button>
+                          </nav>
+                        )}
                       </td>
                     </tr>
                   );
