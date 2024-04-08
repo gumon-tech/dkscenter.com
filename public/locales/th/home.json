@@ -34,5 +34,19 @@
   "course-detail-19": "เอกสารที่เกี่ยวข้อง",
   "schedule-course": "คอร์ส",
   "schedule-duration": "ระยะเวลา",
-  "schedule-schedule": "ตารางอบรม"
+  "schedule-schedule": "ตารางอบรม",
+  "ticket-modal-title": "คอร์ส",
+  "ticket-sales-discount-code": "ใส่โปรโมชันโค้ด",
+  "ticket-sales-apply": "ใช้โค้ด",
+  "ticket-card-available": "คงเหลือ",
+  "ticket-card-available-until": "เริ่มขาย",
+  "ticket-card-available-on": "ขายจนถึง",
+  "ticket-card-sold-out": "ขายหมดแล้ว",
+  "ticket-card-discount-on": "ใช้ส่วนลด",
+  "ticket-cart-cart-details": "รายละเอียดตะกร้า",
+  "ticket-cart-subtotal": "ยอดรวมสินค้า",
+  "ticket-cart-discount": "ส่วนลด",
+  "ticket-cart-total": "ยอดรวมทั้งสิ้น",
+  "ticket-cart-checkout": "ชำระเงิน"
+
 }

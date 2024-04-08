@@ -34,5 +34,19 @@
   "course-detail-19": "DOCUMENT",
   "schedule-course": "Course",
   "schedule-duration": "Duration",
-  "schedule-schedule": "Schedule"
+  "schedule-schedule": "Schedule",
+  "ticket-modal-title": "Ticket",
+  "ticket-sales-discount-code": "Enter discount code",
+  "ticket-sales-apply": "Apply",
+  "ticket-card-available": "Available",
+  "ticket-card-available-until": "Available until",
+  "ticket-card-available-on": "Available on",
+  "ticket-card-sold-out": "SOLD OUT",
+  "ticket-card-discount-on": "Discount from",
+  "ticket-cart-cart-details": "Cart Details",
+  "ticket-cart-subtotal": "Subtotal",
+  "ticket-cart-discount": "Discount",
+  "ticket-cart-total": "Total",
+  "ticket-cart-checkout": "Checkout"
+
 }
