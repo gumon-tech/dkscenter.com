@@ -201,13 +201,15 @@ export default function EmailTicketSale({
         )}
 
         {showOTPForm && isLoading && (
-          <div className="flex justify-center items-center h-screen">
-            <ReactLoading
-              type="spinningBubbles"
-              color={"#049ee8"}
-              height={100} // ปรับความสูง
-              width={100} // ปรับความกว้าง
-            />
+          <div className="max-w-md mx-auto mt-8">
+            <div className="flex justify-center items-center h-screen">
+              <ReactLoading
+                type="spinningBubbles"
+                color={"#049ee8"}
+                height={100} // ปรับความสูง
+                width={100} // ปรับความกว้าง
+              />
+            </div>
           </div>
         )}
       </div>

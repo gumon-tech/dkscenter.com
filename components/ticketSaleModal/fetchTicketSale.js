@@ -51,12 +51,12 @@ export default function FetchTicketSale({
 
   if (isLoading)
     return (
-      <div className="flex justify-center items-center h-screen">
+      <div className="grid justify-center content-center items-center h-max">
         <ReactLoading
           type="spinningBubbles"
           color={"#049ee8"}
-          height={100} // ปรับความสูง
-          width={100} // ปรับความกว้าง
+          height={200} // ปรับความสูง
+          width={200} // ปรับความกว้าง
         />
       </div>
     );

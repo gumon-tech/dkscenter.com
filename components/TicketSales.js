@@ -98,7 +98,7 @@ const TicketCard = ({
           </>
         )}
         {timeSaleType == "isAfterSales" && (
-          <span className="text-red sold-out-text">ขายหมดแล้ว</span>
+          <span className="text-red-500">ขายหมดแล้ว</span>
         )}
       </div>
       <p>Available: {ticket.remaining || ticket.available || 0}</p>
@@ -250,7 +250,7 @@ const TicketSales = ({
   };
 
   return (
-    <div className="container mx-auto flex flex-col md:flex-row">
+    <div className="container mx-auto flex flex-col md:flex-row mt-8">
       <div className="md:w-3/4 mr-4 mb-4 md:mb-0">
         {tickets.map((ticket) => (
           <TicketCard
@@ -269,7 +269,7 @@ const TicketSales = ({
               type="text"
               name="discountCode"
               id="discountCode"
-              className="focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+              className="focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md px-4 py-2 shadow-md"
               placeholder="Enter discount code"
               value={temDiscountCode}
               onChange={handleDiscountCodeChange}
