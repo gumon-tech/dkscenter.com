@@ -109,7 +109,7 @@ export default function CheckoutTicketSale({
     );
 
   return (
-    <div className="p-8">
+    <div className="pb-8">
       <p className="text-left text-gray-600 mb-2">
         ReserveId: {reserveId}
         <br />
@@ -122,7 +122,7 @@ export default function CheckoutTicketSale({
             className="bg-white shadow-md rounded p-4 mb-8 border border-gray-200"
           >
             <h2 className="text-lg font-semibold mb-2">Contact {index + 1}</h2>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <input
                 type="text"
                 placeholder="First Name"
@@ -130,7 +130,7 @@ export default function CheckoutTicketSale({
                 name={`firstName_${index}`}
                 value={contacts[index]?.firstName || ""}
                 onChange={(event) => handleInputFirstName(index, event)}
-                className="border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500"
+                className="border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500 mb-4 md:mb-0"
                 required
               />
               <input
@@ -140,7 +140,7 @@ export default function CheckoutTicketSale({
                 name={`lastName_${index}`}
                 value={contacts[index]?.lastName || ""}
                 onChange={(event) => handleInputLastName(index, event)}
-                className="border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500"
+                className="border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500 mb-4 md:mb-0"
                 required
               />
               <input
@@ -150,7 +150,7 @@ export default function CheckoutTicketSale({
                 name={`email_${index}`}
                 value={contacts[index]?.email || ""}
                 onChange={(event) => handleInputEmail(index, event)}
-                className="border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500"
+                className="border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500 mb-4 md:mb-0" 
                 required
               />
               <input
@@ -160,7 +160,7 @@ export default function CheckoutTicketSale({
                 name={`phoneNumber_${index}`}
                 value={contacts[index]?.phoneNumber || ""}
                 onChange={(event) => handleInputPhoneNumber(index, event)}
-                className="border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500"
+                className="border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500 mb-4 md:mb-0" 
                 required
               />
             </div>
