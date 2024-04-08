@@ -20,7 +20,7 @@ export default function CheckoutTicketSale({
   setManageState,
 }) {
   const router = useRouter();
-
+  const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const initContacts = [];
@@ -64,11 +64,8 @@ export default function CheckoutTicketSale({
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(contacts);
-    // ส่งข้อมูลติดต่อไปยังเซิร์ฟเวอร์หรือทำการประมวลผลต่อไป
-
     setIsLoading(true);
-
+    setError(null);
     try {
       const response = await refreshEmailToken({
         refreshToken: refreshToken,
@@ -82,16 +79,22 @@ export default function CheckoutTicketSale({
           reserveId: reserveId,
           attendees: contacts,
         });
+        setError(null);
 
-        console.log("ticketsCheckout data", response);
         const paymentUrl = response.paymentUrl;
         router.replace(paymentUrl);
       } catch (error) {
         console.error("Error ticketsReserve :", error);
+        setError(error);
+        setIsLoading(false);
+        alert(error?.response?.data?.message);
+
         // ทำการจัดการข้อผิดพลาดตามที่คุณต้องการ
       }
     } catch (error) {
       console.error("Error refreshEmailToken :", error);
+      setError(error);
+      alert(error?.response?.data?.message);
     }
     setIsLoading(false);
   };
@@ -109,70 +112,93 @@ export default function CheckoutTicketSale({
     );
 
   return (
-    <div className="pb-8">
-      <p className="text-left text-gray-600 mb-2">
-        ReserveId: {reserveId}
-        <br />
-        Expire At: <Countdown date={reserveExpire} />
-      </p>
-      <form onSubmit={handleSubmit}>
-        {contacts.map((contact, index) => (
-          <div
-            key={index}
-            className="bg-white shadow-md rounded p-4 mb-8 border border-gray-200"
-          >
-            <h2 className="text-lg font-semibold mb-2">Contact {index + 1}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input
-                type="text"
-                placeholder="First Name"
-                id={`firstName_${index}`}
-                name={`firstName_${index}`}
-                value={contacts[index]?.firstName || ""}
-                onChange={(event) => handleInputFirstName(index, event)}
-                className="border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500 mb-4 md:mb-0"
-                required
-              />
-              <input
-                type="text"
-                placeholder="Last Name"
-                id={`lastName_${index}`}
-                name={`lastName_${index}`}
-                value={contacts[index]?.lastName || ""}
-                onChange={(event) => handleInputLastName(index, event)}
-                className="border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500 mb-4 md:mb-0"
-                required
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                id={`email_${index}`}
-                name={`email_${index}`}
-                value={contacts[index]?.email || ""}
-                onChange={(event) => handleInputEmail(index, event)}
-                className="border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500 mb-4 md:mb-0" 
-                required
-              />
-              <input
-                type="tel"
-                placeholder="Phone Number"
-                id={`phoneNumber_${index}`}
-                name={`phoneNumber_${index}`}
-                value={contacts[index]?.phoneNumber || ""}
-                onChange={(event) => handleInputPhoneNumber(index, event)}
-                className="border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500 mb-4 md:mb-0" 
-                required
-              />
+    <>
+      {error && (
+        <div className="error text-red-500">
+          <p>error message: {JSON.stringify(error?.message)}</p>
+          <p>error name: {JSON.stringify(error?.name)}</p>
+          <p>error code: {JSON.stringify(error?.code)}</p>
+          <p>
+            error response data code:
+            {JSON.stringify(error?.response?.data?.code)}
+          </p>
+          <p>
+            error response data message:
+            {JSON.stringify(error?.response?.data?.message)}
+          </p>
+          <p>
+            error response data errors:
+            {JSON.stringify(error?.response?.data?.errors)}
+          </p>
+        </div>
+      )}
+      <div className="pb-8">
+        <p className="text-left text-gray-600 mb-2">
+          ReserveId: {reserveId}
+          <br />
+          Expire At: <Countdown date={reserveExpire} />
+        </p>
+        <form onSubmit={handleSubmit}>
+          {contacts.map((contact, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-md rounded p-4 mb-8 border border-gray-200"
+            >
+              <h2 className="text-lg font-semibold mb-2">
+                Contact {index + 1}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  id={`firstName_${index}`}
+                  name={`firstName_${index}`}
+                  value={contacts[index]?.firstName || ""}
+                  onChange={(event) => handleInputFirstName(index, event)}
+                  className="border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500 mb-4 md:mb-0"
+                  required
+                />
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  id={`lastName_${index}`}
+                  name={`lastName_${index}`}
+                  value={contacts[index]?.lastName || ""}
+                  onChange={(event) => handleInputLastName(index, event)}
+                  className="border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500 mb-4 md:mb-0"
+                  required
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  id={`email_${index}`}
+                  name={`email_${index}`}
+                  value={contacts[index]?.email || ""}
+                  onChange={(event) => handleInputEmail(index, event)}
+                  className="border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500 mb-4 md:mb-0"
+                  required
+                />
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
+                  id={`phoneNumber_${index}`}
+                  name={`phoneNumber_${index}`}
+                  value={contacts[index]?.phoneNumber || ""}
+                  onChange={(event) => handleInputPhoneNumber(index, event)}
+                  className="border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500 mb-4 md:mb-0"
+                  required
+                />
+              </div>
             </div>
-          </div>
-        ))}
-        <button
-          type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 w-full transition duration-300 ease-in-out"
-        >
-          Submit
-        </button>
-      </form>
-    </div>
+          ))}
+          <button
+            type="submit"
+            className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 w-full transition duration-300 ease-in-out"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </>
   );
 }
