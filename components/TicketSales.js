@@ -2,16 +2,61 @@ import React, { useState, useEffect } from "react";
 import dayjs from "dayjs";
 
 const TicketCard = ({
+  i18next,
   ticket,
   onQuantityChange,
   discountDetail,
   cartItems,
 }) => {
+  const { t, i18n } = i18next;
   const salesStartTime = new Date(ticket.salesStart);
   const currentTime = new Date();
   const salesEndTime = new Date(ticket.salesEnd);
 
   const [quantity, setQuantity] = useState(0);
+
+  let timeSaleType = "isBeforeSales";
+  if (currentTime < salesStartTime) {
+    timeSaleType = "isBeforeSales";
+  }
+  if (salesStartTime <= currentTime && currentTime <= salesEndTime) {
+    timeSaleType = "isInSales";
+  }
+  if (salesEndTime < currentTime) {
+    timeSaleType = "isAfterSales";
+  }
+
+  let availableText =
+    t("ticket-card-available") + ":" + (ticket.remaining || 0);
+  if (timeSaleType == "isAfterSales") availableText = " ";
+
+  let availableFromText = "";
+  if (timeSaleType === "isBeforeSales") {
+    const localizedTime = salesStartTime.toLocaleDateString("th-TH", {
+      dateStyle: "medium",
+    });
+    availableFromText = t("ticket-card-available-until") + ": " + localizedTime;
+  }
+  if (timeSaleType === "isInSales") {
+    const localizedTime = salesEndTime.toLocaleDateString("th-TH", {
+      dateStyle: "medium",
+    });
+    availableFromText = t("ticket-card-available-on") + ": " + localizedTime;
+  }
+  if (timeSaleType === "isAfterSales") {
+    availableFromText = "";
+  }
+
+  useEffect(() => {
+    // ตรวจสอบว่า ticketId ของการ์ดปัจจุบันมีอยู่ในตะกร้าหรือไม่
+    const isInCart = cartItems.some(
+      (item) => item.ticketId === ticket.ticketId
+    );
+    // ถ้า ticketId ของการ์ดปัจจุบันไม่อยู่ในตะกร้า ให้กำหนดจำนวนเป็น 0
+    if (!isInCart) {
+      setQuantity(0);
+    }
+  }, [cartItems, ticket.ticketId]); // ทำการเรียกใช้ effect เมื่อ cartItems หรือ ticketId ของการ์ดปัจจุบันเปลี่ยนแปลง
 
   const handleIncrease = () => {
     if (quantity < ticket.available - ticket.reserved) {
@@ -26,31 +71,6 @@ const TicketCard = ({
       onQuantityChange(ticket.ticketId, quantity - 1, ticket);
     }
   };
-
-  const localizedSalesStart = salesStartTime.toLocaleDateString("th-TH", {
-    dateStyle: "medium",
-  });
-
-  let timeSaleType = "isBeforeSales";
-  if (currentTime < salesStartTime) {
-    timeSaleType = "isBeforeSales";
-  }
-  if (salesStartTime <= currentTime && currentTime <= salesEndTime) {
-    timeSaleType = "isInSales";
-  }
-  if (salesEndTime < currentTime) {
-    timeSaleType = "isAfterSales";
-  }
-
-  useEffect(() => {
-    // ตรวจสอบว่า ticketId ของการ์ดปัจจุบันมีอยู่ในตะกร้าหรือไม่
-    const isInCart = cartItems.some((item) => item.ticketId === ticket.ticketId);
-    // ถ้า ticketId ของการ์ดปัจจุบันไม่อยู่ในตะกร้า ให้กำหนดจำนวนเป็น 0
-    if (!isInCart) {
-      setQuantity(0);
-    }
-  }, [cartItems, ticket.ticketId]); // ทำการเรียกใช้ effect เมื่อ cartItems หรือ ticketId ของการ์ดปัจจุบันเปลี่ยนแปลง
-
 
   return (
     <div className="border border-gray-300 rounded p-4 mb-4 relative">
@@ -98,28 +118,30 @@ const TicketCard = ({
           </>
         )}
         {timeSaleType == "isAfterSales" && (
-          <span className="text-red-500">ขายหมดแล้ว</span>
+          <span className="text-red-500">{t("ticket-card-sold-out")}</span>
         )}
       </div>
-      <p>Available: {ticket.remaining || ticket.available || 0}</p>
-      <p>Available from: {localizedSalesStart}</p>
+      <p>{availableText}</p>
+      <p>{availableFromText}</p>
       {discountDetail?.discountCode && (
-        <p>Discount from: {discountDetail.discountCode}</p>
+        <p>{t("ticket-card-discount-on")}: {discountDetail.discountCode}</p>
       )}
     </div>
   );
 };
 
 const CartDetails = ({
+  i18next,
   cartItems,
   setDiscountCode,
   discountDetail,
   setTicketId,
   setTicketAmount,
-  setManageState
+  setManageState,
 }) => {
-  const isCartEmpty = cartItems.length === 0;
+  const { t, i18n } = i18next;
 
+  const isCartEmpty = cartItems.length === 0;
 
   const calculateSubtotal = () => {
     let subtotal = 0;
@@ -150,10 +172,11 @@ const CartDetails = ({
     setManageState(1);
   };
 
-
   return (
     <div className="border border-gray-300 rounded p-4">
-      <h2 className="text-lg font-semibold mb-4">Cart Details</h2>
+      <h2 className="text-lg font-semibold mb-4">
+        {t("ticket-cart-cart-details")}
+      </h2>
       {cartItems.map((item) => (
         <div key={item.ticketId} className="cart-item mb-2">
           <p>{item.name}</p>
@@ -169,14 +192,14 @@ const CartDetails = ({
       <hr />
       <br />
       <p>
-        Subtotal x{" "}
+        {t("ticket-cart-subtotal")} x{" "}
         {calculateSubtotal().toLocaleString("th-TH", {
           style: "currency",
           currency: "THB",
         })}
       </p>
       <p>
-        Discount x{" "}
+      {t("ticket-cart-discount")} x{" "}
         {calculateDiscount().toLocaleString("th-TH", {
           style: "currency",
           currency: "THB",
@@ -184,7 +207,7 @@ const CartDetails = ({
       </p>
       <hr />
       <p>
-        Total:{" "}
+      {t("ticket-cart-total")} :{" "}
         {calculateTotal().toLocaleString("th-TH", {
           style: "currency",
           currency: "THB",
@@ -197,7 +220,7 @@ const CartDetails = ({
         onClick={checkoutCart}
         disabled={isCartEmpty}
       >
-        Checkout
+        {t("ticket-cart-checkout")}
       </button>
     </div>
   );
@@ -213,8 +236,9 @@ const TicketSales = ({
   ticketAmount,
   setTicketAmount,
   discountDetail,
-  setManageState
+  setManageState,
 }) => {
+  const { t, i18n } = i18next;
   const [cartItems, setCartItems] = useState([]);
   const [temDiscountCode, setTemDiscountCode] = useState(discountCode);
 
@@ -225,7 +249,7 @@ const TicketSales = ({
     if (existingItemIndex !== -1) {
       let updatedCartItems = [...cartItems];
       updatedCartItems[existingItemIndex].quantity = newQuantity;
-      if(newQuantity === 0){
+      if (newQuantity === 0) {
         updatedCartItems = [];
       }
       setCartItems(updatedCartItems);
@@ -246,7 +270,7 @@ const TicketSales = ({
   };
 
   const applyDiscountCode = () => {
-    setDiscountCode(temDiscountCode); // เมื่อยืนยัน discount code เรียบร้อยแล้วให้ล้างค่า discount code ออก
+    setDiscountCode(temDiscountCode);
   };
 
   return (
@@ -254,6 +278,7 @@ const TicketSales = ({
       <div className="md:w-3/4 mr-4 mb-4 md:mb-0">
         {tickets.map((ticket) => (
           <TicketCard
+            i18next={i18next}
             key={ticket.ticketId}
             ticket={ticket}
             onQuantityChange={handleQuantityChange}
@@ -270,7 +295,7 @@ const TicketSales = ({
               name="discountCode"
               id="discountCode"
               className="focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md px-4 py-2 shadow-md"
-              placeholder="Enter discount code"
+              placeholder={t("ticket-sales-discount-code")}
               value={temDiscountCode}
               onChange={handleDiscountCodeChange}
             />
@@ -279,12 +304,13 @@ const TicketSales = ({
             className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 ml-4"
             onClick={applyDiscountCode}
           >
-            Apply
+            {t("ticket-sales-apply")}
           </button>
         </div>
 
         <hr />
         <CartDetails
+          i18next={i18next}
           cartItems={cartItems}
           discountCode={discountCode}
           setDiscountCode={setDiscountCode}
