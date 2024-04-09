@@ -75,7 +75,7 @@ export default function FetchTicketSale({
         discountDetail={discountDetail}
         setManageState={setManageState}
       />
-      {error && (
+      {/* {error && false && (
         <div className="error text-red-500">
           <p>error message: {JSON.stringify(error.message)}</p>
           <p>error name: {JSON.stringify(error.name)}</p>
@@ -85,7 +85,7 @@ export default function FetchTicketSale({
           <p>error config: {JSON.stringify(error.config)}</p>
           <p>error response: {JSON.stringify(error.response)}</p>
         </div>
-      )}
+      )} */}
     </>
   );
 }
