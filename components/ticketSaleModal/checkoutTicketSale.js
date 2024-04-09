@@ -88,14 +88,14 @@ export default function CheckoutTicketSale({
         console.error("Error ticketsReserve :", error);
         setError(error);
         setIsLoading(false);
-        alert(error?.response?.data?.message);
+        // alert(error?.response?.data?.message);
 
         // ทำการจัดการข้อผิดพลาดตามที่คุณต้องการ
       }
     } catch (error) {
       console.error("Error refreshEmailToken :", error);
       setError(error);
-      alert(error?.response?.data?.message);
+      // alert(error?.response?.data?.message);
     }
     setIsLoading(false);
   };
@@ -116,27 +116,19 @@ export default function CheckoutTicketSale({
     <>
       {error && (
         <div className="error text-red-500">
-          <p>error message: {JSON.stringify(error?.message)}</p>
-          <p>error name: {JSON.stringify(error?.name)}</p>
-          <p>error code: {JSON.stringify(error?.code)}</p>
-          <p>
-            error response data code:
-            {JSON.stringify(error?.response?.data?.code)}
-          </p>
-          <p>
-            error response data message:
-            {JSON.stringify(error?.response?.data?.message)}
-          </p>
-          <p>
-            error response data errors:
-            {JSON.stringify(error?.response?.data?.errors)}
-          </p>
+          {error?.response?.data?.errors &&
+            error?.response?.data?.errors.map((error, index) => (
+              <div key={"error_" + index}>
+                <p>
+                  {error.value} : {error.msg}
+                </p>
+              </div>
+            ))}
+          <br />
         </div>
       )}
       <div className="pb-8">
         <p className="text-left text-gray-600 mb-2">
-          ReserveId: {reserveId}
-          <br />
           {t("ticket-checkout-expire")}: <Countdown date={reserveExpire} />
         </p>
         <form onSubmit={handleSubmit}>
@@ -188,6 +180,7 @@ export default function CheckoutTicketSale({
                   onChange={(event) => handleInputPhoneNumber(index, event)}
                   className="border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500 mb-4 md:mb-0"
                   required
+                  maxLength={10}
                 />
               </div>
             </div>
