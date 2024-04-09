@@ -53,7 +53,7 @@ export default function EmailTicketSale({
       setError(error);
       setIsLoading(false);
       if ("EMAIL_IS_INVALID" === error?.response?.data?.code) {
-        alert(t("error-email_is_invalid"));
+        alert(t("error-email-is-invalid"));
       } else {
         alert(error?.response?.data?.message);
       }
@@ -102,7 +102,7 @@ export default function EmailTicketSale({
       console.error("Error sending verifyEmailToken :", error);
       setError(error);
       if ("EMAIL_REF_OTP_INVALID" === error?.response?.data?.code) {
-        alert(t("error-otp_is_invalid"));
+        alert(t("error-otp-is-invalid"));
       } else {
         alert(error?.response?.data?.message);
       }
@@ -123,6 +123,11 @@ export default function EmailTicketSale({
     } catch (error) {
       console.error("Error sending verification email:", error);
       setError(error);
+      if ("EMAIL_REF_OTP_INVALID" === error?.response?.data?.code) {
+        alert(t("error-otp-is-invalid"));
+      } else {
+        alert(error?.response?.data?.message);
+      }
       // ทำการจัดการข้อผิดพลาดตามที่คุณต้องการ
     }
     setShowOTPForm(true); // แสดงฟอร์มใส่ OTP หลังยืนยันอีเมล
@@ -232,7 +237,7 @@ export default function EmailTicketSale({
         )}
       </div>
 
-      {error && (
+      {/* {error && (
         <div className="error text-red-500">
           <p>error message: {JSON.stringify(error?.message)}</p>
           <p>error name: {JSON.stringify(error?.name)}</p>
@@ -246,7 +251,7 @@ export default function EmailTicketSale({
             {JSON.stringify(error?.response?.data?.message)}
           </p>
         </div>
-      )}
+      )} */}
     </>
   );
 }
