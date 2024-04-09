@@ -74,8 +74,9 @@ const TicketCard = ({
 
   return (
     <div className="border border-gray-300 rounded p-4 mb-4 relative">
-      <h3 className="text-xl font-semibold mb-2">{ticket.name}</h3>
-      <div className="absolute top-4 right-4 flex items-center">
+      <div className="flex flex-wrap">
+      <h3 className="text-xl font-semibold mb-2 mr-auto">{ticket.name}</h3>
+      <div className="flex flex-nowrap">
         {ticket.discountedPrice ? (
           <p className="text-gray-500 line-through mr-2">
             {ticket.price.toLocaleString("th-TH", {
@@ -121,11 +122,16 @@ const TicketCard = ({
           <span className="text-red-500">{t("ticket-card-sold-out")}</span>
         )}
       </div>
-      <p>{availableText}</p>
-      <p>{availableFromText}</p>
-      {discountDetail?.discountCode && (
-        <p>{t("ticket-card-discount-on")}: {discountDetail.discountCode}</p>
-      )}
+      </div>
+      <div>
+        <p>{availableText}</p>
+        <p>{availableFromText}</p>
+        {discountDetail?.discountCode && (
+          <p>
+            {t("ticket-card-discount-on")}: {discountDetail.discountCode}
+          </p>
+        )}
+      </div>
     </div>
   );
 };
@@ -199,7 +205,7 @@ const CartDetails = ({
         })}
       </p>
       <p>
-      {t("ticket-cart-discount")} x{" "}
+        {t("ticket-cart-discount")} x{" "}
         {calculateDiscount().toLocaleString("th-TH", {
           style: "currency",
           currency: "THB",
@@ -207,7 +213,7 @@ const CartDetails = ({
       </p>
       <hr />
       <p>
-      {t("ticket-cart-total")} :{" "}
+        {t("ticket-cart-total")} :{" "}
         {calculateTotal().toLocaleString("th-TH", {
           style: "currency",
           currency: "THB",
