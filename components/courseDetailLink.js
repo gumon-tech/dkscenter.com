@@ -346,7 +346,7 @@ const CourseDetailLink = ({
         )}
       </div>
 
-      <Modal isOpen={modalOpen} onClose={closeModal} title={t("ticket-modal-title")}>
+      <Modal isOpen={modalOpen} onClose={closeModal} title={t("ticket-modal-title")+ " "+courseData.title}>
         <TicketSaleModalManage
           courseKey={courseData.key}
           scheduleKey={scheduleKey}
