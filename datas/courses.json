@@ -495,7 +495,7 @@
       "prerequisites": [
         "ผู้เข้าร่วมคอร์สควรมีความรู้พื้นฐานเกี่ยวกับการเขียนโปรแกรมด้วยภาษา JavaScript",
         "ผู้เข้าร่วมคอร์สควรความรู้พื้นฐานเกี่ยวกับการพัฒนาเว็บแอปพลิเคชัน",
-        "ผู้เข้าร่วมคอร์สควรมีความรู้พื้นฐานเกี่ยวกับ HTML, CSS, และ JavaScript เพื่อให้เข้าใจเนื้อหาได้ดียิ่งขึ้น",
+        "ผู้เข้าร่วมคอร์สควรมีความรู้พื้นฐานเกี่ยวกับ HTML, CSS และ JavaScript เพื่อให้เข้าใจเนื้อหาได้ดียิ่งขึ้น",
         "การเตรียมโปรแกรมพัฒนาที่จำเป็น เช่น Node.js และ npm (Node Package Manager) เพื่อใช้ในการสร้างและจัดการโปรเจค React",
         "การมีความสามารถในการใช้งาน Command Line Interface (CLI) เพื่อการสร้างโปรเจค React และการจัดการกับ dependencies ต่าง ๆ โดยใช้ npm",
         "คอมพิวเตอร์ที่มีเครื่องมือสำหรับการเขียนโปรแกรมเช่นโปรแกรม Text Editor หรือ Integrated Development Environment (IDE) ที่เหมาะสมสำหรับการพัฒนา React",
@@ -792,7 +792,7 @@
       "prerequisites": [
         "Participants in the course should have basic knowledge of programming with JavaScript.",
         "Participants in the course should also have fundamental knowledge of web application development.",
-        "Participants should have a basic understanding of HTML, CSS, and JavaScript to better grasp the content.",
+        "Participants should have a basic understanding of HTML, CSS and JavaScript to better grasp the content.",
         "Preparation of necessary development tools such as Node.js and npm (Node Package Manager) for building and managing React projects.",
         "Ability to use Command Line Interface (CLI) for creating React projects and managing dependencies using npm.",
         "A computer equipped with programming tools such as a Text Editor or Integrated Development Environment (IDE) suitable for React development.",
@@ -1971,27 +1971,27 @@
       ]
     }
   },
-  "2024-011-code-craft": {
+  "2024-011-code-craft-tntro-to-web-development-with-html-css-js": {
     "th": {
       "lastUpdate": "2024-04-09T09:00:00+0700",
-      "key": "2024-011-code-craft",
+      "key": "2024-011-code-craft-tntro-to-web-development-with-html-css-js",
       "isActive": true,
       "imageUrl": "/course/2024-011/poster/cover-image2-01-01.jpg",
-      "detailUrl": "https://dkscenter.com/course/2024-011-code-craft",
-      "title": "CodeCraft: Intro to Web Development with HTML, CSS, & JS",
+      "detailUrl": "https://dkscenter.com/course/2024-011-code-craft-tntro-to-web-development-with-html-css-js",
+      "title": "CodeCraft: Intro to Web Development with HTML, CSS & JS",
       "code": "2024-011",
       "duration": "2 วัน, 09:00 - 17:00",
-      "overview": "คอร์ส CodeCraft: บทนำสู่การพัฒนาเว็บด้วย HTML, CSS, & JS นำเสนอการเรียนรู้พื้นฐานเกี่ยวกับการสร้างเว็บไซต์โดยใช้ HTML, CSS, และ JavaScript ผ่านการเรียนรู้ทั้งหมด 2 วัน ผู้เรียนจะได้เรียนรู้เกี่ยวกับพื้นฐานการพัฒนาเว็บไซต์รวมถึงโครงสร้าง HTML, การสร้างสไตล์ด้วย CSS, และการสร้างประสบการณ์การใช้งานที่มีประสิทธิภาพผ่านการเรียนรู้ทฤษฎีและปฏิบัติในห้องเรียน",
+      "overview": "คอร์ส CodeCraft: บทนำสู่การพัฒนาเว็บด้วย HTML, CSS & JS นำเสนอการเรียนรู้พื้นฐานเกี่ยวกับการสร้างเว็บไซต์โดยใช้ HTML CSS และ JavaScript ผ่านการเรียนรู้ทั้งหมด 2 วัน ผู้เรียนจะได้เรียนรู้เกี่ยวกับพื้นฐานการพัฒนาเว็บไซต์รวมถึงโครงสร้าง HTML, การสร้างสไตล์ด้วย CSS และการสร้างประสบการณ์การใช้งานที่มีประสิทธิภาพผ่านการเรียนรู้ทฤษฎีและปฏิบัติในห้องเรียน",
       "objectives": [
-        "เข้าใจโครงสร้างพื้นฐานและส่วนประกอบของการพัฒนาเว็บไซต์รวมถึง HTML, CSS, และ JavaScript",
+        "เข้าใจโครงสร้างพื้นฐานและส่วนประกอบของการพัฒนาเว็บไซต์รวมถึง HTML CSS และ JavaScript",
         "เรียนรู้วิธีการสร้างเอกสาร HTML ที่มีโครงสร้างที่ดีและการปรับใช้สไตล์ CSS เพื่อเพิ่มการนำเสนอที่สามารถเห็นได้ของเนื้อหาเว็บ",
         "พัฒนาความคุ้นเคยในไวยากรณ์ของ JavaScript รวมถึงตัวแปร, ประเภทข้อมูล, โครงสร้างควบคุม, และฟังก์ชัน",
         "พัฒนาทักษะในการจัดการกับโมเดลวัตถุเอกสาร (DOM) เพื่ออัปเดตเนื้อหาเว็บไซต์แบบไดนามิกและตอบสนองต่อการกระทำของผู้ใช้",
-        "รวมการใช้ HTML, CSS, และ JavaScript เข้าด้วยกันเพื่อสร้างเว็บไซต์แบบอินเทอร์แอคทีฟที่มีความหลากหลายและความสามารถในการเปลี่ยนแปลงได้"
+        "รวมการใช้ HTML, CSS และ JavaScript เข้าด้วยกันเพื่อสร้างเว็บไซต์แบบอินเทอร์แอคทีฟที่มีความหลากหลายและความสามารถในการเปลี่ยนแปลงได้"
       ],
       "whoShouldAttend": [
-        "บุคคลที่ใหม่เข้าสู่การพัฒนาเว็บและต้องการเรียนรู้พื้นฐานในการสร้างเว็บไซต์",
-        "ผู้เริ่มต้นที่มีความรู้พื้นฐานใน HTML, CSS, หรือ JavaScript แต่ต้องการเข้าใจลึกขึ้นและพัฒนาทักษะในการใช้งาน",
+        "บุคคลที่เริ่มต้นเข้าสู่การพัฒนาเว็บและต้องการเรียนรู้พื้นฐานในการสร้างเว็บไซต์",
+        "ผู้เริ่มต้นที่มีความรู้พื้นฐานใน HTML, CSS หรือ JavaScript แต่ต้องการเข้าใจลึกขึ้นและพัฒนาทักษะในการใช้งาน",
         "ผู้มีตำแหน่งงานที่ไม่ใช่ด้านเทคนิคที่ต้องการเข้าใจเนื้อหาพื้นฐานเกี่ยวกับการพัฒนาเว็บสำหรับการเติบโตอย่างรวดเร็วหรือความสนใจส่วนตัว",
         "นักเรียนและนักพัฒนาที่มีแผนที่จะเริ่มต้นด้านการพัฒนาเว็บและต้องการเริ่มต้นด้วยความรู้พื้นฐาน"
       ],
@@ -2002,16 +2002,16 @@
       ],
       "participantsWillReceive": [
         "เอกสารคู่มือการอบรม",
-        "ใบรับรองผ่านการอบรมหลักสูตร CodeCraft: Intro to Web Development with HTML, CSS, & JS",
+        "ใบรับรองผ่านการอบรมหลักสูตร CodeCraft: Intro to Web Development with HTML, CSS & JS",
         "การดูแลเอาใจใส่เป็นอย่างดีจากวิทยากรและทีมงาน Staff",
-        "สามารถเข้าร่วม CodeCraft: Intro to Web Development with HTML, CSS, & JS ซ้ำได้ไม่จำกัดจำนวนครั้ง (จำกัดสิทธิ์เข้าร่วมซ้ำ 5 ท่านต่อรอบการอบรม หากท่านต้องการเข้าร่วม Workshop ซ้ำ กรุณาติดต่อ Facebook Page, Line, Email หรือช่องทางอื่น ๆ เพื่อสำรองที่นั่ง)",
+        "สามารถเข้าร่วม CodeCraft: Intro to Web Development with HTML, CSS & JS ซ้ำได้ไม่จำกัดจำนวนครั้ง (จำกัดสิทธิ์เข้าร่วมซ้ำ 5 ท่านต่อรอบการอบรม หากท่านต้องการเข้าร่วม Workshop ซ้ำ กรุณาติดต่อ Facebook Page, Line, Email หรือช่องทางอื่น ๆ เพื่อสำรองที่นั่ง)",
         "หากท่านไม่สะดวกเข้าร่วมการอบรมในครั้งนี้ ท่านสามารถเลื่อนการเข้าร่วมอบรมได้ตามตารางการอบรม"
       ],
       "outline": [
         {
           "title": "Introduction to Web Development",
           "descriptions": [
-            "Overview of HTML, CSS, and JavaScript.",
+            "Overview of HTML, CSS and JavaScript.",
             "Importance of each in web development."
           ]
         },
@@ -2087,7 +2087,7 @@
         {
           "title": "Putting It All Together",
           "descriptions": [
-            "Integrating HTML, CSS, and JavaScript to create a fully functional web page.",
+            "Integrating HTML, CSS and JavaScript to create a fully functional web page.",
             "Refining the webpage design and functionality."
           ]
         },
@@ -2103,7 +2103,7 @@
       ],
       "publicSchedule": [
         {
-          "title": "CodeCraft: Intro to Web Development with HTML, CSS, & JS - 1/2564",
+          "title": "CodeCraft: Intro to Web Development with HTML, CSS & JS - 1/2564",
           "eventStart": "2024-04-27T09:00:00+0700",
           "eventEnd": "2024-04-28T17:00:00+0700",
           "saleStart": "2024-04-27T09:00:00+0700",
@@ -2115,35 +2115,35 @@
       ],
       "documents": [
         {
-          "title": "CodeCraft Intro to Web Development with HTML, CSS, & JS (English Version)",
-          "fileUrl": "/course/2024-011/document/CodeCraft-Intro-to-Web-Development-with-HTML-CSS-&-JS-EN.pdf"
+          "title": "CodeCraft Intro to Web Development with HTML, CSS & JS (English Version)",
+          "fileUrl": "/course/2024-011/document/CodeCraft-Intro-to-Web-Development-with-HTML-CSS-JS-EN.pdf"
         },
         {
-          "title": "CodeCraft Intro to Web Development with HTML, CSS, & JS (Thai Version)",
-          "fileUrl": "/course/2024-011/document/CodeCraft-Intro-to-Web-Development-with-HTML-CSS-&-JS-TH.pdf"
+          "title": "CodeCraft Intro to Web Development with HTML, CSS & JS (Thai Version)",
+          "fileUrl": "/course/2024-011/document/CodeCraft-Intro-to-Web-Development-with-HTML-CSS-JS-TH.pdf"
         }
       ]
     },
     "en": {
       "lastUpdate": "2024-04-09T09:00:00+0700",
-      "key": "2024-011-code-craft",
+      "key": "2024-011-code-craft-tntro-to-web-development-with-html-css-js",
       "isActive": true,
       "imageUrl": "/course/2024-011/poster/cover-image2-01-01.jpg",
-      "detailUrl": "https://dkscenter.com/course/2024-011-code-craft",
-      "title": "CodeCraft: Intro to Web Development with HTML, CSS, & JS",
+      "detailUrl": "https://dkscenter.com/course/2024-011-code-craft-tntro-to-web-development-with-html-css-js",
+      "title": "CodeCraft: Intro to Web Development with HTML, CSS & JS",
       "code": "2024-011",
       "duration": "2 Days, 09:00 - 17:00",
-      "overview": "The CodeCraft: Intro to Web Development with HTML, CSS, & JS course provides participants with a comprehensive introduction to building websites using HTML, CSS, and JavaScript. Over two days, participants will learn the fundamentals of web development, including HTML structure, CSS styling, and JavaScript interactivity. Through a combination of lectures and hands-on workshops, participants will gain practical skills in creating basic web pages and adding interactivity to enhance user experience.",
+      "overview": "The CodeCraft: Intro to Web Development with HTML, CSS & JS course provides participants with a comprehensive introduction to building websites using HTML, CSS and JavaScript. Over two days, participants will learn the fundamentals of web development, including HTML structure, CSS styling, and JavaScript interactivity. Through a combination of lectures and hands-on workshops, participants will gain practical skills in creating basic web pages and adding interactivity to enhance user experience.",
       "objectives": [
-        "Understand the basic structure and components of web development, including HTML, CSS, and JavaScript.",
+        "Understand the basic structure and components of web development, including HTML, CSS and JavaScript.",
         "Learn how to create well-structured HTML documents and apply CSS styles to enhance the visual presentation of web content.",
         "Gain proficiency in JavaScript syntax, including variables, data types, control structures, and functions.",
         "Develop skills in manipulating the Document Object Model (DOM) to dynamically update web page content and respond to user interactions.",
-        "Integrate HTML, CSS, and JavaScript to create interactive web pages with dynamic functionality."
+        "Integrate HTML, CSS and JavaScript to create interactive web pages with dynamic functionality."
       ],
       "whoShouldAttend": [
         "Individuals who are new to web development and want to learn the fundamentals of building websites.",
-        "Beginners who have some basic knowledge of HTML, CSS, or JavaScript but want to deepen their understanding and practical skills.",
+        "Beginners who have some basic knowledge of HTML, CSS or JavaScript but want to deepen their understanding and practical skills.",
         "Professionals in non-technical roles who want to gain a basic understanding of web development concepts for career advancement or personal interest.",
         "Students and aspiring developers who are considering a career in web development and want to start with foundational knowledge."
       ],
@@ -2154,16 +2154,16 @@
       ],
       "participantsWillReceive": [
         "Training manuals/documentation.",
-        "Certification upon completion of the CodeCraft: Intro to Web Development with HTML, CSS, & JS course.",
+        "Certification upon completion of the CodeCraft: Intro to Web Development with HTML, CSS & JS course.",
         "Excellent care and attention from instructors and staff.",
-        "Unlimited attendance to the CodeCraft: Intro to Web Development with HTML, CSS, & JS (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat).",
+        "Unlimited attendance to the CodeCraft: Intro to Web Development with HTML, CSS & JS (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat).",
         "If you are unable to attend the training session this time, you can reschedule your participation according to the training schedule."
       ],
       "outline": [
         {
           "title": "Introduction to Web Development",
           "descriptions": [
-            "Overview of HTML, CSS, and JavaScript.",
+            "Overview of HTML, CSS and JavaScript.",
             "Importance of each in web development."
           ]
         },
@@ -2239,7 +2239,7 @@
         {
           "title": "Putting It All Together",
           "descriptions": [
-            "Integrating HTML, CSS, and JavaScript to create a fully functional web page.",
+            "Integrating HTML, CSS and JavaScript to create a fully functional web page.",
             "Refining the webpage design and functionality."
           ]
         },
@@ -2255,7 +2255,7 @@
       ],
       "publicSchedule": [
         {
-          "title": "CodeCraft: Intro to Web Development with HTML, CSS, & JS - 1/2564",
+          "title": "CodeCraft: Intro to Web Development with HTML, CSS & JS - 1/2564",
           "eventStart": "2024-04-27T09:00:00+0700",
           "eventEnd": "2024-04-28T17:00:00+0700",
           "saleStart": "2024-04-27T09:00:00+0700",
@@ -2267,12 +2267,12 @@
       ],
       "documents": [
         {
-          "title": "CodeCraft Intro to Web Development with HTML, CSS, & JS (English Version)",
-          "fileUrl": "/course/2024-011/document/CodeCraft-Intro-to-Web-Development-with-HTML-CSS-&-JS-EN.pdf"
+          "title": "CodeCraft Intro to Web Development with HTML, CSS & JS (English Version)",
+          "fileUrl": "/course/2024-011/document/CodeCraft-Intro-to-Web-Development-with-HTML-CSS-JS-EN.pdf"
         },
         {
-          "title": "CodeCraft Intro to Web Development with HTML, CSS, & JS (Thai Version)",
-          "fileUrl": "/course/2024-011/document/CodeCraft-Intro-to-Web-Development-with-HTML-CSS-&-JS-TH.pdf"
+          "title": "CodeCraft Intro to Web Development with HTML, CSS & JS (Thai Version)",
+          "fileUrl": "/course/2024-011/document/CodeCraft-Intro-to-Web-Development-with-HTML-CSS-JS-TH.pdf"
         }
       ]
     }
