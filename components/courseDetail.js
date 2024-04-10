@@ -16,7 +16,7 @@ const CourseDetail = ({ courseData, i18next }) => {
       <Breadcrumb
         paths={[
           { title: "Training Course", path: "/course" },
-          { title: courseData.code, path: `/course/${courseData.code}` },
+          { title: courseData.code, path: `/course/${courseData.key}` },
         ]}
       />
       <h2 className="mt-3 max-w-2xl text-3xl font-bold leading-snug tracking-tight text-gray-800 lg:leading-tight lg:text-4xl dark:text-white">

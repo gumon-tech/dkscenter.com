@@ -14,7 +14,7 @@ export default function CourseList(props) {
   return (
     <Container>
       {props.breadcrumb && (
-        <Breadcrumb paths={[{ title: "Training Course", path: "course" }]} />
+        <Breadcrumb paths={[{ title: "Training Course", path: "/course" }]} />
       )}
       <h2 className="mt-3 max-w-2xl text-3xl font-bold leading-snug tracking-tight text-gray-800 lg:leading-tight lg:text-4xl dark:text-white">
         {t("course-list-1")}
