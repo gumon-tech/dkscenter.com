@@ -6,8 +6,6 @@ import { sendVerifyEmail } from "../../utils/sendVerifyEmail";
 import { verifyEmailToken } from "../../utils/verifyEmailToken";
 import { ticketsReserve } from "../../utils/ticketsReserve";
 
-const API_URL = process.env.API_URL;
-
 export default function EmailTicketSale({
   i18next,
   accessToken,

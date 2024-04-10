@@ -1,11 +1,11 @@
 import axios from "axios";
-
+import env from "/config.env.json"
 // ตรวจสอบว่าตัวแปร API_URL ได้ถูกกำหนดค่าหรือไม่
-if (!process.env.API_URL) {
+if (!env.apiUrl) {
   throw new Error("API_URL is not defined in environment variables.");
 }
 
-const API_URL = process.env.API_URL;
+const API_URL = env.apiUrl;
 
 export async function getOrders({ token }) {
   try {

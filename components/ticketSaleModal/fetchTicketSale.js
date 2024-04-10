@@ -4,8 +4,6 @@ import ReactLoading from "react-loading";
 import TicketSales from "../TicketSales";
 import { getTickets } from "../../utils/getTickets";
 
-const API_URL = process.env.API_URL;
-
 export default function FetchTicketSale({
   i18next,
   courseKey,

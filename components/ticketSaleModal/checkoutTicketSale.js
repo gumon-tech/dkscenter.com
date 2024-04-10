@@ -6,8 +6,6 @@ import { ticketsCheckout } from "../../utils/ticketsCheckout";
 import { useRouter } from "next/router";
 import { refreshEmailToken } from "../../utils/refreshEmailToken";
 
-const API_URL = process.env.API_URL;
-
 export default function CheckoutTicketSale({
   i18next,
   accessToken,
