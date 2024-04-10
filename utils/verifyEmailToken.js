@@ -1,4 +1,6 @@
 import axios from "axios";
+import { decodeJWT } from "./decodeJWT";
+import Cookies from 'js-cookie';
 
 // ตรวจสอบว่าตัวแปร API_URL ได้ถูกกำหนดค่าหรือไม่
 if (!process.env.API_URL) {
@@ -18,6 +20,13 @@ export async function verifyEmailToken({ id, email, ref, otp }) {
 
     // ตรวจสอบว่าการส่งอีเมล์เสร็จสมบูรณ์และไม่มีข้อผิดพลาดเกิดขึ้น
     if (response.status === 200) {
+      
+      const accessToken = response.data.accessToken;
+      const refreshToken = response.data.refreshToken;
+
+      Cookies.set('accessToken', accessToken, { expires: 7 }); // กำหนดเวลาในการหมดอายุของ Cookie
+      Cookies.set('refreshToken', refreshToken, { expires: 7 }); // กำหนดเวลาในการหมดอายุของ Cookie
+
       return response.data;
     } else {
       throw new Error("Failed to send verification email.");
