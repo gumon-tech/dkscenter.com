@@ -55,9 +55,6 @@ const fetchSuccessDetail = ({ orderId, i18next }) => {
   }, [orderId]);
 
   if (!orderId) {
-    alert('No Data');
-    router.replace("/");
-
     return (
       <Container>
         <Breadcrumb paths={[{ title: "Training Course", path: "/course" }]} />

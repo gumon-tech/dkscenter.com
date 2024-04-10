@@ -47,6 +47,17 @@ const SuccessDetail = ({ orderData, i18next }) => {
           <p>Detail Link: <a className="text-blue-500" href={orderData?.ticketDetail?.detailLink}>{orderData?.ticketDetail?.detailLink}</a></p>
           <p>Ticket Type: {orderData?.ticketDetail?.name}</p>
           <p>Ticket Price: {orderData?.ticketDetail?.price} บาท</p>
+          <br/>
+
+          {/* เพิ่มข้อมูล discountDetail ตามต้องการ */}
+          {orderData?.discountDetail && (
+            <div>
+              <h2 className="text-xl font-semibold mb-2">รายละเอียดส่วนลด</h2>
+              <p>Discount Code: {orderData?.discountDetail?.discountCode}</p>
+              <p>Discount Type: {orderData?.discountDetail?.discountType}</p>
+              <p>Discount Value: {orderData?.discountDetail?.discountValue}</p>
+            </div>
+          )}
         </div>
       </div>
     </div>

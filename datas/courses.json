@@ -2279,7 +2279,8 @@
           "saleEnd": "2024-04-26T17:00:00+0700",
           "isActive": true,
           "isSoldOut": false,
-          "location": "Online"
+          "location": "Online",
+          "scheduleKey": "2024-1"
         }
       ],
       "documents": [
