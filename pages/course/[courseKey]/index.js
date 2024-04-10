@@ -1,5 +1,5 @@
 import { Redirect } from "/lib/redirect";
-import courses from "../../datas/courses.json";
+import courses from "/datas/courses.json";
 
 export const getStaticPaths = () => {
   const courseKeyList = Object.keys(courses);
