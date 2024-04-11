@@ -73,19 +73,19 @@ const TicketCard = ({
   };
 
   return (
-    <div className="border border-gray-300 rounded p-4 mb-4 relative">
+    <div className="border border-gray-300 rounded p-4 mb-4 relative dark:border-gray-500 dark:bg-gray-700">
       <div className="flex flex-wrap">
         <h3 className="text-xl font-semibold mb-2 mr-auto">{ticket.name}</h3>
-        <div className="flex flex-nowrap">
+        <div className="flex flex-nowrap ">
           {ticket.discountedPrice || ticket.discountedPrice === 0 ? (
-            <p className="text-gray-500 line-through mr-2">
+            <p className="text-gray-500 line-through mr-2 dark:text-gray-100">
               {ticket.price.toLocaleString("th-TH", {
                 style: "currency",
                 currency: "THB",
               })}
             </p>
           ) : (
-            <p className="text-lg text-gray-800 mb-2 mx-4">
+            <p className="text-lg text-gray-800 mb-2 mx-4 dark:text-gray-100">
               {ticket.price.toLocaleString("th-TH", {
                 style: "currency",
                 currency: "THB",
@@ -93,7 +93,7 @@ const TicketCard = ({
             </p>
           )}
           {(ticket.discountedPrice || ticket.discountedPrice === 0) && (
-            <p className="text-lg text-indigo-600 font-semibold mb-2 mx-4">
+            <p className="text-lg text-indigo-600 font-semibold mb-2 mx-4 dark:text-gray-100">
               {ticket.discountedPrice.toLocaleString("th-TH", {
                 style: "currency",
                 currency: "THB",
@@ -179,7 +179,7 @@ const CartDetails = ({
   };
 
   return (
-    <div className="border border-gray-300 rounded p-4">
+    <div className="border border-gray-300 rounded p-4 dark:bg-gray-700">
       <h2 className="text-lg font-semibold mb-4">
         {t("ticket-cart-cart-details")}
       </h2>
@@ -281,7 +281,7 @@ const TicketSales = ({
 
   return (
     <div className="container mx-auto flex flex-col md:flex-row mt-8">
-      <div className="md:w-3/4 mr-4 mb-4 md:mb-0">
+      <div className="md:w-3/4 mr-4 mb-4 md:mb-0 ">
         {tickets.map((ticket) => (
           <TicketCard
             i18next={i18next}
@@ -294,7 +294,7 @@ const TicketSales = ({
         ))}
       </div>
       <div className="md:w-1/4">
-        <div className="mb-4 flex items-center">
+        <div className="mb-4 flex items-center ">
           <div className="mt-1 relative rounded-md shadow-sm flex-1">
             <input
               type="text"

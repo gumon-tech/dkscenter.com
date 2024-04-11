@@ -126,14 +126,14 @@ export default function CheckoutTicketSale({
         </div>
       )}
       <div className="pb-8">
-        <p className="text-left text-gray-600 mb-2">
+        <p className="text-left text-gray-600 mb-2  text-gray-200">
           {t("ticket-checkout-expire")}: <Countdown date={reserveExpire} />
         </p>
         <form onSubmit={handleSubmit}>
           {contacts.map((contact, index) => (
             <div
               key={index}
-              className="bg-white shadow-md rounded p-4 mb-8 border border-gray-200"
+              className="bg-white shadow-md rounded p-4 mb-8 border border-gray-200 dark:bg-gray-700 dark:border-gray-700"
             >
               <h2 className="text-lg font-semibold mb-2">
                 {t("ticket-checkout-contact")} {index + 1}
@@ -146,7 +146,7 @@ export default function CheckoutTicketSale({
                   name={`firstName_${index}`}
                   value={contacts[index]?.firstName || ""}
                   onChange={(event) => handleInputFirstName(index, event)}
-                  className="border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500 mb-4 md:mb-0"
+                  className="border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500 mb-4 md:mb-0 dark:border-gray-700"
                   required
                 />
                 <input
