@@ -36,8 +36,9 @@ export default function EmailTicketSale({
     e.preventDefault();
     // ส่งอีเมลไปยังเซิร์ฟเวอร์เพื่อขอ OTP
     // onConfirmEmail(email);
-    setShowOTPForm(false);
+
     setIsLoading(true);
+    setShowOTPForm(true);
     try {
       setError(null);
       const response = await sendVerifyEmail(email); // เพิ่ม await เพื่อรอให้การส่งอีเมล์เสร็จสมบูรณ์ก่อน
@@ -50,6 +51,7 @@ export default function EmailTicketSale({
       console.error("Error sending verification email:", error);
       setError(error);
       setIsLoading(false);
+      setShowOTPForm(false);
       if ("EMAIL_IS_INVALID" === error?.response?.data?.code) {
         alert(t("error-email-is-invalid"));
       } else {
@@ -138,14 +140,14 @@ export default function EmailTicketSale({
       <div className="container mx-auto">
         {!showOTPForm && (
           <div className="max-w-md mx-auto mt-8">
-            <div className="bg-white shadow-md rounded px-8 py-8">
+            <div className="bg-white rounded px-8 py-8 dark:bg-gray-800">
               <h2 className="text-2xl font-semibold text-center mb-4">
                 {t("ticket-email-email-confirmation")}
               </h2>
               <form onSubmit={handleEmailSubmit}>
                 <div className="mb-4">
                   <label
-                    className="block text-gray-700 text-sm font-bold mb-2"
+                    className="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400"
                     htmlFor="email"
                   >
                     {t("ticket-email-email-address")}
@@ -172,12 +174,12 @@ export default function EmailTicketSale({
 
         {showOTPForm && !isLoading && (
           <div className="max-w-md mx-auto mt-8">
-            <div className="bg-white shadow-md rounded px-8 py-8">
-              <h2 className="text-2xl font-semibold text-center mb-4">
+            <div className="bg-white rounded px-8 py-8 dark:bg-gray-800 ">
+              <h2 className="text-2xl font-semibold text-center mb-4 ">
                 {t("ticket-email-oto-confirmation")}
               </h2>
               <p className="text-center mb-4">{t("ticket-email-oto-enter")}</p>
-              <p className="text-left text-gray-600 mb-2">
+              <p className="text-left text-gray-600 dark:text-gray-300 mb-2">
                 Email: {email}
                 <br />
                 {t("ticket-email-oto-ref")}: {ref}
@@ -187,7 +189,7 @@ export default function EmailTicketSale({
               <form onSubmit={handleOTPSubmit}>
                 <div className="mb-4">
                   <label
-                    className="block text-gray-700 text-sm font-bold mb-2"
+                    className="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-300"
                     htmlFor="otp"
                   >
                     OTP
@@ -223,12 +225,12 @@ export default function EmailTicketSale({
 
         {showOTPForm && isLoading && (
           <div className="max-w-md mx-auto mt-8">
-            <div className="flex justify-center items-center h-screen">
+            <div className="flex justify-center items-center">
               <ReactLoading
                 type="spinningBubbles"
                 color={"#049ee8"}
-                height={100} // ปรับความสูง
-                width={100} // ปรับความกว้าง
+                height={200} // ปรับความสูง
+                width={200} // ปรับความกว้าง
               />
             </div>
           </div>
