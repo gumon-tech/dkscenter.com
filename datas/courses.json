@@ -762,6 +762,30 @@
           "isSoldOut": false,
           "location": "BTS Phaya Thai",
           "scheduleKey": "2024-1"
+        },
+        {
+          "title": "Modern Web Frontend with React - 2/2024",
+          "eventStart": "2024-07-16T09:00:00+0700",
+          "eventEnd": "2024-07-17T17:00:00+0700",
+          "ticketUrl": "",
+          "saleStart": "2024-06-15T09:00:00+0700",
+          "saleEnd": "2024-07-15T23:59:59+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "BTS Phaya Thai",
+          "scheduleKey": "2024-2"
+        },
+        {
+          "title": "Modern Web Frontend with React - 3/2024",
+          "eventStart": "2024-09-14T09:00:00+0700",
+          "eventEnd": "2024-09-15T17:00:00+0700",
+          "ticketUrl": "",
+          "saleStart": "2024-08-13T09:00:00+0700",
+          "saleEnd": "2024-09-13T23:59:59+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "BTS Phaya Thai",
+          "scheduleKey": "2024-3"
         }
       ],
       "documents": [
@@ -1061,6 +1085,30 @@
           "isSoldOut": false,
           "location": "BTS Phaya Thai",
           "scheduleKey": "2024-1"
+        },
+        {
+          "title": "Modern Web Frontend with React - 2/2024",
+          "eventStart": "2024-07-16T09:00:00+0700",
+          "eventEnd": "2024-07-17T17:00:00+0700",
+          "ticketUrl": "",
+          "saleStart": "2024-06-15T09:00:00+0700",
+          "saleEnd": "2024-07-15T23:59:59+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "BTS Phaya Thai",
+          "scheduleKey": "2024-2"
+        },
+        {
+          "title": "Modern Web Frontend with React - 3/2024",
+          "eventStart": "2024-09-14T09:00:00+0700",
+          "eventEnd": "2024-09-15T17:00:00+0700",
+          "ticketUrl": "",
+          "saleStart": "2024-08-13T09:00:00+0700",
+          "saleEnd": "2024-09-13T23:59:59+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "BTS Phaya Thai",
+          "scheduleKey": "2024-3"
         }
       ],
       "documents": [
@@ -2128,6 +2176,28 @@
           "isSoldOut": false,
           "location": "Online",
           "scheduleKey": "2024-1"
+        },
+        {
+          "title": "CodeCraft: Intro to Web Development with HTML, CSS & JS - 2/2564",
+          "eventStart": "2024-06-29T09:00:00+0700",
+          "eventEnd": "2024-06-30T17:00:00+0700",
+          "saleStart": "2024-05-29T09:00:00+0700",
+          "saleEnd": "2024-06-28T17:00:00+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "Online",
+          "scheduleKey": "2024-2"
+        },
+        {
+          "title": "CodeCraft: Intro to Web Development with HTML, CSS & JS - 3/2564",
+          "eventStart": "2024-08-24T09:00:00+0700",
+          "eventEnd": "2024-08-25T17:00:00+0700",
+          "saleStart": "2024-07-24T09:00:00+0700",
+          "saleEnd": "2024-08-23T17:00:00+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "Online",
+          "scheduleKey": "2024-3"
         }
       ],
       "documents": [
@@ -2281,6 +2351,28 @@
           "isSoldOut": false,
           "location": "Online",
           "scheduleKey": "2024-1"
+        },
+        {
+          "title": "CodeCraft: Intro to Web Development with HTML, CSS & JS - 2/2564",
+          "eventStart": "2024-06-29T09:00:00+0700",
+          "eventEnd": "2024-06-30T17:00:00+0700",
+          "saleStart": "2024-05-29T09:00:00+0700",
+          "saleEnd": "2024-06-28T17:00:00+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "Online",
+          "scheduleKey": "2024-2"
+        },
+        {
+          "title": "CodeCraft: Intro to Web Development with HTML, CSS & JS - 3/2564",
+          "eventStart": "2024-08-24T09:00:00+0700",
+          "eventEnd": "2024-08-25T17:00:00+0700",
+          "saleStart": "2024-07-24T09:00:00+0700",
+          "saleEnd": "2024-08-23T17:00:00+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "Online",
+          "scheduleKey": "2024-3"
         }
       ],
       "documents": [
