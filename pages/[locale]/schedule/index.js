@@ -7,6 +7,7 @@ import Table from "../../../components/table";
 import { useTranslation } from "next-i18next";
 import { makeStaticProps } from "/lib/getStatic";
 import { getStaticPaths } from "/lib/getStatic";
+import { useRouter } from "next/router";
 
 const getStaticProps = makeStaticProps(["home"]);
 export { getStaticPaths, getStaticProps };
@@ -14,6 +15,15 @@ export { getStaticPaths, getStaticProps };
 const Schedule = () => {
   const i18next = useTranslation("home");
   const { t, i18n } = i18next;
+
+  const { asPath } = useRouter();
+  const origin =
+    typeof window !== "undefined" && window.location.origin
+      ? window.location.origin
+      : "";
+
+  const URL = `${origin}${asPath}`;
+  const domain = origin;
 
   return (
     <>
