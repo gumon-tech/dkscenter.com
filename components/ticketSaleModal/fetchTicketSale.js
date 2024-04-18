@@ -3,6 +3,7 @@ import axios from "axios";
 import ReactLoading from "react-loading";
 import TicketSales from "../TicketSales";
 import { getTickets } from "../../utils/getTickets";
+import { useRouter } from "next/router";
 
 export default function FetchTicketSale({
   i18next,
@@ -23,6 +24,7 @@ export default function FetchTicketSale({
   const [tickets, setTickets] = useState([]);
   const [discountDetail, setDiscountDetail] = useState(null);
   const [error, setError] = useState(null);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchTickets = async () => {
@@ -37,6 +39,10 @@ export default function FetchTicketSale({
         setDiscountDetail(response.discountDetail || null);
         setIsLoading(false);
         setError(null);
+
+        const { pathname, query } = router;
+        const queryParams = { ...query, code: discountCode };
+        router.push({ pathname, query: queryParams });
       } catch (error) {
         console.error("Error getTickets:", error);
         setIsLoading(false);
