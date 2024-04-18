@@ -10,7 +10,6 @@ import { makeStaticProps } from "/lib/getStatic";
 import { getStaticPaths } from "/lib/getStatic";
 import { useRouter } from "next/router";
 
-
 const getStaticProps = makeStaticProps(["home"]);
 export { getStaticPaths, getStaticProps };
 
@@ -27,7 +26,6 @@ const Home = () => {
   const URL = `${origin}${asPath}`;
   const domain = origin;
 
-
   return (
     <>
       <Head>
@@ -36,33 +34,15 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
 
         {/* Open Graph Protocol */}
-        <meta
-          property="og:title"
-          content={t("head-title")}
-        />
-        <meta
-          property="og:description"
-          content={t("head-content")}
-        />
-        <meta
-          property="og:image"
-          content={domain + "/img/main_img.jpg"}
-        />
+        <meta property="og:title" content={t("head-title")} />
+        <meta property="og:description" content={t("head-content")} />
+        <meta property="og:image" content={domain + "/img/main_img.jpg"} />
         <meta property="og:url" content={URL} />
 
         {/* Twitter Card */}
-        <meta
-          name="twitter:title"
-          content={t("head-title")}
-        />
-        <meta
-          name="twitter:description"
-          content={t("head-content")}
-        />
-        <meta
-          name="twitter:image"
-          content={domain + "/img/main_img.jpg"}
-        />
+        <meta name="twitter:title" content={t("head-title")} />
+        <meta name="twitter:description" content={t("head-content")} />
+        <meta name="twitter:image" content={domain + "/img/main_img.jpg"} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Navbar i18next={i18next} />

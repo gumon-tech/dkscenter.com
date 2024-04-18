@@ -98,16 +98,21 @@ const CourseDetailLink = ({
                     dayjs(publicSchedule.saleEnd)
                   );
 
+                  const isSaleStart = dayjs().isAfter(
+                    dayjs(publicSchedule.saleStart)
+                  );
+
                   // ไม่ตรงเงือนไข จะแสดงสิ่งนี้
                   let courseType = "COMING_SOON";
                   // หมดช่วงเวลาขาย
                   if (isSaleEnded) courseType = "ENDED";
                   // ยังอยู่ช่วงเวลาขาย + ขายหมดแล้ว
-                  if (!isSaleEnded && publicSchedule.isSoldOut) {
+                  if (isSaleStart && !isSaleEnded && publicSchedule.isSoldOut) {
                     courseType = "SOLD_OUT";
                   }
                   // ยังอยู่ช่วงเวลาขาย + ขายไม่หมด + มีลิ้งขาย
                   if (
+                    isSaleStart &&
                     !isSaleEnded &&
                     !publicSchedule.isSoldOut &&
                     publicSchedule.ticketUrl
@@ -116,6 +121,7 @@ const CourseDetailLink = ({
                   }
 
                   if (
+                    isSaleStart &&
                     !isSaleEnded &&
                     !publicSchedule.isSoldOut &&
                     !publicSchedule.ticketUrl &&
@@ -128,17 +134,29 @@ const CourseDetailLink = ({
                     <tr key={index} className="bg-white dark:bg-gray-800">
                       <th scope="row" className="px-6 py-4">
                         <h3 className="text-indigo-700 dark:text-indigo-400">
-                          {publicSchedule.ticketUrl ? (
-                            <a
-                              target="_blank"
-                              href={
-                                publicSchedule.ticketUrl +
-                                (!!code ? "?discount_code=" + code : "")
-                              }
-                            >
-                              {publicSchedule.title}
-                            </a>
-                          ) : publicSchedule.scheduleKey ? (
+                          {courseType === "COMING_SOON" && (
+                            <>{publicSchedule.title}</>
+                          )}
+                          {courseType === "ENDED" && (
+                            <>{publicSchedule.title}</>
+                          )}
+                          {courseType === "SOLD_OUT" && (
+                            <>{publicSchedule.title}</>
+                          )}
+                          {courseType === "GET_YOURS" && (
+                            <>
+                              <a
+                                target="_blank"
+                                href={
+                                  publicSchedule.ticketUrl +
+                                  (!!code ? "?discount_code=" + code : "")
+                                }
+                              >
+                                {publicSchedule.title}
+                              </a>
+                            </>
+                          )}
+                          {courseType === "GET_YOURS_2" && (
                             <>
                               <a
                                 href="#"
@@ -149,8 +167,6 @@ const CourseDetailLink = ({
                                 {publicSchedule.title}
                               </a>
                             </>
-                          ) : (
-                            publicSchedule.title
                           )}
                         </h3>
                         <div className="flex text-gray-700 dark:text-gray-400 font-light">
@@ -346,7 +362,11 @@ const CourseDetailLink = ({
         )}
       </div>
 
-      <Modal isOpen={modalOpen} onClose={closeModal} title={t("ticket-modal-title")+ " "+courseData.title}>
+      <Modal
+        isOpen={modalOpen}
+        onClose={closeModal}
+        title={t("ticket-modal-title") + " " + courseData.title}
+      >
         <TicketSaleModalManage
           courseKey={courseData.key}
           scheduleKey={scheduleKey}
