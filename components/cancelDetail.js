@@ -1,7 +1,5 @@
 import Container from "./container";
 import Breadcrumb from "./breadcrumb";
-import dayjs from "dayjs";
-import CourseDetailLink from "./courseDetailLink";
 
 const CancelDetail = ({ order, i18next }) => {
   const { t } = i18next;
