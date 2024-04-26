@@ -1,12 +1,4 @@
 import Container from "./container";
-import Breadcrumb from "./breadcrumb";
-import dayjs from "dayjs";
-import CourseDetailLink from "./courseDetailLink";
-import { useEffect, useState } from "react";
-import { getOrder } from "../utils/getOrder";
-import Cookies from 'js-cookie';
-import { refreshEmailToken } from "../utils/refreshEmailToken";
-
 
 const SuccessDetail = ({ orderData, i18next }) => {
   const { t } = i18next;
