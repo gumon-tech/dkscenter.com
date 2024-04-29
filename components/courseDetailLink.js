@@ -222,7 +222,7 @@ const CourseDetailLink = ({
                           </>
                         )}
                       </th>
-                      <td>
+                      <th className="min-w-16">
                         {courseType === "COMING_SOON" && "COMING SOON!"}
                         {courseType === "ENDED" && (
                           <span className="text-gray-700 dark:text-gray-400 font-bold">
@@ -260,7 +260,7 @@ const CourseDetailLink = ({
                             </button>
                           </nav>
                         )}
-                      </td>
+                      </th>
                     </tr>
                   );
                 })
