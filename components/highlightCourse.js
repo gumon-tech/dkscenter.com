@@ -1,4 +1,3 @@
-"use client";
 import SectionTitle from "./sectionTitle";
 import Link from "next/link";
 import { getActiveCourses, removeCoursesOutDate } from "../utils/course";
