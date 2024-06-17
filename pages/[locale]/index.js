@@ -9,6 +9,7 @@ import { useTranslation } from "next-i18next";
 import { makeStaticProps } from "/lib/getStatic";
 import { getStaticPaths } from "/lib/getStatic";
 import { useRouter } from "next/router";
+import courses from "/datas/courses.json";
 
 const getStaticProps = makeStaticProps(["home"]);
 export { getStaticPaths, getStaticProps };
@@ -16,6 +17,7 @@ export { getStaticPaths, getStaticProps };
 const Home = () => {
   const i18next = useTranslation("home");
   const { t, i18n } = i18next;
+  const currentLanguage = i18n.language || "th";
 
   const { asPath } = useRouter();
   const origin =
@@ -25,6 +27,14 @@ const Home = () => {
 
   const URL = `${origin}${asPath}`;
   const domain = origin;
+
+  const highlightKey =
+    "2024-011-code-craft-tntro-to-web-development-with-html-css-js";
+  const highlightCourse = courses[highlightKey][currentLanguage];
+  const highlightSchedule = highlightCourse?.publicSchedule[1];
+
+  let localeNaming = "en_US";
+  if (currentLanguage === "th") localeNaming = "TH_TH";
 
   return (
     <>
@@ -38,6 +48,10 @@ const Home = () => {
         <meta property="og:description" content={t("head-content")} />
         <meta property="og:image" content={domain + "/img/main_img.jpg"} />
         <meta property="og:url" content={URL} />
+        <meta property="og:site_name" content={domain} />
+        <meta property="og:locale" content={localeNaming} />
+        <meta property="og:locale:alternate" content="TH_TH" />
+        <meta property="og:locale:alternate" content="en_US" />
 
         {/* Twitter Card */}
         <meta name="twitter:title" content={t("head-title")} />
@@ -48,9 +62,9 @@ const Home = () => {
       <Navbar i18next={i18next} />
       <SectionTitle
         pretitle={t("sectionTitle-pretitle")}
-        title={t("sectionTitle-title")}
+        title={highlightSchedule?.title || t("sectionTitle-title")}
       >
-        {t("sectionTitle-detail1")}
+        {highlightCourse.overview || t("sectionTitle-detail1")}
         <p className="pt-8">
           <Link
             href="/course/2024-007-modern-web-frontend-with-react"
