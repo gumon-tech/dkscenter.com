@@ -10,7 +10,7 @@ import { makeStaticProps } from "/lib/getStatic";
 import { getStaticPaths } from "/lib/getStatic";
 import { useRouter } from "next/router";
 import courses from "/datas/courses.json";
-import HighlightCourse from "../../components/HighlightCourse";
+import HighlightCourse from "../../components/highlightCourse";
 
 const getStaticProps = makeStaticProps(["home"]);
 export { getStaticPaths, getStaticProps };
