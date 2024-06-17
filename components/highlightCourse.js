@@ -2,14 +2,17 @@ import SectionTitle from "./sectionTitle";
 import Link from "next/link";
 import { getActiveCourses, removeCoursesOutDate } from "../utils/course";
 import { useState, useEffect } from "react";
+import { Course, PublicSchedule } from "../types/course";
 
 const HighlightCourse = ({ i18next }) => {
   const { t, i18n } = i18next;
   const currentLanguage = i18n.language || "th";
 
-
   const [highlightCourse, setHighlightCourse] = useState({});
   const [highlightSchedule, setHighlightSchedule] = useState({});
+  const [courseRef, setCourseHref] = useState(
+    "/course/2024-007-modern-web-frontend-with-react"
+  );
 
   useEffect(() => {
     let highlightCourse;
@@ -33,6 +36,7 @@ const HighlightCourse = ({ i18next }) => {
 
     setHighlightCourse(highlightCourse);
     setHighlightSchedule(highlightSchedule);
+    setCourseHref("/course/" + highlightCourse.key);
   }, [i18n.language]);
 
   return (
@@ -44,7 +48,7 @@ const HighlightCourse = ({ i18next }) => {
         {highlightCourse?.overview || t("sectionTitle-detail1")}
         <p className="pt-8">
           <Link
-            href="/course/2024-007-modern-web-frontend-with-react"
+            href={courseRef}
             className="mt-8 px-8 py-4 text-lg font-medium text-center text-white bg-indigo-600 rounded-md"
           >
             {t("sectionTitle-detail2")}
