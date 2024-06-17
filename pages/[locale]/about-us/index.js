@@ -17,6 +17,7 @@ export { getStaticPaths, getStaticProps };
 const AboutUs = () => {
   const i18next = useTranslation("home");
   const { t, i18n } = i18next;
+  const currentLanguage = i18n.language || "th";
   const { asPath } = useRouter();
   const origin =
     typeof window !== "undefined" && window.location.origin
@@ -25,6 +26,8 @@ const AboutUs = () => {
 
   const URL = `${origin}${asPath}`;
   const domain = origin;
+  let localeNaming = "en_US";
+  if (currentLanguage === "th") localeNaming = "TH_TH";
   return (
     <>
       <Head>
@@ -37,6 +40,10 @@ const AboutUs = () => {
         <meta property="og:description" content={t("head-content")} />
         <meta property="og:image" content={domain + "/img/assistant1.jpg"} />
         <meta property="og:url" content={URL} />
+        <meta property="og:site_name" content={domain} />
+        <meta property="og:locale" content={localeNaming} />
+        <meta property="og:locale:alternate" content="TH_TH" />
+        <meta property="og:locale:alternate" content="en_US" />
 
         {/* Twitter Card */}
         <meta name="twitter:title" content={t("head-title")} />

@@ -15,7 +15,7 @@ export const removeCoursesOutDate = (courses: Course[] = []): Course[] => {
     const publicSchedules: PublicSchedule[] = [];
     for (const publicSchedule of course.publicSchedule) {
       const isEventEnded = dayjs().isAfter(dayjs(publicSchedule.eventEnd));
-      if (!isEventEnded && publicSchedule) {
+      if (!isEventEnded && publicSchedule && publicSchedule.isActive) {
         publicSchedules.push(publicSchedule);
       }
     }
