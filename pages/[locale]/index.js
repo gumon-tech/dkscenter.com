@@ -10,6 +10,7 @@ import { makeStaticProps } from "/lib/getStatic";
 import { getStaticPaths } from "/lib/getStatic";
 import { useRouter } from "next/router";
 import courses from "/datas/courses.json";
+import HighlightCourse from "../../components/HighlightCourse";
 
 const getStaticProps = makeStaticProps(["home"]);
 export { getStaticPaths, getStaticProps };
@@ -60,20 +61,7 @@ const Home = () => {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Navbar i18next={i18next} />
-      <SectionTitle
-        pretitle={t("sectionTitle-pretitle")}
-        title={highlightSchedule?.title || t("sectionTitle-title")}
-      >
-        {highlightCourse.overview || t("sectionTitle-detail1")}
-        <p className="pt-8">
-          <Link
-            href="/course/2024-007-modern-web-frontend-with-react"
-            className="mt-8 px-8 py-4 text-lg font-medium text-center text-white bg-indigo-600 rounded-md"
-          >
-            {t("sectionTitle-detail2")}
-          </Link>
-        </p>
-      </SectionTitle>
+      <HighlightCourse i18next={i18next} />
       <Video />
       <CourseList i18next={i18next} />
       <Footer i18next={i18next} />
