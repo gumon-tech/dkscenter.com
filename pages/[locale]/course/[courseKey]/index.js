@@ -22,6 +22,8 @@ const Course = ({ courseData }) => {
   const domain = origin;
   const currentLanguage = i18n.language;
   const courseLocaleData = courseData[currentLanguage];
+  let localeNaming = "en_US";
+  if (currentLanguage === "th") localeNaming = "TH_TH";
 
   return (
     <>
@@ -49,6 +51,10 @@ const Course = ({ courseData }) => {
           content={domain + courseLocaleData.imageUrl}
         />
         <meta property="og:url" content={URL} />
+        <meta property="og:site_name" content={domain} />
+        <meta property="og:locale" content={localeNaming} />
+        <meta property="og:locale:alternate" content="TH_TH" />
+        <meta property="og:locale:alternate" content="en_US" />
 
         {/* Twitter Card */}
         <meta
