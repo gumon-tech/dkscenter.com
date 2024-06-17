@@ -89,6 +89,9 @@ importers:
       react-dotdotdot:
         specifier: ^1.3.1
         version: 1.3.1(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react-ga:
+        specifier: ^3.3.1
+        version: 3.3.1(prop-types@15.8.1)(react@18.3.1)
       react-hook-form:
         specifier: ^7.43.9
         version: 7.52.0(react@18.3.1)
@@ -2353,6 +2356,12 @@ packages:
       prop-types: '*'
       react: '*'
       react-dom: '*'
+
+  react-ga@3.3.1:
+    resolution: {integrity: sha512-4Vc0W5EvXAXUN/wWyxvsAKDLLgtJ3oLmhYYssx+YzphJpejtOst6cbIHCIyF50Fdxuf5DDKqRYny24yJ2y7GFQ==}
+    peerDependencies:
+      prop-types: ^15.6.0
+      react: ^15.6.2 || ^16.0 || ^17 || ^18
 
   react-hook-form@7.52.0:
     resolution: {integrity: sha512-mJX506Xc6mirzLsmXUJyqlAI3Kj9Ph2RhplYhUVffeOQSnubK2uVqBFOBJmvKikvbFV91pxVXmDiR+QMF19x6A==}
@@ -5741,6 +5750,11 @@ snapshots:
       prop-types: 15.8.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
+
+  react-ga@3.3.1(prop-types@15.8.1)(react@18.3.1):
+    dependencies:
+      prop-types: 15.8.1
+      react: 18.3.1
 
   react-hook-form@7.52.0(react@18.3.1):
     dependencies:
