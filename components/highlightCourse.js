@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getActiveCourses, removeCoursesOutDate } from "../utils/course";
 import { useState, useEffect } from "react";
 import { Course, PublicSchedule } from "../types/course";
+import Video from "./video";
 
 const HighlightCourse = ({ i18next }) => {
   const { t, i18n } = i18next;
@@ -55,6 +56,7 @@ const HighlightCourse = ({ i18next }) => {
           </Link>
         </p>
       </SectionTitle>
+      <Video course= {highlightCourse}/>
     </>
   );
 };

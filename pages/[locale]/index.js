@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Navbar from "../../components/navbar";
 import SectionTitle from "../../components/sectionTitle";
-import Video from "../../components/video";
 import Footer from "../../components/footer";
 import CourseList from "../../components/courseList";
 import Link from "/components/link";
@@ -62,7 +61,7 @@ const Home = () => {
       </Head>
       <Navbar i18next={i18next} />
       <HighlightCourse i18next={i18next} />
-      <Video />
+      
       <CourseList i18next={i18next} />
       <Footer i18next={i18next} />
     </>
