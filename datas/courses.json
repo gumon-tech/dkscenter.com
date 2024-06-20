@@ -4,7 +4,7 @@
       "lastUpdate": "2024-02-18T09:00:00+0700",
       "key": "2024-001-fundamental-docker",
       "locale": "th",
-      "isActive": true,
+      "isActive": false,
       "imageUrl": "/course/2024-001/poster/cover-image2-01-01.jpg",
       "detailUrl": "https://dkscenter.com/th/course/2024-001-fundamental-docker",
       "title": "Fundamental Docker",
@@ -100,7 +100,7 @@
       "lastUpdate": "2024-02-18T09:00:00+0700",
       "key": "2024-001-fundamental-docker",
       "locale": "en",
-      "isActive": true,
+      "isActive": false,
       "imageUrl": "/course/2024-001/poster/cover-image2-01-01.jpg",
       "detailUrl": "https://dkscenter.com/course/2024-001-fundamental-docker",
       "title": "Fundamental Docker",
@@ -2625,6 +2625,400 @@
           "descriptions": [
             "Recap of key concepts",
             "Open discussion and Q&A session"
+          ]
+        }
+      ],
+      "publicSchedule": [],
+      "documents": []
+    }
+  },
+  "2024-014-pixel-pioneers-nextjs-react-masterclass": {
+    "th": {
+      "lastUpdate": "2024-02-19T09:00:00+0700",
+      "key": "2024-014-pixel-pioneers-nextjs-react-masterclass",
+      "locale": "th",
+      "isActive": true,
+      "imageUrl": "/course/2024-014/poster/cover-image.jpg",
+      "detailUrl": "https://dkscenter.com/th/course/2024-014-pixel-pioneers-nextjs-react-masterclass",
+      "title": "Pixel Pioneers: Next.js and React Masterclass",
+      "code": "2024-014",
+      "duration": "2 วัน, 09:00 - 17:00",
+      "overview": "คอร์ส Pixel Pioneers: Next.js and React Masterclass เป็นการเรียนรู้เกี่ยวกับพื้นฐานของการพัฒนาเว็บแอปพลิเคชันด้วย ReactJS ซึ่งเป็นไลบรารี JavaScript ที่ใช้สำหรับสร้าง UI และอินเทอร์เฟซผู้ใช้ ผู้เรียนจะได้เรียนรู้เกี่ยวกับโครงสร้างของ React, การสร้างคอมโพเนนต์, การจัดการสถานะ, การเรียกใช้ API, และการทำ routing ในเว็บแอปพลิเคชัน",
+      "objectives": [
+        "เพื่อให้ผู้เรียนมีความเข้าใจเกี่ยวกับพื้นฐานของ ReactJS และการพัฒนาเว็บแอปพลิเคชันด้วย React",
+        "เพื่อให้ผู้เรียนสามารถสร้างและจัดการกับคอมโพเนนต์ต่าง ๆ ในเว็บแอปพลิเคชันด้วย React",
+        "เพื่อให้ผู้เรียนสามารถเรียกใช้งานข้อมูลจาก API และจัดการกับสถานะของแอปพลิเคชันในรูปแบบของ React"
+      ],
+      "whoShouldAttend": [
+        "นักพัฒนาซอฟต์แวร์ที่ต้องการเรียนรู้เกี่ยวกับ ReactJS และการพัฒนาเว็บแอปพลิเคชัน",
+        "นักพัฒนาที่มีประสบการณ์ในการพัฒนาเว็บไซต์และต้องการทำความเข้าใจในการใช้ ReactJS",
+        "ผู้ที่สนใจเรียนรู้เกี่ยวกับการสร้างเว็บแอปพลิเคชันที่มีประสิทธิภาพด้วย ReactJS"
+      ],
+      "prerequisites": [
+        "ผู้เข้าร่วมคอร์สควรมีความรู้พื้นฐานเกี่ยวกับการเขียนโปรแกรมด้วยภาษา JavaScript",
+        "ผู้เข้าร่วมคอร์สควรความรู้พื้นฐานเกี่ยวกับการพัฒนาเว็บแอปพลิเคชัน",
+        "ผู้เข้าร่วมคอร์สควรมีความรู้พื้นฐานเกี่ยวกับ HTML, CSS และ JavaScript เพื่อให้เข้าใจเนื้อหาได้ดียิ่งขึ้น",
+        "การเตรียมโปรแกรมพัฒนาที่จำเป็น เช่น Node.js และ npm (Node Package Manager) เพื่อใช้ในการสร้างและจัดการโปรเจค React",
+        "การมีความสามารถในการใช้งาน Command Line Interface (CLI) เพื่อการสร้างโปรเจค React และการจัดการกับ dependencies ต่าง ๆ โดยใช้ npm",
+        "คอมพิวเตอร์ที่มีเครื่องมือสำหรับการเขียนโปรแกรมเช่นโปรแกรม Text Editor หรือ Integrated Development Environment (IDE) ที่เหมาะสมสำหรับการพัฒนา React",
+        "ความกระตือรือร้นในการเรียนรู้และการทำงานร่วมกับผู้อื่นในระหว่างการศึกษา การทำงานร่วมกับสมาชิกในทีมช่วยให้ผู้เรียนได้รับประสบการณ์ที่มีประโยชน์จากการแลกเปลี่ยนความรู้และประสบการณ์"
+      ],
+      "participantsWillReceive": [
+        "เอกสารคู่มือการอบรม",
+        "อาหารกลางวันและอาหารว่าง",
+        "ใบรับรองผ่านการอบรมหลักสูตร Pixel Pioneers: Next.js and React Masterclass",
+        "การดูแลเอาใจใส่เป็นอย่างดีจากวิทยากรและทีมงาน Staff",
+        "สามารถเข้าร่วม Pixel Pioneers: Next.js and React Masterclass ซ้ำได้ไม่จำกัดจำนวนครั้ง (จำกัดสิทธิ์เข้าร่วมซ้ำ 5 ท่านต่อรอบการอบรม หากท่านต้องการเข้าร่วม Workshop ซ้ำ กรุณาติดต่อ Facebook Page, Line, Email หรือช่องทางอื่น ๆ เพื่อสำรองที่นั่ง)",
+        "หากท่านไม่สะดวกเข้าร่วมการอบรมในครั้งนี้ ท่านสามารถเลื่อนการเข้าร่วมอบรมได้ตามตารางการอบรม"
+      ],
+      "outline": [
+        {
+          "title": "History of Web Frontend Development",
+          "descriptions": [
+            "ประวัติศาสตร์ของการพัฒนาเว็บแอปพลิเคชันก่อนจะมีการพัฒนาแบบแยกระหว่าง Backend และ Frontend"
+          ]
+        },
+        {
+          "title": "Pros and Cons",
+          "descriptions": [
+            "ข้อดี ข้อเสีย ของการพัฒนาเว็บแอปพลิเคชันแบบแยก Backend และ Frontend"
+          ]
+        },
+        {
+          "title": "System Architecture Overview",
+          "descriptions": [
+            "ภาพรวมของการออกแบบเว็บแอปพลิเคชันแบบแยก Backend และ Frontend ในปัจจุบัน พร้อมกรณีศึกษา"
+          ]
+        },
+        {
+          "title": "ECMAScript and TypeScript",
+          "descriptions": [
+            "การเขียนจาวาสคริปต์สมัยใหม่ และพื้นฐานการเขียน Typescript"
+          ]
+        },
+        {
+          "title": "What is React? And why Next.js?",
+          "descriptions": [
+            "ทำความรู้จักกับ React และ React-powered frameworks"
+          ]
+        },
+        {
+          "title": "Workshop 1",
+          "descriptions": [
+            "Creating a Next.js app."
+          ]
+        },
+        {
+          "title": "Project Structure",
+          "descriptions": [
+            "แนะนำโครงสร้างของ Next.js"
+          ]
+        },
+        {
+          "title": "HTML and JSX",
+          "descriptions": [
+            "JSX คืออะไร?",
+            "ความแตกต่างและข้อควรระวังระหว่าง Html tag และ JSX"
+          ]
+        },
+        {
+          "title": "Component Concept",
+          "descriptions": [
+            "อธิบายฟังก์ชันและหน้าที่ต่าง ๆ ที่จำเป็นต่อการพัฒนาเว็บแอปพลิเคชันด้วย React",
+            "การสร้าง Component เพื่อแยกส่วนประกอบที่ใช้งานบ่อย ๆ",
+            "การ Export และ Import ส่วนประกอบเข้ามาใช้งาน",
+            "การส่งค่าไปยังส่วนประกอบ (Component Pops)"
+          ]
+        },
+        {
+          "title": "Workshop 2",
+          "descriptions": [
+            "My First Component."
+          ]
+        },
+        {
+          "title": "Tailwind CSS",
+          "descriptions": [
+            "แนะนำการใช้งาน Tailwind CSS เบื้องต้น"
+          ]
+        },
+        {
+          "title": "Workshop 3",
+          "descriptions": [
+            "My Home Page."
+          ]
+        },
+        {
+          "title": "State: A Component's Memory",
+          "descriptions": [
+            "อธิบายฟังก์ชัน useState และวิธีการใช้งานเบื้องต้น"
+          ]
+        },
+        {
+          "title": "Workshop 4",
+          "descriptions": [
+            "Carousel banner."
+          ]
+        },
+        {
+          "title": "Reacting to Input with State",
+          "descriptions": [
+            "การใช้งาน State ร่วมกับ Input"
+          ]
+        },
+        {
+          "title": "Workshop 5",
+          "descriptions": [
+            "Search box."
+          ]
+        },
+        {
+          "title": "Sharing State Between Components",
+          "descriptions": [
+            "อธิบายการใช้ State ร่วมกับ Component อื่นๆ"
+          ]
+        },
+        {
+          "title": "Workshop 6",
+          "descriptions": [
+            "Search results."
+          ]
+        },
+        {
+          "title": "Next.js Routing",
+          "descriptions": [
+            "อธิบายการสร้าง Route Path ในรูปแบบต่าง ๆ",
+            "โครงสร้างของ Page และ Layouts",
+            "การเปลี่ยนหน้า (Linking and Navigating)"
+          ]
+        },
+        {
+          "title": "Workshop 7",
+          "descriptions": [
+            "New search page."
+          ]
+        },
+        {
+          "title": "Workshop 8",
+          "descriptions": [
+            "Products and Details."
+          ]
+        },
+        {
+          "title": "Server Components and Client Components",
+          "descriptions": [
+            "อธิบายข้อแตกต่างและการใช้งาน Server Components และ Client Components",
+            "กรณีศึกษา"
+          ]
+        },
+        {
+          "title": "Next.js Data Fetching",
+          "descriptions": [
+            "อธิบายการเรียกใช้ API",
+            "การสร้างและเรียกใช้งาน Server Actions and Mutations",
+            "การใช้งาน formData และ useFormStatus"
+          ]
+        },
+        {
+          "title": "Workshop 9",
+          "descriptions": [
+            "Register."
+          ]
+        }
+      ],
+      "publicSchedule": [],
+      "documents": []
+    },
+    "en": {
+      "lastUpdate": "2024-02-19T09:00:00+0700",
+      "key": "2024-014-pixel-pioneers-nextjs-react-masterclass",
+      "locale": "en",
+      "isActive": true,
+      "imageUrl": "/course/2024-014/poster/cover-image.jpg",
+      "detailUrl": "https://dkscenter.com/en/course/2024-014-pixel-pioneers-nextjs-react-masterclass",
+      "title": "Pixel Pioneers: Next.js and React Masterclass",
+      "code": "2024-014",
+      "duration": "2 Days, 09:00 - 17:00",
+      "overview": "Pixel Pioneers: Next.js and React Masterclass course is a learning experience focused on the basics of developing web applications using ReactJS, a JavaScript library used for building user interfaces. Participants will learn about the React structure, component creation, state management, API integration, and routing in web applications.",
+      "objectives": [
+        "To provide participants with an understanding of the basics of ReactJS and web application development using React.",
+        "To empower participants to create and manage various components in web applications using React.",
+        "To enable participants to fetch data from APIs and manage the state of the application in the React framework."
+      ],
+      "whoShouldAttend": [
+        "Software developers looking to learn about ReactJS and web application development.",
+        "Developers with experience in website development who seek to understand the usage of ReactJS.",
+        "Individuals interested in learning how to create efficient web applications using ReactJS."
+      ],
+      "prerequisites": [
+        "Participants in the course should have basic knowledge of programming with JavaScript.",
+        "Participants in the course should also have fundamental knowledge of web application development.",
+        "Participants should have a basic understanding of HTML, CSS and JavaScript to better grasp the content.",
+        "Preparation of necessary development tools such as Node.js and npm (Node Package Manager) for building and managing React projects.",
+        "Ability to use Command Line Interface (CLI) for creating React projects and managing dependencies using npm.",
+        "A computer equipped with programming tools such as a Text Editor or Integrated Development Environment (IDE) suitable for React development.",
+        "Enthusiasm for learning and collaborating with others during the course. Working with team members helps participants gain valuable experience through knowledge exchange and collaboration."
+      ],
+      "participantsWillReceive": [
+        "Training manuals/documentation.",
+        "Lunch and refreshments.",
+        "Certification upon completion of the Pixel Pioneers: Next.js and React Masterclass course.",
+        "Excellent care and attention from instructors and staff.",
+        "Unlimited attendance to the Pixel Pioneers: Next.js and React Masterclass course (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat).",
+        "If you are unable to attend the training session this time, you can reschedule your participation according to the training schedule."
+      ],
+      "outline": [
+        {
+          "title": "History of Web Frontend Development",
+          "descriptions": [
+            "The evolution of web application development before the separation of Backend and Frontend."
+          ]
+        },
+        {
+          "title": "Pros and Cons",
+          "descriptions": [
+            "Advantages and disadvantages of developing web applications with separated Backend and Frontend."
+          ]
+        },
+        {
+          "title": "System Architecture Overview",
+          "descriptions": [
+            "An overview of current web application design with Backend and Frontend separation, including case studies."
+          ]
+        },
+        {
+          "title": "ECMAScript and TypeScript",
+          "descriptions": [
+            "Modern JavaScript writing and fundamentals of TypeScript."
+          ]
+        },
+        {
+          "title": "What is React? And why Next.js?",
+          "descriptions": [
+            "Introduction to React and React-powered frameworks."
+          ]
+        },
+        {
+          "title": "Workshop 1",
+          "descriptions": [
+            "Creating a Next.js app."
+          ]
+        },
+        {
+          "title": "Project Structure",
+          "descriptions": [
+            "Introduction to the basic structure of Next.js."
+          ]
+        },
+        {
+          "title": "HTML and JSX",
+          "descriptions": [
+            "What is JSX?",
+            "Differences and precautions between HTML tags and JSX."
+          ]
+        },
+        {
+          "title": "Component Concept",
+          "descriptions": [
+            "Explanation of functions and various necessary roles in developing web applications with React",
+            "Creating components to separate frequently used parts",
+            "Component exporting and importing",
+            "Passing values to components (Component Props)."
+          ]
+        },
+        {
+          "title": "Workshop 2",
+          "descriptions": [
+            "My First Component."
+          ]
+        },
+        {
+          "title": "Tailwind CSS",
+          "descriptions": [
+            "Introduction to basic usage of Tailwind CSS"
+          ]
+        },
+        {
+          "title": "Workshop 3",
+          "descriptions": [
+            "My Home Page."
+          ]
+        },
+        {
+          "title": "State: A Component's Memory",
+          "descriptions": [
+            "Explanation of useState function and basic usage."
+          ]
+        },
+        {
+          "title": "Workshop 4",
+          "descriptions": [
+            "Carousel banner."
+          ]
+        },
+        {
+          "title": "Reacting to Input with State",
+          "descriptions": [
+            "Using State with Input."
+          ]
+        },
+        {
+          "title": "Workshop 5",
+          "descriptions": [
+            "Search box."
+          ]
+        },
+        {
+          "title": "Sharing State Between Components",
+          "descriptions": [
+            "Explanation of using State with other components."
+          ]
+        },
+        {
+          "title": "Workshop 6",
+          "descriptions": [
+            "Search results."
+          ]
+        },
+        {
+          "title": "Next.js Routing",
+          "descriptions": [
+            "Explanation of creating Route Paths in various formats",
+            "Page and Layout structures",
+            "page navigation (Linking and Navigating)."
+          ]
+        },
+        {
+          "title": "Workshop 7",
+          "descriptions": [
+            "New search page."
+          ]
+        },
+        {
+          "title": "Workshop 8",
+          "descriptions": [
+            "Products and Details."
+          ]
+        },
+        {
+          "title": "Server Components and Client Components",
+          "descriptions": [
+            "Explanation of differences and usage of Server Components and Client Components",
+            "Case studies."
+          ]
+        },
+        {
+          "title": "Next.js Data Fetching",
+          "descriptions": [
+            "Explanation of API calls",
+            "Creating and using Server Actions and Mutations",
+            "Using formData and useFormStatus."
+          ]
+        },
+        {
+          "title": "Workshop 9",
+          "descriptions": [
+            "Register."
           ]
         }
       ],
