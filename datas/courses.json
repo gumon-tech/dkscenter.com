@@ -2506,7 +2506,30 @@
           ]
         }
       ],
-      "publicSchedule": [],
+      "publicSchedule": [
+        {
+          "title": "Container Conquest: Dominate with Docker Workshop - 1/2564",
+          "eventStart": "2024-10-28T09:00:00+0700",
+          "eventEnd": "2024-10-28T17:00:00+0700",
+          "saleStart": "2024-09-28T09:00:00+0700",
+          "saleEnd": "2024-10-27T21:00:00+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "Online",
+          "scheduleKey": "2024-12-1"
+        },
+        {
+          "title": "Container Conquest: Dominate with Docker Workshop - 2/2564",
+          "eventStart": "2024-11-23T09:00:00+0700",
+          "eventEnd": "2024-11-23T17:00:00+0700",
+          "saleStart": "2024-10-23T09:00:00+0700",
+          "saleEnd": "2024-11-22T21:00:00+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "Online",
+          "scheduleKey": "2024-12-2"
+        }
+      ],
       "documents": []
     },
     "en": {
@@ -2628,7 +2651,30 @@
           ]
         }
       ],
-      "publicSchedule": [],
+      "publicSchedule": [
+        {
+          "title": "Container Conquest: Dominate with Docker Workshop - 1/2564",
+          "eventStart": "2024-10-28T09:00:00+0700",
+          "eventEnd": "2024-10-28T17:00:00+0700",
+          "saleStart": "2024-09-28T09:00:00+0700",
+          "saleEnd": "2024-10-27T21:00:00+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "Online",
+          "scheduleKey": "2024-12-1"
+        },
+        {
+          "title": "Container Conquest: Dominate with Docker Workshop - 2/2564",
+          "eventStart": "2024-11-23T09:00:00+0700",
+          "eventEnd": "2024-11-23T17:00:00+0700",
+          "saleStart": "2024-10-23T09:00:00+0700",
+          "saleEnd": "2024-11-22T21:00:00+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "Online",
+          "scheduleKey": "2024-12-2"
+        }
+      ],
       "documents": []
     }
   },
@@ -2826,7 +2872,30 @@
           ]
         }
       ],
-      "publicSchedule": [],
+      "publicSchedule": [
+        {
+          "title": "Pixel Pioneers: Next.js and React Masterclass - 1/2564",
+          "eventStart": "2024-10-07T09:00:00+0700",
+          "eventEnd": "2024-10-08T17:00:00+0700",
+          "saleStart": "2024-09-07T09:00:00+0700",
+          "saleEnd": "2024-10-06T21:00:00+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "Online",
+          "scheduleKey": "2024-12-1"
+        },
+        {
+          "title": "Pixel Pioneers: Next.js and React Masterclass - 2/2564",
+          "eventStart": "2024-11-02T09:00:00+0700",
+          "eventEnd": "2024-11-03T17:00:00+0700",
+          "saleStart": "2024-10-03T09:00:00+0700",
+          "saleEnd": "2024-11-01T21:00:00+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "Online",
+          "scheduleKey": "2024-12-2"
+        }
+      ],
       "documents": []
     },
     "en": {
@@ -3022,7 +3091,30 @@
           ]
         }
       ],
-      "publicSchedule": [],
+      "publicSchedule": [
+        {
+          "title": "Pixel Pioneers: Next.js and React Masterclass - 1/2564",
+          "eventStart": "2024-10-07T09:00:00+0700",
+          "eventEnd": "2024-10-08T17:00:00+0700",
+          "saleStart": "2024-09-07T09:00:00+0700",
+          "saleEnd": "2024-10-06T21:00:00+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "Online",
+          "scheduleKey": "2024-12-1"
+        },
+        {
+          "title": "Pixel Pioneers: Next.js and React Masterclass - 2/2564",
+          "eventStart": "2024-11-02T09:00:00+0700",
+          "eventEnd": "2024-11-03T17:00:00+0700",
+          "saleStart": "2024-10-03T09:00:00+0700",
+          "saleEnd": "2024-11-01T21:00:00+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "Online",
+          "scheduleKey": "2024-12-2"
+        }
+      ],
       "documents": []
     }
   }
