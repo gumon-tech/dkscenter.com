@@ -1,6 +1,9 @@
 import languageDetector from "/lib/languageDetector";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import dayjs from "dayjs";
+import "dayjs/locale/th";
+import "dayjs/locale/en";
 
 const LanguageSwitchLink = ({ className, locale, ...rest }) => {
   const router = useRouter();
@@ -26,6 +29,9 @@ const LanguageSwitchLink = ({ className, locale, ...rest }) => {
   });
   if (locale) {
     href = rest.href ? `/${locale}${rest.href}` : pName;
+
+    if (locale === "th") dayjs.locale("en");
+    if (locale === "en") dayjs.locale("th");
   }
   if (queryString) {
     href = href + queryString;
