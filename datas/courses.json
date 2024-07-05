@@ -3365,5 +3365,315 @@
         }
       ]
     }
+  },
+  "2024-016-data-storyteller-visual-narratives-with-power-bi": {
+    "th": {
+      "lastUpdate": "2024-07-05T09:00:00+0700",
+      "key": "2024-016-data-storyteller-visual-narratives-with-power-bi",
+      "locale": "th",
+      "isActive": true,
+      "imageUrl": "/course/2024-016/poster/cover-image.jpg",
+      "detailUrl": "https://dkscenter.com/th/course/2024-016-data-storyteller-visual-narratives-with-power-bi",
+      "title": "Data Storyteller: Visual Narratives with Power BI",
+      "code": "2024-016",
+      "duration": "2 วัน, 09:00 - 17:00",
+      "overview": "หลักสูตรเชิงลึกเกี่ยวกับ Power BI จะเตรียมผู้เรียนให้มีความรู้และทักษะในการใช้ Power BI ในการวิเคราะห์ข้อมูลและแสดงผลได้อย่างมีประสิทธิภาพ ผู้เรียนจะเรียนรู้เกี่ยวกับระบบ Power BI ตั้งแต่การเตรียมข้อมูลและการสร้างโมเดลข้อมูล ไปจนถึงเทคนิคการแสดงผลขั้นสูงและกลยุทธ์ในการใช้งาน ณ สิ้นสุดหลักสูตร ผู้เรียนจะสามารถสร้างรายงานและแดชบอร์ดแบบแอ็กทีฟได้อย่างมีประสิทธิภาพ ปรับปรุงโมเดลข้อมูลด้วย DAX และใช้ Power BI Service และ Mobile เพื่อการทำงานร่วมกันและแชร์ข้อมูลอย่างราบรื่นได้",
+      "objectives": [
+        "เข้าใจภาพรวมและความสำคัญของ Power BI",
+        "เรียนรู้การติดตั้งและการตั้งค่า Power BI Desktop",
+        "ทำความเข้าใจการนำเข้าและการแปลงข้อมูล",
+        "สร้างและจัดการโมเดลข้อมูลด้วย DAX",
+        "สร้างและปรับแต่งการแสดงผลและรายงาน",
+        "ใช้เทคนิคการแสดงผลและ DAX ขั้นสูง",
+        "เผยแพร่รายงานและทำงานร่วมกันใน Power BI Service",
+        "เรียนรู้แนวปฏิบัติที่ดีที่สุดและการแก้ไขปัญหาใน Power BI"
+      ],
+      "whoShouldAttend": [
+        "นักวิเคราะห์ธุรกิจ",
+        "นักวิเคราะห์ข้อมูล",
+        "นักวิทยาศาสตร์ข้อมูล",
+        "นักพัฒนา BI",
+        "ผู้เชี่ยวชาญด้าน IT",
+        "ผู้ที่สนใจเรียนรู้การแสดงผลข้อมูลและการวิเคราะห์ธุรกิจโดยใช้ Power BI"
+      ],
+      "prerequisites": [
+        "ความเข้าใจพื้นฐานในการวิเคราะห์ข้อมูลและการรายงาน",
+        "ความคุ้นเคยกับ Excel หรือเครื่องมือการวิเคราะห์ข้อมูลอื่น ๆ",
+        "ความรู้พื้นฐานเกี่ยวกับฐานข้อมูลเชิงสัมพันธ์และ SQL (ไม่บังคับแต่มีประโยชน์)",
+        "ติดตั้ง Power BI ในเครื่องให้พร้อมเพื่อใช้สำหรับการอบรม"
+      ],
+      "participantsWillReceive": [
+        "เอกสารคู่มือการอบรม",
+        "ใบรับรองผ่านการอบรมหลักสูตร Data Storyteller: Visual Narratives with Power BI",
+        "การดูแลเอาใจใส่เป็นอย่างดีจากวิทยากรและทีมงาน Staff",
+        "สามารถเข้าร่วม Data Storyteller: Visual Narratives with Power BI ซ้ำได้ไม่จำกัดจำนวนครั้ง (จำกัดสิทธิ์เข้าร่วมซ้ำ 5 ท่านต่อรอบการอบรม หากท่านต้องการเข้าร่วม Workshop ซ้ำ กรุณาติดต่อ Facebook Page, Line, Email หรือช่องทางอื่น ๆ เพื่อสำรองที่นั่ง)",
+        "หากท่านไม่สะดวกเข้าร่วมการอบรมในครั้งนี้ ท่านสามารถเลื่อนการเข้าร่วมอบรมได้ตามตารางการอบรม"
+      ],
+      "outline": [
+        {
+          "title": "แนะนำ Power BI",
+          "descriptions": [
+            "ภาพรวมของ Power BI: Power BI คืออะไร?",
+            "คุณสมบัติและประโยชน์หลัก",
+            "ระบบนิเวศของ Power BI: Power BI Desktop, Power BI Service, Power BI Mobile",
+            "ทำความเข้าใจแหล่งข้อมูลต่าง ๆ"
+          ]
+        },
+        {
+          "title": "เริ่มต้นกับ Power BI Desktop",
+          "descriptions": [
+            "การติดตั้งและการตั้งค่า Power BI Desktop",
+            "ทำความเข้าใจอินเทอร์เฟซของ Power BI",
+            "การนำเข้าข้อมูลจากแหล่งต่าง ๆ (Excel, SQL Server, เว็บ ฯลฯ)",
+            "การแปลงข้อมูลพื้นฐานด้วย Power Query Editor"
+          ]
+        },
+        {
+          "title": "การทำความสะอาดและการแปลงข้อมูล",
+          "descriptions": [
+            "เทคนิคการแปลงข้อมูลขั้นสูง",
+            "การรวมและการต่อคิวรี",
+            "การสร้างและการจัดการความสัมพันธ์ของข้อมูล",
+            "แนะนำ DAX (Data Analysis Expressions) สำหรับคอลัมน์ที่คำนวณและการวัด"
+          ]
+        },
+        {
+          "title": "การสร้างโมเดลข้อมูล",
+          "descriptions": [
+            "ทำความเข้าใจโมเดลข้อมูล",
+            "การสร้างโมเดลข้อมูลใน Power BI",
+            "การใช้ DAX สำหรับการสร้างโมเดลข้อมูล",
+            "แนวปฏิบัติที่ดีที่สุดสำหรับการสร้างโมเดลข้อมูล"
+          ]
+        },
+        {
+          "title": "การสร้างการแสดงผล",
+          "descriptions": [
+            "แนะนำการแสดงผลใน Power BI",
+            "การสร้างและการปรับแต่งกราฟพื้นฐาน (แถบ, เส้น, วงกลม ฯลฯ)",
+            "การใช้ Slicers และ Filters",
+            "การออกแบบรายงานและแดชบอร์ดเชิงโต้ตอบ"
+          ]
+        },
+        {
+          "title": "เทคนิค Power BI ขั้นสูงและการแบ่งปันข้อมูล",
+          "descriptions": []
+        },
+        {
+          "title": "การแสดงผลขั้นสูง",
+          "descriptions": [
+            "การใช้กราฟขั้นสูง (TreeMap, Waterfall, Funnel ฯลฯ)",
+            "กราฟที่กำหนดเองใน Power BI",
+            "การทำงานกับแผนที่และข้อมูลเชิงพื้นที่",
+            "แนวปฏิบัติที่ดีที่สุดสำหรับการแสดงผลข้อมูล"
+          ]
+        },
+        {
+          "title": "DAX ขั้นสูงและการคำนวณ",
+          "descriptions": [
+            "ฟังก์ชันและสูตร DAX ขั้นสูง",
+            "การวิเคราะห์เวลาใน Power BI",
+            "การสร้างและการใช้ Hierarchies",
+            "การจัดการความปลอดภัยตามบทบาทด้วย DAX"
+          ]
+        },
+        {
+          "title": "Power BI Service",
+          "descriptions": [
+            "การเผยแพร่รายงานไปยัง Power BI Service",
+            "การรีเฟรชข้อมูลและการตั้งค่ารีเฟรชอัตโนมัติ",
+            "การทำงานกับ Power BI Workspaces",
+            "การแบ่งปันและการทำงานร่วมกันในรายงาน"
+          ]
+        },
+        {
+          "title": "Power BI Mobile และการฝังตัว",
+          "descriptions": [
+            "ภาพรวมของ Power BI Mobile",
+            "การสร้างรายงานที่ปรับแต่งสำหรับมือถือ",
+            "การฝังรายงาน Power BI ในเว็บไซต์และแอปพลิเคชัน",
+            "Power BI REST API และ Power BI Embedded"
+          ]
+        },
+        {
+          "title": "แนวปฏิบัติที่ดีที่สุดและ Q&A",
+          "descriptions": [
+            "แนวปฏิบัติที่ดีที่สุดสำหรับการพัฒนาและการนำ Power BI ไปใช้",
+            "เทคนิคการเพิ่มประสิทธิภาพ",
+            "ข้อผิดพลาดที่พบบ่อยและการแก้ไขปัญหา",
+            "ช่วงถาม-ตอบและการฝึกปฏิบัติ"
+          ]
+        },
+        {
+          "title": "สรุปหลักสูตร",
+          "descriptions": [
+            "สรุปแนวคิดสำคัญ",
+            "แหล่งข้อมูลสำหรับการเรียนรู้เพิ่มเติม",
+            "ข้อเสนอแนะและขั้นตอนถัดไป"
+          ]
+        }
+      ],
+      "publicSchedule": [],
+      "documents": [
+        {
+          "title": "Data Storyteller Visual Narratives with Power BI (Thai Version)",
+          "fileUrl": "/course/2024-016/document/Data Storyteller Visual Narratives  with Power BI TH.pdf"
+        }
+      ]
+    },
+    "en": {
+      "lastUpdate": "2024-07-05T09:00:00+0700",
+      "key": "2024-016-data-storyteller-visual-narratives-with-power-bi",
+      "locale": "en",
+      "isActive": true,
+      "imageUrl": "/course/2024-016/poster/cover-image.jpg",
+      "detailUrl": "https://dkscenter.com/th/course/2024-016-data-storyteller-visual-narratives-with-power-bi",
+      "title": "Data Storyteller: Visual Narratives with Power BI",
+      "code": "2024-016",
+      "duration": "2 Days, 09:00 - 17:00",
+      "overview": "This comprehensive course on Power BI equips participants with the knowledge and skills to effectively utilize Power BI for data analysis and visualization. Participants will learn to navigate the Power BI ecosystem, from data preparation and modeling to advanced visualization techniques and deployment strategies. By the end of the course, participants will be proficient in creating interactive reports and dashboards, optimizing data models using DAX, and leveraging Power BI Service and Mobile for seamless collaboration and data sharing.",
+      "objectives": [
+        "Understand the overview and importance of Power BI",
+        "Learn to install and set up Power BI Desktop",
+        "Understand data import and transformation processes",
+        "Create and manage data models using DAX",
+        "Create and customize visualizations and reports",
+        "Utilize advanced visualization techniques and DAX functions",
+        "Publish reports and collaborate in Power BI Service",
+        "Learn best practices and troubleshooting in Power BI"       
+      ],
+      "whoShouldAttend": [
+        "Business Analysts",
+        "Data Analysts",
+        "Data Scientists",
+        "BI Developers",
+        "IT Professionals",
+        "Anyone interested in learning data visualization and business intelligence using Power BI"
+      ],
+      "prerequisites": [
+        "Basic understanding of data analysis and reporting concepts",
+        "Familiarity with Excel or any other data analysis tool",
+        "Basic knowledge of relational databases and SQL (optional but beneficial)",
+        "Install Power BI on your machine ready to use for training."
+      ],
+      "participantsWillReceive": [
+        "Training manuals/documentation.",
+        "Certification upon completion of the Data Storyteller: Visual Narratives with Power BI course.",
+        "Excellent care and attention from instructors and staff.",
+        "Unlimited attendance to the Data Storyteller: Visual Narratives with Power BI course (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat).",
+        "If you are unable to attend the training session this time, you can reschedule your participation according to the training schedule."
+      ],
+      "outline": [
+        {
+          "title": "Introduction to Power BI",
+          "descriptions": [
+            "Overview of Power BI: What is Power BI?",
+            "Key Features and Benefits",
+            "Power BI Ecosystem: Power BI Desktop, Power BI Service, Power BI Mobile",
+            "Understanding Different Data Sources"
+          ]
+        },
+        {
+          "title": "Getting Started with Power BI Desktop",
+          "descriptions": [
+            "Installing and Setting Up Power BI Desktop",
+            "Understanding the Power BI Interface",
+            "Importing Data from Various Sources (Excel, SQL Server, Web, etc.)",
+            "Basic Data Transformation with Power Query Editor"
+          ]
+        },
+        {
+          "title": "Data Cleaning and Transformation",
+          "descriptions": [
+            "Advanced Data Transformation Techniques",
+            "Merging and Appending Queries",
+            "Creating and Managing Data Relationships",
+            "Introduction to DAX (Data Analysis Expressions) for Calculated Columns and Measures"
+          ]
+        },
+        {
+          "title": "Data Modeling",
+          "descriptions": [
+            "Understanding Data Models",
+            "Creating Data Models in Power BI",
+            "Using DAX for Data Modeling",
+            "Best Practices for Data Modeling"
+          ]
+        },
+        {
+          "title": "Creating Visualizations",
+          "descriptions": [
+            "Introduction to Power BI Visualizations",
+            "Creating and Customizing Basic Charts (Bar, Line, Pie, etc.)",
+            "Using Slicers and Filters",
+            "Designing Interactive Reports and Dashboards"
+          ]
+        },
+        {
+          "title": "Advanced Power BI Techniques and Sharing Insights",
+          "descriptions": []
+        },
+        {
+          "title": "Advanced Visualizations",
+          "descriptions": [
+            "Using Advanced Charts (TreeMap, Waterfall, Funnel, etc.)",
+            "Custom Visuals in Power BI",
+            "Working with Maps and Geospatial Data",
+            "Best Practices for Data Visualization"
+          ]
+        },
+        {
+          "title": "Advanced DAX and Calculations",
+          "descriptions": [
+            "Advanced DAX Functions and Formulas",
+            "Time Intelligence in Power BI",
+            "Creating and Using Hierarchies",
+            "Managing Role-Based Security with DAX"
+          ]
+        },
+        {
+          "title": "Power BI Service",
+          "descriptions": [
+            "Publishing Reports to Power BI Service",
+            "Data Refresh and Scheduled Refresh",
+            "Working with Power BI Workspaces",
+            "Sharing and Collaborating on Reports"
+          ]
+        },
+        {
+          "title": "Power BI Mobile and Embedding",
+          "descriptions": [
+            "Overview of Power BI Mobile",
+            "Creating Mobile-Optimized Reports",
+            "Embedding Power BI Reports in Websites and Apps",
+            "Power BI REST API and Power BI Embedded"
+          ]
+        },
+        {
+          "title": "Best Practices and Q&A",
+          "descriptions": [
+            "Best Practices for Power BI Development and Deployment",
+            "Performance Optimization Techniques",
+            "Common Pitfalls and Troubleshooting",
+            "Q&A Session and Hands-On Practice"
+          ]
+        },
+        {
+          "title": "Course Wrap-Up",
+          "descriptions": [
+            "Recap of Key Concepts",
+            "Resources for Further Learning",
+            "Feedback and Next Steps"
+          ]
+        }
+      ],
+      "publicSchedule": [],
+      "documents": [
+        {
+          "title": "Data Storyteller Visual Narratives with Power BI (English Version)",
+          "fileUrl": "/course/2024-016/document/Data Storyteller Visual Narratives  with Power BI ENG.pdf"
+        }
+      ]
+    }
   }
 }
