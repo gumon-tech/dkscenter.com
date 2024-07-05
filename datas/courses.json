@@ -2530,7 +2530,12 @@
           "scheduleKey": "2024-12-2"
         }
       ],
-      "documents": []
+      "documents": [
+        {
+          "title": "Container Conquest Dominate with Docker Workshop (Thai Version)",
+          "fileUrl": "/course/2024-012/document/Container Conquest Dominate with Docker Workshop_th.pdf"
+        }
+      ]
     },
     "en": {
       "lastUpdate": "2024-06-20T09:00:00+0700",
@@ -2675,7 +2680,12 @@
           "scheduleKey": "2024-12-2"
         }
       ],
-      "documents": []
+      "documents": [
+        {
+          "title": "Container Conquest Dominate with Docker Workshop (English Version)",
+          "fileUrl": "/course/2024-012/document/Container Conquest Dominate with Docker Workshop_en.pdf"
+        }
+      ]
     }
   },
   "2024-014-pixel-pioneers-nextjs-react-masterclass": {
@@ -3116,6 +3126,244 @@
         }
       ],
       "documents": []
+    }
+  },
+  "2024-015-excel-vanguard-cutting-edge-functions": {
+    "th": {
+      "lastUpdate": "2024-07-05T09:00:00+0700",
+      "key": "2024-015-excel-vanguard-cutting-edge-functions",
+      "locale": "th",
+      "isActive": true,
+      "imageUrl": "/course/2024-015/poster/cover-image.jpg",
+      "detailUrl": "https://dkscenter.com/th/course/2024-015-excel-vanguard-cutting-edge-functions",
+      "title": "Excel Vanguard: Cutting-Edge Functions",
+      "code": "2024-015",
+      "duration": "2 วัน, 09:00 - 17:00",
+      "overview": "คอร์ส Excel Mastery: การวิเคราะห์ข้อมูลและการทำงานอัตโนมัติ นำเสนอการเรียนรู้ที่ครอบคลุมเกี่ยวกับการใช้งานฟังก์ชันและสูตรขั้นสูง การตรวจสอบข้อมูล การนำเข้าข้อมูล และการทำงานอัตโนมัติด้วยแมโคร ผ่านการเรียนรู้ทั้งหมด 2 วัน ผู้เรียนจะได้เรียนรู้การวิเคราะห์ข้อมูล การจัดการข้อมูล และการสร้างแบบจำลองข้อมูล โดยผ่านการเรียนรู้ทั้งภาคทฤษฎีและปฏิบัติในห้องเรียน",
+      "objectives": [
+        "เสริมสร้างทักษะการใช้สูตรและฟังก์ชันขั้นสูง: ผู้เรียนจะได้เรียนรู้การใช้ฟังก์ชันเชิงตรรกะ ฟังก์ชันค้นหาและอ้างอิง ฟังก์ชันข้อความและวันที่ ฟังก์ชันการเงิน และสูตรอาร์เรย์ที่สำคัญในการทำงานกับข้อมูลใน Excel",
+        "พัฒนาทักษะการจัดการและตรวจสอบข้อมูล: การใช้เครื่องมือตรวจสอบข้อมูล การสร้างรายการ drop-down และการจัดรูปแบบตามเงื่อนไข เพื่อให้ข้อมูลมีความถูกต้องและน่าเชื่อถือ",
+        "สร้างความเข้าใจในการใช้งานตาราง Pivot และแผนภูมิ Pivot: ผู้เรียนจะได้เรียนรู้วิธีการสร้าง ปรับแต่ง และใช้ตาราง Pivot และแผนภูมิ Pivot เพื่อวิเคราะห์และสรุปข้อมูลอย่างมีประสิทธิภาพ",
+        "เพิ่มประสิทธิภาพในการจัดการข้อมูล: การจัดเรียง การกรองขั้นสูง และการรวมข้อมูล เพื่อเพิ่มประสิทธิภาพในการจัดการข้อมูลขนาดใหญ่", 
+        "เสริมสร้างความรู้เกี่ยวกับการนำเข้าข้อมูลและการทำงานอัตโนมัติ: ผู้เรียนจะได้เรียนรู้การนำเข้าข้อมูลจากแหล่งต่าง ๆ และการใช้แมโครเพื่อทำงานอัตโนมัติ", 
+        "การวิเคราะห์ข้อมูลขั้นสูงและการสร้างแบบจำลองข้อมูล: การใช้เครื่องมือวิเคราะห์ข้อมูลขั้นสูง เช่น การวิเคราะห์ What-If และ Add-in Solver รวมถึงการใช้ Power Query และ Power Pivot เพื่อสร้างแบบจำลองข้อมูลที่ซับซ้อน"
+      ],
+      "whoShouldAttend": [
+        "ผู้เชี่ยวชาญที่มีความรู้พื้นฐานเกี่ยวกับ Excel และต้องการพัฒนาทักษะเพิ่มเติม",
+        "นักวิเคราะห์ข้อมูล, นักวิเคราะห์การเงิน, และผู้จัดการ",
+        "ผู้ที่สนใจในการใช้ Excel สำหรับการวิเคราะห์ข้อมูลที่ซับซ้อนและการทำงานอัตโนมัติ"
+      ],
+      "prerequisites": [
+        "ความรู้พื้นฐานเกี่ยวกับฟังก์ชันและสูตรใน Excel",
+        "ความคุ้นเคยกับอินเทอร์เฟซของ Excel และการจัดการข้อมูลเบื้องต้น",
+        "ติดตั้ง Excel ในเครื่องให้พร้อมเพื่อใช้สำหรับการอบรม"
+      ],
+      "participantsWillReceive": [
+        "เอกสารคู่มือการอบรม",
+        "แบบฝึกหัดและกรณีศึกษาเชิงปฏิบัติ",
+        "แบบทดสอบและการประเมินผล",
+        "ใบรับรองผ่านการอบรมหลักสูตร Excel Vanguard: Cutting-Edge Functions",
+        "การดูแลเอาใจใส่เป็นอย่างดีจากวิทยากรและทีมงาน Staff",
+        "สามารถเข้าร่วม Excel Vanguard: Cutting-Edge Functions ซ้ำได้ไม่จำกัดจำนวนครั้ง (จำกัดสิทธิ์เข้าร่วมซ้ำ 5 ท่านต่อรอบการอบรม หากท่านต้องการเข้าร่วม Workshop ซ้ำ กรุณาติดต่อ Facebook Page, Line, Email หรือช่องทางอื่น ๆ เพื่อสำรองที่นั่ง)",
+        "หากท่านไม่สะดวกเข้าร่วมการอบรมในครั้งนี้ ท่านสามารถเลื่อนการเข้าร่วมอบรมได้ตามตารางการอบรม"
+      ],
+      "outline": [
+        {
+          "title": "เซสชั่น 1.1: สูตรและฟังก์ชันขั้นสูง",
+          "descriptions": [
+            "ฟังก์ชันเชิงตรรกะ (IF, AND, OR, NOT)",
+            "ฟังก์ชันค้นหาและอ้างอิง (VLOOKUP, HLOOKUP, INDEX, MATCH)"
+          ]
+        },
+        {
+          "title": "เซสชั่น 1.2: ฟังก์ชันข้อความและวันที่",
+          "descriptions": [
+            "ฟังก์ชันข้อความ (CONCATENATE, LEFT, RIGHT, MID, LEN, FIND, SUBSTITUTE)",
+            "ฟังก์ชันวันที่และเวลา (TODAY, NOW, DATE, YEAR, MONTH, DAY)"
+          ]
+        },
+        {
+          "title": "เซสชั่น 1.3: ฟังก์ชันการเงินและสูตรอาร์เรย์ (1 ชั่วโมง)",
+          "descriptions": [
+            "ฟังก์ชันการเงิน (PMT, FV, PV)",
+            "สูตรอาร์เรย์ (SUMPRODUCT, TRANSPOSE)"
+          ]
+        },
+        {
+          "title": "เซสชั่น 2.1: การตรวจสอบข้อมูลและการจัดรูปแบบตามเงื่อนไข",
+          "descriptions": [
+            "การสร้างรายการดรอปดาวน์",
+            "การใช้กฎการตรวจสอบข้อมูล",
+            "การจัดรูปแบบตามเงื่อนไข (Highlight Cells Rules, Data Bars, Color Scales)"
+          ]
+        },
+        {
+          "title": "เซสชั่น 2.2: ตาราง Pivot และแผนภูมิ Pivot",
+          "descriptions": [
+            "การสร้างและปรับแต่งตาราง Pivot",
+            "การใช้ Slicers",
+            "การสร้างแผนภูมิ Pivot"
+          ]
+        },
+        {
+          "title": "เซสชั่น 3.1: การกรองขั้นสูง, การจัดเรียง และการจัดการข้อมูล",
+          "descriptions": [
+            "การจัดเรียงแบบกำหนดเอง",
+            "ตัวเลือกการกรองขั้นสูง",
+            "การใช้ตาราง Excel",
+            "การรวมข้อมูล"
+          ]
+        },
+        {
+          "title": "เซสชั่น 3.2: การนำเข้าข้อมูลและการทำงานอัตโนมัติด้วยแมโคร",
+          "descriptions": [
+            "การนำเข้าข้อมูลจากแหล่งต่าง ๆ (CSV, เว็บ)",
+            "การแนะนำแมโคร",
+            "การบันทึกและการเรียกใช้แมโคร"
+          ]
+        },
+        {
+          "title": "เซสชั่น 4.1: เครื่องมือการวิเคราะห์ข้อมูลขั้นสูง",
+          "descriptions": [
+            "การวิเคราะห์ข้อมูลแบบ What-If (Data Tables, Scenario Manager, Goal Seek)",
+            "Add-in Solver (การแก้ปัญหาการเพิ่มประสิทธิภาพ)"
+          ]
+        },
+        {
+          "title": "เซสชั่น 4.2: Power Query และ Power Pivot",
+          "descriptions": [
+            "การแนะนำ Power Query",
+            "การเชื่อมต่อและแปลงข้อมูล",
+            "การแนะนำ Power Pivot",
+            "การสร้างแบบจำลองข้อมูล"
+          ]
+        }
+      ],
+      "publicSchedule": [],
+      "documents": [
+        {
+          "title": "Excel Vanguard: Cutting-Edge Functions (Thai Version)",
+          "fileUrl": "/course/2024-015/document/Excel Vanguard Cutting-Edge Functions-th.pdf"
+        }
+      ]
+    },
+    "en": {
+      "lastUpdate": "2024-07-05T09:00:00+0700",
+      "key": "2024-015-excel-vanguard-cutting-edge-functions",
+      "locale": "en",
+      "isActive": true,
+      "imageUrl": "/course/2024-015/poster/cover-image.jpg",
+      "detailUrl": "https://dkscenter.com/en/course/2024-015-excel-vanguard-cutting-edge-functions",
+      "title": "Excel Vanguard: Cutting-Edge Functions",
+      "code": "2024-015",
+      "duration": "2 Days, 09:00 - 17:00",
+      "overview": "The Excel Mastery: Data Analysis and Automation course provides participants with comprehensive training on advanced formulas and functions, data validation, data import, and automation using macros. Over two days, participants will learn data analysis, data management, and data modeling through a combination of lectures and hands-on workshops.",
+      "objectives": [
+        "Enhancing Skills in Advanced Formulas and Functions: Participants will learn to use logical functions, lookup and reference functions, text and date functions, financial functions, and essential array formulas for effective data handling in Excel.",
+        "Developing Data Management and Validation Skills: Utilizing data validation tools, creating drop-down lists, and applying conditional formatting to ensure data accuracy and reliability.",
+        "Understanding Pivot Tables and Pivot Charts: Learning to create, customize, and use Pivot Tables and Pivot Charts for efficient data analysis and summarization.",
+        "Improving Data Management Efficiency: Advanced sorting, filtering, and data consolidation techniques to manage large datasets more effectively.", 
+        "Enhancing Knowledge in Data Import and Automation: Learning to import data from various sources and using macros for automation tasks.", 
+        "Advanced Data Analysis and Data Modeling: Utilizing advanced data analysis tools such as What-If Analysis and Solver Add-in, and using Power Query and Power Pivot for complex data modeling."
+      ],
+      "whoShouldAttend": [
+        "Professionals with basic Excel knowledge looking to advance their skills",
+        "Data analysts, financial analysts, and managers",
+        "Anyone interested in leveraging Excel for complex data analysis and automation tasks"
+      ],
+      "prerequisites": [
+        "Basic knowledge of Excel functions and formulas",
+        "Familiarity with Excel interface and basic data manipulation",
+        "Install Excel on the machine ready to use for training."
+      ],
+      "participantsWillReceive": [
+        "Training manual documents",
+        "Practical exercises and case studies",
+        "Quizzes and assessments",
+        "Certificate of completion Excel Vanguard: Cutting-Edge Functions",
+        "Excellent care and attention from instructors and staff.",
+        "Unlimited attendance to the  Excel Vanguard: Cutting-Edge Functions (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat).",
+        "If you are unable to attend the training session this time, you can reschedule your participation according to the training schedule."
+      ],
+      "outline": [
+        {
+          "title": "Session 1.1: Advanced Formulas and Functions",
+          "descriptions": [
+            "Logical Functions (IF, AND, OR, NOT)",
+            "Lookup and Reference Functions (VLOOKUP, HLOOKUP, INDEX, MATCH)"
+          ]
+        },
+        {
+          "title": "Session 1.2: Text and Date Functions",
+          "descriptions": [
+            "Text Functions (CONCATENATE, LEFT, RIGHT, MID, LEN, FIND, SUBSTITUTE)",
+            "Date and Time Functions (TODAY, NOW, DATE, YEAR, MONTH, DAY)"
+          ]
+        },
+        {
+          "title": "Session 1.3: Financial and Array Formulas",
+          "descriptions": [
+            "Financial Functions (PMT, FV, PV)",
+            "Array Formulas (SUMPRODUCT, TRANSPOSE)"
+          ]
+        },
+        {
+          "title": "Session 2.1: Data Validation and Conditional Formatting",
+          "descriptions": [
+            "Creating Drop-down Lists",
+            "Applying Data Validation Rules",
+            "Conditional Formatting (Highlight Cells Rules, Data Bars, Color Scales)"
+          ]
+        },
+        {
+          "title": "Session 2.2: Pivot Tables and Pivot Charts",
+          "descriptions": [
+            "Creating and Customizing Pivot Tables",
+            "Using Slicers",
+            "Creating Pivot Charts"
+          ]
+        },
+        {
+          "title": "Session 3.1: Advanced Filtering, Sorting, and Data Management",
+          "descriptions": [
+            "Custom Sorts",
+            "Advanced Filter Options",
+            "Using Excel Tables",
+            "Data Consolidation"
+          ]
+        },
+        {
+          "title": "Session 3.2: Importing Data and Automation with Macros",
+          "descriptions": [
+            "Importing Data from Different Sources (CSV, Web)",
+            "Introduction to Macros",
+            "Recording and Running Macros"
+          ]
+        },
+        {
+          "title": "Session 4.1: Advanced Data Analysis Tools",
+          "descriptions": [
+            "What-If Analysis (Data Tables, Scenario Manager, Goal Seek)",
+            "Solver Add-in (Solving Optimization Problems)"
+          ]
+        },
+        {
+          "title": "Session 4.2: Power Query and Power Pivot",
+          "descriptions": [
+            "Introduction to Power Query",
+            "Connecting and Transforming Data",
+            "Introduction to Power Pivot",
+            "Creating Data Models"
+          ]
+        }
+      ],
+      "publicSchedule": [],
+      "documents": [
+        {
+          "title": "Excel Vanguard: Cutting-Edge Functions (English Version)",
+          "fileUrl": "/course/2024-015/document/Excel Vanguard Cutting-Edge Functions-en.pdf"
+        }
+      ]
     }
   }
 }
