@@ -1,4 +1,5 @@
-import Container from "./container";
+import React from 'react';
+import Container from './container';
 import {
   EnvelopeIcon,
   CalendarIcon,
@@ -10,16 +11,14 @@ import {
   CheckCircleIcon,
 } from '@heroicons/react/24/outline';
 
-
 const SuccessDetail = ({ orderData, i18next }) => {
   const { t } = i18next;
 
-  if (!orderData) return <></>
+  if (!orderData) return <></>;
 
   return (
     <Container>
       <div className="container mx-auto mt-8 px-4">
-        
         <h1 className="text-3xl font-semibold mb-6 flex items-center">
           <TicketIcon className="h-8 w-8 text-blue-500 dark:text-blue-400 mr-2" />
           Order #{orderData?.orderId}
@@ -28,13 +27,18 @@ const SuccessDetail = ({ orderData, i18next }) => {
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
           <div className="flex items-center text-gray-900 dark:text-gray-100">
             <CheckCircleIcon className="h-6 w-6 text-green-500 dark:text-green-400 mr-2" />
-            <span>Please check your email for further details and updates regarding your order.</span>
+            <span>
+              Please check your email for further details and updates regarding
+              your order.
+            </span>
           </div>
         </div>
 
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
           <div className="mb-4">
-            <h2 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Order Status: {orderData?.ticketDetail?.eventName}</h2>
+            <h2 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">
+              Order Status: {orderData?.ticketDetail?.eventName}
+            </h2>
             <p className="text-gray-700 dark:text-gray-300 flex items-center">
               <TagIcon className="h-5 w-5 text-blue-500 dark:text-blue-400 mr-2" />
               {orderData?.orderStatus}
@@ -107,7 +111,14 @@ const SuccessDetail = ({ orderData, i18next }) => {
             <div className="p-4 bg-gray-100 dark:bg-gray-700 rounded-lg">
               <p className="text-gray-700 dark:text-gray-300 flex items-center">
                 <TagIcon className="h-5 w-5 text-blue-500 dark:text-blue-400 mr-2" />
-                <a target="_blank" className="text-blue-500 dark:text-blue-400 underline" href={orderData?.ticketDetail?.detailLink}>Detail Link: Clink to course detail </a>
+                <a
+                  target="_blank"
+                  className="text-blue-500 dark:text-blue-400 underline"
+                  href={orderData?.ticketDetail?.detailLink}
+                  rel="noreferrer"
+                >
+                  Detail Link: Clink to course detail{' '}
+                </a>
               </p>
               <p className="text-gray-700 dark:text-gray-300 flex items-center">
                 <TagIcon className="h-5 w-5 text-blue-500 dark:text-blue-400 mr-2" />
@@ -142,7 +153,6 @@ const SuccessDetail = ({ orderData, i18next }) => {
           </div>
         )}
       </div>
-
     </Container>
   );
 };

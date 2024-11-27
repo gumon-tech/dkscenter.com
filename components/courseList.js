@@ -1,10 +1,11 @@
-import courses from "../datas/courses.json";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircle } from "@fortawesome/free-regular-svg-icons";
-import Dotdotdot from "react-dotdotdot";
-import Container from "./container";
-import Link from "/components/link";
-import Breadcrumb from "./breadcrumb";
+import React from 'react';
+import courses from '../datas/courses.json';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircle } from '@fortawesome/free-regular-svg-icons';
+import Dotdotdot from 'react-dotdotdot';
+import Container from './container';
+import Link from '/components/link';
+import Breadcrumb from './breadcrumb';
 
 export default function CourseList(props) {
   const i18next = props.i18next;
@@ -14,10 +15,10 @@ export default function CourseList(props) {
   return (
     <Container>
       {props.breadcrumb && (
-        <Breadcrumb paths={[{ title: "Training Course", path: "/course" }]} />
+        <Breadcrumb paths={[{ title: 'Training Course', path: '/course' }]} />
       )}
       <h2 className="mt-3 max-w-2xl text-3xl font-bold leading-snug tracking-tight text-gray-800 lg:leading-tight lg:text-4xl dark:text-white">
-        {t("course-list-1")}
+        {t('course-list-1')}
       </h2>
       <div className="flex flex-wrap mt-5">
         {Object.values(courses)
@@ -42,7 +43,7 @@ const CourseCard = ({ courseData, i18next }) => {
             backgroundImage: `url(${
               courseData.imageUrl
                 ? courseData.imageUrl
-                : "/img/DKS_01_Logo_Ori.png"
+                : '/img/DKS_01_Logo_Ori.png'
             })`,
           }}
         ></div>
@@ -53,13 +54,13 @@ const CourseCard = ({ courseData, i18next }) => {
             </h5>
           </Link>
           <div className="text-sm font-bold tracking-wider text-indigo-700 dark:text-indigo-400 uppercase mb-2">
-            {courseData.code}{" "}
+            {courseData.code}{' '}
             <FontAwesomeIcon
               className="inline"
               icon={faCircle}
               width={10}
               height={10}
-            />{" "}
+            />{' '}
             {courseData.duration}
           </div>
 
@@ -73,7 +74,7 @@ const CourseCard = ({ courseData, i18next }) => {
             href={`/course/${courseData.key}`}
             className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
-            {t("course-list-2")}
+            {t('course-list-2')}
             <svg
               className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
               aria-hidden="true"

@@ -1,6 +1,7 @@
-import Image from "next/image";
-import React from "react";
-import Container from "./container";
+import React from 'react';
+import Image from 'next/image';
+import React from 'react';
+import Container from './container';
 
 const Benefits = (props) => {
   const { data } = props;
@@ -9,7 +10,7 @@ const Benefits = (props) => {
       <Container className="flex flex-wrap mb-20 lg:gap-10 lg:flex-nowrap ">
         <div
           className={`flex items-center justify-center w-full lg:w-1/2 ${
-            props.imgPos === "right" ? "lg:order-1" : ""
+            props.imgPos === 'right' ? 'lg:order-1' : ''
           }`}
         >
           <div>
@@ -18,7 +19,7 @@ const Benefits = (props) => {
               width="521"
               height="auto"
               alt="Benefits"
-              className={"object-cover"}
+              className={'object-cover'}
               placeholder="blur"
               blurDataURL={data.image.src}
             />
@@ -27,7 +28,7 @@ const Benefits = (props) => {
 
         <div
           className={`flex flex-wrap items-center w-full lg:w-1/2 ${
-            data.imgPos === "right" ? "lg:justify-end" : ""
+            data.imgPos === 'right' ? 'lg:justify-end' : ''
           }`}
         >
           <div>
@@ -61,7 +62,7 @@ function Benefit(props) {
       <div className="flex items-start mt-8 space-x-3">
         <div className="flex items-center justify-center flex-shrink-0 mt-1 bg-indigo-500 rounded-md w-11 h-11 ">
           {React.cloneElement(props.icon, {
-            className: "w-7 h-7 text-indigo-50",
+            className: 'w-7 h-7 text-indigo-50',
           })}
         </div>
         <div>

@@ -1,10 +1,11 @@
-import ThemeChanger from "./DarkSwitch";
-import Image from "next/image";
-import { Disclosure } from "@headlessui/react";
-import Link from "/components/link";
-import { useRouter } from "next/router";
-import LanguageSwitchLink from "./LanguageSwitchLink";
-import i18nextConfig from "../next-i18next.config";
+import React from 'react';
+import ThemeChanger from './DarkSwitch';
+import Image from 'next/image';
+import { Disclosure } from '@headlessui/react';
+import Link from '/components/link';
+import { useRouter } from 'next/router';
+import LanguageSwitchLink from './LanguageSwitchLink';
+import i18nextConfig from '../next-i18next.config';
 
 export default function Navbar(props) {
   const router = useRouter();
@@ -13,10 +14,10 @@ export default function Navbar(props) {
 
   const currentLocale = router.query.locale || i18nextConfig.i18n.defaultLocale;
   const navigation = [
-    { title: "Home", path: "/" },
-    { title: "Course", path: "/course" },
-    { title: "Schedule", path: "/schedule" },
-    { title: "About Us", path: "/about-us" },
+    { title: 'Home', path: '/' },
+    { title: 'Course', path: '/course' },
+    { title: 'Schedule', path: '/schedule' },
+    { title: 'About Us', path: '/about-us' },
   ];
 
   return (
@@ -83,7 +84,7 @@ export default function Navbar(props) {
                       return (
                         <LanguageSwitchLink
                           className={
-                            "w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none"
+                            'w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none'
                           }
                           locale={locale}
                           key={locale}
@@ -118,7 +119,7 @@ export default function Navbar(props) {
                 return (
                   <LanguageSwitchLink
                     className={
-                      "inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800"
+                      'inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800'
                     }
                     locale={locale}
                     key={locale}

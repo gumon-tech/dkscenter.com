@@ -1,4 +1,5 @@
-import Link from "/components/link";
+import React from 'react';
+import Link from '/components/link';
 
 export default function Breadcrumb(props) {
   return (

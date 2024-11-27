@@ -1,8 +1,9 @@
-import { useRouter } from "next/router";
-import { useState } from "react";
-import FetchTicketSale from "./fetchTicketSale";
-import EmailTicketSale from "./emailTicketSale";
-import CheckoutTicketSale from "./checkoutTicketSale";
+import React from 'react';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
+import FetchTicketSale from './fetchTicketSale';
+import EmailTicketSale from './emailTicketSale';
+import CheckoutTicketSale from './checkoutTicketSale';
 
 export default function TicketSaleModalManage({
   i18next,
@@ -17,7 +18,7 @@ export default function TicketSaleModalManage({
   if (!scheduleKey) return null;
 
   const [manageState, setManageState] = useState(0);
-  const [discountCode, setDiscountCode] = useState(discountCodeURL || "");
+  const [discountCode, setDiscountCode] = useState(discountCodeURL || '');
   const [accessToken, setAccessToken] = useState(null);
   const [refreshToken, setRefreshToken] = useState(null);
   const [ticketId, setTicketId] = useState(null);

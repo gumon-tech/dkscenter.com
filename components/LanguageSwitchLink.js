@@ -1,9 +1,10 @@
-import languageDetector from "/lib/languageDetector";
-import { useRouter } from "next/router";
-import Link from "next/link";
-import dayjs from "dayjs";
-import "dayjs/locale/th";
-import "dayjs/locale/en";
+import React from 'react';
+import languageDetector from '/lib/languageDetector';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import dayjs from 'dayjs';
+import 'dayjs/locale/th';
+import 'dayjs/locale/en';
 
 const LanguageSwitchLink = ({ className, locale, ...rest }) => {
   const router = useRouter();
@@ -12,16 +13,16 @@ const LanguageSwitchLink = ({ className, locale, ...rest }) => {
   let pName = router.pathname;
 
   // หาตำแหน่งของสตริงคิวรี่ใน URL
-  const queryIndex = href.indexOf("?");
+  const queryIndex = href.indexOf('?');
 
   // ตัดสตริงคิวรี่ออกมา
-  let queryString = "";
+  let queryString = '';
   if (queryIndex > 0) {
     queryString = href.substring(queryIndex);
   }
 
   Object.keys(router.query).forEach((k) => {
-    if (k === "locale") {
+    if (k === 'locale') {
       pName = pName.replace(`[${k}]`, locale);
       return;
     }
@@ -30,8 +31,8 @@ const LanguageSwitchLink = ({ className, locale, ...rest }) => {
   if (locale) {
     href = rest.href ? `/${locale}${rest.href}` : pName;
 
-    if (locale === "th") dayjs.locale("en");
-    if (locale === "en") dayjs.locale("th");
+    if (locale === 'th') dayjs.locale('en');
+    if (locale === 'en') dayjs.locale('th');
   }
   if (queryString) {
     href = href + queryString;
@@ -43,12 +44,12 @@ const LanguageSwitchLink = ({ className, locale, ...rest }) => {
       onClick={() => languageDetector.cache(locale)}
       className={className}
     >
-      {locale === "th" && (
+      {locale === 'th' && (
         <>
           <span className="text-indigo-500">English</span> | ไทย
         </>
       )}
-      {locale === "en" && (
+      {locale === 'en' && (
         <>
           English | <span className="text-indigo-500">ไทย</span>
         </>

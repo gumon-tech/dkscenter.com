@@ -2,14 +2,14 @@ import {
   CalendarIcon,
   ClockIcon,
   MapPinIcon,
-} from "@heroicons/react/24/outline";
-import Link from "/components/link";
-import dayjs from "dayjs";
-import { useRouter } from "next/router";
-import React, { useState } from "react";
-import Modal from "/components/modal";
-import TicketSales from "/components/TicketSales";
-import TicketSaleModalManage from "./ticketSaleModal/ticketSaleModalManage";
+} from '@heroicons/react/24/outline';
+import Link from '/components/link';
+import dayjs from 'dayjs';
+import { useRouter } from 'next/router';
+import React, { useState } from 'react';
+import Modal from '/components/modal';
+import TicketSales from '/components/TicketSales';
+import TicketSaleModalManage from './ticketSaleModal/ticketSaleModalManage';
 
 const CourseDetailLink = ({
   courseData,
@@ -23,7 +23,7 @@ const CourseDetailLink = ({
   const { code } = router.query;
 
   const [modalOpen, setModalOpen] = useState(false);
-  const [scheduleKey, setScheduleKey] = useState("");
+  const [scheduleKey, setScheduleKey] = useState('');
 
   const openModal = (scheduleKey) => {
     setScheduleKey(scheduleKey);
@@ -44,7 +44,7 @@ const CourseDetailLink = ({
                 scope="col"
                 className="px-6 py-3 rounded-t-lg text-xl mt-5 text-blue-700 dark:text-blue-400 font-bold"
               >
-                {t("course-detail-8")}
+                {t('course-detail-8')}
               </th>
             </tr>
           </thead>
@@ -68,47 +68,47 @@ const CourseDetailLink = ({
                 colSpan={2}
                 className="px-6 py-3 rounded-t-lg text-xl mt-5 text-blue-700 dark:text-blue-400 font-bold"
               >
-                {t("course-detail-9")}
+                {t('course-detail-9')}
               </th>
             </tr>
           </thead>
           <tbody>
             {courseData.publicSchedule &&
             courseData.publicSchedule.filter(
-              (publicSchedule) => publicSchedule.isActive
+              (publicSchedule) => publicSchedule.isActive,
             ).length > 0 ? (
               courseData.publicSchedule
                 .filter((publicSchedule) => publicSchedule.isActive)
                 .map((publicSchedule, index) => {
                   const eventStartDate = dayjs(
-                    publicSchedule.eventStart
-                  ).format("D MMM YYYY");
+                    publicSchedule.eventStart,
+                  ).format('D MMM YYYY');
                   const eventEndDate = dayjs(publicSchedule.eventEnd).format(
-                    "D MMM YYYY"
+                    'D MMM YYYY',
                   );
 
                   const eventStartTime = dayjs(
-                    publicSchedule.eventStart
-                  ).format("HH:mm");
+                    publicSchedule.eventStart,
+                  ).format('HH:mm');
                   const eventEndTime = dayjs(publicSchedule.eventEnd).format(
-                    "HH:mm"
+                    'HH:mm',
                   );
 
                   const isSaleEnded = dayjs().isAfter(
-                    dayjs(publicSchedule.saleEnd)
+                    dayjs(publicSchedule.saleEnd),
                   );
 
                   const isSaleStart = dayjs().isAfter(
-                    dayjs(publicSchedule.saleStart)
+                    dayjs(publicSchedule.saleStart),
                   );
 
                   // ไม่ตรงเงือนไข จะแสดงสิ่งนี้
-                  let courseType = "COMING_SOON";
+                  let courseType = 'COMING_SOON';
                   // หมดช่วงเวลาขาย
-                  if (isSaleEnded) courseType = "ENDED";
+                  if (isSaleEnded) courseType = 'ENDED';
                   // ยังอยู่ช่วงเวลาขาย + ขายหมดแล้ว
                   if (isSaleStart && !isSaleEnded && publicSchedule.isSoldOut) {
-                    courseType = "SOLD_OUT";
+                    courseType = 'SOLD_OUT';
                   }
                   // ยังอยู่ช่วงเวลาขาย + ขายไม่หมด + มีลิ้งขาย
                   if (
@@ -117,7 +117,7 @@ const CourseDetailLink = ({
                     !publicSchedule.isSoldOut &&
                     publicSchedule.ticketUrl
                   ) {
-                    courseType = "GET_YOURS";
+                    courseType = 'GET_YOURS';
                   }
 
                   if (
@@ -127,36 +127,37 @@ const CourseDetailLink = ({
                     !publicSchedule.ticketUrl &&
                     publicSchedule.scheduleKey
                   ) {
-                    courseType = "GET_YOURS_2";
+                    courseType = 'GET_YOURS_2';
                   }
 
                   return (
                     <tr key={index} className="bg-white dark:bg-gray-800">
                       <th scope="row" className="px-6 py-4">
                         <h3 className="text-indigo-700 dark:text-indigo-400">
-                          {courseType === "COMING_SOON" && (
+                          {courseType === 'COMING_SOON' && (
                             <>{publicSchedule.title}</>
                           )}
-                          {courseType === "ENDED" && (
+                          {courseType === 'ENDED' && (
                             <>{publicSchedule.title}</>
                           )}
-                          {courseType === "SOLD_OUT" && (
+                          {courseType === 'SOLD_OUT' && (
                             <>{publicSchedule.title}</>
                           )}
-                          {courseType === "GET_YOURS" && (
+                          {courseType === 'GET_YOURS' && (
                             <>
                               <a
                                 target="_blank"
                                 href={
                                   publicSchedule.ticketUrl +
-                                  (!!code ? "?discount_code=" + code : "")
+                                  (code ? '?discount_code=' + code : '')
                                 }
+                                rel="noreferrer"
                               >
                                 {publicSchedule.title}
                               </a>
                             </>
                           )}
-                          {courseType === "GET_YOURS_2" && (
+                          {courseType === 'GET_YOURS_2' && (
                             <>
                               <a
                                 href="#"
@@ -172,7 +173,7 @@ const CourseDetailLink = ({
                         <div className="flex text-gray-700 dark:text-gray-400 font-light">
                           <p className="w-5 h-5 mr-1">
                             <CalendarIcon />
-                          </p>{" "}
+                          </p>{' '}
                           <p>{eventStartDate}</p>
                           {eventStartDate !== eventEndDate && (
                             <p className="pl-1">- {eventEndDate}</p>
@@ -181,7 +182,7 @@ const CourseDetailLink = ({
                         <div className="flex text-gray-700 dark:text-gray-400 font-light">
                           <p className="w-5 h-5 mr-1">
                             <ClockIcon />
-                          </p>{" "}
+                          </p>{' '}
                           <p>{eventStartTime}</p>
                           <p className="pl-1">- {eventEndTime}</p>
                         </div>
@@ -189,25 +190,26 @@ const CourseDetailLink = ({
                           <div className="flex text-gray-700 dark:text-gray-400 font-light">
                             <p className="w-5 h-5 mr-1">
                               <MapPinIcon />
-                            </p>{" "}
+                            </p>{' '}
                             <p>{publicSchedule.location}</p>
                           </div>
                         )}
 
-                        {courseType === "GET_YOURS" && registerBottom && (
+                        {courseType === 'GET_YOURS' && registerBottom && (
                           <a
                             target="_blank"
                             href={
                               publicSchedule.ticketUrl +
-                              (!!code ? "?discount_code=" + code : "")
+                              (code ? '?discount_code=' + code : '')
                             }
                             className="mt-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                            rel="noreferrer"
                           >
-                            {t("course-detail-16")}
+                            {t('course-detail-16')}
                           </a>
                         )}
 
-                        {courseType === "GET_YOURS_2" && registerBottom && (
+                        {courseType === 'GET_YOURS_2' && registerBottom && (
                           <>
                             <nav>
                               <button
@@ -216,39 +218,40 @@ const CourseDetailLink = ({
                                   openModal(publicSchedule.scheduleKey)
                                 }
                               >
-                                {t("course-detail-16")}
+                                {t('course-detail-16')}
                               </button>
                             </nav>
                           </>
                         )}
                       </th>
                       <th className="min-w-16">
-                        {courseType === "COMING_SOON" && "COMING SOON!"}
-                        {courseType === "ENDED" && (
+                        {courseType === 'COMING_SOON' && 'COMING SOON!'}
+                        {courseType === 'ENDED' && (
                           <span className="text-gray-700 dark:text-gray-400 font-bold">
-                            {t("course-detail-14")}
+                            {t('course-detail-14')}
                           </span>
                         )}
-                        {courseType === "SOLD_OUT" && (
+                        {courseType === 'SOLD_OUT' && (
                           <span className="text-red-600 font-bold">
-                            {t("course-detail-15")}
+                            {t('course-detail-15')}
                           </span>
                         )}
 
-                        {courseType === "GET_YOURS" && registerRight && (
+                        {courseType === 'GET_YOURS' && registerRight && (
                           <a
                             target="_blank"
                             href={
                               publicSchedule.ticketUrl +
-                              (!!code ? "?discount_code=" + code : "")
+                              (code ? '?discount_code=' + code : '')
                             }
                             className="mt-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                            rel="noreferrer"
                           >
-                            {t("course-detail-16")}
+                            {t('course-detail-16')}
                           </a>
                         )}
 
-                        {courseType === "GET_YOURS_2" && registerRight && (
+                        {courseType === 'GET_YOURS_2' && registerRight && (
                           <nav>
                             <button
                               className="mt-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -256,7 +259,7 @@ const CourseDetailLink = ({
                                 openModal(publicSchedule.scheduleKey)
                               }
                             >
-                              {t("course-detail-16")}
+                              {t('course-detail-16')}
                             </button>
                           </nav>
                         )}
@@ -271,7 +274,7 @@ const CourseDetailLink = ({
                   colSpan={2}
                   className="px-6 rounded-t-lg py-4 font-medium text-gray-900 dark:text-white"
                 >
-                  {t("course-detail-17")}
+                  {t('course-detail-17')}
                 </th>
               </tr>
             )}
@@ -282,10 +285,10 @@ const CourseDetailLink = ({
                 className="px-6 rounded-b-lg py-4 font-medium text-gray-900 dark:text-white"
               >
                 <Link
-                  href={"/about-us"}
+                  href={'/about-us'}
                   className="inline-flex font-medium items-center text-blue-600 dark:text-blue-400 hover:underline"
                 >
-                  {t("course-detail-18")}
+                  {t('course-detail-18')}
                   <svg
                     className="w-3 h-3 ms-2.5 rtl:rotate-[270deg]"
                     aria-hidden="true"
@@ -315,7 +318,7 @@ const CourseDetailLink = ({
                   scope="col"
                   className="px-6 py-3 rounded-t-lg text-xl mt-5 text-blue-700 dark:text-blue-400 font-bold"
                 >
-                  {t("course-detail-19")}
+                  {t('course-detail-19')}
                 </th>
               </tr>
             </thead>
@@ -330,6 +333,7 @@ const CourseDetailLink = ({
                       target="_blank"
                       href={documentFile.fileUrl}
                       className="inline-flex font-medium items-center text-blue-600 dark:text-blue-400 hover:underline"
+                      rel="noreferrer"
                     >
                       {documentFile.title}
                       <svg
@@ -365,10 +369,10 @@ const CourseDetailLink = ({
       <Modal
         isOpen={modalOpen}
         onClose={closeModal}
-        title={t("ticket-modal-title") + " " + courseData.title}
+        title={t('ticket-modal-title') + ' ' + courseData.title}
       >
         <TicketSaleModalManage
-          courseKey={courseData.key}
+          courseKey={courseData?.key || ''}
           scheduleKey={scheduleKey}
           discountCodeURL={code}
           i18next={i18next}

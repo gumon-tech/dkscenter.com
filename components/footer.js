@@ -1,17 +1,17 @@
-import Link from "/components/link";
-import Image from "next/image";
-import React from "react";
-import Container from "./container";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from '/components/link';
+import Image from 'next/image';
+import React from 'react';
+import Container from './container';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebook,
   faSquareYoutube,
   faLine,
-} from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import i18nextConfig from "../next-i18next.config";
-import { useRouter } from "next/router";
-import LanguageSwitchLink from "./LanguageSwitchLink";
+} from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import i18nextConfig from '../next-i18next.config';
+import { useRouter } from 'next/router';
+import LanguageSwitchLink from './LanguageSwitchLink';
 
 export default function Footer(props) {
   const router = useRouter();
@@ -20,13 +20,13 @@ export default function Footer(props) {
   const currentLocale = router.query.locale || i18nextConfig.i18n.defaultLocale;
 
   const navigation = [
-    { title: "Home", path: "/" },
-    { title: "Course", path: "/course" },
-    { title: "Schedule", path: "/schedule" },
+    { title: 'Home', path: '/' },
+    { title: 'Course', path: '/course' },
+    { title: 'Schedule', path: '/schedule' },
   ];
   const legal = [
-    { title: "About Us", path: "/about-us" },
-    { title: "Privacy", path: "/privacy" },
+    { title: 'About Us', path: '/about-us' },
+    { title: 'Privacy', path: '/privacy' },
   ];
   return (
     <div className="relative">
@@ -34,7 +34,7 @@ export default function Footer(props) {
         <div className="grid max-w-screen-xl grid-cols-1 gap-10 pt-10 mx-auto mt-5 border-t border-gray-100 dark:border-trueGray-700 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <div>
-              {" "}
+              {' '}
               <Link
                 href="/"
                 className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100"
@@ -50,7 +50,7 @@ export default function Footer(props) {
             </div>
 
             <div className="max-w-md mt-4 text-gray-500 dark:text-gray-400">
-              {t("footer")}
+              {t('footer')}
             </div>
           </div>
 
@@ -83,7 +83,7 @@ export default function Footer(props) {
                 return (
                   <LanguageSwitchLink
                     className={
-                      "w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700"
+                      'w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700'
                     }
                     locale={locale}
                     key={locale}
@@ -100,20 +100,29 @@ export default function Footer(props) {
               <a
                 target="_blank"
                 href="https://www.facebook.com/dks.share"
+                rel="noreferrer"
               >
                 <FontAwesomeIcon icon={faFacebook} width={30} height={30} />
               </a>
-              <a target="_blank" href="https://lin.ee/fnl0CuL">
+              <a target="_blank" href="https://lin.ee/fnl0CuL" rel="noreferrer">
                 <FontAwesomeIcon icon={faLine} width={30} height={30} />
               </a>
-              <a target="_blank" href="https://www.youtube.com/@dkscenter">
+              <a
+                target="_blank"
+                href="https://www.youtube.com/@dkscenter"
+                rel="noreferrer"
+              >
                 <FontAwesomeIcon
                   icon={faSquareYoutube}
                   width={30}
                   height={30}
                 />
               </a>
-              <a target="_blank" href="mailto:sales@dkscenter.com">
+              <a
+                target="_blank"
+                href="mailto:sales@dkscenter.com"
+                rel="noreferrer"
+              >
                 <FontAwesomeIcon icon={faEnvelope} width={30} height={30} />
               </a>
             </div>
@@ -121,8 +130,8 @@ export default function Footer(props) {
         </div>
 
         <div className="my-10 text-sm text-center text-gray-600 dark:text-gray-400">
-          Copyright © {new Date().getFullYear()}. Made with ♥ by{" "}
-          <a href="https://gumon.io/" target="_blank" rel="noopener">
+          Copyright © {new Date().getFullYear()}. Made with ♥ by{' '}
+          <a href="https://gumon.io/" target="_blank" rel="noopener noreferrer">
             Gumon.io
           </a>
         </div>

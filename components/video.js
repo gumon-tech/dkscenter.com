@@ -1,6 +1,6 @@
-import { useState } from "react";
-import Container from "./container";
-import { Course } from "../types/course";
+import React, { useState } from 'react';
+import Container from './container';
+import { Course } from '../types/course';
 
 const Video = ({ course }) => {
   const [playVideo, setPlayVideo] = useState(false);
