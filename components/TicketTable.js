@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import dayjs from "dayjs";
+import dayjs from 'dayjs';
 
 const TicketTable = ({ tickets }) => {
-  const [quantities, setQuantities] = useState(tickets.map(ticket => 0));
+  const [quantities, setQuantities] = useState(tickets.map((ticket) => 0));
   const [promoCode, setPromoCode] = useState('');
   const currentTime = new Date();
-
 
   const handleQuantityChange = (index, quantity) => {
     const newQuantities = [...quantities];
@@ -44,32 +43,62 @@ const TicketTable = ({ tickets }) => {
         <tbody>
           {tickets.map((ticket, index) => (
             <tr key={ticket.ticketId}>
-              <td className="border border-gray-300 px-4 py-2">{ticket.name}</td>
-              <td className="border border-gray-300 px-4 py-2">{ticket.price}</td>
               <td className="border border-gray-300 px-4 py-2">
-                {(new Date(ticket.salesStart) <= currentTime && currentTime <= new Date(ticket.salesEnd)) ? (
+                {ticket.name}
+              </td>
+              <td className="border border-gray-300 px-4 py-2">
+                {ticket.price}
+              </td>
+              <td className="border border-gray-300 px-4 py-2">
+                {new Date(ticket.salesStart) <= currentTime &&
+                currentTime <= new Date(ticket.salesEnd) ? (
                   <>
-                    <button className="bg-blue-500 text-white px-2 py-1 rounded" onClick={() => handleQuantityChange(index, quantities[index] - 1)}>-</button>
+                    <button
+                      className="bg-blue-500 text-white px-2 py-1 rounded"
+                      onClick={() =>
+                        handleQuantityChange(index, quantities[index] - 1)
+                      }
+                    >
+                      -
+                    </button>
                     <span className="px-4">{quantities[index]}</span>
-                    <button className="bg-blue-500 text-white px-2 py-1 rounded" onClick={() => handleQuantityChange(index, quantities[index] + 1)}>+</button>
+                    <button
+                      className="bg-blue-500 text-white px-2 py-1 rounded"
+                      onClick={() =>
+                        handleQuantityChange(index, quantities[index] + 1)
+                      }
+                    >
+                      +
+                    </button>
                   </>
                 ) : (
                   <span>Not available</span>
                 )}
               </td>
-              <td className="border border-gray-300 px-4 py-2">{calculateSubtotal(ticket.price, quantities[index])}</td>
+              <td className="border border-gray-300 px-4 py-2">
+                {calculateSubtotal(ticket.price, quantities[index])}
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
       <div className="mt-4">
-        <input className="border border-gray-300 rounded px-4 py-2" type="text" value={promoCode} onChange={e => setPromoCode(e.target.value)} placeholder="Enter promo code" />
+        <input
+          className="border border-gray-300 rounded px-4 py-2"
+          type="text"
+          value={promoCode}
+          onChange={(e) => setPromoCode(e.target.value)}
+          placeholder="Enter promo code"
+        />
       </div>
+      <div className="mt-4">Total: {calculateTotalPrice()}</div>
       <div className="mt-4">
-        Total: {calculateTotalPrice()}
-      </div>
-      <div className="mt-4">
-        <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded" onClick={handlePurchase}>Purchase</button>
+        <button
+          className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded"
+          onClick={handlePurchase}
+        >
+          Purchase
+        </button>
       </div>
     </div>
   );

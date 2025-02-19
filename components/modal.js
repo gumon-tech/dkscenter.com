@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 const Modal = ({ isOpen, onClose, children, title }) => {
   const modalStyle = {
-    minWidth: "70vw", // ขนาดขั้นต่ำของ modal เป็น 70% ของ viewport width
+    minWidth: '70vw', // ขนาดขั้นต่ำของ modal เป็น 70% ของ viewport width
     // minHeight: '100vh', // ขนาดขั้นต่ำของ modal เป็น 70% ของ viewport height
   };
 
@@ -40,7 +40,7 @@ const Modal = ({ isOpen, onClose, children, title }) => {
             </svg>
           </button>
         </div>
-        <div className="h-2/3 px-8 pb-8">{children}</div>{" "}
+        <div className="h-2/3 px-8 pb-8">{children}</div>{' '}
         {/* เพิ่ม class overflow-y-auto และ max-h-96 เพื่อให้มีการเลื่อนแนวตั้งเฉพาะเนื้อหา */}
       </div>
     </div>

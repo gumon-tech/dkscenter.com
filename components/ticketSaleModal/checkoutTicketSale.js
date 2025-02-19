@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import ReactLoading from "react-loading";
-import Countdown from "react-countdown";
-import { ticketsCheckout } from "../../utils/ticketsCheckout";
-import { useRouter } from "next/router";
-import { refreshEmailToken } from "../../utils/refreshEmailToken";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import ReactLoading from 'react-loading';
+import Countdown from 'react-countdown';
+import { ticketsCheckout } from '../../utils/ticketsCheckout';
+import { useRouter } from 'next/router';
+import { refreshEmailToken } from '../../utils/refreshEmailToken';
 
 export default function CheckoutTicketSale({
   i18next,
@@ -25,10 +25,10 @@ export default function CheckoutTicketSale({
   const initContacts = [];
   for (let i = 0; i < ticketAmount; i++) {
     initContacts.push({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phoneNumber: "",
+      firstName: '',
+      lastName: '',
+      email: '',
+      phoneNumber: '',
     });
   }
 
@@ -83,7 +83,7 @@ export default function CheckoutTicketSale({
         const paymentUrl = response.paymentUrl;
         router.replace(paymentUrl);
       } catch (error) {
-        console.error("Error ticketsReserve :", error);
+        console.error('Error ticketsReserve :', error);
         setError(error);
         setIsLoading(false);
         // alert(error?.response?.data?.message);
@@ -91,7 +91,7 @@ export default function CheckoutTicketSale({
         // ทำการจัดการข้อผิดพลาดตามที่คุณต้องการ
       }
     } catch (error) {
-      console.error("Error refreshEmailToken :", error);
+      console.error('Error refreshEmailToken :', error);
       setError(error);
       // alert(error?.response?.data?.message);
     }
@@ -103,7 +103,7 @@ export default function CheckoutTicketSale({
       <div className="grid justify-center content-center items-center h-max">
         <ReactLoading
           type="spinningBubbles"
-          color={"#049ee8"}
+          color={'#049ee8'}
           height={200} // ปรับความสูง
           width={200} // ปรับความกว้าง
         />
@@ -116,7 +116,7 @@ export default function CheckoutTicketSale({
         <div className="error text-red-500">
           {error?.response?.data?.errors &&
             error?.response?.data?.errors.map((error, index) => (
-              <div key={"error_" + index}>
+              <div key={'error_' + index}>
                 <p>
                   {error.value} : {error.msg}
                 </p>
@@ -127,7 +127,7 @@ export default function CheckoutTicketSale({
       )}
       <div className="pb-8">
         <p className="text-left text-gray-600 mb-2  text-gray-200">
-          {t("ticket-checkout-expire")}: <Countdown date={reserveExpire} />
+          {t('ticket-checkout-expire')}: <Countdown date={reserveExpire} />
         </p>
         <form onSubmit={handleSubmit}>
           {contacts.map((contact, index) => (
@@ -136,45 +136,45 @@ export default function CheckoutTicketSale({
               className="bg-white shadow-md rounded p-4 mb-8 border border-gray-200 dark:bg-gray-700 dark:border-gray-700"
             >
               <h2 className="text-lg font-semibold mb-2">
-                {t("ticket-checkout-contact")} {index + 1}
+                {t('ticket-checkout-contact')} {index + 1}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input
                   type="text"
-                  placeholder={t("ticket-checkout-first-name")}
+                  placeholder={t('ticket-checkout-first-name')}
                   id={`firstName_${index}`}
                   name={`firstName_${index}`}
-                  value={contacts[index]?.firstName || ""}
+                  value={contacts[index]?.firstName || ''}
                   onChange={(event) => handleInputFirstName(index, event)}
                   className="border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500 mb-4 md:mb-0 dark:border-gray-700"
                   required
                 />
                 <input
                   type="text"
-                  placeholder={t("ticket-checkout-last-name")}
+                  placeholder={t('ticket-checkout-last-name')}
                   id={`lastName_${index}`}
                   name={`lastName_${index}`}
-                  value={contacts[index]?.lastName || ""}
+                  value={contacts[index]?.lastName || ''}
                   onChange={(event) => handleInputLastName(index, event)}
                   className="border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500 mb-4 md:mb-0"
                   required
                 />
                 <input
                   type="email"
-                  placeholder={t("ticket-checkout-email")}
+                  placeholder={t('ticket-checkout-email')}
                   id={`email_${index}`}
                   name={`email_${index}`}
-                  value={contacts[index]?.email || ""}
+                  value={contacts[index]?.email || ''}
                   onChange={(event) => handleInputEmail(index, event)}
                   className="border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500 mb-4 md:mb-0"
                   required
                 />
                 <input
                   type="tel"
-                  placeholder={t("ticket-checkout-phone-number")}
+                  placeholder={t('ticket-checkout-phone-number')}
                   id={`phoneNumber_${index}`}
                   name={`phoneNumber_${index}`}
-                  value={contacts[index]?.phoneNumber || ""}
+                  value={contacts[index]?.phoneNumber || ''}
                   onChange={(event) => handleInputPhoneNumber(index, event)}
                   className="border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500 mb-4 md:mb-0"
                   required
@@ -187,7 +187,7 @@ export default function CheckoutTicketSale({
             type="submit"
             className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 w-full transition duration-300 ease-in-out"
           >
-            {t("ticket-checkout-submit")}
+            {t('ticket-checkout-submit')}
           </button>
         </form>
       </div>

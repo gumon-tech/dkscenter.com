@@ -1,7 +1,7 @@
-import React from "react";
-import Link from "/components/link";
-import { getActiveCourses, removeCoursesOutDate } from "../utils/course";
-import { getSchedule } from "../utils/dateTime";
+import React from 'react';
+import Link from '/components/link';
+import { getActiveCourses, removeCoursesOutDate } from '../utils/course';
+import { getSchedule } from '../utils/dateTime';
 
 export default function Table(props) {
   const i18next = props.i18next;
@@ -9,7 +9,6 @@ export default function Table(props) {
   const currentLanguage = i18n.language;
   let courses = getActiveCourses(currentLanguage);
   courses = removeCoursesOutDate(courses);
-
 
   return (
     <div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -19,23 +18,23 @@ export default function Table(props) {
             <thead>
               <tr>
                 <th className="font-bold text-xl border-b dark:border-slate-600  text-slate-400  dark:text-slate-200 text-center p-4">
-                  {t("schedule-course")}
+                  {t('schedule-course')}
                 </th>
                 {/* <th className="font-bold text-xl border-b dark:border-slate-600  text-slate-400  dark:text-slate-200 text-center p-4 ">
                   Code
                 </th> */}
                 <th className="font-bold text-xl border-b dark:border-slate-600  text-slate-400  dark:text-slate-200 text-center p-4 ">
-                  {t("schedule-duration")}
+                  {t('schedule-duration')}
                 </th>
                 <th className="font-bold text-xl border-b dark:border-slate-600  text-slate-400  dark:text-slate-200 text-center p-4 ">
-                  {t("schedule-schedule")}
+                  {t('schedule-schedule')}
                 </th>
               </tr>
             </thead>
             <tbody className="bg-white dark:bg-slate-800">
               {courses.map((course, index) => {
                 return (
-                  <tr key={course.key + "-" + index}>
+                  <tr key={course.key + '-' + index}>
                     <td className="font-bold border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-200 text-left">
                       <Link
                         href={`/course/${course.key}`}
@@ -55,14 +54,14 @@ export default function Table(props) {
                       {course.publicSchedule.map((schedule, index) => {
                         return (
                           <div
-                            key={"schedule-" + index}
+                            key={'schedule-' + index}
                             className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"
                           >
                             <div className="text-left">{schedule.title}</div>
                             <div className="font-bold text-left">
                               {getSchedule(
                                 schedule.eventStart,
-                                schedule.eventEnd
+                                schedule.eventEnd,
                               )}
                             </div>
                           </div>

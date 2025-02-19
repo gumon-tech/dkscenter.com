@@ -21,18 +21,17 @@ export type Course = {
   outline: Outline[];
   publicSchedule: PublicSchedule[];
   documents: Document[];
-
-}
+};
 
 export type Document = {
   title: string;
   fileUrl: string;
-}
+};
 
 export type Outline = {
   title: string;
   descriptions: string[];
-}
+};
 
 export type PublicSchedule = {
   title: string;
@@ -44,4 +43,4 @@ export type PublicSchedule = {
   isActive: boolean;
   isSoldOut?: boolean;
   location?: string;
-}
+};

@@ -1,27 +1,27 @@
-import React, { useState } from "react";
-import Head from "next/head";
-import Navbar from "/components/navbar";
-import Footer from "/components/footer";
-import CourseDetail from "/components/courseDetail";
-import courses from "/datas/courses.json";
-import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Container from "/components/container";
-import Modal from "/components/modal";
-import TicketTable from "/components/TicketTable";
-import TicketSales from "/components/TicketSales";
-import TicketSaleModalManage from "/components/ticketSaleModal/ticketSaleModalManage";
+import React, { useState } from 'react';
+import Head from 'next/head';
+import Navbar from '/components/navbar';
+import Footer from '/components/footer';
+import CourseDetail from '/components/courseDetail';
+import courses from '/datas/courses.json';
+import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Container from '/components/container';
+import Modal from '/components/modal';
+import TicketTable from '/components/TicketTable';
+import TicketSales from '/components/TicketSales';
+import TicketSaleModalManage from '/components/ticketSaleModal/ticketSaleModalManage';
 
 const CourseSchedule = ({ courseData, scheduleData }) => {
-  const i18next = useTranslation("home");
+  const i18next = useTranslation('home');
   const { t, i18n } = i18next;
   const router = useRouter();
   const { asPath, query } = useRouter();
   const origin =
-    typeof window !== "undefined" && window.location.origin
+    typeof window !== 'undefined' && window.location.origin
       ? window.location.origin
-      : "";
+      : '';
 
   const URL = `${origin}${asPath}`;
   const domain = origin;
@@ -32,8 +32,6 @@ const CourseSchedule = ({ courseData, scheduleData }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [scheduleKey, setScheduleKey] = useState(scheduleData.scheduleKey);
   const { code } = router.query;
-
-
 
   const openModal = () => {
     setModalOpen(true);
@@ -98,7 +96,7 @@ const CourseSchedule = ({ courseData, scheduleData }) => {
       <Modal
         isOpen={modalOpen}
         onClose={closeModal}
-        title={t("ticket-modal-title") + " " + courseData.title}
+        title={t('ticket-modal-title') + ' ' + courseData.title}
       >
         <TicketSaleModalManage
           courseKey={courseData.key}
@@ -123,7 +121,7 @@ export const getStaticPaths = () => {
             params: {
               courseKey: courseLocaleData.key,
               scheduleKey: publicSchedule.scheduleKey,
-              locale: courseLocaleData.locale || "en",
+              locale: courseLocaleData.locale || 'en',
             },
           });
         }
@@ -133,11 +131,11 @@ export const getStaticPaths = () => {
   return { paths, fallback: false };
 };
 
-export const getStaticProps = makeStaticProps(["home"]);
+export const getStaticProps = makeStaticProps(['home']);
 
 function makeStaticProps(ns = {}) {
   return async function getStaticProps(ctx) {
-    const courseKey = ctx.params?.courseKey || "";
+    const courseKey = ctx.params?.courseKey || '';
     const courseData = courses[courseKey];
     return {
       props: await getI18nProps(ctx, ns, courseData),
@@ -145,12 +143,12 @@ function makeStaticProps(ns = {}) {
   };
 }
 
-async function getI18nProps(ctx, ns = ["home"], courseData) {
+async function getI18nProps(ctx, ns = ['home'], courseData) {
   const locale = ctx?.params?.locale;
   const scheduleKey = ctx?.params?.scheduleKey;
   const courseLocaleData = courseData[locale];
   const scheduleData = courseLocaleData?.publicSchedule?.find(
-    (schedule) => schedule.scheduleKey == scheduleKey
+    (schedule) => schedule.scheduleKey == scheduleKey,
   );
   const props = {
     ...(await serverSideTranslations(locale, ns)),

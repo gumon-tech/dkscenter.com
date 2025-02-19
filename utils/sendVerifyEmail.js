@@ -1,8 +1,8 @@
-import axios from "axios";
-import env from "/config.env.json"
+import axios from 'axios';
+import env from '/config.env.json';
 // ตรวจสอบว่าตัวแปร API_URL ได้ถูกกำหนดค่าหรือไม่
 if (!env.apiUrl) {
-  throw new Error("API_URL is not defined in environment variables.");
+  throw new Error('API_URL is not defined in environment variables.');
 }
 
 const API_URL = env.apiUrl;
@@ -17,10 +17,10 @@ export async function sendVerifyEmail(email) {
     if (response.status === 200) {
       return response.data;
     } else {
-      throw new Error("Failed to send verification email.");
+      throw new Error('Failed to send verification email.');
     }
   } catch (error) {
-    console.error("Error sending verification email:", error);
+    console.error('Error sending verification email:', error);
     throw error;
   }
 }

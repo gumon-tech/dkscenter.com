@@ -1,29 +1,29 @@
-import React from "react";
-import Head from "next/head";
-import Navbar from "/components/navbar";
-import Footer from "/components/footer";
-import CourseDetail from "/components/courseDetail";
-import courses from "/datas/courses.json";
-import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import React from 'react';
+import Head from 'next/head';
+import Navbar from '/components/navbar';
+import Footer from '/components/footer';
+import CourseDetail from '/components/courseDetail';
+import courses from '/datas/courses.json';
+import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const Course = ({ courseData }) => {
-  const i18next = useTranslation("home");
+  const i18next = useTranslation('home');
   const { t, i18n } = i18next;
 
   const { asPath } = useRouter();
   const origin =
-    typeof window !== "undefined" && window.location.origin
+    typeof window !== 'undefined' && window.location.origin
       ? window.location.origin
-      : "";
+      : '';
 
   const URL = `${origin}${asPath}`;
   const domain = origin;
   const currentLanguage = i18n.language;
   const courseLocaleData = courseData[currentLanguage];
-  let localeNaming = "en_US";
-  if (currentLanguage === "th") localeNaming = "TH_TH";
+  let localeNaming = 'en_US';
+  if (currentLanguage === 'th') localeNaming = 'TH_TH';
 
   return (
     <>
@@ -81,7 +81,7 @@ const Course = ({ courseData }) => {
 export const getStaticPaths = () => {
   const courseKeyList = Object.keys(courses);
   const paths = [];
-  const locales = ["en", "th"];
+  const locales = ['en', 'th'];
   for (const courseKey of courseKeyList) {
     for (const locale of locales) {
       paths.push({
@@ -92,11 +92,11 @@ export const getStaticPaths = () => {
   return { paths, fallback: false };
 };
 
-export const getStaticProps = makeStaticProps(["home"]);
+export const getStaticProps = makeStaticProps(['home']);
 
 function makeStaticProps(ns = {}) {
   return async function getStaticProps(ctx) {
-    const courseKey = ctx.params?.courseKey || "";
+    const courseKey = ctx.params?.courseKey || '';
     const courseData = courses[courseKey];
     return {
       props: await getI18nProps(ctx, ns, courseData),
@@ -104,7 +104,7 @@ function makeStaticProps(ns = {}) {
   };
 }
 
-async function getI18nProps(ctx, ns = ["home"], courseData) {
+async function getI18nProps(ctx, ns = ['home'], courseData) {
   const locale = ctx?.params?.locale;
   const props = {
     ...(await serverSideTranslations(locale, ns)),

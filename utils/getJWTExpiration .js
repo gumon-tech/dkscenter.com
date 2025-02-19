@@ -1,4 +1,4 @@
-import { decodeJWT } from "./decodeJWT";
+import { decodeJWT } from './decodeJWT';
 
 // ฟังก์ชั่นเพื่อดึงเวลาหมดอายุของ JWT
 export const getJWTExpiration = (token) => {

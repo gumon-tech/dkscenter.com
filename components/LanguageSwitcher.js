@@ -1,7 +1,7 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
-import languageDetector from "/lib/languageDetector";
-import { useRouter } from "next/router";
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import languageDetector from '/lib/languageDetector';
+import { useRouter } from 'next/router';
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
@@ -16,16 +16,16 @@ const LanguageSwitcher = () => {
     let pName = router.pathname;
 
     // หาตำแหน่งของสตริงคิวรี่ใน URL
-    const queryIndex = href.indexOf("?");
+    const queryIndex = href.indexOf('?');
 
     // ตัดสตริงคิวรี่ออกมา
-    let queryString = "";
+    let queryString = '';
     if (queryIndex > 0) {
       queryString = href.substring(queryIndex);
     }
 
     Object.keys(router.query).forEach((k) => {
-      if (k === "locale") {
+      if (k === 'locale') {
         pName = pName.replace(`[${k}]`, newLang);
         return;
       }

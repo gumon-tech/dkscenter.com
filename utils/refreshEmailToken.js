@@ -1,10 +1,10 @@
-import axios from "axios";
+import axios from 'axios';
 import Cookies from 'js-cookie';
 
-import env from "/config.env.json"
+import env from '/config.env.json';
 // ตรวจสอบว่าตัวแปร API_URL ได้ถูกกำหนดค่าหรือไม่
 if (!env.apiUrl) {
-  throw new Error("API_URL is not defined in environment variables.");
+  throw new Error('API_URL is not defined in environment variables.');
 }
 
 const API_URL = env.apiUrl;
@@ -22,10 +22,10 @@ export async function refreshEmailToken({ refreshToken }) {
 
       return response.data;
     } else {
-      throw new Error("Failed to send refreshEmailToken.");
+      throw new Error('Failed to send refreshEmailToken.');
     }
   } catch (error) {
-    console.error("Error sending refreshEmailToken:", error);
+    console.error('Error sending refreshEmailToken:', error);
     throw error;
   }
 }

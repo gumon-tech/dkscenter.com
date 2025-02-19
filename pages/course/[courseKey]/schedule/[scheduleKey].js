@@ -1,19 +1,20 @@
-import { RedirectRender } from "/lib/redirect";
-import { useRouter } from "next/router";
-import Head from "next/head";
-import courses from "/datas/courses.json";
+import React from 'react';
+import { RedirectRender } from '/lib/redirect';
+import { useRouter } from 'next/router';
+import Head from 'next/head';
+import courses from '/datas/courses.json';
 
 export const getStaticPaths = () => {
-  const courseDatas =  Object.values(courses)
+  const courseDatas = Object.values(courses);
   const paths = [];
   for (const courseData of courseDatas) {
-    const courseLocaleDatas =  Object.values(courseData)
+    const courseLocaleDatas = Object.values(courseData);
     for (const courseLocaleData of courseLocaleDatas) {
       for (const publicSchedule of courseLocaleData.publicSchedule) {
-        if(publicSchedule.isActive === true && publicSchedule.scheduleKey){
+        if (publicSchedule.isActive === true && publicSchedule.scheduleKey) {
           paths.push({
-            params: { 
-              courseKey: courseLocaleData.key, 
+            params: {
+              courseKey: courseLocaleData.key,
               scheduleKey: publicSchedule.scheduleKey,
             },
           });
@@ -25,21 +26,20 @@ export const getStaticPaths = () => {
 };
 
 export const getStaticProps = (context) => {
-  const courseKey = context.params?.courseKey || "";
+  const courseKey = context.params?.courseKey || '';
   const courseData = courses[courseKey];
   return { props: { courseData } };
 };
 
-
 const Home = ({ courseData }) => {
   const { asPath } = useRouter();
   const origin =
-    typeof window !== "undefined" && window.location.origin
+    typeof window !== 'undefined' && window.location.origin
       ? window.location.origin
-      : "";
+      : '';
 
   const URL = `${origin}${asPath}`;
-  const domain = origin;  
+  const domain = origin;
   const courseLocaleData = courseData.en;
 
   return RedirectRender(
@@ -84,7 +84,7 @@ const Home = ({ courseData }) => {
         />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-    </>
+    </>,
   );
 };
 

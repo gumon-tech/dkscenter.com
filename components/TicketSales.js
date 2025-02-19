@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import dayjs from "dayjs";
+import React, { useState, useEffect } from 'react';
+import dayjs from 'dayjs';
 
 const TicketCard = ({
   i18next,
@@ -15,42 +15,42 @@ const TicketCard = ({
 
   const [quantity, setQuantity] = useState(0);
 
-  let timeSaleType = "isBeforeSales";
+  let timeSaleType = 'isBeforeSales';
   if (currentTime < salesStartTime) {
-    timeSaleType = "isBeforeSales";
+    timeSaleType = 'isBeforeSales';
   }
   if (salesStartTime <= currentTime && currentTime <= salesEndTime) {
-    timeSaleType = "isInSales";
+    timeSaleType = 'isInSales';
   }
   if (salesEndTime < currentTime) {
-    timeSaleType = "isAfterSales";
+    timeSaleType = 'isAfterSales';
   }
 
   let availableText =
-    t("ticket-card-available") + ":" + (ticket.remaining || 0);
-  if (timeSaleType == "isAfterSales") availableText = " ";
+    t('ticket-card-available') + ':' + (ticket.remaining || 0);
+  if (timeSaleType == 'isAfterSales') availableText = ' ';
 
-  let availableFromText = "";
-  if (timeSaleType === "isBeforeSales") {
-    const localizedTime = salesStartTime.toLocaleDateString("th-TH", {
-      dateStyle: "medium",
+  let availableFromText = '';
+  if (timeSaleType === 'isBeforeSales') {
+    const localizedTime = salesStartTime.toLocaleDateString('th-TH', {
+      dateStyle: 'medium',
     });
-    availableFromText = t("ticket-card-available-until") + ": " + localizedTime;
+    availableFromText = t('ticket-card-available-until') + ': ' + localizedTime;
   }
-  if (timeSaleType === "isInSales") {
-    const localizedTime = salesEndTime.toLocaleDateString("th-TH", {
-      dateStyle: "medium",
+  if (timeSaleType === 'isInSales') {
+    const localizedTime = salesEndTime.toLocaleDateString('th-TH', {
+      dateStyle: 'medium',
     });
-    availableFromText = t("ticket-card-available-on") + ": " + localizedTime;
+    availableFromText = t('ticket-card-available-on') + ': ' + localizedTime;
   }
-  if (timeSaleType === "isAfterSales") {
-    availableFromText = "";
+  if (timeSaleType === 'isAfterSales') {
+    availableFromText = '';
   }
 
   useEffect(() => {
     // ตรวจสอบว่า ticketId ของการ์ดปัจจุบันมีอยู่ในตะกร้าหรือไม่
     const isInCart = cartItems.some(
-      (item) => item.ticketId === ticket.ticketId
+      (item) => item.ticketId === ticket.ticketId,
     );
     // ถ้า ticketId ของการ์ดปัจจุบันไม่อยู่ในตะกร้า ให้กำหนดจำนวนเป็น 0
     if (!isInCart) {
@@ -79,29 +79,29 @@ const TicketCard = ({
         <div className="flex flex-nowrap ">
           {ticket.discountedPrice || ticket.discountedPrice === 0 ? (
             <p className="text-gray-500 line-through mr-2 dark:text-gray-100">
-              {ticket.price.toLocaleString("th-TH", {
-                style: "currency",
-                currency: "THB",
+              {ticket.price.toLocaleString('th-TH', {
+                style: 'currency',
+                currency: 'THB',
               })}
             </p>
           ) : (
             <p className="text-lg text-gray-800 mb-2 mx-4 dark:text-gray-100">
-              {ticket.price.toLocaleString("th-TH", {
-                style: "currency",
-                currency: "THB",
+              {ticket.price.toLocaleString('th-TH', {
+                style: 'currency',
+                currency: 'THB',
               })}
             </p>
           )}
           {(ticket.discountedPrice || ticket.discountedPrice === 0) && (
             <p className="text-lg text-indigo-600 font-semibold mb-2 mx-4 dark:text-gray-100">
-              {ticket.discountedPrice.toLocaleString("th-TH", {
-                style: "currency",
-                currency: "THB",
+              {ticket.discountedPrice.toLocaleString('th-TH', {
+                style: 'currency',
+                currency: 'THB',
               })}
             </p>
           )}
-          {timeSaleType == "isBeforeSales" && <></>}
-          {timeSaleType == "isInSales" && (
+          {timeSaleType == 'isBeforeSales' && <></>}
+          {timeSaleType == 'isInSales' && (
             <>
               <button
                 className="bg-blue-500 text-white px-2 py-1 rounded"
@@ -118,8 +118,8 @@ const TicketCard = ({
               </button>
             </>
           )}
-          {timeSaleType == "isAfterSales" && (
-            <span className="text-red-500">{t("ticket-card-sold-out")}</span>
+          {timeSaleType == 'isAfterSales' && (
+            <span className="text-red-500">{t('ticket-card-sold-out')}</span>
           )}
         </div>
       </div>
@@ -128,7 +128,7 @@ const TicketCard = ({
         <p>{availableFromText}</p>
         {discountDetail?.discountCode && (
           <p>
-            {t("ticket-card-discount-on")}: {discountDetail.discountCode}
+            {t('ticket-card-discount-on')}: {discountDetail.discountCode}
           </p>
         )}
       </div>
@@ -181,52 +181,52 @@ const CartDetails = ({
   return (
     <div className="border border-gray-300 rounded p-4 dark:bg-gray-700">
       <h2 className="text-lg font-semibold mb-4">
-        {t("ticket-cart-cart-details")}
+        {t('ticket-cart-cart-details')}
       </h2>
       {cartItems.map((item) => (
         <div key={item.ticketId} className="cart-item mb-2">
           <p>{item.name}</p>
           <p>
-            {item.price.toLocaleString("th-TH", {
-              style: "currency",
-              currency: "THB",
-            })}{" "}
-            x {item.quantity}{" "}
+            {item.price.toLocaleString('th-TH', {
+              style: 'currency',
+              currency: 'THB',
+            })}{' '}
+            x {item.quantity}{' '}
           </p>
         </div>
       ))}
       <hr />
       <br />
       <p>
-        {t("ticket-cart-subtotal")} x{" "}
-        {calculateSubtotal().toLocaleString("th-TH", {
-          style: "currency",
-          currency: "THB",
+        {t('ticket-cart-subtotal')} x{' '}
+        {calculateSubtotal().toLocaleString('th-TH', {
+          style: 'currency',
+          currency: 'THB',
         })}
       </p>
       <p>
-        {t("ticket-cart-discount")} x{" "}
-        {calculateDiscount().toLocaleString("th-TH", {
-          style: "currency",
-          currency: "THB",
+        {t('ticket-cart-discount')} x{' '}
+        {calculateDiscount().toLocaleString('th-TH', {
+          style: 'currency',
+          currency: 'THB',
         })}
       </p>
       <hr />
       <p>
-        {t("ticket-cart-total")} :{" "}
-        {calculateTotal().toLocaleString("th-TH", {
-          style: "currency",
-          currency: "THB",
+        {t('ticket-cart-total')} :{' '}
+        {calculateTotal().toLocaleString('th-TH', {
+          style: 'currency',
+          currency: 'THB',
         })}
       </p>
       <button
         className={`bg-green-500 text-white px-4 py-2 rounded mt-4 ${
-          isCartEmpty && "opacity-50 cursor-not-allowed"
+          isCartEmpty && 'opacity-50 cursor-not-allowed'
         }`}
         onClick={checkoutCart}
         disabled={isCartEmpty}
       >
-        {t("ticket-cart-checkout")}
+        {t('ticket-cart-checkout')}
       </button>
     </div>
   );
@@ -250,7 +250,7 @@ const TicketSales = ({
 
   const handleQuantityChange = (ticketId, newQuantity, ticketObj = {}) => {
     const existingItemIndex = cartItems.findIndex(
-      (item) => item.ticketId === ticketId
+      (item) => item.ticketId === ticketId,
     );
     if (existingItemIndex !== -1) {
       let updatedCartItems = [...cartItems];
@@ -301,7 +301,7 @@ const TicketSales = ({
               name="discountCode"
               id="discountCode"
               className="focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md px-4 py-2 shadow-md"
-              placeholder={t("ticket-sales-discount-code")}
+              placeholder={t('ticket-sales-discount-code')}
               value={temDiscountCode}
               onChange={handleDiscountCodeChange}
             />
@@ -310,7 +310,7 @@ const TicketSales = ({
             className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 ml-4"
             onClick={applyDiscountCode}
           >
-            {t("ticket-sales-apply")}
+            {t('ticket-sales-apply')}
           </button>
         </div>
 
