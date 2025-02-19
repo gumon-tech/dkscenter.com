@@ -1,3 +1,4 @@
+import React from 'react';
 export default function PrivacyContentTH() {
   return (
     <div className="text-left">

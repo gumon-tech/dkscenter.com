@@ -1,3 +1,4 @@
+import React from 'react';
 import { RedirectRender } from '/lib/redirect';
 import { useRouter } from 'next/router';
 import Head from 'next/head';

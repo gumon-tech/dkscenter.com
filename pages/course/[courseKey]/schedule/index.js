@@ -1,3 +1,4 @@
+import React from 'react';
 import courses from '/datas/courses.json';
 import { RedirectRender } from '/lib/redirect';
 import { useRouter } from 'next/router';

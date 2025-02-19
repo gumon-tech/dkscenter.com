@@ -1,3 +1,4 @@
+import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import Link from 'next/link';
 import nextI18nextConfig from '../next-i18next.config';
