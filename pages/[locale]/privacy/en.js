@@ -350,21 +350,26 @@ export default function PrivacyContentEN() {
           </p>
           <p>Gumon Technology Co., Ltd.</p>
 
-          <p>42 Moo 11, Ban Dong, Ubolratana, Khon Kaen, 40250</p>
+          <p>
+            35 Floors The Ninth Tower (Tower A),33/4 Rama 9 road, Huaykwang,
+            Huaykwang Bangkok 10310
+          </p>
 
           <p>contact@gumon.io</p>
           <p>www.gumon.io</p>
-          <p>0805356935</p>
-
+          <span itemprop="telephone">+66 80-642-5659</span>
           <p>
             <b>Data Protection Officer</b>
           </p>
           <p>DPO Team</p>
 
-          <p>42 Moo 11, Ban Dong, Ubolratana, Khon Kaen, 40250</p>
+          <p>
+            35 Floors The Ninth Tower (Tower A),33/4 Rama 9 road, Huaykwang,
+            Huaykwang Bangkok 10310
+          </p>
 
           <p>contact@gumon.io</p>
-          <p>0805356935</p>
+          <span itemprop="telephone">+66 80-642-5659</span>
         </div>
       </div>
     </div>
