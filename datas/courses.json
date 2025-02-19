@@ -3413,7 +3413,7 @@
       "imageUrl": "/course/2025-001/poster/cover-image.jpg",
       "detailUrl": "https://dkscenter.com/th/course/2025-001-orchestrate-docker-kubernetes-bootcamp",
       "title": "Orchestrate - Docker & Kubernetes Bootcamp",
-      "code": "202-001",
+      "code": "2025-001",
       "duration": "2 วัน, 09:00 - 17:00",
       "overview": "ในโลกที่การพัฒนาและการปรับใช้ซอฟต์แวร์มีการเปลี่ยนแปลงอย่างรวดเร็ว คอนเทนเนอร์ (Containers) ได้กลายมาเป็นพื้นฐานสำคัญของแนวปฏิบัติ DevOps สมัยใหม่ หลักสูตรเชิงปฏิบัติการเข้มข้น 2 วัน นี้ จะช่วยให้คุณมีพื้นฐานที่มั่นคงในการใช้งาน Docker และ Kubernetes ซึ่งเป็นเครื่องมือยอดนิยมสำหรับการจัดการและประสานคอนเทนเนอร์ หลักสูตรนี้ออกแบบมาเพื่อ นักพัฒนาโปรแกรม วิศวกร DevOps และสถาปนิกระบบ โดยผสมผสานทฤษฎีและการปฏิบัติจริงอย่างลงตัว",
       "objectives": [
@@ -3561,7 +3561,7 @@
           "isSoldOut": false,
           "location": "COMING SOON!",
           "scheduleKey": "",
-          "ticketUrl": ""
+          "ticketUrl": "https://www.eventpop.me/e/74477/orchestrate-docker-kubernetes-bootcamp-1-2025"
         }
       ],
       "documents": []
@@ -3574,7 +3574,7 @@
       "imageUrl": "/course/2025-001/poster/cover-image.jpg",
       "detailUrl": "https://dkscenter.com/en/course/2025-001-orchestrate-docker-kubernetes-bootcamp",
       "title": "Orchestrate - Docker & Kubernetes Bootcamp",
-      "code": "202-001",
+      "code": "2025-001",
       "duration": "2 Days, 09:00 - 17:00",
       "overview": "In the rapidly evolving world of software development and deployment, containerization has become the cornerstone of modern DevOps practices. This comprehensive 2-day hands-on workshop will equip you with a solid foundation in Docker and Kubernetes, the most popular tools for container management and orchestration. Designed for developers, IT professionals, and system architects, this course provides an immersive experience, blending theory with practical labs.",
       "objectives": [
@@ -3718,6 +3718,282 @@
           "eventEnd": "2025-03-16T17:00:00+0700",
           "saleStart": "2025-02-15T09:00:00+0700",
           "saleEnd": "2025-03-14T21:00:00+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "COMING SOON!",
+          "scheduleKey": "",
+          "ticketUrl": "https://www.eventpop.me/e/74477/orchestrate-docker-kubernetes-bootcamp-1-2025"
+        }
+      ],
+      "documents": []
+    }
+  },
+  "2025-002-event-driven-odyssey-kafka-nest-and-graphql-in-action": {
+    "th": {
+      "lastUpdate": "2025-02-19T09:00:00+0700",
+      "key": "2025-002-event-driven-odyssey-kafka-nest-and-graphql-in-action",
+      "locale": "th",
+      "isActive": true,
+      "imageUrl": "/course/2025-002/poster/cover-image.jpg",
+      "detailUrl": "https://dkscenter.com/th/course/2025-002-event-driven-odyssey-kafka-nest-and-graphql-in-action",
+      "title": "Event-Driven Odyssey: Kafka, Nest, and GraphQL in Action",
+      "code": "2025-002",
+      "duration": "2 วัน, 09:00 - 17:00",
+      "overview": "เวิร์กชอปสุดเข้มข้น 2 วัน: พัฒนา API แบบ Event-Driven ด้วย Kafka, Nest.js และ GraphQL ในโลกที่หมุนเร็วของวันนี้ การประมวลผลข้อมูลแบบเรียลไทม์และสถาปัตยกรรมแบบ Event-Driven เป็นหัวใจสำคัญของแอปพลิเคชันที่สามารถขยายตัวได้ Event-Driven Odyssey: Kafka, Nest, and GraphQL in Action คือเวิร์กชอปภาคปฏิบัติที่ออกแบบมาเพื่อให้คุณได้เรียนรู้และพัฒนาทักษะในการสร้าง API แบบ Event-Driven โดยใช้ Apache Kafka, Nest.js, MongoDB และ GraphQLคุณจะได้เรียนรู้วิธี สตรีมข้อมูลแบบเรียลไทม์ สร้าง API ที่ตอบสนองทันที และบูรณาการ Kafka เข้ากับระบบไมโครเซอร์วิส ด้วยแนวทางที่เป็นมาตรฐานอุตสาหกรรม พร้อมเทคนิคที่สามารถนำไปใช้ได้จริง! ",
+      "objectives": [
+        "พื้นฐานของ Apache Kafka และระบบ Event-Driven",
+        "การตั้งค่า Kafka Broker และการทำงานกับ Producers, Consumers และ Topics",
+        "แนะนำ Nest.js และโครงสร้างแบบโมดูลาร์",
+        "การเชื่อมต่อ MongoDB กับ Nest.js เพื่อการจัดเก็บข้อมูล",
+        "การเชื่อมต่อ Nest.js กับ Kafka และการทำ Message Streaming",
+        "รู้จัก GraphQL และเหตุผลที่ดีกว่า REST",
+        "การสร้าง GraphQL APIs ใน Nest.js ด้วย Queries, Mutations และ Subscriptions",
+        "ใช้ Kafka เป็น Event Source สำหรับ Real-time GraphQL Subscriptions",
+        "การจัดการ Multi-Topic Messaging เพื่อขยายระบบ Microservices",
+        "การ Deploy ระบบด้วย Docker และการ Monitor Kafka Services"
+      ],
+      "whoShouldAttend": [
+        "นักพัฒนา Backend ที่ต้องการรวม Kafka เข้ากับแอปพลิเคชันของตน",
+        "นักพัฒนา Full-Stack ที่สนใจสร้าง GraphQL API แบบเรียลไทม์",
+        "สถาปนิกซอฟต์แวร์ที่ต้องการออกแบบระบบ Event-Driven ที่ขยายตัวได้",
+        "วิศวกรที่ทำงานกับ Microservices และต้องการใช้ Kafka สำหรับ Distributed Messaging",
+        "ทุกคนที่ต้องการเรียนรู้ Kafka, Nest.js และ GraphQL ผ่านการปฏิบัติจริง"
+      ],
+      "prerequisites": [
+        "มีประสบการณ์พื้นฐานกับ JavaScript หรือ TypeScript",
+        "คุ้นเคยกับ Node.js และ REST API",
+        "มีความรู้เกี่ยวกับ MongoDB หรือฐานข้อมูลเชิงสัมพันธ์บ้างเล็กน้อย",
+        "ไม่จำเป็นต้องมีประสบการณ์กับ Kafka หรือ GraphQL มาก่อน – เราจะสอนคุณตั้งแต่พื้นฐาน!"
+      ],
+      "participantsWillReceive": [
+        "เอกสารคู่มือการอบรม",
+        "ใบรับรองผ่านการอบรมหลักสูตร Event-Driven Odyssey: Kafka, Nest, and GraphQL in Action",
+        "การดูแลเอาใจใส่เป็นอย่างดีจากวิทยากรและทีมงาน Staff",
+        "สามารถเข้าร่วม Event-Driven Odyssey: Kafka, Nest, and GraphQL in Action ซ้ำได้ไม่จำกัดจำนวนครั้ง (จำกัดสิทธิ์เข้าร่วมซ้ำ 5 ท่านต่อรอบการอบรม หากท่านต้องการเข้าร่วม Workshop ซ้ำ กรุณาติดต่อ Facebook Page, Line, Email หรือช่องทางอื่น ๆ เพื่อสำรองที่นั่ง)",
+        "หากท่านไม่สะดวกเข้าร่วมการอบรมในครั้งนี้ ท่านสามารถเลื่อนการเข้าร่วมอบรมได้ตามตารางการอบรม",
+        "API แบบ Event-Driven ที่ใช้งานได้จริงด้วย Kafka, Nest.js และ GraphQL",
+        "ความเข้าใจเชิงลึกเกี่ยวกับระบบข้อความแบบเรียลไทม์และ Microservices",
+        "ซอร์สโค้ดและเทมเพลตสำหรับสร้างแอปพลิเคชันแบบ Event-Driven ที่ขยายตัวได้",
+        "Certificate of Completion เพื่อยืนยันทักษะใหม่ของคุณ",
+        "โอกาสในการสร้างเครือข่ายกับนักพัฒนาที่มีแนวคิดเดียวกัน"
+      ],
+      "outline": [
+        {
+          "title": "Introduction to Kafka & Event-Driven Architecture",
+          "descriptions": [
+            "Overview of Kafka: What it is and why it's useful",
+            "Understanding event-driven architecture and use cases",
+            "Key Kafka components: Producers, Consumers, Topics, Brokers",
+            "Setting up a local Kafka environment using Docker"
+          ]
+        },
+        {
+          "title": "Getting Started with Nest.js & MongoDB",
+          "descriptions": [
+            "Introduction to Nest.js framework",
+            "Setting up a Nest.js project with TypeScript",
+            "Integrating MongoDB with Mongoose",
+            "Creating a basic REST API to interact with MongoDB"
+          ]
+        },
+        {
+          "title": "Kafka Integration with Nest.js",
+          "descriptions": [
+            "Installing Kafka dependencies in Nest.js",
+            "Connecting a Nest.js service to Kafka",
+            "Producing messages to a Kafka topic",
+            "Consuming messages from a Kafka topic"
+          ]
+        },
+        {
+          "title": "Practical Exercise - Real-Time Data Processing",
+          "descriptions": [
+            "Implementing a simple message processing system",
+            "Writing producers and consumers in Nest.js",
+            "Logging and debugging Kafka messages",
+            "Hands-on exercise: Sending and receiving messages with Kafka and Nest.js"
+          ]
+        },
+        {
+          "title": "Introduction to GraphQL with Nest.js",
+          "descriptions": [
+            "Why GraphQL? Comparison with REST",
+            "Setting up a GraphQL API in Nest.js",
+            "Defining schemas, queries, and mutations",
+            "Connecting GraphQL to MongoDB"
+          ]
+        },
+        {
+          "title": "Building a Real-Time GraphQL API with Kafka",
+          "descriptions": [
+            "Using Kafka as an event source for GraphQL subscriptions",
+            "Implementing real-time messaging with GraphQL Subscriptions",
+            "Handling event-driven updates in the GraphQL API"
+          ]
+        },
+        {
+          "title": "Advanced Kafka Topics & Scaling",
+          "descriptions": [
+            "Handling errors and retries in Kafka consumers",
+            "Partitioning and consumer groups for scalability",
+            "Monitoring Kafka with tools like Confluent Control Center",
+            "Using Kafka Streams for real-time data transformation"
+          ]
+        },
+        {
+          "title": "Hands-on Project - Event-Driven GraphQL API",
+          "descriptions": [
+            "Building a real-time chat API using GraphQL, Nest.js, Kafka, and MongoDB",
+            "Implementing multi-topic messaging with Kafka",
+            "Deploying Kafka and Nest.js services with Docker",
+            "Final project demonstration & Q&A session"
+          ]
+        }
+      ],
+      "publicSchedule": [
+        {
+          "title": "Event-Driven Odyssey: Kafka, Nest, and GraphQL in Action",
+          "eventStart": "2025-06-28T09:00:00+0700",
+          "eventEnd": "2025-06-29T17:00:00+0700",
+          "saleStart": "2025-05-28T09:00:00+0700",
+          "saleEnd": "2025-06-27T21:00:00+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "COMING SOON!",
+          "scheduleKey": "",
+          "ticketUrl": ""
+        }
+      ],
+      "documents": []
+    },
+    "en": {
+      "lastUpdate": "2025-02-19T09:00:00+0700",
+      "key": "2025-002-event-driven-odyssey-kafka-nest-and-graphql-in-action",
+      "locale": "en",
+      "isActive": true,
+      "imageUrl": "/course/2025-002/poster/cover-image.jpg",
+      "detailUrl": "https://dkscenter.com/en/course/2025-002-event-driven-odyssey-kafka-nest-and-graphql-in-action",
+      "title": "Event-Driven Odyssey: Kafka, Nest, and GraphQL in Action",
+      "code": "2025-002",
+      "duration": "2 Days, 09:00 - 17:00",
+      "overview": "In today s fast-paced world, real-time data processing and event-driven architectures are at the heart of scalable applications. Event-Driven Odyssey: Kafka, Nest, and GraphQL in Action is a hands-on, 2-day workshop designed to equip developers with the knowledge and skills to build event-driven APIs using Apache Kafka, Nest.js, MongoDB, and GraphQL. You will learn how to stream data in real time, create reactive APIs, and integrate Kafka into a microservices ecosystem using best practices.",
+      "objectives": [
+        "The fundamentals of Apache Kafka and event-driven systems",
+        "Setting up a Kafka broker and working with Producers, Consumers, and Topics",
+        "Introduction to Nest.js and its modular architecture",
+        "Integrating MongoDB with Nest.js for data persistence",
+        "Connecting Nest.js with Kafka and implementing message streaming",
+        "Introduction to GraphQL and why it’s better than REST",
+        "Creating GraphQL APIs in Nest.js with Queries, Mutations, and Subscriptions",
+        "Using Kafka as an event source for real-time GraphQL subscriptions",
+        "Implementing multi-topic messaging for scalable microservices",
+        "Deploying the system with Docker & monitoring Kafka services"
+      ],
+      "whoShouldAttend": [
+        "Backend Developers looking to integrate Kafka into their applications",
+        "Full-Stack Developers interested in building real-time GraphQL APIs",
+        "Software Architects who want to design scalable event-driven systems",
+        "Engineers working with microservices who need Kafka for distributed messaging",
+        "Anyone who wants to learn Kafka, Nest.js, and GraphQL in a practical way"
+      ],
+      "prerequisites": [
+        "Basic experience with JavaScript or TypeScript",
+        "Familiarity with Node.js and REST APIs",
+        "Some knowledge of MongoDB or relational databases",
+        "No prior Kafka or GraphQL experience required – we’ll teach you from scratch!"
+      ],
+      "participantsWillReceive": [
+        "Training manuals/documentation.",
+        "Certification upon completion of the Event-Driven Odyssey: Kafka, Nest, and GraphQL in Action.",
+        "Excellent care and attention from instructors and staff.",
+        "Unlimited attendance to the Event-Driven Odyssey: Kafka, Nest, and GraphQL in Action (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat).",
+        "If you are unable to attend the training session this time, you can reschedule your participation according to the training schedule.",
+        "A fully functional event-driven API using Kafka, Nest.js, and GraphQL",
+        "Deep understanding of real-time messaging and microservices",
+        "Source code and templates for building scalable event-driven applications",
+        "Certificate of Completion to showcase your new skills",
+        "Networking opportunities with like-minded developers"
+      ],
+      "outline": [
+        {
+          "title": "Introduction to Kafka & Event-Driven Architecture",
+          "descriptions": [
+            "Overview of Kafka: What it is and why it's useful",
+            "Understanding event-driven architecture and use cases",
+            "Key Kafka components: Producers, Consumers, Topics, Brokers",
+            "Setting up a local Kafka environment using Docker"
+          ]
+        },
+        {
+          "title": "Getting Started with Nest.js & MongoDB",
+          "descriptions": [
+            "Introduction to Nest.js framework",
+            "Setting up a Nest.js project with TypeScript",
+            "Integrating MongoDB with Mongoose",
+            "Creating a basic REST API to interact with MongoDB"
+          ]
+        },
+        {
+          "title": "Kafka Integration with Nest.js",
+          "descriptions": [
+            "Installing Kafka dependencies in Nest.js",
+            "Connecting a Nest.js service to Kafka",
+            "Producing messages to a Kafka topic",
+            "Consuming messages from a Kafka topic"
+          ]
+        },
+        {
+          "title": "Practical Exercise - Real-Time Data Processing",
+          "descriptions": [
+            "Implementing a simple message processing system",
+            "Writing producers and consumers in Nest.js",
+            "Logging and debugging Kafka messages",
+            "Hands-on exercise: Sending and receiving messages with Kafka and Nest.js"
+          ]
+        },
+        {
+          "title": "Introduction to GraphQL with Nest.js",
+          "descriptions": [
+            "Why GraphQL? Comparison with REST",
+            "Setting up a GraphQL API in Nest.js",
+            "Defining schemas, queries, and mutations",
+            "Connecting GraphQL to MongoDB"
+          ]
+        },
+        {
+          "title": "Building a Real-Time GraphQL API with Kafka",
+          "descriptions": [
+            "Using Kafka as an event source for GraphQL subscriptions",
+            "Implementing real-time messaging with GraphQL Subscriptions",
+            "Handling event-driven updates in the GraphQL API"
+          ]
+        },
+        {
+          "title": "Advanced Kafka Topics & Scaling",
+          "descriptions": [
+            "Handling errors and retries in Kafka consumers",
+            "Partitioning and consumer groups for scalability",
+            "Monitoring Kafka with tools like Confluent Control Center",
+            "Using Kafka Streams for real-time data transformation"
+          ]
+        },
+        {
+          "title": "Hands-on Project - Event-Driven GraphQL API",
+          "descriptions": [
+            "Building a real-time chat API using GraphQL, Nest.js, Kafka, and MongoDB",
+            "Implementing multi-topic messaging with Kafka",
+            "Deploying Kafka and Nest.js services with Docker",
+            "Final project demonstration & Q&A session"
+          ]
+        }
+      ],
+      "publicSchedule": [
+        {
+          "title": "Event-Driven Odyssey: Kafka, Nest, and GraphQL in Action",
+          "eventStart": "2025-06-28T09:00:00+0700",
+          "eventEnd": "2025-06-29T17:00:00+0700",
+          "saleStart": "2025-05-28T09:00:00+0700",
+          "saleEnd": "2025-06-27T21:00:00+0700",
           "isActive": true,
           "isSoldOut": false,
           "location": "COMING SOON!",
