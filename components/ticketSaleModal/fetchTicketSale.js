@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import ReactLoading from "react-loading";
-import TicketSales from "../TicketSales";
-import { getTickets } from "../../utils/getTickets";
-import { useRouter } from "next/router";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import ReactLoading from 'react-loading';
+import TicketSales from '../TicketSales';
+import { getTickets } from '../../utils/getTickets';
+import { useRouter } from 'next/router';
 
 export default function FetchTicketSale({
   i18next,
@@ -44,7 +44,7 @@ export default function FetchTicketSale({
         const queryParams = { ...query, code: discountCode };
         router.push({ pathname, query: queryParams });
       } catch (error) {
-        console.error("Error getTickets:", error);
+        console.error('Error getTickets:', error);
         setIsLoading(false);
         setError(error);
       }
@@ -58,7 +58,7 @@ export default function FetchTicketSale({
       <div className="grid justify-center content-center items-center h-max">
         <ReactLoading
           type="spinningBubbles"
-          color={"#049ee8"}
+          color={'#049ee8'}
           height={200} // ปรับความสูง
           width={200} // ปรับความกว้าง
         />

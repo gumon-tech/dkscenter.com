@@ -541,21 +541,15 @@
         },
         {
           "title": "What is React? And why Next.js?",
-          "descriptions": [
-            "ทำความรู้จักกับ React และ React-powered frameworks"
-          ]
+          "descriptions": ["ทำความรู้จักกับ React และ React-powered frameworks"]
         },
         {
           "title": "Workshop 1",
-          "descriptions": [
-            "Creating a Next.js app."
-          ]
+          "descriptions": ["Creating a Next.js app."]
         },
         {
           "title": "Project Structure",
-          "descriptions": [
-            "แนะนำโครงสร้างของ Next.js"
-          ]
+          "descriptions": ["แนะนำโครงสร้างของ Next.js"]
         },
         {
           "title": "HTML and JSX",
@@ -575,57 +569,39 @@
         },
         {
           "title": "Workshop 2",
-          "descriptions": [
-            "My First Component."
-          ]
+          "descriptions": ["My First Component."]
         },
         {
           "title": "Tailwind CSS",
-          "descriptions": [
-            "แนะนำการใช้งาน Tailwind CSS เบื้องต้น"
-          ]
+          "descriptions": ["แนะนำการใช้งาน Tailwind CSS เบื้องต้น"]
         },
         {
           "title": "Workshop 3",
-          "descriptions": [
-            "My Home Page."
-          ]
+          "descriptions": ["My Home Page."]
         },
         {
           "title": "State: A Component's Memory",
-          "descriptions": [
-            "อธิบายฟังก์ชัน useState และวิธีการใช้งานเบื้องต้น"
-          ]
+          "descriptions": ["อธิบายฟังก์ชัน useState และวิธีการใช้งานเบื้องต้น"]
         },
         {
           "title": "Workshop 4",
-          "descriptions": [
-            "Carousel banner."
-          ]
+          "descriptions": ["Carousel banner."]
         },
         {
           "title": "Reacting to Input with State",
-          "descriptions": [
-            "การใช้งาน State ร่วมกับ Input"
-          ]
+          "descriptions": ["การใช้งาน State ร่วมกับ Input"]
         },
         {
           "title": "Workshop 5",
-          "descriptions": [
-            "Search box."
-          ]
+          "descriptions": ["Search box."]
         },
         {
           "title": "Sharing State Between Components",
-          "descriptions": [
-            "อธิบายการใช้ State ร่วมกับ Component อื่นๆ"
-          ]
+          "descriptions": ["อธิบายการใช้ State ร่วมกับ Component อื่นๆ"]
         },
         {
           "title": "Workshop 6",
-          "descriptions": [
-            "Search results."
-          ]
+          "descriptions": ["Search results."]
         },
         {
           "title": "Next.js Routing",
@@ -637,15 +613,11 @@
         },
         {
           "title": "Workshop 7",
-          "descriptions": [
-            "New search page."
-          ]
+          "descriptions": ["New search page."]
         },
         {
           "title": "Workshop 8",
-          "descriptions": [
-            "Products and Details."
-          ]
+          "descriptions": ["Products and Details."]
         },
         {
           "title": "Server Components and Client Components",
@@ -664,9 +636,7 @@
         },
         {
           "title": "Workshop 9",
-          "descriptions": [
-            "Register."
-          ]
+          "descriptions": ["Register."]
         },
         {
           "title": "Authentication Flow",
@@ -676,9 +646,7 @@
         },
         {
           "title": "Workshop 10",
-          "descriptions": [
-            "Login."
-          ]
+          "descriptions": ["Login."]
         },
         {
           "title": "Passing Data Deeply with Context",
@@ -689,9 +657,7 @@
         },
         {
           "title": "Workshop 11",
-          "descriptions": [
-            "My Profile."
-          ]
+          "descriptions": ["My Profile."]
         },
         {
           "title": "Error Handling and Middleware",
@@ -702,9 +668,7 @@
         },
         {
           "title": "Workshop 12",
-          "descriptions": [
-            "Redirect when not logged in."
-          ]
+          "descriptions": ["Redirect when not logged in."]
         },
         {
           "title": "Scaling Up with Reducer and Context",
@@ -715,9 +679,7 @@
         },
         {
           "title": "Workshop 13",
-          "descriptions": [
-            "Add products to cart."
-          ]
+          "descriptions": ["Add products to cart."]
         },
         {
           "title": "Synchronizing with Effects",
@@ -727,15 +689,11 @@
         },
         {
           "title": "Workshop 14",
-          "descriptions": [
-            "Checkout!"
-          ]
+          "descriptions": ["Checkout!"]
         },
         {
           "title": "Workshop 15",
-          "descriptions": [
-            "Order History."
-          ]
+          "descriptions": ["Order History."]
         },
         {
           "title": "Environment Variables and Deploying",
@@ -745,9 +703,7 @@
         },
         {
           "title": "Workshop 16",
-          "descriptions": [
-            "Hello World!"
-          ]
+          "descriptions": ["Hello World!"]
         }
       ],
       "publicSchedule": [
@@ -870,15 +826,11 @@
         },
         {
           "title": "Workshop 1",
-          "descriptions": [
-            "Creating a Next.js app."
-          ]
+          "descriptions": ["Creating a Next.js app."]
         },
         {
           "title": "Project Structure",
-          "descriptions": [
-            "Introduction to the basic structure of Next.js."
-          ]
+          "descriptions": ["Introduction to the basic structure of Next.js."]
         },
         {
           "title": "HTML and JSX",
@@ -898,57 +850,39 @@
         },
         {
           "title": "Workshop 2",
-          "descriptions": [
-            "My First Component."
-          ]
+          "descriptions": ["My First Component."]
         },
         {
           "title": "Tailwind CSS",
-          "descriptions": [
-            "Introduction to basic usage of Tailwind CSS"
-          ]
+          "descriptions": ["Introduction to basic usage of Tailwind CSS"]
         },
         {
           "title": "Workshop 3",
-          "descriptions": [
-            "My Home Page."
-          ]
+          "descriptions": ["My Home Page."]
         },
         {
           "title": "State: A Component's Memory",
-          "descriptions": [
-            "Explanation of useState function and basic usage."
-          ]
+          "descriptions": ["Explanation of useState function and basic usage."]
         },
         {
           "title": "Workshop 4",
-          "descriptions": [
-            "Carousel banner."
-          ]
+          "descriptions": ["Carousel banner."]
         },
         {
           "title": "Reacting to Input with State",
-          "descriptions": [
-            "Using State with Input."
-          ]
+          "descriptions": ["Using State with Input."]
         },
         {
           "title": "Workshop 5",
-          "descriptions": [
-            "Search box."
-          ]
+          "descriptions": ["Search box."]
         },
         {
           "title": "Sharing State Between Components",
-          "descriptions": [
-            "Explanation of using State with other components."
-          ]
+          "descriptions": ["Explanation of using State with other components."]
         },
         {
           "title": "Workshop 6",
-          "descriptions": [
-            "Search results."
-          ]
+          "descriptions": ["Search results."]
         },
         {
           "title": "Next.js Routing",
@@ -960,15 +894,11 @@
         },
         {
           "title": "Workshop 7",
-          "descriptions": [
-            "New search page."
-          ]
+          "descriptions": ["New search page."]
         },
         {
           "title": "Workshop 8",
-          "descriptions": [
-            "Products and Details."
-          ]
+          "descriptions": ["Products and Details."]
         },
         {
           "title": "Server Components and Client Components",
@@ -987,9 +917,7 @@
         },
         {
           "title": "Workshop 9",
-          "descriptions": [
-            "Register."
-          ]
+          "descriptions": ["Register."]
         },
         {
           "title": "Authentication Flow",
@@ -999,9 +927,7 @@
         },
         {
           "title": "Workshop 10",
-          "descriptions": [
-            "Login."
-          ]
+          "descriptions": ["Login."]
         },
         {
           "title": "Passing Data Deeply with Context",
@@ -1012,9 +938,7 @@
         },
         {
           "title": "Workshop 11",
-          "descriptions": [
-            "My Profile."
-          ]
+          "descriptions": ["My Profile."]
         },
         {
           "title": "Error Handling and Middleware",
@@ -1025,9 +949,7 @@
         },
         {
           "title": "Workshop 12",
-          "descriptions": [
-            "Redirect when not logged in."
-          ]
+          "descriptions": ["Redirect when not logged in."]
         },
         {
           "title": "Scaling Up with Reducer and Context",
@@ -1038,9 +960,7 @@
         },
         {
           "title": "Workshop 13",
-          "descriptions": [
-            "Add products to cart."
-          ]
+          "descriptions": ["Add products to cart."]
         },
         {
           "title": "Synchronizing with Effects",
@@ -1050,15 +970,11 @@
         },
         {
           "title": "Workshop 14",
-          "descriptions": [
-            "Checkout!"
-          ]
+          "descriptions": ["Checkout!"]
         },
         {
           "title": "Workshop 15",
-          "descriptions": [
-            "Order History."
-          ]
+          "descriptions": ["Order History."]
         },
         {
           "title": "Environment Variables and Deploying",
@@ -1068,9 +984,7 @@
         },
         {
           "title": "Workshop 16",
-          "descriptions": [
-            "Hello World!"
-          ]
+          "descriptions": ["Hello World!"]
         }
       ],
       "publicSchedule": [
@@ -1159,51 +1073,35 @@
       "outline": [
         {
           "title": "Introduction to JavaScript (ECMAScript) ",
-          "descriptions": [
-            "Workshop1 - Play with JavaScript"
-          ]
+          "descriptions": ["Workshop1 - Play with JavaScript"]
         },
         {
           "title": "Introduction to NodeJS",
-          "descriptions": [
-            "Workshop2 - Play with NodeJS"
-          ]
+          "descriptions": ["Workshop2 - Play with NodeJS"]
         },
         {
           "title": "Introduction to Restful API",
-          "descriptions": [
-            "Workshop3 - Play with Restful API"
-          ]
+          "descriptions": ["Workshop3 - Play with Restful API"]
         },
         {
           "title": "Introduction to TypeScript",
-          "descriptions": [
-            "Workshop4 - Play with TypeScript"
-          ]
+          "descriptions": ["Workshop4 - Play with TypeScript"]
         },
         {
           "title": "Introduction to Nest JS",
-          "descriptions": [
-            "Workshop5 - Play with Nest JS "
-          ]
+          "descriptions": ["Workshop5 - Play with Nest JS "]
         },
         {
           "title": "Introduction to MongoDB ",
-          "descriptions": [
-            "Workshop6 - Play with MongoDB "
-          ]
+          "descriptions": ["Workshop6 - Play with MongoDB "]
         },
         {
           "title": "Introduction to MVC ",
-          "descriptions": [
-            "Workshop7 - Routing and CRUD (MongoDB & Mongoose) "
-          ]
+          "descriptions": ["Workshop7 - Routing and CRUD (MongoDB & Mongoose) "]
         },
         {
           "title": "NodeJS Environment (Node ENV)",
-          "descriptions": [
-            "Workshop8 - Using multiple Node ENV"
-          ]
+          "descriptions": ["Workshop8 - Using multiple Node ENV"]
         },
         {
           "title": "Nest JS Middleware",
@@ -1214,15 +1112,11 @@
         },
         {
           "title": "Error Handling",
-          "descriptions": [
-            "Workshop11 - Handling error with Restful API"
-          ]
+          "descriptions": ["Workshop11 - Handling error with Restful API"]
         },
         {
           "title": "Build & Deployment",
-          "descriptions": [
-            "Workshop12 - Deploy NodeJS project"
-          ]
+          "descriptions": ["Workshop12 - Deploy NodeJS project"]
         }
       ],
       "publicSchedule": [],
@@ -1272,51 +1166,35 @@
       "outline": [
         {
           "title": "Introduction to JavaScript (ECMAScript) ",
-          "descriptions": [
-            "Workshop1 - Play with JavaScript"
-          ]
+          "descriptions": ["Workshop1 - Play with JavaScript"]
         },
         {
           "title": "Introduction to NodeJS",
-          "descriptions": [
-            "Workshop2 - Play with NodeJS"
-          ]
+          "descriptions": ["Workshop2 - Play with NodeJS"]
         },
         {
           "title": "Introduction to Restful API",
-          "descriptions": [
-            "Workshop3 - Play with Restful API"
-          ]
+          "descriptions": ["Workshop3 - Play with Restful API"]
         },
         {
           "title": "Introduction to TypeScript",
-          "descriptions": [
-            "Workshop4 - Play with TypeScript"
-          ]
+          "descriptions": ["Workshop4 - Play with TypeScript"]
         },
         {
           "title": "Introduction to Nest JS",
-          "descriptions": [
-            "Workshop5 - Play with Nest JS "
-          ]
+          "descriptions": ["Workshop5 - Play with Nest JS "]
         },
         {
           "title": "Introduction to MongoDB ",
-          "descriptions": [
-            "Workshop6 - Play with MongoDB "
-          ]
+          "descriptions": ["Workshop6 - Play with MongoDB "]
         },
         {
           "title": "Introduction to MVC ",
-          "descriptions": [
-            "Workshop7 - Routing and CRUD (MongoDB & Mongoose) "
-          ]
+          "descriptions": ["Workshop7 - Routing and CRUD (MongoDB & Mongoose) "]
         },
         {
           "title": "NodeJS Environment (Node ENV)",
-          "descriptions": [
-            "Workshop8 - Using multiple Node ENV"
-          ]
+          "descriptions": ["Workshop8 - Using multiple Node ENV"]
         },
         {
           "title": "Nest JS Middleware",
@@ -1327,15 +1205,11 @@
         },
         {
           "title": "Error Handling",
-          "descriptions": [
-            "Workshop11 - Handling error with Restful API"
-          ]
+          "descriptions": ["Workshop11 - Handling error with Restful API"]
         },
         {
           "title": "Build & Deployment",
-          "descriptions": [
-            "Workshop12 - Deploy NodeJS project"
-          ]
+          "descriptions": ["Workshop12 - Deploy NodeJS project"]
         }
       ],
       "publicSchedule": [],
@@ -1387,51 +1261,35 @@
       "outline": [
         {
           "title": "Introduction to JavaScript (ECMAScript) ",
-          "descriptions": [
-            "Workshop1 - Play with JavaScript"
-          ]
+          "descriptions": ["Workshop1 - Play with JavaScript"]
         },
         {
           "title": "Introduction to NodeJS",
-          "descriptions": [
-            "Workshop2 - Play with NodeJS"
-          ]
+          "descriptions": ["Workshop2 - Play with NodeJS"]
         },
         {
           "title": "Introduction to GraphQL",
-          "descriptions": [
-            "Workshop3 - Play with GraphQL"
-          ]
+          "descriptions": ["Workshop3 - Play with GraphQL"]
         },
         {
           "title": "Introduction to TypeScript",
-          "descriptions": [
-            "Workshop4 - Play with TypeScript"
-          ]
+          "descriptions": ["Workshop4 - Play with TypeScript"]
         },
         {
           "title": "Introduction to Nest JS",
-          "descriptions": [
-            "Workshop5 - Play with Nest JS "
-          ]
+          "descriptions": ["Workshop5 - Play with Nest JS "]
         },
         {
           "title": "Introduction to MongoDB ",
-          "descriptions": [
-            "Workshop6 - Play with MongoDB "
-          ]
+          "descriptions": ["Workshop6 - Play with MongoDB "]
         },
         {
           "title": "Introduction to MVC ",
-          "descriptions": [
-            "Workshop7 - Routing and CRUD (MongoDB & Mongoose) "
-          ]
+          "descriptions": ["Workshop7 - Routing and CRUD (MongoDB & Mongoose) "]
         },
         {
           "title": "NodeJS Environment (Node ENV)",
-          "descriptions": [
-            "Workshop8 - Using multiple Node ENV"
-          ]
+          "descriptions": ["Workshop8 - Using multiple Node ENV"]
         },
         {
           "title": "Nest JS Middleware",
@@ -1442,15 +1300,11 @@
         },
         {
           "title": "Error Handling",
-          "descriptions": [
-            "Workshop11 - Handling error with GraphQL"
-          ]
+          "descriptions": ["Workshop11 - Handling error with GraphQL"]
         },
         {
           "title": "Build & Deployment",
-          "descriptions": [
-            "Workshop12 - Deploy NodeJS project"
-          ]
+          "descriptions": ["Workshop12 - Deploy NodeJS project"]
         }
       ],
       "publicSchedule": [],
@@ -1500,51 +1354,35 @@
       "outline": [
         {
           "title": "Introduction to JavaScript (ECMAScript) ",
-          "descriptions": [
-            "Workshop1 - Play with JavaScript"
-          ]
+          "descriptions": ["Workshop1 - Play with JavaScript"]
         },
         {
           "title": "Introduction to NodeJS",
-          "descriptions": [
-            "Workshop2 - Play with NodeJS"
-          ]
+          "descriptions": ["Workshop2 - Play with NodeJS"]
         },
         {
           "title": "Introduction to GraphQL",
-          "descriptions": [
-            "Workshop3 - Play with GraphQL"
-          ]
+          "descriptions": ["Workshop3 - Play with GraphQL"]
         },
         {
           "title": "Introduction to TypeScript",
-          "descriptions": [
-            "Workshop4 - Play with TypeScript"
-          ]
+          "descriptions": ["Workshop4 - Play with TypeScript"]
         },
         {
           "title": "Introduction to Nest JS",
-          "descriptions": [
-            "Workshop5 - Play with Nest JS "
-          ]
+          "descriptions": ["Workshop5 - Play with Nest JS "]
         },
         {
           "title": "Introduction to MongoDB ",
-          "descriptions": [
-            "Workshop6 - Play with MongoDB "
-          ]
+          "descriptions": ["Workshop6 - Play with MongoDB "]
         },
         {
           "title": "Introduction to MVC ",
-          "descriptions": [
-            "Workshop7 - Routing and CRUD (MongoDB & Mongoose) "
-          ]
+          "descriptions": ["Workshop7 - Routing and CRUD (MongoDB & Mongoose) "]
         },
         {
           "title": "NodeJS Environment (Node ENV)",
-          "descriptions": [
-            "Workshop8 - Using multiple Node ENV"
-          ]
+          "descriptions": ["Workshop8 - Using multiple Node ENV"]
         },
         {
           "title": "Nest JS Middleware",
@@ -1555,15 +1393,11 @@
         },
         {
           "title": "Error Handling",
-          "descriptions": [
-            "Workshop11 - Handling error with GraphQL"
-          ]
+          "descriptions": ["Workshop11 - Handling error with GraphQL"]
         },
         {
           "title": "Build & Deployment",
-          "descriptions": [
-            "Workshop12 - Deploy NodeJS project"
-          ]
+          "descriptions": ["Workshop12 - Deploy NodeJS project"]
         }
       ],
       "publicSchedule": [],
@@ -1615,39 +1449,27 @@
       "outline": [
         {
           "title": "Introduction to JavaScript (ECMAScript) ",
-          "descriptions": [
-            "Workshop1 - Play with JavaScript"
-          ]
+          "descriptions": ["Workshop1 - Play with JavaScript"]
         },
         {
           "title": "Introduction to NodeJS",
-          "descriptions": [
-            "Workshop2 - Play with NodeJS"
-          ]
+          "descriptions": ["Workshop2 - Play with NodeJS"]
         },
         {
           "title": "Introduction to Restful API",
-          "descriptions": [
-            "Workshop3 - Play with Restful API"
-          ]
+          "descriptions": ["Workshop3 - Play with Restful API"]
         },
         {
           "title": "Introduction to TypeScript",
-          "descriptions": [
-            "Workshop4 - Play with TypeScript"
-          ]
+          "descriptions": ["Workshop4 - Play with TypeScript"]
         },
         {
           "title": "Introduction to Nest JS",
-          "descriptions": [
-            "Workshop5 - Play with Nest JS "
-          ]
+          "descriptions": ["Workshop5 - Play with Nest JS "]
         },
         {
           "title": "Introduction to PostgreSQL ",
-          "descriptions": [
-            "Workshop6 - Play with PostgreSQL "
-          ]
+          "descriptions": ["Workshop6 - Play with PostgreSQL "]
         },
         {
           "title": "Introduction to MVC ",
@@ -1657,9 +1479,7 @@
         },
         {
           "title": "NodeJS Environment (Node ENV)",
-          "descriptions": [
-            "Workshop8 - Using multiple Node ENV"
-          ]
+          "descriptions": ["Workshop8 - Using multiple Node ENV"]
         },
         {
           "title": "Nest JS Middleware",
@@ -1670,15 +1490,11 @@
         },
         {
           "title": "Error Handling",
-          "descriptions": [
-            "Workshop11 - Handling error with Restful API"
-          ]
+          "descriptions": ["Workshop11 - Handling error with Restful API"]
         },
         {
           "title": "Build & Deployment",
-          "descriptions": [
-            "Workshop12 - Deploy NodeJS project"
-          ]
+          "descriptions": ["Workshop12 - Deploy NodeJS project"]
         }
       ],
       "publicSchedule": [],
@@ -1728,39 +1544,27 @@
       "outline": [
         {
           "title": "Introduction to JavaScript (ECMAScript) ",
-          "descriptions": [
-            "Workshop1 - Play with JavaScript"
-          ]
+          "descriptions": ["Workshop1 - Play with JavaScript"]
         },
         {
           "title": "Introduction to NodeJS",
-          "descriptions": [
-            "Workshop2 - Play with NodeJS"
-          ]
+          "descriptions": ["Workshop2 - Play with NodeJS"]
         },
         {
           "title": "Introduction to Restful API",
-          "descriptions": [
-            "Workshop3 - Play with Restful API"
-          ]
+          "descriptions": ["Workshop3 - Play with Restful API"]
         },
         {
           "title": "Introduction to TypeScript",
-          "descriptions": [
-            "Workshop4 - Play with TypeScript"
-          ]
+          "descriptions": ["Workshop4 - Play with TypeScript"]
         },
         {
           "title": "Introduction to Nest JS",
-          "descriptions": [
-            "Workshop5 - Play with Nest JS "
-          ]
+          "descriptions": ["Workshop5 - Play with Nest JS "]
         },
         {
           "title": "Introduction to PostgreSQL ",
-          "descriptions": [
-            "Workshop6 - Play with PostgreSQL "
-          ]
+          "descriptions": ["Workshop6 - Play with PostgreSQL "]
         },
         {
           "title": "Introduction to MVC ",
@@ -1770,9 +1574,7 @@
         },
         {
           "title": "NodeJS Environment (Node ENV)",
-          "descriptions": [
-            "Workshop8 - Using multiple Node ENV"
-          ]
+          "descriptions": ["Workshop8 - Using multiple Node ENV"]
         },
         {
           "title": "Nest JS Middleware",
@@ -1783,15 +1585,11 @@
         },
         {
           "title": "Error Handling",
-          "descriptions": [
-            "Workshop11 - Handling error with Restful API"
-          ]
+          "descriptions": ["Workshop11 - Handling error with Restful API"]
         },
         {
           "title": "Build & Deployment",
-          "descriptions": [
-            "Workshop12 - Deploy NodeJS project"
-          ]
+          "descriptions": ["Workshop12 - Deploy NodeJS project"]
         }
       ],
       "publicSchedule": [],
@@ -1843,39 +1641,27 @@
       "outline": [
         {
           "title": "Introduction to JavaScript (ECMAScript) ",
-          "descriptions": [
-            "Workshop1 - Play with JavaScript"
-          ]
+          "descriptions": ["Workshop1 - Play with JavaScript"]
         },
         {
           "title": "Introduction to NodeJS",
-          "descriptions": [
-            "Workshop2 - Play with NodeJS"
-          ]
+          "descriptions": ["Workshop2 - Play with NodeJS"]
         },
         {
           "title": "Introduction to GraphQL",
-          "descriptions": [
-            "Workshop3 - Play with GraphQL"
-          ]
+          "descriptions": ["Workshop3 - Play with GraphQL"]
         },
         {
           "title": "Introduction to TypeScript",
-          "descriptions": [
-            "Workshop4 - Play with TypeScript"
-          ]
+          "descriptions": ["Workshop4 - Play with TypeScript"]
         },
         {
           "title": "Introduction to Nest JS",
-          "descriptions": [
-            "Workshop5 - Play with Nest JS "
-          ]
+          "descriptions": ["Workshop5 - Play with Nest JS "]
         },
         {
           "title": "Introduction to PostgreSQL ",
-          "descriptions": [
-            "Workshop6 - Play with PostgreSQL "
-          ]
+          "descriptions": ["Workshop6 - Play with PostgreSQL "]
         },
         {
           "title": "Introduction to MVC ",
@@ -1885,9 +1671,7 @@
         },
         {
           "title": "NodeJS Environment (Node ENV)",
-          "descriptions": [
-            "Workshop8 - Using multiple Node ENV"
-          ]
+          "descriptions": ["Workshop8 - Using multiple Node ENV"]
         },
         {
           "title": "Nest JS Middleware",
@@ -1898,15 +1682,11 @@
         },
         {
           "title": "Error Handling",
-          "descriptions": [
-            "Workshop11 - Handling error with GraphQL"
-          ]
+          "descriptions": ["Workshop11 - Handling error with GraphQL"]
         },
         {
           "title": "Build & Deployment",
-          "descriptions": [
-            "Workshop12 - Deploy NodeJS project"
-          ]
+          "descriptions": ["Workshop12 - Deploy NodeJS project"]
         }
       ],
       "publicSchedule": [],
@@ -1956,39 +1736,27 @@
       "outline": [
         {
           "title": "Introduction to JavaScript (ECMAScript) ",
-          "descriptions": [
-            "Workshop1 - Play with JavaScript"
-          ]
+          "descriptions": ["Workshop1 - Play with JavaScript"]
         },
         {
           "title": "Introduction to NodeJS",
-          "descriptions": [
-            "Workshop2 - Play with NodeJS"
-          ]
+          "descriptions": ["Workshop2 - Play with NodeJS"]
         },
         {
           "title": "Introduction to GraphQL",
-          "descriptions": [
-            "Workshop3 - Play with GraphQL"
-          ]
+          "descriptions": ["Workshop3 - Play with GraphQL"]
         },
         {
           "title": "Introduction to TypeScript",
-          "descriptions": [
-            "Workshop4 - Play with TypeScript"
-          ]
+          "descriptions": ["Workshop4 - Play with TypeScript"]
         },
         {
           "title": "Introduction to Nest JS",
-          "descriptions": [
-            "Workshop5 - Play with Nest JS "
-          ]
+          "descriptions": ["Workshop5 - Play with Nest JS "]
         },
         {
           "title": "Introduction to PostgreSQL ",
-          "descriptions": [
-            "Workshop6 - Play with PostgreSQL "
-          ]
+          "descriptions": ["Workshop6 - Play with PostgreSQL "]
         },
         {
           "title": "Introduction to MVC ",
@@ -1998,9 +1766,7 @@
         },
         {
           "title": "NodeJS Environment (Node ENV)",
-          "descriptions": [
-            "Workshop8 - Using multiple Node ENV"
-          ]
+          "descriptions": ["Workshop8 - Using multiple Node ENV"]
         },
         {
           "title": "Nest JS Middleware",
@@ -2011,15 +1777,11 @@
         },
         {
           "title": "Error Handling",
-          "descriptions": [
-            "Workshop11 - Handling error with GraphQL"
-          ]
+          "descriptions": ["Workshop11 - Handling error with GraphQL"]
         },
         {
           "title": "Build & Deployment",
-          "descriptions": [
-            "Workshop12 - Deploy NodeJS project"
-          ]
+          "descriptions": ["Workshop12 - Deploy NodeJS project"]
         }
       ],
       "publicSchedule": [],
@@ -2754,21 +2516,15 @@
         },
         {
           "title": "What is React? And why Next.js?",
-          "descriptions": [
-            "ทำความรู้จักกับ React และ React-powered frameworks"
-          ]
+          "descriptions": ["ทำความรู้จักกับ React และ React-powered frameworks"]
         },
         {
           "title": "Workshop 1",
-          "descriptions": [
-            "Creating a Next.js app."
-          ]
+          "descriptions": ["Creating a Next.js app."]
         },
         {
           "title": "Project Structure",
-          "descriptions": [
-            "แนะนำโครงสร้างของ Next.js"
-          ]
+          "descriptions": ["แนะนำโครงสร้างของ Next.js"]
         },
         {
           "title": "HTML and JSX",
@@ -2788,57 +2544,39 @@
         },
         {
           "title": "Workshop 2",
-          "descriptions": [
-            "My First Component."
-          ]
+          "descriptions": ["My First Component."]
         },
         {
           "title": "Tailwind CSS",
-          "descriptions": [
-            "แนะนำการใช้งาน Tailwind CSS เบื้องต้น"
-          ]
+          "descriptions": ["แนะนำการใช้งาน Tailwind CSS เบื้องต้น"]
         },
         {
           "title": "Workshop 3",
-          "descriptions": [
-            "My Home Page."
-          ]
+          "descriptions": ["My Home Page."]
         },
         {
           "title": "State: A Component's Memory",
-          "descriptions": [
-            "อธิบายฟังก์ชัน useState และวิธีการใช้งานเบื้องต้น"
-          ]
+          "descriptions": ["อธิบายฟังก์ชัน useState และวิธีการใช้งานเบื้องต้น"]
         },
         {
           "title": "Workshop 4",
-          "descriptions": [
-            "Carousel banner."
-          ]
+          "descriptions": ["Carousel banner."]
         },
         {
           "title": "Reacting to Input with State",
-          "descriptions": [
-            "การใช้งาน State ร่วมกับ Input"
-          ]
+          "descriptions": ["การใช้งาน State ร่วมกับ Input"]
         },
         {
           "title": "Workshop 5",
-          "descriptions": [
-            "Search box."
-          ]
+          "descriptions": ["Search box."]
         },
         {
           "title": "Sharing State Between Components",
-          "descriptions": [
-            "อธิบายการใช้ State ร่วมกับ Component อื่นๆ"
-          ]
+          "descriptions": ["อธิบายการใช้ State ร่วมกับ Component อื่นๆ"]
         },
         {
           "title": "Workshop 6",
-          "descriptions": [
-            "Search results."
-          ]
+          "descriptions": ["Search results."]
         },
         {
           "title": "Next.js Routing",
@@ -2850,15 +2588,11 @@
         },
         {
           "title": "Workshop 7",
-          "descriptions": [
-            "New search page."
-          ]
+          "descriptions": ["New search page."]
         },
         {
           "title": "Workshop 8",
-          "descriptions": [
-            "Products and Details."
-          ]
+          "descriptions": ["Products and Details."]
         },
         {
           "title": "Server Components and Client Components",
@@ -2877,9 +2611,7 @@
         },
         {
           "title": "Workshop 9",
-          "descriptions": [
-            "Register."
-          ]
+          "descriptions": ["Register."]
         }
       ],
       "publicSchedule": [
@@ -2979,15 +2711,11 @@
         },
         {
           "title": "Workshop 1",
-          "descriptions": [
-            "Creating a Next.js app."
-          ]
+          "descriptions": ["Creating a Next.js app."]
         },
         {
           "title": "Project Structure",
-          "descriptions": [
-            "Introduction to the basic structure of Next.js."
-          ]
+          "descriptions": ["Introduction to the basic structure of Next.js."]
         },
         {
           "title": "HTML and JSX",
@@ -3007,57 +2735,39 @@
         },
         {
           "title": "Workshop 2",
-          "descriptions": [
-            "My First Component."
-          ]
+          "descriptions": ["My First Component."]
         },
         {
           "title": "Tailwind CSS",
-          "descriptions": [
-            "Introduction to basic usage of Tailwind CSS"
-          ]
+          "descriptions": ["Introduction to basic usage of Tailwind CSS"]
         },
         {
           "title": "Workshop 3",
-          "descriptions": [
-            "My Home Page."
-          ]
+          "descriptions": ["My Home Page."]
         },
         {
           "title": "State: A Component's Memory",
-          "descriptions": [
-            "Explanation of useState function and basic usage."
-          ]
+          "descriptions": ["Explanation of useState function and basic usage."]
         },
         {
           "title": "Workshop 4",
-          "descriptions": [
-            "Carousel banner."
-          ]
+          "descriptions": ["Carousel banner."]
         },
         {
           "title": "Reacting to Input with State",
-          "descriptions": [
-            "Using State with Input."
-          ]
+          "descriptions": ["Using State with Input."]
         },
         {
           "title": "Workshop 5",
-          "descriptions": [
-            "Search box."
-          ]
+          "descriptions": ["Search box."]
         },
         {
           "title": "Sharing State Between Components",
-          "descriptions": [
-            "Explanation of using State with other components."
-          ]
+          "descriptions": ["Explanation of using State with other components."]
         },
         {
           "title": "Workshop 6",
-          "descriptions": [
-            "Search results."
-          ]
+          "descriptions": ["Search results."]
         },
         {
           "title": "Next.js Routing",
@@ -3069,15 +2779,11 @@
         },
         {
           "title": "Workshop 7",
-          "descriptions": [
-            "New search page."
-          ]
+          "descriptions": ["New search page."]
         },
         {
           "title": "Workshop 8",
-          "descriptions": [
-            "Products and Details."
-          ]
+          "descriptions": ["Products and Details."]
         },
         {
           "title": "Server Components and Client Components",
@@ -3096,9 +2802,7 @@
         },
         {
           "title": "Workshop 9",
-          "descriptions": [
-            "Register."
-          ]
+          "descriptions": ["Register."]
         }
       ],
       "publicSchedule": [
@@ -3144,8 +2848,8 @@
         "เสริมสร้างทักษะการใช้สูตรและฟังก์ชันขั้นสูง: ผู้เรียนจะได้เรียนรู้การใช้ฟังก์ชันเชิงตรรกะ ฟังก์ชันค้นหาและอ้างอิง ฟังก์ชันข้อความและวันที่ ฟังก์ชันการเงิน และสูตรอาร์เรย์ที่สำคัญในการทำงานกับข้อมูลใน Excel",
         "พัฒนาทักษะการจัดการและตรวจสอบข้อมูล: การใช้เครื่องมือตรวจสอบข้อมูล การสร้างรายการ drop-down และการจัดรูปแบบตามเงื่อนไข เพื่อให้ข้อมูลมีความถูกต้องและน่าเชื่อถือ",
         "สร้างความเข้าใจในการใช้งานตาราง Pivot และแผนภูมิ Pivot: ผู้เรียนจะได้เรียนรู้วิธีการสร้าง ปรับแต่ง และใช้ตาราง Pivot และแผนภูมิ Pivot เพื่อวิเคราะห์และสรุปข้อมูลอย่างมีประสิทธิภาพ",
-        "เพิ่มประสิทธิภาพในการจัดการข้อมูล: การจัดเรียง การกรองขั้นสูง และการรวมข้อมูล เพื่อเพิ่มประสิทธิภาพในการจัดการข้อมูลขนาดใหญ่", 
-        "เสริมสร้างความรู้เกี่ยวกับการนำเข้าข้อมูลและการทำงานอัตโนมัติ: ผู้เรียนจะได้เรียนรู้การนำเข้าข้อมูลจากแหล่งต่าง ๆ และการใช้แมโครเพื่อทำงานอัตโนมัติ", 
+        "เพิ่มประสิทธิภาพในการจัดการข้อมูล: การจัดเรียง การกรองขั้นสูง และการรวมข้อมูล เพื่อเพิ่มประสิทธิภาพในการจัดการข้อมูลขนาดใหญ่",
+        "เสริมสร้างความรู้เกี่ยวกับการนำเข้าข้อมูลและการทำงานอัตโนมัติ: ผู้เรียนจะได้เรียนรู้การนำเข้าข้อมูลจากแหล่งต่าง ๆ และการใช้แมโครเพื่อทำงานอัตโนมัติ",
         "การวิเคราะห์ข้อมูลขั้นสูงและการสร้างแบบจำลองข้อมูล: การใช้เครื่องมือวิเคราะห์ข้อมูลขั้นสูง เช่น การวิเคราะห์ What-If และ Add-in Solver รวมถึงการใช้ Power Query และ Power Pivot เพื่อสร้างแบบจำลองข้อมูลที่ซับซ้อน"
       ],
       "whoShouldAttend": [
@@ -3262,8 +2966,8 @@
         "Enhancing Skills in Advanced Formulas and Functions: Participants will learn to use logical functions, lookup and reference functions, text and date functions, financial functions, and essential array formulas for effective data handling in Excel.",
         "Developing Data Management and Validation Skills: Utilizing data validation tools, creating drop-down lists, and applying conditional formatting to ensure data accuracy and reliability.",
         "Understanding Pivot Tables and Pivot Charts: Learning to create, customize, and use Pivot Tables and Pivot Charts for efficient data analysis and summarization.",
-        "Improving Data Management Efficiency: Advanced sorting, filtering, and data consolidation techniques to manage large datasets more effectively.", 
-        "Enhancing Knowledge in Data Import and Automation: Learning to import data from various sources and using macros for automation tasks.", 
+        "Improving Data Management Efficiency: Advanced sorting, filtering, and data consolidation techniques to manage large datasets more effectively.",
+        "Enhancing Knowledge in Data Import and Automation: Learning to import data from various sources and using macros for automation tasks.",
         "Advanced Data Analysis and Data Modeling: Utilizing advanced data analysis tools such as What-If Analysis and Solver Add-in, and using Power Query and Power Pivot for complex data modeling."
       ],
       "whoShouldAttend": [
@@ -3540,7 +3244,7 @@
         "Create and customize visualizations and reports",
         "Utilize advanced visualization techniques and DAX functions",
         "Publish reports and collaborate in Power BI Service",
-        "Learn best practices and troubleshooting in Power BI"       
+        "Learn best practices and troubleshooting in Power BI"
       ],
       "whoShouldAttend": [
         "Business Analysts",

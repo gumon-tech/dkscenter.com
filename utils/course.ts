@@ -1,8 +1,8 @@
-import courses from "../datas/courses.json";
-import { Course, PublicSchedule } from "../types/course";
-import dayjs from "dayjs";
+import courses from '../datas/courses.json';
+import { Course, PublicSchedule } from '../types/course';
+import dayjs from 'dayjs';
 
-export const getActiveCourses = (currentLanguage = "en"): Course[] => {
+export const getActiveCourses = (currentLanguage = 'en'): Course[] => {
   return Object.values(courses)
     .map((course) => course[currentLanguage])
     .filter((course) => course.isActive);

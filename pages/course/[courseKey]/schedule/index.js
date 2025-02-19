@@ -1,7 +1,7 @@
-import courses from "/datas/courses.json";
-import { RedirectRender } from "/lib/redirect";
-import { useRouter } from "next/router";
-import Head from "next/head";
+import courses from '/datas/courses.json';
+import { RedirectRender } from '/lib/redirect';
+import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 export const getStaticPaths = () => {
   const courseKeyList = Object.keys(courses);
@@ -15,7 +15,7 @@ export const getStaticPaths = () => {
 };
 
 export const getStaticProps = (context) => {
-  const courseKey = context.params?.courseKey || "";
+  const courseKey = context.params?.courseKey || '';
   const courseData = courses[courseKey];
   return { props: { courseData } };
 };
@@ -23,12 +23,12 @@ export const getStaticProps = (context) => {
 const Home = ({ courseData }) => {
   const { asPath } = useRouter();
   const origin =
-    typeof window !== "undefined" && window.location.origin
+    typeof window !== 'undefined' && window.location.origin
       ? window.location.origin
-      : "";
+      : '';
 
   const URL = `${origin}${asPath}`;
-  const domain = origin;  
+  const domain = origin;
   const courseLocaleData = courseData.en;
 
   return RedirectRender(
@@ -73,7 +73,7 @@ const Home = ({ courseData }) => {
         />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-    </>
+    </>,
   );
 };
 
