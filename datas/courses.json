@@ -2636,6 +2636,18 @@
           "isSoldOut": false,
           "location": "Online",
           "scheduleKey": "2024-12-2"
+        },
+        {
+          "title": "Pixel Pioneers: Next.js and React Masterclass - 3/2568",
+          "eventStart": "2025-07-26T09:00:00+0700",
+          "eventEnd": "2025-07-27T17:00:00+0700",
+          "saleStart": "2025-06-03T09:00:00+0700",
+          "saleEnd": "2025-07-25T21:00:00+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "COMING SOON",
+          "scheduleKey": "",
+          "ticketUrl": ""
         }
       ],
       "documents": []
@@ -2827,6 +2839,18 @@
           "isSoldOut": false,
           "location": "Online",
           "scheduleKey": "2024-12-2"
+        },
+        {
+          "title": "Pixel Pioneers: Next.js and React Masterclass - 3/2568",
+          "eventStart": "2025-07-26T09:00:00+0700",
+          "eventEnd": "2025-07-27T17:00:00+0700",
+          "saleStart": "2025-06-03T09:00:00+0700",
+          "saleEnd": "2025-07-25T21:00:00+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "COMING SOON",
+          "scheduleKey": "",
+          "ticketUrl": ""
         }
       ],
       "documents": []
@@ -2837,7 +2861,7 @@
       "lastUpdate": "2024-07-05T09:00:00+0700",
       "key": "2024-015-excel-vanguard-cutting-edge-functions",
       "locale": "th",
-      "isActive": true,
+      "isActive": false,
       "imageUrl": "/course/2024-015/poster/cover-image.jpg",
       "detailUrl": "https://dkscenter.com/th/course/2024-015-excel-vanguard-cutting-edge-functions",
       "title": "Excel Vanguard: Cutting-Edge Functions",
@@ -2955,7 +2979,7 @@
       "lastUpdate": "2024-07-05T09:00:00+0700",
       "key": "2024-015-excel-vanguard-cutting-edge-functions",
       "locale": "en",
-      "isActive": true,
+      "isActive": false,
       "imageUrl": "/course/2024-015/poster/cover-image.jpg",
       "detailUrl": "https://dkscenter.com/en/course/2024-015-excel-vanguard-cutting-edge-functions",
       "title": "Excel Vanguard: Cutting-Edge Functions",
@@ -3075,7 +3099,7 @@
       "lastUpdate": "2024-07-05T09:00:00+0700",
       "key": "2024-016-data-storyteller-visual-narratives-with-power-bi",
       "locale": "th",
-      "isActive": true,
+      "isActive": false,
       "imageUrl": "/course/2024-016/poster/cover-image.jpg",
       "detailUrl": "https://dkscenter.com/th/course/2024-016-data-storyteller-visual-narratives-with-power-bi",
       "title": "Data Storyteller: Visual Narratives with Power BI",
@@ -3229,7 +3253,7 @@
       "lastUpdate": "2024-07-05T09:00:00+0700",
       "key": "2024-016-data-storyteller-visual-narratives-with-power-bi",
       "locale": "en",
-      "isActive": true,
+      "isActive": false,
       "imageUrl": "/course/2024-016/poster/cover-image.jpg",
       "detailUrl": "https://dkscenter.com/th/course/2024-016-data-storyteller-visual-narratives-with-power-bi",
       "title": "Data Storyteller: Visual Narratives with Power BI",
