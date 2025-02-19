@@ -60,8 +60,8 @@ const AboutUs = () => {
 
           <Contact
             title={
-              <a target="_blank" href="mailto:sales@dkscenter.com">
-                sales@dkscenter.com
+              <a target="_blank" href="mailto:dkscenter@gumon.io">
+                dkscenter@gumon.io
               </a>
             }
             icon={<AtSymbolIcon />}
@@ -76,7 +76,7 @@ const AboutUs = () => {
             }
             icon={<FontAwesomeIcon icon={faFacebook} width={30} height={30} />}
           />
-          <Contact
+          {/* <Contact
             title={
               <>
                 <a target="_blank" href="https://lin.ee/fnl0CuL">
@@ -85,7 +85,7 @@ const AboutUs = () => {
               </>
             }
             icon={<FontAwesomeIcon icon={faLine} width={30} height={30} />}
-          />
+          /> */}
         </>
       </Hero>
       <Footer i18next={i18next} />
