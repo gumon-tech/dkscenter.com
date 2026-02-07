@@ -2456,7 +2456,7 @@
       "key": "2024-014-pixel-pioneers-nextjs-react-masterclass",
       "locale": "th",
       "isActive": true,
-      "imageUrl": "/course/2024-014/poster/cover-image.jpg",
+      "imageUrl": "/course/2024-014/poster/cover-image2.jpg",
       "detailUrl": "https://dkscenter.gumon.io/th/course/2024-014-pixel-pioneers-nextjs-react-masterclass",
       "title": "Pixel Pioneers: Next.js and React Masterclass",
       "code": "2024-014",
@@ -2648,6 +2648,18 @@
           "location": "COMING SOON",
           "scheduleKey": "",
           "ticketUrl": ""
+        },
+        {
+          "title": "Pixel Pioneers: Next.js and React Masterclass - 1/2569",
+          "eventStart": "2026-02-21T09:00:00+0700",
+          "eventEnd": "2026-02-22T17:00:00+0700",
+          "saleStart": "2026-02-07T09:00:00+0700",
+          "saleEnd": "2026-02-20T21:00:00+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "มหาวิทยาลัยเทคโนโลยีราชมงคลกรุงเทพ",
+          "scheduleKey": "",
+          "ticketUrl": "https://www.eventpop.me/e/100061-pixel-pioneers-nextjs-and-react-masterclass-1-2025"
         }
       ],
       "documents": []
@@ -2657,7 +2669,7 @@
       "key": "2024-014-pixel-pioneers-nextjs-react-masterclass",
       "locale": "en",
       "isActive": true,
-      "imageUrl": "/course/2024-014/poster/cover-image.jpg",
+      "imageUrl": "/course/2024-014/poster/cover-image2.jpg",
       "detailUrl": "https://dkscenter.gumon.io/en/course/2024-014-pixel-pioneers-nextjs-react-masterclass",
       "title": "Pixel Pioneers: Next.js and React Masterclass",
       "code": "2024-014",
@@ -2851,6 +2863,18 @@
           "location": "COMING SOON",
           "scheduleKey": "",
           "ticketUrl": ""
+        },
+        {
+          "title": "Pixel Pioneers: Next.js and React Masterclass - 1/2569",
+          "eventStart": "2026-02-21T09:00:00+0700",
+          "eventEnd": "2026-02-22T17:00:00+0700",
+          "saleStart": "2026-02-07T09:00:00+0700",
+          "saleEnd": "2026-02-20T21:00:00+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "Rajamangala University of Technology Krungthep",
+          "scheduleKey": "",
+          "ticketUrl": "https://www.eventpop.me/e/100061-pixel-pioneers-nextjs-and-react-masterclass-1-2025"
         }
       ],
       "documents": []
