@@ -1,10 +1,12 @@
+// pages/_app.js
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
 import { ThemeProvider } from 'next-themes';
 import { appWithTranslation } from 'next-i18next';
+
+import { GTM_ID, trackPageView } from '/lib/gtm';
 import { DEFAULT_BRAND, normalizeBrand } from '/lib/brand';
-import { GTM_ID } from '/lib/gtm';
 
 import '../css/tailwind.css';
 import '../css/styles.css';
@@ -16,35 +18,43 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     if (!GTM_ID) return;
 
-    const pushPageView = (url) => {
-      window.dataLayer = window.dataLayer || [];
+    const getLocale = () => {
+      // โปรเจกต์คุณใช้ /[locale]/... ดังนั้นอ่านจาก query ก่อน
+      const qLocale = router.query?.locale;
+      if (qLocale) return String(qLocale);
+      // fallback (บางที next อาจมี router.locale)
+      if (router.locale) return String(router.locale);
+      return 'en';
+    };
 
-      const brandOwner = normalizeBrand(pageProps?.brandOwner);
-      const brandEffective = brandOwner || DEFAULT_BRAND;
+    const getBrandOwner = () => {
+      // pageProps.brandOwner จะมาจาก getStaticProps ในแต่ละหน้า (เช่น course detail)
+      const fromProps = pageProps?.brandOwner;
+      return normalizeBrand(fromProps || DEFAULT_BRAND);
+    };
 
-      window.dataLayer.push({
-        event: 'page_view',
-        page_path: url,
-        page_title: document?.title || '',
-        brand_default: DEFAULT_BRAND,
-        brand_owner: brandOwner,
-        brand_effective: brandEffective,
-        page_type: pageProps?.pageType || 'page',
+    const getPageType = () => pageProps?.pageType || 'page';
+
+    const pushPV = (url) => {
+      trackPageView({
+        pagePath: url,
+        pageType: getPageType(),
+        locale: getLocale(),
+        brandOwner: getBrandOwner(),
       });
     };
 
     // initial
-    pushPageView(window.location.pathname + window.location.search);
+    pushPV(window.location.pathname + window.location.search);
 
     // SPA route changes
-    const handleRouteChange = (url) => pushPageView(url);
+    const handleRouteChange = (url) => pushPV(url);
     router.events.on('routeChangeComplete', handleRouteChange);
     return () => router.events.off('routeChangeComplete', handleRouteChange);
-  }, [router.events]);
+  }, [router.events, router.query?.locale, pageProps?.brandOwner, pageProps?.pageType]);
 
   return (
     <>
-      {/* GTM head script */}
       {GTM_ID && (
         <Script id="gtm-init" strategy="afterInteractive">
           {`

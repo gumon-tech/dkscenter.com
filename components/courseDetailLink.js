@@ -12,6 +12,11 @@ import TicketSales from '/components/TicketSales';
 import TicketSaleModalManage from './ticketSaleModal/ticketSaleModalManage';
 import { gtmEvent } from '/lib/gtm';
 import { normalizeBrand } from '/lib/brand';
+import {
+  trackBeginCheckout,
+  trackSelectContent,
+  trackOutboundClick,
+} from '/lib/gtm';
 
 const CourseDetailLink = ({
   courseData,
@@ -23,6 +28,35 @@ const CourseDetailLink = ({
   const { t, i18n } = i18next;
   const router = useRouter();
   const code = router.query?.discount_code || router.query?.code;
+  const brandOwner = normalizeBrand(courseData?.brand);
+  const baseItem = {
+    item_name: courseData?.title,
+    item_category: 'course',
+    item_id: courseData?.code || courseData?.key,
+  };
+
+  const onScheduleTitleClick = (publicSchedule, linkUrl) => {
+    if (!courseData?.title) return;
+
+    trackSelectContent({
+      brandOwner,
+      item: baseItem,
+      content: {
+        type: 'schedule',
+        id: publicSchedule?.title || '',
+        name: publicSchedule?.title || '',
+      },
+    });
+
+    // ถ้าเป็นลิงก์ออกนอกโดเมน (eventpop) เก็บ outbound ด้วย
+    if (linkUrl && /^https?:\/\//.test(linkUrl)) {
+      trackOutboundClick({
+        brandOwner,
+        linkUrl,
+        label: 'eventpop_ticket',
+      });
+    }
+  };
 
   const [modalOpen, setModalOpen] = useState(false);
   const [scheduleKey, setScheduleKey] = useState('');
@@ -72,26 +106,24 @@ const CourseDetailLink = ({
     return `${ticketUrl}${glue}${extraStr}`;
   };
 
-  const onRegisterClick = (publicSchedule) => {
+  const onRegisterClick = (publicSchedule, linkUrl) => {
     if (!courseData?.title) return;
 
-    gtmEvent('begin_checkout', {
-      brand_owner: normalizeBrand(courseData?.brand),
-      items: [
-        {
-          item_name: courseData.title,
-          item_category: 'course',
-          item_id: courseData?.code || courseData?.key,
-          item_variant: publicSchedule?.title,
-          item_brand: normalizeBrand(courseData?.brand),
-        },
-      ],
+    trackBeginCheckout({
+      brandOwner,
+      item: baseItem,
+      schedule: publicSchedule,
+      linkUrl: linkUrl || '',
     });
+
+    if (linkUrl && /^https?:\/\//.test(linkUrl)) {
+      trackOutboundClick({
+        brandOwner,
+        linkUrl,
+        label: 'eventpop_ticket',
+      });
+    }
   };
-
-
-
-
 
   return (
     <>
@@ -224,7 +256,12 @@ const CourseDetailLink = ({
                                 <a
                                   target="_blank"
                                   href={buildTicketUrlWithCurrentQuery(publicSchedule.ticketUrl)}
-                                  onClick={onRegisterClick}
+                                  onClick={() =>
+                                    onScheduleTitleClick(
+                                      publicSchedule,
+                                      buildTicketUrlWithCurrentQuery(publicSchedule.ticketUrl)
+                                    )
+                                  }
                                   rel="noreferrer"
                                   className='cursor-pointer text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300'
                                 >
@@ -276,7 +313,13 @@ const CourseDetailLink = ({
                             <a
                               target="_blank"
                               href={buildTicketUrlWithCurrentQuery(publicSchedule.ticketUrl)}
-                              onClick={onRegisterClick}
+                              onClick={() =>
+                                onRegisterClick(
+                                  publicSchedule,
+                                  buildTicketUrlWithCurrentQuery(publicSchedule.ticketUrl)
+                                )
+                              }
+
                               className="mt-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                               rel="noreferrer"
                             >

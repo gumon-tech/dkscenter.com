@@ -5,6 +5,7 @@ import dayjs from 'dayjs';
 import CourseDetailLink from './courseDetailLink';
 import { gtmEvent } from '/lib/gtm';
 import { normalizeBrand } from '/lib/brand';
+import { trackViewItem } from '/lib/gtm';
 
 const CourseDetail = ({ courseData, i18next }) => {
   const { t } = i18next;
@@ -12,18 +13,17 @@ const CourseDetail = ({ courseData, i18next }) => {
   useEffect(() => {
     if (!courseData?.title) return;
 
-    gtmEvent('view_item', {
-      brand_owner: normalizeBrand(courseData?.brand),
-      items: [
-        {
-          item_name: courseData.title,
-          item_category: 'course',
-          item_id: courseData?.code || courseData?.key,
-          item_brand: normalizeBrand(courseData?.brand),
-        },
-      ],
+    const brandOwner = normalizeBrand(courseData?.brand); // brand ใน courses.json (ระดับ locale)
+
+    trackViewItem({
+      brandOwner,
+      item: {
+        item_name: courseData.title,
+        item_category: 'course',
+        item_id: courseData?.code || courseData?.key,
+      },
     });
-  }, [courseData?.title, courseData?.code, courseData?.key]);
+  }, [courseData?.title, courseData?.code, courseData?.key, courseData?.brand]);
 
   return !courseData ? (
     <Container>
