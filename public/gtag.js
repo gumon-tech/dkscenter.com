@@ -1,17 +1,17 @@
 export const GA_TRACKING_ID = 'G-WD6C8CCPC9';
 
+// Pageview
 export const pageview = (url) => {
   if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-    window.gtag('config', GA_TRACKING_ID, { page_path: url });
+    window.gtag('config', GA_TRACKING_ID, {
+      page_path: url,
+    });
   }
 };
 
-export const event = ({ action, category, label, value }) => {
+// GA4 event (recommended)
+export const event = (eventName, params = {}) => {
   if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-    window.gtag('event', action, {
-      event_category: category,
-      event_label: label,
-      value,
-    });
+    window.gtag('event', eventName, params);
   }
 };

@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Container from './container';
 import Breadcrumb from './breadcrumb';
 import dayjs from 'dayjs';
 import CourseDetailLink from './courseDetailLink';
+import * as gtag from '/public/gtag';
 
 const CourseDetail = ({ courseData, i18next }) => {
   const { t } = i18next;
+  useEffect(() => {
+    if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
+      window.fbq('track', 'ViewContent', {
+        content_name: courseData?.title,
+        content_type: 'course',
+      });
+    }
+  }, [courseData?.title]);
+
+  useEffect(() => {
+    gtag.event('view_item', {
+      item_name: courseData?.title,
+      item_category: 'course',
+    });
+  }, [courseData?.title]);
+
 
   return !courseData ? (
     <Container>

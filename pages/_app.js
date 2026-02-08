@@ -1,25 +1,29 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import * as gtag from '../public/gtag';
 import Script from 'next/script';
 import { ThemeProvider } from 'next-themes';
+import { appWithTranslation } from 'next-i18next';
+
+import * as gtag from '../public/gtag';
+
 import '../css/tailwind.css';
 import '../css/styles.css';
 import '../css/fonts.css';
-import { appWithTranslation } from 'next-i18next';
 
 const FB_PIXEL_ID = process.env.NEXT_PUBLIC_FB_PIXEL_ID;
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
-  // GA: track SPA route changes (Static-safe)
+  // Track SPA route changes (GA + FB Pixel) - Static-safe
   useEffect(() => {
     const handleRouteChange = (url) => {
+      // GA pageview (only if gtag is ready)
       if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
         gtag.pageview(url);
       }
-      // FB Pixel PageView on route change
+
+      // FB Pixel PageView (only if fbq is ready)
       if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
         window.fbq('track', 'PageView');
       }
@@ -44,8 +48,11 @@ function MyApp({ Component, pageProps }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             window.gtag = gtag;
+
             gtag('js', new Date());
-            gtag('config', '${gtag.GA_TRACKING_ID}', { page_path: window.location.pathname });
+            gtag('config', '${gtag.GA_TRACKING_ID}', {
+              page_path: window.location.pathname + window.location.search
+            });
           `,
         }}
       />
@@ -72,7 +79,8 @@ function MyApp({ Component, pageProps }) {
               `,
             }}
           />
-          {/* noscript แบบ pixel image (optional แต่ดี) */}
+
+          {/* noscript pixel image (optional but good) */}
           <noscript>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
