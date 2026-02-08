@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://dkscenter.gumon.io/en</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/th</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/en/course</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/en/schedule</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/th/schedule</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/en/about-us</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/th/about-us</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/en/privacy</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/th/privacy</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/en/course/2024-001-fundamental-docker</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2024-001-fundamental-docker</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/en/course/2024-002-fundamental-kubernetes</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2024-002-fundamental-kubernetes</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/en/course/2024-007-modern-web-frontend-with-react</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2024-007-modern-web-frontend-with-react</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/en/course/2024-003-fundamental-api</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2024-003-fundamental-api</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/en/course/2024-004-fundamental-api</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2024-004-fundamental-api</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/en/course/2024-005-fundamental-api</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2024-005-fundamental-api</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/en/course/2024-006-fundamental-api</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2024-006-fundamental-api</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/en/course/2024-011-code-craft-tntro-to-web-development-with-html-css-js</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2024-011-code-craft-tntro-to-web-development-with-html-css-js</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/en/course/2024-012-container-conquest-dominate-with-docker-workshop</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2024-012-container-conquest-dominate-with-docker-workshop</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/en/course/2024-014-pixel-pioneers-nextjs-react-masterclass</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2024-014-pixel-pioneers-nextjs-react-masterclass</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/en/course/2024-015-excel-vanguard-cutting-edge-functions</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2024-015-excel-vanguard-cutting-edge-functions</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/en/course/2024-016-data-storyteller-visual-narratives-with-power-bi</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2024-016-data-storyteller-visual-narratives-with-power-bi</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/en/course/2025-001-orchestrate-docker-kubernetes-bootcamp</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2025-001-orchestrate-docker-kubernetes-bootcamp</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/en/course/2025-002-event-driven-odyssey-kafka-nest-and-graphql-in-action</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2025-002-event-driven-odyssey-kafka-nest-and-graphql-in-action</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/en/course/test-ac</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/test-ac</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/en/course/test-dks</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/test-dks</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>

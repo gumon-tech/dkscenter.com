@@ -4,30 +4,31 @@ import Navbar from '/components/navbar';
 import Footer from '/components/footer';
 import CourseDetail from '/components/courseDetail';
 import courses from '/datas/courses.json';
-import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { normalizeBrand } from '/lib/brand';
 
-const Course = ({ courseData }) => {
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || 'https://dkscenter.gumon.io';
+
+const Course = ({ courseData, courseKey }) => {
   const i18next = useTranslation('home');
-  const { t, i18n } = i18next;
+  const { i18n } = i18next;
 
-  const { asPath } = useRouter();
-  const origin =
-    typeof window !== 'undefined' && window.location.origin
-      ? window.location.origin
-      : '';
-
-  const URL = `${origin}${asPath}`;
-  const domain = origin;
-  const currentLanguage = i18n.language;
+  const currentLanguage = i18n.language; // 'en' | 'th'
   const courseLocaleData = courseData[currentLanguage];
-  let localeNaming = 'en_US';
-  if (currentLanguage === 'th') localeNaming = 'TH_TH';
+
+  const localeNaming = currentLanguage === 'th' ? 'th_TH' : 'en_US';
+
+  const canonicalUrl = `${SITE_URL}/${currentLanguage}/course/${courseKey}`;
+  const ogImage = courseLocaleData.imageUrl
+    ? `${SITE_URL}${courseLocaleData.imageUrl}`
+    : undefined;
 
   return (
     <>
       <Head>
+        {/* Title & Description */}
         <title>
           {`${courseLocaleData.title} | DKS Center - Digital Knowledge Sharing Center`}
         </title>
@@ -37,40 +38,51 @@ const Course = ({ courseData }) => {
         />
         <link rel="icon" href="/favicon.ico" />
 
-        {/* Open Graph Protocol */}
-        <meta
-          property="og:title"
-          content={`${courseLocaleData.title} | DKS Center - Digital Knowledge Sharing Center`}
+        {/* Canonical */}
+        <link rel="canonical" href={canonicalUrl} />
+
+        {/* hreflang */}
+        <link
+          rel="alternate"
+          hrefLang="en"
+          href={`${SITE_URL}/en/course/${courseKey}`}
         />
+        <link
+          rel="alternate"
+          hrefLang="th"
+          href={`${SITE_URL}/th/course/${courseKey}`}
+        />
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href={`${SITE_URL}/en/course/${courseKey}`}
+        />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={courseLocaleData.title} />
         <meta
           property="og:description"
-          content={`${courseLocaleData.title} | ${courseLocaleData.overview}`}
+          content={courseLocaleData.overview}
         />
-        <meta
-          property="og:image"
-          content={domain + courseLocaleData.imageUrl}
-        />
-        <meta property="og:url" content={URL} />
-        <meta property="og:site_name" content={domain} />
+        {ogImage && <meta property="og:image" content={ogImage} />}
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:site_name" content="DKS Center" />
         <meta property="og:locale" content={localeNaming} />
-        <meta property="og:locale:alternate" content="TH_TH" />
-        <meta property="og:locale:alternate" content="en_US" />
+        <meta
+          property="og:locale:alternate"
+          content={localeNaming === 'th_TH' ? 'en_US' : 'th_TH'}
+        />
 
         {/* Twitter Card */}
-        <meta
-          name="twitter:title"
-          content={`${courseLocaleData.title} | DKS Center - Digital Knowledge Sharing Center`}
-        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={courseLocaleData.title} />
         <meta
           name="twitter:description"
-          content={`${courseLocaleData.title} | ${courseLocaleData.overview}`}
+          content={courseLocaleData.overview}
         />
-        <meta
-          name="twitter:image"
-          content={domain + courseLocaleData.imageUrl}
-        />
-        <meta name="twitter:card" content="summary_large_image" />
+        {ogImage && <meta name="twitter:image" content={ogImage} />}
       </Head>
+
       <Navbar i18next={i18next} />
       <CourseDetail courseData={courseLocaleData} i18next={i18next} />
       <Footer i18next={i18next} />
@@ -80,15 +92,17 @@ const Course = ({ courseData }) => {
 
 export const getStaticPaths = () => {
   const courseKeyList = Object.keys(courses);
-  const paths = [];
   const locales = ['en', 'th'];
+
+  const paths = [];
   for (const courseKey of courseKeyList) {
     for (const locale of locales) {
       paths.push({
-        params: { courseKey: courseKey, locale: locale },
+        params: { courseKey, locale },
       });
     }
   }
+
   return { paths, fallback: false };
 };
 
@@ -98,19 +112,26 @@ function makeStaticProps(ns = {}) {
   return async function getStaticProps(ctx) {
     const courseKey = ctx.params?.courseKey || '';
     const courseData = courses[courseKey];
+
     return {
-      props: await getI18nProps(ctx, ns, courseData),
+      props: await getI18nProps(ctx, ns, courseData, courseKey),
     };
   };
 }
 
-async function getI18nProps(ctx, ns = ['home'], courseData) {
+async function getI18nProps(ctx, ns = ['home'], courseData, courseKey) {
   const locale = ctx?.params?.locale;
-  const props = {
+
+  const localized = courseData?.[locale] || null;
+  const brandOwner = normalizeBrand(localized?.brand);
+
+  return {
     ...(await serverSideTranslations(locale, ns)),
-    courseData: courseData,
+    courseData,
+    courseKey,              // ✅ STEP 2.2
+    pageType: 'course_detail',
+    brandOwner,
   };
-  return props;
 }
 
 export default Course;

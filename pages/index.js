@@ -1,42 +1,42 @@
-import React from 'react';
-import { RedirectRender } from '../lib/redirect';
-import { useRouter } from 'next/router';
 import Head from 'next/head';
+import { useEffect } from 'react';
 
-const Home = () => {
-  const { asPath } = useRouter();
-  const origin =
-    typeof window !== 'undefined' && window.location.origin
-      ? window.location.origin
-      : '';
+const DEFAULT_LOCALE = 'th';
+const SUPPORTED = new Set(['en', 'th']);
 
-  const URL = `${origin}${asPath}`;
-  const domain = origin;
-  const headTitle = 'DKS Center - Digital Knowledge Sharing Center';
-  const headContent =
-    'DKS acts as a central hub bridging digital communities and technology enthusiasts, fostering collaboration and knowledge exchange. Our mission includes organizing seminars, knowledge-sharing activities, and collaborative events to constantly update our network with the latest insights.';
+function mapLocale(v) {
+  if (!v) return null;
+  const s = String(v).toLowerCase();
+  if (s.startsWith('th')) return 'th';
+  if (s.startsWith('en')) return 'en';
+  return null;
+}
 
-  return RedirectRender(
+function getCookie(name) {
+  if (typeof document === 'undefined') return null;
+  const m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+  return m ? decodeURIComponent(m[2]) : null;
+}
+
+export default function Home() {
+  useEffect(() => {
+    // 1) cookie: locale=th_TH / en_US (ตามที่คุณมีอยู่)
+    const cookieLocale = mapLocale(getCookie('locale'));
+
+    // 2) browser language: th-TH / en-US
+    const browserLocale = mapLocale(navigator.language);
+
+    const target = cookieLocale || browserLocale || DEFAULT_LOCALE;
+    const finalTarget = SUPPORTED.has(target) ? target : DEFAULT_LOCALE;
+
+    window.location.replace('/' + finalTarget);
+  }, []);
+
+  return (
     <>
       <Head>
-        <title>{headTitle}</title>
-        <meta name="description" content={headContent} />
-        <link rel="icon" href="/favicon.ico" />
-
-        {/* Open Graph Protocol */}
-        <meta property="og:title" content={headTitle} />
-        <meta property="og:description" content={headContent} />
-        <meta property="og:image" content={domain + '/img/main_img.jpg'} />
-        <meta property="og:url" content={URL} />
-
-        {/* Twitter Card */}
-        <meta name="twitter:title" content={headTitle} />
-        <meta name="twitter:description" content={headContent} />
-        <meta name="twitter:image" content={domain + '/img/main_img.jpg'} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="robots" content="noindex,follow" />
       </Head>
-    </>,
+    </>
   );
-};
-
-export default Home;
+}

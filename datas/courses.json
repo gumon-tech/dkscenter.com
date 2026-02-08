@@ -541,15 +541,21 @@
         },
         {
           "title": "What is React? And why Next.js?",
-          "descriptions": ["ทำความรู้จักกับ React และ React-powered frameworks"]
+          "descriptions": [
+            "ทำความรู้จักกับ React และ React-powered frameworks"
+          ]
         },
         {
           "title": "Workshop 1",
-          "descriptions": ["Creating a Next.js app."]
+          "descriptions": [
+            "Creating a Next.js app."
+          ]
         },
         {
           "title": "Project Structure",
-          "descriptions": ["แนะนำโครงสร้างของ Next.js"]
+          "descriptions": [
+            "แนะนำโครงสร้างของ Next.js"
+          ]
         },
         {
           "title": "HTML and JSX",
@@ -569,39 +575,57 @@
         },
         {
           "title": "Workshop 2",
-          "descriptions": ["My First Component."]
+          "descriptions": [
+            "My First Component."
+          ]
         },
         {
           "title": "Tailwind CSS",
-          "descriptions": ["แนะนำการใช้งาน Tailwind CSS เบื้องต้น"]
+          "descriptions": [
+            "แนะนำการใช้งาน Tailwind CSS เบื้องต้น"
+          ]
         },
         {
           "title": "Workshop 3",
-          "descriptions": ["My Home Page."]
+          "descriptions": [
+            "My Home Page."
+          ]
         },
         {
           "title": "State: A Component's Memory",
-          "descriptions": ["อธิบายฟังก์ชัน useState และวิธีการใช้งานเบื้องต้น"]
+          "descriptions": [
+            "อธิบายฟังก์ชัน useState และวิธีการใช้งานเบื้องต้น"
+          ]
         },
         {
           "title": "Workshop 4",
-          "descriptions": ["Carousel banner."]
+          "descriptions": [
+            "Carousel banner."
+          ]
         },
         {
           "title": "Reacting to Input with State",
-          "descriptions": ["การใช้งาน State ร่วมกับ Input"]
+          "descriptions": [
+            "การใช้งาน State ร่วมกับ Input"
+          ]
         },
         {
           "title": "Workshop 5",
-          "descriptions": ["Search box."]
+          "descriptions": [
+            "Search box."
+          ]
         },
         {
           "title": "Sharing State Between Components",
-          "descriptions": ["อธิบายการใช้ State ร่วมกับ Component อื่นๆ"]
+          "descriptions": [
+            "อธิบายการใช้ State ร่วมกับ Component อื่นๆ"
+          ]
         },
         {
           "title": "Workshop 6",
-          "descriptions": ["Search results."]
+          "descriptions": [
+            "Search results."
+          ]
         },
         {
           "title": "Next.js Routing",
@@ -613,11 +637,15 @@
         },
         {
           "title": "Workshop 7",
-          "descriptions": ["New search page."]
+          "descriptions": [
+            "New search page."
+          ]
         },
         {
           "title": "Workshop 8",
-          "descriptions": ["Products and Details."]
+          "descriptions": [
+            "Products and Details."
+          ]
         },
         {
           "title": "Server Components and Client Components",
@@ -636,7 +664,9 @@
         },
         {
           "title": "Workshop 9",
-          "descriptions": ["Register."]
+          "descriptions": [
+            "Register."
+          ]
         },
         {
           "title": "Authentication Flow",
@@ -646,7 +676,9 @@
         },
         {
           "title": "Workshop 10",
-          "descriptions": ["Login."]
+          "descriptions": [
+            "Login."
+          ]
         },
         {
           "title": "Passing Data Deeply with Context",
@@ -657,7 +689,9 @@
         },
         {
           "title": "Workshop 11",
-          "descriptions": ["My Profile."]
+          "descriptions": [
+            "My Profile."
+          ]
         },
         {
           "title": "Error Handling and Middleware",
@@ -668,7 +702,9 @@
         },
         {
           "title": "Workshop 12",
-          "descriptions": ["Redirect when not logged in."]
+          "descriptions": [
+            "Redirect when not logged in."
+          ]
         },
         {
           "title": "Scaling Up with Reducer and Context",
@@ -679,7 +715,9 @@
         },
         {
           "title": "Workshop 13",
-          "descriptions": ["Add products to cart."]
+          "descriptions": [
+            "Add products to cart."
+          ]
         },
         {
           "title": "Synchronizing with Effects",
@@ -689,11 +727,15 @@
         },
         {
           "title": "Workshop 14",
-          "descriptions": ["Checkout!"]
+          "descriptions": [
+            "Checkout!"
+          ]
         },
         {
           "title": "Workshop 15",
-          "descriptions": ["Order History."]
+          "descriptions": [
+            "Order History."
+          ]
         },
         {
           "title": "Environment Variables and Deploying",
@@ -703,7 +745,9 @@
         },
         {
           "title": "Workshop 16",
-          "descriptions": ["Hello World!"]
+          "descriptions": [
+            "Hello World!"
+          ]
         }
       ],
       "publicSchedule": [
@@ -826,11 +870,15 @@
         },
         {
           "title": "Workshop 1",
-          "descriptions": ["Creating a Next.js app."]
+          "descriptions": [
+            "Creating a Next.js app."
+          ]
         },
         {
           "title": "Project Structure",
-          "descriptions": ["Introduction to the basic structure of Next.js."]
+          "descriptions": [
+            "Introduction to the basic structure of Next.js."
+          ]
         },
         {
           "title": "HTML and JSX",
@@ -850,39 +898,57 @@
         },
         {
           "title": "Workshop 2",
-          "descriptions": ["My First Component."]
+          "descriptions": [
+            "My First Component."
+          ]
         },
         {
           "title": "Tailwind CSS",
-          "descriptions": ["Introduction to basic usage of Tailwind CSS"]
+          "descriptions": [
+            "Introduction to basic usage of Tailwind CSS"
+          ]
         },
         {
           "title": "Workshop 3",
-          "descriptions": ["My Home Page."]
+          "descriptions": [
+            "My Home Page."
+          ]
         },
         {
           "title": "State: A Component's Memory",
-          "descriptions": ["Explanation of useState function and basic usage."]
+          "descriptions": [
+            "Explanation of useState function and basic usage."
+          ]
         },
         {
           "title": "Workshop 4",
-          "descriptions": ["Carousel banner."]
+          "descriptions": [
+            "Carousel banner."
+          ]
         },
         {
           "title": "Reacting to Input with State",
-          "descriptions": ["Using State with Input."]
+          "descriptions": [
+            "Using State with Input."
+          ]
         },
         {
           "title": "Workshop 5",
-          "descriptions": ["Search box."]
+          "descriptions": [
+            "Search box."
+          ]
         },
         {
           "title": "Sharing State Between Components",
-          "descriptions": ["Explanation of using State with other components."]
+          "descriptions": [
+            "Explanation of using State with other components."
+          ]
         },
         {
           "title": "Workshop 6",
-          "descriptions": ["Search results."]
+          "descriptions": [
+            "Search results."
+          ]
         },
         {
           "title": "Next.js Routing",
@@ -894,11 +960,15 @@
         },
         {
           "title": "Workshop 7",
-          "descriptions": ["New search page."]
+          "descriptions": [
+            "New search page."
+          ]
         },
         {
           "title": "Workshop 8",
-          "descriptions": ["Products and Details."]
+          "descriptions": [
+            "Products and Details."
+          ]
         },
         {
           "title": "Server Components and Client Components",
@@ -917,7 +987,9 @@
         },
         {
           "title": "Workshop 9",
-          "descriptions": ["Register."]
+          "descriptions": [
+            "Register."
+          ]
         },
         {
           "title": "Authentication Flow",
@@ -927,7 +999,9 @@
         },
         {
           "title": "Workshop 10",
-          "descriptions": ["Login."]
+          "descriptions": [
+            "Login."
+          ]
         },
         {
           "title": "Passing Data Deeply with Context",
@@ -938,7 +1012,9 @@
         },
         {
           "title": "Workshop 11",
-          "descriptions": ["My Profile."]
+          "descriptions": [
+            "My Profile."
+          ]
         },
         {
           "title": "Error Handling and Middleware",
@@ -949,7 +1025,9 @@
         },
         {
           "title": "Workshop 12",
-          "descriptions": ["Redirect when not logged in."]
+          "descriptions": [
+            "Redirect when not logged in."
+          ]
         },
         {
           "title": "Scaling Up with Reducer and Context",
@@ -960,7 +1038,9 @@
         },
         {
           "title": "Workshop 13",
-          "descriptions": ["Add products to cart."]
+          "descriptions": [
+            "Add products to cart."
+          ]
         },
         {
           "title": "Synchronizing with Effects",
@@ -970,11 +1050,15 @@
         },
         {
           "title": "Workshop 14",
-          "descriptions": ["Checkout!"]
+          "descriptions": [
+            "Checkout!"
+          ]
         },
         {
           "title": "Workshop 15",
-          "descriptions": ["Order History."]
+          "descriptions": [
+            "Order History."
+          ]
         },
         {
           "title": "Environment Variables and Deploying",
@@ -984,7 +1068,9 @@
         },
         {
           "title": "Workshop 16",
-          "descriptions": ["Hello World!"]
+          "descriptions": [
+            "Hello World!"
+          ]
         }
       ],
       "publicSchedule": [
@@ -1073,35 +1159,51 @@
       "outline": [
         {
           "title": "Introduction to JavaScript (ECMAScript) ",
-          "descriptions": ["Workshop1 - Play with JavaScript"]
+          "descriptions": [
+            "Workshop1 - Play with JavaScript"
+          ]
         },
         {
           "title": "Introduction to NodeJS",
-          "descriptions": ["Workshop2 - Play with NodeJS"]
+          "descriptions": [
+            "Workshop2 - Play with NodeJS"
+          ]
         },
         {
           "title": "Introduction to Restful API",
-          "descriptions": ["Workshop3 - Play with Restful API"]
+          "descriptions": [
+            "Workshop3 - Play with Restful API"
+          ]
         },
         {
           "title": "Introduction to TypeScript",
-          "descriptions": ["Workshop4 - Play with TypeScript"]
+          "descriptions": [
+            "Workshop4 - Play with TypeScript"
+          ]
         },
         {
           "title": "Introduction to Nest JS",
-          "descriptions": ["Workshop5 - Play with Nest JS "]
+          "descriptions": [
+            "Workshop5 - Play with Nest JS "
+          ]
         },
         {
           "title": "Introduction to MongoDB ",
-          "descriptions": ["Workshop6 - Play with MongoDB "]
+          "descriptions": [
+            "Workshop6 - Play with MongoDB "
+          ]
         },
         {
           "title": "Introduction to MVC ",
-          "descriptions": ["Workshop7 - Routing and CRUD (MongoDB & Mongoose) "]
+          "descriptions": [
+            "Workshop7 - Routing and CRUD (MongoDB & Mongoose) "
+          ]
         },
         {
           "title": "NodeJS Environment (Node ENV)",
-          "descriptions": ["Workshop8 - Using multiple Node ENV"]
+          "descriptions": [
+            "Workshop8 - Using multiple Node ENV"
+          ]
         },
         {
           "title": "Nest JS Middleware",
@@ -1112,11 +1214,15 @@
         },
         {
           "title": "Error Handling",
-          "descriptions": ["Workshop11 - Handling error with Restful API"]
+          "descriptions": [
+            "Workshop11 - Handling error with Restful API"
+          ]
         },
         {
           "title": "Build & Deployment",
-          "descriptions": ["Workshop12 - Deploy NodeJS project"]
+          "descriptions": [
+            "Workshop12 - Deploy NodeJS project"
+          ]
         }
       ],
       "publicSchedule": [],
@@ -1166,35 +1272,51 @@
       "outline": [
         {
           "title": "Introduction to JavaScript (ECMAScript) ",
-          "descriptions": ["Workshop1 - Play with JavaScript"]
+          "descriptions": [
+            "Workshop1 - Play with JavaScript"
+          ]
         },
         {
           "title": "Introduction to NodeJS",
-          "descriptions": ["Workshop2 - Play with NodeJS"]
+          "descriptions": [
+            "Workshop2 - Play with NodeJS"
+          ]
         },
         {
           "title": "Introduction to Restful API",
-          "descriptions": ["Workshop3 - Play with Restful API"]
+          "descriptions": [
+            "Workshop3 - Play with Restful API"
+          ]
         },
         {
           "title": "Introduction to TypeScript",
-          "descriptions": ["Workshop4 - Play with TypeScript"]
+          "descriptions": [
+            "Workshop4 - Play with TypeScript"
+          ]
         },
         {
           "title": "Introduction to Nest JS",
-          "descriptions": ["Workshop5 - Play with Nest JS "]
+          "descriptions": [
+            "Workshop5 - Play with Nest JS "
+          ]
         },
         {
           "title": "Introduction to MongoDB ",
-          "descriptions": ["Workshop6 - Play with MongoDB "]
+          "descriptions": [
+            "Workshop6 - Play with MongoDB "
+          ]
         },
         {
           "title": "Introduction to MVC ",
-          "descriptions": ["Workshop7 - Routing and CRUD (MongoDB & Mongoose) "]
+          "descriptions": [
+            "Workshop7 - Routing and CRUD (MongoDB & Mongoose) "
+          ]
         },
         {
           "title": "NodeJS Environment (Node ENV)",
-          "descriptions": ["Workshop8 - Using multiple Node ENV"]
+          "descriptions": [
+            "Workshop8 - Using multiple Node ENV"
+          ]
         },
         {
           "title": "Nest JS Middleware",
@@ -1205,11 +1327,15 @@
         },
         {
           "title": "Error Handling",
-          "descriptions": ["Workshop11 - Handling error with Restful API"]
+          "descriptions": [
+            "Workshop11 - Handling error with Restful API"
+          ]
         },
         {
           "title": "Build & Deployment",
-          "descriptions": ["Workshop12 - Deploy NodeJS project"]
+          "descriptions": [
+            "Workshop12 - Deploy NodeJS project"
+          ]
         }
       ],
       "publicSchedule": [],
@@ -1261,35 +1387,51 @@
       "outline": [
         {
           "title": "Introduction to JavaScript (ECMAScript) ",
-          "descriptions": ["Workshop1 - Play with JavaScript"]
+          "descriptions": [
+            "Workshop1 - Play with JavaScript"
+          ]
         },
         {
           "title": "Introduction to NodeJS",
-          "descriptions": ["Workshop2 - Play with NodeJS"]
+          "descriptions": [
+            "Workshop2 - Play with NodeJS"
+          ]
         },
         {
           "title": "Introduction to GraphQL",
-          "descriptions": ["Workshop3 - Play with GraphQL"]
+          "descriptions": [
+            "Workshop3 - Play with GraphQL"
+          ]
         },
         {
           "title": "Introduction to TypeScript",
-          "descriptions": ["Workshop4 - Play with TypeScript"]
+          "descriptions": [
+            "Workshop4 - Play with TypeScript"
+          ]
         },
         {
           "title": "Introduction to Nest JS",
-          "descriptions": ["Workshop5 - Play with Nest JS "]
+          "descriptions": [
+            "Workshop5 - Play with Nest JS "
+          ]
         },
         {
           "title": "Introduction to MongoDB ",
-          "descriptions": ["Workshop6 - Play with MongoDB "]
+          "descriptions": [
+            "Workshop6 - Play with MongoDB "
+          ]
         },
         {
           "title": "Introduction to MVC ",
-          "descriptions": ["Workshop7 - Routing and CRUD (MongoDB & Mongoose) "]
+          "descriptions": [
+            "Workshop7 - Routing and CRUD (MongoDB & Mongoose) "
+          ]
         },
         {
           "title": "NodeJS Environment (Node ENV)",
-          "descriptions": ["Workshop8 - Using multiple Node ENV"]
+          "descriptions": [
+            "Workshop8 - Using multiple Node ENV"
+          ]
         },
         {
           "title": "Nest JS Middleware",
@@ -1300,11 +1442,15 @@
         },
         {
           "title": "Error Handling",
-          "descriptions": ["Workshop11 - Handling error with GraphQL"]
+          "descriptions": [
+            "Workshop11 - Handling error with GraphQL"
+          ]
         },
         {
           "title": "Build & Deployment",
-          "descriptions": ["Workshop12 - Deploy NodeJS project"]
+          "descriptions": [
+            "Workshop12 - Deploy NodeJS project"
+          ]
         }
       ],
       "publicSchedule": [],
@@ -1354,35 +1500,51 @@
       "outline": [
         {
           "title": "Introduction to JavaScript (ECMAScript) ",
-          "descriptions": ["Workshop1 - Play with JavaScript"]
+          "descriptions": [
+            "Workshop1 - Play with JavaScript"
+          ]
         },
         {
           "title": "Introduction to NodeJS",
-          "descriptions": ["Workshop2 - Play with NodeJS"]
+          "descriptions": [
+            "Workshop2 - Play with NodeJS"
+          ]
         },
         {
           "title": "Introduction to GraphQL",
-          "descriptions": ["Workshop3 - Play with GraphQL"]
+          "descriptions": [
+            "Workshop3 - Play with GraphQL"
+          ]
         },
         {
           "title": "Introduction to TypeScript",
-          "descriptions": ["Workshop4 - Play with TypeScript"]
+          "descriptions": [
+            "Workshop4 - Play with TypeScript"
+          ]
         },
         {
           "title": "Introduction to Nest JS",
-          "descriptions": ["Workshop5 - Play with Nest JS "]
+          "descriptions": [
+            "Workshop5 - Play with Nest JS "
+          ]
         },
         {
           "title": "Introduction to MongoDB ",
-          "descriptions": ["Workshop6 - Play with MongoDB "]
+          "descriptions": [
+            "Workshop6 - Play with MongoDB "
+          ]
         },
         {
           "title": "Introduction to MVC ",
-          "descriptions": ["Workshop7 - Routing and CRUD (MongoDB & Mongoose) "]
+          "descriptions": [
+            "Workshop7 - Routing and CRUD (MongoDB & Mongoose) "
+          ]
         },
         {
           "title": "NodeJS Environment (Node ENV)",
-          "descriptions": ["Workshop8 - Using multiple Node ENV"]
+          "descriptions": [
+            "Workshop8 - Using multiple Node ENV"
+          ]
         },
         {
           "title": "Nest JS Middleware",
@@ -1393,11 +1555,15 @@
         },
         {
           "title": "Error Handling",
-          "descriptions": ["Workshop11 - Handling error with GraphQL"]
+          "descriptions": [
+            "Workshop11 - Handling error with GraphQL"
+          ]
         },
         {
           "title": "Build & Deployment",
-          "descriptions": ["Workshop12 - Deploy NodeJS project"]
+          "descriptions": [
+            "Workshop12 - Deploy NodeJS project"
+          ]
         }
       ],
       "publicSchedule": [],
@@ -1449,27 +1615,39 @@
       "outline": [
         {
           "title": "Introduction to JavaScript (ECMAScript) ",
-          "descriptions": ["Workshop1 - Play with JavaScript"]
+          "descriptions": [
+            "Workshop1 - Play with JavaScript"
+          ]
         },
         {
           "title": "Introduction to NodeJS",
-          "descriptions": ["Workshop2 - Play with NodeJS"]
+          "descriptions": [
+            "Workshop2 - Play with NodeJS"
+          ]
         },
         {
           "title": "Introduction to Restful API",
-          "descriptions": ["Workshop3 - Play with Restful API"]
+          "descriptions": [
+            "Workshop3 - Play with Restful API"
+          ]
         },
         {
           "title": "Introduction to TypeScript",
-          "descriptions": ["Workshop4 - Play with TypeScript"]
+          "descriptions": [
+            "Workshop4 - Play with TypeScript"
+          ]
         },
         {
           "title": "Introduction to Nest JS",
-          "descriptions": ["Workshop5 - Play with Nest JS "]
+          "descriptions": [
+            "Workshop5 - Play with Nest JS "
+          ]
         },
         {
           "title": "Introduction to PostgreSQL ",
-          "descriptions": ["Workshop6 - Play with PostgreSQL "]
+          "descriptions": [
+            "Workshop6 - Play with PostgreSQL "
+          ]
         },
         {
           "title": "Introduction to MVC ",
@@ -1479,7 +1657,9 @@
         },
         {
           "title": "NodeJS Environment (Node ENV)",
-          "descriptions": ["Workshop8 - Using multiple Node ENV"]
+          "descriptions": [
+            "Workshop8 - Using multiple Node ENV"
+          ]
         },
         {
           "title": "Nest JS Middleware",
@@ -1490,11 +1670,15 @@
         },
         {
           "title": "Error Handling",
-          "descriptions": ["Workshop11 - Handling error with Restful API"]
+          "descriptions": [
+            "Workshop11 - Handling error with Restful API"
+          ]
         },
         {
           "title": "Build & Deployment",
-          "descriptions": ["Workshop12 - Deploy NodeJS project"]
+          "descriptions": [
+            "Workshop12 - Deploy NodeJS project"
+          ]
         }
       ],
       "publicSchedule": [],
@@ -1544,27 +1728,39 @@
       "outline": [
         {
           "title": "Introduction to JavaScript (ECMAScript) ",
-          "descriptions": ["Workshop1 - Play with JavaScript"]
+          "descriptions": [
+            "Workshop1 - Play with JavaScript"
+          ]
         },
         {
           "title": "Introduction to NodeJS",
-          "descriptions": ["Workshop2 - Play with NodeJS"]
+          "descriptions": [
+            "Workshop2 - Play with NodeJS"
+          ]
         },
         {
           "title": "Introduction to Restful API",
-          "descriptions": ["Workshop3 - Play with Restful API"]
+          "descriptions": [
+            "Workshop3 - Play with Restful API"
+          ]
         },
         {
           "title": "Introduction to TypeScript",
-          "descriptions": ["Workshop4 - Play with TypeScript"]
+          "descriptions": [
+            "Workshop4 - Play with TypeScript"
+          ]
         },
         {
           "title": "Introduction to Nest JS",
-          "descriptions": ["Workshop5 - Play with Nest JS "]
+          "descriptions": [
+            "Workshop5 - Play with Nest JS "
+          ]
         },
         {
           "title": "Introduction to PostgreSQL ",
-          "descriptions": ["Workshop6 - Play with PostgreSQL "]
+          "descriptions": [
+            "Workshop6 - Play with PostgreSQL "
+          ]
         },
         {
           "title": "Introduction to MVC ",
@@ -1574,7 +1770,9 @@
         },
         {
           "title": "NodeJS Environment (Node ENV)",
-          "descriptions": ["Workshop8 - Using multiple Node ENV"]
+          "descriptions": [
+            "Workshop8 - Using multiple Node ENV"
+          ]
         },
         {
           "title": "Nest JS Middleware",
@@ -1585,11 +1783,15 @@
         },
         {
           "title": "Error Handling",
-          "descriptions": ["Workshop11 - Handling error with Restful API"]
+          "descriptions": [
+            "Workshop11 - Handling error with Restful API"
+          ]
         },
         {
           "title": "Build & Deployment",
-          "descriptions": ["Workshop12 - Deploy NodeJS project"]
+          "descriptions": [
+            "Workshop12 - Deploy NodeJS project"
+          ]
         }
       ],
       "publicSchedule": [],
@@ -1641,27 +1843,39 @@
       "outline": [
         {
           "title": "Introduction to JavaScript (ECMAScript) ",
-          "descriptions": ["Workshop1 - Play with JavaScript"]
+          "descriptions": [
+            "Workshop1 - Play with JavaScript"
+          ]
         },
         {
           "title": "Introduction to NodeJS",
-          "descriptions": ["Workshop2 - Play with NodeJS"]
+          "descriptions": [
+            "Workshop2 - Play with NodeJS"
+          ]
         },
         {
           "title": "Introduction to GraphQL",
-          "descriptions": ["Workshop3 - Play with GraphQL"]
+          "descriptions": [
+            "Workshop3 - Play with GraphQL"
+          ]
         },
         {
           "title": "Introduction to TypeScript",
-          "descriptions": ["Workshop4 - Play with TypeScript"]
+          "descriptions": [
+            "Workshop4 - Play with TypeScript"
+          ]
         },
         {
           "title": "Introduction to Nest JS",
-          "descriptions": ["Workshop5 - Play with Nest JS "]
+          "descriptions": [
+            "Workshop5 - Play with Nest JS "
+          ]
         },
         {
           "title": "Introduction to PostgreSQL ",
-          "descriptions": ["Workshop6 - Play with PostgreSQL "]
+          "descriptions": [
+            "Workshop6 - Play with PostgreSQL "
+          ]
         },
         {
           "title": "Introduction to MVC ",
@@ -1671,7 +1885,9 @@
         },
         {
           "title": "NodeJS Environment (Node ENV)",
-          "descriptions": ["Workshop8 - Using multiple Node ENV"]
+          "descriptions": [
+            "Workshop8 - Using multiple Node ENV"
+          ]
         },
         {
           "title": "Nest JS Middleware",
@@ -1682,11 +1898,15 @@
         },
         {
           "title": "Error Handling",
-          "descriptions": ["Workshop11 - Handling error with GraphQL"]
+          "descriptions": [
+            "Workshop11 - Handling error with GraphQL"
+          ]
         },
         {
           "title": "Build & Deployment",
-          "descriptions": ["Workshop12 - Deploy NodeJS project"]
+          "descriptions": [
+            "Workshop12 - Deploy NodeJS project"
+          ]
         }
       ],
       "publicSchedule": [],
@@ -1736,27 +1956,39 @@
       "outline": [
         {
           "title": "Introduction to JavaScript (ECMAScript) ",
-          "descriptions": ["Workshop1 - Play with JavaScript"]
+          "descriptions": [
+            "Workshop1 - Play with JavaScript"
+          ]
         },
         {
           "title": "Introduction to NodeJS",
-          "descriptions": ["Workshop2 - Play with NodeJS"]
+          "descriptions": [
+            "Workshop2 - Play with NodeJS"
+          ]
         },
         {
           "title": "Introduction to GraphQL",
-          "descriptions": ["Workshop3 - Play with GraphQL"]
+          "descriptions": [
+            "Workshop3 - Play with GraphQL"
+          ]
         },
         {
           "title": "Introduction to TypeScript",
-          "descriptions": ["Workshop4 - Play with TypeScript"]
+          "descriptions": [
+            "Workshop4 - Play with TypeScript"
+          ]
         },
         {
           "title": "Introduction to Nest JS",
-          "descriptions": ["Workshop5 - Play with Nest JS "]
+          "descriptions": [
+            "Workshop5 - Play with Nest JS "
+          ]
         },
         {
           "title": "Introduction to PostgreSQL ",
-          "descriptions": ["Workshop6 - Play with PostgreSQL "]
+          "descriptions": [
+            "Workshop6 - Play with PostgreSQL "
+          ]
         },
         {
           "title": "Introduction to MVC ",
@@ -1766,7 +1998,9 @@
         },
         {
           "title": "NodeJS Environment (Node ENV)",
-          "descriptions": ["Workshop8 - Using multiple Node ENV"]
+          "descriptions": [
+            "Workshop8 - Using multiple Node ENV"
+          ]
         },
         {
           "title": "Nest JS Middleware",
@@ -1777,11 +2011,15 @@
         },
         {
           "title": "Error Handling",
-          "descriptions": ["Workshop11 - Handling error with GraphQL"]
+          "descriptions": [
+            "Workshop11 - Handling error with GraphQL"
+          ]
         },
         {
           "title": "Build & Deployment",
-          "descriptions": ["Workshop12 - Deploy NodeJS project"]
+          "descriptions": [
+            "Workshop12 - Deploy NodeJS project"
+          ]
         }
       ],
       "publicSchedule": [],
@@ -2452,7 +2690,8 @@
   },
   "2024-014-pixel-pioneers-nextjs-react-masterclass": {
     "th": {
-      "lastUpdate": "22026-02-08T16:31:00+0700",
+      "brand": "AC Academys",
+      "lastUpdate": "2026-02-08T16:31:00+0700",
       "key": "2024-014-pixel-pioneers-nextjs-react-masterclass",
       "locale": "th",
       "isActive": true,
@@ -2516,15 +2755,21 @@
         },
         {
           "title": "What is React? And why Next.js?",
-          "descriptions": ["ทำความรู้จักกับ React และ React-powered frameworks"]
+          "descriptions": [
+            "ทำความรู้จักกับ React และ React-powered frameworks"
+          ]
         },
         {
           "title": "Workshop 1",
-          "descriptions": ["Creating a Next.js app."]
+          "descriptions": [
+            "Creating a Next.js app."
+          ]
         },
         {
           "title": "Project Structure",
-          "descriptions": ["แนะนำโครงสร้างของ Next.js"]
+          "descriptions": [
+            "แนะนำโครงสร้างของ Next.js"
+          ]
         },
         {
           "title": "HTML and JSX",
@@ -2544,39 +2789,57 @@
         },
         {
           "title": "Workshop 2",
-          "descriptions": ["My First Component."]
+          "descriptions": [
+            "My First Component."
+          ]
         },
         {
           "title": "Tailwind CSS",
-          "descriptions": ["แนะนำการใช้งาน Tailwind CSS เบื้องต้น"]
+          "descriptions": [
+            "แนะนำการใช้งาน Tailwind CSS เบื้องต้น"
+          ]
         },
         {
           "title": "Workshop 3",
-          "descriptions": ["My Home Page."]
+          "descriptions": [
+            "My Home Page."
+          ]
         },
         {
           "title": "State: A Component's Memory",
-          "descriptions": ["อธิบายฟังก์ชัน useState และวิธีการใช้งานเบื้องต้น"]
+          "descriptions": [
+            "อธิบายฟังก์ชัน useState และวิธีการใช้งานเบื้องต้น"
+          ]
         },
         {
           "title": "Workshop 4",
-          "descriptions": ["Carousel banner."]
+          "descriptions": [
+            "Carousel banner."
+          ]
         },
         {
           "title": "Reacting to Input with State",
-          "descriptions": ["การใช้งาน State ร่วมกับ Input"]
+          "descriptions": [
+            "การใช้งาน State ร่วมกับ Input"
+          ]
         },
         {
           "title": "Workshop 5",
-          "descriptions": ["Search box."]
+          "descriptions": [
+            "Search box."
+          ]
         },
         {
           "title": "Sharing State Between Components",
-          "descriptions": ["อธิบายการใช้ State ร่วมกับ Component อื่นๆ"]
+          "descriptions": [
+            "อธิบายการใช้ State ร่วมกับ Component อื่นๆ"
+          ]
         },
         {
           "title": "Workshop 6",
-          "descriptions": ["Search results."]
+          "descriptions": [
+            "Search results."
+          ]
         },
         {
           "title": "Next.js Routing",
@@ -2588,11 +2851,15 @@
         },
         {
           "title": "Workshop 7",
-          "descriptions": ["New search page."]
+          "descriptions": [
+            "New search page."
+          ]
         },
         {
           "title": "Workshop 8",
-          "descriptions": ["Products and Details."]
+          "descriptions": [
+            "Products and Details."
+          ]
         },
         {
           "title": "Server Components and Client Components",
@@ -2611,7 +2878,9 @@
         },
         {
           "title": "Workshop 9",
-          "descriptions": ["Register."]
+          "descriptions": [
+            "Register."
+          ]
         }
       ],
       "publicSchedule": [
@@ -2665,6 +2934,7 @@
       "documents": []
     },
     "en": {
+      "brand": "AC Academys",
       "lastUpdate": "2026-02-08T16:31:00+0700",
       "key": "2024-014-pixel-pioneers-nextjs-react-masterclass",
       "locale": "en",
@@ -2735,11 +3005,15 @@
         },
         {
           "title": "Workshop 1",
-          "descriptions": ["Creating a Next.js app."]
+          "descriptions": [
+            "Creating a Next.js app."
+          ]
         },
         {
           "title": "Project Structure",
-          "descriptions": ["Introduction to the basic structure of Next.js."]
+          "descriptions": [
+            "Introduction to the basic structure of Next.js."
+          ]
         },
         {
           "title": "HTML and JSX",
@@ -2759,39 +3033,57 @@
         },
         {
           "title": "Workshop 2",
-          "descriptions": ["My First Component."]
+          "descriptions": [
+            "My First Component."
+          ]
         },
         {
           "title": "Tailwind CSS",
-          "descriptions": ["Introduction to basic usage of Tailwind CSS"]
+          "descriptions": [
+            "Introduction to basic usage of Tailwind CSS"
+          ]
         },
         {
           "title": "Workshop 3",
-          "descriptions": ["My Home Page."]
+          "descriptions": [
+            "My Home Page."
+          ]
         },
         {
           "title": "State: A Component's Memory",
-          "descriptions": ["Explanation of useState function and basic usage."]
+          "descriptions": [
+            "Explanation of useState function and basic usage."
+          ]
         },
         {
           "title": "Workshop 4",
-          "descriptions": ["Carousel banner."]
+          "descriptions": [
+            "Carousel banner."
+          ]
         },
         {
           "title": "Reacting to Input with State",
-          "descriptions": ["Using State with Input."]
+          "descriptions": [
+            "Using State with Input."
+          ]
         },
         {
           "title": "Workshop 5",
-          "descriptions": ["Search box."]
+          "descriptions": [
+            "Search box."
+          ]
         },
         {
           "title": "Sharing State Between Components",
-          "descriptions": ["Explanation of using State with other components."]
+          "descriptions": [
+            "Explanation of using State with other components."
+          ]
         },
         {
           "title": "Workshop 6",
-          "descriptions": ["Search results."]
+          "descriptions": [
+            "Search results."
+          ]
         },
         {
           "title": "Next.js Routing",
@@ -2803,11 +3095,15 @@
         },
         {
           "title": "Workshop 7",
-          "descriptions": ["New search page."]
+          "descriptions": [
+            "New search page."
+          ]
         },
         {
           "title": "Workshop 8",
-          "descriptions": ["Products and Details."]
+          "descriptions": [
+            "Products and Details."
+          ]
         },
         {
           "title": "Server Components and Client Components",
@@ -2826,7 +3122,9 @@
         },
         {
           "title": "Workshop 9",
-          "descriptions": ["Register."]
+          "descriptions": [
+            "Register."
+          ]
         }
       ],
       "publicSchedule": [
@@ -3430,6 +3728,7 @@
   },
   "2025-001-orchestrate-docker-kubernetes-bootcamp": {
     "th": {
+      "brand": "AC Academys",
       "lastUpdate": "2026-02-08T16:31:00+0700",
       "key": "2025-001-orchestrate-docker-kubernetes-bootcamp",
       "locale": "th",
@@ -3603,6 +3902,7 @@
       "documents": []
     },
     "en": {
+      "brand": "AC Academys",
       "lastUpdate": "2026-02-08T16:31:00+0700",
       "key": "2025-001-orchestrate-docker-kubernetes-bootcamp",
       "locale": "en",
@@ -4047,6 +4347,558 @@
           "location": "COMING SOON!",
           "scheduleKey": "",
           "ticketUrl": ""
+        }
+      ],
+      "documents": []
+    }
+  },
+  "test-ac": {
+    "th": {
+      "brand": "AC Academys",
+      "lastUpdate": "2025-02-19T09:00:00+0700",
+      "key": "test-ac",
+      "locale": "th",
+      "isActive": true,
+      "detailUrl": "https://dkscenter.gumon.io/th/course/test-ac",
+      "title": "Test Event AC",
+      "code": "2025-002",
+      "duration": "2 วัน, 09:00 - 17:00",
+      "overview": "เวิร์กชอปสุดเข้มข้น 2 วัน: พัฒนา API แบบ Event-Driven ด้วย Kafka, Nest.js และ GraphQL ในโลกที่หมุนเร็วของวันนี้ การประมวลผลข้อมูลแบบเรียลไทม์และสถาปัตยกรรมแบบ Event-Driven เป็นหัวใจสำคัญของแอปพลิเคชันที่สามารถขยายตัวได้ Event-Driven Odyssey: Kafka, Nest, and GraphQL in Action คือเวิร์กชอปภาคปฏิบัติที่ออกแบบมาเพื่อให้คุณได้เรียนรู้และพัฒนาทักษะในการสร้าง API แบบ Event-Driven โดยใช้ Apache Kafka, Nest.js, MongoDB และ GraphQLคุณจะได้เรียนรู้วิธี สตรีมข้อมูลแบบเรียลไทม์ สร้าง API ที่ตอบสนองทันที และบูรณาการ Kafka เข้ากับระบบไมโครเซอร์วิส ด้วยแนวทางที่เป็นมาตรฐานอุตสาหกรรม พร้อมเทคนิคที่สามารถนำไปใช้ได้จริง! ",
+      "objectives": [
+        "พื้นฐานของ Apache Kafka และระบบ Event-Driven",
+        "การตั้งค่า Kafka Broker และการทำงานกับ Producers, Consumers และ Topics",
+        "แนะนำ Nest.js และโครงสร้างแบบโมดูลาร์",
+        "การเชื่อมต่อ MongoDB กับ Nest.js เพื่อการจัดเก็บข้อมูล",
+        "การเชื่อมต่อ Nest.js กับ Kafka และการทำ Message Streaming",
+        "รู้จัก GraphQL และเหตุผลที่ดีกว่า REST",
+        "การสร้าง GraphQL APIs ใน Nest.js ด้วย Queries, Mutations และ Subscriptions",
+        "ใช้ Kafka เป็น Event Source สำหรับ Real-time GraphQL Subscriptions",
+        "การจัดการ Multi-Topic Messaging เพื่อขยายระบบ Microservices",
+        "การ Deploy ระบบด้วย Docker และการ Monitor Kafka Services"
+      ],
+      "whoShouldAttend": [
+        "นักพัฒนา Backend ที่ต้องการรวม Kafka เข้ากับแอปพลิเคชันของตน",
+        "นักพัฒนา Full-Stack ที่สนใจสร้าง GraphQL API แบบเรียลไทม์",
+        "สถาปนิกซอฟต์แวร์ที่ต้องการออกแบบระบบ Event-Driven ที่ขยายตัวได้",
+        "วิศวกรที่ทำงานกับ Microservices และต้องการใช้ Kafka สำหรับ Distributed Messaging",
+        "ทุกคนที่ต้องการเรียนรู้ Kafka, Nest.js และ GraphQL ผ่านการปฏิบัติจริง"
+      ],
+      "prerequisites": [
+        "มีประสบการณ์พื้นฐานกับ JavaScript หรือ TypeScript",
+        "คุ้นเคยกับ Node.js และ REST API",
+        "มีความรู้เกี่ยวกับ MongoDB หรือฐานข้อมูลเชิงสัมพันธ์บ้างเล็กน้อย",
+        "ไม่จำเป็นต้องมีประสบการณ์กับ Kafka หรือ GraphQL มาก่อน – เราจะสอนคุณตั้งแต่พื้นฐาน!"
+      ],
+      "participantsWillReceive": [
+        "เอกสารคู่มือการอบรม",
+        "ใบรับรองผ่านการอบรมหลักสูตร Event-Driven Odyssey: Kafka, Nest, and GraphQL in Action",
+        "การดูแลเอาใจใส่เป็นอย่างดีจากวิทยากรและทีมงาน Staff",
+        "สามารถเข้าร่วม Event-Driven Odyssey: Kafka, Nest, and GraphQL in Action ซ้ำได้ไม่จำกัดจำนวนครั้ง (จำกัดสิทธิ์เข้าร่วมซ้ำ 5 ท่านต่อรอบการอบรม หากท่านต้องการเข้าร่วม Workshop ซ้ำ กรุณาติดต่อ Facebook Page, Line, Email หรือช่องทางอื่น ๆ เพื่อสำรองที่นั่ง)",
+        "หากท่านไม่สะดวกเข้าร่วมการอบรมในครั้งนี้ ท่านสามารถเลื่อนการเข้าร่วมอบรมได้ตามตารางการอบรม",
+        "API แบบ Event-Driven ที่ใช้งานได้จริงด้วย Kafka, Nest.js และ GraphQL",
+        "ความเข้าใจเชิงลึกเกี่ยวกับระบบข้อความแบบเรียลไทม์และ Microservices",
+        "ซอร์สโค้ดและเทมเพลตสำหรับสร้างแอปพลิเคชันแบบ Event-Driven ที่ขยายตัวได้",
+        "Certificate of Completion เพื่อยืนยันทักษะใหม่ของคุณ",
+        "โอกาสในการสร้างเครือข่ายกับนักพัฒนาที่มีแนวคิดเดียวกัน"
+      ],
+      "outline": [
+        {
+          "title": "Introduction to Kafka & Event-Driven Architecture",
+          "descriptions": [
+            "Overview of Kafka: What it is and why it's useful",
+            "Understanding event-driven architecture and use cases",
+            "Key Kafka components: Producers, Consumers, Topics, Brokers",
+            "Setting up a local Kafka environment using Docker"
+          ]
+        },
+        {
+          "title": "Getting Started with Nest.js & MongoDB",
+          "descriptions": [
+            "Introduction to Nest.js framework",
+            "Setting up a Nest.js project with TypeScript",
+            "Integrating MongoDB with Mongoose",
+            "Creating a basic REST API to interact with MongoDB"
+          ]
+        },
+        {
+          "title": "Kafka Integration with Nest.js",
+          "descriptions": [
+            "Installing Kafka dependencies in Nest.js",
+            "Connecting a Nest.js service to Kafka",
+            "Producing messages to a Kafka topic",
+            "Consuming messages from a Kafka topic"
+          ]
+        },
+        {
+          "title": "Practical Exercise - Real-Time Data Processing",
+          "descriptions": [
+            "Implementing a simple message processing system",
+            "Writing producers and consumers in Nest.js",
+            "Logging and debugging Kafka messages",
+            "Hands-on exercise: Sending and receiving messages with Kafka and Nest.js"
+          ]
+        },
+        {
+          "title": "Introduction to GraphQL with Nest.js",
+          "descriptions": [
+            "Why GraphQL? Comparison with REST",
+            "Setting up a GraphQL API in Nest.js",
+            "Defining schemas, queries, and mutations",
+            "Connecting GraphQL to MongoDB"
+          ]
+        },
+        {
+          "title": "Building a Real-Time GraphQL API with Kafka",
+          "descriptions": [
+            "Using Kafka as an event source for GraphQL subscriptions",
+            "Implementing real-time messaging with GraphQL Subscriptions",
+            "Handling event-driven updates in the GraphQL API"
+          ]
+        },
+        {
+          "title": "Advanced Kafka Topics & Scaling",
+          "descriptions": [
+            "Handling errors and retries in Kafka consumers",
+            "Partitioning and consumer groups for scalability",
+            "Monitoring Kafka with tools like Confluent Control Center",
+            "Using Kafka Streams for real-time data transformation"
+          ]
+        },
+        {
+          "title": "Hands-on Project - Event-Driven GraphQL API",
+          "descriptions": [
+            "Building a real-time chat API using GraphQL, Nest.js, Kafka, and MongoDB",
+            "Implementing multi-topic messaging with Kafka",
+            "Deploying Kafka and Nest.js services with Docker",
+            "Final project demonstration & Q&A session"
+          ]
+        }
+      ],
+      "publicSchedule": [
+        {
+          "title": "Test Eventpop",
+          "eventStart": "2026-03-08T09:00:00+0700",
+          "eventEnd": "2026-03-09T09:00:00+0700",
+          "saleStart": "2026-02-08T09:00:00+0700",
+          "saleEnd": "2026-03-08T09:00:00+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "Test",
+          "scheduleKey": "",
+          "ticketUrl": "https://www.eventpop.me/e/135346"
+        }
+      ],
+      "documents": []
+    },
+    "en": {
+      "brand": "AC Academys",
+      "lastUpdate": "2025-02-19T09:00:00+0700",
+      "key": "test-ac",
+      "locale": "en",
+      "isActive": true,
+      "detailUrl": "https://dkscenter.gumon.io/en/course/test-ac",
+      "title": "Test AC",
+      "code": "2025-002",
+      "duration": "2 Days, 09:00 - 17:00",
+      "overview": "In today s fast-paced world, real-time data processing and event-driven architectures are at the heart of scalable applications. Event-Driven Odyssey: Kafka, Nest, and GraphQL in Action is a hands-on, 2-day workshop designed to equip developers with the knowledge and skills to build event-driven APIs using Apache Kafka, Nest.js, MongoDB, and GraphQL. You will learn how to stream data in real time, create reactive APIs, and integrate Kafka into a microservices ecosystem using best practices.",
+      "objectives": [
+        "The fundamentals of Apache Kafka and event-driven systems",
+        "Setting up a Kafka broker and working with Producers, Consumers, and Topics",
+        "Introduction to Nest.js and its modular architecture",
+        "Integrating MongoDB with Nest.js for data persistence",
+        "Connecting Nest.js with Kafka and implementing message streaming",
+        "Introduction to GraphQL and why it’s better than REST",
+        "Creating GraphQL APIs in Nest.js with Queries, Mutations, and Subscriptions",
+        "Using Kafka as an event source for real-time GraphQL subscriptions",
+        "Implementing multi-topic messaging for scalable microservices",
+        "Deploying the system with Docker & monitoring Kafka services"
+      ],
+      "whoShouldAttend": [
+        "Backend Developers looking to integrate Kafka into their applications",
+        "Full-Stack Developers interested in building real-time GraphQL APIs",
+        "Software Architects who want to design scalable event-driven systems",
+        "Engineers working with microservices who need Kafka for distributed messaging",
+        "Anyone who wants to learn Kafka, Nest.js, and GraphQL in a practical way"
+      ],
+      "prerequisites": [
+        "Basic experience with JavaScript or TypeScript",
+        "Familiarity with Node.js and REST APIs",
+        "Some knowledge of MongoDB or relational databases",
+        "No prior Kafka or GraphQL experience required – we’ll teach you from scratch!"
+      ],
+      "participantsWillReceive": [
+        "Training manuals/documentation.",
+        "Certification upon completion of the Event-Driven Odyssey: Kafka, Nest, and GraphQL in Action.",
+        "Excellent care and attention from instructors and staff.",
+        "Unlimited attendance to the Event-Driven Odyssey: Kafka, Nest, and GraphQL in Action (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat).",
+        "If you are unable to attend the training session this time, you can reschedule your participation according to the training schedule.",
+        "A fully functional event-driven API using Kafka, Nest.js, and GraphQL",
+        "Deep understanding of real-time messaging and microservices",
+        "Source code and templates for building scalable event-driven applications",
+        "Certificate of Completion to showcase your new skills",
+        "Networking opportunities with like-minded developers"
+      ],
+      "outline": [
+        {
+          "title": "Introduction to Kafka & Event-Driven Architecture",
+          "descriptions": [
+            "Overview of Kafka: What it is and why it's useful",
+            "Understanding event-driven architecture and use cases",
+            "Key Kafka components: Producers, Consumers, Topics, Brokers",
+            "Setting up a local Kafka environment using Docker"
+          ]
+        },
+        {
+          "title": "Getting Started with Nest.js & MongoDB",
+          "descriptions": [
+            "Introduction to Nest.js framework",
+            "Setting up a Nest.js project with TypeScript",
+            "Integrating MongoDB with Mongoose",
+            "Creating a basic REST API to interact with MongoDB"
+          ]
+        },
+        {
+          "title": "Kafka Integration with Nest.js",
+          "descriptions": [
+            "Installing Kafka dependencies in Nest.js",
+            "Connecting a Nest.js service to Kafka",
+            "Producing messages to a Kafka topic",
+            "Consuming messages from a Kafka topic"
+          ]
+        },
+        {
+          "title": "Practical Exercise - Real-Time Data Processing",
+          "descriptions": [
+            "Implementing a simple message processing system",
+            "Writing producers and consumers in Nest.js",
+            "Logging and debugging Kafka messages",
+            "Hands-on exercise: Sending and receiving messages with Kafka and Nest.js"
+          ]
+        },
+        {
+          "title": "Introduction to GraphQL with Nest.js",
+          "descriptions": [
+            "Why GraphQL? Comparison with REST",
+            "Setting up a GraphQL API in Nest.js",
+            "Defining schemas, queries, and mutations",
+            "Connecting GraphQL to MongoDB"
+          ]
+        },
+        {
+          "title": "Building a Real-Time GraphQL API with Kafka",
+          "descriptions": [
+            "Using Kafka as an event source for GraphQL subscriptions",
+            "Implementing real-time messaging with GraphQL Subscriptions",
+            "Handling event-driven updates in the GraphQL API"
+          ]
+        },
+        {
+          "title": "Advanced Kafka Topics & Scaling",
+          "descriptions": [
+            "Handling errors and retries in Kafka consumers",
+            "Partitioning and consumer groups for scalability",
+            "Monitoring Kafka with tools like Confluent Control Center",
+            "Using Kafka Streams for real-time data transformation"
+          ]
+        },
+        {
+          "title": "Hands-on Project - Event-Driven GraphQL API",
+          "descriptions": [
+            "Building a real-time chat API using GraphQL, Nest.js, Kafka, and MongoDB",
+            "Implementing multi-topic messaging with Kafka",
+            "Deploying Kafka and Nest.js services with Docker",
+            "Final project demonstration & Q&A session"
+          ]
+        }
+      ],
+      "publicSchedule": [
+        {
+          "title": "Test Eventpop",
+          "eventStart": "2026-03-08T09:00:00+0700",
+          "eventEnd": "2026-03-09T09:00:00+0700",
+          "saleStart": "2026-02-08T09:00:00+0700",
+          "saleEnd": "2026-03-08T09:00:00+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "Test",
+          "scheduleKey": "",
+          "ticketUrl": "https://www.eventpop.me/e/135346"
+        }
+      ],
+      "documents": []
+    }
+  },
+  "test-dks": {
+    "th": {
+      "brand": "DKS Center",
+      "lastUpdate": "2025-02-19T09:00:00+0700",
+      "key": "test-dks",
+      "locale": "th",
+      "isActive": true,
+      "detailUrl": "https://dkscenter.gumon.io/th/course/test-dks",
+      "title": "Test Event DKS",
+      "code": "2025-002",
+      "duration": "2 วัน, 09:00 - 17:00",
+      "overview": "เวิร์กชอปสุดเข้มข้น 2 วัน: พัฒนา API แบบ Event-Driven ด้วย Kafka, Nest.js และ GraphQL ในโลกที่หมุนเร็วของวันนี้ การประมวลผลข้อมูลแบบเรียลไทม์และสถาปัตยกรรมแบบ Event-Driven เป็นหัวใจสำคัญของแอปพลิเคชันที่สามารถขยายตัวได้ Event-Driven Odyssey: Kafka, Nest, and GraphQL in Action คือเวิร์กชอปภาคปฏิบัติที่ออกแบบมาเพื่อให้คุณได้เรียนรู้และพัฒนาทักษะในการสร้าง API แบบ Event-Driven โดยใช้ Apache Kafka, Nest.js, MongoDB และ GraphQLคุณจะได้เรียนรู้วิธี สตรีมข้อมูลแบบเรียลไทม์ สร้าง API ที่ตอบสนองทันที และบูรณาการ Kafka เข้ากับระบบไมโครเซอร์วิส ด้วยแนวทางที่เป็นมาตรฐานอุตสาหกรรม พร้อมเทคนิคที่สามารถนำไปใช้ได้จริง! ",
+      "objectives": [
+        "พื้นฐานของ Apache Kafka และระบบ Event-Driven",
+        "การตั้งค่า Kafka Broker และการทำงานกับ Producers, Consumers และ Topics",
+        "แนะนำ Nest.js และโครงสร้างแบบโมดูลาร์",
+        "การเชื่อมต่อ MongoDB กับ Nest.js เพื่อการจัดเก็บข้อมูล",
+        "การเชื่อมต่อ Nest.js กับ Kafka และการทำ Message Streaming",
+        "รู้จัก GraphQL และเหตุผลที่ดีกว่า REST",
+        "การสร้าง GraphQL APIs ใน Nest.js ด้วย Queries, Mutations และ Subscriptions",
+        "ใช้ Kafka เป็น Event Source สำหรับ Real-time GraphQL Subscriptions",
+        "การจัดการ Multi-Topic Messaging เพื่อขยายระบบ Microservices",
+        "การ Deploy ระบบด้วย Docker และการ Monitor Kafka Services"
+      ],
+      "whoShouldAttend": [
+        "นักพัฒนา Backend ที่ต้องการรวม Kafka เข้ากับแอปพลิเคชันของตน",
+        "นักพัฒนา Full-Stack ที่สนใจสร้าง GraphQL API แบบเรียลไทม์",
+        "สถาปนิกซอฟต์แวร์ที่ต้องการออกแบบระบบ Event-Driven ที่ขยายตัวได้",
+        "วิศวกรที่ทำงานกับ Microservices และต้องการใช้ Kafka สำหรับ Distributed Messaging",
+        "ทุกคนที่ต้องการเรียนรู้ Kafka, Nest.js และ GraphQL ผ่านการปฏิบัติจริง"
+      ],
+      "prerequisites": [
+        "มีประสบการณ์พื้นฐานกับ JavaScript หรือ TypeScript",
+        "คุ้นเคยกับ Node.js และ REST API",
+        "มีความรู้เกี่ยวกับ MongoDB หรือฐานข้อมูลเชิงสัมพันธ์บ้างเล็กน้อย",
+        "ไม่จำเป็นต้องมีประสบการณ์กับ Kafka หรือ GraphQL มาก่อน – เราจะสอนคุณตั้งแต่พื้นฐาน!"
+      ],
+      "participantsWillReceive": [
+        "เอกสารคู่มือการอบรม",
+        "ใบรับรองผ่านการอบรมหลักสูตร Event-Driven Odyssey: Kafka, Nest, and GraphQL in Action",
+        "การดูแลเอาใจใส่เป็นอย่างดีจากวิทยากรและทีมงาน Staff",
+        "สามารถเข้าร่วม Event-Driven Odyssey: Kafka, Nest, and GraphQL in Action ซ้ำได้ไม่จำกัดจำนวนครั้ง (จำกัดสิทธิ์เข้าร่วมซ้ำ 5 ท่านต่อรอบการอบรม หากท่านต้องการเข้าร่วม Workshop ซ้ำ กรุณาติดต่อ Facebook Page, Line, Email หรือช่องทางอื่น ๆ เพื่อสำรองที่นั่ง)",
+        "หากท่านไม่สะดวกเข้าร่วมการอบรมในครั้งนี้ ท่านสามารถเลื่อนการเข้าร่วมอบรมได้ตามตารางการอบรม",
+        "API แบบ Event-Driven ที่ใช้งานได้จริงด้วย Kafka, Nest.js และ GraphQL",
+        "ความเข้าใจเชิงลึกเกี่ยวกับระบบข้อความแบบเรียลไทม์และ Microservices",
+        "ซอร์สโค้ดและเทมเพลตสำหรับสร้างแอปพลิเคชันแบบ Event-Driven ที่ขยายตัวได้",
+        "Certificate of Completion เพื่อยืนยันทักษะใหม่ของคุณ",
+        "โอกาสในการสร้างเครือข่ายกับนักพัฒนาที่มีแนวคิดเดียวกัน"
+      ],
+      "outline": [
+        {
+          "title": "Introduction to Kafka & Event-Driven Architecture",
+          "descriptions": [
+            "Overview of Kafka: What it is and why it's useful",
+            "Understanding event-driven architecture and use cases",
+            "Key Kafka components: Producers, Consumers, Topics, Brokers",
+            "Setting up a local Kafka environment using Docker"
+          ]
+        },
+        {
+          "title": "Getting Started with Nest.js & MongoDB",
+          "descriptions": [
+            "Introduction to Nest.js framework",
+            "Setting up a Nest.js project with TypeScript",
+            "Integrating MongoDB with Mongoose",
+            "Creating a basic REST API to interact with MongoDB"
+          ]
+        },
+        {
+          "title": "Kafka Integration with Nest.js",
+          "descriptions": [
+            "Installing Kafka dependencies in Nest.js",
+            "Connecting a Nest.js service to Kafka",
+            "Producing messages to a Kafka topic",
+            "Consuming messages from a Kafka topic"
+          ]
+        },
+        {
+          "title": "Practical Exercise - Real-Time Data Processing",
+          "descriptions": [
+            "Implementing a simple message processing system",
+            "Writing producers and consumers in Nest.js",
+            "Logging and debugging Kafka messages",
+            "Hands-on exercise: Sending and receiving messages with Kafka and Nest.js"
+          ]
+        },
+        {
+          "title": "Introduction to GraphQL with Nest.js",
+          "descriptions": [
+            "Why GraphQL? Comparison with REST",
+            "Setting up a GraphQL API in Nest.js",
+            "Defining schemas, queries, and mutations",
+            "Connecting GraphQL to MongoDB"
+          ]
+        },
+        {
+          "title": "Building a Real-Time GraphQL API with Kafka",
+          "descriptions": [
+            "Using Kafka as an event source for GraphQL subscriptions",
+            "Implementing real-time messaging with GraphQL Subscriptions",
+            "Handling event-driven updates in the GraphQL API"
+          ]
+        },
+        {
+          "title": "Advanced Kafka Topics & Scaling",
+          "descriptions": [
+            "Handling errors and retries in Kafka consumers",
+            "Partitioning and consumer groups for scalability",
+            "Monitoring Kafka with tools like Confluent Control Center",
+            "Using Kafka Streams for real-time data transformation"
+          ]
+        },
+        {
+          "title": "Hands-on Project - Event-Driven GraphQL API",
+          "descriptions": [
+            "Building a real-time chat API using GraphQL, Nest.js, Kafka, and MongoDB",
+            "Implementing multi-topic messaging with Kafka",
+            "Deploying Kafka and Nest.js services with Docker",
+            "Final project demonstration & Q&A session"
+          ]
+        }
+      ],
+      "publicSchedule": [
+        {
+          "title": "Test Eventpop",
+          "eventStart": "2026-03-08T09:00:00+0700",
+          "eventEnd": "2026-03-09T09:00:00+0700",
+          "saleStart": "2026-02-08T09:00:00+0700",
+          "saleEnd": "2026-03-08T09:00:00+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "Test",
+          "scheduleKey": "",
+          "ticketUrl": "https://www.eventpop.me/e/135478"
+        }
+      ],
+      "documents": []
+    },
+    "en": {
+      "brand": "DKS Center",
+      "lastUpdate": "2025-02-19T09:00:00+0700",
+      "key": "test-dks",
+      "locale": "en",
+      "isActive": true,
+      "detailUrl": "https://dkscenter.gumon.io/en/course/test-dks",
+      "title": "Test Event DKS",
+      "code": "2025-002",
+      "duration": "2 Days, 09:00 - 17:00",
+      "overview": "In today s fast-paced world, real-time data processing and event-driven architectures are at the heart of scalable applications. Event-Driven Odyssey: Kafka, Nest, and GraphQL in Action is a hands-on, 2-day workshop designed to equip developers with the knowledge and skills to build event-driven APIs using Apache Kafka, Nest.js, MongoDB, and GraphQL. You will learn how to stream data in real time, create reactive APIs, and integrate Kafka into a microservices ecosystem using best practices.",
+      "objectives": [
+        "The fundamentals of Apache Kafka and event-driven systems",
+        "Setting up a Kafka broker and working with Producers, Consumers, and Topics",
+        "Introduction to Nest.js and its modular architecture",
+        "Integrating MongoDB with Nest.js for data persistence",
+        "Connecting Nest.js with Kafka and implementing message streaming",
+        "Introduction to GraphQL and why it’s better than REST",
+        "Creating GraphQL APIs in Nest.js with Queries, Mutations, and Subscriptions",
+        "Using Kafka as an event source for real-time GraphQL subscriptions",
+        "Implementing multi-topic messaging for scalable microservices",
+        "Deploying the system with Docker & monitoring Kafka services"
+      ],
+      "whoShouldAttend": [
+        "Backend Developers looking to integrate Kafka into their applications",
+        "Full-Stack Developers interested in building real-time GraphQL APIs",
+        "Software Architects who want to design scalable event-driven systems",
+        "Engineers working with microservices who need Kafka for distributed messaging",
+        "Anyone who wants to learn Kafka, Nest.js, and GraphQL in a practical way"
+      ],
+      "prerequisites": [
+        "Basic experience with JavaScript or TypeScript",
+        "Familiarity with Node.js and REST APIs",
+        "Some knowledge of MongoDB or relational databases",
+        "No prior Kafka or GraphQL experience required – we’ll teach you from scratch!"
+      ],
+      "participantsWillReceive": [
+        "Training manuals/documentation.",
+        "Certification upon completion of the Event-Driven Odyssey: Kafka, Nest, and GraphQL in Action.",
+        "Excellent care and attention from instructors and staff.",
+        "Unlimited attendance to the Event-Driven Odyssey: Kafka, Nest, and GraphQL in Action (limited to 5 repeat attendees per training session; if you wish to attend the workshop again, please contact our Facebook Page, Line, Email, or other channels to reserve your seat).",
+        "If you are unable to attend the training session this time, you can reschedule your participation according to the training schedule.",
+        "A fully functional event-driven API using Kafka, Nest.js, and GraphQL",
+        "Deep understanding of real-time messaging and microservices",
+        "Source code and templates for building scalable event-driven applications",
+        "Certificate of Completion to showcase your new skills",
+        "Networking opportunities with like-minded developers"
+      ],
+      "outline": [
+        {
+          "title": "Introduction to Kafka & Event-Driven Architecture",
+          "descriptions": [
+            "Overview of Kafka: What it is and why it's useful",
+            "Understanding event-driven architecture and use cases",
+            "Key Kafka components: Producers, Consumers, Topics, Brokers",
+            "Setting up a local Kafka environment using Docker"
+          ]
+        },
+        {
+          "title": "Getting Started with Nest.js & MongoDB",
+          "descriptions": [
+            "Introduction to Nest.js framework",
+            "Setting up a Nest.js project with TypeScript",
+            "Integrating MongoDB with Mongoose",
+            "Creating a basic REST API to interact with MongoDB"
+          ]
+        },
+        {
+          "title": "Kafka Integration with Nest.js",
+          "descriptions": [
+            "Installing Kafka dependencies in Nest.js",
+            "Connecting a Nest.js service to Kafka",
+            "Producing messages to a Kafka topic",
+            "Consuming messages from a Kafka topic"
+          ]
+        },
+        {
+          "title": "Practical Exercise - Real-Time Data Processing",
+          "descriptions": [
+            "Implementing a simple message processing system",
+            "Writing producers and consumers in Nest.js",
+            "Logging and debugging Kafka messages",
+            "Hands-on exercise: Sending and receiving messages with Kafka and Nest.js"
+          ]
+        },
+        {
+          "title": "Introduction to GraphQL with Nest.js",
+          "descriptions": [
+            "Why GraphQL? Comparison with REST",
+            "Setting up a GraphQL API in Nest.js",
+            "Defining schemas, queries, and mutations",
+            "Connecting GraphQL to MongoDB"
+          ]
+        },
+        {
+          "title": "Building a Real-Time GraphQL API with Kafka",
+          "descriptions": [
+            "Using Kafka as an event source for GraphQL subscriptions",
+            "Implementing real-time messaging with GraphQL Subscriptions",
+            "Handling event-driven updates in the GraphQL API"
+          ]
+        },
+        {
+          "title": "Advanced Kafka Topics & Scaling",
+          "descriptions": [
+            "Handling errors and retries in Kafka consumers",
+            "Partitioning and consumer groups for scalability",
+            "Monitoring Kafka with tools like Confluent Control Center",
+            "Using Kafka Streams for real-time data transformation"
+          ]
+        },
+        {
+          "title": "Hands-on Project - Event-Driven GraphQL API",
+          "descriptions": [
+            "Building a real-time chat API using GraphQL, Nest.js, Kafka, and MongoDB",
+            "Implementing multi-topic messaging with Kafka",
+            "Deploying Kafka and Nest.js services with Docker",
+            "Final project demonstration & Q&A session"
+          ]
+        }
+      ],
+      "publicSchedule": [
+        {
+          "title": "Test Eventpop",
+          "eventStart": "2026-03-08T09:00:00+0700",
+          "eventEnd": "2026-03-09T09:00:00+0700",
+          "saleStart": "2026-02-08T09:00:00+0700",
+          "saleEnd": "2026-03-08T09:00:00+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "Test",
+          "scheduleKey": "",
+          "ticketUrl": "https://www.eventpop.me/e/135478"
         }
       ],
       "documents": []

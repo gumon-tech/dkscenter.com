@@ -12,10 +12,8 @@ const LanguageSwitchLink = ({ className, locale, ...rest }) => {
   let href = rest.href || router.asPath;
   let pName = router.pathname;
 
-  // หาตำแหน่งของสตริงคิวรี่ใน URL
   const queryIndex = href.indexOf('?');
 
-  // ตัดสตริงคิวรี่ออกมา
   let queryString = '';
   if (queryIndex > 0) {
     queryString = href.substring(queryIndex);
@@ -28,12 +26,15 @@ const LanguageSwitchLink = ({ className, locale, ...rest }) => {
     }
     pName = pName.replace(`[${k}]`, router.query[k]);
   });
+
   if (locale) {
     href = rest.href ? `/${locale}${rest.href}` : pName;
 
-    if (locale === 'th') dayjs.locale('en');
-    if (locale === 'en') dayjs.locale('th');
+    // ✅ FIX: ตั้ง locale ให้ถูกภาษา
+    if (locale === 'th') dayjs.locale('th');
+    if (locale === 'en') dayjs.locale('en');
   }
+
   if (queryString) {
     href = href + queryString;
   }
@@ -41,7 +42,7 @@ const LanguageSwitchLink = ({ className, locale, ...rest }) => {
   return (
     <Link
       href={href}
-      onClick={() => languageDetector.cache(locale)}
+      onClick={() => languageDetector.cache(locale)} // ✅ จะ set cookie + cache
       className={className}
     >
       {locale === 'th' && (

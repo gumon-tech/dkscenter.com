@@ -3,96 +3,59 @@ import { useRouter } from 'next/router';
 import Script from 'next/script';
 import { ThemeProvider } from 'next-themes';
 import { appWithTranslation } from 'next-i18next';
-
-import * as gtag from '../public/gtag';
+import { DEFAULT_BRAND, normalizeBrand } from '/lib/brand';
+import { GTM_ID } from '/lib/gtm';
 
 import '../css/tailwind.css';
 import '../css/styles.css';
 import '../css/fonts.css';
 
-const FB_PIXEL_ID = process.env.NEXT_PUBLIC_FB_PIXEL_ID;
-
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
-  // Track SPA route changes (GA + FB Pixel) - Static-safe
   useEffect(() => {
-    const handleRouteChange = (url) => {
-      // GA pageview (only if gtag is ready)
-      if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-        gtag.pageview(url);
-      }
+    if (!GTM_ID) return;
 
-      // FB Pixel PageView (only if fbq is ready)
-      if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
-        window.fbq('track', 'PageView');
-      }
+    const pushPageView = (url) => {
+      window.dataLayer = window.dataLayer || [];
+
+      const brandOwner = normalizeBrand(pageProps?.brandOwner);
+      const brandEffective = brandOwner || DEFAULT_BRAND;
+
+      window.dataLayer.push({
+        event: 'page_view',
+        page_path: url,
+        page_title: document?.title || '',
+        brand_default: DEFAULT_BRAND,
+        brand_owner: brandOwner,
+        brand_effective: brandEffective,
+        page_type: pageProps?.pageType || 'page',
+      });
     };
 
+    // initial
+    pushPageView(window.location.pathname + window.location.search);
+
+    // SPA route changes
+    const handleRouteChange = (url) => pushPageView(url);
     router.events.on('routeChangeComplete', handleRouteChange);
     return () => router.events.off('routeChangeComplete', handleRouteChange);
   }, [router.events]);
 
   return (
     <>
-      {/* Google Analytics (gtag.js) */}
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
-      />
-      <Script
-        id="gtag-init"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            window.gtag = gtag;
-
-            gtag('js', new Date());
-            gtag('config', '${gtag.GA_TRACKING_ID}', {
-              page_path: window.location.pathname + window.location.search
-            });
-          `,
-        }}
-      />
-
-      {/* Facebook Pixel (Static-safe) */}
-      {FB_PIXEL_ID ? (
-        <>
-          <Script
-            id="fb-pixel"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `
-                !function(f,b,e,v,n,t,s){
-                  if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-                  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-                  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-                  n.queue=[];t=b.createElement(e);t.async=!0;
-                  t.src=v;s=b.getElementsByTagName(e)[0];
-                  s.parentNode.insertBefore(t,s)
-                }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-
-                fbq('init', '${FB_PIXEL_ID}');
-                fbq('track', 'PageView');
-              `,
-            }}
-          />
-
-          {/* noscript pixel image (optional but good) */}
-          <noscript>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              height="1"
-              width="1"
-              style={{ display: 'none' }}
-              src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
-              alt=""
-            />
-          </noscript>
-        </>
-      ) : null}
+      {/* GTM head script */}
+      {GTM_ID && (
+        <Script id="gtm-init" strategy="afterInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','${GTM_ID}');
+          `}
+        </Script>
+      )}
 
       <ThemeProvider attribute="class">
         <Component {...pageProps} />

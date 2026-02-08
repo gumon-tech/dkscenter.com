@@ -10,8 +10,8 @@ import React, { useState } from 'react';
 import Modal from '/components/modal';
 import TicketSales from '/components/TicketSales';
 import TicketSaleModalManage from './ticketSaleModal/ticketSaleModalManage';
-import * as gtag from '/public/gtag';
-
+import { gtmEvent } from '/lib/gtm';
+import { normalizeBrand } from '/lib/brand';
 
 const CourseDetailLink = ({
   courseData,
@@ -72,21 +72,23 @@ const CourseDetailLink = ({
     return `${ticketUrl}${glue}${extraStr}`;
   };
 
-  const onRegisterClick = () => {
-    // Facebook Pixel
-    if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
-      window.fbq('track', 'InitiateCheckout', {
-        content_name: courseData?.title,
-        content_type: 'course',
-      });
-    }
+  const onRegisterClick = (publicSchedule) => {
+    if (!courseData?.title) return;
 
-    // Google Analytics (GA4)
-    gtag.event('begin_checkout', {
-      item_name: courseData?.title,
-      item_category: 'course',
+    gtmEvent('begin_checkout', {
+      brand_owner: normalizeBrand(courseData?.brand),
+      items: [
+        {
+          item_name: courseData.title,
+          item_category: 'course',
+          item_id: courseData?.code || courseData?.key,
+          item_variant: publicSchedule?.title,
+          item_brand: normalizeBrand(courseData?.brand),
+        },
+      ],
     });
   };
+
 
 
 
