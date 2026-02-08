@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "format": "prettier --write .",
-    "preexport": "node scripts/generate-sitemap.js"
+    "preexport": "node scripts/generate-sitemap.js",
+    "export": "next export",
+    "format": "prettier --write ."
   },
   "repository": {
     "type": "git",
