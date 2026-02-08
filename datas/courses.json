@@ -2452,7 +2452,7 @@
   },
   "2024-014-pixel-pioneers-nextjs-react-masterclass": {
     "th": {
-      "lastUpdate": "2024-02-19T09:00:00+0700",
+      "lastUpdate": "22026-02-08T16:31:00+0700",
       "key": "2024-014-pixel-pioneers-nextjs-react-masterclass",
       "locale": "th",
       "isActive": true,
@@ -2665,7 +2665,7 @@
       "documents": []
     },
     "en": {
-      "lastUpdate": "2024-02-19T09:00:00+0700",
+      "lastUpdate": "2026-02-08T16:31:00+0700",
       "key": "2024-014-pixel-pioneers-nextjs-react-masterclass",
       "locale": "en",
       "isActive": true,
@@ -3430,11 +3430,11 @@
   },
   "2025-001-orchestrate-docker-kubernetes-bootcamp": {
     "th": {
-      "lastUpdate": "2025-02-19T09:00:00+0700",
+      "lastUpdate": "2026-02-08T16:31:00+0700",
       "key": "2025-001-orchestrate-docker-kubernetes-bootcamp",
       "locale": "th",
       "isActive": true,
-      "imageUrl": "/course/2025-001/poster/cover-image.jpg",
+      "imageUrl": "/course/2025-001/poster/docker_cover_2.jpg",
       "detailUrl": "https://dkscenter.gumon.io/th/course/2025-001-orchestrate-docker-kubernetes-bootcamp",
       "title": "Orchestrate - Docker & Kubernetes Bootcamp",
       "code": "2025-001",
@@ -3586,16 +3586,28 @@
           "location": "Clazy Cafe The Seasons Mall @BTS สนามเป้า ทางออก 1 Bangkok, Thailand",
           "scheduleKey": "",
           "ticketUrl": "https://www.eventpop.me/e/74477/orchestrate-docker-kubernetes-bootcamp-1-2025"
+        },
+        {
+          "title": "Orchestrate - Docker & Kubernetes Bootcamp - 1/2026",
+          "eventStart": "2026-03-28T09:00:00+0700",
+          "eventEnd": "2026-03-29T17:00:00+0700",
+          "saleStart": "2026-02-07T09:00:00+0700",
+          "saleEnd": "2026-03-27T21:00:00+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "มหาวิทยาลัยเทคโนโลยีราชมงคลกรุงเทพ",
+          "scheduleKey": "",
+          "ticketUrl": "https://www.eventpop.me/e/103013/orchestrate-docker-kubernetes-bootcamp-2-2025"
         }
       ],
       "documents": []
     },
     "en": {
-      "lastUpdate": "2025-02-19T09:00:00+0700",
+      "lastUpdate": "2026-02-08T16:31:00+0700",
       "key": "2025-001-orchestrate-docker-kubernetes-bootcamp",
       "locale": "en",
       "isActive": true,
-      "imageUrl": "/course/2025-001/poster/cover-image.jpg",
+      "imageUrl": "/course/2025-001/poster/docker_cover_2.jpg",
       "detailUrl": "https://dkscenter.gumon.io/en/course/2025-001-orchestrate-docker-kubernetes-bootcamp",
       "title": "Orchestrate - Docker & Kubernetes Bootcamp",
       "code": "2025-001",
@@ -3747,6 +3759,18 @@
           "location": "Clazy Cafe The Seasons Mall @BTS Sanam Pao, Exit 1, Bangkok, Thailand.",
           "scheduleKey": "",
           "ticketUrl": "https://www.eventpop.me/e/74477/orchestrate-docker-kubernetes-bootcamp-1-2025"
+        },
+        {
+          "title": "Orchestrate - Docker & Kubernetes Bootcamp - 1/2026",
+          "eventStart": "2026-03-28T09:00:00+0700",
+          "eventEnd": "2026-03-29T17:00:00+0700",
+          "saleStart": "2026-02-07T09:00:00+0700",
+          "saleEnd": "2026-03-27T21:00:00+0700",
+          "isActive": true,
+          "isSoldOut": false,
+          "location": "Rajamangala University of Technology Krungthep",
+          "scheduleKey": "",
+          "ticketUrl": "https://www.eventpop.me/e/103013/orchestrate-docker-kubernetes-bootcamp-2-2025"
         }
       ],
       "documents": []
