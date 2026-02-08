@@ -40,11 +40,10 @@ const CourseCard = ({ courseData, i18next }) => {
         <div
           className="rounded-t-lg h-60 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url(${
-              courseData.imageUrl
-                ? courseData.imageUrl
-                : '/img/logo_2_h.pngg'
-            })`,
+            backgroundImage: `url(${courseData.imageUrl
+              ? courseData.imageUrl
+              : '/img/logo_2_sq.png'
+              })`,
           }}
         ></div>
         <div className="p-5">
