@@ -43,7 +43,7 @@ const CourseCard = ({ courseData, i18next }) => {
             backgroundImage: `url(${
               courseData.imageUrl
                 ? courseData.imageUrl
-                : '/img/DKS_01_Logo_Ori.png'
+                : '/img/logo_2_h.pngg'
             })`,
           }}
         ></div>
