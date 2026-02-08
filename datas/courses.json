@@ -4361,7 +4361,7 @@
       "isActive": true,
       "detailUrl": "https://dkscenter.gumon.io/th/course/test-ac",
       "title": "Test Event AC",
-      "code": "2025-002",
+      "code": "8417602",
       "duration": "2 วัน, 09:00 - 17:00",
       "overview": "เวิร์กชอปสุดเข้มข้น 2 วัน: พัฒนา API แบบ Event-Driven ด้วย Kafka, Nest.js และ GraphQL ในโลกที่หมุนเร็วของวันนี้ การประมวลผลข้อมูลแบบเรียลไทม์และสถาปัตยกรรมแบบ Event-Driven เป็นหัวใจสำคัญของแอปพลิเคชันที่สามารถขยายตัวได้ Event-Driven Odyssey: Kafka, Nest, and GraphQL in Action คือเวิร์กชอปภาคปฏิบัติที่ออกแบบมาเพื่อให้คุณได้เรียนรู้และพัฒนาทักษะในการสร้าง API แบบ Event-Driven โดยใช้ Apache Kafka, Nest.js, MongoDB และ GraphQLคุณจะได้เรียนรู้วิธี สตรีมข้อมูลแบบเรียลไทม์ สร้าง API ที่ตอบสนองทันที และบูรณาการ Kafka เข้ากับระบบไมโครเซอร์วิส ด้วยแนวทางที่เป็นมาตรฐานอุตสาหกรรม พร้อมเทคนิคที่สามารถนำไปใช้ได้จริง! ",
       "objectives": [
@@ -4498,7 +4498,7 @@
       "isActive": true,
       "detailUrl": "https://dkscenter.gumon.io/en/course/test-ac",
       "title": "Test AC",
-      "code": "2025-002",
+      "code": "8417602",
       "duration": "2 Days, 09:00 - 17:00",
       "overview": "In today s fast-paced world, real-time data processing and event-driven architectures are at the heart of scalable applications. Event-Driven Odyssey: Kafka, Nest, and GraphQL in Action is a hands-on, 2-day workshop designed to equip developers with the knowledge and skills to build event-driven APIs using Apache Kafka, Nest.js, MongoDB, and GraphQL. You will learn how to stream data in real time, create reactive APIs, and integrate Kafka into a microservices ecosystem using best practices.",
       "objectives": [
@@ -4637,7 +4637,7 @@
       "isActive": true,
       "detailUrl": "https://dkscenter.gumon.io/th/course/test-dks",
       "title": "Test Event DKS",
-      "code": "2025-002",
+      "code": "8417535",
       "duration": "2 วัน, 09:00 - 17:00",
       "overview": "เวิร์กชอปสุดเข้มข้น 2 วัน: พัฒนา API แบบ Event-Driven ด้วย Kafka, Nest.js และ GraphQL ในโลกที่หมุนเร็วของวันนี้ การประมวลผลข้อมูลแบบเรียลไทม์และสถาปัตยกรรมแบบ Event-Driven เป็นหัวใจสำคัญของแอปพลิเคชันที่สามารถขยายตัวได้ Event-Driven Odyssey: Kafka, Nest, and GraphQL in Action คือเวิร์กชอปภาคปฏิบัติที่ออกแบบมาเพื่อให้คุณได้เรียนรู้และพัฒนาทักษะในการสร้าง API แบบ Event-Driven โดยใช้ Apache Kafka, Nest.js, MongoDB และ GraphQLคุณจะได้เรียนรู้วิธี สตรีมข้อมูลแบบเรียลไทม์ สร้าง API ที่ตอบสนองทันที และบูรณาการ Kafka เข้ากับระบบไมโครเซอร์วิส ด้วยแนวทางที่เป็นมาตรฐานอุตสาหกรรม พร้อมเทคนิคที่สามารถนำไปใช้ได้จริง! ",
       "objectives": [
@@ -4774,7 +4774,7 @@
       "isActive": true,
       "detailUrl": "https://dkscenter.gumon.io/en/course/test-dks",
       "title": "Test Event DKS",
-      "code": "2025-002",
+      "code": "8417535",
       "duration": "2 Days, 09:00 - 17:00",
       "overview": "In today s fast-paced world, real-time data processing and event-driven architectures are at the heart of scalable applications. Event-Driven Odyssey: Kafka, Nest, and GraphQL in Action is a hands-on, 2-day workshop designed to equip developers with the knowledge and skills to build event-driven APIs using Apache Kafka, Nest.js, MongoDB, and GraphQL. You will learn how to stream data in real time, create reactive APIs, and integrate Kafka into a microservices ecosystem using best practices.",
       "objectives": [
