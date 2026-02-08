@@ -20,7 +20,7 @@ const CourseDetailLink = ({
 }) => {
   const { t, i18n } = i18next;
   const router = useRouter();
-  const { code } = router.query;
+  const code = router.query?.discount_code;
 
   const [modalOpen, setModalOpen] = useState(false);
   const [scheduleKey, setScheduleKey] = useState('');
