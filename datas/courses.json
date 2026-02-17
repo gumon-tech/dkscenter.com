@@ -2926,7 +2926,7 @@
           "saleEnd": "2026-02-20T21:00:00+0700",
           "isActive": true,
           "isSoldOut": false,
-          "location": "มหาวิทยาลัยเทคโนโลยีราชมงคลกรุงเทพ",
+          "location": "Airport Rail Link ลาดกระบัง",
           "scheduleKey": "",
           "ticketUrl": "https://www.eventpop.me/e/100061-pixel-pioneers-nextjs-and-react-masterclass-1-2025"
         }
@@ -3170,7 +3170,7 @@
           "saleEnd": "2026-02-20T21:00:00+0700",
           "isActive": true,
           "isSoldOut": false,
-          "location": "Rajamangala University of Technology Krungthep",
+          "location": "Airport Rail Link Ladkrabang",
           "scheduleKey": "",
           "ticketUrl": "https://www.eventpop.me/e/100061-pixel-pioneers-nextjs-and-react-masterclass-1-2025"
         }
