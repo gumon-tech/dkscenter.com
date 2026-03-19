@@ -70,22 +70,22 @@ const AboutUs = () => {
             title={
               <>
                 <a target="_blank" href="https://www.facebook.com/dks.share">
-                  fb.com/dks.share
+                  DKS Center
                 </a>
               </>
             }
             icon={<FontAwesomeIcon icon={faFacebook} width={30} height={30} />}
           />
-          {/* <Contact
+          <Contact
             title={
               <>
-                <a target="_blank" href="https://lin.ee/fnl0CuL">
-                  @digitalknowledge
+                <a target="_blank" href="https://lin.ee/xyZvMd2">
+                  @dks.share
                 </a>
               </>
             }
             icon={<FontAwesomeIcon icon={faLine} width={30} height={30} />}
-          /> */}
+          />
         </>
       </Hero>
       <Footer i18next={i18next} />
