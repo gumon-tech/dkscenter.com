@@ -20,7 +20,6 @@ import {
 import {
   formatCourseDateRange,
   formatCourseDateTime,
-  formatScheduleMeta,
   formatCourseTime,
 } from '/lib/courses/formatters';
 import LineContactButton from './course/line-contact-button';
@@ -37,7 +36,6 @@ const CourseDetail = ({ courseData, i18next }) => {
   const isConversionFocusedCourse = isLinePrimaryCourse(courseData);
   const lineCopy = getLineCtaCopy(locale);
   const featuredSchedule = getPrimarySchedule(courseData);
-  const scheduleMeta = formatScheduleMeta(featuredSchedule, locale);
   const registerUrl = buildForwardedUrl(
     featuredSchedule?.ticketUrl,
     router.query || {},
@@ -60,6 +58,10 @@ const CourseDetail = ({ courseData, i18next }) => {
     {
       label: locale === 'th' ? 'Course Code' : 'Course Code',
       value: courseData?.code,
+    },
+    {
+      label: locale === 'th' ? 'Duration' : 'Duration',
+      value: courseData?.duration,
     },
   ].filter((item) => item.value);
   const featuredImage = courseData?.imageUrl;
@@ -159,7 +161,7 @@ const CourseDetail = ({ courseData, i18next }) => {
           { title: courseData.code, path: `/course/${courseData?.key}` },
         ]}
       />
-      <section className="relative mt-4 grid gap-6 xl:mt-6 xl:grid-cols-[minmax(0,1.2fr)_420px] xl:items-start">
+      <section className="relative mt-4 grid gap-6 xl:mt-6 xl:grid-cols-[minmax(0,1.12fr)_380px] xl:items-start">
         <div className="course-theme-hero relative overflow-hidden rounded-[36px] p-7 sm:p-8 xl:p-10">
           <div
             aria-hidden="true"
@@ -194,22 +196,6 @@ const CourseDetail = ({ courseData, i18next }) => {
               {courseData.overview}
             </p>
 
-            <div className="mt-7 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-              {scheduleMeta.map((item) => (
-                <div
-                  key={item.label}
-                  className="course-theme-subtle rounded-2xl px-4 py-4 backdrop-blur-sm"
-                >
-                  <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-strong">
-                    {item.label}
-                  </div>
-                  <div className="course-contrast-heading mt-2 text-[17px] font-medium leading-7">
-                    {item.value}
-                  </div>
-                </div>
-              ))}
-            </div>
-
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <LineContactButton
                 courseData={courseData}
@@ -232,54 +218,29 @@ const CourseDetail = ({ courseData, i18next }) => {
               {lineCopy.heroMicrocopy}
             </p>
 
-            <div className="mt-8">
-              <div className="course-theme-soft-panel rounded-[30px] p-6 lg:p-7">
-                <div className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
-                  {locale === 'th' ? 'Why This Course' : 'Why This Course'}
-                </div>
-                <div className="mt-5 space-y-4">
-                  {heroHighlights.map((item, index) => (
-                    <div
-                      key={index}
-                      className="rounded-[24px] border border-border/60 bg-surface/70 px-5 py-5"
-                    >
-                      <div className="flex items-start gap-4">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-primary/20 bg-primary/10 text-sm font-semibold text-primary-strong">
-                          0{index + 1}
-                        </div>
-                        <div className="min-w-0 flex-1 border-l border-border/60 pl-4">
-                          <p className="course-copy max-w-3xl text-[1.05rem] leading-8 lg:text-[1.1rem] lg:leading-9">
-                            {item}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+            <div className="mt-8 rounded-[30px] border border-border/60 bg-surface/40 px-5 py-5">
+              <div className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
+                {locale === 'th' ? 'Why This Course' : 'Why This Course'}
               </div>
-            </div>
-
-            <div className="mt-6 flex flex-wrap gap-2">
-              <span className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.14em] text-primary-strong">
-                {locale === 'th' ? 'Hands-on Workshop' : 'Hands-on Workshop'}
-              </span>
-              <span className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.14em] text-primary-strong">
-                {locale === 'th' ? 'Onsite Training' : 'Onsite Training'}
-              </span>
-              <span className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.14em] text-primary-strong">
-                {locale === 'th'
-                  ? 'Certificate Included'
-                  : 'Certificate Included'}
-              </span>
-              <span className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.14em] text-primary-strong">
-                {locale === 'th' ? 'Developer Focused' : 'Developer Focused'}
-              </span>
+              <div className="space-y-4">
+                {heroHighlights.map((item, index) => (
+                  <div key={index} className="flex items-start gap-4">
+                    <div className="flex h-8 min-w-[2rem] items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary-strong">
+                      {String(index + 1).padStart(2, '0')}
+                    </div>
+                    <p className="course-copy max-w-3xl pt-0.5 text-[1.02rem] leading-8 lg:text-[1.08rem] lg:leading-9">
+                      {item}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
 
         {featuredImage && (
-          <aside className="course-theme-panel relative overflow-hidden rounded-[32px] p-4 sm:p-5 xl:p-6">
+          <aside className="space-y-4 xl:sticky xl:top-24">
+            <div className="course-theme-panel relative overflow-hidden rounded-[32px] p-4 sm:p-5 xl:p-6">
             <div className="mb-4 flex items-center justify-between gap-3">
               <div>
                 <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
@@ -304,7 +265,6 @@ const CourseDetail = ({ courseData, i18next }) => {
                 />
               </div>
             </div>
-            <div className="mt-4 grid gap-3">
               <div className="rounded-2xl border border-border/70 bg-surface px-4 py-4">
                 <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
                   {locale === 'th' ? 'Quick Facts' : 'Quick Facts'}
@@ -326,14 +286,28 @@ const CourseDetail = ({ courseData, i18next }) => {
                 </dl>
               </div>
 
-            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-1">
+            <div className="mt-3 grid gap-3">
               <div className="rounded-2xl border border-border/70 bg-surface px-4 py-4">
                 <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-soft">
-                  {locale === 'th' ? 'Schedule' : 'Schedule'}
+                  {locale === 'th' ? 'Next Session' : 'Next Session'}
                 </div>
                 <div className="course-copy mt-2 text-sm leading-7">
                   <div>{scheduleDateRange}</div>
                   <div>{scheduleTimeRange}</div>
+                  {featuredSchedule?.location ? (
+                    featuredSchedule.locationUrl ? (
+                      <a
+                        href={featuredSchedule.locationUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-2 block text-primary underline decoration-primary/35 underline-offset-4 transition hover:text-primary-strong"
+                      >
+                        {featuredSchedule.location}
+                      </a>
+                    ) : (
+                      <div className="mt-2">{featuredSchedule.location}</div>
+                    )
+                  ) : null}
                 </div>
               </div>
               <div className="rounded-2xl border border-border/70 bg-surface px-4 py-4">
@@ -351,34 +325,34 @@ const CourseDetail = ({ courseData, i18next }) => {
               </div>
             </div>
             </div>
+
+            {isConversionFocusedCourse && (
+              <CourseConversionBand
+                compact
+                locale={locale}
+                courseData={courseData}
+                title={lineCopy.midTitle}
+                description={lineCopy.midDescription}
+                primaryLabel={lineCopy.midPrimary}
+                secondaryLabel={lineCopy.heroSecondary}
+                registerUrl={registerUrl}
+                onRegisterClick={onRegisterCtaClick}
+                trackingLabel="midpage_line_contact"
+              />
+            )}
           </aside>
         )}
       </section>
 
-      <div className="mt-10 grid gap-8 xl:grid-cols-[minmax(0,1fr)_360px] xl:gap-10">
-        <div className="min-w-0">
+      <div className="mt-12 space-y-12">
           <CourseSectionShell
             eyebrow={locale === 'th' ? 'Course Overview' : 'Course Overview'}
             title={locale === 'th' ? 'ภาพรวมของคอร์ส' : 'Course Overview'}
           >
             <div className="course-theme-soft-panel rounded-[30px] p-7">
-              <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
-                <div>
-                  <p className="course-copy text-base leading-8 lg:text-[17px]">
-                    {courseData.overview}
-                  </p>
-                </div>
-                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
-                  {heroHighlights.map((item, index) => (
-                    <div
-                      key={index}
-                      className="rounded-2xl border border-border/70 bg-surface px-4 py-4 text-sm leading-7 text-muted"
-                    >
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <p className="course-copy max-w-4xl text-base leading-8 lg:text-[17px]">
+                {courseData.overview}
+              </p>
             </div>
           </CourseSectionShell>
 
@@ -392,21 +366,6 @@ const CourseDetail = ({ courseData, i18next }) => {
           >
             <CourseTrustGrid items={trustItems} locale={locale} />
           </CourseSectionShell>
-
-          {isConversionFocusedCourse && (
-            <CourseConversionBand
-              compact
-              locale={locale}
-              courseData={courseData}
-              title={lineCopy.midTitle}
-              description={lineCopy.midDescription}
-              primaryLabel={lineCopy.midPrimary}
-              secondaryLabel={lineCopy.heroSecondary}
-              registerUrl={registerUrl}
-              onRegisterClick={onRegisterCtaClick}
-              trackingLabel="midpage_line_contact"
-            />
-          )}
 
           <div className="grid gap-12">
             {courseData.objectives && courseData.objectives.length > 0 && (
@@ -457,23 +416,12 @@ const CourseDetail = ({ courseData, i18next }) => {
               </CourseSectionShell>
             )}
           </div>
-        </div>
 
         <CourseDetailLink
           className="min-w-0"
           courseData={courseData}
           i18next={i18next}
-          registerBottom
           sectionId="course-registration"
-        />
-      </div>
-
-      <div className="mt-8">
-        <CourseDetailLink
-          className="hidden xl:block"
-          courseData={courseData}
-          i18next={i18next}
-          registerRight
         />
       </div>
 

@@ -44,6 +44,27 @@ export default function CourseScheduleOverview({
                 {scheduleData.title}
               </dd>
             </div>
+            {scheduleData.location ? (
+              <div>
+                <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
+                  {t('order-label-location')}
+                </dt>
+                <dd className="mt-2 text-lg font-semibold">
+                  {scheduleData.locationUrl ? (
+                    <a
+                      href={scheduleData.locationUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-primary underline decoration-primary/35 underline-offset-4 transition hover:text-primary-strong"
+                    >
+                      {scheduleData.location}
+                    </a>
+                  ) : (
+                    <span className="text-text">{scheduleData.location}</span>
+                  )}
+                </dd>
+              </div>
+            ) : null}
           </dl>
 
           <div className="mt-8">

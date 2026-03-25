@@ -171,6 +171,7 @@ const courseTh = {
       isSoldOut: false,
       location:
         'เอเชีย คอนเน็คท์ คอร์ปอเรชั่น, เขตลาดกระบัง, กรุงเทพมหานคร',
+      locationUrl: 'https://maps.app.goo.gl/SZZsAHV1RtFawjM66',
       scheduleKey: '',
       ticketUrl:
         'https://www.eventpop.me/e/103013/orchestrate-docker-kubernetes-bootcamp-2-2025',

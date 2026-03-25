@@ -36,6 +36,7 @@
  *         isActive: boolean,
  *         isSoldOut?: boolean,
  *         location?: string,
+ *         locationUrl?: string,
  *       }[],
  *       documents: { title: string, fileUrl: string }[],
  *     }

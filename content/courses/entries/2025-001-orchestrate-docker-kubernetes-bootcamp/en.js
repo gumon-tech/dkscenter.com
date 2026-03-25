@@ -169,6 +169,7 @@ const courseEn = {
       isActive: true,
       isSoldOut: false,
       location: 'Asia Connect Corporation, Lat Krabang, Bangkok.',
+      locationUrl: 'https://maps.app.goo.gl/SZZsAHV1RtFawjM66',
       scheduleKey: '',
       ticketUrl:
         'https://www.eventpop.me/e/103013/orchestrate-docker-kubernetes-bootcamp-2-2025',

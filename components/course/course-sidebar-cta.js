@@ -57,7 +57,20 @@ export default function CourseSidebarCta({
               <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-strong">
                 {locale === 'th' ? 'Location' : 'Location'}
               </div>
-              <div className="mt-2">{featuredSchedule.location}</div>
+              <div className="mt-2">
+                {featuredSchedule.locationUrl ? (
+                  <a
+                    href={featuredSchedule.locationUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-primary underline decoration-primary/35 underline-offset-4 transition hover:text-primary-strong"
+                  >
+                    {featuredSchedule.location}
+                  </a>
+                ) : (
+                  featuredSchedule.location
+                )}
+              </div>
             </div>
           )}
         </div>

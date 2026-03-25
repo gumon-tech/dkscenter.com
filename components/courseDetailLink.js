@@ -9,17 +9,9 @@ import {
   trackOutboundClick,
 } from '/lib/gtm';
 import {
-  buildForwardedUrl,
   getLineCtaCopy,
-  getPrimarySchedule,
   isLinePrimaryCourse,
 } from '/lib/courses/cta';
-import {
-  formatCourseDateRange,
-  formatCourseTime,
-} from '/lib/courses/formatters';
-import CourseSidebarCta from './course/course-sidebar-cta';
-import CourseInlineCta from './course/course-inline-cta';
 import CourseScheduleTable from './course/course-schedule-table';
 import CourseDocumentsTable from './course/course-documents-table';
 
@@ -27,8 +19,8 @@ const CourseDetailLink = ({
   courseData,
   i18next,
   className,
-  registerBottom,
-  registerRight,
+  registerBottom: _registerBottom,
+  registerRight: _registerRight,
   sectionId,
 }) => {
   const { t, i18n } = i18next;
@@ -38,21 +30,6 @@ const CourseDetailLink = ({
   const locale = i18n?.language || 'th';
   const isConversionFocusedCourse = isLinePrimaryCourse(courseData);
   const lineCopy = getLineCtaCopy(locale);
-  const featuredSchedule = getPrimarySchedule(courseData);
-  const featuredRegisterUrl = buildForwardedUrl(
-    featuredSchedule?.ticketUrl,
-    router.query || {},
-  );
-  const scheduleDateRange = featuredSchedule
-    ? formatCourseDateRange(
-        featuredSchedule.eventStart,
-        featuredSchedule.eventEnd,
-        locale,
-      )
-    : null;
-  const scheduleTimeRange = featuredSchedule
-    ? `${formatCourseTime(featuredSchedule.eventStart, locale)} - ${formatCourseTime(featuredSchedule.eventEnd, locale)}`
-    : null;
   const baseItem = {
     item_name: courseData?.title,
     item_category: 'course',
@@ -115,82 +92,24 @@ const CourseDetailLink = ({
 
   return (
     <>
-      <div
-        className={`${className || ''} ${
-          registerBottom ? 'xl:sticky xl:top-24 xl:self-start' : ''
-        }`.trim()}
-      >
-        {isConversionFocusedCourse && registerBottom && (
-          <CourseSidebarCta
+      <div className={(className || '').trim()}>
+        <div id={sectionId}>
+          <CourseScheduleTable
             courseData={courseData}
-            lineCopy={lineCopy}
             locale={locale}
-            featuredSchedule={featuredSchedule}
-            scheduleDateRange={scheduleDateRange}
-            scheduleTimeRange={scheduleTimeRange}
-            featuredRegisterUrl={featuredRegisterUrl}
-            onRegisterClick={() =>
-              featuredSchedule &&
-              onRegisterClick(featuredSchedule, featuredRegisterUrl)
-            }
-          />
-        )}
-
-        {isConversionFocusedCourse && registerRight && (
-          <CourseInlineCta
-            courseData={courseData}
+            t={t}
+            routerQuery={router.query || {}}
+            isConversionFocusedCourse={isConversionFocusedCourse}
             lineCopy={lineCopy}
-            featuredRegisterUrl={featuredRegisterUrl}
-            onRegisterClick={() =>
-              featuredSchedule &&
-              onRegisterClick(featuredSchedule, featuredRegisterUrl)
-            }
+            onScheduleTitleClick={onScheduleTitleClick}
+            onRegisterClick={onRegisterClick}
+            onOpenModal={openModal}
           />
-        )}
-
-        <div className="space-y-5">
-          <div className="course-theme-panel overflow-hidden rounded-[30px]">
-            <table className="w-full text-left text-sm text-muted rtl:text-right">
-              <thead className="course-theme-table-head text-xs uppercase text-soft">
-                <tr>
-                  <th
-                    scope="col"
-                    className="rounded-t-[30px] px-6 py-5 text-xl font-semibold tracking-[-0.03em] text-text"
-                  >
-                    {t('course-detail-8')}
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="bg-transparent">
-                  <th
-                    scope="row"
-                    className="rounded-b-[30px] border-t border-border/70 px-6 py-5 text-base font-semibold text-text"
-                  >
-                    {courseData.duration}
-                  </th>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div id={sectionId}>
-            <CourseScheduleTable
-              courseData={courseData}
-              locale={locale}
-              t={t}
-              routerQuery={router.query || {}}
-              registerBottom={registerBottom}
-              registerRight={registerRight}
-              isConversionFocusedCourse={isConversionFocusedCourse}
-              lineCopy={lineCopy}
-              onScheduleTitleClick={onScheduleTitleClick}
-              onRegisterClick={onRegisterClick}
-              onOpenModal={openModal}
-            />
-          </div>
         </div>
 
-        <CourseDocumentsTable documents={courseData.documents} t={t} />
+        <div className="mt-5">
+          <CourseDocumentsTable documents={courseData.documents} t={t} />
+        </div>
       </div>
 
       <Modal
