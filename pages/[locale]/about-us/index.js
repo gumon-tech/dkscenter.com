@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import Hero from '../../../components/hero';
 import { AtSymbolIcon } from '@heroicons/react/24/solid';
 import { faFacebook, faLine } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,6 +8,11 @@ import { makeStaticProps } from '/lib/getStatic';
 import { getStaticPaths } from '/lib/getStatic';
 import SeoHead from '../../../components/seo/seo-head';
 import SiteShell from '../../../components/layout/site-shell';
+import Container from '../../../components/container';
+import Heading from '../../../components/ui/heading';
+import Card from '../../../components/ui/card';
+import Badge from '../../../components/ui/badge';
+import Button from '../../../components/ui/button';
 
 const getStaticProps = makeStaticProps(['home']);
 export { getStaticPaths, getStaticProps };
@@ -27,56 +31,69 @@ const AboutUs = () => {
         image="/img/assistant1.jpg"
       />
       <SiteShell i18next={i18next}>
-        <Hero i18next={i18next}>
-          <>
-            <p className="py-5 leading-normal text-gray-500  dark:text-gray-300">
-              {t('about-us-1')}
-            </p>
-
-            <Contact
-              title={
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="mailto:dkscenter@gumon.io"
-                >
-                  dkscenter@gumon.io
-                </a>
-              }
-              icon={<AtSymbolIcon />}
-            />
-            <Contact
-              title={
-                <>
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://www.facebook.com/dks.share"
-                  >
-                    DKS Center
-                  </a>
-                </>
-              }
-              icon={
-                <FontAwesomeIcon icon={faFacebook} width={30} height={30} />
-              }
-            />
-            <Contact
-              title={
-                <>
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
+        <Container className="pb-section lg:pb-section-lg">
+          <section className="pt-section-sm lg:pt-section">
+            <div className="grid gap-8 xl:grid-cols-[1.08fr_0.92fr]">
+              <div className="rounded-[36px] border border-border/70 bg-[linear-gradient(145deg,rgba(11,19,35,0.95),rgba(18,34,66,0.96),rgba(27,47,92,0.94))] px-6 py-8 shadow-floating sm:px-8 lg:px-10">
+                <Badge className="text-primary-strong">{t('nav-about-us')}</Badge>
+                <h1 className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-white sm:text-5xl">
+                  {currentLanguage === 'th'
+                    ? 'คุยกับทีม DKS เพื่อเลือกคอร์สที่เหมาะกับคุณ'
+                    : 'Talk to DKS to find the right course for your team or career path.'}
+                </h1>
+                <p className="mt-5 max-w-3xl text-base leading-8 text-muted sm:text-lg">
+                  {t('about-us-1')}
+                </p>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <Button as="a" href="mailto:dkscenter@gumon.io">
+                    {currentLanguage === 'th' ? 'ส่งอีเมลหาเรา' : 'Email Us'}
+                  </Button>
+                  <Button
+                    as="a"
                     href="https://lin.ee/xyZvMd2"
+                    target="_blank"
+                    rel="noreferrer"
+                    variant="secondary"
                   >
-                    @dks.share
-                  </a>
-                </>
-              }
-              icon={<FontAwesomeIcon icon={faLine} width={30} height={30} />}
-            />
-          </>
-        </Hero>
+                    LINE Contact
+                  </Button>
+                </div>
+              </div>
+
+              <Card className="p-5 sm:p-6">
+                <Heading
+                  eyebrow={currentLanguage === 'th' ? 'Contact Channels' : 'Contact Channels'}
+                  title={currentLanguage === 'th' ? 'ช่องทางติดต่อทั้งหมด' : 'All the ways to reach us'}
+                  description={
+                    currentLanguage === 'th'
+                      ? 'เหมาะสำหรับสอบถามรายละเอียดคอร์ส รอบเรียน ราคา in-house training หรือคำถามก่อนตัดสินใจ'
+                      : 'Use these channels for course details, upcoming cohorts, pricing, in-house training, or pre-enrollment questions.'
+                  }
+                />
+                <div className="mt-6 grid gap-4">
+                  <Contact
+                    title="dkscenter@gumon.io"
+                    href="mailto:dkscenter@gumon.io"
+                    description={currentLanguage === 'th' ? 'ตอบกลับรายละเอียดคอร์สและการอบรม' : 'Course inquiries and training coordination'}
+                    icon={<AtSymbolIcon />}
+                  />
+                  <Contact
+                    title="DKS Center"
+                    href="https://www.facebook.com/dks.share"
+                    description={currentLanguage === 'th' ? 'ข่าวสาร คอร์สใหม่ และกิจกรรม' : 'Updates, new courses, and community activity'}
+                    icon={<FontAwesomeIcon icon={faFacebook} width={22} height={22} />}
+                  />
+                  <Contact
+                    title="@dks.share"
+                    href="https://lin.ee/xyZvMd2"
+                    description={currentLanguage === 'th' ? 'สอบถามเร็วที่สุดผ่าน LINE' : 'Fastest support via LINE'}
+                    icon={<FontAwesomeIcon icon={faLine} width={22} height={22} />}
+                  />
+                </div>
+              </Card>
+            </div>
+          </section>
+        </Container>
       </SiteShell>
     </>
   );
@@ -84,20 +101,22 @@ const AboutUs = () => {
 
 function Contact(props) {
   return (
-    <>
-      <div className="flex items-center mt-2 space-x-3">
-        <div className="flex items-center justify-center flex-shrink-0 mt-1 bg-indigo-500 rounded-md w-11 h-11 ">
+      <a
+        href={props.href}
+        target="_blank"
+        rel="noreferrer"
+        className="flex items-start gap-4 rounded-[28px] border border-border/70 bg-surface px-4 py-4 hover:border-primary/25 hover:bg-surface-elevated"
+      >
+        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-white shadow-glow">
           {React.cloneElement(props.icon, {
-            className: 'w-7 h-7 text-indigo-50',
+            className: 'h-6 w-6 text-white',
           })}
         </div>
         <div>
-          <h4 className="text-md font-medium text-gray-800 dark:text-gray-200">
-            {props.title}
-          </h4>
+          <h4 className="text-base font-semibold text-text">{props.title}</h4>
+          <p className="mt-1 text-sm leading-7 text-muted">{props.description}</p>
         </div>
-      </div>
-    </>
+      </a>
   );
 }
 

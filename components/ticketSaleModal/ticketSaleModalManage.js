@@ -3,6 +3,7 @@ import { useState } from 'react';
 import FetchTicketSale from './fetchTicketSale';
 import EmailTicketSale from './emailTicketSale';
 import CheckoutTicketSale from './checkoutTicketSale';
+import Badge from '../ui/badge';
 
 export default function TicketSaleModalManage({
   i18next,
@@ -10,6 +11,7 @@ export default function TicketSaleModalManage({
   scheduleKey,
   discountCodeURL,
 }) {
+  const locale = i18next?.i18n?.language || 'th';
   const [manageState, setManageState] = useState(0);
   const [discountCode, setDiscountCode] = useState(discountCodeURL || '');
   const [accessToken, setAccessToken] = useState(null);
@@ -27,7 +29,16 @@ export default function TicketSaleModalManage({
 
   if (manageState === 0) {
     return (
-      <div>
+      <div className="space-y-5">
+        <div className="flex flex-wrap items-center gap-3">
+          <Badge>{locale === 'th' ? '1. เลือกบัตร' : '1. Select tickets'}</Badge>
+          <Badge variant="neutral">
+            {locale === 'th' ? '2. ยืนยันอีเมล' : '2. Verify email'}
+          </Badge>
+          <Badge variant="neutral">
+            {locale === 'th' ? '3. กรอกข้อมูล' : '3. Checkout details'}
+          </Badge>
+        </div>
         <FetchTicketSale
           i18next={i18next}
           courseKey={courseKey}
@@ -46,7 +57,16 @@ export default function TicketSaleModalManage({
 
   if (manageState === 1) {
     return (
-      <div>
+      <div className="space-y-5">
+        <div className="flex flex-wrap items-center gap-3">
+          <Badge variant="neutral">
+            {locale === 'th' ? '1. เลือกบัตร' : '1. Select tickets'}
+          </Badge>
+          <Badge>{locale === 'th' ? '2. ยืนยันอีเมล' : '2. Verify email'}</Badge>
+          <Badge variant="neutral">
+            {locale === 'th' ? '3. กรอกข้อมูล' : '3. Checkout details'}
+          </Badge>
+        </div>
         <EmailTicketSale
           i18next={i18next}
           accessToken={accessToken}
@@ -68,7 +88,16 @@ export default function TicketSaleModalManage({
 
   if (manageState === 2) {
     return (
-      <div>
+      <div className="space-y-5">
+        <div className="flex flex-wrap items-center gap-3">
+          <Badge variant="neutral">
+            {locale === 'th' ? '1. เลือกบัตร' : '1. Select tickets'}
+          </Badge>
+          <Badge variant="neutral">
+            {locale === 'th' ? '2. ยืนยันอีเมล' : '2. Verify email'}
+          </Badge>
+          <Badge>{locale === 'th' ? '3. กรอกข้อมูล' : '3. Checkout details'}</Badge>
+        </div>
         <CheckoutTicketSale
           i18next={i18next}
           accessToken={accessToken}

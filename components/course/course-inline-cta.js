@@ -10,10 +10,10 @@ export default function CourseInlineCta({
   onRegisterClick,
 }) {
   return (
-    <section className="course-theme-contrast mb-5 rounded-[30px] p-6">
+    <section className="course-theme-contrast mb-5 rounded-[32px] p-6 lg:p-7">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-2xl">
-          <h3 className="course-contrast-heading text-2xl font-bold">
+          <h3 className="course-contrast-heading text-2xl font-semibold tracking-[-0.03em]">
             {lineCopy.bottomPrimary}
           </h3>
           <p className="course-contrast-copy mt-2 text-base leading-7">

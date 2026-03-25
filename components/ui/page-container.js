@@ -13,7 +13,7 @@ export default function PageContainer({
   return (
     <Component
       className={cx(
-        'mx-auto w-full max-w-7xl px-6 md:px-8 xl:px-10',
+        'mx-auto w-full max-w-layout px-5 sm:px-6 lg:px-8 xl:px-10',
         className,
       )}
     >

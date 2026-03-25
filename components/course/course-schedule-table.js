@@ -59,20 +59,20 @@ export default function CourseScheduleTable({
     .sort((a, b) => dayjs(b.eventStart).valueOf() - dayjs(a.eventStart).valueOf());
 
   return (
-    <div className="course-theme-panel scroll-mt-28 overflow-hidden rounded-2xl">
-      <table className="w-full text-left text-sm text-gray-500 dark:text-gray-400 rtl:text-right">
-        <thead className="course-theme-table-head text-xs uppercase text-gray-700 dark:text-gray-400">
+    <div className="course-theme-panel scroll-mt-28 overflow-hidden rounded-[30px]">
+      <table className="w-full text-left text-sm text-muted rtl:text-right">
+        <thead className="course-theme-table-head text-xs uppercase text-soft">
           <tr>
             <th
               scope="col"
               colSpan={2}
-              className="rounded-t-xl border-b border-gray-200 px-6 py-4 text-xl font-bold text-blue-700 dark:border-slate-800 dark:text-blue-400"
+              className="rounded-t-[30px] border-b border-border/70 px-6 py-5 text-xl font-semibold tracking-[-0.03em] text-text"
             >
               {t('course-detail-9')}
             </th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
+        <tbody className="divide-y divide-border/70">
           {activeSchedules.length > 0 ? (
             activeSchedules.map((publicSchedule, index) => {
               const eventStartDate = formatCourseDate(
@@ -98,15 +98,15 @@ export default function CourseScheduleTable({
               );
               const registerButtonClass = isConversionFocusedCourse
                 ? registerScheduleButtonClass
-                : 'inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800';
+                : 'inline-flex items-center justify-center rounded-full border border-primary/20 bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-glow transition hover:bg-primary-strong focus:outline-none focus:ring-4 focus:ring-primary/20';
 
               return (
                 <tr
                   key={index}
                   className="course-theme-table-row group transition-colors duration-200"
                 >
-                  <th scope="row" className="px-4 py-5 align-top">
-                    <h3 className="text-lg font-bold leading-7 text-gray-700 dark:text-gray-300">
+                  <th scope="row" className="px-5 py-5 align-top sm:px-6">
+                    <h3 className="max-w-[20rem] text-[1.75rem] font-semibold leading-[1.28] tracking-[-0.04em] text-text sm:max-w-none sm:text-lg sm:leading-7 sm:tracking-[-0.03em]">
                       {(courseType === 'COMING_SOON' ||
                         courseType === 'ENDED' ||
                         courseType === 'SOLD_OUT') && <>{publicSchedule.title}</>}
@@ -118,7 +118,7 @@ export default function CourseScheduleTable({
                             onScheduleTitleClick(publicSchedule, forwardedUrl)
                           }
                           rel="noreferrer"
-                          className="cursor-pointer text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+                          className="cursor-pointer text-primary hover:text-primary-strong"
                         >
                           {publicSchedule.title}
                         </a>
@@ -133,39 +133,47 @@ export default function CourseScheduleTable({
                         </a>
                       )}
                     </h3>
-                    <div className="flex pt-2 text-[15px] leading-6 text-gray-700 dark:text-gray-400">
-                      <span className="w-5 h-5 mr-1 min-w-[1.25rem]">
-                        <CalendarIcon />
-                      </span>
-                      <p>{eventStartDate}</p>
-                      {eventStartDate !== eventEndDate && (
-                        <p className="pl-1">- {eventEndDate}</p>
+                    <div className="mt-5 grid gap-3 text-[15px] leading-7 text-muted">
+                      <div className="flex items-start gap-3">
+                        <span className="mt-0.5 h-5 w-5 min-w-[1.25rem] text-soft">
+                          <CalendarIcon />
+                        </span>
+                        <div className="grid gap-1 sm:flex sm:flex-wrap sm:items-center">
+                          <p>{eventStartDate}</p>
+                          {eventStartDate !== eventEndDate && (
+                            <p className="sm:pl-1">- {eventEndDate}</p>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="flex items-start gap-3">
+                        <span className="mt-0.5 h-5 w-5 min-w-[1.25rem] text-soft">
+                          <ClockIcon />
+                        </span>
+                        <div className="grid gap-1 sm:flex sm:flex-wrap sm:items-center">
+                          <p>{eventStartTime}</p>
+                          <p className="sm:pl-1">- {eventEndTime}</p>
+                        </div>
+                      </div>
+
+                      {publicSchedule.location && (
+                        <div className="flex items-start gap-3">
+                          <span className="mt-0.5 h-5 w-5 min-w-[1.25rem] text-soft">
+                            <MapPinIcon />
+                          </span>
+                          <span className="max-w-[24rem] sm:max-w-none">
+                            {publicSchedule.location}
+                          </span>
+                        </div>
                       )}
                     </div>
-
-                    <div className="flex pt-1 text-[15px] leading-6 text-gray-700 dark:text-gray-400">
-                      <span className="w-5 h-5 mr-1 min-w-[1.25rem]">
-                        <ClockIcon />
-                      </span>
-                      <p>{eventStartTime}</p>
-                      <p className="pl-1">- {eventEndTime}</p>
-                    </div>
-
-                    {publicSchedule.location && (
-                      <div className="flex pt-1 text-[15px] leading-6 text-gray-700 dark:text-gray-400">
-                        <span className="w-5 h-5 mr-1 min-w-[1.25rem]">
-                          <MapPinIcon />
-                        </span>
-                        <span>{publicSchedule.location}</span>
-                      </div>
-                    )}
 
                     {courseType === 'GET_YOURS' && registerBottom && (
                       <a
                         target="_blank"
                         href={forwardedUrl}
                         onClick={() => onRegisterClick(publicSchedule, forwardedUrl)}
-                        className={`mt-2 ${registerButtonClass}`}
+                        className={`mt-5 ${registerButtonClass}`}
                         rel="noreferrer"
                       >
                         {isConversionFocusedCourse
@@ -177,7 +185,7 @@ export default function CourseScheduleTable({
                     {courseType === 'GET_YOURS_2' && registerBottom && (
                       <nav>
                         <button
-                          className={`mt-2 ${registerButtonClass}`}
+                          className={`mt-5 ${registerButtonClass}`}
                           onClick={() => onOpenModal(publicSchedule.scheduleKey)}
                         >
                           {isConversionFocusedCourse
@@ -188,15 +196,19 @@ export default function CourseScheduleTable({
                     )}
                   </th>
 
-                  <th className="px-4 py-5 align-top">
-                    {courseType === 'COMING_SOON' && 'COMING SOON!'}
+                  <th className="hidden px-4 py-5 align-top md:table-cell">
+                    {courseType === 'COMING_SOON' && (
+                      <span className="rounded-full border border-border/70 bg-surface px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-soft">
+                        Coming soon
+                      </span>
+                    )}
                     {courseType === 'ENDED' && (
-                      <span className="text-gray-700 dark:text-gray-400 font-bold whitespace-nowrap">
+                      <span className="whitespace-nowrap rounded-full border border-border/70 bg-surface px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-soft">
                         {t('course-detail-14')}
                       </span>
                     )}
                     {courseType === 'SOLD_OUT' && (
-                      <span className="text-red-600 font-bold whitespace-nowrap">
+                      <span className="whitespace-nowrap rounded-full border border-danger/20 bg-danger/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-danger">
                         {t('course-detail-15')}
                       </span>
                     )}
@@ -240,7 +252,7 @@ export default function CourseScheduleTable({
               <th
                 scope="row"
                 colSpan={2}
-                className="rounded-t-lg px-6 py-5 text-base font-medium leading-7 text-gray-900 dark:text-white"
+                className="rounded-t-lg px-6 py-5 text-base font-medium leading-7 text-text"
               >
                 {t('course-detail-17')}
               </th>
@@ -251,11 +263,11 @@ export default function CourseScheduleTable({
             <th
               scope="row"
               colSpan={2}
-              className="rounded-b-lg px-6 py-5 text-base font-medium text-gray-900 dark:text-white"
+              className="rounded-b-[30px] px-6 py-5 text-base font-medium text-text"
             >
               <Link
                 href={'/about-us'}
-                className="inline-flex font-medium items-center text-blue-600 dark:text-blue-400 hover:underline"
+                className="inline-flex items-center font-medium text-primary hover:text-primary-strong"
               >
                 {t('course-detail-18')}
                 <svg

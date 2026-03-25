@@ -9,7 +9,7 @@ export default function Card({ as: Component = 'div', className, children }) {
   return (
     <Component
       className={cx(
-        'rounded-3xl border border-border bg-surface shadow-soft backdrop-blur-sm',
+        'rounded-[28px] border border-border/80 bg-surface-elevated shadow-panel backdrop-blur-xl',
         className,
       )}
     >

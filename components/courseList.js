@@ -13,12 +13,21 @@ export default function CourseList(props) {
   const courses = getActiveLocalizedCourses(currentLanguage);
 
   return (
-    <Container className="py-10 md:py-12">
+    <Container className="pb-section lg:pb-section-lg">
       {props.breadcrumb && (
         <Breadcrumb paths={[{ title: 'Training Course', path: '/course' }]} />
       )}
-      <Heading title={t('course-list-1')} className="mt-3" />
-      <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+      <Heading
+        eyebrow={currentLanguage === 'th' ? 'Course Catalog' : 'Course Catalog'}
+        title={t('course-list-1')}
+        description={
+          currentLanguage === 'th'
+            ? 'หลักสูตรทั้งหมดถูกจัดวางใหม่ให้สแกนง่าย เปรียบเทียบเร็ว และตัดสินใจได้ชัดเจนขึ้นทั้งบนเดสก์ท็อปและมือถือ'
+            : 'A clearer course catalog with stronger hierarchy, cleaner comparison, and a sharper path from discovery to registration.'
+        }
+        className="mt-6"
+      />
+      <div className="mt-10 grid gap-7 md:grid-cols-2 xl:grid-cols-3">
         {courses.map((course) => (
           <CourseCard
             key={course.key}

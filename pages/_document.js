@@ -11,7 +11,7 @@ class MyDocument extends Document {
       nextI18nextConfig.i18n.defaultLocale;
 
     return (
-      <Html lang={currentLocale}>
+      <Html lang={currentLocale} className="dark">
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
@@ -25,7 +25,7 @@ class MyDocument extends Document {
           />
         </Head>
 
-        <body>
+        <body className="dark bg-background text-text">
           {/* GTM noscript */}
           {GTM_ID && (
             <noscript>

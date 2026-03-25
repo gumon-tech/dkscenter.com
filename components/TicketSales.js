@@ -1,4 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import Button from './ui/button';
+import Badge from './ui/badge';
+import Card from './ui/card';
+import Input from './ui/input';
+import Divider from './ui/divider';
+
+const formatCurrency = (value) =>
+  Number(value || 0).toLocaleString('th-TH', {
+    style: 'currency',
+    currency: 'THB',
+  });
 
 const TicketCard = ({
   i18next,
@@ -72,66 +83,73 @@ const TicketCard = ({
   };
 
   return (
-    <div className="border border-gray-300 rounded p-4 mb-4 relative dark:border-gray-500 dark:bg-gray-700">
-      <div className="flex flex-wrap">
-        <h3 className="text-xl font-semibold mb-2 mr-auto">{ticket.name}</h3>
-        <div className="flex flex-nowrap ">
+    <Card className="mb-4 p-5">
+      <div className="flex flex-wrap items-start gap-4">
+        <div className="mr-auto">
+          <h3 className="text-xl font-semibold tracking-[-0.03em] text-text">
+            {ticket.name}
+          </h3>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {timeSaleType === 'isBeforeSales' && (
+              <Badge variant="warning">{t('ticket-card-available-until')}</Badge>
+            )}
+            {timeSaleType === 'isInSales' && (
+              <Badge variant="success">{t('ticket-card-available')}</Badge>
+            )}
+            {timeSaleType === 'isAfterSales' && (
+              <Badge variant="danger">{t('ticket-card-sold-out')}</Badge>
+            )}
+          </div>
+        </div>
+        <div className="flex items-center gap-3">
           {ticket.discountedPrice || ticket.discountedPrice === 0 ? (
-            <p className="text-gray-500 line-through mr-2 dark:text-gray-100">
-              {ticket.price.toLocaleString('th-TH', {
-                style: 'currency',
-                currency: 'THB',
-              })}
+            <p className="mr-1 text-sm text-soft line-through">
+              {formatCurrency(ticket.price)}
             </p>
           ) : (
-            <p className="text-lg text-gray-800 mb-2 mx-4 dark:text-gray-100">
-              {ticket.price.toLocaleString('th-TH', {
-                style: 'currency',
-                currency: 'THB',
-              })}
+            <p className="text-lg font-semibold text-text">
+              {formatCurrency(ticket.price)}
             </p>
           )}
           {(ticket.discountedPrice || ticket.discountedPrice === 0) && (
-            <p className="text-lg text-indigo-600 font-semibold mb-2 mx-4 dark:text-gray-100">
-              {ticket.discountedPrice.toLocaleString('th-TH', {
-                style: 'currency',
-                currency: 'THB',
-              })}
+            <p className="text-lg font-semibold text-primary">
+              {formatCurrency(ticket.discountedPrice)}
             </p>
           )}
           {timeSaleType === 'isBeforeSales' && <></>}
           {timeSaleType === 'isInSales' && (
-            <>
+            <div className="ml-2 inline-flex items-center gap-3 rounded-full border border-border/80 bg-surface px-2 py-2">
               <button
-                className="bg-blue-500 text-white px-2 py-1 rounded"
+                type="button"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-border/80 bg-surface-elevated text-text"
                 onClick={handleDecrease}
               >
                 -
               </button>
-              <span className="mx-2">{quantity}</span>
+              <span className="min-w-[1.5rem] text-center font-semibold text-text">
+                {quantity}
+              </span>
               <button
-                className="bg-blue-500 text-white px-2 py-1 rounded"
+                type="button"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-white"
                 onClick={handleIncrease}
               >
                 +
               </button>
-            </>
-          )}
-          {timeSaleType === 'isAfterSales' && (
-            <span className="text-red-500">{t('ticket-card-sold-out')}</span>
+            </div>
           )}
         </div>
       </div>
-      <div>
+      <div className="mt-4 space-y-2 text-sm leading-7 text-muted">
         <p>{availableText}</p>
         <p>{availableFromText}</p>
         {discountDetail?.discountCode && (
-          <p>
+          <p className="text-primary">
             {t('ticket-card-discount-on')}: {discountDetail.discountCode}
           </p>
         )}
       </div>
-    </div>
+    </Card>
   );
 };
 
@@ -178,56 +196,41 @@ const CartDetails = ({
   };
 
   return (
-    <div className="border border-gray-300 rounded p-4 dark:bg-gray-700">
-      <h2 className="text-lg font-semibold mb-4">
+    <Card className="p-5">
+      <h2 className="text-lg font-semibold tracking-[-0.03em] text-text">
         {t('ticket-cart-cart-details')}
       </h2>
-      {cartItems.map((item) => (
-        <div key={item.ticketId} className="cart-item mb-2">
-          <p>{item.name}</p>
-          <p>
-            {item.price.toLocaleString('th-TH', {
-              style: 'currency',
-              currency: 'THB',
-            })}{' '}
-            x {item.quantity}{' '}
-          </p>
-        </div>
-      ))}
-      <hr />
-      <br />
-      <p>
-        {t('ticket-cart-subtotal')} x{' '}
-        {calculateSubtotal().toLocaleString('th-TH', {
-          style: 'currency',
-          currency: 'THB',
-        })}
+      <div className="mt-4 space-y-3">
+        {cartItems.map((item) => (
+          <div key={item.ticketId} className="rounded-2xl border border-border/70 bg-surface px-4 py-4">
+            <p className="font-medium text-text">{item.name}</p>
+            <p className="mt-1 text-sm text-muted">
+              {formatCurrency(item.price)} x {item.quantity}
+            </p>
+          </div>
+        ))}
+      </div>
+      <Divider className="my-5" />
+      <div className="space-y-2 text-sm leading-7 text-muted">
+        <p>
+          {t('ticket-cart-subtotal')} : {formatCurrency(calculateSubtotal())}
+        </p>
+        <p>
+          {t('ticket-cart-discount')} : {formatCurrency(calculateDiscount())}
+        </p>
+      </div>
+      <Divider className="my-5" />
+      <p className="text-base font-semibold text-text">
+        {t('ticket-cart-total')} : {formatCurrency(calculateTotal())}
       </p>
-      <p>
-        {t('ticket-cart-discount')} x{' '}
-        {calculateDiscount().toLocaleString('th-TH', {
-          style: 'currency',
-          currency: 'THB',
-        })}
-      </p>
-      <hr />
-      <p>
-        {t('ticket-cart-total')} :{' '}
-        {calculateTotal().toLocaleString('th-TH', {
-          style: 'currency',
-          currency: 'THB',
-        })}
-      </p>
-      <button
-        className={`bg-green-500 text-white px-4 py-2 rounded mt-4 ${
-          isCartEmpty && 'opacity-50 cursor-not-allowed'
-        }`}
+      <Button
+        className={`mt-5 w-full ${isCartEmpty ? 'pointer-events-none opacity-50' : ''}`}
         onClick={checkoutCart}
         disabled={isCartEmpty}
       >
         {t('ticket-cart-checkout')}
-      </button>
-    </div>
+      </Button>
+    </Card>
   );
 };
 
@@ -279,8 +282,8 @@ const TicketSales = ({
   };
 
   return (
-    <div className="container mx-auto flex flex-col md:flex-row mt-8">
-      <div className="md:w-3/4 mr-4 mb-4 md:mb-0 ">
+    <div className="mx-auto mt-2 grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
+      <div>
         {tickets.map((ticket) => (
           <TicketCard
             i18next={i18next}
@@ -292,28 +295,27 @@ const TicketSales = ({
           />
         ))}
       </div>
-      <div className="md:w-1/4">
-        <div className="mb-4 flex items-center ">
-          <div className="mt-1 relative rounded-md shadow-sm flex-1">
-            <input
+      <div className="space-y-4">
+        <Card className="p-5">
+          <h3 className="text-base font-semibold text-text">
+            {t('ticket-sales-discount-code')}
+          </h3>
+          <div className="mt-4 flex items-end gap-3">
+            <Input
               type="text"
               name="discountCode"
               id="discountCode"
-              className="focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md px-4 py-2 shadow-md"
               placeholder={t('ticket-sales-discount-code')}
               value={temDiscountCode}
               onChange={handleDiscountCodeChange}
+              className="flex-1"
             />
+            <Button variant="secondary" onClick={applyDiscountCode}>
+              {t('ticket-sales-apply')}
+            </Button>
           </div>
-          <button
-            className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 ml-4"
-            onClick={applyDiscountCode}
-          >
-            {t('ticket-sales-apply')}
-          </button>
-        </div>
+        </Card>
 
-        <hr />
         <CartDetails
           i18next={i18next}
           cartItems={cartItems}

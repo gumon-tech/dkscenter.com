@@ -149,13 +149,13 @@ const CourseDetailLink = ({
         )}
 
         <div className="space-y-5">
-          <div className="course-theme-panel overflow-hidden rounded-2xl">
-            <table className="w-full text-left text-sm text-gray-500 dark:text-gray-400 rtl:text-right">
-              <thead className="course-theme-table-head text-xs uppercase text-gray-700 dark:text-gray-400">
+          <div className="course-theme-panel overflow-hidden rounded-[30px]">
+            <table className="w-full text-left text-sm text-muted rtl:text-right">
+              <thead className="course-theme-table-head text-xs uppercase text-soft">
                 <tr>
                   <th
                     scope="col"
-                    className="rounded-t-lg px-6 py-4 text-xl font-bold text-blue-700 dark:text-blue-400"
+                    className="rounded-t-[30px] px-6 py-5 text-xl font-semibold tracking-[-0.03em] text-text"
                   >
                     {t('course-detail-8')}
                   </th>
@@ -165,7 +165,7 @@ const CourseDetailLink = ({
                 <tr className="bg-transparent">
                   <th
                     scope="row"
-                    className="rounded-b-lg px-6 py-4 text-base font-semibold text-gray-700 dark:text-gray-300"
+                    className="rounded-b-[30px] border-t border-border/70 px-6 py-5 text-base font-semibold text-text"
                   >
                     {courseData.duration}
                   </th>

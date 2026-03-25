@@ -7,9 +7,9 @@ function cx(...classNames) {
 
 const styles = {
   primary:
-    'bg-primary text-white hover:bg-primary-strong focus-visible:outline-primary',
+    'border border-primary/10 bg-primary text-white shadow-glow hover:bg-primary-strong focus-visible:outline-primary',
   secondary:
-    'border border-border bg-surface text-text hover:border-primary/40 hover:text-primary focus-visible:outline-primary',
+    'border border-border/80 bg-surface-elevated text-text hover:border-primary/35 hover:text-primary focus-visible:outline-primary',
   ghost:
     'text-text hover:bg-primary/10 hover:text-primary focus-visible:outline-primary',
 };
@@ -24,7 +24,7 @@ export default function Button({
   return (
     <Component
       className={cx(
-        'inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2',
+        'inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-60',
         styles[variant] || styles.primary,
         className,
       )}

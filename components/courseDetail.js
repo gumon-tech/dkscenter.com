@@ -153,45 +153,33 @@ const CourseDetail = ({ courseData, i18next }) => {
         isConversionFocusedCourse ? 'pb-32 xl:pb-10' : ''
       }`}
     >
-      {isConversionFocusedCourse && (
-        <>
-          <div
-            aria-hidden="true"
-            className="course-theme-ambient pointer-events-none absolute inset-x-0 top-0 -z-10 h-[36rem]"
-          />
-          <div
-            aria-hidden="true"
-            className="course-theme-depth pointer-events-none absolute inset-x-0 top-[18rem] -z-10 h-[48rem]"
-          />
-        </>
-      )}
       <Breadcrumb
         paths={[
           { title: 'Training Course', path: '/course' },
           { title: courseData.code, path: `/course/${courseData?.key}` },
         ]}
       />
-      <section className="relative mt-3 grid gap-6 xl:mt-5 xl:grid-cols-[minmax(0,1.2fr)_420px] xl:items-start">
-        <div className="course-theme-hero relative overflow-hidden rounded-[32px] p-7 sm:p-8 xl:p-9">
+      <section className="relative mt-4 grid gap-6 xl:mt-6 xl:grid-cols-[minmax(0,1.2fr)_420px] xl:items-start">
+        <div className="course-theme-hero relative overflow-hidden rounded-[36px] p-7 sm:p-8 xl:p-10">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute right-[-10%] top-[-12%] h-56 w-56 rounded-full bg-cyan-400/18 blur-3xl"
+            className="pointer-events-none absolute right-[-10%] top-[-12%] h-56 w-56 rounded-full bg-primary/25 blur-3xl"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute bottom-[-18%] left-[-5%] h-56 w-56 rounded-full bg-blue-500/16 blur-3xl"
+            className="pointer-events-none absolute bottom-[-18%] left-[-5%] h-56 w-56 rounded-full bg-secondary/20 blur-3xl"
           />
 
           <div className="relative z-10">
             <div className="mb-5 flex flex-wrap items-center gap-2.5">
-              <span className="inline-flex rounded-full border border-cyan-400/25 bg-cyan-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-cyan-300">
+              <span className="inline-flex rounded-full border border-primary/25 bg-primary/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
                 {lineCopy.heroBadge}
               </span>
-              <span className="inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[12px] font-medium uppercase tracking-[0.18em] text-slate-300">
-                {locale === 'th' ? 'Premium Bootcamp' : 'Premium Bootcamp'}
+              <span className="inline-flex rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-[12px] font-medium uppercase tracking-[0.18em] text-primary-strong">
+                {locale === 'th' ? 'เวิร์กชอปเรือธง' : 'Signature workshop'}
               </span>
               {courseData.lastUpdate && (
-                <span className="text-[12px] font-medium uppercase tracking-[0.18em] text-slate-400">
+                <span className="text-[12px] font-medium uppercase tracking-[0.18em] text-soft">
                   {t('course-detail-2')}{' '}
                   {formatCourseDateTime(courseData.lastUpdate, locale)}
                 </span>
@@ -212,7 +200,7 @@ const CourseDetail = ({ courseData, i18next }) => {
                   key={item.label}
                   className="course-theme-subtle rounded-2xl px-4 py-4 backdrop-blur-sm"
                 >
-                  <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-cyan-300/80">
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-strong">
                     {item.label}
                   </div>
                   <div className="course-contrast-heading mt-2 text-[17px] font-medium leading-7">
@@ -244,58 +232,46 @@ const CourseDetail = ({ courseData, i18next }) => {
               {lineCopy.heroMicrocopy}
             </p>
 
-            <div className="mt-8 grid gap-3 lg:grid-cols-[1.15fr_0.85fr]">
-              <div className="course-theme-subtle rounded-[28px] p-5 backdrop-blur-sm">
-                <div className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-cyan-300/70">
+            <div className="mt-8">
+              <div className="course-theme-soft-panel rounded-[30px] p-6 lg:p-7">
+                <div className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
                   {locale === 'th' ? 'Why This Course' : 'Why This Course'}
                 </div>
-                <div className="grid gap-3 sm:grid-cols-3">
+                <div className="mt-5 space-y-4">
                   {heroHighlights.map((item, index) => (
                     <div
                       key={index}
-                      className="course-theme-subtle course-contrast-copy rounded-2xl px-4 py-4 text-sm leading-7"
+                      className="rounded-[24px] border border-border/60 bg-surface/70 px-5 py-5"
                     >
-                      {item}
+                      <div className="flex items-start gap-4">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-primary/20 bg-primary/10 text-sm font-semibold text-primary-strong">
+                          0{index + 1}
+                        </div>
+                        <div className="min-w-0 flex-1 border-l border-border/60 pl-4">
+                          <p className="course-copy max-w-3xl text-[1.05rem] leading-8 lg:text-[1.1rem] lg:leading-9">
+                            {item}
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>
-              </div>
-
-              <div className="course-theme-subtle rounded-[28px] p-5 backdrop-blur-sm">
-                <div className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-cyan-300/70">
-                  {locale === 'th' ? 'Quick Facts' : 'Quick Facts'}
-                </div>
-                <dl className="space-y-3">
-                  {overviewCards.map((item) => (
-                    <div
-                      key={item.label}
-                      className="flex items-start justify-between gap-4 border-b border-white/8 pb-3 last:border-b-0 last:pb-0"
-                    >
-                      <dt className="text-xs uppercase tracking-[0.16em] text-slate-400">
-                        {item.label}
-                      </dt>
-                      <dd className="course-contrast-heading text-right text-sm font-medium leading-6">
-                        {item.value}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
               </div>
             </div>
 
             <div className="mt-6 flex flex-wrap gap-2">
-              <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium tracking-[0.14em] text-slate-300 uppercase">
+              <span className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.14em] text-primary-strong">
                 {locale === 'th' ? 'Hands-on Workshop' : 'Hands-on Workshop'}
               </span>
-              <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium tracking-[0.14em] text-slate-300 uppercase">
+              <span className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.14em] text-primary-strong">
                 {locale === 'th' ? 'Onsite Training' : 'Onsite Training'}
               </span>
-              <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium tracking-[0.14em] text-slate-300 uppercase">
+              <span className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.14em] text-primary-strong">
                 {locale === 'th'
                   ? 'Certificate Included'
                   : 'Certificate Included'}
               </span>
-              <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium tracking-[0.14em] text-slate-300 uppercase">
+              <span className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.14em] text-primary-strong">
                 {locale === 'th' ? 'Developer Focused' : 'Developer Focused'}
               </span>
             </div>
@@ -306,18 +282,18 @@ const CourseDetail = ({ courseData, i18next }) => {
           <aside className="course-theme-panel relative overflow-hidden rounded-[32px] p-4 sm:p-5 xl:p-6">
             <div className="mb-4 flex items-center justify-between gap-3">
               <div>
-                <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-cyan-400/80">
+                <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
                   {locale === 'th' ? 'Next Session' : 'Next Session'}
                 </div>
                 <div className="course-heading mt-1 text-lg font-semibold">
                   {scheduleDateRange}
                 </div>
               </div>
-              <span className="rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-emerald-300">
+              <span className="rounded-full border border-secondary/25 bg-secondary/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-secondary">
                 {locale === 'th' ? 'Onsite' : 'Onsite'}
               </span>
             </div>
-            <div className="relative overflow-hidden rounded-[26px] border border-slate-200 bg-slate-100 dark:border-white/10 dark:bg-slate-950/40">
+            <div className="relative overflow-hidden rounded-[26px] border border-border/70 bg-background-alt">
               <div className="relative aspect-[5/3] w-full">
                 <Image
                   src={featuredImage}
@@ -328,9 +304,31 @@ const CourseDetail = ({ courseData, i18next }) => {
                 />
               </div>
             </div>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-1">
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 dark:border-white/10 dark:bg-white/[0.04]">
-                <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+            <div className="mt-4 grid gap-3">
+              <div className="rounded-2xl border border-border/70 bg-surface px-4 py-4">
+                <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
+                  {locale === 'th' ? 'Quick Facts' : 'Quick Facts'}
+                </div>
+                <dl className="mt-3 space-y-0">
+                  {overviewCards.map((item) => (
+                    <div
+                      key={item.label}
+                      className="border-b border-border/60 py-4 first:pt-1 last:border-b-0 last:pb-1"
+                    >
+                      <dt className="text-[11px] font-semibold uppercase tracking-[0.2em] text-soft">
+                        {item.label}
+                      </dt>
+                      <dd className="mt-2 text-lg font-semibold leading-7 text-text">
+                        {item.value}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+
+            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-1">
+              <div className="rounded-2xl border border-border/70 bg-surface px-4 py-4">
+                <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-soft">
                   {locale === 'th' ? 'Schedule' : 'Schedule'}
                 </div>
                 <div className="course-copy mt-2 text-sm leading-7">
@@ -338,19 +336,20 @@ const CourseDetail = ({ courseData, i18next }) => {
                   <div>{scheduleTimeRange}</div>
                 </div>
               </div>
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 dark:border-white/10 dark:bg-white/[0.04]">
-                <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+              <div className="rounded-2xl border border-border/70 bg-surface px-4 py-4">
+                <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-soft">
                   {locale === 'th' ? 'Best For' : 'Best For'}
                 </div>
                 <ul className="course-copy mt-2 space-y-2 text-sm leading-6">
                   {audienceHighlights.map((item, index) => (
                     <li key={index} className="flex gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-cyan-300" />
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
+            </div>
             </div>
           </aside>
         )}
@@ -373,7 +372,7 @@ const CourseDetail = ({ courseData, i18next }) => {
                   {heroHighlights.map((item, index) => (
                     <div
                       key={index}
-                      className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm leading-7 text-slate-700 dark:border-white/8 dark:bg-white/[0.03] dark:text-slate-200/90"
+                      className="rounded-2xl border border-border/70 bg-surface px-4 py-4 text-sm leading-7 text-muted"
                     >
                       {item}
                     </div>
@@ -502,7 +501,7 @@ const CourseDetail = ({ courseData, i18next }) => {
       )}
 
       {isConversionFocusedCourse && (
-        <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-slate-950/95 px-4 py-3 shadow-2xl backdrop-blur xl:hidden">
+        <div className="fixed inset-x-0 bottom-0 z-40 border-t border-border/70 bg-surface-glass px-4 py-3 shadow-floating backdrop-blur-2xl xl:hidden">
           <div className="mx-auto flex max-w-5xl flex-col gap-2">
             <LineContactButton
               courseData={courseData}

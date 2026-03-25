@@ -1,27 +1,24 @@
 import React from 'react';
 
 const Modal = ({ isOpen, onClose, children, title }) => {
-  const modalStyle = {
-    minWidth: '70vw', // ขนาดขั้นต่ำของ modal เป็น 70% ของ viewport width
-    // minHeight: '100vh', // ขนาดขั้นต่ำของ modal เป็น 70% ของ viewport height
-  };
-
-  if (!isOpen) return <></>;
+  if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50">
+    <div className="fixed inset-0 z-50 flex items-center justify-center px-4 py-6 sm:px-6">
       <div
-        className="fixed inset-0 bg-black opacity-50"
+        className="fixed inset-0 bg-[rgba(3,8,17,0.76)] backdrop-blur-md"
         onClick={onClose}
-      ></div>
+      />
       <div
-        className="relative bg-white p-0 max-w-4xl w-full md:max-w-2xl md:w-3/4 lg:w-1/2 xl:w-1/3 mx-auto z-10 rounded-lg shadow-lg overflow-y-auto max-h-screen h-5/6 w-5/6 dark:bg-gray-800 dark:border-gray-700"
-        style={modalStyle}
+        className="relative z-10 flex max-h-[90vh] w-full max-w-5xl flex-col overflow-hidden rounded-[32px] border border-border/70 bg-surface-glass shadow-floating backdrop-blur-2xl"
       >
-        <div className="static top-0 left-0 right-0 flex justify-between mb-4 bg-gray-100 border-b border-gray-200 px-4 py-2 rounded-t-lg w-full dark:bg-gray-500 dark:border-gray-700">
-          <h2 className="p-2 text-lg font-semibold ">{title}</h2>
+        <div className="flex items-center justify-between border-b border-border/70 bg-surface/80 px-5 py-4 sm:px-6">
+          <h2 className="pr-4 text-lg font-semibold tracking-[-0.03em] text-text sm:text-xl">
+            {title}
+          </h2>
           <button
-            className="text-gray-600 hover:text-gray-800 focus:outline-none dark:text-gray-100"
+            type="button"
+            className="flex h-10 w-10 items-center justify-center rounded-2xl border border-border/70 bg-surface text-soft hover:text-text"
             onClick={onClose}
           >
             <svg
@@ -40,8 +37,9 @@ const Modal = ({ isOpen, onClose, children, title }) => {
             </svg>
           </button>
         </div>
-        <div className="h-2/3 px-8 pb-8">{children}</div>{' '}
-        {/* เพิ่ม class overflow-y-auto และ max-h-96 เพื่อให้มีการเลื่อนแนวตั้งเฉพาะเนื้อหา */}
+        <div className="overflow-y-auto px-5 pb-6 pt-5 sm:px-6 sm:pb-8">
+          {children}
+        </div>
       </div>
     </div>
   );

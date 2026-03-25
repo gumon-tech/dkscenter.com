@@ -47,12 +47,13 @@ const LanguageSwitchLink = ({ className, locale, ...rest }) => {
     >
       {locale === 'th' && (
         <>
-          <span className="text-indigo-500">English</span> | ไทย
+          <span className="text-primary">English</span> <span>/ ไทย</span>
         </>
       )}
       {locale === 'en' && (
         <>
-          English | <span className="text-indigo-500">ไทย</span>
+          <span>English / </span>
+          <span className="text-primary">ไทย</span>
         </>
       )}
     </Link>

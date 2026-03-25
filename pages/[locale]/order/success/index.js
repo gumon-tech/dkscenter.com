@@ -26,7 +26,7 @@ const Success = () => {
         description={t('head-content')}
       />
       <SiteShell i18next={i18next}>
-        <FetchSuccessDetail i18next={i18next} orderId={order} />
+        <FetchSuccessDetail i18next={i18next} orderId={order} mode="success" />
       </SiteShell>
     </>
   );

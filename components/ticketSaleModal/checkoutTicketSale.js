@@ -4,6 +4,10 @@ import Countdown from 'react-countdown';
 import { ticketsCheckout } from '../../utils/ticketsCheckout';
 import { useRouter } from 'next/router';
 import { refreshEmailToken } from '../../utils/refreshEmailToken';
+import Card from '../ui/card';
+import Input from '../ui/input';
+import Button from '../ui/button';
+import Badge from '../ui/badge';
 
 export default function CheckoutTicketSale({
   i18next,
@@ -99,12 +103,12 @@ export default function CheckoutTicketSale({
 
   if (isLoading)
     return (
-      <div className="grid justify-center content-center items-center h-max">
+      <div className="grid h-[320px] items-center justify-center">
         <ReactLoading
           type="spinningBubbles"
-          color={'#049ee8'}
-          height={200} // ปรับความสูง
-          width={200} // ปรับความกว้าง
+          color={'#2458ff'}
+          height={120}
+          width={120}
         />
       </div>
     );
@@ -112,7 +116,7 @@ export default function CheckoutTicketSale({
   return (
     <>
       {error && (
-        <div className="error text-red-500">
+        <div className="mb-5 rounded-2xl border border-danger/20 bg-danger/10 px-4 py-4 text-sm text-danger">
           {error?.response?.data?.errors &&
             error?.response?.data?.errors.map((error, index) => (
               <div key={'error_' + index}>
@@ -125,69 +129,66 @@ export default function CheckoutTicketSale({
         </div>
       )}
       <div className="pb-8">
-        <p className="text-left text-gray-600 mb-2  text-gray-200">
+        <div className="mb-5 flex flex-wrap items-center gap-3">
+          <Badge>{t('ticket-checkout-expire')}: <Countdown date={reserveExpire} /></Badge>
+        </div>
+        <p className="mb-5 text-sm leading-7 text-muted">
           {t('ticket-checkout-expire')}: <Countdown date={reserveExpire} />
         </p>
         <form onSubmit={handleSubmit}>
           {contacts.map((contact, index) => (
-            <div
-              key={index}
-              className="bg-white shadow-md rounded p-4 mb-8 border border-gray-200 dark:bg-gray-700 dark:border-gray-700"
-            >
-              <h2 className="text-lg font-semibold mb-2">
+            <Card key={index} className="mb-6 p-5">
+              <h2 className="mb-4 text-lg font-semibold tracking-[-0.03em] text-text">
                 {t('ticket-checkout-contact')} {index + 1}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input
+                <Input
                   type="text"
-                  placeholder={t('ticket-checkout-first-name')}
                   id={`firstName_${index}`}
                   name={`firstName_${index}`}
+                  label={t('ticket-checkout-first-name')}
+                  placeholder={t('ticket-checkout-first-name')}
                   value={contacts[index]?.firstName || ''}
                   onChange={(event) => handleInputFirstName(index, event)}
-                  className="border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500 mb-4 md:mb-0 dark:border-gray-700"
                   required
                 />
-                <input
+                <Input
                   type="text"
-                  placeholder={t('ticket-checkout-last-name')}
                   id={`lastName_${index}`}
                   name={`lastName_${index}`}
+                  label={t('ticket-checkout-last-name')}
+                  placeholder={t('ticket-checkout-last-name')}
                   value={contacts[index]?.lastName || ''}
                   onChange={(event) => handleInputLastName(index, event)}
-                  className="border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500 mb-4 md:mb-0"
                   required
                 />
-                <input
+                <Input
                   type="email"
-                  placeholder={t('ticket-checkout-email')}
                   id={`email_${index}`}
                   name={`email_${index}`}
+                  label={t('ticket-checkout-email')}
+                  placeholder={t('ticket-checkout-email')}
                   value={contacts[index]?.email || ''}
                   onChange={(event) => handleInputEmail(index, event)}
-                  className="border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500 mb-4 md:mb-0"
                   required
                 />
-                <input
+                <Input
                   type="tel"
-                  placeholder={t('ticket-checkout-phone-number')}
                   id={`phoneNumber_${index}`}
                   name={`phoneNumber_${index}`}
+                  label={t('ticket-checkout-phone-number')}
+                  placeholder={t('ticket-checkout-phone-number')}
                   value={contacts[index]?.phoneNumber || ''}
                   onChange={(event) => handleInputPhoneNumber(index, event)}
-                  className="border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500 mb-4 md:mb-0"
                   required
                   maxLength={10}
                 />
               </div>
-            </div>
+            </Card>
           ))}
-          <button
-            type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 w-full transition duration-300 ease-in-out"
-          >
+          <Button type="submit" className="w-full">
             {t('ticket-checkout-submit')}
-          </button>
+          </Button>
         </form>
       </div>
     </>

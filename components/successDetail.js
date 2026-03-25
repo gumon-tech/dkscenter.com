@@ -1,5 +1,4 @@
 import React from 'react';
-import Container from './container';
 import {
   EnvelopeIcon,
   CalendarIcon,
@@ -9,149 +8,301 @@ import {
   UsersIcon,
   DocumentTextIcon,
   CheckCircleIcon,
+  XCircleIcon,
+  ArrowTopRightOnSquareIcon,
 } from '@heroicons/react/24/outline';
+import Card from './ui/card';
+import Badge from './ui/badge';
+import Button from './ui/button';
+import Link from './link';
 
-const SuccessDetail = ({ orderData, i18next: _i18next }) => {
+const formatCurrency = (value) =>
+  Number(value || 0).toLocaleString('th-TH', {
+    style: 'currency',
+    currency: 'THB',
+  });
+
+const detailRowClass =
+  'flex items-start gap-3 text-sm leading-7 text-muted';
+
+const SuccessDetail = ({ orderData, i18next, mode = 'success' }) => {
+  const { t } = i18next;
   if (!orderData) return <></>;
 
+  const isCancel = mode === 'cancel';
+  const statusLabel = isCancel
+    ? t('order-cancel-badge')
+    : t('order-success-badge');
+  const bannerTitle = isCancel
+    ? t('order-cancel-title')
+    : t('order-success-title');
+  const bannerDescription = isCancel
+    ? t('order-cancel-description')
+    : t('order-success-description');
+  const StatusIcon = isCancel ? XCircleIcon : CheckCircleIcon;
+
   return (
-    <Container>
-      <div className="container mx-auto mt-8 px-4">
-        <h1 className="text-3xl font-semibold mb-6 flex items-center">
-          <TicketIcon className="h-8 w-8 text-blue-500 dark:text-blue-400 mr-2" />
-          Order #{orderData?.orderId}
-        </h1>
-
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
-          <div className="flex items-center text-gray-900 dark:text-gray-100">
-            <CheckCircleIcon className="h-6 w-6 text-green-500 dark:text-green-400 mr-2" />
-            <span>
-              Please check your email for further details and updates regarding
-              your order.
-            </span>
+    <div className="pb-section">
+      <section className="mt-6 rounded-[36px] border border-border/70 bg-[linear-gradient(145deg,rgba(11,19,35,0.95),rgba(18,34,66,0.96),rgba(27,47,92,0.94))] px-6 py-8 shadow-floating sm:px-8 lg:px-10">
+        <Badge variant={isCancel ? 'warning' : 'success'}>{statusLabel}</Badge>
+        <div className="mt-5 flex flex-wrap items-start gap-4">
+          <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/10">
+            <StatusIcon className="h-8 w-8 text-white" />
+          </div>
+          <div className="flex-1">
+            <h1 className="text-4xl font-semibold tracking-[-0.05em] text-white sm:text-5xl">
+              {bannerTitle}
+            </h1>
+            <p className="mt-4 max-w-3xl text-base leading-8 text-muted sm:text-lg">
+              {bannerDescription}
+            </p>
           </div>
         </div>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Button as={Link} href="/course">
+            {t('nav-course')}
+          </Button>
+          <Button as={Link} href="/about-us" variant="secondary">
+            {t('nav-about-us')}
+          </Button>
+        </div>
+      </section>
 
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
-          <div className="mb-4">
-            <h2 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">
-              Order Status: {orderData?.ticketDetail?.eventName}
+      <div className="mt-8 grid gap-6 xl:grid-cols-[1.05fr_0.95fr]">
+        <Card className="p-6 sm:p-8">
+          <div className="mb-6 flex items-center gap-3">
+            <TicketIcon className="h-6 w-6 text-primary" />
+            <h2 className="text-2xl font-semibold tracking-[-0.03em] text-text">
+              {t('order-summary-title')}
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 flex items-center">
-              <TagIcon className="h-5 w-5 text-blue-500 dark:text-blue-400 mr-2" />
-              {orderData?.orderStatus}
-            </p>
-            <p className="text-gray-700 dark:text-gray-300 flex items-center">
-              <TagIcon className="h-5 w-5 text-blue-500 dark:text-blue-400 mr-2" />
-              Total Price: {orderData?.totalPrice} บาท
-            </p>
-            <p className="text-gray-700 dark:text-gray-300 flex items-center">
-              <EnvelopeIcon className="h-5 w-5 text-blue-500 dark:text-blue-400 mr-2" />
-              Email: {orderData?.userEmail}
-            </p>
-
-            <p className="text-gray-700 dark:text-gray-300 flex items-center">
-              <TagIcon className="h-5 w-5 text-blue-500 dark:text-blue-400 mr-2" />
-              Total Unit Price: {orderData?.totalUnitPrice} บาท
-            </p>
-            <p className="text-gray-700 dark:text-gray-300 flex items-center">
-              <CalendarIcon className="h-5 w-5 text-blue-500 dark:text-blue-400 mr-2" />
-              Purchase Time: {new Date(orderData?.timestamp).toLocaleString()}
-            </p>
-            <p className="text-gray-700 dark:text-gray-300 flex items-center">
-              <TagIcon className="h-5 w-5 text-blue-500 dark:text-blue-400 mr-2" />
-              Schedule Key: {orderData?.scheduleKey}
-            </p>
-            <p className="text-gray-700 dark:text-gray-300 flex items-center">
-              <TagIcon className="h-5 w-5 text-blue-500 dark:text-blue-400 mr-2" />
-              Reserve ID: {orderData?.reserveId}
-            </p>
           </div>
-          <div>
-            <h3 className="text-lg font-semibold mt-4 mb-2 flex items-center text-gray-900 dark:text-gray-100">
-              <UsersIcon className="h-6 w-6 text-blue-500 dark:text-blue-400 mr-2" />
-              Attendees
-            </h3>
-            <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300">
-              {orderData?.attendees?.map((attendee, index) => (
-                <li key={index}>
-                  {attendee.firstName} {attendee.lastName} - {attendee.email}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
-          <h2 className="text-xl font-semibold mb-4 flex items-center text-gray-900 dark:text-gray-100">
-            <DocumentTextIcon className="h-6 w-6 text-blue-500 dark:text-blue-400 mr-2" />
-            Ticket Details
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="p-4 bg-gray-100 dark:bg-gray-700 rounded-lg">
-              <p className="text-gray-700 dark:text-gray-300 flex items-center">
-                <TicketIcon className="h-5 w-5 text-blue-500 dark:text-blue-400 mr-2" />
-                Number of Tickets: {orderData?.ticketAmount}
-              </p>
-              <p className="text-gray-700 dark:text-gray-300 flex items-center">
-                <MapPinIcon className="h-5 w-5 text-blue-500 dark:text-blue-400 mr-2" />
-                Location: {orderData?.ticketDetail?.eventLocation}
-              </p>
-              <p className="text-gray-700 dark:text-gray-300 flex items-center">
-                <CalendarIcon className="h-5 w-5 text-blue-500 dark:text-blue-400 mr-2" />
-                Date: {orderData?.ticketDetail?.eventDate}
-              </p>
-              <p className="text-gray-700 dark:text-gray-300 flex items-center">
-                <CalendarIcon className="h-5 w-5 text-blue-500 dark:text-blue-400 mr-2" />
-                Time: {orderData?.ticketDetail?.eventTime}
-              </p>
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className={detailRowClass}>
+              <TagIcon className="mt-1 h-5 w-5 text-primary" />
+              <div>
+                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
+                  {t('order-label-order-id')}
+                </div>
+                <div className="text-text">#{orderData?.orderId}</div>
+              </div>
             </div>
-            <div className="p-4 bg-gray-100 dark:bg-gray-700 rounded-lg">
-              <p className="text-gray-700 dark:text-gray-300 flex items-center">
-                <TagIcon className="h-5 w-5 text-blue-500 dark:text-blue-400 mr-2" />
-                <a
-                  target="_blank"
-                  className="text-blue-500 dark:text-blue-400 underline"
-                  href={orderData?.ticketDetail?.detailLink}
-                  rel="noreferrer"
-                >
-                  Detail Link: Clink to course detail{' '}
-                </a>
-              </p>
-              <p className="text-gray-700 dark:text-gray-300 flex items-center">
-                <TagIcon className="h-5 w-5 text-blue-500 dark:text-blue-400 mr-2" />
-                Ticket Type: {orderData?.ticketDetail?.name}
-              </p>
-              <p className="text-gray-700 dark:text-gray-300 flex items-center">
-                <TagIcon className="h-5 w-5 text-blue-500 dark:text-blue-400 mr-2" />
-                Price: {orderData?.ticketDetail?.price} บาท
-              </p>
+            <div className={detailRowClass}>
+              <TagIcon className="mt-1 h-5 w-5 text-primary" />
+              <div>
+                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
+                  {t('order-label-status')}
+                </div>
+                <div className="text-text">{orderData?.orderStatus}</div>
+              </div>
+            </div>
+            <div className={detailRowClass}>
+              <EnvelopeIcon className="mt-1 h-5 w-5 text-primary" />
+              <div>
+                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
+                  {t('order-label-email')}
+                </div>
+                <div className="text-text">{orderData?.userEmail}</div>
+              </div>
+            </div>
+            <div className={detailRowClass}>
+              <CalendarIcon className="mt-1 h-5 w-5 text-primary" />
+              <div>
+                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
+                  {t('order-label-purchase-time')}
+                </div>
+                <div className="text-text">
+                  {new Date(orderData?.timestamp).toLocaleString()}
+                </div>
+              </div>
+            </div>
+            <div className={detailRowClass}>
+              <TagIcon className="mt-1 h-5 w-5 text-primary" />
+              <div>
+                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
+                  {t('order-label-total')}
+                </div>
+                <div className="text-text">{formatCurrency(orderData?.totalPrice)}</div>
+              </div>
+            </div>
+            <div className={detailRowClass}>
+              <TagIcon className="mt-1 h-5 w-5 text-primary" />
+              <div>
+                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
+                  {t('order-label-unit-total')}
+                </div>
+                <div className="text-text">
+                  {formatCurrency(orderData?.totalUnitPrice)}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </Card>
 
-        {orderData?.discountDetail && (
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
-            <h2 className="text-xl font-semibold mb-4 flex items-center text-gray-900 dark:text-gray-100">
-              <TagIcon className="h-6 w-6 text-blue-500 dark:text-blue-400 mr-2" />
-              Discount Details
+        <Card className="p-6 sm:p-8">
+          <div className="mb-6 flex items-center gap-3">
+            <DocumentTextIcon className="h-6 w-6 text-primary" />
+            <h2 className="text-2xl font-semibold tracking-[-0.03em] text-text">
+              {t('order-ticket-title')}
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 flex items-center">
-              <TagIcon className="h-5 w-5 text-blue-500 dark:text-blue-400 mr-2" />
-              Code: {orderData?.discountDetail?.discountCode}
-            </p>
-            <p className="text-gray-700 dark:text-gray-300 flex items-center">
-              <TagIcon className="h-5 w-5 text-blue-500 dark:text-blue-400 mr-2" />
-              Type: {orderData?.discountDetail?.discountType}
-            </p>
-            <p className="text-gray-700 dark:text-gray-300 flex items-center">
-              <TagIcon className="h-5 w-5 text-blue-500 dark:text-blue-400 mr-2" />
-              Value: {orderData?.discountDetail?.discountValue}
-            </p>
           </div>
-        )}
+          <div className="space-y-4">
+            <div className={detailRowClass}>
+              <TicketIcon className="mt-1 h-5 w-5 text-primary" />
+              <div>
+                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
+                  {t('order-label-event')}
+                </div>
+                <div className="text-text">{orderData?.ticketDetail?.eventName}</div>
+              </div>
+            </div>
+            <div className={detailRowClass}>
+              <TicketIcon className="mt-1 h-5 w-5 text-primary" />
+              <div>
+                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
+                  {t('order-label-ticket-type')}
+                </div>
+                <div className="text-text">{orderData?.ticketDetail?.name}</div>
+              </div>
+            </div>
+            <div className={detailRowClass}>
+              <MapPinIcon className="mt-1 h-5 w-5 text-primary" />
+              <div>
+                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
+                  {t('order-label-location')}
+                </div>
+                <div className="text-text">{orderData?.ticketDetail?.eventLocation}</div>
+              </div>
+            </div>
+            <div className={detailRowClass}>
+              <CalendarIcon className="mt-1 h-5 w-5 text-primary" />
+              <div>
+                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
+                  {t('order-label-date-time')}
+                </div>
+                <div className="text-text">
+                  {orderData?.ticketDetail?.eventDate} {orderData?.ticketDetail?.eventTime}
+                </div>
+              </div>
+            </div>
+            <div className={detailRowClass}>
+              <TagIcon className="mt-1 h-5 w-5 text-primary" />
+              <div>
+                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
+                  {t('order-label-ticket-amount')}
+                </div>
+                <div className="text-text">{orderData?.ticketAmount}</div>
+              </div>
+            </div>
+            {orderData?.ticketDetail?.detailLink ? (
+              <a
+                target="_blank"
+                className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary-strong"
+                href={orderData?.ticketDetail?.detailLink}
+                rel="noreferrer"
+              >
+                {t('order-open-course-link')}
+                <ArrowTopRightOnSquareIcon className="h-4 w-4" />
+              </a>
+            ) : null}
+          </div>
+        </Card>
       </div>
-    </Container>
+
+      <div className="mt-6 grid gap-6 xl:grid-cols-[1.05fr_0.95fr]">
+        <Card className="p-6 sm:p-8">
+          <div className="mb-6 flex items-center gap-3">
+            <UsersIcon className="h-6 w-6 text-primary" />
+            <h2 className="text-2xl font-semibold tracking-[-0.03em] text-text">
+              {t('order-attendees-title')}
+            </h2>
+          </div>
+          <div className="space-y-4">
+            {orderData?.attendees?.map((attendee, index) => (
+              <div
+                key={index}
+                className="rounded-2xl border border-border/70 bg-surface px-4 py-4"
+              >
+                <div className="font-medium text-text">
+                  {attendee.firstName} {attendee.lastName}
+                </div>
+                <div className="mt-1 text-sm text-muted">{attendee.email}</div>
+              </div>
+            ))}
+          </div>
+        </Card>
+
+        <div className="space-y-6">
+          <Card className="p-6 sm:p-8">
+            <div className="mb-6 flex items-center gap-3">
+              <TagIcon className="h-6 w-6 text-primary" />
+              <h2 className="text-2xl font-semibold tracking-[-0.03em] text-text">
+                {t('order-reference-title')}
+              </h2>
+            </div>
+            <div className="space-y-4">
+              <div className={detailRowClass}>
+                <TagIcon className="mt-1 h-5 w-5 text-primary" />
+                <div>
+                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
+                    {t('order-label-schedule-key')}
+                  </div>
+                  <div className="text-text break-all">{orderData?.scheduleKey}</div>
+                </div>
+              </div>
+              <div className={detailRowClass}>
+                <TagIcon className="mt-1 h-5 w-5 text-primary" />
+                <div>
+                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
+                    {t('order-label-reserve-id')}
+                  </div>
+                  <div className="text-text break-all">{orderData?.reserveId}</div>
+                </div>
+              </div>
+            </div>
+          </Card>
+
+          {orderData?.discountDetail ? (
+            <Card className="p-6 sm:p-8">
+              <div className="mb-6 flex items-center gap-3">
+                <TagIcon className="h-6 w-6 text-primary" />
+                <h2 className="text-2xl font-semibold tracking-[-0.03em] text-text">
+                  {t('order-discount-title')}
+                </h2>
+              </div>
+              <div className="space-y-4">
+                <div className={detailRowClass}>
+                  <TagIcon className="mt-1 h-5 w-5 text-primary" />
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
+                      {t('order-label-discount-code')}
+                    </div>
+                    <div className="text-text">{orderData?.discountDetail?.discountCode}</div>
+                  </div>
+                </div>
+                <div className={detailRowClass}>
+                  <TagIcon className="mt-1 h-5 w-5 text-primary" />
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
+                      {t('order-label-discount-type')}
+                    </div>
+                    <div className="text-text">{orderData?.discountDetail?.discountType}</div>
+                  </div>
+                </div>
+                <div className={detailRowClass}>
+                  <TagIcon className="mt-1 h-5 w-5 text-primary" />
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
+                      {t('order-label-discount-value')}
+                    </div>
+                    <div className="text-text">{orderData?.discountDetail?.discountValue}</div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          ) : null}
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -3,6 +3,7 @@ import Link from '/components/link';
 import { getActiveCourses, removeCoursesOutDate } from '../utils/course';
 import { getSchedule } from '../utils/dateTime';
 import Card from './ui/card';
+import Badge from './ui/badge';
 
 export default function Table(props) {
   const i18next = props.i18next;
@@ -12,54 +13,56 @@ export default function Table(props) {
   courses = removeCoursesOutDate(courses);
 
   return (
-    <Card className="overflow-hidden">
-      <div className="relative rounded-xl overflow-auto">
-        <div className="shadow-sm table-overflow overflow-hidden my-8">
-          <table className="border-collapse table-auto w-full text-base">
+    <Card className="overflow-hidden p-0">
+      <div className="relative overflow-auto">
+        <div className="table-overflow overflow-hidden">
+          <table className="w-full border-collapse table-auto text-base">
             <thead>
-              <tr>
-                <th className="font-bold text-xl border-b dark:border-slate-600  text-slate-400  dark:text-slate-200 text-center p-4">
+              <tr className="bg-surface">
+                <th className="border-b border-border/70 p-5 text-left text-xs font-semibold uppercase tracking-[0.2em] text-soft">
                   {t('schedule-course')}
                 </th>
-                {/* <th className="font-bold text-xl border-b dark:border-slate-600  text-slate-400  dark:text-slate-200 text-center p-4 ">
-                  Code
-                </th> */}
-                <th className="font-bold text-xl border-b dark:border-slate-600  text-slate-400  dark:text-slate-200 text-center p-4 ">
+                <th className="border-b border-border/70 p-5 text-left text-xs font-semibold uppercase tracking-[0.2em] text-soft">
                   {t('schedule-duration')}
                 </th>
-                <th className="font-bold text-xl border-b dark:border-slate-600  text-slate-400  dark:text-slate-200 text-center p-4 ">
+                <th className="border-b border-border/70 p-5 text-left text-xs font-semibold uppercase tracking-[0.2em] text-soft">
                   {t('schedule-schedule')}
                 </th>
               </tr>
             </thead>
-            <tbody className="bg-white dark:bg-slate-800">
+            <tbody className="bg-transparent">
               {courses.map((course, index) => {
                 return (
-                  <tr key={course.key + '-' + index}>
-                    <td className="font-bold border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-200 text-left">
+                  <tr
+                    key={course.key + '-' + index}
+                    className="align-top odd:bg-transparent even:bg-surface/50"
+                  >
+                    <td className="border-b border-border/70 p-5 text-left">
                       <Link
                         href={`/course/${course.key}`}
-                        className="hover:text-cyan-600 text-left"
+                        className="block text-lg font-semibold tracking-[-0.03em] text-text hover:text-primary"
                       >
                         {course.title}
                       </Link>
+                      <div className="mt-3">
+                        <Badge variant="neutral">{course.code}</Badge>
+                      </div>
                     </td>
-                    {/* <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">
-                      {course.code}
-                    </td> */}
-                    <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">
+                    <td className="border-b border-border/70 p-5 text-sm leading-7 text-muted">
                       {course.duration}
                     </td>
 
-                    <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">
+                    <td className="border-b border-border/70 p-5 text-sm text-muted">
                       {course.publicSchedule.map((schedule, index) => {
                         return (
                           <div
                             key={'schedule-' + index}
-                            className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"
+                            className="mb-3 rounded-2xl border border-border/70 bg-surface px-4 py-4 last:mb-0"
                           >
-                            <div className="text-left">{schedule.title}</div>
-                            <div className="font-bold text-left">
+                            <div className="text-left font-semibold text-text">
+                              {schedule.title}
+                            </div>
+                            <div className="mt-2 text-left leading-7 text-muted">
                               {getSchedule(
                                 schedule.eventStart,
                                 schedule.eventEnd,

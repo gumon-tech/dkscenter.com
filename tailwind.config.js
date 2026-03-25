@@ -14,40 +14,34 @@ module.exports = {
     extend: {
       colors: {
         trueGray: colors.neutral,
+        background: 'var(--color-background)',
+        'background-alt': 'var(--color-background-alt)',
+        surface: 'var(--color-surface)',
+        'surface-elevated': 'var(--color-surface-elevated)',
+        'surface-strong': 'var(--color-surface-strong)',
+        'surface-muted': 'var(--color-surface-muted)',
+        'surface-glass': 'var(--color-surface-glass)',
         text: 'var(--color-text)',
         muted: 'var(--color-text-muted)',
         soft: 'var(--color-text-soft)',
-        surface: 'var(--color-surface)',
-        'surface-strong': 'var(--color-surface-strong)',
-        'surface-muted': 'var(--color-surface-muted)',
         border: 'var(--color-border)',
         'border-strong': 'var(--color-border-strong)',
-        secondary: 'var(--color-secondary)',
-        accent: 'var(--color-accent)',
-        success: 'var(--color-success)',
-        danger: 'var(--color-danger)',
-        background: {
-          light: '#f9fafb',
-          dark: '#0f172a', // slate-900 느낌
-        },
-        surface: {
-          light: '#f9fafb', // card / section
-          dark: '#111827',
-        },
-        border: {
-          light: '#e5e7eb',
-          dark: '#374151',
-        },
         primary: {
           DEFAULT: 'var(--color-primary)',
           strong: 'var(--color-primary-strong)',
-          dark: '#3b82f6',
+          soft: 'var(--color-primary-soft)',
         },
+        accent: 'var(--color-accent)',
+        secondary: 'var(--color-secondary)',
+        success: 'var(--color-success)',
+        warning: 'var(--color-warning)',
+        danger: 'var(--color-danger)',
       },
       boxShadow: {
         soft: 'var(--shadow-sm)',
         panel: 'var(--shadow-md)',
         floating: 'var(--shadow-lg)',
+        glow: 'var(--shadow-glow)',
       },
       borderRadius: {
         xs: 'var(--radius-xs)',
@@ -58,9 +52,12 @@ module.exports = {
       },
       spacing: {
         section: 'var(--space-section)',
+        'section-sm': 'var(--space-section-sm)',
+        'section-lg': 'var(--space-section-lg)',
       },
       fontFamily: {
         sans: [
+          '"Inter"',
           '"IBM Plex Sans Thai Looped"',
           '"IBM Plex Sans"',
           'Noto Sans Thai',
@@ -71,6 +68,7 @@ module.exports = {
       },
       maxWidth: {
         layout: '80rem',
+        content: '72rem',
       },
     },
     fontFamily: {

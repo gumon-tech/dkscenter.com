@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
-import { ThemeProvider } from 'next-themes';
 import { appWithTranslation } from 'next-i18next';
 
 import { GTM_ID, trackPageView } from '/lib/gtm';
@@ -74,11 +73,9 @@ function MyApp({ Component, pageProps }) {
         </Script>
       )}
 
-      <ThemeProvider attribute="class">
-        <div className="font-sans">
-          <Component {...pageProps} />
-        </div>
-      </ThemeProvider>
+      <div className="dark font-sans">
+        <Component {...pageProps} />
+      </div>
     </>
   );
 }

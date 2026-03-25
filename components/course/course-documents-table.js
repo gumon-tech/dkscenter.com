@@ -5,12 +5,12 @@ export default function CourseDocumentsTable({ documents, t }) {
   if (!documents || documents.length === 0) return null;
 
   return (
-    <table className="course-theme-panel mb-5 w-full overflow-hidden rounded-2xl text-left text-sm text-gray-500 dark:text-gray-400">
-      <thead className="course-theme-table-head text-xs uppercase text-gray-700 dark:text-gray-400">
+    <table className="course-theme-panel mb-5 w-full overflow-hidden rounded-[30px] text-left text-sm text-muted">
+      <thead className="course-theme-table-head text-xs uppercase text-soft">
         <tr>
           <th
             scope="col"
-            className="rounded-t-lg px-6 py-4 text-xl font-bold text-blue-700 dark:text-blue-400"
+            className="rounded-t-[30px] px-6 py-5 text-xl font-semibold tracking-[-0.03em] text-text"
           >
             {t('course-detail-19')}
           </th>
@@ -21,12 +21,12 @@ export default function CourseDocumentsTable({ documents, t }) {
           <tr key={index} className="bg-transparent">
             <th
               scope="row"
-              className="px-6 py-4 text-base font-semibold text-gray-700 dark:text-gray-300"
+              className="border-t border-border/70 px-6 py-4 text-base font-semibold text-text"
             >
               <a
                 target="_blank"
                 href={documentFile.fileUrl}
-                className="inline-flex font-medium items-center text-blue-600 dark:text-blue-400 hover:underline"
+                className="inline-flex items-center font-medium text-primary hover:text-primary-strong"
                 rel="noreferrer"
               >
                 {documentFile.title}
@@ -52,7 +52,7 @@ export default function CourseDocumentsTable({ documents, t }) {
         <tr className="bg-transparent">
           <th
             scope="row"
-            className="px-6 rounded-b-lg py-4 font-medium text-gray-900 dark:text-white"
+            className="rounded-b-[30px] px-6 py-4 font-medium text-text"
           ></th>
         </tr>
       </tbody>

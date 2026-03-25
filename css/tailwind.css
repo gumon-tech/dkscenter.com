@@ -3,10 +3,36 @@
 @tailwind utilities;
 
 @layer base {
-  html,
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
   body {
-    @apply 
-      bg-gray-50 text-gray-800
-      dark:bg-slate-900 dark:text-gray-100;
+    @apply bg-background text-text antialiased;
+  }
+
+  ::selection {
+    background: var(--color-primary-soft);
+    color: var(--color-text);
+  }
+
+  a,
+  button,
+  input,
+  textarea,
+  select,
+  summary {
+    @apply transition-colors duration-200;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
   }
 }

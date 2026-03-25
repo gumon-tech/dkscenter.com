@@ -4,6 +4,10 @@ import Countdown from 'react-countdown';
 import { sendVerifyEmail } from '../../utils/sendVerifyEmail';
 import { verifyEmailToken } from '../../utils/verifyEmailToken';
 import { ticketsReserve } from '../../utils/ticketsReserve';
+import Card from '../ui/card';
+import Input from '../ui/input';
+import Button from '../ui/button';
+import Badge from '../ui/badge';
 
 export default function EmailTicketSale({
   i18next,
@@ -125,121 +129,92 @@ export default function EmailTicketSale({
 
   return (
     <>
-      <div className="container mx-auto">
+      <div className="mx-auto">
         {!showOTPForm && (
-          <div className="max-w-md mx-auto mt-8">
-            <div className="bg-white rounded px-8 py-8 dark:bg-gray-800">
-              <h2 className="text-2xl font-semibold text-center mb-4">
+          <div className="mx-auto mt-4 max-w-xl">
+            <Card className="px-6 py-6 sm:px-8 sm:py-8">
+              <Badge>{t('ticket-email-email-confirmation')}</Badge>
+              <h2 className="mt-4 text-2xl font-semibold tracking-[-0.03em] text-text">
                 {t('ticket-email-email-confirmation')}
               </h2>
+              <p className="mt-3 text-sm leading-7 text-muted">
+                {t('ticket-email-oto-enter')}
+              </p>
               <form onSubmit={handleEmailSubmit}>
-                <div className="mb-4">
-                  <label
-                    className="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-400"
-                    htmlFor="email"
-                  >
-                    {t('ticket-email-email-address')}
-                  </label>
-                  <input
+                <div className="mt-5">
+                  <Input
                     type="email"
                     id="email"
-                    className="block w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                    label={t('ticket-email-email-address')}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
                   />
                 </div>
-                <button
-                  type="submit"
-                  className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 w-full"
-                >
+                <Button type="submit" className="mt-5 w-full">
                   {t('ticket-email-email-confirm-email')}
-                </button>
+                </Button>
               </form>
-            </div>
+            </Card>
           </div>
         )}
 
         {showOTPForm && !isLoading && (
-          <div className="max-w-md mx-auto mt-8">
-            <div className="bg-white rounded px-8 py-8 dark:bg-gray-800 ">
-              <h2 className="text-2xl font-semibold text-center mb-4 ">
+          <div className="mx-auto mt-4 max-w-xl">
+            <Card className="px-6 py-6 sm:px-8 sm:py-8">
+              <Badge>{t('ticket-email-oto-confirmation')}</Badge>
+              <h2 className="mt-4 text-2xl font-semibold tracking-[-0.03em] text-text">
                 {t('ticket-email-oto-confirmation')}
               </h2>
-              <p className="text-center mb-4">{t('ticket-email-oto-enter')}</p>
-              <p className="text-left text-gray-600 dark:text-gray-300 mb-2">
+              <p className="mt-3 text-sm leading-7 text-muted">{t('ticket-email-oto-enter')}</p>
+              <div className="mt-4 rounded-2xl border border-border/70 bg-surface px-4 py-4 text-sm leading-7 text-muted">
                 Email: {email}
                 <br />
                 {t('ticket-email-oto-ref')}: {ref}
                 <br />
                 {t('ticket-email-oto-expire')}: <Countdown date={expireAt} />
-              </p>
+              </div>
               <form onSubmit={handleOTPSubmit}>
-                <div className="mb-4">
-                  <label
-                    className="block text-gray-700 text-sm font-bold mb-2 dark:text-gray-300"
-                    htmlFor="otp"
-                  >
-                    OTP
-                  </label>
-                  <input
+                <div className="mt-5">
+                  <Input
                     type="text"
                     id="otp"
-                    className="block w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                    label="OTP"
                     value={otp}
                     onChange={(e) => setOTP(e.target.value)}
                     required
                   />
                 </div>
-                <button
-                  type="submit"
-                  className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 w-full mb-2"
-                >
+                <Button type="submit" className="mt-5 mb-2 w-full">
                   {t('ticket-email-oto-confirm')}
-                </button>
+                </Button>
                 <div className="flex justify-end">
                   <button
                     type="button"
-                    className="text-blue-500 hover:underline"
+                    className="text-sm font-medium text-primary hover:text-primary-strong"
                     onClick={handleResendOTP}
                   >
                     {t('ticket-email-oto-resend')}
                   </button>
                 </div>
               </form>
-            </div>
+            </Card>
           </div>
         )}
 
         {showOTPForm && isLoading && (
-          <div className="max-w-md mx-auto mt-8">
+          <div className="mx-auto mt-8 max-w-md">
             <div className="flex justify-center items-center">
               <ReactLoading
                 type="spinningBubbles"
-                color={'#049ee8'}
-                height={200} // ปรับความสูง
-                width={200} // ปรับความกว้าง
+                color={'#2458ff'}
+                height={120}
+                width={120}
               />
             </div>
           </div>
         )}
       </div>
-
-      {/* {error && (
-        <div className="error text-red-500">
-          <p>error message: {JSON.stringify(error?.message)}</p>
-          <p>error name: {JSON.stringify(error?.name)}</p>
-          <p>error code: {JSON.stringify(error?.code)}</p>
-          <p>
-            error response data code:{" "}
-            {JSON.stringify(error?.response?.data?.code)}
-          </p>
-          <p>
-            error response data message:{" "}
-            {JSON.stringify(error?.response?.data?.message)}
-          </p>
-        </div>
-      )} */}
     </>
   );
 }

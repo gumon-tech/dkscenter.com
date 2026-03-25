@@ -23,6 +23,7 @@ export default function LineContactButton({
   label,
   className = '',
   trackingLabel = 'line_contact',
+  hideIcon = false,
 }) {
   return (
     <a
@@ -32,7 +33,7 @@ export default function LineContactButton({
       onClick={() => trackLineContactClick(courseData, trackingLabel)}
       className={`${linePrimaryButtonClass} ${className}`.trim()}
     >
-      <ChatBubbleLeftRightIcon className="h-5 w-5" />
+      {!hideIcon && <ChatBubbleLeftRightIcon className="h-5 w-5" />}
       <span>{label}</span>
     </a>
   );

@@ -13,7 +13,7 @@ export default function Section({
   children,
 }) {
   return (
-    <Component className={cx('py-10 md:py-12', className)}>
+    <Component className={cx('py-section-sm lg:py-section', className)}>
       <PageContainer className={containerClassName}>{children}</PageContainer>
     </Component>
   );
