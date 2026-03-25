@@ -6,7 +6,6 @@ import {
   ClockIcon,
   MapPinIcon,
 } from '@heroicons/react/24/outline';
-import Link from '/components/link';
 import {
   buildForwardedUrl,
   registerScheduleButtonClass,
@@ -94,213 +93,186 @@ export default function CourseScheduleTable({
     ? registerScheduleButtonClass
     : 'inline-flex items-center justify-center rounded-full border border-primary/20 bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-glow transition hover:bg-primary-strong focus:outline-none focus:ring-4 focus:ring-primary/20';
 
-  return (
-    <section className="course-theme-panel scroll-mt-28 overflow-hidden rounded-[30px]">
-      <div className="border-b border-border/70 px-6 py-5">
+  if (activeSchedules.length === 0) {
+    return (
+      <section className="rounded-[30px] border border-border/60 bg-surface/45 px-5 py-6 shadow-soft backdrop-blur-xl sm:px-6">
         <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
           {locale === 'th' ? 'Schedule Overview' : 'Schedule Overview'}
         </div>
-        <h3 className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-text">
-          {t('course-detail-9')}
-        </h3>
-        <p className="mt-2 text-sm leading-7 text-muted">
+        <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">
+          {locale === 'th'
+            ? 'ยังไม่มีรอบที่เปิดแสดงในขณะนี้ สามารถติดต่อผ่าน LINE เพื่อสอบถามรอบถัดไปได้'
+            : 'There are no active sessions listed right now. You can still contact us on LINE to ask about upcoming dates.'}
+        </p>
+      </section>
+    );
+  }
+
+  return (
+    <section className="overflow-hidden rounded-[30px] border border-border/60 bg-surface/45 shadow-soft backdrop-blur-xl">
+      <div className="border-b border-border/60 px-5 py-5 sm:px-6">
+        <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
+          {locale === 'th' ? 'Schedule Overview' : 'Schedule Overview'}
+        </div>
+        <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">
           {activeSchedules.length > 1
             ? locale === 'th'
               ? `มีรอบอบรม ${activeSchedules.length} รอบที่เปิดแสดงอยู่ตอนนี้`
-              : `${activeSchedules.length} available sessions are listed below.`
+              : `${activeSchedules.length} sessions are currently available.`
             : locale === 'th'
               ? 'รายละเอียดรอบอบรมปัจจุบันและการลงทะเบียน'
-              : 'Current schedule details and registration.'}
+              : 'Current session details and registration.'}
         </p>
       </div>
 
-      <div className="space-y-4 px-4 py-4 sm:px-5 sm:py-5">
-        {activeSchedules.length > 0 ? (
-          activeSchedules.map((publicSchedule, index) => {
-            const eventStartDate = formatCourseDate(
-              publicSchedule.eventStart,
-              locale,
-            );
-            const eventEndDate = formatCourseDate(
-              publicSchedule.eventEnd,
-              locale,
-            );
-            const eventStartTime = formatCourseTime(
-              publicSchedule.eventStart,
-              locale,
-            );
-            const eventEndTime = formatCourseTime(
-              publicSchedule.eventEnd,
-              locale,
-            );
-            const courseType = getCourseType(publicSchedule);
-            const forwardedUrl = buildForwardedUrl(
-              publicSchedule.ticketUrl,
-              routerQuery || {},
-            );
+      <div className="divide-y divide-border/60">
+        {activeSchedules.map((publicSchedule, index) => {
+          const eventStartDate = formatCourseDate(publicSchedule.eventStart, locale);
+          const eventEndDate = formatCourseDate(publicSchedule.eventEnd, locale);
+          const eventStartTime = formatCourseTime(publicSchedule.eventStart, locale);
+          const eventEndTime = formatCourseTime(publicSchedule.eventEnd, locale);
+          const courseType = getCourseType(publicSchedule);
+          const forwardedUrl = buildForwardedUrl(
+            publicSchedule.ticketUrl,
+            routerQuery || {},
+          );
+          const canRegister =
+            courseType === 'GET_YOURS' || courseType === 'GET_YOURS_2';
 
-            const canRegister =
-              courseType === 'GET_YOURS' || courseType === 'GET_YOURS_2';
+          return (
+            <article
+              key={index}
+              className="bg-gradient-to-br from-[#0d1629]/55 via-[#0c1526]/35 to-transparent px-6 py-7 sm:px-7 sm:py-8"
+            >
+              <div className="pb-6 sm:pb-7">
+                <div className="flex flex-col gap-5 lg:gap-6">
+                  <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <ScheduleBadge courseType={courseType} t={t} locale={locale} />
+                      <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-soft">
+                        {locale === 'th'
+                          ? `Session 0${index + 1}`
+                          : `Session 0${index + 1}`}
+                      </span>
+                    </div>
 
-            return (
-              <article
-                key={index}
-                className="rounded-[24px] border border-border/70 bg-surface px-5 py-5"
-              >
-                <div className="flex flex-col gap-4">
-                  <div className="flex flex-wrap items-start justify-between gap-3">
-                    <div className="min-w-0 flex-1">
-                      <div className="mb-3">
-                        <ScheduleBadge
-                          courseType={courseType}
-                          t={t}
-                          locale={locale}
-                        />
-                      </div>
-                      <h4 className="text-xl font-semibold leading-8 tracking-[-0.03em] text-text">
+                    {canRegister ? (
+                      <div className="lg:min-w-[220px] lg:pl-6">
                         {courseType === 'GET_YOURS' ? (
                           <a
                             target="_blank"
                             href={forwardedUrl}
                             onClick={() =>
-                              onScheduleTitleClick(publicSchedule, forwardedUrl)
+                              onRegisterClick(publicSchedule, forwardedUrl)
                             }
                             rel="noreferrer"
-                            className="transition hover:text-primary"
+                            className={`${registerButtonClass} w-full px-6 py-4 text-base`}
                           >
-                            {publicSchedule.title}
+                            {isConversionFocusedCourse
+                              ? lineCopy.registerLabel
+                              : t('course-detail-16')}
                           </a>
-                        ) : courseType === 'GET_YOURS_2' ? (
+                        ) : (
                           <button
                             type="button"
                             onClick={() => onOpenModal(publicSchedule.scheduleKey)}
-                            className="text-left transition hover:text-primary"
+                            className={`${registerButtonClass} w-full px-6 py-4 text-base`}
                           >
-                            {publicSchedule.title}
+                            {isConversionFocusedCourse
+                              ? lineCopy.registerLabel
+                              : t('course-detail-16')}
                           </button>
-                        ) : (
-                          publicSchedule.title
-                        )}
-                      </h4>
-                    </div>
-                  </div>
-
-                  <div className="grid gap-4">
-                    <div className="grid gap-4 sm:grid-cols-2">
-                      <div className="rounded-2xl bg-background/40 px-4 py-4">
-                        <div className="mb-2 flex items-center gap-2 text-soft">
-                          <CalendarIcon className="h-5 w-5" />
-                          <span className="text-[11px] font-semibold uppercase tracking-[0.18em]">
-                            {locale === 'th' ? 'วันที่' : 'Date'}
-                          </span>
-                        </div>
-                        <div className="text-base font-medium leading-7 text-text">
-                          {eventStartDate}
-                          {eventStartDate !== eventEndDate ? ` - ${eventEndDate}` : ''}
-                        </div>
-                      </div>
-
-                      <div className="rounded-2xl bg-background/40 px-4 py-4">
-                        <div className="mb-2 flex items-center gap-2 text-soft">
-                          <ClockIcon className="h-5 w-5" />
-                          <span className="text-[11px] font-semibold uppercase tracking-[0.18em]">
-                            {locale === 'th' ? 'เวลา' : 'Time'}
-                          </span>
-                        </div>
-                        <div className="text-base font-medium leading-7 text-text">
-                          {eventStartTime} - {eventEndTime}
-                        </div>
-                      </div>
-                    </div>
-
-                    {publicSchedule.location && (
-                      <div className="rounded-2xl bg-background/40 px-4 py-4">
-                        <div className="mb-2 flex items-center gap-2 text-soft">
-                          <MapPinIcon className="h-5 w-5" />
-                          <span className="text-[11px] font-semibold uppercase tracking-[0.18em]">
-                            {locale === 'th' ? 'สถานที่' : 'Location'}
-                          </span>
-                        </div>
-                        {publicSchedule.locationUrl ? (
-                          <a
-                            href={publicSchedule.locationUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="text-base font-medium leading-7 text-primary underline decoration-primary/35 underline-offset-4 transition hover:text-primary-strong"
-                          >
-                            {publicSchedule.location}
-                          </a>
-                        ) : (
-                          <div className="text-base font-medium leading-7 text-text">
-                            {publicSchedule.location}
-                          </div>
                         )}
                       </div>
-                    )}
+                    ) : null}
                   </div>
 
-                  {canRegister && (
-                    <div className="pt-1">
+                  <div className="min-w-0">
+                    <h3 className="text-[1.9rem] font-semibold leading-[1.15] tracking-[-0.045em] text-text sm:text-[2.2rem] lg:text-[2.6rem]">
                       {courseType === 'GET_YOURS' ? (
                         <a
                           target="_blank"
                           href={forwardedUrl}
                           onClick={() =>
-                            onRegisterClick(publicSchedule, forwardedUrl)
+                            onScheduleTitleClick(publicSchedule, forwardedUrl)
                           }
-                          className={`${registerButtonClass} w-full sm:w-auto`}
                           rel="noreferrer"
+                          className="transition hover:text-primary"
                         >
-                          {isConversionFocusedCourse
-                            ? lineCopy.registerLabel
-                            : t('course-detail-16')}
+                          {publicSchedule.title}
                         </a>
-                      ) : (
+                      ) : courseType === 'GET_YOURS_2' ? (
                         <button
                           type="button"
-                          className={`${registerButtonClass} w-full sm:w-auto`}
                           onClick={() => onOpenModal(publicSchedule.scheduleKey)}
+                          className="text-left transition hover:text-primary"
                         >
-                          {isConversionFocusedCourse
-                            ? lineCopy.registerLabel
-                            : t('course-detail-16')}
+                          {publicSchedule.title}
                         </button>
+                      ) : (
+                        publicSchedule.title
                       )}
-                    </div>
-                  )}
+                    </h3>
+                  </div>
                 </div>
-              </article>
-            );
-          })
-        ) : (
-          <div className="px-2 py-2 text-base leading-7 text-text">
-            {t('course-detail-17')}
-          </div>
-        )}
-      </div>
+              </div>
 
-      <div className="border-t border-border/70 px-6 py-5">
-        <Link
-          href="/about-us"
-          className="inline-flex items-center font-medium text-primary hover:text-primary-strong"
-        >
-          {t('course-detail-18')}
-          <svg
-            className="ms-2.5 h-3 w-3 rtl:rotate-[270deg]"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 18 18"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
-            />
-          </svg>
-        </Link>
+              <div className="pt-6 sm:pt-7">
+                <div className="grid gap-4 md:grid-cols-3">
+                  <div className="rounded-[24px] bg-white/[0.03] px-5 py-5 ring-1 ring-white/6">
+                    <div className="flex items-center gap-2 text-soft">
+                      <CalendarIcon className="h-5 w-5 text-primary" />
+                      <span className="text-[11px] font-semibold uppercase tracking-[0.18em]">
+                        {locale === 'th' ? 'วันที่' : 'Date'}
+                      </span>
+                    </div>
+                    <div className="mt-4 text-lg leading-9 text-text">
+                      {eventStartDate}
+                      {eventStartDate !== eventEndDate ? ` - ${eventEndDate}` : ''}
+                    </div>
+                  </div>
+
+                  <div className="rounded-[24px] bg-white/[0.03] px-5 py-5 ring-1 ring-white/6">
+                    <div className="flex items-center gap-2 text-soft">
+                      <ClockIcon className="h-5 w-5 text-primary" />
+                      <span className="text-[11px] font-semibold uppercase tracking-[0.18em]">
+                        {locale === 'th' ? 'เวลา' : 'Time'}
+                      </span>
+                    </div>
+                    <div className="mt-4 text-lg leading-9 text-text">
+                      {eventStartTime} - {eventEndTime}
+                    </div>
+                  </div>
+
+                  {publicSchedule.location ? (
+                    <div className="rounded-[24px] bg-white/[0.03] px-5 py-5 ring-1 ring-white/6 md:col-span-1">
+                      <div className="flex items-center gap-2 text-soft">
+                        <MapPinIcon className="h-5 w-5 text-primary" />
+                        <span className="text-[11px] font-semibold uppercase tracking-[0.18em]">
+                          {locale === 'th' ? 'สถานที่' : 'Location'}
+                        </span>
+                      </div>
+                      <div className="mt-4 text-lg leading-9">
+                        {publicSchedule.locationUrl ? (
+                          <a
+                            href={publicSchedule.locationUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-primary underline decoration-primary/35 underline-offset-4 transition hover:text-primary-strong"
+                          >
+                            {publicSchedule.location}
+                          </a>
+                        ) : (
+                          <span className="text-text">{publicSchedule.location}</span>
+                        )}
+                      </div>
+                    </div>
+                  ) : null}
+                </div>
+              </div>
+            </article>
+          );
+        })}
       </div>
     </section>
   );

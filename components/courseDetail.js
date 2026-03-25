@@ -1,5 +1,12 @@
 import React, { useEffect } from 'react';
 import Image from 'next/image';
+import {
+  AcademicCapIcon,
+  CalendarDaysIcon,
+  ClockIcon,
+  MapPinIcon,
+  SparklesIcon,
+} from '@heroicons/react/24/outline';
 import Container from './container';
 import Breadcrumb from './breadcrumb';
 import CourseDetailLink from './courseDetailLink';
@@ -29,6 +36,159 @@ import CourseCurriculum from './course/course-curriculum';
 import CourseTrustGrid from './course/course-trust-grid';
 import CourseConversionBand from './course/course-conversion-band';
 
+function cx(...classNames) {
+  return classNames.filter(Boolean).join(' ');
+}
+
+function HeroSnapshotPanel({
+  locale,
+  courseData,
+  featuredImage,
+  scheduleDateRange,
+  scheduleTimeRange,
+  featuredSchedule,
+  facts,
+  lineCopy,
+  registerUrl,
+  onRegisterCtaClick,
+  audienceHighlights,
+  compact = false,
+}) {
+  return (
+    <aside
+      className={cx(
+        'course-theme-panel relative overflow-hidden rounded-[30px] p-5 sm:p-6',
+        compact ? 'xl:hidden' : 'hidden xl:block xl:sticky xl:top-24',
+      )}
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-[-4rem] top-[-4rem] h-36 w-36 rounded-full bg-primary/15 blur-3xl"
+      />
+
+      {featuredImage && !compact ? (
+        <div className="relative overflow-hidden rounded-[26px] border border-border/60 bg-background-alt">
+          <div className="relative aspect-[5/4] w-full">
+            <Image
+              src={featuredImage}
+              alt={courseData.title}
+              fill
+              unoptimized
+              className="object-cover"
+            />
+          </div>
+        </div>
+      ) : null}
+
+      <div className={cx('relative z-10', featuredImage && !compact ? 'mt-5' : '')}>
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
+              {locale === 'th' ? 'Course Snapshot' : 'Course Snapshot'}
+            </div>
+            <h2 className="mt-2 text-2xl font-semibold leading-tight tracking-[-0.04em] text-white">
+              {scheduleDateRange ||
+                (locale === 'th' ? 'ตารางเรียนอัปเดตล่าสุด' : 'Latest course availability')}
+            </h2>
+          </div>
+          <span className="inline-flex rounded-full border border-secondary/20 bg-secondary/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-secondary">
+            {locale === 'th' ? 'Onsite' : 'Onsite'}
+          </span>
+        </div>
+
+        <dl className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-1">
+          {facts.map((item) => (
+            <div
+              key={item.label}
+              className="border-t border-border/50 pt-4 first:border-t-0 first:pt-0"
+            >
+              <dt className="text-[11px] font-semibold uppercase tracking-[0.18em] text-soft">
+                {item.label}
+              </dt>
+              <dd className="mt-2 text-base font-semibold leading-7 text-text">
+                {item.value}
+              </dd>
+            </div>
+          ))}
+        </dl>
+
+        {featuredSchedule ? (
+          <div className="mt-6 rounded-[24px] bg-background/45 px-4 py-4 ring-1 ring-white/5">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-primary-strong">
+              {locale === 'th' ? 'Next Session' : 'Next Session'}
+            </div>
+            <div className="mt-3 space-y-3 text-sm leading-7 text-muted">
+              <div className="flex items-start gap-3">
+                <CalendarDaysIcon className="mt-0.5 h-5 w-5 text-primary" />
+                <span>{scheduleDateRange}</span>
+              </div>
+              {scheduleTimeRange ? (
+                <div className="flex items-start gap-3">
+                  <ClockIcon className="mt-0.5 h-5 w-5 text-primary" />
+                  <span>{scheduleTimeRange}</span>
+                </div>
+              ) : null}
+              {featuredSchedule.location ? (
+                <div className="flex items-start gap-3">
+                  <MapPinIcon className="mt-0.5 h-5 w-5 text-primary" />
+                  {featuredSchedule.locationUrl ? (
+                    <a
+                      href={featuredSchedule.locationUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-primary underline decoration-primary/35 underline-offset-4 transition hover:text-primary-strong"
+                    >
+                      {featuredSchedule.location}
+                    </a>
+                  ) : (
+                    <span>{featuredSchedule.location}</span>
+                  )}
+                </div>
+              ) : null}
+            </div>
+          </div>
+        ) : null}
+
+        {compact && audienceHighlights.length > 0 ? (
+          <div className="mt-6">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-soft">
+              {locale === 'th' ? 'Best For' : 'Best For'}
+            </div>
+            <ul className="mt-3 space-y-3 text-sm leading-7 text-muted">
+              {audienceHighlights.map((item, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-secondary" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+
+        {compact ? (
+          <div className="mt-7 flex flex-col gap-3">
+            <LineContactButton
+              courseData={courseData}
+              label={lineCopy.heroPrimary}
+              trackingLabel="mobile_snapshot_line_contact"
+              className="w-full"
+            />
+            <a
+              href={registerUrl || '#course-registration'}
+              target={registerUrl ? '_blank' : undefined}
+              rel={registerUrl ? 'noreferrer' : undefined}
+              onClick={onRegisterCtaClick}
+              className={`${registerSecondaryButtonClass} w-full`}
+            >
+              {lineCopy.heroSecondary}
+            </a>
+          </div>
+        ) : null}
+      </div>
+    </aside>
+  );
+}
+
 const CourseDetail = ({ courseData, i18next }) => {
   const { t } = i18next;
   const router = useRouter();
@@ -44,12 +204,30 @@ const CourseDetail = ({ courseData, i18next }) => {
     courseData?.participantsWillReceive?.[1],
     courseData?.participantsWillReceive?.[5],
     courseData?.participantsWillReceive?.[6],
-  ].filter(Boolean);
+  ]
+    .filter(Boolean)
+    .slice(0, 3);
   const audienceHighlights = (courseData?.whoShouldAttend || []).slice(0, 3);
-  const overviewCards = [
+  const featuredImage = courseData?.imageUrl;
+  const scheduleDateRange = featuredSchedule
+    ? formatCourseDateRange(
+      featuredSchedule.eventStart,
+      featuredSchedule.eventEnd,
+      locale,
+    )
+    : null;
+  const scheduleTimeRange = featuredSchedule
+    ? `${formatCourseTime(featuredSchedule.eventStart, locale)} - ${formatCourseTime(featuredSchedule.eventEnd, locale)}`
+    : null;
+
+  const overviewFacts = [
     {
       label: locale === 'th' ? 'Format' : 'Format',
       value: locale === 'th' ? 'Onsite Workshop' : 'Onsite Workshop',
+    },
+    {
+      label: locale === 'th' ? 'Duration' : 'Duration',
+      value: courseData?.duration,
     },
     {
       label: locale === 'th' ? 'Organizer' : 'Organizer',
@@ -59,54 +237,42 @@ const CourseDetail = ({ courseData, i18next }) => {
       label: locale === 'th' ? 'Course Code' : 'Course Code',
       value: courseData?.code,
     },
-    {
-      label: locale === 'th' ? 'Duration' : 'Duration',
-      value: courseData?.duration,
-    },
   ].filter((item) => item.value);
-  const featuredImage = courseData?.imageUrl;
-  const scheduleDateRange = featuredSchedule
-    ? formatCourseDateRange(
-        featuredSchedule.eventStart,
-        featuredSchedule.eventEnd,
-        locale,
-      )
-    : null;
-  const scheduleTimeRange = featuredSchedule
-    ? `${formatCourseTime(featuredSchedule.eventStart, locale)} - ${formatCourseTime(featuredSchedule.eventEnd, locale)}`
-    : null;
+
   const trustItems = [
     {
-      title: locale === 'th' ? 'เรียนแบบลงมือทำจริง' : 'Hands-on Learning',
+      title: locale === 'th' ? 'เรียนแบบลงมือทำจริง' : 'Hands-on by design',
       description:
         locale === 'th'
-          ? 'เน้น workshop และการลงมือปฏิบัติ เพื่อให้ผู้เรียนสามารถนำไปใช้ต่อได้จริง'
-          : 'A workshop-led format designed for immediate practical application.',
+          ? 'ทุกช่วงถูกออกแบบให้ต่อจากภาพรวมไปสู่การลงมือทำจริง เพื่อให้ผู้เรียนกลับไปใช้ต่อได้เร็ว'
+          : 'The course moves from principles to practical execution, so learners can apply it immediately after class.',
     },
     {
       title:
         locale === 'th'
-          ? 'เหมาะกับสาย Developer / DevOps'
-          : 'Built for Developers',
+          ? 'เนื้อหาจัดลำดับเพื่อคนทำงานจริง'
+          : 'Structured for working teams',
       description:
         locale === 'th'
-          ? 'เหมาะสำหรับผู้ที่ต้องการต่อยอดระบบ container และ workflow สมัยใหม่'
-          : 'Tailored for developers, DevOps engineers, and modern infrastructure teams.',
+          ? 'จัดลำดับหัวข้อให้เข้าใจง่ายขึ้น ลดความล้าจากเนื้อหาหนัก และช่วยให้จับประเด็นสำคัญได้ไว'
+          : 'Topics are sequenced to reduce cognitive overload and help teams identify the most important takeaways quickly.',
     },
     {
       title:
-        locale === 'th' ? 'สอบถามก่อนตัดสินใจได้' : 'Consult Before You Buy',
+        locale === 'th'
+          ? 'ตัดสินใจก่อนซื้อได้อย่างมั่นใจ'
+          : 'A clearer decision path',
       description:
         locale === 'th'
-          ? 'ติดต่อผ่าน LINE เพื่อเช็กความเหมาะสม เนื้อหา และที่นั่งว่างก่อนลงทะเบียน'
-          : 'Use LINE to ask about fit, syllabus, and seat availability before registering.',
+          ? 'มีทั้งช่องทางสอบถามและลงทะเบียนที่ชัดเจนในจังหวะสำคัญของหน้า เพื่อช่วยให้ตัดสินใจได้ง่ายขึ้น'
+          : 'Consultation and registration are placed at the right moments, creating a more confident conversion path.',
     },
   ];
 
   useEffect(() => {
     if (!courseData?.title) return;
 
-    const brandOwner = normalizeBrand(courseData?.brand); // brand ใน courses.json (ระดับ locale)
+    const brandOwner = normalizeBrand(courseData?.brand);
 
     trackViewItem({
       brandOwner,
@@ -144,16 +310,19 @@ const CourseDetail = ({ courseData, i18next }) => {
     }
   };
 
-  return !courseData ? (
-    <Container>
-      <Breadcrumb paths={[{ title: 'Training Course', path: '/course' }]} />
-      {t('course-detail-1')}
-    </Container>
-  ) : (
+  if (!courseData) {
+    return (
+      <Container>
+        <Breadcrumb paths={[{ title: 'Training Course', path: '/course' }]} />
+        {t('course-detail-1')}
+      </Container>
+    );
+  }
+
+  return (
     <Container
-      className={`relative overflow-hidden ${
-        isConversionFocusedCourse ? 'pb-32 xl:pb-10' : ''
-      }`}
+      className={`relative overflow-hidden ${isConversionFocusedCourse ? 'pb-32 xl:pb-16' : 'pb-16'
+        }`}
     >
       <Breadcrumb
         paths={[
@@ -161,284 +330,307 @@ const CourseDetail = ({ courseData, i18next }) => {
           { title: courseData.code, path: `/course/${courseData?.key}` },
         ]}
       />
-      <section className="relative mt-4 grid gap-6 xl:mt-6 xl:grid-cols-[minmax(0,1.12fr)_380px] xl:items-start">
-        <div className="course-theme-hero relative overflow-hidden rounded-[36px] p-7 sm:p-8 xl:p-10">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute right-[-10%] top-[-12%] h-56 w-56 rounded-full bg-primary/25 blur-3xl"
-          />
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute bottom-[-18%] left-[-5%] h-56 w-56 rounded-full bg-secondary/20 blur-3xl"
-          />
 
-          <div className="relative z-10">
-            <div className="mb-5 flex flex-wrap items-center gap-2.5">
-              <span className="inline-flex rounded-full border border-primary/25 bg-primary/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
-                {lineCopy.heroBadge}
-              </span>
-              <span className="inline-flex rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-[12px] font-medium uppercase tracking-[0.18em] text-primary-strong">
-                {locale === 'th' ? 'เวิร์กชอปเรือธง' : 'Signature workshop'}
-              </span>
-              {courseData.lastUpdate && (
-                <span className="text-[12px] font-medium uppercase tracking-[0.18em] text-soft">
-                  {t('course-detail-2')}{' '}
-                  {formatCourseDateTime(courseData.lastUpdate, locale)}
+      <section className="relative mt-4 lg:mt-6">
+        <div className="grid gap-6 xl:grid-cols-[minmax(0,1.16fr)_360px] xl:items-start">
+          <div className="course-theme-hero relative overflow-hidden rounded-[36px] px-6 py-7 sm:px-8 sm:py-9 xl:px-10 xl:py-10">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute right-[-10%] top-[-12%] h-56 w-56 rounded-full bg-primary/25 blur-3xl"
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute bottom-[-18%] left-[-5%] h-56 w-56 rounded-full bg-secondary/20 blur-3xl"
+            />
+
+            <div className="relative z-10 flex h-full flex-col">
+              <div className="flex flex-wrap items-center gap-2.5">
+                <span className="inline-flex rounded-full border border-primary/25 bg-primary/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
+                  {lineCopy.heroBadge}
                 </span>
-              )}
-            </div>
-
-            <h1 className="max-w-4xl text-[3.45rem] font-semibold leading-[1.02] tracking-[-0.045em] text-white sm:text-5xl xl:text-[3.7rem]">
-              {courseData.title}
-            </h1>
-
-            <p className="course-contrast-copy mt-5 max-w-[52rem] text-base leading-8 sm:text-lg">
-              {courseData.overview}
-            </p>
-
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-              <LineContactButton
-                courseData={courseData}
-                label={lineCopy.heroPrimary}
-                trackingLabel="hero_line_contact"
-                className="w-full sm:w-auto"
-              />
-              <a
-                href={registerUrl || '#course-registration'}
-                target={registerUrl ? '_blank' : undefined}
-                rel={registerUrl ? 'noreferrer' : undefined}
-                onClick={onRegisterCtaClick}
-                className={`${registerSecondaryButtonClass} w-full sm:w-auto`}
-              >
-                {lineCopy.heroSecondary}
-              </a>
-            </div>
-
-            <p className="course-contrast-copy mt-4 max-w-3xl text-sm leading-7 md:text-base">
-              {lineCopy.heroMicrocopy}
-            </p>
-
-            <div className="mt-8 rounded-[30px] border border-border/60 bg-surface/40 px-5 py-5">
-              <div className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
-                {locale === 'th' ? 'Why This Course' : 'Why This Course'}
+                <span className="inline-flex rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-strong">
+                  {locale === 'th' ? 'เวิร์กชอปเรือธง' : 'Signature workshop'}
+                </span>
+                {courseData.lastUpdate ? (
+                  <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-soft">
+                    {t('course-detail-2')} {formatCourseDateTime(courseData.lastUpdate, locale)}
+                  </span>
+                ) : null}
               </div>
-              <div className="space-y-4">
-                {heroHighlights.map((item, index) => (
-                  <div key={index} className="flex items-start gap-4">
-                    <div className="flex h-8 min-w-[2rem] items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary-strong">
-                      {String(index + 1).padStart(2, '0')}
-                    </div>
-                    <p className="course-copy max-w-3xl pt-0.5 text-[1.02rem] leading-8 lg:text-[1.08rem] lg:leading-9">
-                      {item}
-                    </p>
+
+              <div className="mt-6 max-w-4xl">
+                <h1 className="max-w-[16ch] text-[2.85rem] font-semibold leading-[0.98] tracking-[-0.055em] text-white sm:text-5xl xl:max-w-[18ch] xl:text-[4.2rem]">
+                  {courseData.title}
+                </h1>
+                <p className="course-contrast-copy mt-5 max-w-[44rem] text-base leading-8 sm:text-[1.05rem]">
+                  {courseData.overview}
+                </p>
+              </div>
+
+              <div className="mt-8 flex flex-col gap-4">
+                <div className="flex flex-col gap-3 sm:flex-row">
+                  <LineContactButton
+                    courseData={courseData}
+                    label={lineCopy.heroPrimary}
+                    trackingLabel="hero_line_contact"
+                    className="w-full sm:w-auto"
+                  />
+                  <a
+                    href={registerUrl || '#course-registration'}
+                    target={registerUrl ? '_blank' : undefined}
+                    rel={registerUrl ? 'noreferrer' : undefined}
+                    onClick={onRegisterCtaClick}
+                    className={`${registerSecondaryButtonClass} w-full sm:w-auto`}
+                  >
+                    {lineCopy.heroSecondary}
+                  </a>
+                </div>
+                <p className="course-contrast-copy max-w-2xl text-sm leading-7 text-white/75">
+                  {lineCopy.heroMicrocopy}
+                </p>
+              </div>
+
+              {heroHighlights.length > 0 ? (
+                <div className="mt-8 border-t border-white/8 pt-6 xl:mt-auto xl:pt-7">
+                  <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
+                    {locale === 'th' ? 'Why This Course' : 'Why This Course'}
                   </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+                  <div className="grid gap-4 md:grid-cols-3">
+                    {heroHighlights.map((item, index) => (
+                      <article
+                        key={index}
+                        className="rounded-[24px] bg-white/[0.03] px-4 py-4 ring-1 ring-white/6 backdrop-blur-sm"
+                      >
+                        <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-soft">
+                          {locale === 'th'
+                            ? `Highlight 0${index + 1}`
+                            : `Highlight 0${index + 1}`}
+                        </div>
+                        <p className="mt-3 text-sm leading-7 text-muted">
+                          {item}
+                        </p>
+                      </article>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
 
-        {featuredImage && (
-          <aside className="space-y-4 xl:sticky xl:top-24">
-            <div className="course-theme-panel relative overflow-hidden rounded-[32px] p-4 sm:p-5 xl:p-6">
-            <div className="mb-4 flex items-center justify-between gap-3">
-              <div>
-                <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
-                  {locale === 'th' ? 'Next Session' : 'Next Session'}
-                </div>
-                <div className="course-heading mt-1 text-lg font-semibold">
-                  {scheduleDateRange}
-                </div>
-              </div>
-              <span className="rounded-full border border-secondary/25 bg-secondary/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-secondary">
-                {locale === 'th' ? 'Onsite' : 'Onsite'}
-              </span>
-            </div>
-            <div className="relative overflow-hidden rounded-[26px] border border-border/70 bg-background-alt">
-              <div className="relative aspect-[5/3] w-full">
-                <Image
-                  src={featuredImage}
-                  alt={courseData.title}
-                  fill
-                  unoptimized
-                  className="object-cover"
+              <div className="mt-8 xl:hidden">
+                <HeroSnapshotPanel
+                  compact
+                  locale={locale}
+                  courseData={courseData}
+                  featuredImage={featuredImage}
+                  scheduleDateRange={scheduleDateRange}
+                  scheduleTimeRange={scheduleTimeRange}
+                  featuredSchedule={featuredSchedule}
+                  facts={overviewFacts}
+                  lineCopy={lineCopy}
+                  registerUrl={registerUrl}
+                  onRegisterCtaClick={onRegisterCtaClick}
+                  audienceHighlights={audienceHighlights}
                 />
               </div>
             </div>
-              <div className="rounded-2xl border border-border/70 bg-surface px-4 py-4">
-                <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
-                  {locale === 'th' ? 'Quick Facts' : 'Quick Facts'}
-                </div>
-                <dl className="mt-3 space-y-0">
-                  {overviewCards.map((item) => (
-                    <div
-                      key={item.label}
-                      className="border-b border-border/60 py-4 first:pt-1 last:border-b-0 last:pb-1"
-                    >
-                      <dt className="text-[11px] font-semibold uppercase tracking-[0.2em] text-soft">
-                        {item.label}
-                      </dt>
-                      <dd className="mt-2 text-lg font-semibold leading-7 text-text">
-                        {item.value}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
-              </div>
-
-            <div className="mt-3 grid gap-3">
-              <div className="rounded-2xl border border-border/70 bg-surface px-4 py-4">
-                <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-soft">
-                  {locale === 'th' ? 'Next Session' : 'Next Session'}
-                </div>
-                <div className="course-copy mt-2 text-sm leading-7">
-                  <div>{scheduleDateRange}</div>
-                  <div>{scheduleTimeRange}</div>
-                  {featuredSchedule?.location ? (
-                    featuredSchedule.locationUrl ? (
-                      <a
-                        href={featuredSchedule.locationUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="mt-2 block text-primary underline decoration-primary/35 underline-offset-4 transition hover:text-primary-strong"
-                      >
-                        {featuredSchedule.location}
-                      </a>
-                    ) : (
-                      <div className="mt-2">{featuredSchedule.location}</div>
-                    )
-                  ) : null}
-                </div>
-              </div>
-              <div className="rounded-2xl border border-border/70 bg-surface px-4 py-4">
-                <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-soft">
-                  {locale === 'th' ? 'Best For' : 'Best For'}
-                </div>
-                <ul className="course-copy mt-2 space-y-2 text-sm leading-6">
-                  {audienceHighlights.map((item, index) => (
-                    <li key={index} className="flex gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            </div>
-
-            {isConversionFocusedCourse && (
-              <CourseConversionBand
-                compact
-                locale={locale}
-                courseData={courseData}
-                title={lineCopy.midTitle}
-                description={lineCopy.midDescription}
-                primaryLabel={lineCopy.midPrimary}
-                secondaryLabel={lineCopy.heroSecondary}
-                registerUrl={registerUrl}
-                onRegisterClick={onRegisterCtaClick}
-                trackingLabel="midpage_line_contact"
-              />
-            )}
-          </aside>
-        )}
-      </section>
-
-      <div className="mt-12 space-y-12">
-          <CourseSectionShell
-            eyebrow={locale === 'th' ? 'Course Overview' : 'Course Overview'}
-            title={locale === 'th' ? 'ภาพรวมของคอร์ส' : 'Course Overview'}
-          >
-            <div className="course-theme-soft-panel rounded-[30px] p-7">
-              <p className="course-copy max-w-4xl text-base leading-8 lg:text-[17px]">
-                {courseData.overview}
-              </p>
-            </div>
-          </CourseSectionShell>
-
-          <CourseSectionShell
-            eyebrow={locale === 'th' ? 'Why Join' : 'Why Join'}
-            title={
-              locale === 'th'
-                ? 'เหตุผลที่คอร์สนี้เหมาะสำหรับการอัปสกิลจริง'
-                : 'Why This Course Works for Serious Upskilling'
-            }
-          >
-            <CourseTrustGrid items={trustItems} locale={locale} />
-          </CourseSectionShell>
-
-          <div className="grid gap-12">
-            {courseData.objectives && courseData.objectives.length > 0 && (
-              <CourseSectionShell
-                eyebrow={locale === 'th' ? 'Outcomes' : 'Outcomes'}
-                title={t('course-detail-3')}
-              >
-                <CourseListPanel items={courseData.objectives} />
-              </CourseSectionShell>
-            )}
-
-            {courseData.whoShouldAttend &&
-              courseData.whoShouldAttend.length > 0 && (
-                <CourseSectionShell
-                  eyebrow={locale === 'th' ? 'Audience' : 'Audience'}
-                  title={t('course-detail-4')}
-                >
-                  <CourseListPanel items={courseData.whoShouldAttend} />
-                </CourseSectionShell>
-              )}
-
-            {courseData.prerequisites &&
-              courseData.prerequisites.length > 0 && (
-                <CourseSectionShell
-                  eyebrow={locale === 'th' ? 'Preparation' : 'Preparation'}
-                  title={t('course-detail-5')}
-                >
-                  <CourseListPanel items={courseData.prerequisites} />
-                </CourseSectionShell>
-              )}
-
-            {courseData.participantsWillReceive &&
-              courseData.participantsWillReceive.length > 0 && (
-                <CourseSectionShell
-                  eyebrow={locale === 'th' ? 'Included' : 'Included'}
-                  title={t('course-detail-6')}
-                >
-                  <CourseListPanel items={courseData.participantsWillReceive} />
-                </CourseSectionShell>
-              )}
-
-            {courseData.outline && courseData.outline.length > 0 && (
-              <CourseSectionShell
-                eyebrow={locale === 'th' ? 'Curriculum' : 'Curriculum'}
-                title={t('course-detail-7')}
-              >
-                <CourseCurriculum outline={courseData.outline} locale={locale} />
-              </CourseSectionShell>
-            )}
           </div>
 
-        <CourseDetailLink
-          className="min-w-0"
-          courseData={courseData}
-          i18next={i18next}
-          sectionId="course-registration"
-        />
+          <HeroSnapshotPanel
+            locale={locale}
+            courseData={courseData}
+            featuredImage={featuredImage}
+            scheduleDateRange={scheduleDateRange}
+            scheduleTimeRange={scheduleTimeRange}
+            featuredSchedule={featuredSchedule}
+            facts={overviewFacts}
+            lineCopy={lineCopy}
+            registerUrl={registerUrl}
+            onRegisterCtaClick={onRegisterCtaClick}
+            audienceHighlights={audienceHighlights}
+          />
+        </div>
+      </section>
+
+      <div className="mt-section-sm space-y-section-sm lg:mt-section lg:space-y-section">
+        <CourseSectionShell
+          eyebrow={locale === 'th' ? 'Why This Course Matters' : 'Why This Course Matters'}
+          title={
+            locale === 'th'
+              ? 'หน้าเพจถูกจัดจังหวะใหม่ให้สาระสำคัญและเหตุผลในการตัดสินใจชัดขึ้น'
+              : 'A cleaner structure makes the value of the course easier to understand and act on'
+          }
+          description={
+            locale === 'th'
+              ? 'สรุปประโยชน์ของคอร์สให้สั้นลง อ่านง่ายขึ้น และแยกประเด็นสำคัญออกเป็นช่วงที่สแกนได้เร็ว'
+              : 'The page now gives the most important reasons to join in shorter, easier-to-scan blocks with more breathing room.'
+          }
+        >
+          <CourseTrustGrid items={trustItems} locale={locale} />
+        </CourseSectionShell>
+
+        {courseData.objectives && courseData.objectives.length > 0 ? (
+          <CourseSectionShell
+            eyebrow={locale === 'th' ? 'Learning Outcomes' : 'Learning Outcomes'}
+            title={t('course-detail-3')}
+            description={
+              locale === 'th'
+                ? 'สิ่งที่ผู้เรียนจะเข้าใจและนำไปต่อยอดได้หลังจบคอร์ส จัดเป็นรายการสองคอลัมน์เพื่อช่วยให้สแกนประเด็นได้เร็วขึ้น'
+                : 'A two-column outcomes layout keeps the takeaways clear and easier to scan before committing.'
+            }
+            meta={
+              <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-strong">
+                <AcademicCapIcon className="h-4 w-4" />
+                <span>
+                  {courseData.objectives.length}{' '}
+                  {locale === 'th' ? 'เป้าหมายการเรียนรู้' : 'learning goals'}
+                </span>
+              </div>
+            }
+          >
+            <div className="space-y-8">
+              <CourseListPanel items={courseData.objectives} columns={2} />
+
+              {courseData.participantsWillReceive &&
+                courseData.participantsWillReceive.length > 0 ? (
+                <div className="rounded-[28px] bg-white/[0.03] px-5 py-5 ring-1 ring-white/6 sm:px-6">
+                  <div className="flex flex-wrap items-center justify-between gap-3">
+                    <div>
+                      <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-secondary">
+                        {locale === 'th' ? 'Included' : 'Included'}
+                      </div>
+                      <h3 className="mt-2 text-xl font-semibold tracking-[-0.03em] text-white">
+                        {t('course-detail-6')}
+                      </h3>
+                    </div>
+                    <span className="inline-flex rounded-full border border-secondary/20 bg-secondary/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-secondary">
+                      {courseData.participantsWillReceive.length}{' '}
+                      {locale === 'th' ? 'รายการ' : 'items'}
+                    </span>
+                  </div>
+                  <div className="mt-5">
+                    <CourseListPanel
+                      items={courseData.participantsWillReceive}
+                      columns={2}
+                      compact
+                    />
+                  </div>
+                </div>
+              ) : null}
+            </div>
+          </CourseSectionShell>
+        ) : null}
+
+        {(courseData.whoShouldAttend?.length || courseData.prerequisites?.length) ? (
+          <CourseSectionShell
+            eyebrow={locale === 'th' ? 'Fit & Preparation' : 'Fit & Preparation'}
+            title={
+              locale === 'th'
+                ? 'เหมาะกับใคร และควรเตรียมตัวอย่างไรก่อนเข้าร่วม'
+                : 'Who should join, and what should they prepare beforehand'
+            }
+            description={
+              locale === 'th'
+                ? 'แยกกลุ่มผู้เรียนที่เหมาะสมและสิ่งที่ควรรู้ล่วงหน้าออกจากกันอย่างชัดเจน เพื่อให้ตัดสินใจได้ง่ายขึ้น'
+                : 'Audience fit and prerequisites are separated clearly so prospects can assess readiness without wading through dense text.'
+            }
+          >
+            <div className="grid gap-6 lg:grid-cols-2">
+              {courseData.whoShouldAttend && courseData.whoShouldAttend.length > 0 ? (
+                <section className="rounded-[28px] bg-white/[0.02] px-5 py-5 ring-1 ring-white/6 sm:px-6">
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-strong">
+                    {locale === 'th' ? 'Who Should Join' : 'Who Should Join'}
+                  </div>
+                  <h3 className="mt-2 text-xl font-semibold tracking-[-0.03em] text-white">
+                    {t('course-detail-4')}
+                  </h3>
+                  <div className="mt-5">
+                    <CourseListPanel items={courseData.whoShouldAttend} compact />
+                  </div>
+                </section>
+              ) : null}
+
+              {courseData.prerequisites && courseData.prerequisites.length > 0 ? (
+                <section className="rounded-[28px] bg-white/[0.02] px-5 py-5 ring-1 ring-white/6 sm:px-6">
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-secondary">
+                    {locale === 'th' ? 'Prerequisites' : 'Prerequisites'}
+                  </div>
+                  <h3 className="mt-2 text-xl font-semibold tracking-[-0.03em] text-white">
+                    {t('course-detail-5')}
+                  </h3>
+                  <div className="mt-5">
+                    <CourseListPanel items={courseData.prerequisites} compact />
+                  </div>
+                </section>
+              ) : null}
+            </div>
+          </CourseSectionShell>
+        ) : null}
+
+        {courseData.outline && courseData.outline.length > 0 ? (
+          <CourseSectionShell
+            eyebrow={locale === 'th' ? 'Curriculum' : 'Curriculum'}
+            title={t('course-detail-7')}
+            description={
+              locale === 'th'
+                ? 'ใช้รูปแบบ accordion แบบโมดูลเพื่อลดความล้าระหว่างเลื่อนอ่าน และทำให้สแกนหัวข้อได้ทีละช่วง'
+                : 'The curriculum is grouped into modules so visitors can scan chapter titles first, then expand into detail only where needed.'
+            }
+            meta={
+              <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-surface/55 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-soft">
+                <SparklesIcon className="h-4 w-4" />
+                <span>
+                  {courseData.outline.length}{' '}
+                  {locale === 'th' ? 'โมดูลการเรียน' : 'modules'}
+                </span>
+              </div>
+            }
+          >
+            <CourseCurriculum outline={courseData.outline} locale={locale} />
+          </CourseSectionShell>
+        ) : null}
+
+        <CourseSectionShell
+          eyebrow={locale === 'th' ? 'Schedule & Registration' : 'Schedule & Registration'}
+          title={t('course-detail-9')}
+          description={
+            locale === 'th'
+              ? 'รวมรอบอบรม รายละเอียดสถานที่ เอกสาร และ CTA สำคัญไว้ในช่วงเดียวกัน เพื่อให้ตัดสินใจต่อได้ทันที'
+              : 'Session details, registration links, and supporting documents are grouped together so the next step feels obvious.'
+          }
+        >
+          <div className="space-y-6">
+            {/* {isConversionFocusedCourse ? (
+              <CourseInlineCta
+                courseData={courseData}
+                lineCopy={lineCopy}
+                featuredRegisterUrl={registerUrl}
+                onRegisterClick={onRegisterCtaClick}
+              />
+            ) : null} */}
+
+            <CourseDetailLink
+              className="min-w-0"
+              courseData={courseData}
+              i18next={i18next}
+              sectionId="course-registration"
+            />
+          </div>
+        </CourseSectionShell>
       </div>
 
-      {isConversionFocusedCourse && (
+      {isConversionFocusedCourse ? (
         <CourseConversionBand
           locale={locale}
           courseData={courseData}
           badge={locale === 'th' ? 'Ready To Decide?' : 'Ready To Decide?'}
           title={
             locale === 'th'
-              ? 'พร้อมลงทะเบียน หรืออยากสอบถามก่อนตัดสินใจ?'
-              : 'Ready to register, or do you want to ask a few questions first?'
+              ? 'พร้อมคุยต่อหรือพร้อมจองที่นั่งแล้ว'
+              : 'Ready to ask a final question, or ready to secure your seat'
           }
           description={
             locale === 'th'
-              ? 'ทัก LINE เพื่อเช็กความเหมาะสมของคอร์ส รายละเอียดเนื้อหา และที่นั่งว่าง หรือกดลงทะเบียนได้ทันทีหากคุณพร้อมเรียนในรอบนี้'
-              : 'Use LINE to check course fit, content details, and seat availability, or register immediately if you are ready for this session.'
+              ? 'เลือกทางที่เหมาะกับจังหวะการตัดสินใจของคุณ ทัก LINE เพื่อเช็กความเหมาะสมของคอร์ส หรือกดลงทะเบียนทันทีหากพร้อมเรียนในรอบนี้'
+              : 'Choose the path that matches your confidence level. Ask via LINE if you want to confirm fit, or register immediately if this session is right for you.'
           }
           primaryLabel={lineCopy.bottomPrimary}
           secondaryLabel={lineCopy.heroSecondary}
@@ -446,9 +638,9 @@ const CourseDetail = ({ courseData, i18next }) => {
           onRegisterClick={onRegisterCtaClick}
           trackingLabel="final_line_contact"
         />
-      )}
+      ) : null}
 
-      {isConversionFocusedCourse && (
+      {isConversionFocusedCourse ? (
         <div className="fixed inset-x-0 bottom-0 z-40 border-t border-border/70 bg-surface-glass px-4 py-3 shadow-floating backdrop-blur-2xl xl:hidden">
           <div className="mx-auto flex max-w-5xl flex-col gap-2">
             <LineContactButton
@@ -468,7 +660,7 @@ const CourseDetail = ({ courseData, i18next }) => {
             </a>
           </div>
         </div>
-      )}
+      ) : null}
     </Container>
   );
 };

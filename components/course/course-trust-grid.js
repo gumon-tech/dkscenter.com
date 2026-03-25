@@ -3,22 +3,24 @@ import React from 'react';
 
 export default function CourseTrustGrid({ items, locale }) {
   return (
-    <div className="grid gap-4 lg:grid-cols-3">
-      {items.map((item) => (
-        <div
+    <div className="grid gap-4 md:grid-cols-3">
+      {items.map((item, index) => (
+        <article
           key={item.title}
-          className="course-theme-soft-panel rounded-[30px] p-6 lg:p-7"
+          className="relative overflow-hidden rounded-[28px] bg-white/[0.03] px-5 py-6 ring-1 ring-white/6 sm:px-6"
         >
-          <div className="inline-flex rounded-full border border-primary/18 bg-primary/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
-            {locale === 'th' ? 'Trust Signal' : 'Trust Signal'}
+          <div
+            aria-hidden="true"
+            className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-primary/0 via-primary/60 to-secondary/0"
+          />
+          <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
+            {locale === 'th' ? `Benefit 0${index + 1}` : `Benefit 0${index + 1}`}
           </div>
-          <h4 className="course-heading mt-4 text-lg font-semibold leading-8 tracking-[-0.03em]">
+          <h3 className="course-heading mt-4 text-xl font-semibold leading-8 tracking-[-0.04em]">
             {item.title}
-          </h4>
-          <p className="course-copy mt-2 text-sm leading-7">
-            {item.description}
-          </p>
-        </div>
+          </h3>
+          <p className="course-copy mt-3 text-sm leading-7">{item.description}</p>
+        </article>
       ))}
     </div>
   );
