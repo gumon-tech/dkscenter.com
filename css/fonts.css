@@ -1,17 +1,23 @@
-@font-face {
-  font-family: 'Sarabun';
-  src: url('/fonts/sarabun-regular.woff') format('woff');
-  /* Add other font formats if available */
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+html {
+  font-family:
+    'IBM Plex Sans Thai Looped', 'IBM Plex Sans', 'Noto Sans Thai', system-ui,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-@font-face {
-  font-family: 'Inter';
-  src: url('/fonts/inter-regular.woff') format('woff');
-  /* Add other font formats if available */
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+body {
+  font-family: inherit;
+  font-feature-settings:
+    'ss01' 1,
+    'cv11' 1;
+  letter-spacing: -0.01em;
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
 }

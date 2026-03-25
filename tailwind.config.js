@@ -29,9 +29,18 @@ module.exports = {
           dark: '#3b82f6',
         },
       },
+      fontFamily: {
+        sans: [
+          '"IBM Plex Sans Thai Looped"',
+          '"IBM Plex Sans"',
+          'Noto Sans Thai',
+          'system-ui',
+          ...defaultTheme.fontFamily.sans,
+        ],
+        mono: ['"IBM Plex Mono"', ...defaultTheme.fontFamily.mono],
+      },
     },
     fontFamily: {
-      sans: ['Inter', 'Sarabun', ...defaultTheme.fontFamily.sans],
       stock: [defaultTheme.fontFamily.sans],
     },
   },

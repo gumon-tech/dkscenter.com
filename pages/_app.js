@@ -51,7 +51,12 @@ function MyApp({ Component, pageProps }) {
     const handleRouteChange = (url) => pushPV(url);
     router.events.on('routeChangeComplete', handleRouteChange);
     return () => router.events.off('routeChangeComplete', handleRouteChange);
-  }, [router.events, router.query?.locale, pageProps?.brandOwner, pageProps?.pageType]);
+  }, [
+    router.events,
+    router.query?.locale,
+    pageProps?.brandOwner,
+    pageProps?.pageType,
+  ]);
 
   return (
     <>
@@ -68,7 +73,9 @@ function MyApp({ Component, pageProps }) {
       )}
 
       <ThemeProvider attribute="class">
-        <Component {...pageProps} />
+        <div className="font-sans">
+          <Component {...pageProps} />
+        </div>
       </ThemeProvider>
     </>
   );
