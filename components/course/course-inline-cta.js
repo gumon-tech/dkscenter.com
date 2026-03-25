@@ -15,7 +15,7 @@ export default function CourseInlineCta({
       <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div className="max-w-2xl">
           <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
-            Conversion Point
+            Next Step
           </div>
           <h3 className="course-contrast-heading mt-3 text-2xl font-semibold tracking-[-0.04em] lg:text-[2rem]">
             {lineCopy.bottomPrimary}

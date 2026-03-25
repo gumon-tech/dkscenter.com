@@ -97,7 +97,7 @@ export default function CourseScheduleTable({
     return (
       <section className="rounded-[30px] border border-border/60 bg-surface/45 px-5 py-6 shadow-soft backdrop-blur-xl sm:px-6">
         <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
-          {locale === 'th' ? 'Schedule Overview' : 'Schedule Overview'}
+          {locale === 'th' ? 'รอบอบรม' : 'Available Sessions'}
         </div>
         <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">
           {locale === 'th'
@@ -112,15 +112,15 @@ export default function CourseScheduleTable({
     <section className="overflow-hidden rounded-[30px] border border-border/60 bg-surface/45 shadow-soft backdrop-blur-xl">
       <div className="border-b border-border/60 px-5 py-5 sm:px-6">
         <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
-          {locale === 'th' ? 'Schedule Overview' : 'Schedule Overview'}
+          {locale === 'th' ? 'รอบอบรม' : 'Available Sessions'}
         </div>
         <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">
           {activeSchedules.length > 1
             ? locale === 'th'
-              ? `มีรอบอบรม ${activeSchedules.length} รอบที่เปิดแสดงอยู่ตอนนี้`
+              ? `ขณะนี้มีรอบอบรมที่เปิดลงทะเบียน ${activeSchedules.length} รอบ`
               : `${activeSchedules.length} sessions are currently available.`
             : locale === 'th'
-              ? 'รายละเอียดรอบอบรมปัจจุบันและการลงทะเบียน'
+              ? 'ตรวจสอบรายละเอียดรอบอบรมและลงทะเบียนได้ที่นี่'
               : 'Current session details and registration.'}
         </p>
       </div>

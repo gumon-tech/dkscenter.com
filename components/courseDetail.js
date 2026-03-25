@@ -84,7 +84,7 @@ function HeroSnapshotPanel({
         <div className="flex items-start justify-between gap-4">
           <div>
             <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
-              {locale === 'th' ? 'Course Snapshot' : 'Course Snapshot'}
+              {locale === 'th' ? 'ข้อมูลคอร์ส' : 'Course Snapshot'}
             </div>
             <h2 className="mt-2 text-2xl font-semibold leading-tight tracking-[-0.04em] text-white">
               {scheduleDateRange ||
@@ -393,7 +393,7 @@ const CourseDetail = ({ courseData, i18next }) => {
               {heroHighlights.length > 0 ? (
                 <div className="mt-8 border-t border-white/8 pt-6 xl:mt-auto xl:pt-7">
                   <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
-                    {locale === 'th' ? 'Why This Course' : 'Why This Course'}
+                    {locale === 'th' ? 'จุดเด่นของคอร์ส' : 'Why This Course'}
                   </div>
                   <div className="grid gap-4 md:grid-cols-3">
                     {heroHighlights.map((item, index) => (
@@ -403,7 +403,7 @@ const CourseDetail = ({ courseData, i18next }) => {
                       >
                         <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-soft">
                           {locale === 'th'
-                            ? `Highlight 0${index + 1}`
+                            ? `จุดเด่น 0${index + 1}`
                             : `Highlight 0${index + 1}`}
                         </div>
                         <p className="mt-3 text-sm leading-7 text-muted">
@@ -452,16 +452,16 @@ const CourseDetail = ({ courseData, i18next }) => {
 
       <div className="mt-section-sm space-y-section-sm lg:mt-section lg:space-y-section">
         <CourseSectionShell
-          eyebrow={locale === 'th' ? 'Why This Course Matters' : 'Why This Course Matters'}
+          eyebrow={locale === 'th' ? 'จุดเด่นของคอร์ส' : 'Why This Course'}
           title={
             locale === 'th'
-              ? 'หน้าเพจถูกจัดจังหวะใหม่ให้สาระสำคัญและเหตุผลในการตัดสินใจชัดขึ้น'
-              : 'A cleaner structure makes the value of the course easier to understand and act on'
+              ? 'คอร์สนี้ออกแบบมาเพื่อให้เรียนแล้วนำไปใช้ต่อได้จริง'
+              : 'Why this course is worth learning'
           }
           description={
             locale === 'th'
-              ? 'สรุปประโยชน์ของคอร์สให้สั้นลง อ่านง่ายขึ้น และแยกประเด็นสำคัญออกเป็นช่วงที่สแกนได้เร็ว'
-              : 'The page now gives the most important reasons to join in shorter, easier-to-scan blocks with more breathing room.'
+              ? 'สรุปเหตุผลสำคัญที่ทำให้คอร์สนี้เหมาะกับคนที่ต้องการอัปสกิลอย่างจริงจังและต่อยอดงานได้ทันที'
+              : 'A quick overview of the key reasons this course works well for learners who want practical, job-ready skills.'
           }
         >
           <CourseTrustGrid items={trustItems} locale={locale} />
@@ -473,8 +473,8 @@ const CourseDetail = ({ courseData, i18next }) => {
             title={t('course-detail-3')}
             description={
               locale === 'th'
-                ? 'สิ่งที่ผู้เรียนจะเข้าใจและนำไปต่อยอดได้หลังจบคอร์ส จัดเป็นรายการสองคอลัมน์เพื่อช่วยให้สแกนประเด็นได้เร็วขึ้น'
-                : 'A two-column outcomes layout keeps the takeaways clear and easier to scan before committing.'
+                ? 'สิ่งที่คุณจะเข้าใจและนำไปใช้ต่อได้หลังจบคอร์ส สรุปเป็นรายการที่อ่านเร็วและเห็นภาพชัด'
+                : 'A clear summary of what you will understand and be able to apply after the course.'
             }
             meta={
               <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-strong">
@@ -529,8 +529,8 @@ const CourseDetail = ({ courseData, i18next }) => {
             }
             description={
               locale === 'th'
-                ? 'แยกกลุ่มผู้เรียนที่เหมาะสมและสิ่งที่ควรรู้ล่วงหน้าออกจากกันอย่างชัดเจน เพื่อให้ตัดสินใจได้ง่ายขึ้น'
-                : 'Audience fit and prerequisites are separated clearly so prospects can assess readiness without wading through dense text.'
+                ? 'ดูได้ชัดเจนว่าคอร์สนี้เหมาะกับใคร และควรมีพื้นฐานอะไรบ้างก่อนเข้าเรียน'
+                : 'See at a glance who this course is for and what background is recommended before joining.'
             }
           >
             <div className="grid gap-6 lg:grid-cols-2">
@@ -571,8 +571,8 @@ const CourseDetail = ({ courseData, i18next }) => {
             title={t('course-detail-7')}
             description={
               locale === 'th'
-                ? 'ใช้รูปแบบ accordion แบบโมดูลเพื่อลดความล้าระหว่างเลื่อนอ่าน และทำให้สแกนหัวข้อได้ทีละช่วง'
-                : 'The curriculum is grouped into modules so visitors can scan chapter titles first, then expand into detail only where needed.'
+                ? 'โครงสร้างเนื้อหาถูกแบ่งเป็นโมดูล เพื่อให้ดูภาพรวมได้ง่ายและเลือกเปิดอ่านรายละเอียดในส่วนที่สนใจ'
+                : 'The curriculum is organized into modules so you can scan the overall structure first, then open the details you care about.'
             }
             meta={
               <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-surface/55 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-soft">
@@ -589,12 +589,12 @@ const CourseDetail = ({ courseData, i18next }) => {
         ) : null}
 
         <CourseSectionShell
-          eyebrow={locale === 'th' ? 'Schedule & Registration' : 'Schedule & Registration'}
+          eyebrow={locale === 'th' ? 'รอบอบรมและการลงทะเบียน' : 'Schedule & Registration'}
           title={t('course-detail-9')}
           description={
             locale === 'th'
-              ? 'รวมรอบอบรม รายละเอียดสถานที่ เอกสาร และ CTA สำคัญไว้ในช่วงเดียวกัน เพื่อให้ตัดสินใจต่อได้ทันที'
-              : 'Session details, registration links, and supporting documents are grouped together so the next step feels obvious.'
+              ? 'ตรวจสอบรอบอบรม วันที่ เวลา สถานที่ และรายละเอียดการลงทะเบียนได้ในส่วนเดียว'
+              : 'Review upcoming sessions, key logistics, and registration details in one place.'
           }
         >
           <div className="space-y-6">
@@ -621,15 +621,15 @@ const CourseDetail = ({ courseData, i18next }) => {
         <CourseConversionBand
           locale={locale}
           courseData={courseData}
-          badge={locale === 'th' ? 'Ready To Decide?' : 'Ready To Decide?'}
+          badge={locale === 'th' ? 'พร้อมเริ่มแล้วหรือยัง' : 'Ready To Decide?'}
           title={
             locale === 'th'
-              ? 'พร้อมคุยต่อหรือพร้อมจองที่นั่งแล้ว'
+              ? 'พร้อมลงทะเบียน หรืออยากคุยรายละเอียดก่อน'
               : 'Ready to ask a final question, or ready to secure your seat'
           }
           description={
             locale === 'th'
-              ? 'เลือกทางที่เหมาะกับจังหวะการตัดสินใจของคุณ ทัก LINE เพื่อเช็กความเหมาะสมของคอร์ส หรือกดลงทะเบียนทันทีหากพร้อมเรียนในรอบนี้'
+              ? 'หากอยากเช็กความเหมาะสมของคอร์สก่อนตัดสินใจ สามารถทักมาสอบถามผ่าน LINE ได้ทันที หรือหากพร้อมแล้วก็ลงทะเบียนรอบนี้ได้เลย'
               : 'Choose the path that matches your confidence level. Ask via LINE if you want to confirm fit, or register immediately if this session is right for you.'
           }
           primaryLabel={lineCopy.bottomPrimary}

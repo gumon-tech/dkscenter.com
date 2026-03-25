@@ -16,16 +16,16 @@ export default function CourseConversionBand({
   trackingLabel,
   compact = false,
 }) {
-  const lineTitle = locale === 'th' ? 'แอด LINE เพื่อคุยก่อน' : 'Ask via LINE first';
+  const lineTitle = locale === 'th' ? 'สอบถามผ่าน LINE' : 'Ask via LINE';
   const lineHint =
     locale === 'th'
-      ? 'เหมาะสำหรับคนที่อยากเช็กความเหมาะสมของคอร์สก่อนตัดสินใจ'
-      : 'Best if you want to confirm course fit before paying.';
-  const registerTitle = locale === 'th' ? 'ลงทะเบียนรอบนี้' : 'Register for this session';
+      ? 'เหมาะสำหรับผู้ที่อยากเช็กเนื้อหา ราคา หรือความเหมาะสมของคอร์สก่อนตัดสินใจ'
+      : 'A good option if you want to confirm course fit, pricing, or details before deciding.';
+  const registerTitle = locale === 'th' ? 'ลงทะเบียนรอบนี้' : 'Register Now';
   const registerHint =
     locale === 'th'
       ? 'ไปยังหน้าลงทะเบียนทันทีเมื่อคุณพร้อม'
-      : 'Go straight to registration when you are ready.';
+      : 'Go straight to the registration page when you are ready.';
 
   return (
     <section
@@ -37,7 +37,7 @@ export default function CourseConversionBand({
         <div className="max-w-3xl">
           <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
             {badge ||
-              (locale === 'th' ? 'Consult Before Registering' : 'Consult Before Registering')}
+              (locale === 'th' ? 'สอบถามก่อนลงทะเบียน' : 'Ask Before Registering')}
           </div>
           <h2
             className={`course-contrast-heading mt-3 font-semibold leading-[1.02] tracking-[-0.05em] ${

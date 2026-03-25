@@ -7,7 +7,7 @@ export default function CourseDocumentsTable({ documents, t }) {
   return (
     <section className="rounded-[30px] border border-border/60 bg-surface/35 px-5 py-5 shadow-soft backdrop-blur-xl sm:px-6">
       <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
-        Resources
+        Documents
       </div>
       <h3 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-white">
         {t('course-detail-19')}
