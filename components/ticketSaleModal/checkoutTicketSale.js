@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import ReactLoading from 'react-loading';
 import Countdown from 'react-countdown';
 import { ticketsCheckout } from '../../utils/ticketsCheckout';
@@ -8,16 +7,16 @@ import { refreshEmailToken } from '../../utils/refreshEmailToken';
 
 export default function CheckoutTicketSale({
   i18next,
-  accessToken,
+  accessToken: _accessToken,
   setAccessToken,
   refreshToken,
-  setRefreshToken,
+  setRefreshToken: _setRefreshToken,
   ticketAmount,
   reserveId,
   reserveExpire,
-  setManageState,
+  setManageState: _setManageState,
 }) {
-  const { t, i18n } = i18next;
+  const { t } = i18next;
   const router = useRouter();
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);

@@ -1,15 +1,9 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
+import PageContainer from './ui/page-container';
 
-const Container = (props) => {
-  return (
-    <div
-      className={`container p-8 mx-auto xl:px-8 ${
-        props.className ? props.className : ''
-      }`}
-    >
-      {props.children}
-    </div>
-  );
+const Container = ({ className, children }) => {
+  return <PageContainer className={className}>{children}</PageContainer>;
 };
 
 export default Container;

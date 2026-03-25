@@ -5,7 +5,7 @@ import heroImg from '../public/img/assistant1.jpg';
 
 const Hero = (props) => {
   const i18next = props.i18next;
-  const { t, i18n } = i18next;
+  const { t } = i18next;
   return (
     <>
       <Container className="flex flex-wrap ">

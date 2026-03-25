@@ -2,6 +2,7 @@ import React from 'react';
 import Link from '/components/link';
 import { getActiveCourses, removeCoursesOutDate } from '../utils/course';
 import { getSchedule } from '../utils/dateTime';
+import Card from './ui/card';
 
 export default function Table(props) {
   const i18next = props.i18next;
@@ -11,7 +12,7 @@ export default function Table(props) {
   courses = removeCoursesOutDate(courses);
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <Card className="overflow-hidden">
       <div className="relative rounded-xl overflow-auto">
         <div className="shadow-sm table-overflow overflow-hidden my-8">
           <table className="border-collapse table-auto w-full text-base">
@@ -75,7 +76,6 @@ export default function Table(props) {
           </table>
         </div>
       </div>
-      {/* </div> */}
-    </div>
+    </Card>
   );
 }

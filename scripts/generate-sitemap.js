@@ -4,8 +4,6 @@ const path = require('path');
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://dkscenter.gumon.io';
 
-const courses = require('../datas/courses.json');
-
 function url(loc) {
     return `
   <url>
@@ -15,7 +13,18 @@ function url(loc) {
   </url>`;
 }
 
-function main() {
+async function main() {
+    const entriesDirectory = path.join(
+        process.cwd(),
+        'content',
+        'courses',
+        'entries'
+    );
+    const courseKeys = fs
+        .readdirSync(entriesDirectory, { withFileTypes: true })
+        .filter((entry) => entry.isDirectory())
+        .map((entry) => entry.name)
+        .sort();
     const urls = [];
 
     // root language landing
@@ -33,7 +42,6 @@ function main() {
     urls.push(url(`${SITE_URL}/th/privacy`));
 
     // course detail pages
-    const courseKeys = Object.keys(courses || {});
     for (const key of courseKeys) {
         urls.push(url(`${SITE_URL}/en/course/${key}`));
         urls.push(url(`${SITE_URL}/th/course/${key}`));
@@ -49,4 +57,7 @@ ${urls.join('\n')}
     console.log(`✅ sitemap generated: ${outPath}`);
 }
 
-main();
+main().catch((error) => {
+    console.error('Failed to generate sitemap:', error);
+    process.exit(1);
+});

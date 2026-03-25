@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import dayjs from 'dayjs';
 
 const TicketCard = ({
   i18next,
@@ -8,7 +7,7 @@ const TicketCard = ({
   discountDetail,
   cartItems,
 }) => {
-  const { t, i18n } = i18next;
+  const { t } = i18next;
   const salesStartTime = new Date(ticket.salesStart);
   const currentTime = new Date();
   const salesEndTime = new Date(ticket.salesEnd);
@@ -28,7 +27,7 @@ const TicketCard = ({
 
   let availableText =
     t('ticket-card-available') + ':' + (ticket.remaining || 0);
-  if (timeSaleType == 'isAfterSales') availableText = ' ';
+  if (timeSaleType === 'isAfterSales') availableText = ' ';
 
   let availableFromText = '';
   if (timeSaleType === 'isBeforeSales') {
@@ -100,8 +99,8 @@ const TicketCard = ({
               })}
             </p>
           )}
-          {timeSaleType == 'isBeforeSales' && <></>}
-          {timeSaleType == 'isInSales' && (
+          {timeSaleType === 'isBeforeSales' && <></>}
+          {timeSaleType === 'isInSales' && (
             <>
               <button
                 className="bg-blue-500 text-white px-2 py-1 rounded"
@@ -118,7 +117,7 @@ const TicketCard = ({
               </button>
             </>
           )}
-          {timeSaleType == 'isAfterSales' && (
+          {timeSaleType === 'isAfterSales' && (
             <span className="text-red-500">{t('ticket-card-sold-out')}</span>
           )}
         </div>
@@ -145,7 +144,7 @@ const CartDetails = ({
   setTicketAmount,
   setManageState,
 }) => {
-  const { t, i18n } = i18next;
+  const { t } = i18next;
 
   const isCartEmpty = cartItems.length === 0;
 
@@ -237,14 +236,14 @@ const TicketSales = ({
   tickets,
   discountCode,
   setDiscountCode,
-  ticketId,
+  ticketId: _ticketId,
   setTicketId,
-  ticketAmount,
+  ticketAmount: _ticketAmount,
   setTicketAmount,
   discountDetail,
   setManageState,
 }) => {
-  const { t, i18n } = i18next;
+  const { t } = i18next;
   const [cartItems, setCartItems] = useState([]);
   const [temDiscountCode, setTemDiscountCode] = useState(discountCode);
 

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import dayjs from 'dayjs';
 
 const TicketTable = ({ tickets }) => {
-  const [quantities, setQuantities] = useState(tickets.map((ticket) => 0));
+  const [quantities, setQuantities] = useState(tickets.map(() => 0));
   const [promoCode, setPromoCode] = useState('');
   const currentTime = new Date();
 

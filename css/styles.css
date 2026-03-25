@@ -4,20 +4,200 @@
   }
 }
 
-body {
-  background-image: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.92),
-    rgba(248, 250, 252, 0.98) 22%,
-    rgba(241, 245, 249, 0.75)
+:root {
+  --course-page-bg: linear-gradient(
+    180deg,
+    #f8fbff 0%,
+    #f3f7fc 38%,
+    #eef3f9 100%
   );
+  --course-ambient-bg:
+    radial-gradient(
+      circle at top left,
+      rgba(59, 130, 246, 0.1),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(16, 185, 129, 0.07),
+      transparent 30%
+    );
+  --course-depth-bg: linear-gradient(
+    180deg,
+    rgba(248, 250, 252, 0) 0%,
+    rgba(248, 250, 252, 0.6) 44%,
+    rgba(238, 243, 249, 0.96) 100%
+  );
+  --course-panel-bg: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(247, 250, 255, 0.98) 100%
+  );
+  --course-panel-border: rgba(203, 213, 225, 0.9);
+  --course-panel-shadow: 0 22px 60px -42px rgba(15, 23, 42, 0.2);
+  --course-soft-panel-bg: rgba(255, 255, 255, 0.98);
+  --course-soft-panel-border: rgba(226, 232, 240, 1);
+  --course-soft-panel-shadow: 0 18px 48px -38px rgba(15, 23, 42, 0.12);
+  --course-subtle-bg: rgba(226, 232, 240, 0.64);
+  --course-subtle-border: rgba(255, 255, 255, 0.18);
+  --course-subtle-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  --course-contrast-bg: linear-gradient(
+    135deg,
+    #13203a 0%,
+    #162745 44%,
+    #1d3563 100%
+  );
+  --course-contrast-border: rgba(59, 130, 246, 0.18);
+  --course-contrast-shadow: 0 28px 80px -46px rgba(15, 23, 42, 0.3);
+  --course-hero-bg: linear-gradient(
+    145deg,
+    rgba(24, 37, 64, 0.92) 0%,
+    rgba(30, 48, 82, 0.96) 48%,
+    rgba(40, 61, 101, 0.94) 100%
+  );
+  --course-hero-border: rgba(148, 163, 184, 0.28);
+  --course-hero-shadow: 0 28px 72px -40px rgba(15, 23, 42, 0.22);
+  --course-table-head-bg: #f8fafc;
+  --course-table-row-even: rgba(248, 250, 252, 0.9);
+  --course-table-row-hover: rgba(239, 246, 255, 0.94);
+  --course-title-line: rgba(37, 99, 235, 0.22);
 }
 
-.dark body {
-  background-image: linear-gradient(
-    to bottom,
-    rgba(15, 23, 42, 0.96),
-    rgba(15, 23, 42, 0.98) 25%,
-    rgba(2, 6, 23, 1)
+.dark {
+  --course-page-bg: linear-gradient(
+    180deg,
+    rgba(2, 6, 23, 1) 0%,
+    rgba(15, 23, 42, 0.98) 20%,
+    rgba(2, 6, 23, 1) 100%
   );
+  --course-ambient-bg:
+    radial-gradient(
+      circle at top left,
+      rgba(59, 130, 246, 0.14),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(16, 185, 129, 0.1),
+      transparent 28%
+    );
+  --course-depth-bg: linear-gradient(
+    180deg,
+    rgba(9, 14, 30, 0) 0%,
+    rgba(9, 14, 30, 0.62) 44%,
+    rgba(4, 9, 22, 0.96) 100%
+  );
+  --course-panel-bg: rgba(10, 17, 34, 0.92);
+  --course-panel-border: rgba(51, 65, 85, 0.72);
+  --course-panel-shadow: 0 24px 70px -42px rgba(0, 0, 0, 0.62);
+  --course-soft-panel-bg: rgba(12, 20, 38, 0.84);
+  --course-soft-panel-border: rgba(30, 41, 59, 0.92);
+  --course-soft-panel-shadow: 0 20px 50px -38px rgba(0, 0, 0, 0.56);
+  --course-subtle-bg: rgba(255, 255, 255, 0.04);
+  --course-subtle-border: rgba(255, 255, 255, 0.08);
+  --course-subtle-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  --course-contrast-bg: linear-gradient(
+    135deg,
+    #020617 0%,
+    #0f172a 50%,
+    #172554 100%
+  );
+  --course-contrast-border: rgba(52, 211, 153, 0.18);
+  --course-contrast-shadow: 0 28px 80px -46px rgba(0, 0, 0, 0.72);
+  --course-hero-bg: linear-gradient(
+    145deg,
+    rgba(2, 6, 23, 0.98) 0%,
+    rgba(15, 23, 42, 0.96) 48%,
+    rgba(23, 37, 84, 0.92) 100%
+  );
+  --course-hero-border: rgba(59, 130, 246, 0.16);
+  --course-hero-shadow: 0 30px 90px -48px rgba(0, 0, 0, 0.78);
+  --course-table-head-bg: rgba(20, 30, 48, 0.96);
+  --course-table-row-even: rgba(12, 20, 38, 0.94);
+  --course-table-row-hover: rgba(18, 31, 53, 0.96);
+  --course-title-line: rgba(56, 189, 248, 0.24);
+}
+
+body {
+  background-image: var(--course-page-bg);
+}
+
+.course-theme-ambient {
+  background-image: var(--course-ambient-bg);
+}
+
+.course-theme-depth {
+  background-image: var(--course-depth-bg);
+}
+
+.course-theme-panel {
+  background: var(--course-panel-bg);
+  border: 1px solid var(--course-panel-border);
+  box-shadow: var(--course-panel-shadow);
+}
+
+.course-theme-soft-panel {
+  background: var(--course-soft-panel-bg);
+  border: 1px solid var(--course-soft-panel-border);
+  box-shadow: var(--course-soft-panel-shadow);
+}
+
+.course-theme-subtle {
+  background: var(--course-subtle-bg);
+  border: 1px solid var(--course-subtle-border);
+  box-shadow: var(--course-subtle-shadow);
+}
+
+.course-theme-hero {
+  position: relative;
+  background: var(--course-hero-bg);
+  border: 1px solid var(--course-hero-border);
+  box-shadow: var(--course-hero-shadow);
+}
+
+.course-theme-contrast {
+  position: relative;
+  background: var(--course-contrast-bg);
+  border: 1px solid var(--course-contrast-border);
+  box-shadow: var(--course-contrast-shadow);
+}
+
+.course-theme-table-head {
+  background: var(--course-table-head-bg);
+}
+
+.course-theme-table-row:nth-child(even) {
+  background: var(--course-table-row-even);
+}
+
+.course-theme-table-row:hover {
+  background: var(--course-table-row-hover);
+}
+
+.course-title-line {
+  background: var(--course-title-line);
+}
+
+.course-heading {
+  color: #0f172a;
+}
+
+.dark .course-heading {
+  color: #f8fafc;
+}
+
+.course-copy {
+  color: #334155;
+}
+
+.dark .course-copy {
+  color: rgba(226, 232, 240, 0.9);
+}
+
+.course-contrast-copy {
+  color: rgba(226, 232, 240, 0.9);
+}
+
+.course-contrast-heading {
+  color: #ffffff;
 }

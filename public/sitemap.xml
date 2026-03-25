@@ -86,18 +86,6 @@
   </url>
 
   <url>
-    <loc>https://dkscenter.gumon.io/en/course/2024-007-modern-web-frontend-with-react</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://dkscenter.gumon.io/th/course/2024-007-modern-web-frontend-with-react</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
     <loc>https://dkscenter.gumon.io/en/course/2024-003-fundamental-api</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -141,6 +129,18 @@
 
   <url>
     <loc>https://dkscenter.gumon.io/th/course/2024-006-fundamental-api</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/en/course/2024-007-modern-web-frontend-with-react</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2024-007-modern-web-frontend-with-react</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

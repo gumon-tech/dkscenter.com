@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import ReactLoading from 'react-loading';
 import TicketSales from '../TicketSales';
 import { getTickets } from '../../utils/getTickets';
@@ -17,41 +16,43 @@ export default function FetchTicketSale({
   setTicketAmount,
   setManageState,
 }) {
-  if (!courseKey) return null;
-  if (!scheduleKey) return null;
-
   const [isLoading, setIsLoading] = useState(true);
   const [tickets, setTickets] = useState([]);
   const [discountDetail, setDiscountDetail] = useState(null);
-  const [error, setError] = useState(null);
   const router = useRouter();
 
   useEffect(() => {
+    if (!courseKey || !scheduleKey) {
+      setIsLoading(false);
+      return;
+    }
+
     const fetchTickets = async () => {
       setIsLoading(true);
       try {
         const response = await getTickets({
-          courseKey: courseKey,
-          scheduleKey: scheduleKey,
-          discountCode: discountCode,
+          courseKey,
+          scheduleKey,
+          discountCode,
         });
         setTickets(response.tickets || []);
         setDiscountDetail(response.discountDetail || null);
-        setIsLoading(false);
-        setError(null);
 
         const { pathname, query } = router;
         const queryParams = { ...query, code: discountCode };
         router.push({ pathname, query: queryParams });
       } catch (error) {
         console.error('Error getTickets:', error);
+        setDiscountDetail(null);
+        setTickets([]);
+      } finally {
         setIsLoading(false);
-        setError(error);
       }
-      setIsLoading(false);
     };
     fetchTickets();
-  }, [discountCode]); // เพื่อให้เรียก API ในครั้งเดียวเมื่อ component ถูก render เท่านั้น
+  }, [courseKey, discountCode, router, scheduleKey]);
+
+  if (!courseKey || !scheduleKey) return null;
 
   if (isLoading)
     return (
@@ -79,17 +80,6 @@ export default function FetchTicketSale({
         discountDetail={discountDetail}
         setManageState={setManageState}
       />
-      {/* {error && false && (
-        <div className="error text-red-500">
-          <p>error message: {JSON.stringify(error.message)}</p>
-          <p>error name: {JSON.stringify(error.name)}</p>
-          <p>error code: {JSON.stringify(error.code)}</p>
-          <p>error status: {JSON.stringify(error.status)}</p>
-          <p>error stack: {JSON.stringify(error.stack)}</p>
-          <p>error config: {JSON.stringify(error.config)}</p>
-          <p>error response: {JSON.stringify(error.response)}</p>
-        </div>
-      )} */}
     </>
   );
 }

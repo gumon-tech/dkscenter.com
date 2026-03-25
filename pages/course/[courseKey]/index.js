@@ -2,22 +2,20 @@ import React from 'react';
 import { RedirectRender } from '/lib/redirect';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import courses from '/datas/courses.json';
+import { getCourseByKey, getCourseKeys } from '/lib/courses/repository';
 
 export const getStaticPaths = () => {
-  const courseKeyList = Object.keys(courses);
-  const paths = [];
-  for (const courseKey of courseKeyList) {
-    paths.push({
-      params: { courseKey: courseKey },
-    });
-  }
-  return { paths, fallback: false };
+  return {
+    paths: getCourseKeys().map((courseKey) => ({
+      params: { courseKey },
+    })),
+    fallback: false,
+  };
 };
 
 export const getStaticProps = (context) => {
   const courseKey = context.params?.courseKey || '';
-  const courseData = courses[courseKey];
+  const courseData = getCourseByKey(courseKey);
   return { props: { courseData } };
 };
 

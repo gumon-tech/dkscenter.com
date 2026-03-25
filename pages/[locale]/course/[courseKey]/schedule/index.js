@@ -1,76 +1,36 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import Head from 'next/head';
-import Navbar from '/components/navbar';
-import Footer from '/components/footer';
-import CourseDetail from '/components/courseDetail';
-import courses from '/datas/courses.json';
-import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import CourseDetail from '/components/courseDetail';
+import SeoHead from '/components/seo/seo-head';
+import SiteShell from '/components/layout/site-shell';
+import { getCourseByKey, getCourseKeys } from '/lib/courses/repository';
 
 const CourseSchedule = ({ courseData }) => {
   const i18next = useTranslation('home');
-  const { t, i18n } = i18next;
-
-  const { asPath } = useRouter();
-  const origin =
-    typeof window !== 'undefined' && window.location.origin
-      ? window.location.origin
-      : '';
-
-  const URL = `${origin}${asPath}`;
-  const domain = origin;
+  const { i18n } = i18next;
   const currentLanguage = i18n.language;
   const courseLocaleData = courseData[currentLanguage];
 
   return (
     <>
-      <Head>
-        <title>
-          {`${courseLocaleData.title} | DKS Center - Digital Knowledge Sharing Center`}
-        </title>
-        <meta
-          name="description"
-          content={`${courseLocaleData.title} | ${courseLocaleData.overview}`}
-        />
-        <link rel="icon" href="/favicon.ico" />
-
-        {/* Open Graph Protocol */}
-        <meta
-          property="og:title"
-          content={`${courseLocaleData.title} | DKS Center - Digital Knowledge Sharing Center`}
-        />
-        <meta
-          property="og:description"
-          content={`${courseLocaleData.title} | ${courseLocaleData.overview}`}
-        />
-        <meta
-          property="og:image"
-          content={domain + courseLocaleData.imageUrl}
-        />
-        <meta property="og:url" content={URL} />
-
-        {/* Twitter Card */}
-        <meta
-          name="twitter:title"
-          content={`${courseLocaleData.title} | DKS Center - Digital Knowledge Sharing Center`}
-        />
-        <meta
-          name="twitter:description"
-          content={`${courseLocaleData.title} | ${courseLocaleData.overview}`}
-        />
-        <meta
-          name="twitter:image"
-          content={domain + courseLocaleData.imageUrl}
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+      <SeoHead
+        locale={currentLanguage}
+        path={`/course/${courseLocaleData.key}/schedule`}
+        title={courseLocaleData.title}
+        description={courseLocaleData.overview}
+        image={courseLocaleData.imageUrl}
+      />
+      <SiteShell i18next={i18next}>
+        <CourseDetail courseData={courseLocaleData} i18next={i18next} />
+      </SiteShell>
     </>
   );
 };
 
 export const getStaticPaths = () => {
-  const courseKeyList = Object.keys(courses);
+  const courseKeyList = getCourseKeys();
   const paths = [];
   const locales = ['en', 'th'];
   for (const courseKey of courseKeyList) {
@@ -88,7 +48,7 @@ export const getStaticProps = makeStaticProps(['home']);
 function makeStaticProps(ns = {}) {
   return async function getStaticProps(ctx) {
     const courseKey = ctx.params?.courseKey || '';
-    const courseData = courses[courseKey];
+    const courseData = getCourseByKey(courseKey);
     return {
       props: await getI18nProps(ctx, ns, courseData),
     };

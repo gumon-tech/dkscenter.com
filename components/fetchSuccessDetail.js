@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import Container from './container';
 import Breadcrumb from './breadcrumb';
@@ -9,10 +10,9 @@ import SuccessDetail from './successDetail';
 import ReactLoading from 'react-loading';
 import { useRouter } from 'next/router';
 
-const fetchSuccessDetail = ({ orderId, i18next }) => {
+const FetchSuccessDetail = ({ orderId, i18next }) => {
   const { t } = i18next;
   const [orderData, setOrderData] = useState(null);
-  const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
 
@@ -41,17 +41,15 @@ const fetchSuccessDetail = ({ orderId, i18next }) => {
           });
           setOrderData(response.order);
           setIsLoading(false);
-          setError(null);
         } catch (error) {
           console.error('Error order:', error);
           setIsLoading(false);
-          setError(error);
         }
         setIsLoading(false);
       };
       fetchOrder();
     }
-  }, [orderId]);
+  }, [orderId, router]);
 
   if (!orderId) {
     return (
@@ -86,4 +84,4 @@ const fetchSuccessDetail = ({ orderId, i18next }) => {
   );
 };
 
-export default fetchSuccessDetail;
+export default FetchSuccessDetail;

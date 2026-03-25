@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Container from './container';
-import { Course } from '../types/course';
 
 const Video = ({ course }) => {
   const [playVideo, setPlayVideo] = useState(false);
@@ -42,7 +41,7 @@ const Video = ({ course }) => {
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
+              allowFullScreen
             ></iframe>
           )}
         </div>

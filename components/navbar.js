@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import ThemeChanger from './DarkSwitch';
 import Image from 'next/image';
@@ -5,24 +6,20 @@ import { Disclosure } from '@headlessui/react';
 import Link from '/components/link';
 import { useRouter } from 'next/router';
 import LanguageSwitchLink from './LanguageSwitchLink';
-import i18nextConfig from '../next-i18next.config';
+import { defaultLocale, locales } from '../lib/i18n/config';
+import { MAIN_NAVIGATION } from '../lib/content/site';
+import PageContainer from './ui/page-container';
 
 export default function Navbar(props) {
   const router = useRouter();
   const i18next = props.i18next;
-  const { t, i18n } = i18next;
+  const { t } = i18next;
 
-  const currentLocale = router.query.locale || i18nextConfig.i18n.defaultLocale;
-  const navigation = [
-    { title: 'Home', path: '/' },
-    { title: 'Course', path: '/course' },
-    { title: 'Schedule', path: '/schedule' },
-    { title: 'About Us', path: '/about-us' },
-  ];
+  const currentLocale = router.query.locale || defaultLocale;
 
   return (
-    <div className="w-full">
-      <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-8">
+    <div className="w-full border-b border-border/70 bg-surface/95 backdrop-blur">
+      <PageContainer className="relative flex flex-wrap items-center justify-between py-6 lg:justify-between">
         {/* Logo  */}
         <Disclosure>
           {({ open }) => (
@@ -69,22 +66,22 @@ export default function Navbar(props) {
 
                 <Disclosure.Panel className="flex flex-wrap w-full my-5 lg:hidden">
                   <>
-                    {navigation.map((item, index) => (
+                    {MAIN_NAVIGATION.map((item, index) => (
                       <Link
                         key={index}
-                        href={item.path}
-                        className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none"
+                        href={item.href}
+                        className="w-full px-4 py-2 -ml-4 text-muted rounded-md hover:text-primary focus:text-primary focus:bg-primary/10 dark:focus:bg-gray-800 focus:outline-none"
                       >
-                        {item.title}
+                        {t(`nav-${item.key}`)}
                       </Link>
                     ))}
 
-                    {i18nextConfig.i18n.locales.map((locale) => {
+                    {locales.map((locale) => {
                       if (locale === currentLocale) return null;
                       return (
                         <LanguageSwitchLink
                           className={
-                            'w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none'
+                            'w-full px-4 py-2 -ml-4 text-muted rounded-md hover:text-primary focus:text-primary focus:bg-primary/10 dark:focus:bg-gray-800 focus:outline-none'
                           }
                           locale={locale}
                           key={locale}
@@ -102,24 +99,24 @@ export default function Navbar(props) {
 
         <div className="hidden mr-3 space-x-4 lg:flex nav__item">
           <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
-            {navigation.map((menu, index) => (
+            {MAIN_NAVIGATION.map((menu, index) => (
               <li className="mr-3 nav__item" key={index}>
                 <Link
-                  href={menu.path}
-                  className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800"
+                  href={menu.href}
+                  className="inline-block px-4 py-2 text-base font-medium text-text no-underline rounded-md hover:text-primary focus:text-primary focus:bg-primary/10 focus:outline-none dark:focus:bg-gray-800"
                 >
-                  {menu.title}
+                  {t(`nav-${menu.key}`)}
                 </Link>
               </li>
             ))}
 
             <li className="mr-3 nav__item" key="LanguageSwitchLink">
-              {i18nextConfig.i18n.locales.map((locale) => {
+              {locales.map((locale) => {
                 if (locale === currentLocale) return null;
                 return (
                   <LanguageSwitchLink
                     className={
-                      'inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800'
+                      'inline-block px-4 py-2 text-base font-medium text-text no-underline rounded-md hover:text-primary focus:text-primary focus:bg-primary/10 focus:outline-none dark:focus:bg-gray-800'
                     }
                     locale={locale}
                     key={locale}
@@ -131,7 +128,7 @@ export default function Navbar(props) {
 
           <ThemeChanger />
         </div>
-      </nav>
+      </PageContainer>
     </div>
   );
 }

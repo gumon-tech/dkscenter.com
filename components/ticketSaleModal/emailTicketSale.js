@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import ReactLoading from 'react-loading';
 import Countdown from 'react-countdown';
 import { sendVerifyEmail } from '../../utils/sendVerifyEmail';
@@ -8,20 +7,20 @@ import { ticketsReserve } from '../../utils/ticketsReserve';
 
 export default function EmailTicketSale({
   i18next,
-  accessToken,
+  accessToken: _accessToken,
   setAccessToken,
-  refreshToken,
+  refreshToken: _refreshToken,
   setRefreshToken,
   discountCode,
   ticketId,
   ticketAmount,
-  reserveId,
+  reserveId: _reserveId,
   setReserveId,
-  reserveExpire,
+  reserveExpire: _reserveExpire,
   setReserveExpire,
   setManageState,
 }) {
-  const { t, i18n } = i18next;
+  const { t } = i18next;
 
   const [email, setEmail] = useState('');
   const [ref, setRef] = useState('');
@@ -30,8 +29,6 @@ export default function EmailTicketSale({
   const [otp, setOTP] = useState('');
   const [showOTPForm, setShowOTPForm] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
-
   const handleEmailSubmit = async (e) => {
     e.preventDefault();
     // ส่งอีเมลไปยังเซิร์ฟเวอร์เพื่อขอ OTP
@@ -40,7 +37,6 @@ export default function EmailTicketSale({
     setIsLoading(true);
     setShowOTPForm(true);
     try {
-      setError(null);
       const response = await sendVerifyEmail(email); // เพิ่ม await เพื่อรอให้การส่งอีเมล์เสร็จสมบูรณ์ก่อน
       setRef(response.ref);
       setExpireAt(response.expireAt);
@@ -49,7 +45,6 @@ export default function EmailTicketSale({
       setIsLoading(false);
     } catch (error) {
       console.error('Error sending verification email:', error);
-      setError(error);
       setIsLoading(false);
       setShowOTPForm(false);
       if ('EMAIL_IS_INVALID' === error?.response?.data?.code) {
@@ -65,7 +60,6 @@ export default function EmailTicketSale({
     // ส่ง OTP ไปยังเซิร์ฟเวอร์เพื่อยืนยัน
     setIsLoading(true);
     try {
-      setError(null);
       const response = await verifyEmailToken({
         id: sendVerifyEmailId,
         email: email,
@@ -81,7 +75,6 @@ export default function EmailTicketSale({
 
       // ยิง api ซื้อ
       try {
-        setError(null);
         const response = await ticketsReserve({
           token: newAccessToken,
           ticketId: ticketId,
@@ -92,15 +85,12 @@ export default function EmailTicketSale({
         setReserveId(response.reserveDetail.reserveId);
         setReserveExpire(response.reserveDetail.expireAt);
         setManageState(2);
-        setError(null);
       } catch (error) {
         console.error('Error ticketsReserve :', error);
-        setError(error);
         alert(error?.response?.data?.message);
       }
     } catch (error) {
       console.error('Error sending verifyEmailToken :', error);
-      setError(error);
       if ('EMAIL_REF_OTP_INVALID' === error?.response?.data?.code) {
         alert(t('error-otp-is-invalid'));
       } else {
@@ -111,18 +101,16 @@ export default function EmailTicketSale({
     setIsLoading(false);
   };
 
-  const handleResendOTP = async (e) => {
+  const handleResendOTP = async () => {
     // ส่งอีเมลไปยังเซิร์ฟเวอร์เพื่อขอ OTP ใหม่
     setIsLoading(true);
     try {
-      setError(null);
       const response = await sendVerifyEmail(email); // เพิ่ม await เพื่อรอให้การส่งอีเมล์เสร็จสมบูรณ์ก่อน
       setRef(response.ref);
       setExpireAt(response.expireAt);
       setSendVerifyEmailId(response.id);
     } catch (error) {
       console.error('Error sending verification email:', error);
-      setError(error);
       if ('EMAIL_REF_OTP_INVALID' === error?.response?.data?.code) {
         alert(t('error-otp-is-invalid'));
       } else {

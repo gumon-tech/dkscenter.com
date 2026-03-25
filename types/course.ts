@@ -5,9 +5,14 @@
 //   "Set quicktype target language"
 
 export type Course = {
+  id?: string;
   lastUpdate: string;
   key: string;
+  slug?: string;
+  locale?: string;
+  language?: string;
   isActive: boolean;
+  brand?: string;
   imageUrl?: string | null;
   detailUrl?: string | null;
   title: string;
@@ -15,10 +20,12 @@ export type Course = {
   duration: string;
   overview: string;
   objectives: string[];
+  audience?: string[];
   whoShouldAttend: string[];
   prerequisites: string[];
   participantsWillReceive: string[];
   outline: Outline[];
+  curriculum?: Outline[];
   publicSchedule: PublicSchedule[];
   documents: Document[];
 };
@@ -34,6 +41,7 @@ export type Outline = {
 };
 
 export type PublicSchedule = {
+  scheduleKey?: string;
   title: string;
   eventStart: string;
   eventEnd: string;

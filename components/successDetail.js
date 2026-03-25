@@ -11,9 +11,7 @@ import {
   CheckCircleIcon,
 } from '@heroicons/react/24/outline';
 
-const SuccessDetail = ({ orderData, i18next }) => {
-  const { t } = i18next;
-
+const SuccessDetail = ({ orderData, i18next: _i18next }) => {
   if (!orderData) return <></>;
 
   return (

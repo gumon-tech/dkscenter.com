@@ -1,5 +1,4 @@
 import React from 'react';
-import { useRouter } from 'next/router';
 import { useState } from 'react';
 import FetchTicketSale from './fetchTicketSale';
 import EmailTicketSale from './emailTicketSale';
@@ -11,12 +10,6 @@ export default function TicketSaleModalManage({
   scheduleKey,
   discountCodeURL,
 }) {
-  const router = useRouter();
-  const { t, i18n } = i18next;
-
-  if (!courseKey) return null;
-  if (!scheduleKey) return null;
-
   const [manageState, setManageState] = useState(0);
   const [discountCode, setDiscountCode] = useState(discountCodeURL || '');
   const [accessToken, setAccessToken] = useState(null);
@@ -25,6 +18,8 @@ export default function TicketSaleModalManage({
   const [ticketAmount, setTicketAmount] = useState(null);
   const [reserveId, setReserveId] = useState(null);
   const [reserveExpire, setReserveExpire] = useState(new Date());
+
+  if (!courseKey || !scheduleKey) return null;
 
   // 0 = หน้าแสดงบัตรทั้งหมด
   // 1 = หน้ายืนยัน email

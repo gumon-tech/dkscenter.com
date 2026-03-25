@@ -14,6 +14,7 @@ module.exports = {
   },
   env: {
     browser: true,
+    node: true,
     es2021: true,
   },
   extends: [
@@ -25,7 +26,10 @@ module.exports = {
   ],
   plugins: ['prettier'],
   rules: {
-    'prettier/prettier': 'error',
-    // Customize your rules here
+    'prettier/prettier': 'off',
+    'react/prop-types': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+    'react-hooks/rules-of-hooks': 'warn',
   },
 };

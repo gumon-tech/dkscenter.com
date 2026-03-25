@@ -7,6 +7,8 @@ import {
   AdjustmentsHorizontalIcon,
   SunIcon,
 } from '@heroicons/react/24/solid';
+import benefitOneImg from '../public/img/hero.png';
+import benefitTwoImg from '../public/img/main_img.jpg';
 
 const benefitOne = {
   title: 'Highlight your benefits',

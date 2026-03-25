@@ -3,7 +3,6 @@ import SectionTitle from './sectionTitle';
 import Link from 'next/link';
 import { getActiveCourses, removeCoursesOutDate } from '../utils/course';
 import { useState, useEffect } from 'react';
-import { Course, PublicSchedule } from '../types/course';
 import Video from './video';
 
 const HighlightCourse = ({ i18next }) => {
@@ -41,7 +40,7 @@ const HighlightCourse = ({ i18next }) => {
       setHighlightSchedule(highlightSchedule);
       setCourseHref('/course/' + highlightCourse.key);
     }
-  }, [i18n.language]);
+  }, [currentLanguage]);
 
   return (
     <>

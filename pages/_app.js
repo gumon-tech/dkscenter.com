@@ -11,6 +11,7 @@ import { DEFAULT_BRAND, normalizeBrand } from '/lib/brand';
 import '../css/tailwind.css';
 import '../css/styles.css';
 import '../css/fonts.css';
+import '../styles/tokens.css';
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -53,6 +54,7 @@ function MyApp({ Component, pageProps }) {
     return () => router.events.off('routeChangeComplete', handleRouteChange);
   }, [
     router.events,
+    router.locale,
     router.query?.locale,
     pageProps?.brandOwner,
     pageProps?.pageType,

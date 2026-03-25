@@ -2,32 +2,24 @@ import React from 'react';
 import { RedirectRender } from '/lib/redirect';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import courses from '/datas/courses.json';
+import {
+  getCourseByKey,
+  getLocalizedCourseSchedulePaths,
+} from '/lib/courses/repository';
 
 export const getStaticPaths = () => {
-  const courseDatas = Object.values(courses);
-  const paths = [];
-  for (const courseData of courseDatas) {
-    const courseLocaleDatas = Object.values(courseData);
-    for (const courseLocaleData of courseLocaleDatas) {
-      for (const publicSchedule of courseLocaleData.publicSchedule) {
-        if (publicSchedule.isActive === true && publicSchedule.scheduleKey) {
-          paths.push({
-            params: {
-              courseKey: courseLocaleData.key,
-              scheduleKey: publicSchedule.scheduleKey,
-            },
-          });
-        }
-      }
-    }
-  }
+  const paths = getLocalizedCourseSchedulePaths().map((path) => ({
+    params: {
+      courseKey: path.params.courseKey,
+      scheduleKey: path.params.scheduleKey,
+    },
+  }));
   return { paths, fallback: false };
 };
 
 export const getStaticProps = (context) => {
   const courseKey = context.params?.courseKey || '';
-  const courseData = courses[courseKey];
+  const courseData = getCourseByKey(courseKey);
   return { props: { courseData } };
 };
 
