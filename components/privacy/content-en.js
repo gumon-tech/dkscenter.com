@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function PrivacyContentEN() {
   return (
-    <div className="text-left">
+    <div className="policy-content text-left">
       <div className="mb-6">
         <p>
           Gumon Technology Co., Ltd. recognizes the importance of the protection
@@ -262,11 +262,9 @@ export default function PrivacyContentEN() {
           <p>
             We may send certain information or newsletter for the purpose of
             utilizing your preference via your email. If you no longer want to
-            receive the communications from us, you can click the
-            {' '}
-            &quot;unsubscribe&quot;
-            {' '}
-            link in the email or contact us through our email.
+            receive the communications from us, you can click the{' '}
+            &quot;unsubscribe&quot; link in the email or contact us through our
+            email.
           </p>
         </div>
         <div className="mb-6">

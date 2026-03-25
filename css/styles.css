@@ -5,32 +5,146 @@
 }
 
 :root {
-  --page-grid-color: rgba(71, 85, 105, 0.22);
-  --page-glow-a: radial-gradient(circle at 10% 10%, rgba(73, 116, 255, 0.18), transparent 34%);
-  --page-glow-b: radial-gradient(circle at 90% 10%, rgba(38, 194, 173, 0.12), transparent 26%);
-  --page-glow-c: radial-gradient(circle at 50% 100%, rgba(255, 164, 74, 0.08), transparent 34%);
+  --page-grid-color: rgba(148, 163, 184, 0.2);
+  --page-glow-a: radial-gradient(
+    circle at 10% 10%,
+    rgba(36, 88, 216, 0.14),
+    transparent 34%
+  );
+  --page-glow-b: radial-gradient(
+    circle at 90% 10%,
+    rgba(15, 143, 135, 0.1),
+    transparent 26%
+  );
+  --page-glow-c: radial-gradient(
+    circle at 50% 100%,
+    rgba(217, 119, 6, 0.08),
+    transparent 34%
+  );
   --course-page-bg:
-    var(--page-glow-a),
-    var(--page-glow-b),
-    var(--page-glow-c),
-    linear-gradient(180deg, rgba(8, 17, 31, 1) 0%, rgba(10, 19, 33, 0.98) 42%, rgba(7, 14, 26, 1) 100%);
+    var(--page-glow-a), var(--page-glow-b), var(--page-glow-c),
+    linear-gradient(180deg, #f8fbff 0%, #f3f7fc 42%, #edf3fa 100%);
+  --course-ambient-bg:
+    radial-gradient(circle at 0% 0%, rgba(36, 88, 216, 0.16), transparent 32%),
+    radial-gradient(
+      circle at 100% 18%,
+      rgba(15, 143, 135, 0.1),
+      transparent 24%
+    );
+  --course-depth-bg: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(237, 243, 250, 0.72) 44%,
+    rgba(231, 239, 248, 0.96) 100%
+  );
+  --course-panel-bg: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.88) 0%,
+    rgba(248, 251, 255, 0.96) 100%
+  );
+  --course-panel-border: rgba(148, 163, 184, 0.3);
+  --course-panel-shadow: 0 24px 78px -46px rgba(15, 23, 42, 0.18);
+  --course-soft-panel-bg: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.86) 0%,
+    rgba(242, 247, 252, 0.96) 100%
+  );
+  --course-soft-panel-border: rgba(148, 163, 184, 0.36);
+  --course-soft-panel-shadow: 0 24px 56px -38px rgba(30, 41, 59, 0.16);
+  --course-subtle-bg: rgba(255, 255, 255, 0.68);
+  --course-subtle-border: rgba(36, 88, 216, 0.1);
+  --course-subtle-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  --course-contrast-bg: linear-gradient(
+    145deg,
+    #e8f0ff 0%,
+    #dfeafb 46%,
+    #d0dffc 100%
+  );
+  --course-contrast-border: rgba(36, 88, 216, 0.14);
+  --course-contrast-shadow: 0 32px 90px -52px rgba(36, 88, 216, 0.18);
+  --course-hero-bg: linear-gradient(
+    140deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(243, 247, 252, 0.98) 46%,
+    rgba(226, 236, 251, 0.94) 100%
+  );
+  --course-hero-border: rgba(36, 88, 216, 0.12);
+  --course-hero-shadow: 0 34px 96px -52px rgba(30, 41, 59, 0.2);
+  --course-table-head-bg: rgba(232, 239, 248, 0.94);
+  --course-table-row-even: rgba(246, 249, 253, 0.96);
+  --course-table-row-hover: rgba(236, 243, 252, 0.98);
+  --course-title-line: rgba(36, 88, 216, 0.18);
+}
+
+[data-theme='dark'] {
+  --page-grid-color: rgba(71, 85, 105, 0.22);
+  --page-glow-a: radial-gradient(
+    circle at 10% 10%,
+    rgba(73, 116, 255, 0.18),
+    transparent 34%
+  );
+  --page-glow-b: radial-gradient(
+    circle at 90% 10%,
+    rgba(38, 194, 173, 0.12),
+    transparent 26%
+  );
+  --page-glow-c: radial-gradient(
+    circle at 50% 100%,
+    rgba(255, 164, 74, 0.08),
+    transparent 34%
+  );
+  --course-page-bg:
+    var(--page-glow-a), var(--page-glow-b), var(--page-glow-c),
+    linear-gradient(
+      180deg,
+      rgba(8, 17, 31, 1) 0%,
+      rgba(10, 19, 33, 0.98) 42%,
+      rgba(7, 14, 26, 1) 100%
+    );
   --course-ambient-bg:
     radial-gradient(circle at 0% 0%, rgba(73, 116, 255, 0.22), transparent 32%),
-    radial-gradient(circle at 100% 18%, rgba(38, 194, 173, 0.14), transparent 24%);
-  --course-depth-bg: linear-gradient(180deg, rgba(8, 17, 31, 0) 0%, rgba(8, 17, 31, 0.72) 44%, rgba(7, 14, 26, 0.96) 100%);
-  --course-panel-bg: linear-gradient(180deg, rgba(12, 20, 35, 0.82) 0%, rgba(10, 18, 32, 0.94) 100%);
+    radial-gradient(
+      circle at 100% 18%,
+      rgba(38, 194, 173, 0.14),
+      transparent 24%
+    );
+  --course-depth-bg: linear-gradient(
+    180deg,
+    rgba(8, 17, 31, 0) 0%,
+    rgba(8, 17, 31, 0.72) 44%,
+    rgba(7, 14, 26, 0.96) 100%
+  );
+  --course-panel-bg: linear-gradient(
+    180deg,
+    rgba(12, 20, 35, 0.82) 0%,
+    rgba(10, 18, 32, 0.94) 100%
+  );
   --course-panel-border: rgba(90, 111, 145, 0.34);
   --course-panel-shadow: 0 26px 84px -46px rgba(0, 0, 0, 0.58);
-  --course-soft-panel-bg: linear-gradient(180deg, rgba(14, 23, 39, 0.84) 0%, rgba(12, 21, 37, 0.94) 100%);
+  --course-soft-panel-bg: linear-gradient(
+    180deg,
+    rgba(14, 23, 39, 0.84) 0%,
+    rgba(12, 21, 37, 0.94) 100%
+  );
   --course-soft-panel-border: rgba(71, 85, 105, 0.44);
   --course-soft-panel-shadow: 0 24px 58px -38px rgba(0, 0, 0, 0.54);
   --course-subtle-bg: rgba(148, 163, 184, 0.08);
   --course-subtle-border: rgba(120, 166, 255, 0.08);
   --course-subtle-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
-  --course-contrast-bg: linear-gradient(145deg, #09111f 0%, #0c1730 46%, #17315e 100%);
+  --course-contrast-bg: linear-gradient(
+    145deg,
+    #09111f 0%,
+    #0c1730 46%,
+    #17315e 100%
+  );
   --course-contrast-border: rgba(120, 166, 255, 0.18);
   --course-contrast-shadow: 0 34px 100px -52px rgba(0, 0, 0, 0.72);
-  --course-hero-bg: linear-gradient(140deg, rgba(7, 14, 26, 0.98) 0%, rgba(10, 18, 34, 0.98) 46%, rgba(18, 37, 75, 0.94) 100%);
+  --course-hero-bg: linear-gradient(
+    140deg,
+    rgba(7, 14, 26, 0.98) 0%,
+    rgba(10, 18, 34, 0.98) 46%,
+    rgba(18, 37, 75, 0.94) 100%
+  );
   --course-hero-border: rgba(120, 166, 255, 0.14);
   --course-hero-shadow: 0 34px 104px -52px rgba(0, 0, 0, 0.76);
   --course-table-head-bg: rgba(16, 25, 42, 0.94);
@@ -45,8 +159,18 @@ html::before {
   inset: 0;
   z-index: -2;
   background-image:
-    linear-gradient(to right, transparent 0, transparent calc(100% - 1px), var(--page-grid-color) calc(100% - 1px)),
-    linear-gradient(to bottom, transparent 0, transparent calc(100% - 1px), var(--page-grid-color) calc(100% - 1px));
+    linear-gradient(
+      to right,
+      transparent 0,
+      transparent calc(100% - 1px),
+      var(--page-grid-color) calc(100% - 1px)
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(100% - 1px),
+      var(--page-grid-color) calc(100% - 1px)
+    );
   background-size: 72px 72px;
   mask-image: radial-gradient(circle at center, black 25%, transparent 78%);
   pointer-events: none;
@@ -55,6 +179,10 @@ html::before {
 body {
   background-image: var(--course-page-bg);
   background-attachment: fixed;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    background-image 200ms ease;
 }
 
 .course-theme-ambient {
@@ -99,6 +227,53 @@ body {
   box-shadow: var(--course-contrast-shadow);
 }
 
+.theme-hero-surface {
+  position: relative;
+  overflow: hidden;
+  background: var(--course-contrast-bg);
+  border: 1px solid var(--course-contrast-border);
+  box-shadow: var(--course-contrast-shadow);
+}
+
+.theme-hero-heading {
+  color: var(--course-contrast-heading);
+}
+
+.theme-hero-copy {
+  color: var(--course-contrast-copy);
+}
+
+.theme-hero-muted-panel {
+  background: var(--course-subtle-bg);
+  box-shadow: var(--course-subtle-shadow);
+  border: 1px solid var(--course-subtle-border);
+}
+
+.theme-hero-divider {
+  border-color: var(--course-title-line);
+}
+
+.theme-overlay-card {
+  background: var(--course-subtle-bg);
+  box-shadow: var(--course-subtle-shadow);
+  border: 1px solid var(--course-subtle-border);
+}
+
+.policy-content h2 {
+  margin-bottom: 0.5rem;
+  color: var(--color-primary-strong);
+}
+
+.policy-content p,
+.policy-content li {
+  color: var(--color-text-muted);
+  line-height: 1.9;
+}
+
+.policy-content b {
+  color: var(--color-text);
+}
+
 .course-theme-table-head {
   background: var(--course-table-head-bg);
 }
@@ -124,9 +299,19 @@ body {
 }
 
 .course-contrast-copy {
-  color: rgba(226, 232, 240, 0.9);
+  color: var(--course-contrast-copy);
 }
 
 .course-contrast-heading {
-  color: #ffffff;
+  color: var(--course-contrast-heading);
+}
+
+:root {
+  --course-contrast-copy: rgba(18, 32, 51, 0.82);
+  --course-contrast-heading: #122033;
+}
+
+[data-theme='dark'] {
+  --course-contrast-copy: rgba(226, 232, 240, 0.9);
+  --course-contrast-heading: #ffffff;
 }

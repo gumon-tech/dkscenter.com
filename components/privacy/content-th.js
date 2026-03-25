@@ -1,7 +1,7 @@
 import React from 'react';
 export default function PrivacyContentTH() {
   return (
-    <div className="text-left">
+    <div className="policy-content text-left">
       <div className="mb-6">
         <p className="ibm-plex">
           บริษัท กุมอน เทคโนโลยี จำกัด
@@ -254,10 +254,7 @@ export default function PrivacyContentTH() {
           เราอาจส่งข้อมูลหรือจดหมายข่าวไปยังอีเมลของคุณ
           โดยมีวัตถุประสงค์เพื่อเสนอสิ่งที่น่าสนกับคุณ
           หากคุณไม่ต้องการรับการติดต่อสื่อสารจากเราผ่านทางอีเมลอีกต่อไป
-          คุณสามารถกด
-          {' '}
-          &quot;ยกเลิกการติดต่อ&quot;
-          {' '}
+          คุณสามารถกด &quot;ยกเลิกการติดต่อ&quot;{' '}
           ในลิงก์อีเมลหรือติดต่อมายังอีเมลของเราได้
         </p>
       </div>

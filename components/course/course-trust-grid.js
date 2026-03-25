@@ -7,7 +7,7 @@ export default function CourseTrustGrid({ items, locale }) {
       {items.map((item, index) => (
         <article
           key={item.title}
-          className="relative overflow-hidden rounded-[28px] bg-white/[0.03] px-5 py-6 ring-1 ring-white/6 sm:px-6"
+          className="theme-overlay-card relative overflow-hidden rounded-[28px] px-5 py-6 sm:px-6"
         >
           <div
             aria-hidden="true"
@@ -19,7 +19,9 @@ export default function CourseTrustGrid({ items, locale }) {
           <h3 className="course-heading mt-4 text-xl font-semibold leading-8 tracking-[-0.04em]">
             {item.title}
           </h3>
-          <p className="course-copy mt-3 text-sm leading-7">{item.description}</p>
+          <p className="course-copy mt-3 text-sm leading-7">
+            {item.description}
+          </p>
         </article>
       ))}
     </div>

@@ -73,7 +73,7 @@ function MyApp({ Component, pageProps }) {
         </Script>
       )}
 
-      <div className="dark font-sans">
+      <div className="font-sans">
         <Component {...pageProps} />
       </div>
     </>

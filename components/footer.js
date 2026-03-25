@@ -14,6 +14,7 @@ import { useRouter } from 'next/router';
 import LanguageSwitchLink from './LanguageSwitchLink';
 import { FOOTER_NAVIGATION, LEGAL_NAVIGATION } from '../lib/content/site';
 import { defaultLocale, locales } from '../lib/i18n/config';
+import ThemeSwitcher from './theme-switcher';
 
 export default function Footer(props) {
   const router = useRouter();
@@ -196,18 +197,19 @@ export default function Footer(props) {
             </div>
           </div>
 
-          <div className="mt-8 border-t border-border/70 pt-5 text-sm text-soft md:flex md:items-center md:justify-between">
-            <div>
+          <div className="mt-8 border-t border-border/70 pt-5 text-sm text-soft md:flex md:items-end md:justify-between md:gap-6">
+            <div className="md:flex-1">
               {t('footer-copyright')} © {new Date().getFullYear()} DKS Center.
+              <a
+                href="https://gumon.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 inline-flex text-muted hover:text-primary"
+              >
+                Built with Gumon.io
+              </a>
             </div>
-            <a
-              href="https://gumon.io/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 inline-flex text-muted hover:text-primary md:mt-0"
-            >
-              Built with Gumon.io
-            </a>
+            <ThemeSwitcher language={currentLanguage} />
           </div>
         </div>
       </Container>

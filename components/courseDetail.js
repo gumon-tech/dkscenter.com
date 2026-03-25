@@ -80,15 +80,19 @@ function HeroSnapshotPanel({
         </div>
       ) : null}
 
-      <div className={cx('relative z-10', featuredImage && !compact ? 'mt-5' : '')}>
+      <div
+        className={cx('relative z-10', featuredImage && !compact ? 'mt-5' : '')}
+      >
         <div className="flex items-start justify-between gap-4">
           <div>
             <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
               {locale === 'th' ? 'ข้อมูลคอร์ส' : 'Course Snapshot'}
             </div>
-            <h2 className="mt-2 text-2xl font-semibold leading-tight tracking-[-0.04em] text-white">
+            <h2 className="course-contrast-heading mt-2 text-2xl font-semibold leading-tight tracking-[-0.04em]">
               {scheduleDateRange ||
-                (locale === 'th' ? 'ตารางเรียนอัปเดตล่าสุด' : 'Latest course availability')}
+                (locale === 'th'
+                  ? 'ตารางเรียนอัปเดตล่าสุด'
+                  : 'Latest course availability')}
             </h2>
           </div>
           <span className="inline-flex rounded-full border border-secondary/20 bg-secondary/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-secondary">
@@ -113,7 +117,7 @@ function HeroSnapshotPanel({
         </dl>
 
         {featuredSchedule ? (
-          <div className="mt-6 rounded-[24px] bg-background/45 px-4 py-4 ring-1 ring-white/5">
+          <div className="theme-overlay-card mt-6 rounded-[24px] px-4 py-4">
             <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-primary-strong">
               {locale === 'th' ? 'Next Session' : 'Next Session'}
             </div>
@@ -211,10 +215,10 @@ const CourseDetail = ({ courseData, i18next }) => {
   const featuredImage = courseData?.imageUrl;
   const scheduleDateRange = featuredSchedule
     ? formatCourseDateRange(
-      featuredSchedule.eventStart,
-      featuredSchedule.eventEnd,
-      locale,
-    )
+        featuredSchedule.eventStart,
+        featuredSchedule.eventEnd,
+        locale,
+      )
     : null;
   const scheduleTimeRange = featuredSchedule
     ? `${formatCourseTime(featuredSchedule.eventStart, locale)} - ${formatCourseTime(featuredSchedule.eventEnd, locale)}`
@@ -321,8 +325,9 @@ const CourseDetail = ({ courseData, i18next }) => {
 
   return (
     <Container
-      className={`relative overflow-hidden ${isConversionFocusedCourse ? 'pb-32 xl:pb-16' : 'pb-16'
-        }`}
+      className={`relative overflow-hidden ${
+        isConversionFocusedCourse ? 'pb-32 xl:pb-16' : 'pb-16'
+      }`}
     >
       <Breadcrumb
         paths={[
@@ -353,13 +358,14 @@ const CourseDetail = ({ courseData, i18next }) => {
                 </span>
                 {courseData.lastUpdate ? (
                   <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-soft">
-                    {t('course-detail-2')} {formatCourseDateTime(courseData.lastUpdate, locale)}
+                    {t('course-detail-2')}{' '}
+                    {formatCourseDateTime(courseData.lastUpdate, locale)}
                   </span>
                 ) : null}
               </div>
 
               <div className="mt-6 max-w-4xl">
-                <h1 className="max-w-[16ch] text-[2.85rem] font-semibold leading-[0.98] tracking-[-0.055em] text-white sm:text-5xl xl:max-w-[18ch] xl:text-[4.2rem]">
+                <h1 className="course-contrast-heading max-w-[16ch] text-[2.85rem] font-semibold leading-[0.98] tracking-[-0.055em] sm:text-5xl xl:max-w-[18ch] xl:text-[4.2rem]">
                   {courseData.title}
                 </h1>
                 <p className="course-contrast-copy mt-5 max-w-[44rem] text-base leading-8 sm:text-[1.05rem]">
@@ -385,13 +391,13 @@ const CourseDetail = ({ courseData, i18next }) => {
                     {lineCopy.heroSecondary}
                   </a>
                 </div>
-                <p className="course-contrast-copy max-w-2xl text-sm leading-7 text-white/75">
+                <p className="course-contrast-copy max-w-2xl text-sm leading-7">
                   {lineCopy.heroMicrocopy}
                 </p>
               </div>
 
               {heroHighlights.length > 0 ? (
-                <div className="mt-8 border-t border-white/8 pt-6 xl:mt-auto xl:pt-7">
+                <div className="theme-hero-divider mt-8 border-t pt-6 xl:mt-auto xl:pt-7">
                   <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
                     {locale === 'th' ? 'จุดเด่นของคอร์ส' : 'Why This Course'}
                   </div>
@@ -399,7 +405,7 @@ const CourseDetail = ({ courseData, i18next }) => {
                     {heroHighlights.map((item, index) => (
                       <article
                         key={index}
-                        className="rounded-[24px] bg-white/[0.03] px-4 py-4 ring-1 ring-white/6 backdrop-blur-sm"
+                        className="theme-overlay-card rounded-[24px] px-4 py-4 backdrop-blur-sm"
                       >
                         <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-soft">
                           {locale === 'th'
@@ -469,7 +475,9 @@ const CourseDetail = ({ courseData, i18next }) => {
 
         {courseData.objectives && courseData.objectives.length > 0 ? (
           <CourseSectionShell
-            eyebrow={locale === 'th' ? 'Learning Outcomes' : 'Learning Outcomes'}
+            eyebrow={
+              locale === 'th' ? 'Learning Outcomes' : 'Learning Outcomes'
+            }
             title={t('course-detail-3')}
             description={
               locale === 'th'
@@ -490,14 +498,14 @@ const CourseDetail = ({ courseData, i18next }) => {
               <CourseListPanel items={courseData.objectives} columns={2} />
 
               {courseData.participantsWillReceive &&
-                courseData.participantsWillReceive.length > 0 ? (
-                <div className="rounded-[28px] bg-white/[0.03] px-5 py-5 ring-1 ring-white/6 sm:px-6">
+              courseData.participantsWillReceive.length > 0 ? (
+                <div className="theme-overlay-card rounded-[28px] px-5 py-5 sm:px-6">
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <div>
                       <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-secondary">
                         {locale === 'th' ? 'Included' : 'Included'}
                       </div>
-                      <h3 className="mt-2 text-xl font-semibold tracking-[-0.03em] text-white">
+                      <h3 className="course-contrast-heading mt-2 text-xl font-semibold tracking-[-0.03em]">
                         {t('course-detail-6')}
                       </h3>
                     </div>
@@ -519,9 +527,12 @@ const CourseDetail = ({ courseData, i18next }) => {
           </CourseSectionShell>
         ) : null}
 
-        {(courseData.whoShouldAttend?.length || courseData.prerequisites?.length) ? (
+        {courseData.whoShouldAttend?.length ||
+        courseData.prerequisites?.length ? (
           <CourseSectionShell
-            eyebrow={locale === 'th' ? 'Fit & Preparation' : 'Fit & Preparation'}
+            eyebrow={
+              locale === 'th' ? 'Fit & Preparation' : 'Fit & Preparation'
+            }
             title={
               locale === 'th'
                 ? 'เหมาะกับใคร และควรเตรียมตัวอย่างไรก่อนเข้าร่วม'
@@ -534,26 +545,31 @@ const CourseDetail = ({ courseData, i18next }) => {
             }
           >
             <div className="grid gap-6 lg:grid-cols-2">
-              {courseData.whoShouldAttend && courseData.whoShouldAttend.length > 0 ? (
-                <section className="rounded-[28px] bg-white/[0.02] px-5 py-5 ring-1 ring-white/6 sm:px-6">
+              {courseData.whoShouldAttend &&
+              courseData.whoShouldAttend.length > 0 ? (
+                <section className="theme-overlay-card rounded-[28px] px-5 py-5 sm:px-6">
                   <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-strong">
                     {locale === 'th' ? 'Who Should Join' : 'Who Should Join'}
                   </div>
-                  <h3 className="mt-2 text-xl font-semibold tracking-[-0.03em] text-white">
+                  <h3 className="course-contrast-heading mt-2 text-xl font-semibold tracking-[-0.03em]">
                     {t('course-detail-4')}
                   </h3>
                   <div className="mt-5">
-                    <CourseListPanel items={courseData.whoShouldAttend} compact />
+                    <CourseListPanel
+                      items={courseData.whoShouldAttend}
+                      compact
+                    />
                   </div>
                 </section>
               ) : null}
 
-              {courseData.prerequisites && courseData.prerequisites.length > 0 ? (
-                <section className="rounded-[28px] bg-white/[0.02] px-5 py-5 ring-1 ring-white/6 sm:px-6">
+              {courseData.prerequisites &&
+              courseData.prerequisites.length > 0 ? (
+                <section className="theme-overlay-card rounded-[28px] px-5 py-5 sm:px-6">
                   <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-secondary">
                     {locale === 'th' ? 'Prerequisites' : 'Prerequisites'}
                   </div>
-                  <h3 className="mt-2 text-xl font-semibold tracking-[-0.03em] text-white">
+                  <h3 className="course-contrast-heading mt-2 text-xl font-semibold tracking-[-0.03em]">
                     {t('course-detail-5')}
                   </h3>
                   <div className="mt-5">
@@ -589,7 +605,11 @@ const CourseDetail = ({ courseData, i18next }) => {
         ) : null}
 
         <CourseSectionShell
-          eyebrow={locale === 'th' ? 'รอบอบรมและการลงทะเบียน' : 'Schedule & Registration'}
+          eyebrow={
+            locale === 'th'
+              ? 'รอบอบรมและการลงทะเบียน'
+              : 'Schedule & Registration'
+          }
           title={t('course-detail-9')}
           description={
             locale === 'th'

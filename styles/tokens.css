@@ -1,4 +1,53 @@
 :root {
+  color-scheme: light;
+  --color-background: #f4f7fb;
+  --color-background-alt: #e9f0f8;
+  --color-surface: rgba(255, 255, 255, 0.74);
+  --color-surface-elevated: rgba(255, 255, 255, 0.94);
+  --color-surface-strong: #ffffff;
+  --color-surface-muted: rgba(148, 163, 184, 0.14);
+  --color-surface-glass: rgba(255, 255, 255, 0.72);
+  --color-text: #122033;
+  --color-text-muted: rgba(31, 41, 55, 0.82);
+  --color-text-soft: rgba(71, 85, 105, 0.88);
+  --color-border: rgba(148, 163, 184, 0.28);
+  --color-border-strong: rgba(100, 116, 139, 0.36);
+  --color-primary: #2458d8;
+  --color-primary-strong: #163b9f;
+  --color-primary-soft: rgba(36, 88, 216, 0.12);
+  --color-secondary: #0f8f87;
+  --color-accent: #d97706;
+  --color-success: #0f9f6e;
+  --color-warning: #d97706;
+  --color-danger: #dc4f69;
+  --shadow-sm: 0 18px 42px -30px rgba(15, 23, 42, 0.18);
+  --shadow-md: 0 28px 80px -42px rgba(30, 41, 59, 0.22);
+  --shadow-lg: 0 42px 110px -56px rgba(15, 23, 42, 0.26);
+  --shadow-glow:
+    0 0 0 1px rgba(36, 88, 216, 0.08), 0 28px 82px -42px rgba(36, 88, 216, 0.22);
+  --radius-xs: 0.75rem;
+  --radius-sm: 1rem;
+  --radius-md: 1.5rem;
+  --radius-lg: 2rem;
+  --radius-xl: 2.5rem;
+  --space-section-sm: clamp(2.5rem, 4vw, 4rem);
+  --space-section: clamp(4rem, 8vw, 7rem);
+  --space-section-lg: clamp(5rem, 10vw, 8.5rem);
+  --site-shell-glow-top:
+    radial-gradient(circle at top, rgba(36, 88, 216, 0.14), transparent 40%),
+    radial-gradient(
+      circle at top right,
+      rgba(15, 143, 135, 0.12),
+      transparent 30%
+    );
+  --site-shell-glow-bottom: radial-gradient(
+    circle at center,
+    rgba(217, 119, 6, 0.1),
+    transparent 34%
+  );
+}
+
+[data-theme='dark'] {
   color-scheme: dark;
   --color-background: #08111f;
   --color-background-alt: #0f1a2c;
@@ -23,15 +72,21 @@
   --shadow-sm: 0 20px 44px -30px rgba(0, 0, 0, 0.48);
   --shadow-md: 0 34px 88px -46px rgba(0, 0, 0, 0.62);
   --shadow-lg: 0 50px 130px -58px rgba(0, 0, 0, 0.74);
-  --shadow-glow: 0 0 0 1px rgba(120, 166, 255, 0.14), 0 30px 90px -44px rgba(23, 71, 199, 0.5);
-  --radius-xs: 0.75rem;
-  --radius-sm: 1rem;
-  --radius-md: 1.5rem;
-  --radius-lg: 2rem;
-  --radius-xl: 2.5rem;
-  --space-section-sm: clamp(2.5rem, 4vw, 4rem);
-  --space-section: clamp(4rem, 8vw, 7rem);
-  --space-section-lg: clamp(5rem, 10vw, 8.5rem);
+  --shadow-glow:
+    0 0 0 1px rgba(120, 166, 255, 0.14),
+    0 30px 90px -44px rgba(23, 71, 199, 0.5);
+  --site-shell-glow-top:
+    radial-gradient(circle at top, rgba(36, 88, 255, 0.12), transparent 38%),
+    radial-gradient(
+      circle at top right,
+      rgba(15, 118, 110, 0.1),
+      transparent 28%
+    );
+  --site-shell-glow-bottom: radial-gradient(
+    circle at center,
+    rgba(240, 140, 43, 0.08),
+    transparent 34%
+  );
 }
 
 html {

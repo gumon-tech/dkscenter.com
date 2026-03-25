@@ -41,7 +41,7 @@ const HighlightCourse = ({ i18next }) => {
   return (
     <Section className="pb-8 pt-section-sm lg:pb-12 lg:pt-section">
       <div className="grid gap-8 xl:grid-cols-[1.08fr_0.92fr] xl:items-stretch">
-        <div className="relative overflow-hidden rounded-[38px] border border-border/70 bg-[linear-gradient(145deg,rgba(11,19,35,0.95),rgba(18,34,66,0.96),rgba(27,47,92,0.94))] px-6 py-8 shadow-floating sm:px-8 sm:py-10 lg:px-10 xl:py-12">
+        <div className="theme-hero-surface rounded-[38px] px-6 py-8 sm:px-8 sm:py-10 lg:px-10 xl:py-12">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-[radial-gradient(circle_at_top_left,rgba(120,166,255,0.32),transparent_44%)]"
@@ -56,11 +56,11 @@ const HighlightCourse = ({ i18next }) => {
               {t('sectionTitle-pretitle')}
             </span>
 
-            <h1 className="mt-5 max-w-4xl text-[2.65rem] font-semibold leading-[0.98] tracking-[-0.055em] text-white sm:text-5xl xl:text-[4.4rem]">
+            <h1 className="theme-hero-heading mt-5 max-w-4xl text-[2.65rem] font-semibold leading-[0.98] tracking-[-0.055em] sm:text-5xl xl:text-[4.4rem]">
               {highlightSchedule?.title || t('sectionTitle-title')}
             </h1>
 
-            <p className="mt-5 max-w-3xl text-[15px] leading-8 text-muted sm:text-lg">
+            <p className="theme-hero-copy mt-5 max-w-3xl text-[15px] leading-8 sm:text-lg">
               {highlightCourse?.overview || t('sectionTitle-detail1')}
             </p>
 
@@ -138,7 +138,8 @@ const HighlightCourse = ({ i18next }) => {
                     {currentLanguage === 'th' ? 'รอบถัดไป' : 'Next cohort'}
                   </div>
                   <div className="mt-2 text-base font-semibold text-text">
-                    {dateRange || (currentLanguage === 'th' ? 'เร็วๆ นี้' : 'Coming soon')}
+                    {dateRange ||
+                      (currentLanguage === 'th' ? 'เร็วๆ นี้' : 'Coming soon')}
                   </div>
                 </div>
               </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import nextI18nextConfig from '../next-i18next.config';
+import { getThemeInitScript } from '../lib/theme';
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 
@@ -11,7 +12,7 @@ class MyDocument extends Document {
       nextI18nextConfig.i18n.defaultLocale;
 
     return (
-      <Html lang={currentLocale} className="dark">
+      <Html lang={currentLocale}>
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
@@ -23,9 +24,14 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
             rel="stylesheet"
           />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: getThemeInitScript(),
+            }}
+          />
         </Head>
 
-        <body className="dark bg-background text-text">
+        <body className="bg-background text-text">
           {/* GTM noscript */}
           {GTM_ID && (
             <noscript>

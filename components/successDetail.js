@@ -22,8 +22,7 @@ const formatCurrency = (value) =>
     currency: 'THB',
   });
 
-const detailRowClass =
-  'flex items-start gap-3 text-sm leading-7 text-muted';
+const detailRowClass = 'flex items-start gap-3 text-sm leading-7 text-muted';
 
 const SuccessDetail = ({ orderData, i18next, mode = 'success' }) => {
   const { t } = i18next;
@@ -43,17 +42,17 @@ const SuccessDetail = ({ orderData, i18next, mode = 'success' }) => {
 
   return (
     <div className="pb-section">
-      <section className="mt-6 rounded-[36px] border border-border/70 bg-[linear-gradient(145deg,rgba(11,19,35,0.95),rgba(18,34,66,0.96),rgba(27,47,92,0.94))] px-6 py-8 shadow-floating sm:px-8 lg:px-10">
+      <section className="theme-hero-surface mt-6 rounded-[36px] px-6 py-8 sm:px-8 lg:px-10">
         <Badge variant={isCancel ? 'warning' : 'success'}>{statusLabel}</Badge>
         <div className="mt-5 flex flex-wrap items-start gap-4">
-          <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/10">
-            <StatusIcon className="h-8 w-8 text-white" />
+          <div className="theme-hero-muted-panel flex h-14 w-14 items-center justify-center rounded-2xl">
+            <StatusIcon className="h-8 w-8 text-primary" />
           </div>
           <div className="flex-1">
-            <h1 className="text-4xl font-semibold tracking-[-0.05em] text-white sm:text-5xl">
+            <h1 className="theme-hero-heading text-4xl font-semibold tracking-[-0.05em] sm:text-5xl">
               {bannerTitle}
             </h1>
-            <p className="mt-4 max-w-3xl text-base leading-8 text-muted sm:text-lg">
+            <p className="theme-hero-copy mt-4 max-w-3xl text-base leading-8 sm:text-lg">
               {bannerDescription}
             </p>
           </div>
@@ -121,7 +120,9 @@ const SuccessDetail = ({ orderData, i18next, mode = 'success' }) => {
                 <div className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
                   {t('order-label-total')}
                 </div>
-                <div className="text-text">{formatCurrency(orderData?.totalPrice)}</div>
+                <div className="text-text">
+                  {formatCurrency(orderData?.totalPrice)}
+                </div>
               </div>
             </div>
             <div className={detailRowClass}>
@@ -152,7 +153,9 @@ const SuccessDetail = ({ orderData, i18next, mode = 'success' }) => {
                 <div className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
                   {t('order-label-event')}
                 </div>
-                <div className="text-text">{orderData?.ticketDetail?.eventName}</div>
+                <div className="text-text">
+                  {orderData?.ticketDetail?.eventName}
+                </div>
               </div>
             </div>
             <div className={detailRowClass}>
@@ -170,7 +173,9 @@ const SuccessDetail = ({ orderData, i18next, mode = 'success' }) => {
                 <div className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
                   {t('order-label-location')}
                 </div>
-                <div className="text-text">{orderData?.ticketDetail?.eventLocation}</div>
+                <div className="text-text">
+                  {orderData?.ticketDetail?.eventLocation}
+                </div>
               </div>
             </div>
             <div className={detailRowClass}>
@@ -180,7 +185,8 @@ const SuccessDetail = ({ orderData, i18next, mode = 'success' }) => {
                   {t('order-label-date-time')}
                 </div>
                 <div className="text-text">
-                  {orderData?.ticketDetail?.eventDate} {orderData?.ticketDetail?.eventTime}
+                  {orderData?.ticketDetail?.eventDate}{' '}
+                  {orderData?.ticketDetail?.eventTime}
                 </div>
               </div>
             </div>
@@ -246,7 +252,9 @@ const SuccessDetail = ({ orderData, i18next, mode = 'success' }) => {
                   <div className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
                     {t('order-label-schedule-key')}
                   </div>
-                  <div className="text-text break-all">{orderData?.scheduleKey}</div>
+                  <div className="text-text break-all">
+                    {orderData?.scheduleKey}
+                  </div>
                 </div>
               </div>
               <div className={detailRowClass}>
@@ -255,7 +263,9 @@ const SuccessDetail = ({ orderData, i18next, mode = 'success' }) => {
                   <div className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
                     {t('order-label-reserve-id')}
                   </div>
-                  <div className="text-text break-all">{orderData?.reserveId}</div>
+                  <div className="text-text break-all">
+                    {orderData?.reserveId}
+                  </div>
                 </div>
               </div>
             </div>
@@ -276,7 +286,9 @@ const SuccessDetail = ({ orderData, i18next, mode = 'success' }) => {
                     <div className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
                       {t('order-label-discount-code')}
                     </div>
-                    <div className="text-text">{orderData?.discountDetail?.discountCode}</div>
+                    <div className="text-text">
+                      {orderData?.discountDetail?.discountCode}
+                    </div>
                   </div>
                 </div>
                 <div className={detailRowClass}>
@@ -285,7 +297,9 @@ const SuccessDetail = ({ orderData, i18next, mode = 'success' }) => {
                     <div className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
                       {t('order-label-discount-type')}
                     </div>
-                    <div className="text-text">{orderData?.discountDetail?.discountType}</div>
+                    <div className="text-text">
+                      {orderData?.discountDetail?.discountType}
+                    </div>
                   </div>
                 </div>
                 <div className={detailRowClass}>
@@ -294,7 +308,9 @@ const SuccessDetail = ({ orderData, i18next, mode = 'success' }) => {
                     <div className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
                       {t('order-label-discount-value')}
                     </div>
-                    <div className="text-text">{orderData?.discountDetail?.discountValue}</div>
+                    <div className="text-text">
+                      {orderData?.discountDetail?.discountValue}
+                    </div>
                   </div>
                 </div>
               </div>

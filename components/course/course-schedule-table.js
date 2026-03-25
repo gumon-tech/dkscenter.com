@@ -127,10 +127,22 @@ export default function CourseScheduleTable({
 
       <div className="divide-y divide-border/60">
         {activeSchedules.map((publicSchedule, index) => {
-          const eventStartDate = formatCourseDate(publicSchedule.eventStart, locale);
-          const eventEndDate = formatCourseDate(publicSchedule.eventEnd, locale);
-          const eventStartTime = formatCourseTime(publicSchedule.eventStart, locale);
-          const eventEndTime = formatCourseTime(publicSchedule.eventEnd, locale);
+          const eventStartDate = formatCourseDate(
+            publicSchedule.eventStart,
+            locale,
+          );
+          const eventEndDate = formatCourseDate(
+            publicSchedule.eventEnd,
+            locale,
+          );
+          const eventStartTime = formatCourseTime(
+            publicSchedule.eventStart,
+            locale,
+          );
+          const eventEndTime = formatCourseTime(
+            publicSchedule.eventEnd,
+            locale,
+          );
           const courseType = getCourseType(publicSchedule);
           const forwardedUrl = buildForwardedUrl(
             publicSchedule.ticketUrl,
@@ -140,15 +152,16 @@ export default function CourseScheduleTable({
             courseType === 'GET_YOURS' || courseType === 'GET_YOURS_2';
 
           return (
-            <article
-              key={index}
-              className="bg-gradient-to-br from-[#0d1629]/55 via-[#0c1526]/35 to-transparent px-6 py-7 sm:px-7 sm:py-8"
-            >
+            <article key={index} className="px-6 py-7 sm:px-7 sm:py-8">
               <div className="pb-6 sm:pb-7">
                 <div className="flex flex-col gap-5 lg:gap-6">
                   <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
                     <div className="flex flex-wrap items-center gap-3">
-                      <ScheduleBadge courseType={courseType} t={t} locale={locale} />
+                      <ScheduleBadge
+                        courseType={courseType}
+                        t={t}
+                        locale={locale}
+                      />
                       <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-soft">
                         {locale === 'th'
                           ? `Session 0${index + 1}`
@@ -175,7 +188,9 @@ export default function CourseScheduleTable({
                         ) : (
                           <button
                             type="button"
-                            onClick={() => onOpenModal(publicSchedule.scheduleKey)}
+                            onClick={() =>
+                              onOpenModal(publicSchedule.scheduleKey)
+                            }
                             className={`${registerButtonClass} w-full px-6 py-4 text-base`}
                           >
                             {isConversionFocusedCourse
@@ -204,7 +219,9 @@ export default function CourseScheduleTable({
                       ) : courseType === 'GET_YOURS_2' ? (
                         <button
                           type="button"
-                          onClick={() => onOpenModal(publicSchedule.scheduleKey)}
+                          onClick={() =>
+                            onOpenModal(publicSchedule.scheduleKey)
+                          }
                           className="text-left transition hover:text-primary"
                         >
                           {publicSchedule.title}
@@ -219,7 +236,7 @@ export default function CourseScheduleTable({
 
               <div className="pt-6 sm:pt-7">
                 <div className="grid gap-4 md:grid-cols-3">
-                  <div className="rounded-[24px] bg-white/[0.03] px-5 py-5 ring-1 ring-white/6">
+                  <div className="theme-overlay-card rounded-[24px] px-5 py-5">
                     <div className="flex items-center gap-2 text-soft">
                       <CalendarIcon className="h-5 w-5 text-primary" />
                       <span className="text-[11px] font-semibold uppercase tracking-[0.18em]">
@@ -228,11 +245,13 @@ export default function CourseScheduleTable({
                     </div>
                     <div className="mt-4 text-lg leading-9 text-text">
                       {eventStartDate}
-                      {eventStartDate !== eventEndDate ? ` - ${eventEndDate}` : ''}
+                      {eventStartDate !== eventEndDate
+                        ? ` - ${eventEndDate}`
+                        : ''}
                     </div>
                   </div>
 
-                  <div className="rounded-[24px] bg-white/[0.03] px-5 py-5 ring-1 ring-white/6">
+                  <div className="theme-overlay-card rounded-[24px] px-5 py-5">
                     <div className="flex items-center gap-2 text-soft">
                       <ClockIcon className="h-5 w-5 text-primary" />
                       <span className="text-[11px] font-semibold uppercase tracking-[0.18em]">
@@ -245,7 +264,7 @@ export default function CourseScheduleTable({
                   </div>
 
                   {publicSchedule.location ? (
-                    <div className="rounded-[24px] bg-white/[0.03] px-5 py-5 ring-1 ring-white/6 md:col-span-1">
+                    <div className="theme-overlay-card rounded-[24px] px-5 py-5 md:col-span-1">
                       <div className="flex items-center gap-2 text-soft">
                         <MapPinIcon className="h-5 w-5 text-primary" />
                         <span className="text-[11px] font-semibold uppercase tracking-[0.18em]">
@@ -263,7 +282,9 @@ export default function CourseScheduleTable({
                             {publicSchedule.location}
                           </a>
                         ) : (
-                          <span className="text-text">{publicSchedule.location}</span>
+                          <span className="text-text">
+                            {publicSchedule.location}
+                          </span>
                         )}
                       </div>
                     </div>

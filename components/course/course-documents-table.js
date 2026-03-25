@@ -9,7 +9,7 @@ export default function CourseDocumentsTable({ documents, t }) {
       <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
         Documents
       </div>
-      <h3 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-white">
+      <h3 className="course-contrast-heading mt-3 text-2xl font-semibold tracking-[-0.04em]">
         {t('course-detail-19')}
       </h3>
 
