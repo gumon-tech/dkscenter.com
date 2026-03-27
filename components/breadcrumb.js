@@ -3,8 +3,8 @@ import Link from '/components/link';
 
 export default function Breadcrumb(props) {
   return (
-    <nav className="flex" aria-label="Breadcrumb">
-      <ol className="inline-flex flex-wrap items-center gap-2 rounded-full border border-border/70 bg-surface-glass px-4 py-2 text-sm text-soft shadow-soft backdrop-blur-xl">
+    <nav className="flex justify-center md:justify-start" aria-label="Breadcrumb">
+      <ol className="inline-flex w-full flex-wrap items-center justify-center gap-2 rounded-full border border-border/70 bg-surface-glass px-4 py-2 text-sm text-soft shadow-soft backdrop-blur-xl md:w-auto md:justify-start">
         <li className="inline-flex items-center">
           <Link
             href="/"
