@@ -1,6 +1,6 @@
 # Course Migration Checklist
 
-ใช้ checklist นี้เมื่อต้องย้ายคอร์สจาก legacy entry เดิม ไปยังโครงสร้างใหม่แบบ:
+ใช้ checklist นี้เมื่อต้องย้ายคอร์สจาก source เดิม ไปยังโครงสร้างใหม่แบบ:
 
 - `shared`
 - `locales`
@@ -9,9 +9,7 @@
 ## ก่อนเริ่ม
 
 - ระบุ `courseKey` ที่จะย้าย
-- หาไฟล์เดิมของคอร์ส:
-  - `content/courses/entries/<courseKey>/en.js`
-  - `content/courses/entries/<courseKey>/th.js`
+- หา source เดิมของคอร์สที่จะย้ายให้ครบ
 
 ## ขั้นตอนย้าย
 
@@ -119,11 +117,11 @@
 - `scheduleKey` ไม่หาย
 - route เดิมยังอ้างถึงคอร์สนี้ได้
 
-### 10. mark legacy source
+### 10. remove superseded source
 
 เมื่อย้ายเสร็จและตรวจครบแล้ว:
-- mark legacy entry ว่า deprecated
-- หรือถ้ายังต้อง fallback อยู่ ให้ระบุไว้ชัดเจนใน registry/documentation
+- ลบ source เดิมที่ไม่ใช้แล้ว
+- ให้ `registry.js` ชี้เฉพาะ split files เท่านั้น
 
 ## Validation Checklist
 

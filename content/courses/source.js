@@ -1,8 +1,5 @@
 import { courseRegistry } from './registry';
-import {
-  composeLocalizedCourse,
-  normalizeLegacyCourseCollection,
-} from './normalization/compose-course';
+import { composeLocalizedCourse } from './normalization/compose-course';
 
 function getSplitCourseContentMap() {
   return Object.fromEntries(
@@ -30,21 +27,8 @@ function getSplitCourseContentMap() {
   );
 }
 
-function getLegacyCourseContentMap() {
-  const legacyEntries = Object.fromEntries(
-    Object.entries(courseRegistry || {})
-      .filter(([, entry]) => entry?.mode === 'legacy')
-      .map(([courseKey, entry]) => [courseKey, entry?.legacy || {}]),
-  );
-
-  return normalizeLegacyCourseCollection(legacyEntries);
-}
-
 export function getCourseContentMap() {
-  return {
-    ...getLegacyCourseContentMap(),
-    ...getSplitCourseContentMap(),
-  };
+  return getSplitCourseContentMap();
 }
 
 export function getRawCourseContent() {

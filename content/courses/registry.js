@@ -1,4 +1,3 @@
-import { legacyCourseEntries } from './entries';
 import shared2024014 from './shared/2024-014-pixel-pioneers-nextjs-react-masterclass';
 import shared2024007 from './shared/2024-007-modern-web-frontend-with-react';
 import shared2024001 from './shared/2024-001-fundamental-docker';
@@ -224,17 +223,4 @@ const splitCourseRegistry = {
   },
 };
 
-const legacyRegistry = Object.fromEntries(
-  Object.entries(legacyCourseEntries).map(([courseKey, locales]) => [
-    courseKey,
-    {
-      mode: 'legacy',
-      legacy: locales,
-    },
-  ]),
-);
-
-export const courseRegistry = {
-  ...legacyRegistry,
-  ...splitCourseRegistry,
-};
+export const courseRegistry = splitCourseRegistry;
