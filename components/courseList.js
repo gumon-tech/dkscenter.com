@@ -15,7 +15,15 @@ export default function CourseList(props) {
   return (
     <Container className="pb-section lg:pb-section-lg">
       {props.breadcrumb && (
-        <Breadcrumb paths={[{ title: 'Training Course', path: '/course' }]} />
+        <Breadcrumb
+          homeLabel={currentLanguage === 'th' ? 'หน้าแรก' : 'Home'}
+          paths={[
+            {
+              title: currentLanguage === 'th' ? 'คอร์ส' : 'Courses',
+              path: '/course',
+            },
+          ]}
+        />
       )}
       <Heading
         eyebrow={currentLanguage === 'th' ? 'Course Catalog' : 'Course Catalog'}

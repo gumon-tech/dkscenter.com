@@ -1,16 +1,18 @@
 import React from 'react';
 import Link from '/components/link';
-import { getActiveCourses, removeCoursesOutDate } from '../utils/course';
-import { getSchedule } from '../utils/dateTime';
+import {
+  getCoursesWithUpcomingSchedules,
+  getLocalizedCourseByKey,
+} from '../lib/courses/repository';
 import Card from './ui/card';
 import Badge from './ui/badge';
+import { formatCourseDateRange } from '../lib/courses/formatters';
 
 export default function Table(props) {
   const i18next = props.i18next;
   const { t, i18n } = i18next;
   const currentLanguage = i18n.language;
-  let courses = getActiveCourses(currentLanguage);
-  courses = removeCoursesOutDate(courses);
+  const courses = getCoursesWithUpcomingSchedules(currentLanguage);
 
   return (
     <Card className="overflow-hidden p-0">
@@ -54,19 +56,38 @@ export default function Table(props) {
 
                     <td className="border-b border-border/70 p-5 text-sm text-muted">
                       {course.publicSchedule.map((schedule, index) => {
+                        const courseForSchedule = getLocalizedCourseByKey(
+                          course.key,
+                          currentLanguage,
+                        );
+
                         return (
                           <div
                             key={'schedule-' + index}
                             className="mb-3 rounded-2xl border border-border/70 bg-surface px-4 py-4 last:mb-0"
                           >
-                            <div className="text-left font-semibold text-text">
+                            <Link
+                              href={`/course/${course.key}/schedule/${schedule.scheduleKey}`}
+                              className="block text-left font-semibold text-text hover:text-primary"
+                            >
                               {schedule.title}
-                            </div>
+                            </Link>
                             <div className="mt-2 text-left leading-7 text-muted">
-                              {getSchedule(
+                              {formatCourseDateRange(
                                 schedule.eventStart,
                                 schedule.eventEnd,
+                                currentLanguage,
                               )}
+                            </div>
+                            <div className="mt-2 text-left text-sm">
+                              <Link
+                                href={`/course/${course.key}`}
+                                className="text-primary hover:text-primary-strong"
+                              >
+                                {currentLanguage === 'th'
+                                  ? `ดูรายละเอียดคอร์ส ${courseForSchedule?.title || course.title}`
+                                  : `View ${courseForSchedule?.title || course.title}`}
+                              </Link>
                             </div>
                           </div>
                         );

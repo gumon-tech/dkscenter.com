@@ -6,6 +6,7 @@ import { getStaticPaths } from '/lib/getStatic';
 import { useRouter } from 'next/router';
 import SeoHead from '/components/seo/seo-head';
 import SiteShell from '/components/layout/site-shell';
+import { getOrderPageSeo } from '/lib/seo';
 
 const getStaticProps = makeStaticProps(['home']);
 export { getStaticPaths, getStaticProps };
@@ -15,16 +16,12 @@ const Success = () => {
   const { order } = router.query;
 
   const i18next = useTranslation('home');
-  const { t, i18n } = i18next;
+  const { i18n } = i18next;
   const currentLanguage = i18n.language || 'en';
+  const seo = getOrderPageSeo(currentLanguage, 'success');
   return (
     <>
-      <SeoHead
-        locale={currentLanguage}
-        path="/order/success"
-        title={t('head-title')}
-        description={t('head-content')}
-      />
+      <SeoHead {...seo} />
       <SiteShell i18next={i18next}>
         <FetchSuccessDetail i18next={i18next} orderId={order} mode="success" />
       </SiteShell>

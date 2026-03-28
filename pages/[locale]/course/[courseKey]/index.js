@@ -7,23 +7,19 @@ import { normalizeBrand } from '/lib/brand';
 import SeoHead from '/components/seo/seo-head';
 import SiteShell from '/components/layout/site-shell';
 import { getCourseByKey, getCourseKeys } from '/lib/courses/repository';
+import { getCoursePageSeo } from '/lib/seo';
 
-const Course = ({ courseData, courseKey }) => {
+const Course = ({ courseData }) => {
   const i18next = useTranslation('home');
   const { i18n } = i18next;
 
   const currentLanguage = i18n.language; // 'en' | 'th'
   const courseLocaleData = courseData[currentLanguage];
+  const seo = getCoursePageSeo(courseLocaleData, currentLanguage);
 
   return (
     <>
-      <SeoHead
-        locale={currentLanguage}
-        path={`/course/${courseKey}`}
-        title={courseLocaleData.title}
-        description={courseLocaleData.overview}
-        image={courseLocaleData.imageUrl}
-      />
+      <SeoHead {...seo} />
 
       <SiteShell i18next={i18next}>
         <CourseDetail courseData={courseLocaleData} i18next={i18next} />

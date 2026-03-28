@@ -1,267 +1,363 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://dkscenter.gumon.io/en</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en" />
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
+    <priority>1.0</priority>
 
-  <url>
-    <loc>https://dkscenter.gumon.io/th</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://dkscenter.gumon.io/en/course</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course" />
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
+    <priority>0.9</priority>
 
-  <url>
-    <loc>https://dkscenter.gumon.io/th/course</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://dkscenter.gumon.io/en/schedule</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/schedule" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/schedule" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/schedule" />
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
+    <priority>0.8</priority>
 
-  <url>
-    <loc>https://dkscenter.gumon.io/th/schedule</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://dkscenter.gumon.io/en/about-us</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/about-us" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/about-us" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/about-us" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
 
-  <url>
-    <loc>https://dkscenter.gumon.io/th/about-us</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://dkscenter.gumon.io/en/privacy</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/privacy" />
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
 
-  <url>
-    <loc>https://dkscenter.gumon.io/th/privacy</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://dkscenter.gumon.io/en/course/2024-001-fundamental-docker</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2024-001-fundamental-docker" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2024-001-fundamental-docker" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2024-001-fundamental-docker" />
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <lastmod>2024-02-18T02:00:00.000Z</lastmod>
   </url>
-
-  <url>
-    <loc>https://dkscenter.gumon.io/th/course/2024-001-fundamental-docker</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <url>
     <loc>https://dkscenter.gumon.io/en/course/2024-002-fundamental-kubernetes</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2024-002-fundamental-kubernetes" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2024-002-fundamental-kubernetes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2024-002-fundamental-kubernetes" />
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <lastmod>2024-02-18T02:00:00.000Z</lastmod>
   </url>
-
-  <url>
-    <loc>https://dkscenter.gumon.io/th/course/2024-002-fundamental-kubernetes</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <url>
     <loc>https://dkscenter.gumon.io/en/course/2024-003-fundamental-api</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2024-003-fundamental-api" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2024-003-fundamental-api" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2024-003-fundamental-api" />
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <lastmod>2024-02-20T02:00:00.000Z</lastmod>
   </url>
-
-  <url>
-    <loc>https://dkscenter.gumon.io/th/course/2024-003-fundamental-api</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <url>
     <loc>https://dkscenter.gumon.io/en/course/2024-004-fundamental-api</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2024-004-fundamental-api" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2024-004-fundamental-api" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2024-004-fundamental-api" />
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <lastmod>2024-02-20T02:00:00.000Z</lastmod>
   </url>
-
-  <url>
-    <loc>https://dkscenter.gumon.io/th/course/2024-004-fundamental-api</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <url>
     <loc>https://dkscenter.gumon.io/en/course/2024-005-fundamental-api</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2024-005-fundamental-api" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2024-005-fundamental-api" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2024-005-fundamental-api" />
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <lastmod>2024-02-20T02:00:00.000Z</lastmod>
   </url>
-
-  <url>
-    <loc>https://dkscenter.gumon.io/th/course/2024-005-fundamental-api</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <url>
     <loc>https://dkscenter.gumon.io/en/course/2024-006-fundamental-api</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2024-006-fundamental-api" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2024-006-fundamental-api" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2024-006-fundamental-api" />
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <lastmod>2024-02-20T02:00:00.000Z</lastmod>
   </url>
-
-  <url>
-    <loc>https://dkscenter.gumon.io/th/course/2024-006-fundamental-api</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <url>
     <loc>https://dkscenter.gumon.io/en/course/2024-007-modern-web-frontend-with-react</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2024-007-modern-web-frontend-with-react" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2024-007-modern-web-frontend-with-react" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2024-007-modern-web-frontend-with-react" />
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <lastmod>2024-02-19T02:00:00.000Z</lastmod>
   </url>
-
-  <url>
-    <loc>https://dkscenter.gumon.io/th/course/2024-007-modern-web-frontend-with-react</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <url>
     <loc>https://dkscenter.gumon.io/en/course/2024-011-code-craft-tntro-to-web-development-with-html-css-js</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2024-011-code-craft-tntro-to-web-development-with-html-css-js" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2024-011-code-craft-tntro-to-web-development-with-html-css-js" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2024-011-code-craft-tntro-to-web-development-with-html-css-js" />
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <lastmod>2024-04-09T02:00:00.000Z</lastmod>
   </url>
-
-  <url>
-    <loc>https://dkscenter.gumon.io/th/course/2024-011-code-craft-tntro-to-web-development-with-html-css-js</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <url>
     <loc>https://dkscenter.gumon.io/en/course/2024-012-container-conquest-dominate-with-docker-workshop</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2024-012-container-conquest-dominate-with-docker-workshop" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2024-012-container-conquest-dominate-with-docker-workshop" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2024-012-container-conquest-dominate-with-docker-workshop" />
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <lastmod>2024-06-20T02:00:00.000Z</lastmod>
   </url>
-
-  <url>
-    <loc>https://dkscenter.gumon.io/th/course/2024-012-container-conquest-dominate-with-docker-workshop</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <url>
     <loc>https://dkscenter.gumon.io/en/course/2024-014-pixel-pioneers-nextjs-react-masterclass</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2024-014-pixel-pioneers-nextjs-react-masterclass" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2024-014-pixel-pioneers-nextjs-react-masterclass" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2024-014-pixel-pioneers-nextjs-react-masterclass" />
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <lastmod>2026-02-08T09:31:00.000Z</lastmod>
   </url>
-
-  <url>
-    <loc>https://dkscenter.gumon.io/th/course/2024-014-pixel-pioneers-nextjs-react-masterclass</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <url>
     <loc>https://dkscenter.gumon.io/en/course/2024-015-excel-vanguard-cutting-edge-functions</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2024-015-excel-vanguard-cutting-edge-functions" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2024-015-excel-vanguard-cutting-edge-functions" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2024-015-excel-vanguard-cutting-edge-functions" />
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <lastmod>2024-07-05T02:00:00.000Z</lastmod>
   </url>
-
-  <url>
-    <loc>https://dkscenter.gumon.io/th/course/2024-015-excel-vanguard-cutting-edge-functions</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <url>
     <loc>https://dkscenter.gumon.io/en/course/2024-016-data-storyteller-visual-narratives-with-power-bi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2024-016-data-storyteller-visual-narratives-with-power-bi" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2024-016-data-storyteller-visual-narratives-with-power-bi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2024-016-data-storyteller-visual-narratives-with-power-bi" />
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <lastmod>2024-07-05T02:00:00.000Z</lastmod>
   </url>
-
-  <url>
-    <loc>https://dkscenter.gumon.io/th/course/2024-016-data-storyteller-visual-narratives-with-power-bi</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <url>
     <loc>https://dkscenter.gumon.io/en/course/2025-001-orchestrate-docker-kubernetes-bootcamp</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2025-001-orchestrate-docker-kubernetes-bootcamp" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2025-001-orchestrate-docker-kubernetes-bootcamp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2025-001-orchestrate-docker-kubernetes-bootcamp" />
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <lastmod>2026-02-08T09:31:00.000Z</lastmod>
   </url>
-
-  <url>
-    <loc>https://dkscenter.gumon.io/th/course/2025-001-orchestrate-docker-kubernetes-bootcamp</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <url>
     <loc>https://dkscenter.gumon.io/en/course/2025-002-event-driven-odyssey-kafka-nest-and-graphql-in-action</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2025-002-event-driven-odyssey-kafka-nest-and-graphql-in-action" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2025-002-event-driven-odyssey-kafka-nest-and-graphql-in-action" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2025-002-event-driven-odyssey-kafka-nest-and-graphql-in-action" />
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <lastmod>2025-02-19T02:00:00.000Z</lastmod>
   </url>
-
-  <url>
-    <loc>https://dkscenter.gumon.io/th/course/2025-002-event-driven-odyssey-kafka-nest-and-graphql-in-action</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <url>
     <loc>https://dkscenter.gumon.io/en/course/2026-003-ai-assisted-software-engineering</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2026-003-ai-assisted-software-engineering" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2026-003-ai-assisted-software-engineering" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2026-003-ai-assisted-software-engineering" />
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <lastmod>2026-03-29T05:00:00.000Z</lastmod>
   </url>
+  <url>
+    <loc>https://dkscenter.gumon.io/th</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
 
+  </url>
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+
+  </url>
+  <url>
+    <loc>https://dkscenter.gumon.io/th/schedule</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/schedule" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/schedule" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/schedule" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+
+  </url>
+  <url>
+    <loc>https://dkscenter.gumon.io/th/about-us</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/about-us" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/about-us" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/about-us" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+
+  </url>
+  <url>
+    <loc>https://dkscenter.gumon.io/th/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/privacy" />
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+
+  </url>
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2024-001-fundamental-docker</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2024-001-fundamental-docker" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2024-001-fundamental-docker" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2024-001-fundamental-docker" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-02-18T02:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2024-002-fundamental-kubernetes</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2024-002-fundamental-kubernetes" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2024-002-fundamental-kubernetes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2024-002-fundamental-kubernetes" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-02-18T02:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2024-003-fundamental-api</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2024-003-fundamental-api" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2024-003-fundamental-api" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2024-003-fundamental-api" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-02-20T02:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2024-004-fundamental-api</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2024-004-fundamental-api" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2024-004-fundamental-api" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2024-004-fundamental-api" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-02-20T02:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2024-005-fundamental-api</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2024-005-fundamental-api" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2024-005-fundamental-api" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2024-005-fundamental-api" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-02-20T02:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2024-006-fundamental-api</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2024-006-fundamental-api" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2024-006-fundamental-api" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2024-006-fundamental-api" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-02-20T02:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2024-007-modern-web-frontend-with-react</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2024-007-modern-web-frontend-with-react" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2024-007-modern-web-frontend-with-react" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2024-007-modern-web-frontend-with-react" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-02-19T02:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2024-011-code-craft-tntro-to-web-development-with-html-css-js</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2024-011-code-craft-tntro-to-web-development-with-html-css-js" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2024-011-code-craft-tntro-to-web-development-with-html-css-js" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2024-011-code-craft-tntro-to-web-development-with-html-css-js" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-04-09T02:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2024-012-container-conquest-dominate-with-docker-workshop</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2024-012-container-conquest-dominate-with-docker-workshop" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2024-012-container-conquest-dominate-with-docker-workshop" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2024-012-container-conquest-dominate-with-docker-workshop" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-06-20T02:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2024-014-pixel-pioneers-nextjs-react-masterclass</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2024-014-pixel-pioneers-nextjs-react-masterclass" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2024-014-pixel-pioneers-nextjs-react-masterclass" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2024-014-pixel-pioneers-nextjs-react-masterclass" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-02-08T09:31:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2024-015-excel-vanguard-cutting-edge-functions</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2024-015-excel-vanguard-cutting-edge-functions" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2024-015-excel-vanguard-cutting-edge-functions" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2024-015-excel-vanguard-cutting-edge-functions" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-07-05T02:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2024-016-data-storyteller-visual-narratives-with-power-bi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2024-016-data-storyteller-visual-narratives-with-power-bi" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2024-016-data-storyteller-visual-narratives-with-power-bi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2024-016-data-storyteller-visual-narratives-with-power-bi" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-07-05T02:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2025-001-orchestrate-docker-kubernetes-bootcamp</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2025-001-orchestrate-docker-kubernetes-bootcamp" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2025-001-orchestrate-docker-kubernetes-bootcamp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2025-001-orchestrate-docker-kubernetes-bootcamp" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-02-08T09:31:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2025-002-event-driven-odyssey-kafka-nest-and-graphql-in-action</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2025-002-event-driven-odyssey-kafka-nest-and-graphql-in-action" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2025-002-event-driven-odyssey-kafka-nest-and-graphql-in-action" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2025-002-event-driven-odyssey-kafka-nest-and-graphql-in-action" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2025-02-19T02:00:00.000Z</lastmod>
+  </url>
   <url>
     <loc>https://dkscenter.gumon.io/th/course/2026-003-ai-assisted-software-engineering</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dkscenter.gumon.io/en/course/2026-003-ai-assisted-software-engineering" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://dkscenter.gumon.io/th/course/2026-003-ai-assisted-software-engineering" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dkscenter.gumon.io/en/course/2026-003-ai-assisted-software-engineering" />
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://dkscenter.gumon.io/en/course/test-ac</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://dkscenter.gumon.io/th/course/test-ac</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://dkscenter.gumon.io/en/course/test-dks</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://dkscenter.gumon.io/th/course/test-dks</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <lastmod>2026-03-29T05:00:00.000Z</lastmod>
   </url>
 </urlset>

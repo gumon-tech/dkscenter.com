@@ -1,92 +1,118 @@
-/* scripts/generate-sitemap.js */
 const fs = require('fs');
 const path = require('path');
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://dkscenter.gumon.io';
+const LOCALES = ['en', 'th'];
+const DEFAULT_LOCALE = 'en';
 
-function getDirectoryNames(directoryPath) {
-    return fs
-        .readdirSync(directoryPath, { withFileTypes: true })
-        .filter((entry) => entry.isDirectory())
-        .map((entry) => entry.name);
+function buildAbsoluteUrl(pathname = '') {
+  return `${SITE_URL}${pathname}`;
 }
 
-function getJavaScriptBaseNames(directoryPath) {
-    return fs
-        .readdirSync(directoryPath, { withFileTypes: true })
-        .filter((entry) => entry.isFile() && entry.name.endsWith('.js'))
-        .map((entry) => path.basename(entry.name, '.js'))
-        .filter((name) => name !== 'index');
+function getSharedCourseEntries() {
+  const sharedDirectory = path.join(
+    process.cwd(),
+    'content',
+    'courses',
+    'shared',
+  );
+
+  return fs
+    .readdirSync(sharedDirectory, { withFileTypes: true })
+    .filter((entry) => entry.isFile() && entry.name.endsWith('.js'))
+    .map((entry) => {
+      const filePath = path.join(sharedDirectory, entry.name);
+      const content = fs.readFileSync(filePath, 'utf8');
+      const key = path.basename(entry.name, '.js');
+      const isActive = /isActive:\s*true/.test(content);
+      const lastUpdateMatch = content.match(/lastUpdate:\s*'([^']+)'/);
+
+      return {
+        key,
+        isActive,
+        lastUpdate: lastUpdateMatch?.[1] || null,
+      };
+    })
+    .filter((entry) => entry.isActive)
+    .sort((a, b) => a.key.localeCompare(b.key));
 }
 
-function getCourseKeys() {
-    const contentRoot = path.join(process.cwd(), 'content', 'courses');
-    const legacyEntriesDirectory = path.join(contentRoot, 'entries');
-    const sharedDirectory = path.join(contentRoot, 'shared');
-    const localesDirectory = path.join(contentRoot, 'locales');
-
-    if (fs.existsSync(legacyEntriesDirectory)) {
-        return getDirectoryNames(legacyEntriesDirectory).sort();
-    }
-
-    if (fs.existsSync(sharedDirectory)) {
-        return getJavaScriptBaseNames(sharedDirectory).sort();
-    }
-
-    if (fs.existsSync(localesDirectory)) {
-        return getDirectoryNames(localesDirectory).sort();
-    }
-
-    throw new Error(
-        `Unable to find course content directory. Checked: ${legacyEntriesDirectory}, ${sharedDirectory}, ${localesDirectory}`
-    );
+function buildAlternateLinks(pathname) {
+  return [
+    ...LOCALES.map(
+      (locale) =>
+        `    <xhtml:link rel="alternate" hreflang="${locale}" href="${buildAbsoluteUrl(`/${locale}${pathname}`)}" />`,
+    ),
+    `    <xhtml:link rel="alternate" hreflang="x-default" href="${buildAbsoluteUrl(`/${DEFAULT_LOCALE}${pathname}`)}" />`,
+  ].join('\n');
 }
 
-function url(loc) {
-    return `
-  <url>
+function buildUrlEntry({ pathname, locale, changefreq, priority, lastmod }) {
+  const loc = buildAbsoluteUrl(`/${locale}${pathname}`);
+
+  return `  <url>
     <loc>${loc}</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+${buildAlternateLinks(pathname)}
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priority}</priority>
+${lastmod ? `    <lastmod>${new Date(lastmod).toISOString()}</lastmod>` : ''}
   </url>`;
 }
 
-async function main() {
-    const courseKeys = getCourseKeys();
-    const urls = [];
+function main() {
+  const courseEntries = getSharedCourseEntries();
+  const routes = [
+    { pathname: '', changefreq: 'weekly', priority: '1.0' },
+    { pathname: '/course', changefreq: 'weekly', priority: '0.9' },
+    { pathname: '/schedule', changefreq: 'weekly', priority: '0.8' },
+    { pathname: '/about-us', changefreq: 'monthly', priority: '0.6' },
+    { pathname: '/privacy', changefreq: 'yearly', priority: '0.3' },
+  ];
 
-    // root language landing
-    urls.push(url(`${SITE_URL}/en`));
-    urls.push(url(`${SITE_URL}/th`));
+  const urlEntries = [];
 
-    // list pages
-    urls.push(url(`${SITE_URL}/en/course`));
-    urls.push(url(`${SITE_URL}/th/course`));
-    urls.push(url(`${SITE_URL}/en/schedule`));
-    urls.push(url(`${SITE_URL}/th/schedule`));
-    urls.push(url(`${SITE_URL}/en/about-us`));
-    urls.push(url(`${SITE_URL}/th/about-us`));
-    urls.push(url(`${SITE_URL}/en/privacy`));
-    urls.push(url(`${SITE_URL}/th/privacy`));
-
-    // course detail pages
-    for (const key of courseKeys) {
-        urls.push(url(`${SITE_URL}/en/course/${key}`));
-        urls.push(url(`${SITE_URL}/th/course/${key}`));
+  for (const locale of LOCALES) {
+    for (const route of routes) {
+      urlEntries.push(
+        buildUrlEntry({
+          ...route,
+          locale,
+        }),
+      );
     }
 
-    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.join('\n')}
-</urlset>`;
+    for (const course of courseEntries) {
+      urlEntries.push(
+        buildUrlEntry({
+          pathname: `/course/${course.key}`,
+          locale,
+          changefreq: 'weekly',
+          priority: '0.8',
+          lastmod: course.lastUpdate,
+        }),
+      );
+    }
+  }
 
-    const outPath = path.join(process.cwd(), 'public', 'sitemap.xml');
-    fs.mkdirSync(path.dirname(outPath), { recursive: true });
-    fs.writeFileSync(outPath, sitemap.trim());
-    console.log(`✅ sitemap generated: ${outPath}`);
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${urlEntries.join('\n')}
+</urlset>`;
+  const robots = `User-agent: *
+Allow: /
+
+Sitemap: ${buildAbsoluteUrl('/sitemap.xml')}
+`;
+
+  const sitemapPath = path.join(process.cwd(), 'public', 'sitemap.xml');
+  const robotsPath = path.join(process.cwd(), 'public', 'robots.txt');
+
+  fs.mkdirSync(path.dirname(sitemapPath), { recursive: true });
+  fs.writeFileSync(sitemapPath, `${sitemap}\n`);
+  fs.writeFileSync(robotsPath, robots);
+
+  console.log(`Generated sitemap at ${sitemapPath}`);
+  console.log(`Generated robots.txt at ${robotsPath}`);
 }
 
-main().catch((error) => {
-    console.error('Failed to generate sitemap:', error);
-    process.exit(1);
-});
+main();

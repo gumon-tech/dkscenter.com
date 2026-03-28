@@ -10,6 +10,7 @@ import Container from '/components/container';
 import Heading from '/components/ui/heading';
 import Card from '/components/ui/card';
 import Badge from '/components/ui/badge';
+import { getPrivacyPageSeo } from '/lib/seo';
 
 const getStaticProps = makeStaticProps(['home']);
 export { getStaticPaths, getStaticProps };
@@ -18,15 +19,11 @@ const Privacy = () => {
   const i18next = useTranslation('home');
   const { t, i18n } = i18next;
   const currentLanguage = i18n.language;
+  const seo = getPrivacyPageSeo(currentLanguage);
 
   return (
     <>
-      <SeoHead
-        locale={currentLanguage}
-        path="/privacy"
-        title={t('nav-privacy')}
-        description={t('head-content')}
-      />
+      <SeoHead {...seo} />
       <SiteShell i18next={i18next}>
         <Container className="pb-section lg:pb-section-lg">
           <section className="pt-section-sm lg:pt-section">

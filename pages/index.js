@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { useEffect } from 'react';
+import { getLegacyRedirectSeo } from '../lib/seo';
 
 const DEFAULT_LOCALE = 'th';
 const SUPPORTED = new Set(['en', 'th']);
@@ -19,6 +20,8 @@ function getCookie(name) {
 }
 
 export default function Home() {
+  const seo = getLegacyRedirectSeo('/');
+
   useEffect(() => {
     // 1) cookie: locale=th_TH / en_US (ตามที่คุณมีอยู่)
     const cookieLocale = mapLocale(getCookie('locale'));
@@ -35,7 +38,10 @@ export default function Home() {
   return (
     <>
       <Head>
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
         <meta name="robots" content="noindex,follow" />
+        <link rel="canonical" href={seo.canonical} />
       </Head>
     </>
   );

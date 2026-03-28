@@ -5,22 +5,23 @@ import { makeStaticProps } from '/lib/getStatic';
 import { getStaticPaths } from '/lib/getStatic';
 import SeoHead from '../../../components/seo/seo-head';
 import SiteShell from '../../../components/layout/site-shell';
+import { getActiveLocalizedCourses } from '../../../lib/courses/repository';
+import { getCourseListingSeo } from '../../../lib/seo';
 
 const getStaticProps = makeStaticProps(['home']);
 export { getStaticPaths, getStaticProps };
 
 const Course = () => {
   const i18next = useTranslation('home');
-  const { t, i18n } = i18next;
+  const { i18n } = i18next;
   const currentLanguage = i18n.language || 'th';
+  const seo = getCourseListingSeo(
+    currentLanguage,
+    getActiveLocalizedCourses(currentLanguage),
+  );
   return (
     <>
-      <SeoHead
-        locale={currentLanguage}
-        path="/course"
-        title={t('course-list-1')}
-        description={t('head-content')}
-      />
+      <SeoHead {...seo} />
       <SiteShell i18next={i18next}>
         <CourseList breadcrumb={true} i18next={i18next} />
       </SiteShell>

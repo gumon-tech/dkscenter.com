@@ -1,8 +1,8 @@
 import React from 'react';
 import { RedirectRender } from '/lib/redirect';
-import { useRouter } from 'next/router';
-import Head from 'next/head';
+import SeoHead from '/components/seo/seo-head';
 import { getCourseByKey, getCourseKeys } from '/lib/courses/repository';
+import { getLegacyRedirectSeo } from '/lib/seo';
 
 export const getStaticPaths = () => {
   return {
@@ -20,58 +20,12 @@ export const getStaticProps = (context) => {
 };
 
 const Home = ({ courseData }) => {
-  const { asPath } = useRouter();
-  const origin =
-    typeof window !== 'undefined' && window.location.origin
-      ? window.location.origin
-      : '';
-
-  const URL = `${origin}${asPath}`;
-  const domain = origin;
   const courseLocaleData = courseData.en;
+  const seo = getLegacyRedirectSeo(`/course/${courseLocaleData.key}/schedule`);
 
   return RedirectRender(
     <>
-      <Head>
-        <title>
-          {`${courseLocaleData.title} | DKS Center - Digital Knowledge Sharing Center`}
-        </title>
-        <meta
-          name="description"
-          content={`${courseLocaleData.title} | ${courseLocaleData.overview}`}
-        />
-        <link rel="icon" href="/favicon.ico" />
-
-        {/* Open Graph Protocol */}
-        <meta
-          property="og:title"
-          content={`${courseLocaleData.title} | DKS Center - Digital Knowledge Sharing Center`}
-        />
-        <meta
-          property="og:description"
-          content={`${courseLocaleData.title} | ${courseLocaleData.overview}`}
-        />
-        <meta
-          property="og:image"
-          content={domain + courseLocaleData.imageUrl}
-        />
-        <meta property="og:url" content={URL} />
-
-        {/* Twitter Card */}
-        <meta
-          name="twitter:title"
-          content={`${courseLocaleData.title} | DKS Center - Digital Knowledge Sharing Center`}
-        />
-        <meta
-          name="twitter:description"
-          content={`${courseLocaleData.title} | ${courseLocaleData.overview}`}
-        />
-        <meta
-          name="twitter:image"
-          content={domain + courseLocaleData.imageUrl}
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+      <SeoHead {...seo} image={courseLocaleData.imageUrl} />
     </>,
   );
 };

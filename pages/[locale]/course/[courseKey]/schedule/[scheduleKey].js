@@ -11,6 +11,7 @@ import {
   getLocalizedCourseSchedulePaths,
   getScheduleByKey,
 } from '/lib/courses/repository';
+import { getCourseSessionSeo } from '/lib/seo';
 
 const CourseSchedule = ({ courseData, scheduleData }) => {
   const i18next = useTranslation('home');
@@ -18,16 +19,11 @@ const CourseSchedule = ({ courseData, scheduleData }) => {
   const router = useRouter();
   const { code } = router.query;
   const currentLanguage = i18n.language || courseData.locale || 'en';
+  const seo = getCourseSessionSeo(courseData, scheduleData, currentLanguage);
 
   return (
     <>
-      <SeoHead
-        locale={currentLanguage}
-        path={`/course/${courseData.key}/schedule/${scheduleData.scheduleKey}`}
-        title={scheduleData.title || courseData.title}
-        description={courseData.overview}
-        image={courseData.imageUrl}
-      />
+      <SeoHead {...seo} />
       <SiteShell i18next={i18next}>
         <CourseScheduleOverview
           courseData={courseData}

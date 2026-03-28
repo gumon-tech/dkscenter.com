@@ -30,12 +30,6 @@ function normalizeSchedules(courseKey, schedules) {
   }));
 }
 
-function getLocalizedDetailUrl(detailUrl, locale) {
-  if (!detailUrl) return null;
-  if (typeof detailUrl === 'string') return detailUrl;
-  return detailUrl?.[locale] || detailUrl?.en || detailUrl?.th || null;
-}
-
 export function composeLocalizedCourse({
   courseKey,
   locale,
@@ -57,7 +51,7 @@ export function composeLocalizedCourse({
     overview: localized?.overview || '',
     duration: localized?.duration || '',
     imageUrl: shared?.imageUrl || null,
-    detailUrl: getLocalizedDetailUrl(shared?.detailUrl, locale),
+    detailUrl: `/${locale}/course/${shared?.key || courseKey}`,
     language: locale,
     lastUpdate: shared?.lastUpdate || null,
     objectives: normalizeArray(localized?.objectives),

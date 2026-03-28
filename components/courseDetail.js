@@ -339,7 +339,15 @@ const CourseDetail = ({ courseData, i18next }) => {
   if (!courseData) {
     return (
       <Container>
-        <Breadcrumb paths={[{ title: 'Training Course', path: '/course' }]} />
+        <Breadcrumb
+          homeLabel={locale === 'th' ? 'หน้าแรก' : 'Home'}
+          paths={[
+            {
+              title: locale === 'th' ? 'คอร์ส' : 'Courses',
+              path: '/course',
+            },
+          ]}
+        />
         {t('course-detail-1')}
       </Container>
     );
@@ -352,8 +360,12 @@ const CourseDetail = ({ courseData, i18next }) => {
       }`}
     >
       <Breadcrumb
+        homeLabel={locale === 'th' ? 'หน้าแรก' : 'Home'}
         paths={[
-          { title: 'Training Course', path: '/course' },
+          {
+            title: locale === 'th' ? 'คอร์ส' : 'Courses',
+            path: '/course',
+          },
           { title: courseData.code, path: `/course/${courseData?.key}` },
         ]}
       />
