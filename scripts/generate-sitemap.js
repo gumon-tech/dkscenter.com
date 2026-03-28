@@ -4,6 +4,44 @@ const path = require('path');
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://dkscenter.gumon.io';
 
+function getDirectoryNames(directoryPath) {
+    return fs
+        .readdirSync(directoryPath, { withFileTypes: true })
+        .filter((entry) => entry.isDirectory())
+        .map((entry) => entry.name);
+}
+
+function getJavaScriptBaseNames(directoryPath) {
+    return fs
+        .readdirSync(directoryPath, { withFileTypes: true })
+        .filter((entry) => entry.isFile() && entry.name.endsWith('.js'))
+        .map((entry) => path.basename(entry.name, '.js'))
+        .filter((name) => name !== 'index');
+}
+
+function getCourseKeys() {
+    const contentRoot = path.join(process.cwd(), 'content', 'courses');
+    const legacyEntriesDirectory = path.join(contentRoot, 'entries');
+    const sharedDirectory = path.join(contentRoot, 'shared');
+    const localesDirectory = path.join(contentRoot, 'locales');
+
+    if (fs.existsSync(legacyEntriesDirectory)) {
+        return getDirectoryNames(legacyEntriesDirectory).sort();
+    }
+
+    if (fs.existsSync(sharedDirectory)) {
+        return getJavaScriptBaseNames(sharedDirectory).sort();
+    }
+
+    if (fs.existsSync(localesDirectory)) {
+        return getDirectoryNames(localesDirectory).sort();
+    }
+
+    throw new Error(
+        `Unable to find course content directory. Checked: ${legacyEntriesDirectory}, ${sharedDirectory}, ${localesDirectory}`
+    );
+}
+
 function url(loc) {
     return `
   <url>
@@ -14,17 +52,7 @@ function url(loc) {
 }
 
 async function main() {
-    const entriesDirectory = path.join(
-        process.cwd(),
-        'content',
-        'courses',
-        'entries'
-    );
-    const courseKeys = fs
-        .readdirSync(entriesDirectory, { withFileTypes: true })
-        .filter((entry) => entry.isDirectory())
-        .map((entry) => entry.name)
-        .sort();
+    const courseKeys = getCourseKeys();
     const urls = [];
 
     // root language landing
@@ -53,6 +81,7 @@ ${urls.join('\n')}
 </urlset>`;
 
     const outPath = path.join(process.cwd(), 'public', 'sitemap.xml');
+    fs.mkdirSync(path.dirname(outPath), { recursive: true });
     fs.writeFileSync(outPath, sitemap.trim());
     console.log(`✅ sitemap generated: ${outPath}`);
 }

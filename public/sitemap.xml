@@ -230,6 +230,18 @@
   </url>
 
   <url>
+    <loc>https://dkscenter.gumon.io/en/course/2026-003-ai-assisted-software-engineering</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dkscenter.gumon.io/th/course/2026-003-ai-assisted-software-engineering</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://dkscenter.gumon.io/en/course/test-ac</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
