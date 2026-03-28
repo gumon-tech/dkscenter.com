@@ -73,18 +73,16 @@ export default function CourseScheduleTable({
   onOpenModal,
 }) {
   const availableSchedules = upcomingSessions(courseData);
-  const latestPastSchedules = pastSessions(courseData).slice(0, 1);
+  const previousSchedules = pastSessions(courseData);
   const hasSessions = hasAnySessions(courseData);
-  const displayState =
-    availableSchedules.length > 0 ? 'upcoming' : hasSessions ? 'past' : 'none';
-  const displaySchedules =
-    displayState === 'upcoming' ? availableSchedules : latestPastSchedules;
+  const hasUpcoming = availableSchedules.length > 0;
+  const hasPast = previousSchedules.length > 0;
 
   const registerButtonClass = isConversionFocusedCourse
     ? registerScheduleButtonClass
     : 'inline-flex items-center justify-center rounded-full border border-primary/20 bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-glow transition hover:bg-primary-strong focus:outline-none focus:ring-4 focus:ring-primary/20';
 
-  if (displayState === 'none') {
+  if (!hasSessions) {
     return (
       <section className="rounded-[30px] border border-border/60 bg-surface/45 px-5 py-6 shadow-soft backdrop-blur-xl sm:px-6">
         <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
@@ -100,210 +98,219 @@ export default function CourseScheduleTable({
     );
   }
 
-  return (
-    <section className="overflow-hidden rounded-[30px] border border-border/60 bg-surface/45 shadow-soft backdrop-blur-xl">
-      <div className="border-b border-border/60 px-5 py-5 sm:px-6">
-        <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
-          {locale === 'th' ? 'รอบอบรม' : 'Available Sessions'}
-        </div>
-        <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">
-          {displayState === 'past'
-            ? t('course-detail-20')
-            : displaySchedules.length > 1
-            ? locale === 'th'
-              ? `ขณะนี้มีรอบอบรมที่เปิดลงทะเบียน ${displaySchedules.length} รอบ`
-              : `${displaySchedules.length} sessions are currently available.`
-            : locale === 'th'
-              ? 'ตรวจสอบรายละเอียดรอบอบรมและลงทะเบียนได้ที่นี่'
-              : 'Current session details and registration.'}
-        </p>
-        {displayState === 'past' ? (
-          <p className="mt-2 max-w-2xl text-sm leading-7 text-muted">
-            {t('course-detail-21')}
-          </p>
-        ) : null}
-      </div>
+  const renderSchedules = (schedules, displayState) =>
+    schedules.map((publicSchedule, index) => {
+      const eventStartDate = formatCourseDate(publicSchedule.eventStart, locale);
+      const eventEndDate = formatCourseDate(publicSchedule.eventEnd, locale);
+      const eventStartTime = formatCourseTime(publicSchedule.eventStart, locale);
+      const eventEndTime = formatCourseTime(publicSchedule.eventEnd, locale);
+      const courseType = getCourseType(publicSchedule);
+      const deliveryLabel = getSessionDeliveryLabel(publicSchedule, locale);
+      const forwardedUrl = buildForwardedUrl(
+        publicSchedule.ticketUrl,
+        routerQuery || {},
+      );
+      const canRegister =
+        courseType === 'GET_YOURS' || courseType === 'GET_YOURS_2';
 
-      <div className="divide-y divide-border/60">
-        {displaySchedules.map((publicSchedule, index) => {
-          const eventStartDate = formatCourseDate(
-            publicSchedule.eventStart,
-            locale,
-          );
-          const eventEndDate = formatCourseDate(
-            publicSchedule.eventEnd,
-            locale,
-          );
-          const eventStartTime = formatCourseTime(
-            publicSchedule.eventStart,
-            locale,
-          );
-          const eventEndTime = formatCourseTime(
-            publicSchedule.eventEnd,
-            locale,
-          );
-          const courseType = getCourseType(publicSchedule);
-          const deliveryLabel = getSessionDeliveryLabel(publicSchedule, locale);
-          const forwardedUrl = buildForwardedUrl(
-            publicSchedule.ticketUrl,
-            routerQuery || {},
-          );
-          const canRegister =
-            courseType === 'GET_YOURS' || courseType === 'GET_YOURS_2';
-
-          return (
-            <article key={index} className="px-6 py-7 sm:px-7 sm:py-8">
-              <div className="pb-6 sm:pb-7">
-                <div className="flex flex-col gap-5 lg:gap-6">
-                  <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-                    <div className="flex flex-wrap items-center gap-3">
-                      <ScheduleBadge
-                        courseType={courseType}
-                        t={t}
-                        locale={locale}
-                      />
-                      <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-soft">
-                        {displayState === 'past'
-                          ? locale === 'th'
-                            ? 'รอบล่าสุด'
-                            : 'Latest Session'
-                          : locale === 'th'
-                            ? `Session 0${index + 1}`
-                            : `Session 0${index + 1}`}
-                      </span>
-                      {deliveryLabel ? (
-                        <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-soft">
-                          {deliveryLabel}
-                        </span>
-                      ) : null}
-                    </div>
-
-                    {canRegister ? (
-                      <div className="lg:min-w-[220px] lg:pl-6">
-                        {courseType === 'GET_YOURS' ? (
-                          <a
-                            target="_blank"
-                            href={forwardedUrl}
-                            onClick={() =>
-                              onRegisterClick(publicSchedule, forwardedUrl)
-                            }
-                            rel="noreferrer"
-                            className={`${registerButtonClass} w-full px-6 py-4 text-base`}
-                          >
-                            {isConversionFocusedCourse
-                              ? lineCopy.registerLabel
-                              : t('course-detail-16')}
-                          </a>
-                        ) : (
-                          <button
-                            type="button"
-                            onClick={() =>
-                              onOpenModal(publicSchedule.scheduleKey)
-                            }
-                            className={`${registerButtonClass} w-full px-6 py-4 text-base`}
-                          >
-                            {isConversionFocusedCourse
-                              ? lineCopy.registerLabel
-                              : t('course-detail-16')}
-                          </button>
-                        )}
-                      </div>
-                    ) : null}
-                  </div>
-
-                  <div className="min-w-0">
-                    <h3 className="text-[1.9rem] font-semibold leading-[1.15] tracking-[-0.045em] text-text sm:text-[2.2rem] lg:text-[2.6rem]">
-                      {courseType === 'GET_YOURS' ? (
-                        <a
-                          target="_blank"
-                          href={forwardedUrl}
-                          onClick={() =>
-                            onScheduleTitleClick(publicSchedule, forwardedUrl)
-                          }
-                          rel="noreferrer"
-                          className="transition hover:text-primary"
-                        >
-                          {publicSchedule.title}
-                        </a>
-                      ) : courseType === 'GET_YOURS_2' ? (
-                        <button
-                          type="button"
-                          onClick={() =>
-                            onOpenModal(publicSchedule.scheduleKey)
-                          }
-                          className="text-left transition hover:text-primary"
-                        >
-                          {publicSchedule.title}
-                        </button>
-                      ) : (
-                        publicSchedule.title
-                      )}
-                    </h3>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-6 sm:pt-7">
-                <div className="grid gap-4 md:grid-cols-3">
-                  <div className="theme-overlay-card rounded-[24px] px-5 py-5">
-                    <div className="flex items-center gap-2 text-soft">
-                      <CalendarIcon className="h-5 w-5 text-primary" />
-                      <span className="text-[11px] font-semibold uppercase tracking-[0.18em]">
-                        {locale === 'th' ? 'วันที่' : 'Date'}
-                      </span>
-                    </div>
-                    <div className="mt-4 text-lg leading-9 text-text">
-                      {eventStartDate}
-                      {eventStartDate !== eventEndDate
-                        ? ` - ${eventEndDate}`
-                        : ''}
-                    </div>
-                  </div>
-
-                  <div className="theme-overlay-card rounded-[24px] px-5 py-5">
-                    <div className="flex items-center gap-2 text-soft">
-                      <ClockIcon className="h-5 w-5 text-primary" />
-                      <span className="text-[11px] font-semibold uppercase tracking-[0.18em]">
-                        {locale === 'th' ? 'เวลา' : 'Time'}
-                      </span>
-                    </div>
-                    <div className="mt-4 text-lg leading-9 text-text">
-                      {eventStartTime} - {eventEndTime}
-                    </div>
-                  </div>
-
-                  {publicSchedule.location ? (
-                    <div className="theme-overlay-card rounded-[24px] px-5 py-5 md:col-span-1">
-                      <div className="flex items-center gap-2 text-soft">
-                        <MapPinIcon className="h-5 w-5 text-primary" />
-                        <span className="text-[11px] font-semibold uppercase tracking-[0.18em]">
-                          {locale === 'th' ? 'สถานที่' : 'Location'}
-                        </span>
-                      </div>
-                      <div className="mt-4 text-lg leading-9">
-                        {publicSchedule.locationUrl ? (
-                          <a
-                            href={publicSchedule.locationUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="text-primary underline decoration-primary/35 underline-offset-4 transition hover:text-primary-strong"
-                          >
-                            {publicSchedule.location}
-                          </a>
-                        ) : (
-                          <span className="text-text">
-                            {publicSchedule.location}
-                          </span>
-                        )}
-                      </div>
-                    </div>
+      return (
+        <article
+          key={`${displayState}-${publicSchedule.scheduleKey || publicSchedule.eventStart || index}`}
+          className="px-6 py-7 sm:px-7 sm:py-8"
+        >
+          <div className="pb-6 sm:pb-7">
+            <div className="flex flex-col gap-5 lg:gap-6">
+              <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+                <div className="flex flex-wrap items-center gap-3">
+                  <ScheduleBadge
+                    courseType={courseType}
+                    t={t}
+                    locale={locale}
+                  />
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-soft">
+                    {displayState === 'past'
+                      ? locale === 'th'
+                        ? `รอบที่ผ่านมา ${index + 1}`
+                        : `Past Session ${index + 1}`
+                      : locale === 'th'
+                        ? `Session 0${index + 1}`
+                        : `Session 0${index + 1}`}
+                  </span>
+                  {deliveryLabel ? (
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-soft">
+                      {deliveryLabel}
+                    </span>
                   ) : null}
                 </div>
+
+                {canRegister ? (
+                  <div className="lg:min-w-[220px] lg:pl-6">
+                    {courseType === 'GET_YOURS' ? (
+                      <a
+                        target="_blank"
+                        href={forwardedUrl}
+                        onClick={() =>
+                          onRegisterClick(publicSchedule, forwardedUrl)
+                        }
+                        rel="noreferrer"
+                        className={`${registerButtonClass} w-full px-6 py-4 text-base`}
+                      >
+                        {isConversionFocusedCourse
+                          ? lineCopy.registerLabel
+                          : t('course-detail-16')}
+                      </a>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => onOpenModal(publicSchedule.scheduleKey)}
+                        className={`${registerButtonClass} w-full px-6 py-4 text-base`}
+                      >
+                        {isConversionFocusedCourse
+                          ? lineCopy.registerLabel
+                          : t('course-detail-16')}
+                      </button>
+                    )}
+                  </div>
+                ) : null}
               </div>
-            </article>
-          );
-        })}
-      </div>
-    </section>
+
+              <div className="min-w-0">
+                <h3 className="text-[1.9rem] font-semibold leading-[1.15] tracking-[-0.045em] text-text sm:text-[2.2rem] lg:text-[2.6rem]">
+                  {courseType === 'GET_YOURS' ? (
+                    <a
+                      target="_blank"
+                      href={forwardedUrl}
+                      onClick={() =>
+                        onScheduleTitleClick(publicSchedule, forwardedUrl)
+                      }
+                      rel="noreferrer"
+                      className="transition hover:text-primary"
+                    >
+                      {publicSchedule.title}
+                    </a>
+                  ) : courseType === 'GET_YOURS_2' ? (
+                    <button
+                      type="button"
+                      onClick={() => onOpenModal(publicSchedule.scheduleKey)}
+                      className="text-left transition hover:text-primary"
+                    >
+                      {publicSchedule.title}
+                    </button>
+                  ) : (
+                    publicSchedule.title
+                  )}
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <div className="pt-6 sm:pt-7">
+            <div className="grid gap-4 md:grid-cols-3">
+              <div className="theme-overlay-card rounded-[24px] px-5 py-5">
+                <div className="flex items-center gap-2 text-soft">
+                  <CalendarIcon className="h-5 w-5 text-primary" />
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.18em]">
+                    {locale === 'th' ? 'วันที่' : 'Date'}
+                  </span>
+                </div>
+                <div className="mt-4 text-lg leading-9 text-text">
+                  {eventStartDate}
+                  {eventStartDate !== eventEndDate ? ` - ${eventEndDate}` : ''}
+                </div>
+              </div>
+
+              <div className="theme-overlay-card rounded-[24px] px-5 py-5">
+                <div className="flex items-center gap-2 text-soft">
+                  <ClockIcon className="h-5 w-5 text-primary" />
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.18em]">
+                    {locale === 'th' ? 'เวลา' : 'Time'}
+                  </span>
+                </div>
+                <div className="mt-4 text-lg leading-9 text-text">
+                  {eventStartTime} - {eventEndTime}
+                </div>
+              </div>
+
+              {publicSchedule.location ? (
+                <div className="theme-overlay-card rounded-[24px] px-5 py-5 md:col-span-1">
+                  <div className="flex items-center gap-2 text-soft">
+                    <MapPinIcon className="h-5 w-5 text-primary" />
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.18em]">
+                      {locale === 'th' ? 'สถานที่' : 'Location'}
+                    </span>
+                  </div>
+                  <div className="mt-4 text-lg leading-9">
+                    {publicSchedule.locationUrl ? (
+                      <a
+                        href={publicSchedule.locationUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-primary underline decoration-primary/35 underline-offset-4 transition hover:text-primary-strong"
+                      >
+                        {publicSchedule.location}
+                      </a>
+                    ) : (
+                      <span className="text-text">{publicSchedule.location}</span>
+                    )}
+                  </div>
+                </div>
+              ) : null}
+            </div>
+          </div>
+        </article>
+      );
+    });
+
+  return (
+    <div className="space-y-6">
+      {hasUpcoming ? (
+        <section className="overflow-hidden rounded-[30px] border border-border/60 bg-surface/45 shadow-soft backdrop-blur-xl">
+          <div className="border-b border-border/60 px-5 py-5 sm:px-6">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
+              {locale === 'th' ? 'รอบอบรมที่เปิดอยู่' : 'Available Sessions'}
+            </div>
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">
+              {availableSchedules.length > 1
+                ? locale === 'th'
+                  ? `ขณะนี้มีรอบอบรมที่เปิดลงทะเบียน ${availableSchedules.length} รอบ`
+                  : `${availableSchedules.length} sessions are currently available.`
+                : locale === 'th'
+                  ? 'ตรวจสอบรายละเอียดรอบอบรมและลงทะเบียนได้ที่นี่'
+                  : 'Current session details and registration.'}
+            </p>
+          </div>
+
+          <div className="divide-y divide-border/60">
+            {renderSchedules(availableSchedules, 'upcoming')}
+          </div>
+        </section>
+      ) : null}
+
+      {hasPast ? (
+        <section className="overflow-hidden rounded-[30px] border border-border/60 bg-surface/45 shadow-soft backdrop-blur-xl">
+          <div className="border-b border-border/60 px-5 py-5 sm:px-6">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
+              {locale === 'th' ? 'ประวัติรอบที่ผ่านมา' : 'Past Sessions'}
+            </div>
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">
+              {hasUpcoming
+                ? locale === 'th'
+                  ? 'ดูประวัติรอบที่เคยจัดเพื่อใช้อ้างอิงรูปแบบ วันเวลา และสถานที่ของการอบรมที่ผ่านมา'
+                  : 'Review previous course runs for reference on past formats, dates, and locations.'
+                : t('course-detail-20')}
+            </p>
+            {!hasUpcoming ? (
+              <p className="mt-2 max-w-2xl text-sm leading-7 text-muted">
+                {t('course-detail-21')}
+              </p>
+            ) : null}
+          </div>
+
+          <div className="divide-y divide-border/60">
+            {renderSchedules(previousSchedules, 'past')}
+          </div>
+        </section>
+      ) : null}
+    </div>
   );
 }
