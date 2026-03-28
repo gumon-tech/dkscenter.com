@@ -72,7 +72,7 @@ export default function Table(props) {
                             className="mb-3 rounded-2xl border border-border/70 bg-surface px-4 py-4 last:mb-0"
                           >
                             <Link
-                              href={`/course/${course.key}/schedule/${schedule.scheduleKey}`}
+                              href={`/course/${course.key}`}
                               className="block text-left font-semibold text-text hover:text-primary"
                             >
                               {schedule.title}
