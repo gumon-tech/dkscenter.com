@@ -15,7 +15,7 @@ export default function CourseSectionShell({
   contentClassName,
 }) {
   return (
-    <section className={cx('relative border-t border-border/60 pt-8 lg:pt-10', className)}>
+    <section className={cx('relative pt-8 lg:pt-10', className)}>
       <div className="grid gap-8 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-12">
         <header className="max-w-md">
           <div className="flex items-center gap-3">

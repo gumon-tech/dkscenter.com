@@ -22,7 +22,7 @@ export default function CourseList(props) {
         title={t('course-list-1')}
         description={
           currentLanguage === 'th'
-            ? 'หลักสูตรทั้งหมดถูกจัดวางใหม่ให้สแกนง่าย เปรียบเทียบเร็ว และตัดสินใจได้ชัดเจนขึ้นทั้งบนเดสก์ท็อปและมือถือ'
+            ? 'สำรวจหลักสูตรอบรมที่คัดสรรมาเพื่อช่วยต่อยอดทักษะ และเปิดโอกาสใหม่ให้กับการทำงานของคุณ'
             : 'A clearer course catalog with stronger hierarchy, cleaner comparison, and a sharper path from discovery to registration.'
         }
         className="mt-6"
