@@ -1,104 +1,56 @@
-import { modularCourseEntries } from './entries';
+import { courseRegistry } from './registry';
+import {
+  composeLocalizedCourse,
+  normalizeLegacyCourseCollection,
+} from './normalization/compose-course';
 
-function normalizeArray(value) {
-  return Array.isArray(value) ? value : [];
-}
-
-function isPlainObject(value) {
-  return Boolean(value) && typeof value === 'object' && !Array.isArray(value);
-}
-
-function mergeDeep(baseValue, overrideValue) {
-  if (overrideValue == null) return baseValue;
-  if (Array.isArray(overrideValue)) return overrideValue;
-  if (!isPlainObject(baseValue) || !isPlainObject(overrideValue)) {
-    return overrideValue;
-  }
-
-  const keys = new Set([
-    ...Object.keys(baseValue || {}),
-    ...Object.keys(overrideValue || {}),
-  ]);
-
+function getSplitCourseContentMap() {
   return Object.fromEntries(
-    Array.from(keys).map((key) => [
-      key,
-      mergeDeep(baseValue?.[key], overrideValue?.[key]),
-    ]),
+    Object.entries(courseRegistry || {})
+      .filter(([, entry]) => entry?.mode === 'split')
+      .map(([courseKey, entry]) => [
+        courseKey,
+        {
+          en: composeLocalizedCourse({
+            courseKey,
+            locale: 'en',
+            shared: entry?.shared,
+            localized: entry?.locales?.en,
+            schedules: entry?.schedules,
+          }),
+          th: composeLocalizedCourse({
+            courseKey,
+            locale: 'th',
+            shared: entry?.shared,
+            localized: entry?.locales?.th,
+            schedules: entry?.schedules,
+          }),
+        },
+      ]),
   );
 }
 
-function getMergedCourseSources() {
-  return Object.fromEntries(
-    Object.entries(modularCourseEntries || {}).map(([courseKey, locales]) => [
-      courseKey,
-      mergeDeep({}, locales || {}),
-    ]),
+function getLegacyCourseContentMap() {
+  const legacyEntries = Object.fromEntries(
+    Object.entries(courseRegistry || {})
+      .filter(([, entry]) => entry?.mode === 'legacy')
+      .map(([courseKey, entry]) => [courseKey, entry?.legacy || {}]),
   );
-}
 
-function normalizeLocalizedCourse(courseKey, locale, course = {}) {
-  return {
-    id: course.code || courseKey,
-    key: course.key || courseKey,
-    slug: course.key || courseKey,
-    locale,
-    isActive: Boolean(course.isActive),
-    brand: course.brand || 'DKS Center',
-    code: course.code || '',
-    title: course.title || '',
-    overview: course.overview || '',
-    duration: course.duration || '',
-    imageUrl: course.imageUrl || null,
-    detailUrl: course.detailUrl || null,
-    language: locale,
-    lastUpdate: course.lastUpdate || null,
-    objectives: normalizeArray(course.objectives),
-    audience: normalizeArray(course.whoShouldAttend),
-    whoShouldAttend: normalizeArray(course.whoShouldAttend),
-    prerequisites: normalizeArray(course.prerequisites),
-    participantsWillReceive: normalizeArray(course.participantsWillReceive),
-    outline: normalizeArray(course.outline).map((section) => ({
-      title: section?.title || '',
-      descriptions: normalizeArray(section?.descriptions),
-    })),
-    curriculum: normalizeArray(course.outline).map((section) => ({
-      title: section?.title || '',
-      descriptions: normalizeArray(section?.descriptions),
-    })),
-    publicSchedule: normalizeArray(course.publicSchedule).map((schedule) => ({
-      ...schedule,
-      scheduleKey:
-        schedule?.scheduleKey ||
-        `${course.key || courseKey}-${schedule?.eventStart || 'schedule'}`,
-    })),
-    documents: normalizeArray(course.documents).map((document) => ({
-      title: document?.title || '',
-      fileUrl: document?.fileUrl || '',
-    })),
-  };
+  return normalizeLegacyCourseCollection(legacyEntries);
 }
 
 export function getCourseContentMap() {
-  const mergedCourseSources = getMergedCourseSources();
-
-  return Object.fromEntries(
-    Object.entries(mergedCourseSources).map(([courseKey, locales]) => [
-      courseKey,
-      Object.fromEntries(
-        Object.entries(locales || {}).map(([locale, course]) => [
-          locale,
-          normalizeLocalizedCourse(courseKey, locale, course),
-        ]),
-      ),
-    ]),
-  );
+  return {
+    ...getLegacyCourseContentMap(),
+    ...getSplitCourseContentMap(),
+  };
 }
 
 export function getRawCourseContent() {
-  return {};
+  return courseRegistry;
 }
 
 export function getMergedCourseContent() {
-  return getMergedCourseSources();
+  return getCourseContentMap();
 }

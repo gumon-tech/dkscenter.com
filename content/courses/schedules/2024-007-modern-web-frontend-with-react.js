@@ -1,0 +1,43 @@
+const schedules = [
+  {
+    title: 'Modern Web Frontend with React - 1/2024',
+    eventStart: '2024-05-25T09:00:00+0700',
+    eventEnd: '2024-05-26T17:00:00+0700',
+    ticketUrl: 'https://www.eventpop.me/e/21610/modern-web-frontend-with-react-1-2024',
+    saleStart: '2024-03-21T09:00:00+0700',
+    saleEnd: '2024-05-24T23:59:59+0700',
+    isActive: true,
+    isSoldOut: false,
+    deliveryMode: 'onsite',
+    location: 'BTS Phaya Thai',
+    scheduleKey: '2024-1',
+  },
+  {
+    title: 'Modern Web Frontend with React - 2/2024',
+    eventStart: '2024-07-16T09:00:00+0700',
+    eventEnd: '2024-07-17T17:00:00+0700',
+    ticketUrl: '',
+    saleStart: '2024-06-15T09:00:00+0700',
+    saleEnd: '2024-07-15T23:59:59+0700',
+    isActive: true,
+    isSoldOut: false,
+    deliveryMode: 'onsite',
+    location: 'BTS Phaya Thai',
+    scheduleKey: '2024-2',
+  },
+  {
+    title: 'Modern Web Frontend with React - 3/2024',
+    eventStart: '2024-09-14T09:00:00+0700',
+    eventEnd: '2024-09-15T17:00:00+0700',
+    ticketUrl: '',
+    saleStart: '2024-08-13T09:00:00+0700',
+    saleEnd: '2024-09-13T23:59:59+0700',
+    isActive: true,
+    isSoldOut: false,
+    deliveryMode: 'onsite',
+    location: 'BTS Phaya Thai',
+    scheduleKey: '2024-3',
+  },
+];
+
+export default schedules;

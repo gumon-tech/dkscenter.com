@@ -1,0 +1,43 @@
+const schedules = [
+  {
+    title: 'CodeCraft: Intro to Web Development with HTML, CSS & JS - 1/2564',
+    eventStart: '2024-04-27T09:00:00+0700',
+    eventEnd: '2024-04-28T17:00:00+0700',
+    saleStart: '2024-04-01T09:00:00+0700',
+    saleEnd: '2024-04-26T21:00:00+0700',
+    isActive: true,
+    isSoldOut: false,
+    deliveryMode: 'online',
+    location: 'Online',
+    scheduleKey: '2024-1',
+    ticketUrl: '',
+  },
+  {
+    title: 'CodeCraft: Intro to Web Development with HTML, CSS & JS - 2/2564',
+    eventStart: '2024-06-29T09:00:00+0700',
+    eventEnd: '2024-06-30T17:00:00+0700',
+    saleStart: '2024-04-01T09:00:00+0700',
+    saleEnd: '2024-06-28T21:00:00+0700',
+    isActive: true,
+    isSoldOut: false,
+    deliveryMode: 'online',
+    location: 'Online',
+    scheduleKey: '2024-2',
+    ticketUrl: '',
+  },
+  {
+    title: 'CodeCraft: Intro to Web Development with HTML, CSS & JS - 3/2564',
+    eventStart: '2024-08-24T09:00:00+0700',
+    eventEnd: '2024-08-25T17:00:00+0700',
+    saleStart: '2024-04-01T09:00:00+0700',
+    saleEnd: '2024-08-23T17:00:00+0700',
+    isActive: true,
+    isSoldOut: false,
+    deliveryMode: 'online',
+    location: 'Online',
+    scheduleKey: '2024-3',
+    ticketUrl: '',
+  },
+];
+
+export default schedules;
