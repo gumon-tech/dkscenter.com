@@ -100,7 +100,7 @@ export default function Footer(props) {
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.45fr)_minmax(9.5rem,0.78fr)_minmax(9.5rem,0.78fr)_minmax(0,0.92fr)] lg:gap-x-8">
             <div className="lg:pr-6">
               <Link href="/" className="inline-flex max-w-xl items-start gap-4">
-                <span className="flex h-14 w-14 flex-none items-center justify-center rounded-2xl border border-border/60 bg-surface/80 shadow-soft">
+                <span className="flex h-14 w-14 flex-none items-center justify-center">
                   <Image
                     src="/img/logo_2_sq.png"
                     alt="DKS"
@@ -223,13 +223,12 @@ export default function Footer(props) {
                   {emailAddress}
                 </p>
                 <p
-                  className={`mt-2 text-xs font-medium transition ${
-                    copyStatus === 'copied'
-                      ? 'text-primary'
-                      : copyStatus === 'error'
-                        ? 'text-rose-400'
-                        : 'text-soft'
-                  }`}
+                  className={`mt-2 text-xs font-medium transition ${copyStatus === 'copied'
+                    ? 'text-primary'
+                    : copyStatus === 'error'
+                      ? 'text-rose-400'
+                      : 'text-soft'
+                    }`}
                 >
                   {copyStatus === 'copied'
                     ? copySuccessLabel
