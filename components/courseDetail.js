@@ -2,9 +2,7 @@ import React, { useEffect } from 'react';
 import Image from 'next/image';
 import {
   AcademicCapIcon,
-  CalendarDaysIcon,
   ClockIcon,
-  MapPinIcon,
   SparklesIcon,
 } from '@heroicons/react/24/outline';
 import Container from './container';
@@ -54,8 +52,6 @@ function HeroSnapshotPanel({
   featuredImage,
   scheduleDateRange,
   scheduleTimeRange,
-  featuredSchedule,
-  featuredScheduleState,
   featuredDeliveryLabel,
   facts,
   lineCopy,
@@ -69,7 +65,9 @@ function HeroSnapshotPanel({
     <aside
       className={cx(
         'course-theme-panel relative overflow-hidden rounded-[30px] p-5 sm:p-6',
-        compact ? 'xl:hidden' : 'hidden xl:block xl:sticky xl:top-24',
+        compact
+          ? 'xl:hidden'
+          : 'hidden xl:block xl:self-start xl:sticky xl:top-0',
       )}
     >
       <div
@@ -105,6 +103,12 @@ function HeroSnapshotPanel({
                   ? 'ตารางเรียนอัปเดตล่าสุด'
                   : 'Latest course availability')}
             </h2>
+            {scheduleTimeRange ? (
+              <p className="mt-3 flex items-center gap-2 text-sm font-medium text-muted">
+                <ClockIcon className="h-4 w-4 text-primary" />
+                <span>{scheduleTimeRange}</span>
+              </p>
+            ) : null}
           </div>
           {featuredDeliveryLabel ? (
             <span className="inline-flex rounded-full border border-secondary/20 bg-secondary/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-secondary">
@@ -128,49 +132,6 @@ function HeroSnapshotPanel({
             </div>
           ))}
         </dl>
-
-        {featuredSchedule ? (
-          <div className="theme-overlay-card mt-6 rounded-[24px] px-4 py-4">
-            <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-primary-strong">
-              {featuredScheduleState === 'past'
-                ? locale === 'th'
-                  ? 'รอบล่าสุด'
-                  : 'Latest Session'
-                : locale === 'th'
-                  ? 'รอบถัดไป'
-                  : 'Next Session'}
-            </div>
-            <div className="mt-3 space-y-3 text-sm leading-7 text-muted">
-              <div className="flex items-start gap-3">
-                <CalendarDaysIcon className="mt-0.5 h-5 w-5 text-primary" />
-                <span>{scheduleDateRange}</span>
-              </div>
-              {scheduleTimeRange ? (
-                <div className="flex items-start gap-3">
-                  <ClockIcon className="mt-0.5 h-5 w-5 text-primary" />
-                  <span>{scheduleTimeRange}</span>
-                </div>
-              ) : null}
-              {featuredSchedule.location ? (
-                <div className="flex items-start gap-3">
-                  <MapPinIcon className="mt-0.5 h-5 w-5 text-primary" />
-                  {featuredSchedule.locationUrl ? (
-                    <a
-                      href={featuredSchedule.locationUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-primary underline decoration-primary/35 underline-offset-4 transition hover:text-primary-strong"
-                    >
-                      {featuredSchedule.location}
-                    </a>
-                  ) : (
-                    <span>{featuredSchedule.location}</span>
-                  )}
-                </div>
-              ) : null}
-            </div>
-          </div>
-        ) : null}
 
         {compact && audienceHighlights.length > 0 ? (
           <div className="mt-6">
@@ -267,16 +228,23 @@ const CourseDetail = ({ courseData, i18next }) => {
 
   const overviewFacts = [
     {
-      label: locale === 'th' ? 'Format' : 'Format',
-      value: featuredDeliveryLabel,
-    },
-    {
-      label: locale === 'th' ? 'Duration' : 'Duration',
-      value: courseData?.duration,
-    },
-    {
       label: locale === 'th' ? 'ผู้จัดรอบอบรม' : 'Organizer',
       value: featuredOrganizerLabel || 'DKS Center',
+    },
+    {
+      label: locale === 'th' ? 'สถานที่' : 'Location',
+      value: featuredSchedule?.locationUrl ? (
+        <a
+          href={featuredSchedule.locationUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="text-primary underline decoration-primary/35 underline-offset-4 transition hover:text-primary-strong"
+        >
+          {featuredSchedule.location}
+        </a>
+      ) : (
+        featuredSchedule?.location
+      ),
     },
     {
       label: locale === 'th' ? 'Course Code' : 'Course Code',
