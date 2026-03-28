@@ -20,7 +20,6 @@ import { useRouter } from 'next/router';
 import {
   buildForwardedUrl,
   getLineCtaCopy,
-  getPrimarySchedule,
   isLinePrimaryCourse,
   registerSecondaryButtonClass,
 } from '/lib/courses/cta';
@@ -29,6 +28,12 @@ import {
   formatCourseDateTime,
   formatCourseTime,
 } from '/lib/courses/formatters';
+import {
+  getPrimaryDisplaySessionData,
+  getSessionDeliveryLabel,
+  hasAnySessions,
+  isSessionRegistrationOpen,
+} from '/lib/courses/sessions';
 import LineContactButton from './course/line-contact-button';
 import CourseSectionShell from './course/course-section-shell';
 import CourseListPanel from './course/course-list-panel';
@@ -47,9 +52,12 @@ function HeroSnapshotPanel({
   scheduleDateRange,
   scheduleTimeRange,
   featuredSchedule,
+  featuredScheduleState,
+  featuredDeliveryLabel,
   facts,
   lineCopy,
   registerUrl,
+  canShowRegisterCta,
   onRegisterCtaClick,
   audienceHighlights,
   compact = false,
@@ -95,9 +103,11 @@ function HeroSnapshotPanel({
                   : 'Latest course availability')}
             </h2>
           </div>
-          <span className="inline-flex rounded-full border border-secondary/20 bg-secondary/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-secondary">
-            {locale === 'th' ? 'Onsite' : 'Onsite'}
-          </span>
+          {featuredDeliveryLabel ? (
+            <span className="inline-flex rounded-full border border-secondary/20 bg-secondary/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-secondary">
+              {featuredDeliveryLabel}
+            </span>
+          ) : null}
         </div>
 
         <dl className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-1">
@@ -119,7 +129,13 @@ function HeroSnapshotPanel({
         {featuredSchedule ? (
           <div className="theme-overlay-card mt-6 rounded-[24px] px-4 py-4">
             <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-primary-strong">
-              {locale === 'th' ? 'Next Session' : 'Next Session'}
+              {featuredScheduleState === 'past'
+                ? locale === 'th'
+                  ? 'รอบล่าสุด'
+                  : 'Latest Session'
+                : locale === 'th'
+                  ? 'รอบถัดไป'
+                  : 'Next Session'}
             </div>
             <div className="mt-3 space-y-3 text-sm leading-7 text-muted">
               <div className="flex items-start gap-3">
@@ -169,7 +185,7 @@ function HeroSnapshotPanel({
           </div>
         ) : null}
 
-        {compact ? (
+        {compact && canShowRegisterCta ? (
           <div className="mt-7 flex flex-col gap-3">
             <LineContactButton
               courseData={courseData}
@@ -199,9 +215,15 @@ const CourseDetail = ({ courseData, i18next }) => {
   const locale = i18next?.i18n?.language || 'th';
   const isConversionFocusedCourse = isLinePrimaryCourse(courseData);
   const lineCopy = getLineCtaCopy(locale);
-  const featuredSchedule = getPrimarySchedule(courseData);
+  const { session: featuredSchedule, displayState: featuredScheduleState } =
+    getPrimaryDisplaySessionData(courseData);
+  const hasSessionData = hasAnySessions(courseData);
+  const featuredDeliveryLabel = getSessionDeliveryLabel(featuredSchedule, locale);
+  const canShowRegisterCta =
+    featuredScheduleState === 'upcoming' &&
+    isSessionRegistrationOpen(featuredSchedule);
   const registerUrl = buildForwardedUrl(
-    featuredSchedule?.ticketUrl,
+    canShowRegisterCta ? featuredSchedule?.ticketUrl : '',
     router.query || {},
   );
   const heroHighlights = [
@@ -227,7 +249,7 @@ const CourseDetail = ({ courseData, i18next }) => {
   const overviewFacts = [
     {
       label: locale === 'th' ? 'Format' : 'Format',
-      value: locale === 'th' ? 'Onsite Workshop' : 'Onsite Workshop',
+      value: featuredDeliveryLabel,
     },
     {
       label: locale === 'th' ? 'Duration' : 'Duration',
@@ -289,7 +311,7 @@ const CourseDetail = ({ courseData, i18next }) => {
   }, [courseData?.title, courseData?.code, courseData?.key, courseData?.brand]);
 
   const onRegisterCtaClick = () => {
-    if (!featuredSchedule || !courseData?.title) return;
+    if (!featuredSchedule || !courseData?.title || !canShowRegisterCta) return;
 
     const brandOwner = normalizeBrand(courseData?.brand);
     const baseItem = {
@@ -381,19 +403,32 @@ const CourseDetail = ({ courseData, i18next }) => {
                     trackingLabel="hero_line_contact"
                     className="w-full sm:w-auto"
                   />
-                  <a
-                    href={registerUrl || '#course-registration'}
-                    target={registerUrl ? '_blank' : undefined}
-                    rel={registerUrl ? 'noreferrer' : undefined}
-                    onClick={onRegisterCtaClick}
-                    className={`${registerSecondaryButtonClass} w-full sm:w-auto`}
-                  >
-                    {lineCopy.heroSecondary}
-                  </a>
+                  {canShowRegisterCta ? (
+                    <a
+                      href={registerUrl || '#course-registration'}
+                      target={registerUrl ? '_blank' : undefined}
+                      rel={registerUrl ? 'noreferrer' : undefined}
+                      onClick={onRegisterCtaClick}
+                      className={`${registerSecondaryButtonClass} w-full sm:w-auto`}
+                    >
+                      {lineCopy.heroSecondary}
+                    </a>
+                  ) : null}
                 </div>
                 <p className="course-contrast-copy max-w-2xl text-sm leading-7">
-                  {lineCopy.heroMicrocopy}
+                  {featuredScheduleState === 'past'
+                    ? t('course-detail-20')
+                    : !hasSessionData
+                      ? t('course-detail-17')
+                      : lineCopy.heroMicrocopy}
                 </p>
+                {featuredScheduleState === 'past' || !hasSessionData ? (
+                  <p className="course-contrast-copy max-w-2xl text-sm leading-7">
+                    {featuredScheduleState === 'past'
+                      ? t('course-detail-21')
+                      : t('course-detail-18')}
+                  </p>
+                ) : null}
               </div>
 
               {heroHighlights.length > 0 ? (
@@ -430,9 +465,12 @@ const CourseDetail = ({ courseData, i18next }) => {
                   scheduleDateRange={scheduleDateRange}
                   scheduleTimeRange={scheduleTimeRange}
                   featuredSchedule={featuredSchedule}
+                  featuredScheduleState={featuredScheduleState}
+                  featuredDeliveryLabel={featuredDeliveryLabel}
                   facts={overviewFacts}
                   lineCopy={lineCopy}
                   registerUrl={registerUrl}
+                  canShowRegisterCta={canShowRegisterCta}
                   onRegisterCtaClick={onRegisterCtaClick}
                   audienceHighlights={audienceHighlights}
                 />
@@ -447,9 +485,12 @@ const CourseDetail = ({ courseData, i18next }) => {
             scheduleDateRange={scheduleDateRange}
             scheduleTimeRange={scheduleTimeRange}
             featuredSchedule={featuredSchedule}
+            featuredScheduleState={featuredScheduleState}
+            featuredDeliveryLabel={featuredDeliveryLabel}
             facts={overviewFacts}
             lineCopy={lineCopy}
             registerUrl={registerUrl}
+            canShowRegisterCta={canShowRegisterCta}
             onRegisterCtaClick={onRegisterCtaClick}
             audienceHighlights={audienceHighlights}
           />
@@ -655,12 +696,13 @@ const CourseDetail = ({ courseData, i18next }) => {
           primaryLabel={lineCopy.bottomPrimary}
           secondaryLabel={lineCopy.heroSecondary}
           registerUrl={registerUrl}
+          canShowRegisterCta={canShowRegisterCta}
           onRegisterClick={onRegisterCtaClick}
           trackingLabel="final_line_contact"
         />
       ) : null}
 
-      {isConversionFocusedCourse ? (
+      {isConversionFocusedCourse && canShowRegisterCta ? (
         <div className="fixed inset-x-0 bottom-0 z-40 border-t border-border/70 bg-surface-glass px-4 py-3 shadow-floating backdrop-blur-2xl xl:hidden">
           <div className="mx-auto flex max-w-5xl flex-col gap-2">
             <LineContactButton

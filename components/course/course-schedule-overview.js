@@ -6,6 +6,10 @@ import Card from '../ui/card';
 import Button from '../ui/button';
 import Modal from '../modal';
 import TicketSaleModalManage from '../ticketSaleModal/ticketSaleModalManage';
+import {
+  getSessionDeliveryLabel,
+  isSessionRegistrationOpen,
+} from '/lib/courses/sessions';
 
 export default function CourseScheduleOverview({
   courseData,
@@ -15,6 +19,9 @@ export default function CourseScheduleOverview({
 }) {
   const { t } = i18next;
   const [modalOpen, setModalOpen] = useState(false);
+  const locale = i18next?.i18n?.language || 'th';
+  const deliveryLabel = getSessionDeliveryLabel(scheduleData, locale);
+  const canRegister = isSessionRegistrationOpen(scheduleData);
 
   return (
     <>
@@ -44,6 +51,16 @@ export default function CourseScheduleOverview({
                 {scheduleData.title}
               </dd>
             </div>
+            {deliveryLabel ? (
+              <div>
+                <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
+                  {locale === 'th' ? 'รูปแบบ' : 'Delivery'}
+                </dt>
+                <dd className="mt-2 text-lg font-semibold text-text">
+                  {deliveryLabel}
+                </dd>
+              </div>
+            ) : null}
             {scheduleData.location ? (
               <div>
                 <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
@@ -67,26 +84,34 @@ export default function CourseScheduleOverview({
             ) : null}
           </dl>
 
-          <div className="mt-8">
-            <Button onClick={() => setModalOpen(true)}>
-              {t('ticket-modal-title')}
-            </Button>
-          </div>
+          {canRegister ? (
+            <div className="mt-8">
+              <Button onClick={() => setModalOpen(true)}>
+                {t('ticket-modal-title')}
+              </Button>
+            </div>
+          ) : (
+            <p className="mt-8 text-sm leading-7 text-muted">
+              {t('course-detail-20')} {t('course-detail-21')}
+            </p>
+          )}
         </Card>
       </Container>
 
-      <Modal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        title={`${t('ticket-modal-title')} ${courseData.title}`}
-      >
-        <TicketSaleModalManage
-          courseKey={courseData.key}
-          scheduleKey={scheduleData.scheduleKey}
-          discountCodeURL={discountCode}
-          i18next={i18next}
-        />
-      </Modal>
+      {canRegister ? (
+        <Modal
+          isOpen={modalOpen}
+          onClose={() => setModalOpen(false)}
+          title={`${t('ticket-modal-title')} ${courseData.title}`}
+        >
+          <TicketSaleModalManage
+            courseKey={courseData.key}
+            scheduleKey={scheduleData.scheduleKey}
+            discountCodeURL={discountCode}
+            i18next={i18next}
+          />
+        </Modal>
+      ) : null}
     </>
   );
 }

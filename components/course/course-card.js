@@ -4,12 +4,17 @@ import Image from 'next/image';
 import Card from '../ui/card';
 import Button from '../ui/button';
 import Link from '../link';
-import { getPrimarySchedule } from '/lib/courses/cta';
 import { formatCourseDateRange } from '/lib/courses/formatters';
+import {
+  getPrimaryDisplaySessionData,
+  getSessionDeliveryLabel,
+} from '/lib/courses/sessions';
 
 export default function CourseCard({ courseData, ctaLabel }) {
-  const featuredSchedule = getPrimarySchedule(courseData);
+  const { session: featuredSchedule, displayState } =
+    getPrimaryDisplaySessionData(courseData);
   const locale = courseData?.locale || 'th';
+  const deliveryLabel = getSessionDeliveryLabel(featuredSchedule, locale);
   const nextDate =
     featuredSchedule?.eventStart && featuredSchedule?.eventEnd
       ? formatCourseDateRange(
@@ -17,6 +22,10 @@ export default function CourseCard({ courseData, ctaLabel }) {
           featuredSchedule.eventEnd,
           locale,
         )
+      : displayState === 'past'
+        ? locale === 'th'
+          ? 'อ้างอิงจากรอบล่าสุด'
+          : 'Based on the latest session'
       : locale === 'th'
         ? 'ประกาศรอบถัดไปเร็วๆ นี้'
         : 'Next schedule coming soon';
@@ -66,12 +75,19 @@ export default function CourseCard({ courseData, ctaLabel }) {
                 {locale === 'th' ? 'รูปแบบ' : 'Delivery'}
               </div>
               <div className="mt-2 text-sm font-medium text-text">
-                {locale === 'th' ? 'เวิร์กชอปออนไซต์' : 'Onsite workshop'}
+                {deliveryLabel ||
+                  (locale === 'th' ? 'จะแจ้งให้ทราบอีกครั้ง' : 'To be announced')}
               </div>
             </div>
             <div className="rounded-2xl border border-border/70 bg-surface px-4 py-4">
               <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-soft">
-                {locale === 'th' ? 'รอบถัดไป' : 'Next session'}
+                {displayState === 'past'
+                  ? locale === 'th'
+                    ? 'รอบล่าสุด'
+                    : 'Latest session'
+                  : locale === 'th'
+                    ? 'รอบถัดไป'
+                    : 'Next session'}
               </div>
               <div className="mt-2 text-sm font-medium text-text">
                 {nextDate}

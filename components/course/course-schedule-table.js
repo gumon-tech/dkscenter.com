@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import dayjs from 'dayjs';
 import {
   CalendarIcon,
   ClockIcon,
@@ -11,32 +10,22 @@ import {
   registerScheduleButtonClass,
 } from '/lib/courses/cta';
 import { formatCourseDate, formatCourseTime } from '/lib/courses/formatters';
+import {
+  getSessionDeliveryLabel,
+  getSessionRegistrationState,
+  hasAnySessions,
+  pastSessions,
+  upcomingSessions,
+} from '/lib/courses/sessions';
 
 function getCourseType(publicSchedule) {
-  const isSaleEnded = dayjs().isAfter(dayjs(publicSchedule.saleEnd));
-  const isSaleStart = dayjs().isAfter(dayjs(publicSchedule.saleStart));
+  const registrationState = getSessionRegistrationState(publicSchedule);
 
-  if (isSaleEnded) return 'ENDED';
-  if (isSaleStart && !isSaleEnded && publicSchedule.isSoldOut) {
-    return 'SOLD_OUT';
-  }
-  if (
-    isSaleStart &&
-    !isSaleEnded &&
-    !publicSchedule.isSoldOut &&
-    publicSchedule.ticketUrl
-  ) {
-    return 'GET_YOURS';
-  }
-  if (
-    isSaleStart &&
-    !isSaleEnded &&
-    !publicSchedule.isSoldOut &&
-    !publicSchedule.ticketUrl &&
-    publicSchedule.scheduleKey
-  ) {
-    return 'GET_YOURS_2';
-  }
+  if (registrationState === 'ended') return 'ENDED';
+  if (registrationState === 'sold_out') return 'SOLD_OUT';
+  if (registrationState === 'open_external') return 'GET_YOURS';
+  if (registrationState === 'open_internal') return 'GET_YOURS_2';
+
   return 'COMING_SOON';
 }
 
@@ -83,26 +72,29 @@ export default function CourseScheduleTable({
   onRegisterClick,
   onOpenModal,
 }) {
-  const activeSchedules = (courseData.publicSchedule || [])
-    .filter((publicSchedule) => publicSchedule.isActive)
-    .sort(
-      (a, b) => dayjs(b.eventStart).valueOf() - dayjs(a.eventStart).valueOf(),
-    );
+  const availableSchedules = upcomingSessions(courseData);
+  const latestPastSchedules = pastSessions(courseData).slice(0, 1);
+  const hasSessions = hasAnySessions(courseData);
+  const displayState =
+    availableSchedules.length > 0 ? 'upcoming' : hasSessions ? 'past' : 'none';
+  const displaySchedules =
+    displayState === 'upcoming' ? availableSchedules : latestPastSchedules;
 
   const registerButtonClass = isConversionFocusedCourse
     ? registerScheduleButtonClass
     : 'inline-flex items-center justify-center rounded-full border border-primary/20 bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-glow transition hover:bg-primary-strong focus:outline-none focus:ring-4 focus:ring-primary/20';
 
-  if (activeSchedules.length === 0) {
+  if (displayState === 'none') {
     return (
       <section className="rounded-[30px] border border-border/60 bg-surface/45 px-5 py-6 shadow-soft backdrop-blur-xl sm:px-6">
         <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-strong">
           {locale === 'th' ? 'รอบอบรม' : 'Available Sessions'}
         </div>
         <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">
-          {locale === 'th'
-            ? 'ยังไม่มีรอบที่เปิดแสดงในขณะนี้ สามารถติดต่อผ่าน LINE เพื่อสอบถามรอบถัดไปได้'
-            : 'There are no active sessions listed right now. You can still contact us on LINE to ask about upcoming dates.'}
+          {t('course-detail-17')}
+        </p>
+        <p className="mt-2 max-w-2xl text-sm leading-7 text-muted">
+          {t('course-detail-18')}
         </p>
       </section>
     );
@@ -115,18 +107,25 @@ export default function CourseScheduleTable({
           {locale === 'th' ? 'รอบอบรม' : 'Available Sessions'}
         </div>
         <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">
-          {activeSchedules.length > 1
+          {displayState === 'past'
+            ? t('course-detail-20')
+            : displaySchedules.length > 1
             ? locale === 'th'
-              ? `ขณะนี้มีรอบอบรมที่เปิดลงทะเบียน ${activeSchedules.length} รอบ`
-              : `${activeSchedules.length} sessions are currently available.`
+              ? `ขณะนี้มีรอบอบรมที่เปิดลงทะเบียน ${displaySchedules.length} รอบ`
+              : `${displaySchedules.length} sessions are currently available.`
             : locale === 'th'
               ? 'ตรวจสอบรายละเอียดรอบอบรมและลงทะเบียนได้ที่นี่'
               : 'Current session details and registration.'}
         </p>
+        {displayState === 'past' ? (
+          <p className="mt-2 max-w-2xl text-sm leading-7 text-muted">
+            {t('course-detail-21')}
+          </p>
+        ) : null}
       </div>
 
       <div className="divide-y divide-border/60">
-        {activeSchedules.map((publicSchedule, index) => {
+        {displaySchedules.map((publicSchedule, index) => {
           const eventStartDate = formatCourseDate(
             publicSchedule.eventStart,
             locale,
@@ -144,6 +143,7 @@ export default function CourseScheduleTable({
             locale,
           );
           const courseType = getCourseType(publicSchedule);
+          const deliveryLabel = getSessionDeliveryLabel(publicSchedule, locale);
           const forwardedUrl = buildForwardedUrl(
             publicSchedule.ticketUrl,
             routerQuery || {},
@@ -163,10 +163,19 @@ export default function CourseScheduleTable({
                         locale={locale}
                       />
                       <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-soft">
-                        {locale === 'th'
-                          ? `Session 0${index + 1}`
-                          : `Session 0${index + 1}`}
+                        {displayState === 'past'
+                          ? locale === 'th'
+                            ? 'รอบล่าสุด'
+                            : 'Latest Session'
+                          : locale === 'th'
+                            ? `Session 0${index + 1}`
+                            : `Session 0${index + 1}`}
                       </span>
+                      {deliveryLabel ? (
+                        <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-soft">
+                          {deliveryLabel}
+                        </span>
+                      ) : null}
                     </div>
 
                     {canRegister ? (

@@ -50,5 +50,7 @@ export type PublicSchedule = {
   saleEnd?: null | string;
   isActive: boolean;
   isSoldOut?: boolean;
+  deliveryMode?: string;
   location?: string;
+  locationUrl?: string;
 };

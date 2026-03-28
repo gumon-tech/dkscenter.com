@@ -7,6 +7,10 @@ import Button from './ui/button';
 import Card from './ui/card';
 import { getCoursesWithUpcomingSchedules } from '../lib/courses/repository';
 import { formatCourseDateRange } from '../lib/courses/formatters';
+import {
+  getPrimaryDisplaySessionData,
+  getSessionDeliveryLabel,
+} from '../lib/courses/sessions';
 
 const HighlightCourse = ({ i18next }) => {
   const { t, i18n } = i18next;
@@ -23,11 +27,17 @@ const HighlightCourse = ({ i18next }) => {
     const [featuredCourse] = courses;
 
     if (featuredCourse) {
+      const { session } = getPrimaryDisplaySessionData(featuredCourse);
       setHighlightCourse(featuredCourse);
-      setHighlightSchedule(featuredCourse.publicSchedule?.[0] || {});
+      setHighlightSchedule(session || {});
       setCourseHref('/course/' + featuredCourse.key);
     }
   }, [currentLanguage]);
+
+  const deliveryLabel = getSessionDeliveryLabel(
+    highlightSchedule,
+    currentLanguage,
+  );
 
   const dateRange =
     highlightSchedule?.eventStart && highlightSchedule?.eventEnd
@@ -66,9 +76,10 @@ const HighlightCourse = ({ i18next }) => {
 
             <div className="mt-8 flex flex-wrap gap-3 text-sm text-muted">
               <span className="rounded-full border border-primary/15 bg-primary/10 px-4 py-2 text-text">
-                {currentLanguage === 'th'
-                  ? 'เวิร์กชอปเชิงปฏิบัติ'
-                  : 'Hands-on learning track'}
+                {deliveryLabel ||
+                  (currentLanguage === 'th'
+                    ? 'เวิร์กชอปเชิงปฏิบัติ'
+                    : 'Hands-on learning track')}
               </span>
               {highlightCourse?.duration ? (
                 <span className="rounded-full border border-primary/15 bg-primary/10 px-4 py-2 text-text">

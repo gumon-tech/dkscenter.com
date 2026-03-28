@@ -35,6 +35,7 @@
  *         saleEnd?: string | null,
  *         isActive: boolean,
  *         isSoldOut?: boolean,
+ *         deliveryMode?: 'onsite' | 'online' | 'hybrid' | string,
  *         location?: string,
  *         locationUrl?: string,
  *       }[],

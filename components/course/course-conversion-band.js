@@ -12,6 +12,7 @@ export default function CourseConversionBand({
   primaryLabel: _primaryLabel,
   secondaryLabel: _secondaryLabel,
   registerUrl,
+  canShowRegisterCta = true,
   onRegisterClick,
   trackingLabel,
   compact = false,
@@ -68,23 +69,25 @@ export default function CourseConversionBand({
             </div>
           </a>
 
-          <a
-            href={registerUrl || '#course-registration'}
-            target={registerUrl ? '_blank' : undefined}
-            rel={registerUrl ? 'noreferrer' : undefined}
-            onClick={onRegisterClick}
-            className="rounded-[24px] border border-border/80 bg-surface-elevated px-6 py-5 text-left text-text transition hover:border-primary/30 hover:bg-surface hover:text-primary focus:outline-none focus:ring-4 focus:ring-primary/15"
-          >
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <div className="text-xl font-semibold leading-none tracking-[-0.03em]">
-                  {registerTitle}
+          {canShowRegisterCta ? (
+            <a
+              href={registerUrl || '#course-registration'}
+              target={registerUrl ? '_blank' : undefined}
+              rel={registerUrl ? 'noreferrer' : undefined}
+              onClick={onRegisterClick}
+              className="rounded-[24px] border border-border/80 bg-surface-elevated px-6 py-5 text-left text-text transition hover:border-primary/30 hover:bg-surface hover:text-primary focus:outline-none focus:ring-4 focus:ring-primary/15"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <div className="text-xl font-semibold leading-none tracking-[-0.03em]">
+                    {registerTitle}
+                  </div>
+                  <div className="mt-2 text-sm leading-7 text-soft">{registerHint}</div>
                 </div>
-                <div className="mt-2 text-sm leading-7 text-soft">{registerHint}</div>
+                <ArrowRightIcon className="mt-1 h-5 w-5 shrink-0" />
               </div>
-              <ArrowRightIcon className="mt-1 h-5 w-5 shrink-0" />
-            </div>
-          </a>
+            </a>
+          ) : null}
         </div>
       </div>
     </section>

@@ -155,6 +155,7 @@ const courseTh = {
       saleEnd: '2025-03-14T21:00:00+0700',
       isActive: true,
       isSoldOut: false,
+      deliveryMode: 'onsite',
       location:
         'Clazy Cafe The Seasons Mall @BTS สนามเป้า ทางออก 1 Bangkok, Thailand',
       scheduleKey: '',
@@ -169,6 +170,7 @@ const courseTh = {
       saleEnd: '2026-05-15T21:00:00+07:00',
       isActive: true,
       isSoldOut: false,
+      deliveryMode: 'onsite',
       location:
         'เอเชีย คอนเน็คท์ คอร์ปอเรชั่น, เขตลาดกระบัง, กรุงเทพมหานคร',
       locationUrl: 'https://maps.app.goo.gl/SZZsAHV1RtFawjM66',
