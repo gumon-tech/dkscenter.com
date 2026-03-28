@@ -8,6 +8,8 @@ import Modal from '../modal';
 import TicketSaleModalManage from '../ticketSaleModal/ticketSaleModalManage';
 import {
   getSessionDeliveryLabel,
+  getSessionInstructorLabel,
+  getSessionOrganizerLabel,
   isSessionRegistrationOpen,
 } from '/lib/courses/sessions';
 
@@ -21,6 +23,8 @@ export default function CourseScheduleOverview({
   const [modalOpen, setModalOpen] = useState(false);
   const locale = i18next?.i18n?.language || 'th';
   const deliveryLabel = getSessionDeliveryLabel(scheduleData, locale);
+  const organizerLabel = getSessionOrganizerLabel(scheduleData, courseData);
+  const instructorLabel = getSessionInstructorLabel(scheduleData);
   const canRegister = isSessionRegistrationOpen(scheduleData);
 
   return (
@@ -58,6 +62,26 @@ export default function CourseScheduleOverview({
                 </dt>
                 <dd className="mt-2 text-lg font-semibold text-text">
                   {deliveryLabel}
+                </dd>
+              </div>
+            ) : null}
+            {organizerLabel ? (
+              <div>
+                <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
+                  {locale === 'th' ? 'ผู้จัดรอบอบรม' : 'Organizer'}
+                </dt>
+                <dd className="mt-2 text-lg font-semibold text-text">
+                  {organizerLabel}
+                </dd>
+              </div>
+            ) : null}
+            {instructorLabel ? (
+              <div>
+                <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-soft">
+                  {locale === 'th' ? 'วิทยากร' : 'Instructor'}
+                </dt>
+                <dd className="mt-2 text-lg font-semibold text-text">
+                  {instructorLabel}
                 </dd>
               </div>
             ) : null}

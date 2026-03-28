@@ -8,6 +8,7 @@ import { formatCourseDateRange } from '/lib/courses/formatters';
 import {
   getPrimaryDisplaySessionData,
   getSessionDeliveryLabel,
+  getSessionOrganizerLabel,
 } from '/lib/courses/sessions';
 
 export default function CourseCard({ courseData, ctaLabel }) {
@@ -15,6 +16,7 @@ export default function CourseCard({ courseData, ctaLabel }) {
     getPrimaryDisplaySessionData(courseData);
   const locale = courseData?.locale || 'th';
   const deliveryLabel = getSessionDeliveryLabel(featuredSchedule, locale);
+  const organizerLabel = getSessionOrganizerLabel(featuredSchedule, courseData);
   const nextDate =
     featuredSchedule?.eventStart && featuredSchedule?.eventEnd
       ? formatCourseDateRange(
@@ -99,8 +101,16 @@ export default function CourseCard({ courseData, ctaLabel }) {
         </div>
 
         <div className="mt-auto flex items-center justify-between gap-4 border-t border-border/60 pt-4">
-          <div className="text-[11px] uppercase tracking-[0.18em] text-soft">
-            {locale === 'th' ? 'หลักสูตรแนะนำ' : 'Curated learning track'}
+          <div>
+            <div className="text-[11px] uppercase tracking-[0.18em] text-soft">
+              {locale === 'th' ? 'ผู้จัดรอบหลัก' : 'Session organizer'}
+            </div>
+            <div className="mt-1 text-sm font-medium text-text">
+              {organizerLabel ||
+                (locale === 'th'
+                  ? 'จะแจ้งผู้จัดอีกครั้ง'
+                  : 'Organizer to be announced')}
+            </div>
           </div>
           <Button
             as={Link}

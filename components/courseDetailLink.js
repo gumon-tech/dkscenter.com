@@ -8,10 +8,11 @@ import {
   trackSelectContent,
   trackOutboundClick,
 } from '/lib/gtm';
+import { getLineCtaCopy, isLinePrimaryCourse } from '/lib/courses/cta';
 import {
-  getLineCtaCopy,
-  isLinePrimaryCourse,
-} from '/lib/courses/cta';
+  getCoursePrimaryOrganizer,
+  getSessionPrimaryOrganizer,
+} from '/lib/courses/sessions';
 import CourseScheduleTable from './course/course-schedule-table';
 import CourseDocumentsTable from './course/course-documents-table';
 
@@ -26,7 +27,7 @@ const CourseDetailLink = ({
   const { t, i18n } = i18next;
   const router = useRouter();
   const code = router.query?.discount_code || router.query?.code;
-  const brandOwner = normalizeBrand(courseData?.brand);
+  const courseOrganizer = getCoursePrimaryOrganizer(courseData);
   const locale = i18n?.language || 'th';
   const isConversionFocusedCourse = isLinePrimaryCourse(courseData);
   const lineCopy = getLineCtaCopy(locale);
@@ -38,9 +39,12 @@ const CourseDetailLink = ({
 
   const onScheduleTitleClick = (publicSchedule, linkUrl) => {
     if (!courseData?.title) return;
+    const scheduleBrandOwner = normalizeBrand(
+      getSessionPrimaryOrganizer(publicSchedule, courseData) || courseOrganizer,
+    );
 
     trackSelectContent({
-      brandOwner,
+      brandOwner: scheduleBrandOwner,
       item: baseItem,
       content: {
         type: 'schedule',
@@ -52,7 +56,7 @@ const CourseDetailLink = ({
     // ถ้าเป็นลิงก์ออกนอกโดเมน (eventpop) เก็บ outbound ด้วย
     if (linkUrl && /^https?:\/\//.test(linkUrl)) {
       trackOutboundClick({
-        brandOwner,
+        brandOwner: scheduleBrandOwner,
         linkUrl,
         label: 'eventpop_ticket',
       });
@@ -73,9 +77,12 @@ const CourseDetailLink = ({
 
   const onRegisterClick = (publicSchedule, linkUrl) => {
     if (!courseData?.title) return;
+    const scheduleBrandOwner = normalizeBrand(
+      getSessionPrimaryOrganizer(publicSchedule, courseData) || courseOrganizer,
+    );
 
     trackBeginCheckout({
-      brandOwner,
+      brandOwner: scheduleBrandOwner,
       item: baseItem,
       schedule: publicSchedule,
       linkUrl: linkUrl || '',
@@ -83,7 +90,7 @@ const CourseDetailLink = ({
 
     if (linkUrl && /^https?:\/\//.test(linkUrl)) {
       trackOutboundClick({
-        brandOwner,
+        brandOwner: scheduleBrandOwner,
         linkUrl,
         label: 'eventpop_ticket',
       });

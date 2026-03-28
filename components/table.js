@@ -7,6 +7,7 @@ import {
 import Card from './ui/card';
 import Badge from './ui/badge';
 import { formatCourseDateRange } from '../lib/courses/formatters';
+import { getSessionOrganizerLabel } from '../lib/courses/sessions';
 
 export default function Table(props) {
   const i18next = props.i18next;
@@ -60,6 +61,10 @@ export default function Table(props) {
                           course.key,
                           currentLanguage,
                         );
+                        const organizerLabel = getSessionOrganizerLabel(
+                          schedule,
+                          courseForSchedule || course,
+                        );
 
                         return (
                           <div
@@ -79,6 +84,13 @@ export default function Table(props) {
                                 currentLanguage,
                               )}
                             </div>
+                            {organizerLabel ? (
+                              <div className="mt-1 text-left text-sm leading-7 text-muted">
+                                {currentLanguage === 'th'
+                                  ? `ผู้จัด: ${organizerLabel}`
+                                  : `Organizer: ${organizerLabel}`}
+                              </div>
+                            ) : null}
                             <div className="mt-2 text-left text-sm">
                               <Link
                                 href={`/course/${course.key}`}

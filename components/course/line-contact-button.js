@@ -2,14 +2,12 @@
 import React from 'react';
 import { ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
 import { normalizeBrand } from '/lib/brand';
+import { getCoursePrimaryOrganizer } from '/lib/courses/sessions';
 import { trackOutboundClick } from '/lib/gtm';
-import {
-  LINE_CONTACT_URL,
-  linePrimaryButtonClass,
-} from '/lib/courses/cta';
+import { LINE_CONTACT_URL, linePrimaryButtonClass } from '/lib/courses/cta';
 
 export const trackLineContactClick = (courseData, label = 'line_contact') => {
-  const brandOwner = normalizeBrand(courseData?.brand);
+  const brandOwner = normalizeBrand(getCoursePrimaryOrganizer(courseData));
 
   trackOutboundClick({
     brandOwner,

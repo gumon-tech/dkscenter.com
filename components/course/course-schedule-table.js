@@ -12,6 +12,8 @@ import {
 import { formatCourseDate, formatCourseTime } from '/lib/courses/formatters';
 import {
   getSessionDeliveryLabel,
+  getSessionInstructorLabel,
+  getSessionOrganizerLabel,
   getSessionRegistrationState,
   hasAnySessions,
   pastSessions,
@@ -100,12 +102,23 @@ export default function CourseScheduleTable({
 
   const renderSchedules = (schedules, displayState) =>
     schedules.map((publicSchedule, index) => {
-      const eventStartDate = formatCourseDate(publicSchedule.eventStart, locale);
+      const eventStartDate = formatCourseDate(
+        publicSchedule.eventStart,
+        locale,
+      );
       const eventEndDate = formatCourseDate(publicSchedule.eventEnd, locale);
-      const eventStartTime = formatCourseTime(publicSchedule.eventStart, locale);
+      const eventStartTime = formatCourseTime(
+        publicSchedule.eventStart,
+        locale,
+      );
       const eventEndTime = formatCourseTime(publicSchedule.eventEnd, locale);
       const courseType = getCourseType(publicSchedule);
       const deliveryLabel = getSessionDeliveryLabel(publicSchedule, locale);
+      const organizerLabel = getSessionOrganizerLabel(
+        publicSchedule,
+        courseData,
+      );
+      const instructorLabel = getSessionInstructorLabel(publicSchedule);
       const forwardedUrl = buildForwardedUrl(
         publicSchedule.ticketUrl,
         routerQuery || {},
@@ -175,6 +188,13 @@ export default function CourseScheduleTable({
               </div>
 
               <div className="min-w-0">
+                {organizerLabel ? (
+                  <div className="mb-3 text-sm font-medium leading-7 text-muted">
+                    {locale === 'th'
+                      ? `ผู้จัดรอบนี้: ${organizerLabel}`
+                      : `Organized by ${organizerLabel}`}
+                  </div>
+                ) : null}
                 <h3 className="text-[1.9rem] font-semibold leading-[1.15] tracking-[-0.045em] text-text sm:text-[2.2rem] lg:text-[2.6rem]">
                   {courseType === 'GET_YOURS' ? (
                     <a
@@ -200,6 +220,13 @@ export default function CourseScheduleTable({
                     publicSchedule.title
                   )}
                 </h3>
+                {instructorLabel ? (
+                  <div className="mt-3 text-sm leading-7 text-muted">
+                    {locale === 'th'
+                      ? `วิทยากร: ${instructorLabel}`
+                      : `Instructor: ${instructorLabel}`}
+                  </div>
+                ) : null}
               </div>
             </div>
           </div>
@@ -250,7 +277,9 @@ export default function CourseScheduleTable({
                         {publicSchedule.location}
                       </a>
                     ) : (
-                      <span className="text-text">{publicSchedule.location}</span>
+                      <span className="text-text">
+                        {publicSchedule.location}
+                      </span>
                     )}
                   </div>
                 </div>

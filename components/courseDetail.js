@@ -29,8 +29,11 @@ import {
   formatCourseTime,
 } from '/lib/courses/formatters';
 import {
+  getCoursePrimaryOrganizer,
   getPrimaryDisplaySessionData,
   getSessionDeliveryLabel,
+  getSessionOrganizerLabel,
+  getSessionPrimaryOrganizer,
   hasAnySessions,
   isSessionRegistrationOpen,
 } from '/lib/courses/sessions';
@@ -217,8 +220,24 @@ const CourseDetail = ({ courseData, i18next }) => {
   const lineCopy = getLineCtaCopy(locale);
   const { session: featuredSchedule, displayState: featuredScheduleState } =
     getPrimaryDisplaySessionData(courseData);
+  const courseOrganizer = getCoursePrimaryOrganizer(courseData);
+  const featuredOrganizer = getSessionPrimaryOrganizer(
+    featuredSchedule,
+    courseData,
+  );
   const hasSessionData = hasAnySessions(courseData);
-  const featuredDeliveryLabel = getSessionDeliveryLabel(featuredSchedule, locale);
+  const featuredDeliveryLabel = getSessionDeliveryLabel(
+    featuredSchedule,
+    locale,
+  );
+  const featuredOrganizerLabel = getSessionOrganizerLabel(
+    featuredSchedule,
+    courseData,
+  );
+  const courseBrandOwner = normalizeBrand(courseOrganizer);
+  const featuredBrandOwner = normalizeBrand(
+    featuredOrganizer || courseOrganizer,
+  );
   const canShowRegisterCta =
     featuredScheduleState === 'upcoming' &&
     isSessionRegistrationOpen(featuredSchedule);
@@ -256,8 +275,8 @@ const CourseDetail = ({ courseData, i18next }) => {
       value: courseData?.duration,
     },
     {
-      label: locale === 'th' ? 'Organizer' : 'Organizer',
-      value: courseData?.brand || 'DKS Center',
+      label: locale === 'th' ? 'ผู้จัดรอบอบรม' : 'Organizer',
+      value: featuredOrganizerLabel || 'DKS Center',
     },
     {
       label: locale === 'th' ? 'Course Code' : 'Course Code',
@@ -298,22 +317,19 @@ const CourseDetail = ({ courseData, i18next }) => {
   useEffect(() => {
     if (!courseData?.title) return;
 
-    const brandOwner = normalizeBrand(courseData?.brand);
-
     trackViewItem({
-      brandOwner,
+      brandOwner: courseBrandOwner,
       item: {
         item_name: courseData.title,
         item_category: 'course',
         item_id: courseData?.code || courseData?.key,
       },
     });
-  }, [courseData?.title, courseData?.code, courseData?.key, courseData?.brand]);
+  }, [courseBrandOwner, courseData?.title, courseData?.code, courseData?.key]);
 
   const onRegisterCtaClick = () => {
     if (!featuredSchedule || !courseData?.title || !canShowRegisterCta) return;
 
-    const brandOwner = normalizeBrand(courseData?.brand);
     const baseItem = {
       item_name: courseData?.title,
       item_category: 'course',
@@ -321,7 +337,7 @@ const CourseDetail = ({ courseData, i18next }) => {
     };
 
     trackBeginCheckout({
-      brandOwner,
+      brandOwner: featuredBrandOwner,
       item: baseItem,
       schedule: featuredSchedule,
       linkUrl: registerUrl || '',
@@ -329,7 +345,7 @@ const CourseDetail = ({ courseData, i18next }) => {
 
     if (registerUrl && /^https?:\/\//.test(registerUrl)) {
       trackOutboundClick({
-        brandOwner,
+        brandOwner: featuredBrandOwner,
         linkUrl: registerUrl,
         label: 'eventpop_ticket',
       });

@@ -6,6 +6,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { normalizeBrand } from '/lib/brand';
 import SeoHead from '/components/seo/seo-head';
 import SiteShell from '/components/layout/site-shell';
+import { getCoursePrimaryOrganizer } from '/lib/courses/sessions';
 import { getCourseByKey, getCourseKeys } from '/lib/courses/repository';
 import { getCoursePageSeo } from '/lib/seo';
 
@@ -61,7 +62,7 @@ async function getI18nProps(ctx, ns = ['home'], courseData, courseKey) {
   const locale = ctx?.params?.locale;
 
   const localized = courseData?.[locale] || null;
-  const brandOwner = normalizeBrand(localized?.brand);
+  const brandOwner = normalizeBrand(getCoursePrimaryOrganizer(localized));
 
   return {
     ...(await serverSideTranslations(locale, ns)),

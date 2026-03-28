@@ -1,7 +1,7 @@
 const sharedCourse = {
   key: '2026-003-ai-assisted-software-engineering',
   code: '2026-003',
-  brand: 'DKS Center',
+  defaultOrganizer: 'DKS Center',
   isActive: true,
   imageUrl: null,
   lastUpdate: '2026-03-29T12:00:00+0700',

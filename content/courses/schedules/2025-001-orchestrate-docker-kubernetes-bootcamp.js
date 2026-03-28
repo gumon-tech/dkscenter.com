@@ -7,8 +7,10 @@ const schedules = [
     saleEnd: '2025-03-14T21:00:00+0700',
     isActive: true,
     isSoldOut: false,
+    organizer: 'AC Academys',
     deliveryMode: 'onsite',
-    location: 'Clazy Cafe The Seasons Mall @BTS Sanam Pao, Exit 1, Bangkok, Thailand.',
+    location:
+      'Clazy Cafe The Seasons Mall @BTS Sanam Pao, Exit 1, Bangkok, Thailand.',
     scheduleKey: '',
     ticketUrl:
       'https://www.eventpop.me/e/74477/orchestrate-docker-kubernetes-bootcamp-1-2025',
@@ -21,6 +23,7 @@ const schedules = [
     saleEnd: '2026-05-15T21:00:00+07:00',
     isActive: true,
     isSoldOut: false,
+    organizer: 'AC Academys',
     deliveryMode: 'onsite',
     location: 'Asia Connect Corporation, Lat Krabang, Bangkok.',
     locationUrl: 'https://maps.app.goo.gl/SZZsAHV1RtFawjM66',

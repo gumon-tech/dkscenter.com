@@ -12,7 +12,8 @@ export type Course = {
   locale?: string;
   language?: string;
   isActive: boolean;
-  brand?: string;
+  defaultOrganizer?: NamedEntity | null;
+  defaultOrganizers?: NamedEntity[];
   imageUrl?: string | null;
   detailUrl?: string | null;
   title: string;
@@ -40,6 +41,16 @@ export type Outline = {
   descriptions: string[];
 };
 
+export type NamedEntity = {
+  name: string;
+  url?: string;
+};
+
+export type Instructor = NamedEntity & {
+  title?: string;
+  profileUrl?: string;
+};
+
 export type PublicSchedule = {
   scheduleKey?: string;
   title: string;
@@ -53,4 +64,7 @@ export type PublicSchedule = {
   deliveryMode?: string;
   location?: string;
   locationUrl?: string;
+  organizer?: NamedEntity | null;
+  organizers?: NamedEntity[];
+  instructors?: Instructor[];
 };

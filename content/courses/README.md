@@ -124,6 +124,6 @@ content/courses/
 - `locales/<courseKey>/th.js`
   - localized editorial content only
 - `schedules/<courseKey>.js`
-  - public session data only
+  - public session/run data only, including per-run organizer and optional instructor data
 
 The normalization layer combines these sources back into the runtime course shape used by the repository and UI. Legacy runtime sources are no longer used.

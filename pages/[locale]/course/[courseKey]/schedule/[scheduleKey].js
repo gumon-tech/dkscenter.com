@@ -6,11 +6,13 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import SeoHead from '/components/seo/seo-head';
 import SiteShell from '/components/layout/site-shell';
 import CourseScheduleOverview from '/components/course/course-schedule-overview';
+import { normalizeBrand } from '/lib/brand';
 import {
   getCourseByKey,
   getLocalizedCourseSchedulePaths,
   getScheduleByKey,
 } from '/lib/courses/repository';
+import { getSessionPrimaryOrganizer } from '/lib/courses/sessions';
 import { getCourseSessionSeo } from '/lib/seo';
 
 const CourseSchedule = ({ courseData, scheduleData }) => {
@@ -61,6 +63,10 @@ async function getI18nProps(ctx, ns = ['home'], courseData) {
     ...(await serverSideTranslations(locale, ns)),
     courseData: courseLocaleData,
     scheduleData: scheduleData,
+    pageType: 'course_session',
+    brandOwner: normalizeBrand(
+      getSessionPrimaryOrganizer(scheduleData, courseLocaleData),
+    ),
   };
   return props;
 }

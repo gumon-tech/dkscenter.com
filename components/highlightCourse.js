@@ -9,6 +9,7 @@ import {
 import {
   getPrimaryDisplaySessionData,
   getSessionDeliveryLabel,
+  getSessionOrganizerLabel,
 } from '../lib/courses/sessions';
 
 const FALLBACK_COURSE_PATH = '/course/2024-007-modern-web-frontend-with-react';
@@ -41,6 +42,10 @@ const HighlightCourse = ({ i18next }) => {
   const deliveryLabel = getSessionDeliveryLabel(
     highlightSchedule,
     currentLanguage,
+  );
+  const organizerLabel = getSessionOrganizerLabel(
+    highlightSchedule,
+    highlightCourse,
   );
 
   const dateRange =
@@ -90,12 +95,12 @@ const HighlightCourse = ({ i18next }) => {
       value: timeRange,
     },
     {
-      label: currentLanguage === 'th' ? 'ผู้สอน' : 'Instructor',
+      label: currentLanguage === 'th' ? 'ผู้จัดรอบอบรม' : 'Organizer',
       value:
-        highlightCourse?.brand ||
+        organizerLabel ||
         (currentLanguage === 'th'
-          ? 'ทีมวิทยากร DKS Center'
-          : 'DKS Center Instructor Team'),
+          ? 'จะแจ้งผู้จัดอีกครั้ง'
+          : 'Organizer to be announced'),
     },
     {
       label: currentLanguage === 'th' ? 'สถานที่' : 'Venue',

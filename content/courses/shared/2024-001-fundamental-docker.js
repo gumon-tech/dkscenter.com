@@ -1,7 +1,7 @@
 const sharedCourse = {
   key: '2024-001-fundamental-docker',
   code: '2024-001',
-  brand: 'DKS Center',
+  defaultOrganizer: 'DKS Center',
   isActive: true,
   imageUrl: '/course/2024-001/poster/cover-image2-01-01.jpg',
   lastUpdate: '2024-02-18T09:00:00+0700',

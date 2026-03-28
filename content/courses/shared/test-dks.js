@@ -1,7 +1,7 @@
 const sharedCourse = {
   key: 'test-dks',
   code: '8417535',
-  brand: 'DKS Center',
+  defaultOrganizer: 'DKS Center',
   isActive: false,
   lastUpdate: '2025-02-19T09:00:00+0700',
   detailUrl: {

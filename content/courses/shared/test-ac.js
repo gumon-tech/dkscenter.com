@@ -1,7 +1,7 @@
 const sharedCourse = {
   key: 'test-ac',
   code: '8417602',
-  brand: 'AC Academys',
+  defaultOrganizer: 'AC Academys',
   isActive: false,
   lastUpdate: '2025-02-19T09:00:00+0700',
   detailUrl: {
