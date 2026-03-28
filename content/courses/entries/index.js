@@ -20,6 +20,8 @@ import courseEn2025001 from './2025-001-orchestrate-docker-kubernetes-bootcamp/e
 import courseTh2025001 from './2025-001-orchestrate-docker-kubernetes-bootcamp/th.js';
 import courseEn2025002 from './2025-002-event-driven-odyssey-kafka-nest-and-graphql-in-action/en.js';
 import courseTh2025002 from './2025-002-event-driven-odyssey-kafka-nest-and-graphql-in-action/th.js';
+import courseEn2026003 from './2026-003-ai-assisted-software-engineering/en.js';
+import courseTh2026003 from './2026-003-ai-assisted-software-engineering/th.js';
 import courseEn2024001 from './2024-001-fundamental-docker/en.js';
 import courseTh2024001 from './2024-001-fundamental-docker/th.js';
 import courseEn2024002 from './2024-002-fundamental-kubernetes/en.js';
@@ -105,6 +107,10 @@ export const modularCourseEntries = {
   '2025-002-event-driven-odyssey-kafka-nest-and-graphql-in-action': {
     en: courseEn2025002,
     th: courseTh2025002,
+  },
+  '2026-003-ai-assisted-software-engineering': {
+    en: courseEn2026003,
+    th: courseTh2026003,
   },
   'test-ac': {
     en: courseEnTestAc,
